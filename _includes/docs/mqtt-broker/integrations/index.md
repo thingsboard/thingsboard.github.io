@@ -2,8 +2,10 @@
 * TOC
 {:toc}
 
+{% if docsPrefix != "pe/" %}
 {% assign sinceVersion = "2.1.0" %}
 {% include templates/mqtt-broker/since.md %}
+{% endif %}
 
 ## Overview
 
@@ -179,7 +181,7 @@ This pattern provides a **durable, distributed configuration source** backed by 
 
 Although downlink topics are not used for message processing (which is useful for parallel processing), separating them by integration type provides several key benefits:
 
-- **Executor Specialization**: You can assign specific Integration Executor instances to process only certain integration types using the `TB_SERVICE_INTEGRATIONS_SUPPORTED` and `TB_SERVICE_INTEGRATIONS_EXCLUDED` [environment variables](/docs/mqtt-broker/install/ie-config/#service-parameters).
+- **Executor Specialization**: You can assign specific Integration Executor instances to process only certain integration types using the `TB_SERVICE_INTEGRATIONS_SUPPORTED` and `TB_SERVICE_INTEGRATIONS_EXCLUDED` [environment variables](/docs/{{docsPrefix}}mqtt-broker/install/ie-config/#service-parameters).
 - **Targeted Consumption**: Executors subscribe only to topics they are configured to handle.
 - **Improved Isolation**: Different integration types often have different configuration payloads and validation logic. Dedicated topics ensure that only relevant messages are received by each executor.
 - **Operational Simplicity**: Easier to debug and monitor traffic per integration type.
@@ -238,7 +240,7 @@ The integration will not be saved.
 ![image](/images/mqtt-broker/integrations/tbmq-ie-admin-ok.png)
 
 The Integration Executor is running and the configuration is valid. Result: **Success**.
-Once validation succeeds, the integration entity is saved in the database, the integration subscriptions are persisted in the [Subscription Trie](/docs/mqtt-broker/architecture/#subscriptions-trie),
+Once validation succeeds, the integration entity is saved in the database, the integration subscriptions are persisted in the [Subscription Trie](/docs/{{docsPrefix}}mqtt-broker/architecture/#subscriptions-trie),
 and integration configuration event is sent to the Integration Executor for processing.
 
 ### Integration Message Processing Topic
@@ -464,9 +466,9 @@ This architecture supports modern cloud-native deployment models and ensures tha
 
 TBMQ currently supports three outbound integration types, each designed for specific use cases:
 
-- [**HTTP Integration**](/docs/mqtt-broker/integrations/http/) – Send MQTT messages to REST APIs or Webhooks via HTTP(S).
-- [**MQTT Integration**](/docs/mqtt-broker/integrations/mqtt/) – Forward messages to external MQTT brokers for cross-broker communication via MQTT(S).
-- [**Kafka Integration**](/docs/mqtt-broker/integrations/kafka/) – Stream messages into Kafka topics for real-time processing via TCP(TLS).
+- [**HTTP Integration**](/docs/{{docsPrefix}}mqtt-broker/integrations/http/) – Send MQTT messages to REST APIs or Webhooks via HTTP(S).
+- [**MQTT Integration**](/docs/{{docsPrefix}}mqtt-broker/integrations/mqtt/) – Forward messages to external MQTT brokers for cross-broker communication via MQTT(S).
+- [**Kafka Integration**](/docs/{{docsPrefix}}mqtt-broker/integrations/kafka/) – Stream messages into Kafka topics for real-time processing via TCP(TLS).
 
 ## Roadmap
 

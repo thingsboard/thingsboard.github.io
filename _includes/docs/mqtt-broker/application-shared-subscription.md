@@ -2,7 +2,7 @@
 * TOC
 {:toc}
 
-The Application Shared Subscription entity provides the capability to leverage the [Shared Subscriptions](/docs/mqtt-broker/user-guide/shared-subscriptions/) 
+The Application Shared Subscription entity provides the capability to leverage the [Shared Subscriptions](/docs/{{docsPrefix}}mqtt-broker/user-guide/shared-subscriptions/) 
 feature for **APPLICATION** clients. This feature enables multiple clients to subscribe and receive messages from a shared subscription. 
 Upon creating the Application Shared Subscription entity, a corresponding Kafka topic is automatically created. 
 This Kafka topic serves as a repository for all messages pertaining to the shared subscription.

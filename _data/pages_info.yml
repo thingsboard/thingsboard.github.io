@@ -951,14 +951,14 @@
 "/docs/mqtt-broker/security/overview/":
   url: "/docs/mqtt-broker/security/overview/"
   redirect_from: []
-"/docs/mqtt-broker/subscription/":
-  url: "/docs/mqtt-broker/subscription/"
-  redirect_from: []
 "/docs/mqtt-broker/troubleshooting/":
   url: "/docs/mqtt-broker/troubleshooting/"
   redirect_from: []
 "/docs/mqtt-broker/user-guide/backpressure/":
   url: "/docs/mqtt-broker/user-guide/backpressure/"
+  redirect_from: []
+"/docs/mqtt-broker/user-guide/clean-persistent-sessions/":
+  url: "/docs/mqtt-broker/user-guide/clean-persistent-sessions/"
   redirect_from: []
 "/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/":
   url: "/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/"
@@ -3493,6 +3493,264 @@
 "/docs/pe/mobile-center/mobile-center/":
   url: "/docs/pe/mobile-center/mobile-center/"
   redirect_from: []
+"/docs/pe/mqtt-broker/api/":
+  url: "/docs/pe/mqtt-broker/api/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/application-shared-subscription/":
+  url: "/docs/pe/mqtt-broker/application-shared-subscription/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/architecture-details/persistent-app-client/":
+  url: "/docs/pe/mqtt-broker/architecture-details/persistent-app-client/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/architecture-details/persistent-device-client/":
+  url: "/docs/pe/mqtt-broker/architecture-details/persistent-device-client/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/architecture/":
+  url: "/docs/pe/mqtt-broker/architecture/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/faq/":
+  url: "/docs/pe/mqtt-broker/faq/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/":
+  url: "/docs/pe/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/getting-started/":
+  url: "/docs/pe/mqtt-broker/getting-started/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/help/":
+  url: "/docs/pe/mqtt-broker/help/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/image-gallery/":
+  url: "/docs/pe/mqtt-broker/image-gallery/"
+  redirect_from:
+  - "/docs/mqtt-broker/image-gallery/"
+"/docs/pe/mqtt-broker/":
+  url: "/docs/pe/mqtt-broker/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/aws-cluster-setup/":
+  url: "/docs/pe/mqtt-broker/install/cluster/aws-cluster-setup/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/azure-cluster-setup/":
+  url: "/docs/pe/mqtt-broker/install/cluster/azure-cluster-setup/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/docker-compose-setup/":
+  url: "/docs/pe/mqtt-broker/install/cluster/docker-compose-setup/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/gcp-cluster-setup/":
+  url: "/docs/pe/mqtt-broker/install/cluster/gcp-cluster-setup/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-aws/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-aws/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-azure/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-azure/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-gcp/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-gcp/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-minikube/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-minikube/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-options/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-options/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-upgrading-options/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-upgrading-options/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/minikube-cluster-setup/":
+  url: "/docs/pe/mqtt-broker/install/cluster/minikube-cluster-setup/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-with-from-version/":
+  url: "/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-with-from-version/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-without-from-version/":
+  url: "/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-without-from-version/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-with-from-version/":
+  url: "/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-with-from-version/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/config/":
+  url: "/docs/pe/mqtt-broker/install/config/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/docker-windows/":
+  url: "/docs/pe/mqtt-broker/install/docker-windows/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/docker/":
+  url: "/docs/pe/mqtt-broker/install/docker/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/ie-config/":
+  url: "/docs/pe/mqtt-broker/install/ie-config/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/installation-options/":
+  url: "/docs/pe/mqtt-broker/install/installation-options/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/upgrade-instructions/":
+  url: "/docs/pe/mqtt-broker/install/upgrade-instructions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/integrations/http/":
+  url: "/docs/pe/mqtt-broker/integrations/http/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/integrations/":
+  url: "/docs/pe/mqtt-broker/integrations/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/integrations/kafka/":
+  url: "/docs/pe/mqtt-broker/integrations/kafka/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/integrations/mqtt/":
+  url: "/docs/pe/mqtt-broker/integrations/mqtt/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/mqtt-client-credentials-management/":
+  url: "/docs/pe/mqtt-broker/mqtt-client-credentials-management/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/other/blocked-client/":
+  url: "/docs/pe/mqtt-broker/other/blocked-client/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/other/health/":
+  url: "/docs/pe/mqtt-broker/other/health/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/other/msg-delivery-strategy/":
+  url: "/docs/pe/mqtt-broker/other/msg-delivery-strategy/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/other/proxy-protocol/":
+  url: "/docs/pe/mqtt-broker/other/proxy-protocol/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/reference/100m-connections-performance-test/":
+  url: "/docs/pe/mqtt-broker/reference/100m-connections-performance-test/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/reference/1m-throughput-p2p-performance-test/":
+  url: "/docs/pe/mqtt-broker/reference/1m-throughput-p2p-performance-test/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/reference/3m-throughput-single-node-performance-test/":
+  url: "/docs/pe/mqtt-broker/reference/3m-throughput-single-node-performance-test/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/releases/":
+  url: "/docs/pe/mqtt-broker/releases/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/rest-api/":
+  url: "/docs/pe/mqtt-broker/rest-api/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/roadmap/":
+  url: "/docs/pe/mqtt-broker/roadmap/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/search/":
+  url: "/docs/pe/mqtt-broker/search/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/authentication/basic/":
+  url: "/docs/pe/mqtt-broker/security/authentication/basic/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/authentication/jwt/":
+  url: "/docs/pe/mqtt-broker/security/authentication/jwt/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/authentication/scram/":
+  url: "/docs/pe/mqtt-broker/security/authentication/scram/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/authentication/x509/":
+  url: "/docs/pe/mqtt-broker/security/authentication/x509/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/domains/":
+  url: "/docs/pe/mqtt-broker/security/domains/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/https/":
+  url: "/docs/pe/mqtt-broker/security/https/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/listeners/":
+  url: "/docs/pe/mqtt-broker/security/listeners/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/mqtts/":
+  url: "/docs/pe/mqtt-broker/security/mqtts/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/oauth-2-support/":
+  url: "/docs/pe/mqtt-broker/security/oauth-2-support/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/overview/":
+  url: "/docs/pe/mqtt-broker/security/overview/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/rbac/":
+  url: "/docs/pe/mqtt-broker/security/rbac/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/subscription/":
+  url: "/docs/pe/mqtt-broker/subscription/"
+  redirect_from:
+  - "/docs/mqtt-broker/subscription/"
+"/docs/pe/mqtt-broker/troubleshooting/":
+  url: "/docs/pe/mqtt-broker/troubleshooting/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/backpressure/":
+  url: "/docs/pe/mqtt-broker/user-guide/backpressure/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/clean-persistent-sessions/":
+  url: "/docs/pe/mqtt-broker/user-guide/clean-persistent-sessions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/":
+  url: "/docs/pe/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/keep-alive/":
+  url: "/docs/pe/mqtt-broker/user-guide/keep-alive/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/last-will/":
+  url: "/docs/pe/mqtt-broker/user-guide/last-will/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/mqtt-broker/":
+  url: "/docs/pe/mqtt-broker/user-guide/mqtt-broker/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/mqtt-client-type/":
+  url: "/docs/pe/mqtt-broker/user-guide/mqtt-client-type/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/mqtt-over-ws/":
+  url: "/docs/pe/mqtt-broker/user-guide/mqtt-over-ws/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/mqtt-protocol/":
+  url: "/docs/pe/mqtt-broker/user-guide/mqtt-protocol/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/qos/":
+  url: "/docs/pe/mqtt-broker/user-guide/qos/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/retained-messages/":
+  url: "/docs/pe/mqtt-broker/user-guide/retained-messages/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/shared-subscriptions/":
+  url: "/docs/pe/mqtt-broker/user-guide/shared-subscriptions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/topics/":
+  url: "/docs/pe/mqtt-broker/user-guide/topics/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/mail-server/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/mail-server/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/monitoring/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/monitoring/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/mqtt-client-credentials/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/mqtt-client-credentials/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/sessions/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/sessions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/settings/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/settings/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/shared-subscriptions/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/shared-subscriptions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/subscriptions/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/subscriptions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/unauthorized-clients/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/unauthorized-clients/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/users/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/users/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/websocket-client/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/websocket-client/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-management/":
+  url: "/docs/pe/mqtt-broker/user-management/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/white-labeling/":
+  url: "/docs/pe/mqtt-broker/white-labeling/"
+  redirect_from:
+  - "/docs/mqtt-broker/white-labeling/"
 "/docs/pe/reference/coap-api/":
   url: "/docs/pe/reference/coap-api/"
   redirect_from:

@@ -1,70 +1,64 @@
-We recommend deploying Bitnami Redis Cluster from Helm. For that, review the `redis` folder.
+TBMQ relies on **Valkey** to store messages for [DEVICE persistent clients](/docs/{{docsPrefix}}mqtt-broker/architecture/#persistent-device-client).
+The cache also improves performance by reducing the number of direct database reads, especially when authentication is enabled and multiple clients connect at once.
+Without caching, every new connection triggers a database query to validate MQTT client credentials, which can cause the unnecessary load under high connection rates.
 
-```bash
-ls redis/
-```
-{: .copy-code}
+To set up Valkey in Google Cloud, refer to the Google Memorystore for Valkey documentation:
 
-You can find there _default-values-redis.yml_ file -
-default values downloaded from [Bitnami artifactHub](https://artifacthub.io/packages/helm/bitnami/redis-cluster).
-And _values-redis.yml_ file with modified values.
-We recommend keeping the first file untouched and making changes to the second one only. This way the upgrade process to the next version will go more smoothly as it will be possible to see diff.
+* **Create Memorystore for Valkey instances**:
+  Instructions to provision both **Cluster Mode Enabled** and **Cluster Mode Disabled** instances, including prerequisites like service connection policies and networking setup.
+  ([Google Cloud][1])
 
-To add the Bitnami helm repo:
+* **General overview**:
+  Details on the managed Valkey service, architecture, and key concepts such as shards, endpoints, and supported Valkey versions (including 8.0).
+  ([Google Cloud][2])
 
-```bash
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm repo update
-```
-{: .copy-code}
+* **Networking requirements**:
+  Guidance on Private Service Connect and service connection policy setup necessary for secure connectivity.
+  ([Google Cloud][3])
 
-To install Bitnami Redis cluster, execute the following command:
+* **Instance & node sizing**:
+  Recommendations for choosing node types according to workload (e.g., `standard-small`, `highmem-medium`), memory capacity, and performance characteristics.
+  ([Google Cloud][4])
 
-```bash
-helm install redis -f redis/values-redis.yml bitnami/redis-cluster --version 10.2.5
-```
-{: .copy-code}
+* **Cluster vs Standalone (Cluster Mode Enabled vs Disabled)**:
+  Comparison of horizontal scaling, throughput, and feature support—helpful in choosing the appropriate mode for your use case.
+  ([Google Cloud][5])
 
-Once deployed, you should see the information about deployment state, followed by the command to get your REDIS_PASSWORD:
+* **High Availability & Replicas**:
+  Best practices for multi-zone deployment, replica usage for read scaling, and resilience in production scenarios.
+  ([Google Cloud][6])
 
-```text
-NAME: redis
-LAST DEPLOYED: Tue Apr  8 11:22:44 2025
-NAMESPACE: thingsboard-mqtt-broker
-STATUS: deployed
-REVISION: 1
-TEST SUITE: None
-NOTES:
-CHART NAME: redis-cluster
-CHART VERSION: 10.2.5
-APP VERSION: 7.2.5** Please be patient while the chart is being deployed **
+* **Best practices & scaling guidance**:
+  Advice on memory management, eviction policies, when to scale, and how to handle growing workloads effectively.
+  ([Google Cloud][7])
 
+Once your Valkey cluster is ready, update the cache configuration in `tbmq-cache-configmap.yml` with the correct endpoint values:
 
-To get your password run:
-    export REDIS_PASSWORD=$(kubectl get secret --namespace "thingsboard-mqtt-broker" redis-redis-cluster -o jsonpath="{.data.redis-password}" | base64 -d)
-```
+* **For standalone Valkey**:
+  Uncomment and set the following values. Make sure the `REDIS_HOST` value does **not** include the port (`:6379`).
 
-Let's modify this command to print the password to the terminal:
+  ```yaml
+  REDIS_CONNECTION_TYPE: "standalone"
+  REDIS_HOST: "YOUR_VALKEY_ENDPOINT_URL_WITHOUT_PORT"
+  #REDIS_PASSWORD: "YOUR_REDIS_PASSWORD"
+  ```
 
-```bash
-echo $(kubectl get secret --namespace "thingsboard-mqtt-broker" redis-redis-cluster -o jsonpath="{.data.redis-password}" | base64 -d)
-```
-{: .copy-code}
+* **For Valkey cluster**:
+  Provide a comma-separated list of "host:port" node endpoints to bootstrap from.
 
-You need to copy the output and paste it into the _tb-broker-cache-configmap.yml_ file, replacing `YOUR_REDIS_PASSWORD`.
+  ```yaml
+  REDIS_CONNECTION_TYPE: "cluster"
+  REDIS_NODES: "COMMA_SEPARATED_LIST_OF_NODES"
+  #REDIS_PASSWORD: "YOUR_REDIS_PASSWORD"
+  # Recommended in Kubernetes for handling dynamic IPs and failover:
+  #REDIS_LETTUCE_CLUSTER_TOPOLOGY_REFRESH_ENABLED: "true"
+  #REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_ENABLED: "true"
+  ```
 
-```bash
-nano tb-broker-cache-configmap.yml
-```
-{: .copy-code}
-
-{% capture redis-nodes %}
-
-The value of `REDIS_NODES` in _tb-broker-cache-configmap.yml_ is set to `"redis-redis-cluster-headless:6379"` by default.
-The host name is based on the release name (redis) and the default naming conventions of the Bitnami chart.
-If you modify the `nameOverride` or `fullnameOverride` fields in your Redis values file, or change the release name during installation,
-you must update this value accordingly to match the actual headless service name created by the chart.
-
-{% endcapture %}
-{% include templates/info-banner.md content=redis-nodes %}
-
+[1]: https://cloud.google.com/memorystore/docs/valkey/create-instances "Create instances | Memorystore for Valkey | Google Cloud"
+[2]: https://cloud.google.com/memorystore/docs/valkey/product-overview "Memorystore for Valkey overview - Google Cloud"
+[3]: https://cloud.google.com/memorystore/docs/valkey/networking "Networking | Memorystore for Valkey | Google Cloud"
+[4]: https://cloud.google.com/memorystore/docs/valkey/instance-node-specification "Instance and node specification | Memorystore for Valkey | Google Cloud"
+[5]: https://cloud.google.com/memorystore/docs/valkey/cluster-mode-enabled-and-disabled "Enable and disable cluster mode | Memorystore for Valkey - Google Cloud"
+[6]: https://cloud.google.com/memorystore/docs/valkey/ha-and-replicas "High availability and replicas | Memorystore for Valkey | Google Cloud"
+[7]: https://cloud.google.com/memorystore/docs/valkey/general-best-practices "Best practices for Memorystore for Valkey - Google Cloud"
