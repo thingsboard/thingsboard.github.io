@@ -90,9 +90,9 @@ Please consider the following examples:
 * If Publish/Subscribe authorization rules has no rules (field is empty) - client will be forbidden to publish/subscribe to any topics.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/pe/mqtt-broker/user-guide/ui/ssl-credentials-authorization.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/ui/ssl-credentials-authorization.png)
 {% else %}
-![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-authorization.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ssl-credentials-authorization.png)
 {% endif %}
 
 ### SCRAM

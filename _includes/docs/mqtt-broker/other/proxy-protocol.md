@@ -18,7 +18,7 @@ By using PROXY Protocol, TBMQ can log, filter, and apply policies based on the r
 The PROXY Protocol appends **meta-information** about the original client connection at the very start of the TCP stream. 
 This metadata is sent by the proxy or load balancer **before** any protocol-specific data, such as the MQTT CONNECT packet or the TLS handshake.
 
-![image](/images/mqtt-broker/other/proxy-protocol.png)
+![image](https://img.thingsboard.io/mqtt-broker/other/proxy-protocol.png)
 
 When a client connects to TBMQ through a proxy that supports PROXY Protocol, the connection flow is as follows:
 

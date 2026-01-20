@@ -22,23 +22,23 @@ In the "General" tab you can set or change the following options:
  - Logo - you can change the standard logo in the upper left corner to your company logo; 
  - Logo height - you can resize the logo;
 
-![image](/images/pe/mqtt-broker/user-guide/white-labeling/white-labeling-title-logo-favicon.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/white-labeling/white-labeling-title-logo-favicon.png)
 
  - White labeling allows you to customize the color theme by adjusting the primary and accent palettes to match your desired UI design.
 
     - Primary palette - you can customize the background color and font color by choosing one of the suggested UI design options or customizing an existing one;
     - Accent palette - you can customize the color for some elements, for example, for a toggle;
 
-    ![image](/images/pe/mqtt-broker/user-guide/white-labeling/primary-accent-palette.png)
+    ![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/white-labeling/primary-accent-palette.png)
 
  - Advanced CSS - you can stylize any elements of the TBMQ user interface as you wish. We will talk more about this functionality [below](#advanced-css);
  - Show/hide platform name and version - by checking this option, the name of the platform and its current version will be displayed in the lower left corner.
 
-   ![image](/images/pe/mqtt-broker/user-guide/white-labeling/show-platform-name-and-version.png)
+   ![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/white-labeling/show-platform-name-and-version.png)
 
 The final look of the customized user interface:
 
-![image](/images/pe/mqtt-broker/user-guide/white-labeling/white-labeling-custom.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/white-labeling/white-labeling-custom.png)
 
 ### Advanced CSS
 

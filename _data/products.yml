@@ -89,6 +89,6 @@
   fulltitle: PE MQTT Broker
   description: PE MQTT Broker Documentation
   tag: mqtt-broker-pe
-  icon: /images/tbmq-icon.svg
+  icon: https://img.thingsboard.io/tbmq-icon.svg
   path: /docs/pe/mqtt-broker/
   docsPrefix: /docs/pe/mqtt-broker/

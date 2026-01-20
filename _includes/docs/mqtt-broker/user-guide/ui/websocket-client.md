@@ -8,9 +8,9 @@ It offers seamless management of MQTT clients, subscription to topics, and messa
 TBMQ WebSocket Client utilizes the [MQTT.js](https://github.com/mqttjs/MQTT.js) library for communication between client and broker.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/pe/mqtt-broker/user-guide/ui/ws-overview.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/ui/ws-overview.png)
 {% else %}
-![image](/images/mqtt-broker/user-guide/ui/ws-overview.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-overview.png)
 {% endif %}
 
 ## Connections
@@ -117,9 +117,9 @@ The status of the WebSocket Client may be one of the following:
 4. **Connection failed**. Indicates that the client was unable to establish a connection with the broker. This status may also include additional information such as the cause of the failure - for instance, authentication issues, session taken over, among others.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/pe/mqtt-broker/user-guide/ui/ws-logs.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/ui/ws-logs.png)
 {% else %}
-![image](/images/mqtt-broker/user-guide/ui/ws-logs.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-logs.png)
 {% endif %}
 
 ## Subscriptions
@@ -192,9 +192,9 @@ The table messages can be filtered by:
 * **Topic/QoS/Retain** - click on the _filter_ icon next to _Clear messages_ button.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/pe/mqtt-broker/user-guide/ui/ws-table-filter.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/ui/ws-table-filter.png)
 {% else %}
-![image](/images/mqtt-broker/user-guide/ui/ws-table-filter.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-table-filter.png)
 {% endif %}
 
 ### Publish a message
@@ -221,9 +221,9 @@ After filling out the necessary information and settings, locate and **click on 
 The message will now be dispatched to the broker and relayed to all clients who are subscribed to the given topic.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/pe/mqtt-broker/user-guide/ui/ws-publish-msg.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/ui/ws-publish-msg.png)
 {% else %}
-![image](/images/mqtt-broker/user-guide/ui/ws-publish-msg.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-publish-msg.png)
 {% endif %}
 
 For MQTT clients utilizing **MQTT Version 5**, there are also additional parameters available to further customize your message publishing experience. 
@@ -240,7 +240,7 @@ Below is a brief explanation of each setting:
 * **User Properties**. Allows user-defined metadata in form of key-value pairs.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/pe/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)
 {% else %}
-![image](/images/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)
 {% endif %}

@@ -237,9 +237,9 @@ Closing client...
 Moreover, you can utilize the [WebSocket client](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/websocket-client/) to subscribe to the topic and receive messages, allowing you to verify the result.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/pe/mqtt-broker/ws/ws_example.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/ws/ws_example.png)
 {% else %}
-![image](/images/mqtt-broker/ws/ws_example.png)
+![image](https://img.thingsboard.io/mqtt-broker/ws/ws_example.png)
 {% endif %}
 
 ### Connection details

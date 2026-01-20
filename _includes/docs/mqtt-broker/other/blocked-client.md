@@ -20,9 +20,9 @@ This ensures that unauthorized or potentially malicious connection attempts are 
 ## Supported Block Types
 
 {% if docsPrefix == "pe/" %}
-![image](/images/pe/mqtt-broker/other/blocked-clients.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/other/blocked-clients.png)
 {% else %}
-![image](/images/mqtt-broker/other/blocked-clients.png)
+![image](https://img.thingsboard.io/mqtt-broker/other/blocked-clients.png)
 {% endif %}
 
 You can block a client using any of the following identifiers:

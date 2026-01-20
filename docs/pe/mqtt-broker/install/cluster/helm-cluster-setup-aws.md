@@ -7,4 +7,4 @@ description: Deploy TBMQ PE Cluster on EKS with Helm
 
 {% assign docsPrefix = "pe/" %}
 {% assign tbmqSuffix = "PE" %}
-![image](/images/coming-soon.jpg)
+![image](https://img.thingsboard.io/coming-soon.jpg)

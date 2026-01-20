@@ -6,7 +6,7 @@
 The Image Gallery serves as a centralized repository for managing images in the TBMQ application.
 It provides the source for logo and favicon images used in the **White labeling** feature on the [application](/docs/pe/mqtt-broker/white-labeling/#customize-tbmq-web-interface) and [login](/docs/pe/mqtt-broker/white-labeling/#customize-the-login-page) pages.
 
-![image](/images/pe/mqtt-broker/user-guide/white-labeling/image-gallery.png)
+![image](https://img.thingsboard.io/pe/mqtt-broker/user-guide/white-labeling/image-gallery.png)
 
 ## Add image
 
