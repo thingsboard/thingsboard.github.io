@@ -1,4 +1,18 @@
-To adding new requests mapping, navigate to the "Requests mapping" tab and click the "plus" icon.
-In the open modal window, select the "Attribute request" type, set a topic filter. Fill in the fields of the "Input request parsing" and "Output request parsing" sections. Then, click "Add".
+In order to add new attribute request mapping, follow these steps:
 
-![image](/images/gateway/mqtt-connector/attribute-request-1-ce.png)
+{% assign AttributesRequest = '
+    ===
+        image: /images/gateway/mqtt-connector/mqtt-gateway-configuring-11-ce.png,
+        title: Click the "**Add mapping**" under "**Requests mapping**" section to add new attribute request mapping.
+    ===
+        image: /images/gateway/mqtt-connector/mqtt-attribute-requests-1.png,
+        title: Select "**Attribute request**" in the **Request type** field, enter the "**Topic filter**"
+    ===
+        image: /images/gateway/mqtt-connector/mqtt-attribute-requests-2.png,
+        title: Configure the **Device name expression**, **Response topic expression**, and **Attribute name expression** fields. 
+        Select the source type for each field (`Message`, `Topic`, or `Constant`) and enter the corresponding values. 
+        You can also set the **Retain** option to determine whether the attribute response message should be retained by the MQTT broker.
+    '
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=AttributesRequest %}

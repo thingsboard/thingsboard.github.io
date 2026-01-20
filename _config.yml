@@ -82,12 +82,12 @@ collections:
 release:
   branch: release-4.2
   branch_major_next: master
-  ver: 4.2.1
-  ce_ver: 4.2.1
-  ce_tag: v4.2.1
-  ce_full_ver: 4.2.1
-  pe_ver: 4.2.1pe
-  pe_full_ver: 4.2.1PE
+  ver: 4.2.1.1
+  ce_ver: 4.2.1.1
+  ce_tag: v4.2.1.1
+  ce_full_ver: 4.2.1.1
+  pe_ver: 4.2.1.1pe
+  pe_full_ver: 4.2.1.1PE
   wd_examples_commit: v4.2.1
   # >>> EDGE
   edge_ver: 4.2

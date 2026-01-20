@@ -180,7 +180,6 @@ $header-clearance: 210px
           > td
             border-bottom: 1px solid rgba(42,125,236,0.2)
 
-
   #editPageButton
     position: absolute
     top: -25px
@@ -912,6 +911,11 @@ html.search #docsContent
                 font-weight: 500
           li.hide
             display: none
+      &.noTableOfContents
+        margin-right: 0
+        width: calc(100% - 285px)
+        #table-of-contents
+          display: none
 
 @media screen and (min-width: 1500px)
   #docs, #common
@@ -936,6 +940,11 @@ html.search #docsContent
         width: calc(100% - 750px)
       #table-of-contents
         width: 370px
+      &.noTableOfContents
+        margin-right: 0
+        width: calc(100% - 350px)
+        #table-of-contents
+          display: none
 
   #device-filters
     width: 358px

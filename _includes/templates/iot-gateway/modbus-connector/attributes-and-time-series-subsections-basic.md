@@ -47,9 +47,78 @@ Additional information about the report strategy can be found [here](/docs/iot-g
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+##### Enum mapping
+
+{% capture difference %}
+Feature available since ThingsBoard IoT Gateway v.3.8.1 and only in advanced configuration mode.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+You can map register values to human-readable strings using the enum mapping feature. This is particularly 
+useful for registers where value denotes a state of the device instead of a "sensor value". Enum mapping works with 
+all register types. Uplink `RPC to Device` calls can use enum mapping to get interpreted values.
+Also, enum mapping works with batch reading as expected.
+
+In order to set up enum mapping for a specific attribute or time series, you need to define the `variants` parameter in the
+configuration. This parameter is an object where each key represents a possible register value, and the corresponding
+value is the human-readable string that describes that register value.
+
+Example of enum mapping configuration:
+```json
+{
+  "tag": "status",
+  "type": "16int",
+  "address": 1,
+  "objectsCount": 1,
+  "functionCode": 3,
+  "variants": {
+    "0": "Stopped",
+    "1": "Booting",
+    "2": "Running"
+  }
+}
+```
+
+Example of enum mapping configuration for coil register:
+```json
+{
+  "tag": "relay",
+  "type": "bits",
+  "address": 1,
+  "objectsCount": 1,
+  "functionCode": 1,
+  "bitTargetType": "int",
+  "variants": {
+    "0": "Disable",
+    "1": "Enable"
+  }
+}
+```
+
+Example of enum mapping configuration for `RPC to Device` call:
+```json
+{
+  "method": "getStatus",
+  "type": "16int",
+  "address": 1,
+  "objectsCount": 1,
+  "functionCode": 3,
+  "variants": {
+    "0": "Stopped",
+    "1": "Booting",
+    "2": "Running"
+  }
+}
+```
+
+{% capture difference %}
+More usage examples can be found in the [Example usage](/docs/iot-gateway/config/modbus/#usage-examples) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 ##### Modifier
 
-Also, **modifier** for attribute/time series value can be applied using the following settings:
+**modifier** for attribute/time series value can be applied using the following settings:
 
 | **Parameter** | **Description**                                                                                                                                                                  |
 |:--------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -64,7 +133,12 @@ More usage examples can be found in the [Example usage](/docs/iot-gateway/config
 
 ![image](/images/gateway/modbus-connector/modifier.png)
 
-##### Batch reading (Advanced configuration mode only)
+##### Batch reading
+
+{% capture difference %}
+Feature available since ThingsBoard IoT Gateway v.3.7.9 and only in advanced configuration mode.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 To optimize the reading process, you can group multiple registers into a single batch read request. This approach 
 reduces the number of requests sent to the Modbus server, which can enhance performance and decrease network traffic.

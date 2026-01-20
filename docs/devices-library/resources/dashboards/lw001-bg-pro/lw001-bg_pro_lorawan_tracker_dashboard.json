@@ -1,0 +1,682 @@
+{
+  "title": "LW001-BG PRO LoRaWAN Tracker",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "b85faaa9-a5f1-619d-cd20-255786aaaf12": {
+        "typeFullFqn": "system.cards.value_card",
+        "type": "latest",
+        "sizeX": 3,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "device",
+              "name": "",
+              "deviceId": "17322320-a658-11f0-87ea-b9809c1a7a9e",
+              "dataKeys": [
+                {
+                  "name": "data_battery_voltage",
+                  "type": "timeseries",
+                  "label": "battery_voltage",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.635749995309042
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "labelPosition": "top",
+            "layout": "square",
+            "showLabel": true,
+            "labelFont": {
+              "family": "Roboto",
+              "size": 16,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "labelColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "showIcon": true,
+            "iconSize": 40,
+            "iconSizeUnit": "px",
+            "icon": "battery_full",
+            "iconColor": {
+              "type": "constant",
+              "color": "#5469FF",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "size": 52,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "showDate": true,
+            "dateFormat": {
+              "format": "yyyy-MM-dd HH:mm:ss.SSS",
+              "lastUpdateAgo": false,
+              "custom": false,
+              "auto": false
+            },
+            "dateFont": {
+              "family": "Roboto",
+              "size": 12,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "dateColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.38)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "background": {
+              "type": "color",
+              "imageUrl": null,
+              "color": "#EDF1F3",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "autoScale": true,
+            "padding": ""
+          },
+          "title": "Value card",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°C",
+          "decimals": 0,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "configMode": "basic",
+          "margin": "0px",
+          "borderRadius": "0px",
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "enableDataExport": false,
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleFont": {
+            "size": 12,
+            "sizeUnit": "px",
+            "family": null,
+            "weight": null,
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "titleIcon": "",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "14px"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "b85faaa9-a5f1-619d-cd20-255786aaaf12"
+      },
+      "87f2afd0-1e0f-49a1-8657-6b7f14198703": {
+        "typeFullFqn": "system.cards.value_card",
+        "type": "latest",
+        "sizeX": 3,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "device",
+              "name": "",
+              "deviceId": "17322320-a658-11f0-87ea-b9809c1a7a9e",
+              "dataKeys": [
+                {
+                  "name": "data_operation_mode",
+                  "type": "timeseries",
+                  "label": "operation mode",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5094508039766821
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "labelPosition": "top",
+            "layout": "square",
+            "showLabel": true,
+            "labelFont": {
+              "family": "Roboto",
+              "size": 16,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "labelColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "showIcon": true,
+            "iconSize": 40,
+            "iconSizeUnit": "px",
+            "icon": "mdi:folder-network-outline",
+            "iconColor": {
+              "type": "constant",
+              "color": "#5469FF",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "size": 52,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "showDate": true,
+            "dateFormat": {
+              "format": null,
+              "lastUpdateAgo": true,
+              "custom": false
+            },
+            "dateFont": {
+              "family": "Roboto",
+              "size": 12,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "dateColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.38)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "background": {
+              "type": "color",
+              "color": "#fff",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "autoScale": true,
+            "padding": ""
+          },
+          "title": "Value card",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°C",
+          "decimals": 0,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "configMode": "basic",
+          "margin": "0px",
+          "borderRadius": "0px",
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "enableDataExport": false,
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleFont": {
+            "size": 12,
+            "sizeUnit": "px",
+            "family": null,
+            "weight": null,
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "titleIcon": "",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "14px"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "87f2afd0-1e0f-49a1-8657-6b7f14198703"
+      },
+      "505af46b-a8f6-e936-9316-c93194cf3ed1": {
+        "typeFullFqn": "system.cards.value_card",
+        "type": "latest",
+        "sizeX": 3,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "device",
+              "name": "",
+              "deviceId": "17322320-a658-11f0-87ea-b9809c1a7a9e",
+              "dataKeys": [
+                {
+                  "name": "data_temperature",
+                  "type": "timeseries",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.707673677731941
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "labelPosition": "top",
+            "layout": "square",
+            "showLabel": true,
+            "labelFont": {
+              "family": "Roboto",
+              "size": 16,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "labelColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "showIcon": true,
+            "iconSize": 40,
+            "iconSizeUnit": "px",
+            "icon": "thermostat",
+            "iconColor": {
+              "type": "constant",
+              "color": "#5469FF",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "size": 52,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "showDate": true,
+            "dateFormat": {
+              "format": null,
+              "lastUpdateAgo": true,
+              "custom": false
+            },
+            "dateFont": {
+              "family": "Roboto",
+              "size": 12,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "dateColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.38)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "background": {
+              "type": "color",
+              "color": "#fff",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "autoScale": true,
+            "padding": ""
+          },
+          "title": "Value card",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°C",
+          "decimals": 0,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "configMode": "basic",
+          "margin": "0px",
+          "borderRadius": "0px",
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "enableDataExport": false,
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleFont": {
+            "size": 12,
+            "sizeUnit": "px",
+            "family": null,
+            "weight": null,
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "titleIcon": "",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "14px"
+        },
+        "row": 0,
+        "col": 0,
+        "id": "505af46b-a8f6-e936-9316-c93194cf3ed1"
+      },
+      "ffde479e-9afb-9f8e-fed6-b3b0a8be8b45": {
+        "typeFullFqn": "system.map",
+        "type": "latest",
+        "sizeX": 8.5,
+        "sizeY": 6,
+        "config": {
+          "datasources": [],
+          "showTitle": true,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "mapType": "geoMap",
+            "layers": [
+              {
+                "label": "{i18n:widgets.maps.layer.roadmap}",
+                "provider": "openstreet",
+                "layerType": "OpenStreetMap.Mapnik"
+              },
+              {
+                "label": "{i18n:widgets.maps.layer.satellite}",
+                "provider": "openstreet",
+                "layerType": "Esri.WorldImagery"
+              },
+              {
+                "label": "{i18n:widgets.maps.layer.hybrid}",
+                "provider": "openstreet",
+                "layerType": "Esri.WorldImagery",
+                "referenceLayer": "openstreetmap_hybrid"
+              }
+            ],
+            "imageSource": null,
+            "markers": [
+              {
+                "dsType": "device",
+                "dsLabel": "",
+                "xKey": {
+                  "name": "latitude",
+                  "label": "latitude",
+                  "type": "attribute",
+                  "settings": {},
+                  "color": "#2196f3"
+                },
+                "yKey": {
+                  "name": "longitude",
+                  "label": "longitude",
+                  "type": "attribute",
+                  "settings": {},
+                  "color": "#2196f3"
+                },
+                "markerType": "shape",
+                "markerShape": {
+                  "shape": "markerShape1",
+                  "size": 34,
+                  "color": {
+                    "type": "constant",
+                    "color": "#307FE5"
+                  }
+                },
+                "markerIcon": {
+                  "iconContainer": "iconContainer1",
+                  "icon": "mdi:lightbulb-on",
+                  "size": 48,
+                  "color": {
+                    "type": "constant",
+                    "color": "#307FE5"
+                  }
+                },
+                "markerImage": {
+                  "type": "image",
+                  "image": "https://static.thingsboard.cloud/assets/markers/shape1.svg",
+                  "imageSize": 34
+                },
+                "markerOffsetX": 0.5,
+                "markerOffsetY": 1,
+                "positionFunction": "return {x: origXPos, y: origYPos};",
+                "markerClustering": {
+                  "enable": false,
+                  "zoomOnClick": true,
+                  "maxZoom": null,
+                  "maxClusterRadius": 80,
+                  "zoomAnimation": true,
+                  "showCoverageOnHover": true,
+                  "spiderfyOnMaxZoom": false,
+                  "chunkedLoad": false,
+                  "lazyLoad": true,
+                  "useClusterMarkerColorFunction": false,
+                  "clusterMarkerColorFunction": null
+                },
+                "label": {
+                  "show": true,
+                  "type": "pattern",
+                  "pattern": "${entityName}"
+                },
+                "tooltip": {
+                  "show": true,
+                  "trigger": "click",
+                  "autoclose": true,
+                  "type": "pattern",
+                  "pattern": "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Temperature:</b> ${temperature} °C<br/><small>See tooltip settings for details</small>",
+                  "offsetX": 0,
+                  "offsetY": -1
+                },
+                "click": {
+                  "type": "doNothing"
+                },
+                "edit": {
+                  "enabledActions": [],
+                  "attributeScope": "SERVER_SCOPE",
+                  "snappable": false
+                },
+                "dsDeviceId": "17322320-a658-11f0-87ea-b9809c1a7a9e"
+              }
+            ],
+            "polygons": [],
+            "circles": [],
+            "additionalDataSources": [],
+            "controlsPosition": "topleft",
+            "zoomActions": [
+              "scroll",
+              "doubleClick",
+              "controlButtons"
+            ],
+            "scales": [],
+            "dragModeButton": false,
+            "fitMapBounds": true,
+            "useDefaultCenterPosition": false,
+            "defaultCenterPosition": "0,0",
+            "defaultZoomLevel": null,
+            "mapPageSize": 16384,
+            "mapActionButtons": [],
+            "background": {
+              "type": "color",
+              "color": "#fff",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "8px"
+          },
+          "title": "Map",
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "widgetCss": "",
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "configMode": "basic",
+          "titleFont": null,
+          "titleColor": null,
+          "margin": "0px",
+          "borderRadius": "0px",
+          "iconSize": "24px",
+          "titleIcon": "map",
+          "iconColor": "#1F6BDD",
+          "actions": {},
+          "enableDataExport": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "ffde479e-9afb-9f8e-fed6-b3b0a8be8b45"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "LW001-BG PRO LoRaWAN Tracker",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "b85faaa9-a5f1-619d-cd20-255786aaaf12": {
+                "sizeX": 7,
+                "sizeY": 3,
+                "row": 0,
+                "col": 0
+              },
+              "87f2afd0-1e0f-49a1-8657-6b7f14198703": {
+                "sizeX": 8,
+                "sizeY": 3,
+                "row": 0,
+                "col": 7
+              },
+              "505af46b-a8f6-e936-9316-c93194cf3ed1": {
+                "sizeX": 9,
+                "sizeY": 3,
+                "row": 0,
+                "col": 15
+              },
+              "ffde479e-9afb-9f8e-fed6-b3b0a8be8b45": {
+                "sizeX": 24,
+                "sizeY": 12,
+                "row": 3,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "layoutType": "default",
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "outerMargin": true,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {},
+    "filters": {},
+    "timewindow": {
+      "displayValue": "",
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "quickInterval": "CURRENT_DAY",
+        "hideInterval": false,
+        "hideLastInterval": false,
+        "hideQuickInterval": false
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1760262709516,
+          "endTimeMs": 1760349109516
+        },
+        "quickInterval": "CURRENT_DAY",
+        "hideInterval": false,
+        "hideLastInterval": false,
+        "hideFixedInterval": false,
+        "hideQuickInterval": false
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "LW001-BG PRO LoRaWAN Tracker",
+  "resources": []
+}

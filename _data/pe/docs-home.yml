@@ -238,6 +238,8 @@ toc:
     new: true
   - title: MCP Server
     path: /docs/pe/samples/analytics/mcp-server-ai-insights/
+  - title: n8n node
+    path: /docs/pe/samples/analytics/n8n-node/
     new: true
   - title: AI models
     path: /docs/pe/samples/analytics/ai-models/
@@ -395,9 +397,13 @@ toc:
           path: /docs/pe/user-guide/contribution/ui/custom-subscriptions/
         - title: Advanced widget development
           path: /docs/pe/user-guide/contribution/ui/advanced-development/
+- title: Versions & Support
+  section:
+    - title: Releases
+      path: /docs/pe/releases/releases-table/
+    - title: Release & Support Policy
+      path: /docs/pe/releases/release-policy/
+    - title: Roadmap
+      path: /docs/pe/releases/roadmap/
 - title: Troubleshooting
   path: /docs/pe/user-guide/troubleshooting/
-- title: Release notes
-  path: /docs/pe/reference/releases/
-- title: Roadmap
-  path: /docs/pe/reference/roadmap/

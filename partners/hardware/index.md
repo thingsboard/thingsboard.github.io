@@ -10,6 +10,7 @@ itemsPerPage: "15"
 searchControl: "#searchCompanyInput"
 customTitle: "true"
 firstCompaniesInList: "Milesight%Seeed Studio%Lansitec%Shenzhen Beilai Technology Co., Ltd.%MikroTik%MOKO SMART"
+not-found: "No partners have been found..."
 
 filterCollection:
   - label: Hardware types
@@ -21,7 +22,6 @@ filterCollection:
       - Trackers
       - Other devices
       - Gateway
-      - Single Board Computer
   - label: Connectivity
     filters:
       - HTTP

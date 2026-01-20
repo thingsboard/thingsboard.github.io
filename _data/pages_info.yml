@@ -28,10 +28,7 @@
   redirect_from: []
 "/docs/devices-library/arduino-nano-rp2040-connect/":
   url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from:
-  - "/docs/samples/arduino/"
-  - "/docs/samples/arduino/temperature/"
-  - "/docs/samples/arduino/sim808-htu21d/"
+  redirect_from: []
 "/docs/devices-library/asset-management-tracker/":
   url: "/docs/devices-library/asset-management-tracker/"
   redirect_from: []
@@ -100,19 +97,12 @@
   redirect_from: []
 "/docs/devices-library/esp32-dev-kit-v1/":
   url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from:
-  - "/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/"
-  - "/docs/samples/esp32/"
-  - "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
-  - "/docs/samples/esp32/ota/"
+  redirect_from: []
 "/docs/devices-library/esp32-dev-kit-v4/":
   url: "/docs/devices-library/esp32-dev-kit-v4/"
   redirect_from: []
 "/docs/devices-library/esp32-pico-kit/":
   url: "/docs/devices-library/esp32-pico-kit/"
-  redirect_from: []
-"/docs/devices-library/guidelines/":
-  url: "/docs/devices-library/guidelines/"
   redirect_from: []
 "/docs/devices-library/helmet-sensor/":
   url: "/docs/devices-library/helmet-sensor/"
@@ -125,6 +115,9 @@
   redirect_from: []
 "/docs/devices-library/hummingboard-gate/":
   url: "/docs/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/devices-library/":
+  url: "/docs/devices-library/"
   redirect_from: []
 "/docs/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/devices-library/indoor-bluetooth-gateway/"
@@ -156,6 +149,9 @@
 "/docs/devices-library/luanode32/":
   url: "/docs/devices-library/luanode32/"
   redirect_from: []
+"/docs/devices-library/lw001-bg-pro/":
+  url: "/docs/devices-library/lw001-bg-pro/"
+  redirect_from: []
 "/docs/devices-library/m5stack-timer-camera-f/":
   url: "/docs/devices-library/m5stack-timer-camera-f/"
   redirect_from: []
@@ -185,12 +181,7 @@
   redirect_from: []
 "/docs/devices-library/nodemcuv3/":
   url: "/docs/devices-library/nodemcuv3/"
-  redirect_from:
-  - "/docs/samples/esp8266/"
-  - "/docs/samples/esp8266/temperature/"
-  - "/docs/samples/esp8266/gpio/"
-  - "/docs/samples/nodemcu/"
-  - "/docs/samples/nodemcu/temperature/"
+  redirect_from: []
 "/docs/devices-library/nvidia-jetson-nano-developer-kit/":
   url: "/docs/devices-library/nvidia-jetson-nano-developer-kit/"
   redirect_from: []
@@ -232,11 +223,7 @@
   redirect_from: []
 "/docs/devices-library/raspberry-pi-4/":
   url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from:
-  - "/docs/samples/raspberry/"
-  - "/docs/samples/raspberry/gpio/"
-  - "/docs/samples/raspberry/gpio-android-things/"
-  - "/docs/samples/raspberry/temperature/"
+  redirect_from: []
 "/docs/devices-library/raspberry-pi-cm4/":
   url: "/docs/devices-library/raspberry-pi-cm4/"
   redirect_from: []
@@ -263,6 +250,12 @@
   redirect_from: []
 "/docs/devices-library/rock960/":
   url: "/docs/devices-library/rock960/"
+  redirect_from: []
+"/docs/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/devices-library/sensy32/":
+  url: "/docs/devices-library/sensy32/"
   redirect_from: []
 "/docs/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/devices-library/socketsync-bluetooth-gateway/"
@@ -375,11 +368,6 @@
 "/docs/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/devices-library/":
-  url: "/docs/devices-library/"
-  redirect_from:
-  - "/docs/samples/linkit-one/"
-  - "/docs/samples/linkit-one/gps/"
 "/docs/domains/":
   url: "/docs/domains/"
   redirect_from: []
@@ -425,8 +413,8 @@
 "/docs/edge/config/subscribe-to-attribute/":
   url: "/docs/edge/config/subscribe-to-attribute/"
   redirect_from: []
-"/docs/edge/devices-library/guidelines/":
-  url: "/docs/edge/devices-library/guidelines/"
+"/docs/edge/devices-library/":
+  url: "/docs/edge/devices-library/"
   redirect_from: []
 "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
   url: "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
@@ -439,9 +427,6 @@
   redirect_from: []
 "/docs/edge/devices-library/recomputer-r1100/":
   url: "/docs/edge/devices-library/recomputer-r1100/"
-  redirect_from: []
-"/docs/edge/devices-library/":
-  url: "/docs/edge/devices-library/"
   redirect_from: []
 "/docs/edge/edge-architecture/":
   url: "/docs/edge/edge-architecture/"
@@ -1147,9 +1132,6 @@
 "/docs/paas/devices-library/esp32-pico-kit/":
   url: "/docs/paas/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/paas/devices-library/guidelines/":
-  url: "/docs/paas/devices-library/guidelines/"
-  redirect_from: []
 "/docs/paas/devices-library/helmet-sensor/":
   url: "/docs/paas/devices-library/helmet-sensor/"
   redirect_from: []
@@ -1161,6 +1143,9 @@
   redirect_from: []
 "/docs/paas/devices-library/hummingboard-gate/":
   url: "/docs/paas/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/paas/devices-library/":
+  url: "/docs/paas/devices-library/"
   redirect_from: []
 "/docs/paas/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/paas/devices-library/indoor-bluetooth-gateway/"
@@ -1191,6 +1176,9 @@
   redirect_from: []
 "/docs/paas/devices-library/luanode32/":
   url: "/docs/paas/devices-library/luanode32/"
+  redirect_from: []
+"/docs/paas/devices-library/lw001-bg-pro/":
+  url: "/docs/paas/devices-library/lw001-bg-pro/"
   redirect_from: []
 "/docs/paas/devices-library/m5stack-timer-camera-f/":
   url: "/docs/paas/devices-library/m5stack-timer-camera-f/"
@@ -1290,6 +1278,12 @@
   redirect_from: []
 "/docs/paas/devices-library/rock960/":
   url: "/docs/paas/devices-library/rock960/"
+  redirect_from: []
+"/docs/paas/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/paas/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/sensy32/":
+  url: "/docs/paas/devices-library/sensy32/"
   redirect_from: []
 "/docs/paas/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/paas/devices-library/socketsync-bluetooth-gateway/"
@@ -1402,9 +1396,6 @@
 "/docs/paas/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/paas/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/paas/devices-library/":
-  url: "/docs/paas/devices-library/"
-  redirect_from: []
 "/docs/paas/domains/":
   url: "/docs/paas/domains/"
   redirect_from:
@@ -1511,9 +1502,6 @@
 "/docs/paas/eu/devices-library/esp32-pico-kit/":
   url: "/docs/paas/eu/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/paas/eu/devices-library/guidelines/":
-  url: "/docs/paas/eu/devices-library/guidelines/"
-  redirect_from: []
 "/docs/paas/eu/devices-library/helmet-sensor/":
   url: "/docs/paas/eu/devices-library/helmet-sensor/"
   redirect_from: []
@@ -1525,6 +1513,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/hummingboard-gate/":
   url: "/docs/paas/eu/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/":
+  url: "/docs/paas/eu/devices-library/"
   redirect_from: []
 "/docs/paas/eu/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/paas/eu/devices-library/indoor-bluetooth-gateway/"
@@ -1555,6 +1546,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/luanode32/":
   url: "/docs/paas/eu/devices-library/luanode32/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/lw001-bg-pro/":
+  url: "/docs/paas/eu/devices-library/lw001-bg-pro/"
   redirect_from: []
 "/docs/paas/eu/devices-library/m5stack-timer-camera-f/":
   url: "/docs/paas/eu/devices-library/m5stack-timer-camera-f/"
@@ -1654,6 +1648,12 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/rock960/":
   url: "/docs/paas/eu/devices-library/rock960/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/sensy32/":
+  url: "/docs/paas/eu/devices-library/sensy32/"
   redirect_from: []
 "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/"
@@ -1766,9 +1766,6 @@
 "/docs/paas/eu/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/paas/eu/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/paas/eu/devices-library/":
-  url: "/docs/paas/eu/devices-library/"
-  redirect_from: []
 "/docs/paas/eu/domains/":
   url: "/docs/paas/eu/domains/"
   redirect_from: []
@@ -1857,6 +1854,9 @@
   redirect_from: []
 "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/paas/eu/samples/analytics/n8n-node/":
+  url: "/docs/paas/eu/samples/analytics/n8n-node/"
   redirect_from: []
 "/docs/paas/eu/samples/analytics/ollama/":
   url: "/docs/paas/eu/samples/analytics/ollama/"
@@ -2399,6 +2399,9 @@
   redirect_from: []
 "/docs/paas/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/paas/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/paas/samples/analytics/n8n-node/":
+  url: "/docs/paas/samples/analytics/n8n-node/"
   redirect_from: []
 "/docs/paas/samples/analytics/ollama/":
   url: "/docs/paas/samples/analytics/ollama/"
@@ -2955,9 +2958,6 @@
 "/docs/pe/devices-library/esp32-pico-kit/":
   url: "/docs/pe/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/pe/devices-library/guidelines/":
-  url: "/docs/pe/devices-library/guidelines/"
-  redirect_from: []
 "/docs/pe/devices-library/helmet-sensor/":
   url: "/docs/pe/devices-library/helmet-sensor/"
   redirect_from: []
@@ -2969,6 +2969,9 @@
   redirect_from: []
 "/docs/pe/devices-library/hummingboard-gate/":
   url: "/docs/pe/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/pe/devices-library/":
+  url: "/docs/pe/devices-library/"
   redirect_from: []
 "/docs/pe/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/pe/devices-library/indoor-bluetooth-gateway/"
@@ -2999,6 +3002,9 @@
   redirect_from: []
 "/docs/pe/devices-library/luanode32/":
   url: "/docs/pe/devices-library/luanode32/"
+  redirect_from: []
+"/docs/pe/devices-library/lw001-bg-pro/":
+  url: "/docs/pe/devices-library/lw001-bg-pro/"
   redirect_from: []
 "/docs/pe/devices-library/m5stack-timer-camera-f/":
   url: "/docs/pe/devices-library/m5stack-timer-camera-f/"
@@ -3098,6 +3104,12 @@
   redirect_from: []
 "/docs/pe/devices-library/rock960/":
   url: "/docs/pe/devices-library/rock960/"
+  redirect_from: []
+"/docs/pe/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/pe/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/sensy32/":
+  url: "/docs/pe/devices-library/sensy32/"
   redirect_from: []
 "/docs/pe/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/pe/devices-library/socketsync-bluetooth-gateway/"
@@ -3210,9 +3222,6 @@
 "/docs/pe/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/pe/devices-library/":
-  url: "/docs/pe/devices-library/"
-  redirect_from: []
 "/docs/pe/domains/":
   url: "/docs/pe/domains/"
   redirect_from: []
@@ -3243,8 +3252,8 @@
 "/docs/pe/edge/config/subscribe-to-attribute/":
   url: "/docs/pe/edge/config/subscribe-to-attribute/"
   redirect_from: []
-"/docs/pe/edge/devices-library/guidelines/":
-  url: "/docs/pe/edge/devices-library/guidelines/"
+"/docs/pe/edge/devices-library/":
+  url: "/docs/pe/edge/devices-library/"
   redirect_from: []
 "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
   url: "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
@@ -3257,9 +3266,6 @@
   redirect_from: []
 "/docs/pe/edge/devices-library/recomputer-r1100/":
   url: "/docs/pe/edge/devices-library/recomputer-r1100/"
-  redirect_from: []
-"/docs/pe/edge/devices-library/":
-  url: "/docs/pe/edge/devices-library/"
   redirect_from: []
 "/docs/pe/edge/edge-architecture/":
   url: "/docs/pe/edge/edge-architecture/"
@@ -3813,6 +3819,54 @@
   url: "/docs/pe/reference/"
   redirect_from:
   - "/docs/pe/user-guide/rule-engine-2-0/architecture/"
+"/docs/pe/releases/release-policy/":
+  url: "/docs/pe/releases/release-policy/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/":
+  url: "/docs/pe/releases/releases-table/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v3-0-x/":
+  url: "/docs/pe/releases/releases-table/v3-0-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v3-1-x/":
+  url: "/docs/pe/releases/releases-table/v3-1-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v3-2-x/":
+  url: "/docs/pe/releases/releases-table/v3-2-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v3-3-x/":
+  url: "/docs/pe/releases/releases-table/v3-3-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v3-4-x/":
+  url: "/docs/pe/releases/releases-table/v3-4-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v3-5-x/":
+  url: "/docs/pe/releases/releases-table/v3-5-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v3-6-x/":
+  url: "/docs/pe/releases/releases-table/v3-6-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v3-7-x/":
+  url: "/docs/pe/releases/releases-table/v3-7-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v3-8-x/":
+  url: "/docs/pe/releases/releases-table/v3-8-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v3-9-x/":
+  url: "/docs/pe/releases/releases-table/v3-9-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v4-0-x/":
+  url: "/docs/pe/releases/releases-table/v4-0-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v4-1-x/":
+  url: "/docs/pe/releases/releases-table/v4-1-x/"
+  redirect_from: []
+"/docs/pe/releases/releases-table/v4-2-x/":
+  url: "/docs/pe/releases/releases-table/v4-2-x/"
+  redirect_from: []
+"/docs/pe/releases/roadmap/":
+  url: "/docs/pe/releases/roadmap/"
+  redirect_from: []
 "/docs/pe/samples/analytics/ai-models/":
   url: "/docs/pe/samples/analytics/ai-models/"
   redirect_from: []
@@ -3824,6 +3878,9 @@
   redirect_from: []
 "/docs/pe/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/pe/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/pe/samples/analytics/n8n-node/":
+  url: "/docs/pe/samples/analytics/n8n-node/"
   redirect_from: []
 "/docs/pe/samples/analytics/ollama/":
   url: "/docs/pe/samples/analytics/ollama/"
@@ -4001,6 +4058,211 @@
   - "/docs/user-guide/groups/"
 "/docs/pe/user-guide/image-gallery/":
   url: "/docs/pe/user-guide/image-gallery/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/"
+  redirect_from:
+  - "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
+"/docs/pe/user-guide/install/upgrade-instructions/old-upgrade-instructions/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/old-upgrade-instructions/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-2-x/"
   redirect_from: []
 "/docs/pe/user-guide/mail-templates/":
   url: "/docs/pe/user-guide/mail-templates/"
@@ -4346,6 +4608,54 @@
   url: "/docs/reference/"
   redirect_from:
   - "/docs/user-guide/rule-engine-2-0/architecture/"
+"/docs/releases/release-policy/":
+  url: "/docs/releases/release-policy/"
+  redirect_from: []
+"/docs/releases/releases-table/":
+  url: "/docs/releases/releases-table/"
+  redirect_from: []
+"/docs/releases/releases-table/v3-0-x/":
+  url: "/docs/releases/releases-table/v3-0-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3-1-x/":
+  url: "/docs/releases/releases-table/v3-1-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3-2-x/":
+  url: "/docs/releases/releases-table/v3-2-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3-3-x/":
+  url: "/docs/releases/releases-table/v3-3-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3-4-x/":
+  url: "/docs/releases/releases-table/v3-4-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3-5-x/":
+  url: "/docs/releases/releases-table/v3-5-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3-6-x/":
+  url: "/docs/releases/releases-table/v3-6-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3-7-x/":
+  url: "/docs/releases/releases-table/v3-7-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3-8-x/":
+  url: "/docs/releases/releases-table/v3-8-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3-9-x/":
+  url: "/docs/releases/releases-table/v3-9-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v4-0-x/":
+  url: "/docs/releases/releases-table/v4-0-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v4-1-x/":
+  url: "/docs/releases/releases-table/v4-1-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v4-2-x/":
+  url: "/docs/releases/releases-table/v4-2-x/"
+  redirect_from: []
+"/docs/releases/roadmap/":
+  url: "/docs/releases/roadmap/"
+  redirect_from: []
 "/docs/samples/abeeway/tracker/":
   url: "/docs/samples/abeeway/tracker/"
   redirect_from: []
@@ -4361,6 +4671,9 @@
   - "/docs/samples/analytics/spark-integration-with-thingsboard/"
 "/docs/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/samples/analytics/n8n-node/":
+  url: "/docs/samples/analytics/n8n-node/"
   redirect_from: []
 "/docs/samples/analytics/ollama/nginx/":
   url: "/docs/samples/analytics/ollama/nginx/"
@@ -5128,8 +5441,7 @@
   redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/"
-  redirect_from:
-  - "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
+  redirect_from: []
 "/docs/user-guide/install/pe/vc-executor-config/":
   url: "/docs/user-guide/install/pe/vc-executor-config/"
   redirect_from: []
@@ -5148,8 +5460,206 @@
 "/docs/user-guide/install/ubuntu/":
   url: "/docs/user-guide/install/ubuntu/"
   redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v3-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v3-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v3-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v3-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v3-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v3-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v3-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v3-4-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v3-5-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v3-6-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v3-7-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v3-8-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v3-9-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v4-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v4-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-4-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-5-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-6-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-7-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-8-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-9-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/"
+  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/":
   url: "/docs/user-guide/install/upgrade-instructions/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/old-upgrade-instructions/":
+  url: "/docs/user-guide/install/upgrade-instructions/old-upgrade-instructions/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v3-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v3-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v3-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v3-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v3-4-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v3-5-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v3-6-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v3-7-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v3-8-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v3-9-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v4-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v4-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v3-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v3-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v3-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v3-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v3-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v3-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v3-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v3-4-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v3-5-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v3-6-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v3-7-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v3-8-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v3-9-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v4-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v4-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v4-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v4-2-x/"
   redirect_from: []
 "/docs/user-guide/install/vc-executor-config/":
   url: "/docs/user-guide/install/vc-executor-config/"

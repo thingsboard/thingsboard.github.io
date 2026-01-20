@@ -1,0 +1,100 @@
+.devices-hero
+  .devices-wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 100px
+    position: relative
+    @media (max-width: 960px)
+      gap: 40px
+      flex-direction: column
+    .devices-hero-text
+      display: flex
+      flex-direction: column
+      gap: 32px
+      max-width: 1000px
+      h1
+        font-size: 56px
+        font-weight: 600
+        line-height: 72px
+        @media (max-width: 600px)
+          font-size: 36px
+          line-height: 48px
+          font-weight: 500
+      p
+        font-size: 16px
+        font-weight: 400
+        line-height: 28px
+        @media (max-width: 600px)
+          font-size: 14px
+          line-height: 24px
+    .devices-hero-banner
+      position: relative
+      padding: 152px 32px 32px 32px
+      border-radius: 12px
+      background: #FFF
+      box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+      display: flex
+      flex-direction: column
+      gap: 16px
+      width: 300px
+      overflow: hidden
+      flex-shrink: 0
+      @media (max-width: 800px)
+        max-width: 570px
+        width: 100%
+        padding: 32px
+        margin: 0 auto
+      p
+        font-size: 24px
+        font-weight: 500
+        line-height: 36px
+      a
+        font-size: 16px
+        font-weight: 400
+        line-height: 28px
+        color: #2A7DEC
+        display: inline-block
+        padding: 10px 24px
+        border-radius: 6px
+        border: 1px solid #2A7DEC
+        background: #FFF
+        transition: ease-in-out 0.3s
+        text-align: center
+        &:hover
+          text-decoration: none
+          color: #FFF
+          background: #2A7DEC
+      img
+        position: absolute
+        top: -9px
+        right: -5px
+        width: 170px
+        height: 170px
+#page-with-filter-content
+  .content-block
+    .cards-block
+      .cards-block-content
+        position: relative
+        z-index: 1
+      .not-found
+        z-index: 0
+      .card-collection
+        .pagination-wrapper
+          grid-column: span 3
+        @media (max-width: 959px)
+          width: fit-content
+          margin: 0 auto
+          grid-template-columns: repeat(2, minmax(0, 1fr))
+          .pagination-wrapper
+            grid-column: span 2
+        @media (max-width: 600px)
+          grid-template-columns: repeat(1, minmax(0, 1fr))
+          .pagination-wrapper
+            grid-column: span 1
+        .card
+          .card-wrapper
+            .card-image
+              height: 140px
+              img
+                max-height: 140px

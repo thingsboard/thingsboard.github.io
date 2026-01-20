@@ -1,58 +1,4 @@
 ---
-"/docs/samples/arduino/":
-  url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from: "/docs/samples/arduino/"
-"/docs/samples/arduino/temperature/":
-  url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from: "/docs/samples/arduino/temperature/"
-"/docs/samples/arduino/sim808-htu21d/":
-  url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from: "/docs/samples/arduino/sim808-htu21d/"
-"/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/":
-  url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from: "/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/"
-"/docs/samples/esp32/":
-  url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from: "/docs/samples/esp32/"
-"/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/":
-  url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from: "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
-"/docs/samples/esp32/ota/":
-  url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from: "/docs/samples/esp32/ota/"
-"/docs/samples/esp8266/":
-  url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: "/docs/samples/esp8266/"
-"/docs/samples/esp8266/temperature/":
-  url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: "/docs/samples/esp8266/temperature/"
-"/docs/samples/esp8266/gpio/":
-  url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: "/docs/samples/esp8266/gpio/"
-"/docs/samples/nodemcu/":
-  url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: "/docs/samples/nodemcu/"
-"/docs/samples/nodemcu/temperature/":
-  url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: "/docs/samples/nodemcu/temperature/"
-"/docs/samples/raspberry/":
-  url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from: "/docs/samples/raspberry/"
-"/docs/samples/raspberry/gpio/":
-  url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from: "/docs/samples/raspberry/gpio/"
-"/docs/samples/raspberry/gpio-android-things/":
-  url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from: "/docs/samples/raspberry/gpio-android-things/"
-"/docs/samples/raspberry/temperature/":
-  url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from: "/docs/samples/raspberry/temperature/"
-"/docs/samples/linkit-one/":
-  url: "/docs/devices-library/"
-  redirect_from: "/docs/samples/linkit-one/"
-"/docs/samples/linkit-one/gps/":
-  url: "/docs/devices-library/"
-  redirect_from: "/docs/samples/linkit-one/gps/"
 "/docs/user-guide/edge-computing/":
   url: "/docs/edge/getting-started-guides/what-is-edge/"
   redirect_from: "/docs/user-guide/edge-computing/"
@@ -254,6 +200,9 @@ docs/pe/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/user-guide/groups/":
   url: "/docs/pe/user-guide/groups/"
   redirect_from: "/docs/user-guide/groups/"
+"/docs/user-guide/install/aws-marketplace-pe-upgrade/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/"
+  redirect_from: "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
 "/docs/user-guide/mail-templates/":
   url: "/docs/pe/user-guide/mail-templates/"
   redirect_from: "/docs/user-guide/mail-templates/"
@@ -389,9 +338,6 @@ docs/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/pe/user-guide/install/installation-options/":
   url: "/docs/user-guide/install/pe/installation-options/"
   redirect_from: "/docs/pe/user-guide/install/installation-options/"
-"/docs/user-guide/install/aws-marketplace-pe-upgrade/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/"
-  redirect_from: "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
 "/docs/user-guide/rule-engine-2-0/action-nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/"
   redirect_from: "/docs/user-guide/rule-engine-2-0/action-nodes/"

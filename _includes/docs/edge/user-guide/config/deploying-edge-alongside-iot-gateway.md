@@ -137,7 +137,7 @@ docker compose logs -f
 ```
 {: .copy-code}
 
-Once the **ThingsBoard Edge** and **ThingsBoard IoT Gateway** are running on the **IoT Gateway device**, you can connect IoT devices and sensors to transfer data. Read [this real-life example of visualizing data from IoT devices on a Dashboard](/docs/{{docsPrefix}}devices-library/recomputer-r1000/#visualize-incoming-data-with-the-dashboard){: target="_blank"} when **ThingsBoard Edge** and **Gateway** are deployed on the same **IoT Gateway device**. 
+Once the **ThingsBoard Edge** and **ThingsBoard IoT Gateway** are running on the **IoT Gateway device**, you can connect IoT devices and sensors to transfer data. Read [this real-life example of visualizing data from IoT devices on a Dashboard](/docs/{{docsPrefix}}device-library/recomputer-r1000/#visualize-incoming-data-with-the-dashboard){: target="_blank"} when **ThingsBoard Edge** and **Gateway** are deployed on the same **IoT Gateway device**. 
 
 ## Next Steps
 
