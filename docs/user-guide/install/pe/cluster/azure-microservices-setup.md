@@ -112,7 +112,7 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 
 ### 10.3. Provision Trendz node pool
 
-{% include templates/install/trendz/azure/k8s-trendz-db-creating.md %}
+{% include templates/install/trendz/azure/k8s-trendz-node-creating.md %}
 
 ### 11.4. Trendz starting
 

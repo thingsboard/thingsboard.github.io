@@ -105,7 +105,7 @@ cd thingsboard-pe-k8s/gcp/microservices
 
 ### 10.3. Provision Trendz node pool
 
-{% include templates/install/trendz/gcp/k8s-trendz-db-creating.md %}
+{% include templates/install/trendz/gcp/k8s-trendz-node-creating.md %}
 
 ### 10.4. Trendz starting
 

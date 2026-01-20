@@ -115,7 +115,7 @@ This version of setup does not support an automatic redirect of http port 80 to 
 
 ### 10.3. Provision Trendz node pool
 
-{% include templates/install/trendz/gcp/k8s-trendz-db-creating.md %}
+{% include templates/install/trendz/gcp/k8s-trendz-node-creating.md %}
 
 ### 10.4. Trendz starting
 
