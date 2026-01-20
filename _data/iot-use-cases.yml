@@ -86,8 +86,8 @@
   media:
     image: "/images/usecases/fleet-tracking/site-fleet-tracking-1.webp"
     alt: "Fleet tracking dashboard"
-    video: ["https://video.thingsboard.io/usecases/site-fleet-tracking.mp4", "https://video.thingsboard.io/use-cases/site-fleet-tracking.webm"]
-  href: "/use-cases/fleet-tracking/"
+    video: ["https://video.thingsboard.io/usecases/mine-site-monitoring.mp4", "https://video.thingsboard.io/use-cases/mine-site-monitoring.webm"]
+  href: "/use-cases/site-fleet-tracking/"
 10:
   type: "General"
   name: "Smart Metering"
