@@ -1953,7 +1953,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="trendz-white-labeling" data-title="Is white labeling available out of the box?">
                         <div class="container">
-                            <p>White labeling functionality is available starting from the <b>Prototype</b> subscription.</p>
+                            <p>White labeling functionality is available starting from the <b>Pilot</b> subscription.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="trendz-free-trial" data-title="Do you offer a free trial for Trendz?">
@@ -3079,7 +3079,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-white-labeling" data-title="Is white labeling available out of the box?">
                         <div class="container">
-                            <p>White labeling functionality is available starting from the <b>Prototype</b> subscription.</p>
+                            <p>White labeling functionality is available starting from the <b>Pilot</b> subscription.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-free-trial" data-title="Do you offer a free trial for Trendz?">
