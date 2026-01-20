@@ -2506,19 +2506,6 @@
 			<td> The period, in milliseconds, to wait before processing a batch of messages for total rate limits for incoming messages</td>
 		</tr>
 		<tr>
-			<td>mqtt.rate-limits.total.enabled</td>
-			<td>MQTT_TOTAL_RATE_LIMITS_ENABLED</td>
-			<td>false</td>
-			<td> Enable/disable total incoming and outgoing messages rate limits for the broker (per whole cluster)</td>
-		</tr>
-		<tr>
-			<td>mqtt.rate-limits.total.config</td>
-			<td>MQTT_TOTAL_RATE_LIMITS_CONFIG</td>
-			<td>1000:1,50000:60</td>
-			<td> Limit the maximum count of total incoming and outgoing messages for specified time intervals in seconds. Comma separated list of limit:seconds pairs.
- Example: 1000 messages per second or 50000 messages per minute</td>
-		</tr>
-		<tr>
 			<td>mqtt.rate-limits.incoming-publish.enabled</td>
 			<td>MQTT_INCOMING_RATE_LIMITS_ENABLED</td>
 			<td>false</td>
@@ -2556,26 +2543,6 @@
 			<td>100:1,1000:60</td>
 			<td> Limit the maximum count of Device clients persisted messages for specified time intervals in seconds. Comma separated list of limit:seconds pairs.
  Example: 100 messages per second or 1000 messages per minute</td>
-		</tr>
-		<tr>
-			<td>mqtt.sessions-limit</td>
-			<td>MQTT_SESSIONS_LIMIT</td>
-			<td>0</td>
-			<td> Limit the total number of sessions (connected + disconnected) stored on the broker, not individually for each server (node) if it is a cluster, but as a collective limit.
- For example, when set to 1000 either the single broker node or cluster of 2 or X nodes can store 1000 sessions in total. It is a soft limit meaning a bit more than 1000 sessions can be stored.
- A setting of 0 means the limitation is disabled</td>
-		</tr>
-		<tr>
-			<td>mqtt.sessions-limit-correction</td>
-			<td>MQTT_SESSIONS_LIMIT_CORRECTION</td>
-			<td>false</td>
-			<td> Enable/disable sessions limit value correction in the cache</td>
-		</tr>
-		<tr>
-			<td>mqtt.sessions-limit-correction-period-ms</td>
-			<td>MQTT_SESSIONS_LIMIT_CORRECTION_PERIOD_MS</td>
-			<td>10800000</td>
-			<td> Period in milliseconds to execute the job to correct the value of sessions limit in the cache. Defaults to 3 hours</td>
 		</tr>
 		<tr>
 			<td>mqtt.application-clients-limit</td>
@@ -3041,6 +3008,20 @@
 			<td>true</td>
 			<td> Set whether credentials are supported. When not set, credentials are not supported</td>
 		</tr>
+		<tr>
+			<td>license.secret</td>
+			<td>TBMQ_LICENSE_SECRET</td>
+			<td></td>
+			<td> License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)</td>
+		</tr>
+		<tr>
+			<td>license.instance_data_file</td>
+			<td>TBMQ_LICENSE_INSTANCE_DATA_FILE</td>
+			<td>tbmq-instance-license.data</td>
+			<td> Instance data is auto-generated and is used to identify a particular TBMQ Instance.
+ Instance data is periodically updated and stored into the specified file which can be set to absolute or relative path.
+ Please make sure that TBMQ process has access to the instance data file, in case you use absolute path</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -3184,10 +3165,23 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td>analysis.log.enabled</td>
+			<td>ANALYSIS_LOG_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable the analysis logging</td>
+		</tr>
+		<tr>
+			<td>analysis.log.all-clients</td>
+			<td>ANALYSIS_LOG_ALL_CLIENTS</td>
+			<td>false</td>
+			<td> If true – log events for ALL clients (ignores analyzed-client-ids)</td>
+		</tr>
+		<tr>
 			<td>analysis.log.analyzed-client-ids</td>
 			<td>ANALYSIS_LOG_CLIENT_IDS</td>
 			<td></td>
-			<td> List of Client Ids separated with comas. Additional events for those clients will be logged</td>
+			<td> List of Client Ids separated with comas. Additional events for those clients will be logged.
+ Example env var: ANALYSIS_LOG_CLIENT_IDS=client1,client2</td>
 		</tr>
 	</tbody>
 </table>
