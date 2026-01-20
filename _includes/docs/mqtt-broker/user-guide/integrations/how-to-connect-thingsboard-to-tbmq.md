@@ -7,7 +7,7 @@ In this guide, we integrate the TBMQ with the ThingsBoard using MQTT integration
 We utilize TBMQ client credentials with the type **APPLICATION** to connect ThingsBoard integration as an APPLICATION client.
 APPLICATION clients specialize in subscribing to topics with high message rates. 
 The messages will be persisted when the client is offline and will be delivered once it goes online, ensuring the availability of crucial data. 
-Read more about the APPLICATION client [here](https://thingsboard.io/docs/mqtt-broker/user-guide/mqtt-client-type/).
+Read more about the APPLICATION client [here](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-client-type/).
 
 ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the received data into telemetry and attribute updates. 
 In case of a downlink message, MQTT integration converts it to the device-suitable format and pushes it to TBMQ. 
@@ -18,8 +18,8 @@ ThingsBoard instance that is running in the cloud can’t connect to the TBMQ de
 
 In this tutorial, we will use:
 
- - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed **locally**;
- - [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/) installed **locally** and accessible by ThingsBoard PE instance;
+ - The instance of [ThingsBoard Professional Edition](/docs/user-guide/install/pe/installation-options/) installed **locally**;
+ - [TBMQ](/docs/{{docsPrefix}}mqtt-broker/install/installation-options/) installed **locally** and accessible by ThingsBoard PE instance;
  - mosquitto_pub MQTT client to send messages.
 
 ## TBMQ setup
@@ -33,7 +33,7 @@ To do this, login to your TBMQ user interface and follow the next steps.
 {% capture difference %}
 **Please note**:
 <br>
-The Basic authenticaion must be [enabled](/docs/mqtt-broker/security/authentication/basic/).
+The Basic authenticaion must be [enabled](/docs/{{docsPrefix}}mqtt-broker/security/authentication/basic/).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 

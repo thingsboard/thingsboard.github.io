@@ -434,6 +434,7 @@
             } else {
                 const count = tbSmState.addons.edge.count;
                 const extraEdges = Math.max(0, count - plan.edgeInstancesIncluded);
+                tbSmState.addons.edge.extraEdgeCalc = extraEdges;
                 const extraEdgeCost = extraEdges * (plan.extraEdgePrice || 0);
                 const edgeTotal = plan.edgeMonthPrice + extraEdgeCost;
                 totalPrice += edgeTotal;
@@ -600,7 +601,9 @@
                         <span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltips.join(' + ')}</span></span>
                     </span>
                 </div>
-                <a id="smGetStarted" href="javascript:;" class="button" onClick="getLicense(event, 'todo', 'todo', '${plan.name}', null)">Get started</a>
+                <a id="smGetStarted" href="javascript:;" class="button" onClick="getLicense(event, '${plan.productId}', '${plan.planId}',
+                '${plan.name}', null, null, null, null, '${extraProd}', '${tbSmState.devInstances}', '${tbSmState.addons.edge.enabled}',
+                '${tbSmState.addons.edge.extraEdgeCalc}', '${tbSmState.addons.trendz.enabled}')">Get started</a>
             </div>`;
 
         tbSmInitExpandable();

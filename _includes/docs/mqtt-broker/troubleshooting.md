@@ -11,7 +11,7 @@ you can analyze the overall state of the broker.
 
 TBMQ provides the ability to monitor whether the rate of producing messages to Kafka is faster than the rate of consuming and processing them. 
 In such cases, you will experience a growing latency for message processing. 
-To enable this functionality, ensure that Kafka consumer-stats are enabled (see the **queue.kafka.consumer-stats** section of the [Configuration properties](/docs/mqtt-broker/install/config/)).
+To enable this functionality, ensure that Kafka consumer-stats are enabled (see the **queue.kafka.consumer-stats** section of the [Configuration properties](/docs/{{docsPrefix}}mqtt-broker/install/config/)).
 
 Once Kafka consumer-stats are enabled, logs (see [Troubleshooting](#logs)) about offset lag for consumer groups will be generated.
 
@@ -195,18 +195,28 @@ Please note that in order to achieve maximum performance, **TBMQ uses several qu
 ## Getting help
 
 <section id="talkToUs">
-    <div id="gettingHelp">
-        <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
-            <span class="phrase-heading">Community chat</span>
-            <p>The best way to contact our engineers and share your ideas with them is through our Gitter channel.</p>
-        </a>
-        <a href="https://stackoverflow.com/questions/tagged/thingsboard">
-            <span class="phrase-heading">Stack Overflow</span>
-            <p>The ThingsBoard team actively monitors posts that are tagged with "thingsboard" on the user forum. If you can't find an existing question that addresses your issue, feel free to ask a new one. Our team will be happy to assist you.</p>
-        </a>
+    <div class="doc-features row mt-4">
+        <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
+            <a class="feature-card" href="https://join.slack.com/t/tbmq/shared_invite/zt-31kk3315e-5jtPw8YAKskq1KkUqTrTyQ">
+                <img class="feature-logo" style="filter: unset" src="/images/mqtt-broker/slack-logo.svg" alt="Slack logo">
+                <div class="feature-title">Slack Community</div>
+                <div class="feature-text">
+                    Ask questions and get quick tips from other users and contributors.
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
+            <a class="feature-card" href="https://github.com/thingsboard/tbmq/issues?q=is%3Aissue">
+                <img class="feature-logo" style="filter: unset" src="/images/mqtt-broker/github-logo.svg" alt="Github logo">
+                <div class="feature-title">Github Issues</div>
+                <div class="feature-text">
+                    Found a bug or have a question? Open an issue on our GitHub repo.
+                </div>
+            </a>
+        </div>
     </div>
 </section>
 
 If you are unable to find a solution to your problem from any of the guides provided above, please do not hesitate to contact the ThingsBoard team for further assistance.
 
-<a class="button" href="/docs/contact-us/">Contact us</a>
+<a class="button" href="/docs/contact-us/?subject=TBMQ">Contact us</a>

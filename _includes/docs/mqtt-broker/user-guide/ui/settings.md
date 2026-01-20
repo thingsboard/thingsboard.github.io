@@ -2,8 +2,10 @@
 * TOC
 {:toc}
 
+{% if docsPrefix != "pe/" %}
 {% assign sinceVersion = "2.0" %}
 {% include templates/mqtt-broker/since.md %}
+{% endif %}
 
 TBMQ provides a dedicated Settings page that allows administrators to manage key system configurations directly from the user interface.
 The Settings page is divided into three tabs, each focused on a specific category of system configuration.
@@ -19,7 +21,7 @@ Define broker user password policies, including password strength requirements, 
 
 ### Password policy
 
-To log into TBMQ, the [user](/docs/mqtt-broker/user-guide/ui/users/) uses an email and password.
+To log into TBMQ, the [user](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/users/) uses an email and password.
 You can enhance the security of your account by updating your security settings, including the **password policy**.
 
 For example, you can increase a minimum password length, require a mix of uppercase and lowercase letters, and specify the minimum number of digits and special characters.
@@ -45,7 +47,7 @@ When the password policy is updated, new users will be required to adhere to the
 Note that if you have enabled the **Force to reset password if not valid** option, all users (not only new ones) who do not meet the new requirements will be forced to update their passwords.
 
 {% capture securityDocumentation %}
-To see other security-related settings, please refer to our [Security documentation](/docs/mqtt-broker/security/overview/).
+To see other security-related settings, please refer to our [Security documentation](/docs/{{docsPrefix}}mqtt-broker/security/overview/).
 {% endcapture %}
 {% include templates/info-banner.md content=securityDocumentation %}
 
@@ -71,7 +73,7 @@ including activity logging options and message retention limits for the in-brows
 
 ### WebSocket client
 
-In this section, you can configure additional settings related to the [WebSocket Client](/docs/mqtt-broker/user-guide/ui/websocket-client/) - a browser-accessible tool that provides management of MQTT clients, subscription to topics, receiving messages, and publishing messages.
+In this section, you can configure additional settings related to the [WebSocket Client](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/websocket-client/) - a browser-accessible tool that provides management of MQTT clients, subscription to topics, receiving messages, and publishing messages.
 
 * **Log MQTT client activity** feature can be helpful in debugging connection issues and monitoring message flows by providing real-time client activity logs. 
 If set to true, you will see logs for the following [MQTT.js](https://github.com/mqttjs/MQTT.js) events in the browser developer console:

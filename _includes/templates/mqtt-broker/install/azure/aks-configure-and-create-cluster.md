@@ -7,7 +7,7 @@ az group create --name $AKS_RESOURCE_GROUP --location $AKS_LOCATION
 
 To see more info about `az group` please follow the next [link](https://learn.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest).
 
-After the Resource group is created, we can create AKS cluster by using the next command:
+After the Resource group is created, we can create the AKS cluster by using the next command:
 
 ```bash
 az aks create --resource-group $AKS_RESOURCE_GROUP \
@@ -15,8 +15,8 @@ az aks create --resource-group $AKS_RESOURCE_GROUP \
     --generate-ssh-keys \
     --enable-addons ingress-appgw \
     --appgw-name $AKS_GATEWAY \
-    --appgw-subnet-cidr "10.2.0.0/16" \
-    --node-vm-size Standard_DS3_v2 \
+    --appgw-subnet-cidr "10.225.0.0/24" \
+    --node-vm-size Standard_D4s_v6 \
     --node-count 3
 ```
 {: .copy-code}

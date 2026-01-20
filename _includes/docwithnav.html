@@ -10,6 +10,8 @@
         {% assign searchPath = "/docs/" | append: "pe/mobile" %}
     {% elsif docsTag == "paas-eu" %}
         {% assign searchPath = "/docs/" | append: "paas/eu" %}
+    {% elsif docsTag == "mqtt-broker-pe" %}
+        {% assign searchPath = "/docs/" | append: "pe/mqtt-broker" %}
     {% else %}
         {% assign searchPath = "/docs/" | append: docsTag %}
     {% endif %}

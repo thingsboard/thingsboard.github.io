@@ -1,0 +1,47 @@
+{% assign upgarde_instructions_data = site.data.upgrade-instructions-data %}
+{% assign family = include.family %}
+{% assign os = include.os %}
+
+{% assign family_parts = family | split: "." %}
+{% assign family_major = family_parts[0] %}
+{% assign family_minor = family_parts[1] %}
+
+{% for item in upgarde_instructions_data %}
+{% assign version = item[0] %}
+{% assign data = item[1] %}
+
+{% assign parts = version | split: "." %}
+{% assign major = parts[0] %}
+{% assign minor = parts[1] %}
+
+{% if major == family_major and minor == family_minor %}
+{% assign applicable_versions = data.applicable-versions %}
+{% if applicable_versions and docsPrefix == "pe/" %}
+{% assign applicable_versions = applicable_versions | append: "PE" %}
+{% endif %}
+
+{% assign display_version = version %}
+{% if parts.size == 3 and parts[2] == "0" %}
+{% assign display_version = parts[0] | append: "." | append: parts[1] %}
+{% endif %}
+
+{% assign prev_version = data.upgradable-from %}
+{% assign display_prev_version = prev_version %}
+
+{% if prev_version %}
+{% assign prev_parts = prev_version | split: "." %}
+{% if prev_parts.size == 3 and prev_parts[2] == "0" %}
+{% assign display_prev_version = prev_parts[0] | append: "." | append: prev_parts[1] %}
+{% endif %}
+{% endif %}
+
+{% if os == "windows" %}
+{% include windows-upgrade-instructions.md version=display_version prev_version=display_prev_version x=data.x update_status=data.upgrade zip=data.windows.zip applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% elsif os == "ubuntu" %}
+{% include ubuntu-upgrade-instructions.md version=display_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% elsif os == "centos" %}
+{% include centos-upgrade-instructions.md version=display_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% endif %}
+{% endif %}
+
+{% endfor %}

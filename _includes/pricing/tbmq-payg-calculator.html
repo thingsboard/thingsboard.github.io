@@ -398,7 +398,10 @@
                         <span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltipText}</span></span>
                     </span>
                 </div>
-                <a id="tbmqGetStarted" href="javascript:;" class="button" onClick="getLicense(event, 'todo', 'todo', 'TBMQ-SM', null)">${buttonLabel}</a>
+                <a id="tbmqGetStarted" href="javascript:;" class="button" onClick="getLicense(event,
+                '${plan.productId}', '${plan.planId}', 'TBMQ-SM', 'CFQJ30PWTB', null, '${extraSessions}',
+                '${extraThroughput}', '${extraProd}', '${extraDev}', null, null, null, '${tbmqPaygState.addons.whiteLabeling}',
+                '${tbmqPaygState.addons.priorityHelpDesk}' )">${buttonLabel}</a>
             </div>`;
 
         tbmqPaygInitExpandable();
