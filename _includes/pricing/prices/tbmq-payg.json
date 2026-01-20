@@ -8,5 +8,7 @@
   "extraProdInstancesPrice": 100,
   "extraDevInstancesPrice": 50,
   "whiteLabelingPrice": 100,
-  "priorityHelpDeskPrice": 300
+  "priorityHelpDeskPrice": 300,
+  "productId": "6d811b30-f5ec-11f0-8e58-abbac8d0a38a",
+  "planId": "a2a848b0-f5ec-11f0-8e58-abbac8d0a38a"
 }
