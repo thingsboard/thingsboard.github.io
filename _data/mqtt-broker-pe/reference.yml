@@ -1,0 +1,19 @@
+bigheader: "Architecture"
+abstract: "Design docs, deployment scenarios and performance"
+toc:
+- title: Architecture Overview
+  path: /docs/pe/mqtt-broker/architecture/
+- title: Architecture Details
+  section:
+    - title: "Persistent DEVICE Client"
+      path: /docs/pe/mqtt-broker/architecture-details/persistent-device-client/
+    - title: "Persistent APPLICATION Client"
+      path: /docs/pe/mqtt-broker/architecture-details/persistent-app-client/
+- title: Performance Tests
+  section:
+    - title: "Point-to-point: 1M Msg/sec Throughput"
+      path: /docs/pe/mqtt-broker/reference/1m-throughput-p2p-performance-test/
+    - title: "Fan-out: 3M Msg/sec Throughput"
+      path: /docs/pe/mqtt-broker/reference/3m-throughput-single-node-performance-test/
+    - title: "Fan-in: 100M MQTT Connections"
+      path: /docs/pe/mqtt-broker/reference/100m-connections-performance-test/
