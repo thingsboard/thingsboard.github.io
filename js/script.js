@@ -156,6 +156,7 @@ var tb = (function () {
 		$('[data-faq-id]').each(function () {
 			let faqAnchor = this;
 			let nodeId = this.getAttribute('data-faq-id');
+			let customTooltip = this.getAttribute('data-tooltip');
 			let fontSize = this.getAttribute('data-faq-link-size') || 'smaller';
 			let faqLink = newDOMElement('a', 'faq-link');
 			$(faqLink).css('fontSize', fontSize);
@@ -168,32 +169,37 @@ var tb = (function () {
 				let maxLines = 5;
 				let maxChars = charsPerLine * maxLines;
 
-				if (fullText.length > maxChars) {
-					let truncatedText = fullText.substring(0, maxChars);
-					let lastSpaceIndex = truncatedText.lastIndexOf(' ');
-					if (lastSpaceIndex > maxChars - 20) {
-						truncatedText = truncatedText.substring(0, lastSpaceIndex);
-					}
-
-					let tooltipContent = newDOMElement('p');
-					tooltipContent.textContent = truncatedText;
-					let readMoreLink = newDOMElement('a', 'read-more-link');
-					readMoreLink.href = 'javascript:void(0)';
-					readMoreLink.textContent = '...read more';
-					tooltipContent.appendChild(readMoreLink);
-
-					tooltip.appendChild(tooltipContent);
-
-					$(readMoreLink).on('click', function(e) {
-						e.stopPropagation();
-						e.preventDefault();
-						navigateToFaq(nodeId);
-					});
+				if(customTooltip) {
+					tooltip.innerHTML = customTooltip;
 				} else {
-					let clonedContent = $(contentSource).clone();
-					clonedContent.find('a').attr('target', '_blank');
-					$(tooltip).html(clonedContent.html());
+					if (fullText.length > maxChars) {
+						let truncatedText = fullText.substring(0, maxChars);
+						let lastSpaceIndex = truncatedText.lastIndexOf(' ');
+						if (lastSpaceIndex > maxChars - 20) {
+							truncatedText = truncatedText.substring(0, lastSpaceIndex);
+						}
+
+						let tooltipContent = newDOMElement('p');
+						tooltipContent.textContent = truncatedText;
+						let readMoreLink = newDOMElement('a', 'read-more-link');
+						readMoreLink.href = 'javascript:void(0)';
+						readMoreLink.textContent = '...read more';
+						tooltipContent.appendChild(readMoreLink);
+
+						tooltip.appendChild(tooltipContent);
+
+						$(readMoreLink).on('click', function(e) {
+							e.stopPropagation();
+							e.preventDefault();
+							navigateToFaq(nodeId);
+						});
+					} else {
+						let clonedContent = $(contentSource).clone();
+						clonedContent.find('a').attr('target', '_blank');
+						$(tooltip).html(clonedContent.html());
+					}
 				}
+
 
 				$(tooltip).on('click', function(e) {
 					if (!$(e.target).is('a') && !$(e.target).hasClass('read-more-link')) {
