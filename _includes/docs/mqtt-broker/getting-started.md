@@ -1,3 +1,4 @@
+{% include templates/mqtt-broker/pe-tbmq-explore-banner.md %}
 
 * TOC
 {:toc}
@@ -12,14 +13,14 @@ Through this tutorial, you will gain knowledge and proficiency in the following 
 * Subscribing to topics to receive published messages.
 * Configuring authentication and authorization mechanisms for MQTT clients.
 
-For more comprehensive information regarding the architecture of TBMQ, navigate to the following [document](/docs/mqtt-broker/architecture/).
+For more comprehensive information regarding the architecture of TBMQ, navigate to the following [document](/docs/{{docsPrefix}}mqtt-broker/architecture/).
 This resource will provide you with detailed insights into the underlying structure and design principles of the broker,
 allowing you to develop a deeper understanding of its inner functionalities.
 
 ## Installing TBMQ
 
 To obtain detailed instructions on how to install TBMQ on different platforms, we recommend exploring the
-[**Installation options**](/docs/mqtt-broker/install/installation-options) documentation. 
+[**Installation options**](/docs/{{docsPrefix}}mqtt-broker/install/installation-options) documentation. 
 This resource will provide you with step-by-step guidance tailored to various deployment scenarios.
 
 Follow the below instructions depending on your system for quick TBMQ installation.
@@ -47,7 +48,7 @@ sysadmin
 
 ## Configure client authentication & authorization
 
-In order to secure the connection to the broker, we should [enable Basic authentication](/docs/mqtt-broker/security/authentication/basic/).
+In order to secure the connection to the broker, we should [enable Basic authentication](/docs/{{docsPrefix}}mqtt-broker/security/authentication/basic/).
 
 Once Basic authentication is enabled, it is necessary to create MQTT Client Credentials of type `Basic` to authenticate and validate the connecting client.
 
@@ -59,7 +60,7 @@ Once Basic authentication is enabled, it is necessary to create MQTT Client Cred
 
 {% include images-gallery.html imageCollection="broker-mqtt-creds-creation" %}
 
-A wider range of authentication methods can be found within the [security guide](/docs/mqtt-broker/security/overview/), offering enhanced options for ensuring secure access.
+A wider range of authentication methods can be found within the [security guide](/docs/{{docsPrefix}}mqtt-broker/security/overview/), offering enhanced options for ensuring secure access.
 
 ## Publishing and Subscribing to Topics
 
@@ -120,7 +121,7 @@ Please follow these steps to generate commands for "Getting Started Credentials"
 4. In the opened window, select your operating system and install the necessary client tools.
 5. You can copy and run the commands, but do not forget to replace "$YOUR_PASSWORD" with the real password.
 
-You can read more about [Check Connectivity](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/#check-connectivity) here.
+You can read more about [Check Connectivity](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/mqtt-client-credentials/#check-connectivity) here.
 
 {% include images-gallery.html imageCollection="check-connectivity" %}
 

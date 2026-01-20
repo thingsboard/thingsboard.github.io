@@ -127,6 +127,59 @@ if __name__ == '__main__':
     main()
 ```
 
+### API key authentication (from ThingsBoard 4.3+)
+
+The following code sample demonstrates how to use API key authentication with ThingsBoard REST API.
+Make sure you have created an API key for your user before running the example. Also, ensure to replace 
+`"YOUR_API_KEY_HERE"` with your actual API key value and the `url` variable with your ThingsBoard instance URL.
+
+```python
+import logging
+# Importing models and REST client class from Community Edition version
+from tb_rest_client.rest_client_pe import *
+from tb_rest_client.rest import ApiException
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+
+# ThingsBoard REST API URL
+url = "http://127.0.0.1:8080"
+
+# Your API Key
+api_key = "YOUR_API_KEY_HERE"
+
+
+def main():
+    # Creating the REST client object with context manager
+    with RestClientPE(base_url=url) as rest_client:
+        try:
+            # Auth with API Key
+            rest_client.api_key_login(api_key)
+
+            # Creating a Device
+            # Also, you can use default Device Profile:
+            # default_device_profile_id = rest_client.get_default_device_profile_info().id
+            device_profile = DeviceProfile(name="Thermometer",
+                                           type="DEFAULT",
+                                           transport_type="DEFAULT",
+                                           profile_data=DeviceProfileData(configuration={"type": "DEFAULT"},
+                                                                          transport_configuration={"type": "DEFAULT"}))
+            device_profile = rest_client.save_device_profile(device_profile)
+            device = Device(name="Thermometer 1", label="Thermometer 1",
+                            device_profile_id=device_profile.id)
+            device = rest_client.save_device(device)
+
+            logging.info(" Device was created:\n%r\n", device)
+        except ApiException as e:
+            logging.exception(e)
+
+
+if __name__ == '__main__':
+    main()
+
+```
+
 ### Get user permissions
 
 The following sample code shows how to get allowed permissions of current logged in user and then check sample permission.

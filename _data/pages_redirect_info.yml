@@ -1,58 +1,4 @@
 ---
-"/docs/samples/arduino/":
-  url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from: "/docs/samples/arduino/"
-"/docs/samples/arduino/temperature/":
-  url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from: "/docs/samples/arduino/temperature/"
-"/docs/samples/arduino/sim808-htu21d/":
-  url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from: "/docs/samples/arduino/sim808-htu21d/"
-"/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/":
-  url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from: "/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/"
-"/docs/samples/esp32/":
-  url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from: "/docs/samples/esp32/"
-"/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/":
-  url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from: "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
-"/docs/samples/esp32/ota/":
-  url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from: "/docs/samples/esp32/ota/"
-"/docs/samples/esp8266/":
-  url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: "/docs/samples/esp8266/"
-"/docs/samples/esp8266/temperature/":
-  url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: "/docs/samples/esp8266/temperature/"
-"/docs/samples/esp8266/gpio/":
-  url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: "/docs/samples/esp8266/gpio/"
-"/docs/samples/nodemcu/":
-  url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: "/docs/samples/nodemcu/"
-"/docs/samples/nodemcu/temperature/":
-  url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: "/docs/samples/nodemcu/temperature/"
-"/docs/samples/raspberry/":
-  url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from: "/docs/samples/raspberry/"
-"/docs/samples/raspberry/gpio/":
-  url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from: "/docs/samples/raspberry/gpio/"
-"/docs/samples/raspberry/gpio-android-things/":
-  url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from: "/docs/samples/raspberry/gpio-android-things/"
-"/docs/samples/raspberry/temperature/":
-  url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from: "/docs/samples/raspberry/temperature/"
-"/docs/samples/linkit-one/":
-  url: "/docs/devices-library/"
-  redirect_from: "/docs/samples/linkit-one/"
-"/docs/samples/linkit-one/gps/":
-  url: "/docs/devices-library/"
-  redirect_from: "/docs/samples/linkit-one/gps/"
 "/docs/user-guide/edge-computing/":
   url: "/docs/edge/getting-started-guides/what-is-edge/"
   redirect_from: "/docs/user-guide/edge-computing/"
@@ -110,6 +56,9 @@
 "/docs/paas/eu/user-guide/":
   url: "/docs/paas/eu/guides/"
   redirect_from: "/docs/paas/eu/user-guide/"
+"/products/paas/subscription/":
+  url: "/docs/paas/subscriptions/"
+  redirect_from: "/products/paas/subscription/"
 "/docs/paas/eu/reference/coap-api":
   url: "/docs/paas/eu/reference/coap-api/"
   redirect_from: "/docs/paas/eu/reference/coap-api"
@@ -122,6 +71,15 @@
 "/docs/paas/eu/reference/snmp-api":
   url: "/docs/paas/eu/reference/snmp-api/"
   redirect_from: "/docs/paas/eu/reference/snmp-api"
+"/docs/samples/monitoring/facilities-monitoring-poc/":
+  url: "/docs/pe/solution-templates/smart-office/"
+  redirect_from: "/docs/samples/monitoring/facilities-monitoring-poc/"
+"/products/paas/eu/subscription/":
+  url: "/docs/paas/eu/subscriptions/"
+  redirect_from: "/products/paas/eu/subscription/"
+"/docs/paas/eu/subscription/":
+  url: "/docs/paas/eu/subscriptions/"
+  redirect_from: "/docs/paas/eu/subscription/"
 "/docs/paas/eu/user-guide/ui/asset-profiles":
   url: "/docs/paas/eu/user-guide/asset-profiles/"
   redirect_from: "/docs/paas/eu/user-guide/ui/asset-profiles"
@@ -164,9 +122,9 @@
 "/docs/paas/reference/snmp-api":
   url: "/docs/paas/reference/snmp-api/"
   redirect_from: "/docs/paas/reference/snmp-api"
-"/products/paas/subscription/":
-  url: "/docs/paas/subscription/"
-  redirect_from: "/products/paas/subscription/"
+"/docs/paas/subscription/":
+  url: "/docs/paas/subscriptions/"
+  redirect_from: "/docs/paas/subscription/"
 "/docs/paas/user-guide/ui/asset-profiles":
   url: "/docs/paas/user-guide/asset-profiles/"
   redirect_from: "/docs/paas/user-guide/ui/asset-profiles"
@@ -203,6 +161,15 @@
 "/docs/pe/user-guide/":
   url: "/docs/pe/guides/"
   redirect_from: "/docs/pe/user-guide/"
+"/docs/mqtt-broker/image-gallery/":
+  url: "/docs/pe/mqtt-broker/image-gallery/"
+  redirect_from: "/docs/mqtt-broker/image-gallery/"
+"/docs/mqtt-broker/subscription/":
+  url: "/docs/pe/mqtt-broker/subscription/"
+  redirect_from: "/docs/mqtt-broker/subscription/"
+"/docs/mqtt-broker/white-labeling/":
+  url: "/docs/pe/mqtt-broker/white-labeling/"
+  redirect_from: "/docs/mqtt-broker/white-labeling/"
 "/docs/pe/reference/coap-api":
   url: "/docs/pe/reference/coap-api/"
   redirect_from: "/docs/pe/reference/coap-api"
@@ -218,9 +185,6 @@
 "/docs/pe/user-guide/rule-engine-2-0/architecture/":
   url: "/docs/pe/reference/"
   redirect_from: "/docs/pe/user-guide/rule-engine-2-0/architecture/"
-"/docs/samples/monitoring/facilities-monitoring-poc/":
-  url: "/docs/pe/solution-templates/smart-office/"
-  redirect_from: "/docs/samples/monitoring/facilities-monitoring-poc/"
 "/docs/pe/user-guide/ui/asset-profiles":
   url: "/docs/pe/user-guide/asset-profiles/"
   redirect_from: "/docs/pe/user-guide/ui/asset-profiles"

@@ -14,34 +14,45 @@ toc:
   section:
     - title: Overview
       path: /docs/paas/eu/solution-templates/overview/
-    - title: Temperature & Humidity Sensors
+    - title: Temperature & Humidity sensors
       path: /docs/paas/eu/solution-templates/temperature-humidity-sensors/
     - title: Smart office
       path: /docs/paas/eu/solution-templates/smart-office/
-    - title: SCADA Oil & Gas Drilling system
-      path: /docs/paas/eu/solution-templates/scada-drilling-system/
+    - title: Site fleet tracking
+      path: /docs/paas/eu/solution-templates/site-fleet-tracking/
       new: true
+    - title: Fuel level monitoring
+      path: /docs/paas/eu/solution-templates/fuel-level-monitoring/
+    - title: Swimming pool SCADA system
+      path: /docs/paas/eu/solution-templates/swimming-pool-scada-system/
+    - title: SCADA Oil & Gas drilling system
+      path: /docs/paas/eu/solution-templates/scada-drilling-system/
     - title: SCADA Energy management
       path: /docs/paas/eu/solution-templates/scada-energy-management/
-      new: true
-    - title: Fleet tracking
-      path: /docs/paas/eu/solution-templates/fleet-tracking/
-    - title: Fuel Level Monitoring
-      path: /docs/paas/eu/solution-templates/fuel-level-monitoring/
-    - title: Swimming Pool SCADA system
-      path: /docs/paas/eu/solution-templates/swimming-pool-scada-system/
+    - title: Air quality monitoring
+      path: /docs/paas/eu/solution-templates/air-quality-monitoring/
     - title: Water metering
       path: /docs/paas/eu/solution-templates/water-metering/
     - title: Smart retail
       path: /docs/paas/eu/solution-templates/smart-retail/
-    - title: Air quality monitoring
-      path: /docs/paas/eu/solution-templates/air-quality-monitoring/
-    - title: Smart Irrigation
+    - title: Smart irrigation
       path: /docs/paas/eu/solution-templates/smart-irrigation/
+    - title: Assisted living
+      path: /docs/paas/eu/solution-templates/assisted-living/
     - title: Waste management
       path: /docs/paas/eu/solution-templates/waste-management/
 - title: Key concepts
   section:
+    - title: Alarms
+      path: /docs/paas/eu/user-guide/alarms/
+    - title: Alarm rules
+      path: /docs/paas/eu/user-guide/alarm-rules/
+      new: true
+    - title: Calculated fields
+      path: /docs/paas/eu/user-guide/calculated-fields/
+      new: true
+    - title: Notification center
+      path: /docs/paas/eu/user-guide/notifications/
     - title: Entities and Relations
       path: /docs/paas/eu/user-guide/entities-and-relations/
     - title: Device profiles
@@ -52,17 +63,10 @@ toc:
       path: /docs/paas/eu/user-guide/attributes/
     - title: Time-series data
       path: /docs/paas/eu/user-guide/telemetry/
-    - title: Calculated fields
-      path: /docs/paas/eu/user-guide/calculated-fields/
-      new: true
-    - title: Alarms
-      path: /docs/paas/eu/user-guide/alarms/
     - title: Remote commands to devices
       path: /docs/paas/eu/user-guide/rpc/
     - title: OTA updates
       path: /docs/paas/eu/user-guide/ota-updates/
-    - title: Notification center
-      path: /docs/paas/eu/user-guide/notifications/
 - title: Dashboards
   section:
     - title: Overview
@@ -324,6 +328,8 @@ toc:
       path: /docs/paas/eu/user-guide/rbac/
     - title: Secrets storage
       path: /docs/paas/eu/user-guide/secrets-storage/
+    - title: API keys
+      path: /docs/paas/eu/user-guide/security/api-keys/
       new: true
     - title: Two-factor authentication
       path: /docs/paas/eu/user-guide/two-factor-authentication/
@@ -372,6 +378,6 @@ toc:
     - title: Mail server
       path: /docs/paas/eu/user-guide/ui/mail-settings/
 - title: Subscriptions
-  path: /docs/paas/eu/subscription/
+  path: /docs/paas/eu/subscriptions/
 - title: Plan and billing
   path: /docs/paas/eu/billing-info/

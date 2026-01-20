@@ -1,0 +1,43 @@
+{
+  "type": "SCRIPT",
+  "name": "Freezer temperature analysis",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1767690945691
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "SCRIPT",
+    "arguments": {
+      "defrost": {
+        "refEntityKey": {
+          "key": "defrost",
+          "type": "TS_ROLLING"
+        },
+        "limit": 100,
+        "timeWindow": 900000
+      },
+      "temperature": {
+        "refEntityKey": {
+          "key": "temperature",
+          "type": "TS_ROLLING"
+        },
+        "limit": 100,
+        "timeWindow": 900000
+      }
+    },
+    "expression": "var merged = temperature.merge(defrost);\nvar result = [];\n\nforeach(item: merged) {\n  if (item.v1 > -5.0 && item.v2 == 0) {\n    result.add({\n      ts: item.ts,\n      values: {\n        issue: {\n          temperature: item.v1,\n          defrostState: false\n        }\n      }\n    });\n  }\n}\n\nreturn result;",
+    "output": {
+      "type": "TIME_SERIES",
+      "strategy": {
+        "type": "IMMEDIATE",
+        "ttl": 0,
+        "saveTimeSeries": true,
+        "saveLatest": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    }
+  }
+}

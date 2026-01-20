@@ -257,6 +257,12 @@
 			<td> db password</td>
 		</tr>
 		<tr>
+			<td>redis.username</td>
+			<td>REDIS_USERNAME</td>
+			<td></td>
+			<td> Redis username for ACL authentication (Redis 6.0+). Leave empty for legacy password-only auth</td>
+		</tr>
+		<tr>
 			<td>redis.ssl.enabled</td>
 			<td>TB_REDIS_SSL_ENABLED</td>
 			<td>false</td>
@@ -406,6 +412,12 @@
 			<td>SNMP_SCHEDULER_THREAD_POOL_SIZE</td>
 			<td>4</td>
 			<td> Thread pool size for scheduler that executes device querying tasks</td>
+		</tr>
+		<tr>
+			<td>transport.snmp.batch_retries</td>
+			<td>SNMP_BOOTSTRAP_RETRIES</td>
+			<td>8</td>
+			<td> Maximum number of retry attempts for a single SNMP devices batch during bootstrap.</td>
 		</tr>
 		<tr>
 			<td>transport.sessions.inactivity_timeout</td>
@@ -717,6 +729,12 @@
 			<td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
 			<td>1000</td>
 			<td> Time to wait for the stats-loading requests to Kafka to finis</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topics_cache_ttl_ms</td>
+			<td>TB_QUEUE_KAFKA_TOPICS_CACHE_TTL_MS</td>
+			<td>300000</td>
+			<td> Topics cache TTL in milliseconds. 5 minutes by default</td>
 		</tr>
 		<tr>
 			<td>queue.partitions.hash_function_name</td>

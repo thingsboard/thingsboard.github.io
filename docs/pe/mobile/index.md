@@ -53,6 +53,12 @@ A compatibility table between the Flutter ThingsBoard PE mobile application and 
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>4.3.0PE+</td>
+            <td>1.8.0</td>
+            <td>4.1.0</td>
+            <td>3.29.0</td>
+        </tr>
          <tr>
             <td>4.0.0PE+</td>
             <td>1.7.0</td>

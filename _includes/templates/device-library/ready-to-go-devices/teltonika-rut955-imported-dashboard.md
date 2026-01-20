@@ -1,6 +1,6 @@
 ### Import dashboard
 
-Download [Check Device Data Dashboard](/docs/devices-library/resources/dashboards/ready-to-go-devices/teltonika-rtu955-dashboard.json){:target="_blank" download="teltonika-rut955-dashboard.json"} and import it.
+Download [Check Device Data Dashboard](/docs/device-library/resources/dashboards/ready-to-go-devices/teltonika-rtu955-dashboard.json){:target="_blank" download="teltonika-rut955-dashboard.json"} and import it.
 
 You are able to import a dashboard in JSON format. To import a dashboard, you should go to the Dashboard group and click
  on the **“+”** button in the upper right corner of the page and choose **“Import dashboard”**. The dashboard import window 

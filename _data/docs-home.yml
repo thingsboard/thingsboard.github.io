@@ -9,29 +9,32 @@ toc:
   path: /docs/getting-started-guides/connectivity/
 - title: Key concepts
   section:
-  - title: Entities and relations
+  - title: Alarms
+    path: /docs/user-guide/alarms/
+  - title: Alarm rules
+    path: /docs/user-guide/alarm-rules/
+    new: true
+  - title: Calculated fields
+    path: /docs/user-guide/calculated-fields/
+    new: true
+  - title: Notification center
+    path: /docs/user-guide/notifications/
+  - title: Entities and Relations
     path: /docs/user-guide/entities-and-relations/
-  - title: Tenant profiles
-    path: /docs/user-guide/tenant-profiles/
   - title: Device profiles
     path: /docs/user-guide/device-profiles/
   - title: Asset profiles
     path: /docs/user-guide/asset-profiles/
+  - title: Tenant profiles
+    path: /docs/user-guide/tenant-profiles/
   - title: Attributes
     path: /docs/user-guide/attributes/
   - title: Time-series data
     path: /docs/user-guide/telemetry/
-  - title: Calculated fields
-    path: /docs/user-guide/calculated-fields/
-    new: true
-  - title: Alarms
-    path: /docs/user-guide/alarms/
   - title: Remote commands to devices
     path: /docs/user-guide/rpc/
   - title: OTA updates
     path: /docs/user-guide/ota-updates/
-  - title: Notification center
-    path: /docs/user-guide/notifications/
 - title: Dashboards
   section:
   - title: Overview
@@ -302,6 +305,9 @@ toc:
     - title: Secrets storage
       path: /docs/pe/user-guide/secrets-storage/
       pe: true
+    - title: API keys
+      path: /docs/user-guide/security/api-keys/
+      new: true
     - title: Two-factor authentication
       path: /docs/user-guide/two-factor-authentication/
     - title: OAuth 2.0

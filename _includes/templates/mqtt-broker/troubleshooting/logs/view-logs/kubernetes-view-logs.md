@@ -35,7 +35,7 @@ kubectl logs -f tb-broker-1 > tb-broker-1.log
 ```
 {: .copy-code}
 
-**Note:** you can always log into TBMQ container and view logs there:
+**Note:** you can always log into the TBMQ container and view logs there:
 
 ```bash
 kubectl exec -it tb-broker-0 -- bash

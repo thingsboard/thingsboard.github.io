@@ -1,0 +1,11 @@
+bigheader: "How to Activate Trendz"
+abstract: "Guide how to activate Trendz Analytics"
+toc:
+- title: How to Activate Trendz
+  path: /docs/trendz/activation/how-to/
+- title: ThingsBoard Public Cloud
+  path: /docs/trendz/activation/public-cloud/
+- title: ThingsBoard Private Cloud
+  path: /docs/trendz/activation/private-cloud/
+- title: Self-Managed ThingsBoard (PE)
+  path: /docs/trendz/activation/self-managed/

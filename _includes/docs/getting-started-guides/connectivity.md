@@ -22,7 +22,7 @@ In case you have not found out how to connect your device using the diagram or s
 
 ## Connecting well-known devices
 
-You can check the [Devices library](/docs/{{docsPrefix}}devices-library) section to explore how to connect widely used devices to ThingsBoard.
+You can check the [Device Library](/docs/{{docsPrefix}}device-library) section to explore how to connect widely used devices to ThingsBoard.
 
 ## Built-in transport protocols
 

@@ -20,7 +20,7 @@ contactUsModal: "true"
                 <p class="text">The smart office solution powered by ThingsBoard enables efficient monitoring of energy and water consumption, tracking of air quality and CO₂ levels, control of HVAC systems, real-time response to critical events, and overall improvement of energy efficiency and employee comfort.</p>
             </div>
             <div class="demo-button">
-                <a id="UseCases_SmartOffice_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/bf47dcb0-8b38-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>            </div>
+                <a id="UseCases_SmartOffice_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/375ddea0-f5e5-11f0-bc85-bd57f974c663?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>            </div>
             </div>
         <div class="long">
             <p>Smart office solutions are designed to optimize workplace environments by monitoring key operational parameters and automating building systems in real time. ThingsBoard, as a robust IoT platform, provides all the necessary tools for collecting, processing, and visualizing data from devices that use protocols like BLE or LoRaWAN gateways, enabling seamless integration and support for flexible solutions.</p>
@@ -296,7 +296,7 @@ contactUsModal: "true"
                 <div class=image>${getImage(0)}</div>
             </div>
             <div class="buttons-block">
-                <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/bf47dcb0-8b38-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
+                <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/375ddea0-f5e5-11f0-bc85-bd57f974c663?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
                 <a id="UseCases_EnvMon_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     
@@ -305,7 +305,7 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='https://img.thingsboard.io/usecases/smart-office/smart-office-1.webp' alt='HVAC switch, temperature and power chart, device list, and floor plan with sensor locations' title='HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-office/smart-office-1-v2.webp' alt='HVAC switch, temperature and power chart, device list, and floor plan with sensor locations' title='HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard'/>",
                 "<img src='https://img.thingsboard.io/usecases/smart-office/smart-office-2.webp' alt='Energy consumption, power and current charts with wind turbine background' title='Energy monitoring dashboard with consumption statistics, real-time current and voltage tracking, and no active alarms'/>",
                 "<img src='https://img.thingsboard.io/usecases/smart-office/smart-office-3.webp' alt='HVAC control with state, airflow history, and temperature targets' title='ThingsBoard dashboard for HVAC: displays airflow, target temperature, device state, and alarm history over time'/>",
                 "<img src='https://img.thingsboard.io/usecases/smart-office/smart-office-5.webp' alt='Smart sensor dashboard with temperature, humidity, CO2, TVOC, and occupancy tracking' title='Environmental monitoring via smart sensor: tracks temperature, humidity, air quality, and room occupancy in ThingsBoard platform'/>",

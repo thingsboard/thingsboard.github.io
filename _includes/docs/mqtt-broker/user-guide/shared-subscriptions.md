@@ -61,7 +61,7 @@ If strict message ordering is critical for your application, consider using a **
 
 ## Subscribing to Shared Subscriptions
 
-In this tutorial, we will be connecting [DEVICE](/docs/mqtt-broker/user-guide/mqtt-client-type/#device-client) non-persistent clients and using the [Mosquitto](https://mosquitto.org/download/) client library.
+In this tutorial, we will be connecting [DEVICE](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-client-type/#device-client) non-persistent clients and using the [Mosquitto](https://mosquitto.org/download/) client library.
 For Ubuntu users, it can be installed using the following command:
 ```
 sudo apt-get install mosquitto-clients
@@ -169,8 +169,8 @@ These considerations ensure that message distribution and persistence are handle
 
 To utilize the shared subscription feature for APPLICATION clients in TBMQ, you need to follow an additional step. 
 First, you'll need to create an Application Shared Subscription entity in the PostgreSQL database. 
-To do so follow the instructions from the following [guide](/docs/mqtt-broker/user-guide/ui/shared-subscriptions/).
-This can also be done through the REST API, and detailed instructions can be found in the next [documentation](/docs/mqtt-broker/application-shared-subscription/). 
+To do so follow the instructions from the following [guide](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/shared-subscriptions/).
+This can also be done through the REST API, and detailed instructions can be found in the next [documentation](/docs/{{docsPrefix}}mqtt-broker/application-shared-subscription/). 
 The entity creation process includes the automatic creation of a corresponding Kafka topic.
 
 {% capture difference %}

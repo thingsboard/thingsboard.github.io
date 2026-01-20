@@ -1,0 +1,41 @@
+{
+  "type": "PROPAGATION",
+  "name": "Cooling propagation",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1767614882331
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "PROPAGATION",
+    "arguments": {
+      "hvacMode": {
+        "refEntityKey": {
+          "key": "hvacMode",
+          "type": "ATTRIBUTE",
+          "scope": "SERVER_SCOPE"
+        },
+        "defaultValue": "off"
+      }
+    },
+    "expression": null,
+    "output": {
+      "type": "ATTRIBUTES",
+      "scope": "SERVER_SCOPE",
+      "strategy": {
+        "type": "IMMEDIATE",
+        "sendAttributesUpdatedNotification": false,
+        "updateAttributesOnlyOnValueChange": true,
+        "saveAttribute": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    },
+    "relation": {
+      "direction": "FROM",
+      "relationType": "Manages"
+    },
+    "applyExpressionToResolvedArguments": false
+  }
+}
