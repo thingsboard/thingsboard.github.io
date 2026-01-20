@@ -12,7 +12,9 @@
       "edgeMonthPrice": 0,
       "edgeInstancesIncluded": 1,
       "trendzMonthPrice": 0,
-      "wl": false
+      "wl": false,
+      "productId": "e5388340-df4c-11f0-99f1-77e7265ca405",
+      "planId": "3eeedcd0-df4e-11f0-99f1-77e7265ca405"
     },
     {
       "name": "Prototype",
@@ -25,7 +27,9 @@
       "edgeInstancesIncluded": 1,
       "extraEdgePrice": 39,
       "trendzMonthPrice": 12,
-      "wl": false
+      "wl": false,
+      "productId": "e5388340-df4c-11f0-99f1-77e7265ca405",
+      "planId": "00ca1730-efa2-11f0-91a0-8d3ec456bd48"
     },
     {
       "name": "Pilot",
@@ -38,7 +42,9 @@
       "edgeInstancesIncluded": 1,
       "extraEdgePrice": 39,
       "trendzMonthPrice": 29,
-      "wl": true
+      "wl": true,
+      "productId": "e5388340-df4c-11f0-99f1-77e7265ca405",
+      "planId": "3c084240-efa2-11f0-91a0-8d3ec456bd48"
     },
     {
       "name": "Startup",
@@ -51,7 +57,9 @@
       "edgeInstancesIncluded": 2,
       "extraEdgePrice": 39,
       "trendzMonthPrice": 89,
-      "wl": true
+      "wl": true,
+      "productId": "e5388340-df4c-11f0-99f1-77e7265ca405",
+      "planId": "92637f50-df4f-11f0-99f1-77e7265ca405"
     },
     {
       "name": "Business",
@@ -66,7 +74,9 @@
       "extraEdgePrice": 39,
       "trendzMonthPrice": 149,
       "trendzExtraDevicePrice": 0.03,
-      "wl": true
+      "wl": true,
+      "productId": "e5388340-df4c-11f0-99f1-77e7265ca405",
+      "planId": "d5381c00-df4f-11f0-99f1-77e7265ca405"
     }
   ]
 }

@@ -893,8 +893,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div>
                             <button id="Pricing_PE_SM_Maker" class="button secondary btn-pricing gtm_button"
                                     onClick="getLicense(event,
-                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                            '7ef31a80-a18e-11e9-8e16-03828ff5271c',
+                            'e5388340-df4c-11f0-99f1-77e7265ca405',
+                            '3eeedcd0-df4e-11f0-99f1-77e7265ca405',
                             'Maker', null)">
                                 Get started
                             </button>
@@ -920,8 +920,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div>
                             <button id="Pricing_PE_SM_Maker" class="button secondary btn-pricing gtm_button"
                                     onClick="getLicense(event,
-                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                            '7ef31a80-a18e-11e9-8e16-03828ff5271c',
+                            'e5388340-df4c-11f0-99f1-77e7265ca405',
+                            '00ca1730-efa2-11f0-91a0-8d3ec456bd48',
                             'Prototype', null)">
                                 Get started
                             </button>
@@ -948,8 +948,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div>
                             <button id="Pricing_PE_SM_Prototype" class="button btn-pricing gtm_button"
                                     onClick="getLicense(event,
-                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                            '0e236dc0-a196-11e9-8e16-03828ff5271c',
+                            'e5388340-df4c-11f0-99f1-77e7265ca405',
+                            '3c084240-efa2-11f0-91a0-8d3ec456bd48',
                             'Prototype', null)">
                                 Get started
                             </button>
@@ -975,8 +975,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div>
                             <button id="Pricing_PE_SM_Startup" class="button secondary btn-pricing gtm_button"
                                     onClick="getLicense(event,
-                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                            '8ac6d190-a197-11e9-8e16-03828ff5271c',
+                            'e5388340-df4c-11f0-99f1-77e7265ca405',
+                            '92637f50-df4f-11f0-99f1-77e7265ca405',
                             'Startup', null)">
                                 Get started
                             </button>
@@ -1002,8 +1002,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div>
                             <button id="Pricing_PE_SM_Business" class="button secondary btn-pricing gtm_button"
                                     onClick="getLicense(event,
-                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                            '34530df0-a198-11e9-8e16-03828ff5271c',
+                            'e5388340-df4c-11f0-99f1-77e7265ca405',
+                            'd5381c00-df4f-11f0-99f1-77e7265ca405',
                             'Business', null)">
                                 Get started
                             </button>
