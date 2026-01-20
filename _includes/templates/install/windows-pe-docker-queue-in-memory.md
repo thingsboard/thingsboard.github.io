@@ -78,6 +78,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: postgres
       SCRIPT_ENGINE_DOCKER_PROVIDER_URL: trendz-python-executor:8181
       SCRIPT_ENGINE_TIMEOUT: 30000
+      INITIALIZATION_SECOND_PHASE_START_DELAY_MS: 60000
     volumes:
       - trendz-conf:/trendz-config-files
       - trendz-data:/data
@@ -95,6 +96,7 @@ services:
       THROTTLING_QUEUE_CAPACITY: 10
       THROTTLING_THREAD_POOL_SIZE: 6
       NETWORK_BUFFER_SIZE: 5242880
+      INITIALIZATION_SECOND_PHASE_START_DELAY_MS: 60000
     volumes:
       - trendz-python-executor-conf:/python-executor-config-files
       - trendz-python-executor-data:/data
