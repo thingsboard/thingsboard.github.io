@@ -12,19 +12,22 @@ The REST Connector waits for HTTP requests with the Authorization header that co
 Security section in configuration file will look like this: 
 
 ```json
-    "security": {
-      "type": "basic",
-      "username": "username",
-      "password": "password"
-    }
+{
+  "security": {
+    "type": "basic",
+    "username": "username",
+    "password": "password"
+  }
+}
 ```
+{: .copy-code}
 
 Also, make sure that your request have `Authorization` header with provided credentials.
 
 If you are using cURL, the request will look like:
 ```bash
 curl --user username:password -H "Content-Type: application/json" -X POST \
-    -d '{"sensorName": "SN-001", "sensorModel": "example"}' http://127.0.0.1:5000/my_devices
+    -d '{"name": "SN-001", "sensorModel": "example"}' http://127.0.0.1:5000/test_device
 ```
 
 Or if you are using Postman or Insomnia, simply enable Basic auth.
