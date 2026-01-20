@@ -972,16 +972,17 @@ $bg-white: #fff
   &.visible
     display: flex
   .modal-content
+    display: flex
     width: 1300px
     padding: 8px
     border-radius: 24px
     background-color: #F7F9FC
-    max-height: 912px
+    max-height: min(912px, 100%)
     overflow: hidden
     .modal-body
       display: flex
       position: relative
-      height: 896px
+      flex: 1 1 0
       .close-button
         position: absolute
         right: 9px
@@ -1375,6 +1376,11 @@ $bg-white: #fff
 
 // RESPONSIVE STYLES - MODAL
 
+@media screen and (max-width: 1300px)
+  .modal-overlay
+    .modal-content
+      border-radius: 0
+
 @media screen and (max-width: 1100px)
   .modal-overlay
     .modal-content
@@ -1427,7 +1433,6 @@ $bg-white: #fff
 @media screen and (max-width: 599px)
   .modal-overlay
     .modal-content
-      border-radius: 0
       padding: 0
       .modal-body
         flex-direction: column
