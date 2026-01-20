@@ -685,6 +685,9 @@
 "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/":
   url: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
   redirect_from: []
+"/docs/iot-gateway/help/":
+  url: "/docs/iot-gateway/help/"
+  redirect_from: []
 "/docs/iot-gateway/how-device-removing-renaming-works/":
   url: "/docs/iot-gateway/how-device-removing-renaming-works/"
   redirect_from: []
