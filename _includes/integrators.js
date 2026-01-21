@@ -64,7 +64,15 @@ function createBox(integrator) {
      textSite.textContent = 'Visit us at: ';
 
      var linkSite = document.createElement('a');
-     var link = integrator.site.href.replace('https://', '').replace('http://', '').replace('/', '');
+     var link = integrator.site.href
+       .replace(/^https?:\/\//, '')
+       .replace(/^(.*?)(\/.*)?$/, (match, domain, path = '') => {
+           if (path.startsWith('/thingsboard')) {
+               return domain + path;
+           }
+           return domain;
+       });
+
      linkSite.href = 'https://' + link;
      linkSite.textContent = link.replace('www.', '');
      linkSite.target = integrator.site.target;
