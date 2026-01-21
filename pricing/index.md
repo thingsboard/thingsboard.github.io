@@ -1182,7 +1182,7 @@ defaultActivePricingSection: thingsboard-pe-options
 </div>
 
 <div id="tbmq-private-cloud" class="pricing-content" style="display: none;">
-    <div class="container">
+    <div class="container no-padding">
         <div class="pricing-content-header">
             <div class="pricing-content-description always-display active">
                 <h2>Your private MQTT broker instance</h2>
