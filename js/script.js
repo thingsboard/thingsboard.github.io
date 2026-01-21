@@ -166,7 +166,6 @@ var tb = (function () {
 				let fontSize = this.getAttribute('data-faq-link-size') || 'smaller';
 				let faqLink = newDOMElement('a', 'faq-link');
 				$(faqLink).css('fontSize', fontSize);
-
 				faqAnchor.appendChild(faqLink);
 				$(faqLink).on('click', function() {
 					navigateToFaq(nodeId);
@@ -182,12 +181,15 @@ var tb = (function () {
 
 					if (contentSource) {
 						let fullText = $(contentSource).text().trim().replace(/\s+/g, ' ');
+						let customTooltip = this.getAttribute('data-faq-tooltip');
 						let charsPerLine = 24;
 						let maxLines = 5;
 						let maxChars = charsPerLine * maxLines;
 						let tooltipContent = newDOMElement('span', 'tooltip-content');
 
-						if (fullText.length > maxChars) {
+						if (customTooltip) {
+							tooltipContent.innerHTML = customTooltip;
+						} else if (fullText.length > maxChars && !customTooltip) {
 							let truncatedText = fullText.substring(0, maxChars);
 							let lastSpaceIndex = truncatedText.lastIndexOf(' ');
 							if (lastSpaceIndex > maxChars - 20) {

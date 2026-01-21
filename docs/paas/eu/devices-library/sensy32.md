@@ -1,17 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect Sensy32 to ThingsBoard?
-category: Other devices
-connectivity: WIFI, Bluetooth
-vendor: Sensy32
-hasIntegrationDeviceConfiguration: true
-deviceImageFileName: sensy32.svg
-docsPrefix: paas/eu/
-docsTag: paas-eu
+layout: docwithnav-paas-eu
+title: "How to connect Sensy32 to ThingsBoard?"
+redirect_to: "/device-library/paas-eu/sensy32/"
 ---
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html docsTag=page.docsTag %}
-{% include /docs/device-library/guides/sensy32.md %}
