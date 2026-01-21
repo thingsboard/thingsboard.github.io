@@ -337,6 +337,18 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Germany"],
+    "name": "Elbesoft IoT",
+    "contact": {
+      "href": "info@elbesoft-iot.com"
+    },
+    "site": {
+      "href": "elbesoft-iot.de/thingsboard",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["Germany", "Austria", "Switzerland"],
     "name": "one:solutions Engineering GmbH",
     "contact": {
