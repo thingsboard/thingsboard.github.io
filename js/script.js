@@ -153,62 +153,95 @@ var tb = (function () {
 			CollapseBox($(container), 0);
 		});
 
-		$('[data-faq-id]').each(function () {
-			let faqAnchor = this;
-			let nodeId = this.getAttribute('data-faq-id');
-			let fontSize = this.getAttribute('data-faq-link-size') || 'smaller';
-			let faqLink = newDOMElement('a', 'faq-link');
-			$(faqLink).css('fontSize', fontSize);
-			let contentSource = document.querySelector('div[data-item-id="' + nodeId + '"] .container');
+		if ($('[data-faq-id]').length > 0) {
+			const scriptsList = [
+				{ src: 'https://unpkg.com/@popperjs/core@2', type: 'script' },
+				{ src: 'https://unpkg.com/tippy.js@6', type: 'script' },
+				{ src: 'https://unpkg.com/tippy.js@6/themes/light.css', type: 'css' },
+			];
 
-			if (contentSource) {
-				let tooltip = newDOMElement('div', 'faq-tooltip');
-				let fullText = $(contentSource).text().trim().replace(/\s+/g, ' ');
-				let charsPerLine = 24;
-				let maxLines = 5;
-				let maxChars = charsPerLine * maxLines;
+			$('[data-faq-id]').each(function () {
+				let faqAnchor = this;
+				let nodeId = this.getAttribute('data-faq-id');
+				let fontSize = this.getAttribute('data-faq-link-size') || 'smaller';
+				let faqLink = newDOMElement('a', 'faq-link');
+				$(faqLink).css('fontSize', fontSize);
 
-				if (fullText.length > maxChars) {
-					let truncatedText = fullText.substring(0, maxChars);
-					let lastSpaceIndex = truncatedText.lastIndexOf(' ');
-					if (lastSpaceIndex > maxChars - 20) {
-						truncatedText = truncatedText.substring(0, lastSpaceIndex);
-					}
+				faqAnchor.appendChild(faqLink);
+				$(faqLink).on('click', function() {
+					navigateToFaq(nodeId);
+				});
+			});
 
-					let tooltipContent = newDOMElement('p');
-					tooltipContent.textContent = truncatedText;
-					let readMoreLink = newDOMElement('a', 'read-more-link');
-					readMoreLink.href = 'javascript:void(0)';
-					readMoreLink.textContent = '...read more';
-					tooltipContent.appendChild(readMoreLink);
+			loadNextScript(0, scriptsList, function () {
+				$('[data-faq-id]').each(function () {
+					let faqAnchor = this;
+					let nodeId = this.getAttribute('data-faq-id');
+					let faqLink = $(faqAnchor).children('a')[0];
+					let contentSource = document.querySelector('div[data-item-id="' + nodeId + '"] .container');
 
-					tooltip.appendChild(tooltipContent);
+					if (contentSource) {
+						let fullText = $(contentSource).text().trim().replace(/\s+/g, ' ');
+						let charsPerLine = 24;
+						let maxLines = 5;
+						let maxChars = charsPerLine * maxLines;
+						let tooltipContent = newDOMElement('span', 'tooltip-content');
 
-					$(readMoreLink).on('click', function(e) {
-						e.stopPropagation();
-						e.preventDefault();
-						navigateToFaq(nodeId);
-					});
-				} else {
-					let clonedContent = $(contentSource).clone();
-					clonedContent.find('a').attr('target', '_blank');
-					$(tooltip).html(clonedContent.html());
-				}
+						if (fullText.length > maxChars) {
+							let truncatedText = fullText.substring(0, maxChars);
+							let lastSpaceIndex = truncatedText.lastIndexOf(' ');
+							if (lastSpaceIndex > maxChars - 20) {
+								truncatedText = truncatedText.substring(0, lastSpaceIndex);
+							}
 
-				$(tooltip).on('click', function(e) {
-					if (!$(e.target).is('a') && !$(e.target).hasClass('read-more-link')) {
-						e.stopPropagation();
+							tooltipContent.textContent = truncatedText + '… ';
+							let readMoreLink = newDOMElement('a', 'read-more-link');
+							readMoreLink.href = 'javascript:void(0)';
+							readMoreLink.textContent = 'read more';
+							tooltipContent.appendChild(readMoreLink);
+						} else {
+							tooltipContent.textContent = fullText;
+						}
+
+						tippy(faqLink, {
+							content: tooltipContent,
+							allowHTML: true,
+							interactive: true,
+							maxWidth: 320,
+							placement: 'right',
+							delay: [100, 200],
+							theme: 'light',
+							onShow(instance) {
+								instance.popper.querySelector('.read-more-link')?.addEventListener('click', (e) => {
+									e.preventDefault();
+									navigateToFaq(nodeId);
+								});
+							},
+							popperOptions: {
+								modifiers: [
+									{
+										name: 'offset',
+										options: {
+											offset: (item) => {
+												if (item.placement.includes('right') || item.placement.includes('top')) {
+													return [0, 20];
+												}
+
+												if (item.placement.includes('left') || item.placement.includes('bottom')) {
+													return [10, 5];
+												}
+
+												return [0, 5];
+											},
+										},
+									},
+								],
+							},
+						});
 					}
 				});
-
-				faqLink.appendChild(tooltip);
-			}
-
-			faqAnchor.appendChild(faqLink);
-			$(faqLink).on('click', function() {
-				navigateToFaq(nodeId);
 			});
-		});
+		}
 
 		function navigateToFaq(nodeId) {
 			const faqElement = document.querySelector(`div[data-item-id="${nodeId}"]`);

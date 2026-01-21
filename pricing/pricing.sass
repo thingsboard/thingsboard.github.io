@@ -876,9 +876,12 @@ html#pricing
             line-height: 24px
 
       &#thingsboard-ce
-        padding-top: 60px
+        padding-top: 46px
         .pricing-div
           margin-top: 25px
+
+      &#tbmq-ce
+        padding-top: 46px
 
       .pricing-div
         &.padding-bottom
@@ -938,6 +941,7 @@ html#pricing
               .button, .button.secondary
                 @media (max-width: 1919px)
                   width: 100%
+                  min-width: 150px
               &.popular
                 position: relative
                 width: 290px
@@ -1463,6 +1467,51 @@ html#pricing
       text-decoration: none
       &:hover
         text-decoration: underline
+
+.tippy-box[data-theme~="light"]
+  background-color: #fff
+  color: #3D3D3D
+  text-align: left
+  border-radius: 8px
+  padding: 0
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.05)
+  border: 1px solid #E6F0FC
+  font-family: 'Roboto', sans-serif
+  font-size: 14px
+  line-height: 1.5
+  font-weight: 400
+
+
+  .tippy-content
+    padding: 16px
+    max-width: 320px
+    width: max-content
+
+    .tooltip-content, .tooltip-content:first-child, .tooltip-content:last-child
+      margin: 0 0 8px 0
+      white-space: normal
+      font-size: 14px
+      line-height: 24px
+      color: #3D3D3D
+      &:last-child
+        margin-bottom: 0
+
+    a
+      color: #2A7DEC
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
+    .read-more-link
+      color: #2A7DEC
+      font-weight: 500
+      cursor: pointer
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
 @media (max-width: 992px)
   #pricingContent .container
     max-width: unset
