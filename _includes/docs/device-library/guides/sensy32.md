@@ -56,7 +56,7 @@ https://dl.espressif.com/dl/package_esp32_index.json
 
 {% assign preferences = '
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/preferences.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/preferences.png
         title: Go to **File > Preferences** and add the following URL to the **Additional Boards Manager URLs** field: https://dl.espressif.com/dl/package_esp32_index.json
 '
 %}
@@ -67,7 +67,7 @@ https://dl.espressif.com/dl/package_esp32_index.json
 
 {% assign preferences = '
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/esp32-arduino-ide-board-manager.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/esp32-arduino-ide-board-manager.png
         title: Then go to **Tools > Board > Board Manager** and install the **ESP32 by Espressif Systems** board.
 '
 %}
@@ -89,9 +89,9 @@ Port depends on operation system and may be different:
 
 {% assign preferences = '
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/esp32-s3-dev-module.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/esp32-s3-dev-module.png
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/esp32-s3-dev-module-port.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/esp32-s3-dev-module-port.png
 '
 %}
 
@@ -104,34 +104,34 @@ Port depends on operation system and may be different:
 
 {% assign manageLibraries = '
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/manage-libraries.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/manage-libraries.png
         title: Go to the **Tools** tab and click on **Manage libraries**.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/install-all.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/install-all.png
         title: If prompted to install library dependencies, simply click **Install All** to ensure all necessary libraries are installed.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/library-1.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/library-1.png
         title: **ThingsBoard**: This is the ThingsBoard Arduino SDK, used to connect with the ThingsBoard Platform.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/library-2.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/library-2.png
         title: **ss_oled.h**: This library is used to configure and display data on the LCD screen.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/library-3.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/library-3.png
         title: **Adafruit_LTR390.h**: A library for communicating with the Adafruit_LTR390 UV sensor.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/library-4.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/library-4.png
         title: **SparkFun_BNO08x_Arduino_Library.h**: Simplifies interfacing with BNO08x series sensors in Arduino projects.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/library-5.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/library-5.png
         title: **SparkFun_STHS34PF80_Arduino_Library.h**: Simplifies interfacing with the STHS34PF80 sensor in Arduino projects.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/library-6.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/library-6.png
         title: **BMP388_DEV.h**: This library facilitates interaction with the BMP388 sensor module.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/library-7.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/library-7.png
         title: **SparkFunBME280.h**: This library helps work with the SparkFun BME280 sensor, allowing you to read temperature, humidity, and pressure data.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/library-8.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/library-8.png
         title: **Adafruit_TSL2591.h**: A library for communicating with the Adafruit_TSL2591 Light sensor.
 '
 %}
@@ -162,32 +162,32 @@ For simplicity, we will provide the device manually using the UI.
 
 {% assign createDeviceOnThingsBoardPE = '
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png
         title: Log in to your ThingsBoard instance and go to the **Entities > Devices** section.
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png
         title: Click the "**+**" button in the top-right corner and select Add new device.
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
         title: Enter a device name, for example "My New Device". You can leave all other fields with their default values. Click **Add** to add the device.
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
         title: Your first device has been added.
 '
 %}
 
 {% assign createDeviceOnThingsBoardCE = '
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png
         title: Log in to your ThingsBoard instance and go to the **Entities > Devices** section.
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png
         title: Click the "**+**" button in the top-right corner and select Add new device.
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png
         title: Enter a device name, for example "My New Device". You can leave all other fields with their default values. Click **Add** to add the device.
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
         title: Your first device has been added.
 '
 %}
@@ -205,10 +205,10 @@ To connect your device, you’ll first need to get its credentials. While Things
 
 {% assign connectDevicePE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/hello-world-2-1-connect-device-1-pe.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/hello-world-2-1-connect-device-1-pe.png
         title: Click on the device row in the table to open device details.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/hello-world-2-1-connect-device-2-pe.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/hello-world-2-1-connect-device-2-pe.png
         title: Click **Copy access token**. The token will be copied to your clipboard. Please save it in a safe place.
 '
 %}
@@ -238,7 +238,7 @@ Then upload the code to the device by pressing the Upload button or keyboard com
 
 {% assign upload = '
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/upload.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/upload.png
 '
 %}
 
@@ -248,10 +248,10 @@ If you cannot upload the code and receive an error: `Property 'upload.tool.seria
 
 {% assign programmer = '
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/select-esptool-programmer.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/select-esptool-programmer.png
         title: Go to **Tools > Programmer** and select **Esptool** as a programmer.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/upload-using-programmer.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/upload-using-programmer.png
         title: Go to **Sketch > Upload Using Programmer**.
 '
 %}
@@ -273,13 +273,13 @@ To import the ready-to-use dashboard, follow these steps:
 
 {% assign importDashboard = '
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/import-dashboard-1-pe.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/import-dashboard-1-pe.png
         title: Navigate to the **Dashboards** page. Click on the "**+**" icon in the top right corner. Select **Import dashboard**.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/import-dashboard-2-pe.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/import-dashboard-2-pe.png
         title: In the dashboard import window, **upload the JSON file** and click the **Import** button.
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/import-dashboard-3-pe.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/import-dashboard-3-pe.png
         title: Dashboard has been imported.
 '
 %}
@@ -293,7 +293,7 @@ To import the ready-to-use dashboard, follow these steps:
 
 {% assign myDashboard = '
     ===
-        image: /images/devices-library/ready-to-go-devices/sensy32/my-dashboard.png
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/sensy32/my-dashboard.png
 '
 %}
 
