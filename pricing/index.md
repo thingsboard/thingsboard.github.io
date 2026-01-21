@@ -716,7 +716,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <span class="visually-hidden"> to discuss Enterprise plan of ThingsBoard Private Cloud</span>
                             </a>
                         </div>
-                        <div class="pricing-square-item highlight">Unlimited number of devices</div>
+                        <div class="pricing-square-item highlight">100 000 devices included</div>
                         <div class="pricing-square-item">Custom SLA</div>
                         <div class="pricing-square-item">Unlimited message rate</div>
                         <div class="pricing-square-item">Unlimited storage</div>
