@@ -11,35 +11,10 @@ Unified mechanisms for alarm uniqueness, severity levels, timestamps, and alarm 
 
 ## Create alarm rule
 
-> **Note:** The process of creating an alarm rule is the same for **Devices**, **Assets**, **Device profiles**, **Asset profiles**, or **Customers**.
+The **alarm rules page** allows you to centrally manage all alarm rules in the system — both for individual entities and for profiles.
 
-<b><font size="3">Where should you create an alarm rule?</font></b>
-
-You can create an alarm rule in two ways:
-
-**1. On the global Alarm Rules page**   
-   This page allows you to centrally manage all alarm rules in the system — both for individual entities and for profiles.
-
-**2. Inside a specific entity or profile**   
-   You can also create a rule directly in the settings of a particular:
-   - [Device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"}
-   - [Asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"}
-   - [Device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}
-   - [Asset profile](/docs/{{docsPrefix}}user-guide/asset-profiles/){:target="_blank"}
-   - [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"}
-
-   Alarm rules are configured on the **Alarm rules** tab within the details of the selected entity or profile.
-
-{% capture difference %}
-**Recommendation:** Create alarm rules in **Device profiles** or **Asset profiles** to avoid duplicating configurations across multiple entities.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
-<hr>
-
-### Step 1. Add new alarm rule
-
-**Option 1 — From the global Alarm Rules page**
+> **Note:** The process of creating an alarm rule is the same for [Devices](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"}, [Assets](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"}, [Device profiles](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}, [Asset profiles](/docs/{{docsPrefix}}user-guide/asset-profiles/){:target="_blank"}, and [Customers](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"}.
+ 
 - Open the **Alarms** page from the left-hand menu.
 - Go to the **Alarm rules** tab.
 - Click the "**+**" button in the top-right corner.
@@ -47,37 +22,26 @@ You can create an alarm rule in two ways:
 
 {% include images-gallery.html imageCollection="step-1-add-alarm-rule-1" %}
 
-**Option 2 — Inside a Device / Asset / Profile / Customer**
-- Click the **entity** or **profile** to open its details.
-- Navigate to the **Alarm rules** tab.
-- Click the "**+**" button in the top-right corner.
-- Select **Create new alarm rule** from the dropdown menu.
-
-{% include images-gallery.html imageCollection="step-1-add-alarm-rule-2" %}
+> **Recommendation:** Create alarm rules in **Device profiles** or **Asset profiles** to avoid duplicating configurations across multiple entities.
 
 <hr>
 
-### Step 2. General section
+### General
 
-<b><font size="3">2.1 Alarm type</font></b>
-
-In the **General** section, specify the **alarm type** — the name and unique identifier of the alarm (for example, "High Temperature").   
-The alarm type defines which event the alarm represents and allows ThingsBoard to determine whether a new alarm should be created or an existing active one should be updated.
-
-<b><font size="3">2.2 Target entity type (<i>only on the global Alarm rules page</i>)</font></b>
-
-If you create an alarm rule from the **global Alarm rules** page, you must additionally:
-- Select the **Target entity type** 
-- Specify the **specific entity or profile** that the rule should apply to
+The "General" section defines the basic configuration of the alarm rule:
+- **Alarm type** — the name and unique identifier of the alarm (for example, "High Temperature"). The alarm type defines which event the alarm represents and allows ThingsBoard to determine whether a new alarm should be created or an existing active one should be updated.
+- **Entity type** - the target entity or entity profile where the alarm rule will be applied.
 
 {% include images-gallery.html imageCollection="step-2-general-section-1" %}
+
+<br>
 
 {% assign feature = "alarm rule" %}
 {% include templates/debug-mode.md %}
 
 <hr>
 
-### Step 3. Arguments
+### Arguments
 
 Before defining alarm conditions, you must add at least one **argument** — a data source that the rule will use during evaluation.
 
@@ -122,7 +86,7 @@ After configuring the fields, click **Add**.
 
 <hr>
 
-### Step 4. Trigger conditions
+### Trigger conditions
 
 This step defines the core logic of the alarm rule:
 - **when** the alarm should be created,
@@ -135,7 +99,7 @@ Click **Add trigger condition** and configure the following parameters:
 
 <hr>
 
-#### Step 4.1 Severity
+#### Severity
 
 **Severity** defines the criticality of the alarm at the moment it is created.   
 It affects incident prioritization, UI representation, and automation workflows (Rule Engine, notification rules, etc.).
@@ -154,7 +118,7 @@ The severity level applies to:
 
 <hr>
 
-#### Step 4.2 Condition
+#### Condition
 
 The **Condition** defines the logic that determines whether an alarm should be created or updated.   
 This is the primary expression used to evaluate whether the rule is fulfilled.
@@ -219,7 +183,7 @@ ThingsBoard supports **three types** of conditions:
 
 <hr>
 
-#### Step 4.3 Schedule
+#### Schedule
 
 The **Schedule** defines the time periods during which the alarm creation rule is active.   
 The system evaluates create conditions only when the current time falls within an allowed interval.
@@ -338,7 +302,7 @@ When both **startsOn** and **endsOn** are set to **0**, it means the rule is act
 
 <hr>
 
-#### Step 4.4 Additional info
+#### Additional info
 
 The **Additional info** field allows you to enrich an alarm with extra contextual data that may be useful for incident analysis or troubleshooting.
 This information is stored together with the alarm and displayed in the alarm details view, helping operators, technicians, and analysts work more efficiently.
@@ -354,7 +318,7 @@ This information is stored together with the alarm and displayed in the alarm de
 
 <hr>
 
-#### Step 4.5 Mobile dashboard
+#### Mobile dashboard
 
 This option defines which **mobile dashboard** will open in the ThingsBoard mobile app when a user views the alarm.
 
@@ -378,7 +342,7 @@ After selecting a mobile dashboard:
 
 <hr>
 
-### Step 5. Clear condition
+### Clear condition
 
 The **Clear condition** defines the logic by which ThingsBoard automatically transitions an alarm into the **Cleared** state.
 
@@ -483,7 +447,7 @@ This is useful when:
 
 <hr>
 
-### Step 6. Configure the Advanced settings
+### Configure the advanced settings
 
 In this step, you can define **alarm propagation** — how the alarm is distributed across other entities in the system.      
 Propagation determines **who can see the alarm** and at **which level of the entity hierarchy** it becomes visible.
@@ -503,7 +467,7 @@ Useful when:
 - an **Asset** is linked to a **Customer**
 - you want alarms to be visible across interconnected entities
 
-This ensures that all entities within the relation graph—such as *Device → Office → Building* — can view and process the alarm.
+This ensures that all entities within the relation graph—such as *Device &#8702; Office &#8702; Building* — can view and process the alarm.
 
 {% include images-gallery.html imageCollection="step-6-propagate-alarm-1" %}
 
@@ -523,7 +487,7 @@ This allows owners to see alarms from all their managed devices/assets **without
 <b><font size="3">Propagate alarm to entity owners hierarchy</font></b>
 
 Propagates the alarm **up the entire ownership chain**, ensuring visibility at every parent level:   
-**Asset → Customer → Tenant**
+**Asset &#8702; Customer &#8702; Tenant**
 
 **Useful for:**
 - **B2B platforms** with nested customer structures
@@ -551,7 +515,7 @@ This is the most global visibility option.
 
 <hr>
 
-### Step 7. Save the rule
+### Save the rule
 
 Click **Add** to save the rule configuration.
 
@@ -561,15 +525,14 @@ After saving, ThingsBoard will automatically begin creating, updating, and proce
 
 <hr>
 
-## Managing Alarm Rules in the Alarm rules list
+## Managing alarm rules
 
-After you create an alarm rule, it appears in the table on the **Alarms → Alarm rules** page.    
+After you create an alarm rule, it appears in the table on the **Alarms &#8702; Alarm rules** page.    
 Here, you can quickly view the key parameters of each rule — alarm type, target entity, severity levels, and whether a clear condition is configured — and manage the rule using a set of available actions.
 
 Each rule row includes an action panel that lets you copy, export, debug, edit, or delete the configuration.
 
-Below is an overview of the available buttons.
-
+Each alarm rule includes an action bar for managing it:
 1. **Copy alarm rule configuration**. Copies the rule configuration, allowing you to quickly create a new rule based on the existing one.
 2. **Export**. Exports the rule as a JSON file for backup or migration to another ThingsBoard instance.
 3. **Events**. Opens the event log associated with the rule, including triggers, clears, state changes, and errors.
@@ -577,32 +540,48 @@ Below is an overview of the available buttons.
 5. **Edit**. Opens the rule editor where you can modify any configuration parameters.
 6. **Delete**. Removes the alarm rule from the system.
 
-{% include images-gallery.html imageCollection="alarm-rules-parameters" %}
+{% include images-gallery.html imageCollection="alarm-rules-parameters-1" %}
+
+<br><b><font size="4">View alarm rule details</font></b>
+
+Click an alarm rule to view its detailed information.
+
+{% include images-gallery.html imageCollection="alarm-rules-parameters-2" %}
+
+<br><b><font size="4">Edit the alarm rule</font></b>
+
+To modify the alarm rule, click the rule. The alarm rule details window will open.
+Click the **orange pencil** icon to switch to **edit mode**.
+
+After making the required changes, click the **orange checkmark** icon to apply and save the changes.
+
+{% include images-gallery.html imageCollection="alarm-rules-parameters-3" %}
 
 <hr>
 
-## Import alarm rule
+## Export / Import alarm rule
+
+You can **export** the alarm rule to a JSON file and **import** it into the same or another ThingsBoard instance.
+
+<br><b><font size="4">Export alarm rule</font></b>
+
+- Navigate to **Alarms** page &#8702; **Alarm rules** tab.
+- Click the **Export** button located in the corresponding alarm rule row.
+
+{% include images-gallery.html imageCollection="export-alarm-rule-1" %}
+
+<br><b><font size="4">Import alarm rule</font></b>
 
 ThingsBoard allows you to import previously exported alarm rules in JSON format. This simplifies configuration migration between instances, rapid deployment of standard alarm templates, and restoration from backups.
 
-<b><font size="3">How to import an Alarm rule</font></b>
-
-- Navigate to **Alarms → Alarm rules**,   
-or open the details page of the required device, asset, or profile, and navigate to the **Alarm rules** tab.
-
-- Click the "**+**" button in the upper-right corner. 
-- Select **Import alarm rule** from the drop-down menu. 
-- In the import dialog, drag and drop the JSON file or choose it manually. 
+Steps to import:
+- Navigate to **Alarms** page &#8702; **Alarm rules** tab.
+- Click the "**+**" button in the upper-right corner and select **Import alarm rule** from the drop-down menu. 
+- In the import dialog, drag and drop the JSON file or choose it manually with the alarm rule configuration.
 - Click **Import** to upload the configuration.
+- In the dialog that opens, specify the entity or profile to which the alarm rule will be applied.
+- Click **Add** to save the rule.
 
-<b><font size="3">After importing</font></b>
-
-If required, update the **target profile or entity**.   
-Verify that all arguments, telemetry keys, and attributes used by the rule exist in the current environment and update them if necessary.
-
-<b><font size="3">Complete the import</font></b>
-
-Click **Add** to save the rule.   
 After saving, the rule becomes active immediately and ThingsBoard starts applying it according to its configured logic.
 
 {% include images-gallery.html imageCollection="import-alarm-rule-1" %}
@@ -621,11 +600,18 @@ This ensures centralized alarm logic, reduces duplication, and simplifies ongoin
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-<b><font size="3">Preparation</font></b>
+<b><font size="4">Preparation</font></b>
 
 For the following examples, you need a device named **Thermometer** that sends **temperature** telemetry.
+1. Download the CSV file: [thermometer-device-data.csv](/docs/user-guide/resources/alarm-rules/thermometer-device-data.csv){:target="_blank" download="thermometer-device-data.csv"}
+2. Go to the "Devices" and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file.
 
-You can create this device on the **Devices** page under the **Entities** section and assign it to any Device Profile.
+**CSV includes:**
+- **Name:** Thermometer
+- **Type:** thermostat
+- **Time series:** <span class="code-light">temperature</span>
+
+> **Important note about the CSV:** the column type for the <span class="code-light">temperature</span> key must be set to "**Time series**".
 
 {% include images-gallery.html imageCollection="alarm-rules-example-prepare-device-1" %}
 
@@ -718,7 +704,7 @@ Update the existing **High Temperature** rule by adding a clear condition that s
 
 <b><font size="3">Step 1. Open the High Temperature rule</font></b>
 
-- In the side menu, go to **Alarm** → **Alarm rules**.
+- In the side menu, go to **Alarm** &#8702; **Alarm rules**.
 - Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
@@ -773,14 +759,14 @@ This mechanism helps avoid false alarms caused by short-term temperature spikes.
 
 <b><font size="3">Step 1. Open the High Temperature rule</font></b>
 
-- In the side menu, go to **Alarm** → **Alarm rules**.
+- In the side menu, go to **Alarm** &#8702; **Alarm rules**.
 - Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
 <b><font size="3">Step 2. Configure trigger condition</font></b>
 
 Scroll down to the **Trigger condition** section and edit the existing condition:
-- **Condition type:** change *Simple* → **Duration**
+- **Condition type:** change *Simple* &#8702; **Duration**
 - **Duration value:** 1
 - **Time unit:** *Minutes*
 - Click **Save** to apply the updated alarm condition settings.
@@ -833,7 +819,7 @@ This value will be used by the alarm rule as the duration requirement.
 
 <b><font size="3">Step 1. Open the High Temperature rule</font></b>
 
-- In the side menu, go to **Alarm** → **Alarm rules**.
+- In the side menu, go to **Alarm** &#8702; **Alarm rules**.
 - Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
@@ -893,7 +879,7 @@ This helps filter out random sensor spikes and react only to repeated or consist
 
 <b><font size="3">Step 1. Open the High Temperature rule</font></b>
 
-- In the side menu, go to **Alarm** → **Alarm rules**.
+- In the side menu, go to **Alarm** &#8702; **Alarm rules**.
 - Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
@@ -934,7 +920,7 @@ This is useful when monitoring is required only at certain times—for example, 
 
 <b><font size="3">Step 1. Open the High Temperature rule</font></b>
 
-- In the side menu, go to **Alarm** → **Alarm rules**.
+- In the side menu, go to **Alarm** &#8702; **Alarm rules**.
 - Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
@@ -998,7 +984,7 @@ This attribute determines whether the alarm rule is active for the device.
 
 <b><font size="3">Step 1. Open the High Temperature alarm rule</font></b>
 
-- In the side menu, go to **Alarm** → **Alarm rules**.
+- In the side menu, go to **Alarm** &#8702; **Alarm rules**.
 - Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
