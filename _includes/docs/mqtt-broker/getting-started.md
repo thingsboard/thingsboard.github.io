@@ -31,6 +31,27 @@ Windows%,%windows%,%templates/mqtt-broker/install/windows/windows.md{% endcaptur
 
 {% include content-toggle.html content-toggle-id="tbmqGettingStartedInstallation" toggle-spec=contenttogglespec %}
 
+{% if docsPrefix == "pe/" %}
+
+Before proceeding, make sure you’ve selected your subscription plan or chosen to purchase a perpetual license.
+If you haven’t done this yet, please visit the [Pricing page](/pricing/?section=tbmq-options){: target="_blank"} to compare available options
+and obtain your license key.
+
+{% capture replace_tbmq_license_secret %}
+Update your `docker-compose.yml` file with the license secret you obtained earlier.
+Open the file, find the **TBMQ_LICENSE_SECRET** environment variable,
+and replace **YOUR_LICENSE_KEY_HERE** with your actual license secret.
+After updating the file, restart TBMQ by running the following command.
+{% endcapture %}
+{% include templates/warn-banner.md content=replace_tbmq_license_secret %}
+ 
+```shell
+./tbmq-install-and-run.sh
+```
+{: .copy-code}
+
+{% endif %}
+
 Once the installation process is complete for local deployment, you can access TBMQ UI by visiting the following URL: **http://localhost:8083**. 
 Wait patiently until the services are up and running. To log in, utilize the following default credentials.
 
