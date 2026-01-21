@@ -15,17 +15,9 @@
     padding: 100px 0
     position: relative
     z-index: 10
-
-    &:before
-      content: ""
-      position: absolute
-      width: 100vw
-      height: 100%
-      background-color: #ffffff
-      z-index: -1
-      left: 49.4%
-      transform: translateX(-50%)
-      top: 0
+    background-color: #fff
+    box-shadow: 0 0 0 100vmax #fff
+    clip-path: inset(0 -100vmax)
 
     h2
       font-size: 36px
@@ -366,6 +358,8 @@ html#pricing
               display: none
               &.active
                 display: block
+              div.item
+                overflow: visible
               div.item, div.load-more
                 border-bottom: 1.5px solid #3E9AF81F
 
@@ -569,7 +563,7 @@ html#pricing
           display: none
         @media (min-width: 768px)
           min-height: 42px
-        span
+        &>span
           font-size: 18px
           line-height: 34px
           font-weight: 400

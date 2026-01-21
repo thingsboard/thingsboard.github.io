@@ -1069,6 +1069,8 @@ $bg-white: #fff
               border-radius: 3px
             &::-webkit-scrollbar-thumb:hover
               background-color: #A1A1A1
+            &:has(>.device-profiles-container.advanced)
+              padding-top: 10px
           .actions-container
             flex-shrink: 0
             padding: 24px 0
@@ -1171,11 +1173,13 @@ $bg-white: #fff
       width: 100%
       max-width: 800px
       margin: 16px
+      overflow-y: auto
       .modal-wrapper
         background-color: $bg-white
         padding: 32px
         border-radius: 16px
         position: relative
+        flex: 1
         .modal-header
           display: flex
           justify-content: space-between
@@ -1228,7 +1232,7 @@ $bg-white: #fff
                 top: -4px
                 width: 300px
                 line-height: 18px
-          #json-input
+          #tbPcJsonInput
             width: 100%
             height: 250px
             font-family: 'Inconsolata', monospace
@@ -1496,7 +1500,7 @@ $bg-white: #fff
               font-size: 18px
           .input-group
             flex: 1
-            #json-input
+            #tbPcJsonInput
               height: 200px
           .footer
             flex-direction: column
