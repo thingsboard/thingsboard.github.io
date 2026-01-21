@@ -453,6 +453,28 @@ Each HVAC device received the <span class="code-light">hvacMode</span> attribute
 
 <hr>
 
+## Troubleshooting
+
+### Propagation path settings do not apply after the update
+
+**Problem:** When editing an existing Calculated Field to change the **Relation direction** or **Relation type** (e.g., switching from *Contains* to *Manages*), the field ignores these changes and continues to propagate data using the originally configured path.
+
+**Cause:** The Calculated Field logic caches the **Propagation path to related entities** defined during the initial creation. It does not correctly detect updates made specifically to the relation direction or relation type in the configuration, resulting in the field failing to re-initialize the path.
+
+**Solution:** To force the Calculated Field to apply the new propagation path settings,
+the system requires a configuration change to the **Data to propagate** section.
+Any modification to the arguments will trigger the necessary re-initialization.
+
+Choose one of the following safe methods:
+
+1. Re-create the Field (Cleanest)
+   If you must keep your current arguments exactly as they are (e.g., you cannot change default values), the only way to trigger the update is to delete the existing Calculated Field and create a new one with the correct propagation path settings.
+
+2. Modify Default Value (Recommended Workaround)
+   If you want to fix the issue without re-creating the field,
+   edit an existing argument and change its **Default value** (e.g., set a value if it was empty, or update it).
+   > If the source data is missing, the new default value will be used. However, if the source data is always present, this is the smartest method as it forces the update with zero impact on your data.
+
 ## Your feedback
 
 Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
