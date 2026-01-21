@@ -151,8 +151,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">5 devices</div>
                         <div class="pricing-square-item">5 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="Data points/month is your monthly telemetry allowance. One data point = one measurement (one key/value). You can buy extra Traffic pack anytime to scale up. For full definitions, see the Plans definition <a target='_blank' href='/docs/paas/subscriptions/'>page</a>.">10M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get help through our community channel <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>on GitHub</a>">
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">10M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -174,8 +174,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">50 devices</div>
                         <div class="pricing-square-item">50 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="Data points/month is your monthly telemetry allowance. One data point = one measurement (one key/value). You can buy extra Traffic pack anytime to scale up. For full definitions, see the Plans definition <a target='_blank' href='/docs/paas/subscriptions/'>page</a>.">50M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get help through our community channel <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>on GitHub</a>">
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">50M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -198,8 +198,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">100 devices</div>
                         <div class="pricing-square-item">100 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="Data points/month is your monthly telemetry allowance. One data point = one measurement (one key/value). You can buy extra Traffic pack anytime to scale up. For full definitions, see the Plans definition <a target='_blank' href='/docs/paas/subscriptions/'>page</a>.">100M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get access to our official support desk for product questions and troubleshooting—so you can resolve issues faster and keep your rollout on track.">
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">100M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Official technical support channel for priority assistance. Get expert guidance to accelerate your rollout and optimize platform usage.">
                             Help desk
                         </div>
                         <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
@@ -221,11 +221,11 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">500 devices</div>
                         <div class="pricing-square-item">500 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="Data points/month is your monthly telemetry allowance. One data point = one measurement (one key/value). You can buy extra Traffic pack anytime to scale up. For full definitions, see the Plans definition <a target='_blank' href='/docs/paas/subscriptions/'>page</a>.">500M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads">
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">500M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
                             Priority help desk
                         </div>
-                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling" data-faq-tooltip="White labeling lets you brand the platform as your own—use your logo, colors, and custom domain for a polished, client-ready experience that strengthens trust and keeps your brand front and center.\n You can add more devices anytime. After the 1,000 included devices, each additional device is $0.30 per month—so you can scale anytime.">White labeling</div>
+                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling" data-faq-tooltip="Brand the platform as your own. Fully customize it with your own logo, domain, color scheme, and menu items.">White labeling</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
@@ -244,12 +244,12 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">1 000 devices</div>
                         <div class="pricing-square-item">1 000 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="Data points/month is your monthly telemetry allowance. One data point = one measurement (one key/value). You can buy extra Traffic pack anytime to scale up. For full definitions, see the Plans definition <a target='_blank' href='/docs/paas/subscriptions/'>page</a>.">1B data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads">
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">1B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
                             Priority help desk
                         </div>
-                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling" data-faq-tooltip="White labeling lets you brand the platform as your own—use your logo, colors, and custom domain for a polished, client-ready experience that strengthens trust and keeps your brand front and center.\n You can add more devices anytime. After the 1,000 included devices, each additional device is $0.30 per month—so you can scale anytime.">White labeling</div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-exceed-plan-limits">$0.30 per extra device</div>
+                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling" data-faq-tooltip="Brand the platform as your own. Fully customize it with your own logo, domain, color scheme, and menu items.">White labeling</div>
+                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-exceed-plan-limits" data-faq-tooltip="Supports scaling up to 5,000 devices. For large-scale deployments exceeding this, a <a target='_blank' href='/pricing/?section=thingsboard-pe-options&product=thingsboard-private-cloud'>Private Cloud</a> transition is recommended for enhanced cost-efficiency and dedicated resources.">$0.30 per extra device</div>
                     </div>
                     <div class="pricing-square additional">
                         <h2 class="no-margin">Require dedicated infrastructure for unique enterprise needs?</h2>
@@ -275,8 +275,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">5 devices</div>
                         <div class="pricing-square-item">5 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="Data points/month is your monthly telemetry allowance. One data point = one measurement (one key/value). You can buy extra Traffic pack anytime to scale up. For full definitions, see the Plans definition <a target='_blank' href='/docs/paas/subscriptions/'>page</a>.">10M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get help through our community channel <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>on GitHub</a>">
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">10M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -298,8 +298,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">50 devices</div>
                         <div class="pricing-square-item">50 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="Data points/month is your monthly telemetry allowance. One data point = one measurement (one key/value). You can buy extra Traffic pack anytime to scale up. For full definitions, see the Plans definition <a target='_blank' href='/docs/paas/subscriptions/'>page</a>.">50M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get help through our community channel <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>on GitHub</a>">
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">50M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -322,8 +322,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">100 devices</div>
                         <div class="pricing-square-item">100 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="Data points/month is your monthly telemetry allowance. One data point = one measurement (one key/value). You can buy extra Traffic pack anytime to scale up. For full definitions, see the Plans definition <a target='_blank' href='/docs/paas/subscriptions/'>page</a>.">100M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads">
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">100M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
                             Help desk
                         </div>
                         <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
@@ -345,8 +345,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">500 devices</div>
                         <div class="pricing-square-item">500 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="Data points/month is your monthly telemetry allowance. One data point = one measurement (one key/value). You can buy extra Traffic pack anytime to scale up. For full definitions, see the Plans definition <a target='_blank' href='/docs/paas/subscriptions/'>page</a>.">500M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads">
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">500M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
                             Priority help desk
                         </div>
                         <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
@@ -368,8 +368,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">1 000 devices</div>
                         <div class="pricing-square-item">1 000 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="Data points/month is your monthly telemetry allowance. One data point = one measurement (one key/value). You can buy extra Traffic pack anytime to scale up. For full definitions, see the Plans definition <a target='_blank' href='/docs/paas/subscriptions/'>page</a>.">1B data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads">
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">1B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
                             Priority help desk
                         </div>
                         <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
@@ -648,7 +648,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item highlight">5 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Up to 50,000 msg/min sustained (all protocols + integrations). A message = telemetry / RPC / attributes / downlink. Telemetry: 1 key/value = 1 data point; messages without measurements count as 1.">50 000 msg/minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Calculated as the sum of all telemetry data points (key/value pairs) plus any messages without measurements (like RPC calls). This aggregate reflects your real-time platform throughput.">50 000 msg/minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-faq-tooltip="Includes 500 GB to store your platform data (telemetry, attributes, events, files). Near the limit: prune old data, add storage, or upgrade plan.">500 GB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="You can add more devices anytime. After 5,000 included devices, extra devices are $0.10 per device per month.">$0.10 per extra device</div>
                     </div>
@@ -673,7 +673,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item highlight">25 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee </div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Up to 100,000 msg/min sustained (all protocols + integrations). A message = telemetry/RPC/attributes/downlink. Telemetry: 1 key/value = 1 data point; messages without measurements count as 1.">100 000 msg/minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Calculated as the sum of all telemetry data points (key/value pairs) plus any messages without measurements (like RPC calls). This aggregate reflects your real-time platform throughput.">100 000 msg/minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-faq-tooltip="Includes 1 TB to store your platform data (telemetry, attributes, events, files). Near the limit: prune old data, add storage, or upgrade plan.">1 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="You can add more devices anytime. After 25,000 included devices, extra devices are $0.09 per device per month.">$0.09 per extra device</div>
                     </div>
@@ -698,7 +698,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item highlight">50 000 devices included</div>
                         <div class="pricing-square-item">99.95% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Up to 500,000 msg/min sustained (all protocols + integrations). A message = telemetry/RPC/attributes/downlink. Telemetry: 1 key/value = 1 data point; messages without measurements count as 1.">500 000 msg/minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Calculated as the sum of all telemetry data points (key/value pairs) plus any messages without measurements (like RPC calls). This aggregate reflects your real-time platform throughput.">500 000 msg/minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-faq-tooltip="Includes 2 TB to store your platform data (telemetry, attributes, events, files). Near the limit: prune old data, add storage, or upgrade plan.">2 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="You can add more devices anytime. After 50,000 included devices, extra devices are $0.08 per device per month.">$0.08 per extra device</div>
                     </div>
@@ -902,7 +902,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">10 devices</div>
                         <div class="pricing-square-item">10 assets</div>
                         <div class="pricing-square-item">1 production instance</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get help through our community channel <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>on GitHub</a>">
+                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -929,7 +929,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">50 devices</div>
                         <div class="pricing-square-item">50 assets</div>
                         <div class="pricing-square-item">1 production instance</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get help through our community channel <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>on GitHub</a>">
+                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -957,7 +957,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">100 devices</div>
                         <div class="pricing-square-item">100 assets</div>
                         <div class="pricing-square-item">1 production instance</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get access to our official support desk for product questions and troubleshooting—so you can resolve issues faster and keep your rollout on track.">
+                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Official technical support channel for priority assistance. Get expert guidance to accelerate your rollout and optimize platform usage.">
                             Help desk
                         </div>
                         <div class="pricing-square-item highlight">White labeling</div>
@@ -984,7 +984,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">500 devices</div>
                         <div class="pricing-square-item">500 assets</div>
                         <div class="pricing-square-item">2 production instances</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads">
+                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
                             Priority help desk
                         </div>
                         <div class="pricing-square-item highlight">White labeling</div>
@@ -1011,7 +1011,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">1 000 devices</div>
                         <div class="pricing-square-item">1 000 assets</div>
                         <div class="pricing-square-item">3 production instances</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads">
+                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
                             Priority help desk
                         </div>
                         <div class="pricing-square-item highlight">White labeling</div>
@@ -1758,7 +1758,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-white-labeling" data-title="Is white labeling available out of the box?">
                         <div class="container">
-                            <p>White labeling functionality is available starting from the Pilot subscription.</p>
+                            <p>Brand the platform as your own. Fully customize it with your own logo, domain, color scheme, and menu items.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -2349,7 +2349,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             <p>A message is any application-layer packet that enters or leaves the platform—whether it’s uplink telemetry, an RPC call, an attribute update, or a downlink—regardless of transport protocol (MQTT, HTTP, CoAP, LwM2M) or integration. We measure sustained messages per minute, aggregated across all protocols.<br><br></p>
                             <p><b>What is a “data point”?</b></p>
                             <p>A data point is a single key/value pair (e.g., "temperature": 23.5) within a message payload. Because some messages bundle multiple measurements, the total number of data points often exceeds the raw message count.<br><br></p>
-                            <p><b>How we count the data point limit?</b></p>
+                            <p><b>How we count the msg/minute limit?</b></p>
                             <p>Telemetry messages carry one or more data points (sensor readings, attribute updates, etc.). Each data point in a telemetry message counts as 1 toward your per-minute limit.</p>
                             <p>Non-telemetry messages (RPC calls or downlinks with no measurements) carry zero data points—but we still count each such message as 1 toward your per-minute limit.<br><br></p>
                             <p><b>Total data points per minute = telemetry data points + count of messages with zero data points.</b><br><br></p>
