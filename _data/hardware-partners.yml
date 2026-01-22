@@ -793,8 +793,11 @@
   links:
     general-guides:
       0:
-        label: Connect the RN172plus series to the Thingboard
+        label: Connect RN172plus series to ThingBoard
         href: /device-library/ce/rn172wcd/
+      1:
+        label: Connect RN-320 BTH LoRaWAN Temperature and Humidity sensor to ThingBoard
+        href: /device-library/pe/rn320bth/
   description: Radionode is a global leader in environmental monitoring solutions, offering advanced sensors and IoT platforms for industries like life sciences, cold chain logistics, agriculture, construction, and smart buildings. Its LoRaWAN RN320 series features long battery life, ePaper display, alarms, and microSD backup, while the UA-Series USB sensors support  36+ gases and parameters with calibration-ready, plug-and-play design. With the Radionode365 cloud, users gain real-time monitoring, alerts, and predictive insights.
 - name: Kernel Sistemi
   type:

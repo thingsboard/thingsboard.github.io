@@ -4,6 +4,7 @@ assignees:
 - stitenko
 title: API keys
 description: Managing API keys
+redirect_from: "docs/pe/user-guide/ui/api-keys"
 
 creating-api-key-for-our-account:
     0:

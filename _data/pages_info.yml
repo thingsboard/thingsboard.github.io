@@ -242,6 +242,9 @@
 "/docs/devices-library/rn172wcd/":
   url: "/docs/devices-library/rn172wcd/"
   redirect_from: []
+"/docs/devices-library/rn320bth/":
+  url: "/docs/devices-library/rn320bth/"
+  redirect_from: []
 "/docs/devices-library/rock-pi-4-model-b/":
   url: "/docs/devices-library/rock-pi-4-model-b/"
   redirect_from: []
@@ -1273,6 +1276,9 @@
 "/docs/paas/devices-library/rn172wcd/":
   url: "/docs/paas/devices-library/rn172wcd/"
   redirect_from: []
+"/docs/paas/devices-library/rn320bth/":
+  url: "/docs/paas/devices-library/rn320bth/"
+  redirect_from: []
 "/docs/paas/devices-library/rock-pi-4-model-b/":
   url: "/docs/paas/devices-library/rock-pi-4-model-b/"
   redirect_from: []
@@ -1642,6 +1648,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/rn172wcd/":
   url: "/docs/paas/eu/devices-library/rn172wcd/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/rn320bth/":
+  url: "/docs/paas/eu/devices-library/rn320bth/"
   redirect_from: []
 "/docs/paas/eu/devices-library/rock-pi-4-model-b/":
   url: "/docs/paas/eu/devices-library/rock-pi-4-model-b/"
@@ -2224,7 +2233,8 @@
   redirect_from: []
 "/docs/paas/eu/user-guide/security/api-keys/":
   url: "/docs/paas/eu/user-guide/security/api-keys/"
-  redirect_from: []
+  redirect_from:
+  - docs/paas/eu/user-guide/ui/api-keys
 "/docs/paas/eu/user-guide/self-registration/":
   url: "/docs/paas/eu/user-guide/self-registration/"
   redirect_from: []
@@ -2785,7 +2795,8 @@
   redirect_from: []
 "/docs/paas/user-guide/security/api-keys/":
   url: "/docs/paas/user-guide/security/api-keys/"
-  redirect_from: []
+  redirect_from:
+  - docs/paas/user-guide/ui/api-keys
 "/docs/paas/user-guide/self-registration/":
   url: "/docs/paas/user-guide/self-registration/"
   redirect_from: []
@@ -3129,6 +3140,9 @@
   redirect_from: []
 "/docs/pe/devices-library/rn172wcd/":
   url: "/docs/pe/devices-library/rn172wcd/"
+  redirect_from: []
+"/docs/pe/devices-library/rn320bth/":
+  url: "/docs/pe/devices-library/rn320bth/"
   redirect_from: []
 "/docs/pe/devices-library/rock-pi-4-model-b/":
   url: "/docs/pe/devices-library/rock-pi-4-model-b/"
@@ -4429,7 +4443,8 @@
   redirect_from: []
 "/docs/pe/user-guide/security/api-keys/":
   url: "/docs/pe/user-guide/security/api-keys/"
-  redirect_from: []
+  redirect_from:
+  - docs/pe/user-guide/ui/api-keys
 "/docs/pe/user-guide/self-registration/":
   url: "/docs/pe/user-guide/self-registration/"
   redirect_from:
@@ -6345,7 +6360,8 @@
   redirect_from: []
 "/docs/user-guide/security/api-keys/":
   url: "/docs/user-guide/security/api-keys/"
-  redirect_from: []
+  redirect_from:
+  - docs/user-guide/ui/api-keys
 "/docs/user-guide/ssl/coap-access-token/":
   url: "/docs/user-guide/ssl/coap-access-token/"
   redirect_from: []

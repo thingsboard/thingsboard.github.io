@@ -98,6 +98,9 @@
 "/docs/pe/user-guide/ui/entity-views":
   url: "/docs/pe/user-guide/entity-views/"
   redirect_from: "/docs/pe/user-guide/ui/entity-views"
+docs/paas/eu/user-guide/ui/api-keys:
+  url: "/docs/paas/eu/user-guide/security/api-keys/"
+  redirect_from: docs/paas/eu/user-guide/ui/api-keys
 "/docs/paas/eu/user-guide/ui/templatization":
   url: "/docs/paas/eu/user-guide/templatization/"
   redirect_from: "/docs/paas/eu/user-guide/ui/templatization"
@@ -134,6 +137,9 @@
 "/docs/paas/user-guide/ui/device-profiles":
   url: "/docs/paas/user-guide/device-profiles/"
   redirect_from: "/docs/paas/user-guide/ui/device-profiles"
+docs/paas/user-guide/ui/api-keys:
+  url: "/docs/paas/user-guide/security/api-keys/"
+  redirect_from: docs/paas/user-guide/ui/api-keys
 "/docs/paas/user-guide/ui/templatization":
   url: "/docs/paas/user-guide/templatization/"
   redirect_from: "/docs/paas/user-guide/ui/templatization"
@@ -248,6 +254,9 @@ docs/pe/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/user-guide/scheduler/":
   url: "/docs/pe/user-guide/scheduler/"
   redirect_from: "/docs/user-guide/scheduler/"
+docs/pe/user-guide/ui/api-keys:
+  url: "/docs/pe/user-guide/security/api-keys/"
+  redirect_from: docs/pe/user-guide/ui/api-keys
 "/docs/user-guide/self-registration/":
   url: "/docs/pe/user-guide/self-registration/"
   redirect_from: "/docs/user-guide/self-registration/"
@@ -482,6 +491,9 @@ docs/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/user-guide/queue":
   url: "/docs/user-guide/rule-engine-2-5/queues/"
   redirect_from: "/docs/user-guide/queue"
+docs/user-guide/ui/api-keys:
+  url: "/docs/user-guide/security/api-keys/"
+  redirect_from: docs/user-guide/ui/api-keys
 "/docs/user-guide/ui/templatization":
   url: "/docs/user-guide/templatization/"
   redirect_from: "/docs/user-guide/ui/templatization"
