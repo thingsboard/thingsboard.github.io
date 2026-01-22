@@ -58,9 +58,9 @@ Before starting, ensure the following requirements are met:
 
 {% assign TBLora1 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_3.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_1.png,
 '
 %}
 
@@ -182,7 +182,7 @@ function Decoder(bytes, port) {
 
 {% assign TBLora2 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_2.png,
 '
 %}
 
@@ -205,13 +205,13 @@ To register the end Device enter these details as shown in the image below:
 
 {% assign TBLora3 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_4.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_4.png,
         title: Navigate to **End devices** → **Register end device**.
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_5.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_5.png,
         title: To register the end Device enter these details as shown in the image.
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_6.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_6.png,
         title: Enter the **DevEUI** correctly in the slot provided there. You can find DevEUI on the sticker on the side of the device.<br>Add an **End device ID** in the slot given.<br>Click **Register end device** to complete the end device registration.
 
 '
@@ -303,11 +303,11 @@ return result;
 
 {% assign TBLora6 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_7.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_7.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_8.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_8.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_9.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_9.png,
 '
 %}
 
@@ -330,9 +330,9 @@ Now the communication will start between the network server and the ThingsBoard 
 
 {% assign TBLora10 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_10.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_10.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_11.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_11.png,
 '
 %}
 
@@ -346,7 +346,7 @@ Now the communication will start between the network server and the ThingsBoard 
 
 {% assign TBLora11 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_12.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_12.png,
 '
 %}
 
@@ -365,15 +365,15 @@ A sample of the dashboard created is shown in the pictures below.
 
 {% assign TBLora12 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_13.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_13.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_14.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_14.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_15.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_15.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_16.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_16.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/rn320bth/TB_Lora_17.png,'
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/rn320bth/TB_Lora_17.png,'
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=TBLora12 %}
