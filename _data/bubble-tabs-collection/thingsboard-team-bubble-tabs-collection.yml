@@ -133,26 +133,16 @@ Product:
       title: "Iryna Matveieva"
       description: "Java Engineer"
     18:
-      src: "/images/company-images/thingsboard-team-photos/product-team/artem-barysh.webp"
-      alt: "Artem Barysh"
-      title: "Artem Barysh"
-      description: "Java Engineer"
-    19:
       src: "/images/company-images/thingsboard-team-photos/product-team/serhii-titenko.webp"
       alt: "Serhii Titenko"
       title: "Serhii Titenko"
       description: "Technical Writer"
-    20:
+    19:
       src: "/images/company-images/thingsboard-team-photos/product-team/yana-semeniak.webp"
       alt: "Yana Semeniak"
       title: "Yana Semeniak"
       description: "UI/UX Designer"
-    21:
-      src: "/images/company-images/thingsboard-team-photos/product-team/maryna-zakharchenko.webp"
-      alt: "Maryna Zakharchenko"
-      title: "Maryna Zakharchenko"
-      description: "UI/UX Designer"
-    22:
+    20:
       src: "/images/company-images/thingsboard-team-photos/product-team/oleksii-zolotukhin.webp"
       alt: "Oleksii  Zolotukhin"
       title: "Oleksii  Zolotukhin"
@@ -219,21 +209,6 @@ Solutions:
       src: "/images/company-images/thingsboard-team-photos/solutions-team/nikita-mazurenko.webp"
       alt: "Nikita Mazurenko"
       title: "Nikita Mazurenko"
-      description: "Java Engineer"
-    8:
-      src: "/images/company-images/thingsboard-team-photos/solutions-team/vitalii-kukoba.webp"
-      alt: "Vitalii Kukoba"
-      title: "Vitalii Kukoba"
-      description: "Java Engineer"
-    9:
-      src: "/images/company-images/thingsboard-team-photos/solutions-team/andrii-tikholoz.webp"
-      alt: "Andrii Tikholoz"
-      title: "Andrii Tikholoz"
-      description: "Java Engineer"
-    10:
-      src: "/images/company-images/thingsboard-team-photos/solutions-team/andrii-perun.webp"
-      alt: "Andrii Perun"
-      title: "Andrii Perun"
       description: "Java Engineer"
   2:
     0:
@@ -325,16 +300,6 @@ Support:
       title: "Daniela Dodonova"
       description: "Account manager"
     1:
-      src: "/images/company-images/thingsboard-team-photos/support-team/pavlo-kachurko.webp"
-      alt: "Pavlo Kachurko"
-      title: "Pavlo Kachurko"
-      description: "Technical Support Engineer"
-    2:
-      src: "/images/company-images/thingsboard-team-photos/kasharix.webp"
-      alt: "Dmytro Shyshka"
-      title: "Dmytro Shyshka"
-      description: "Technical Support Engineer"
-    3:
       src: "/images/company-images/thingsboard-team-photos/support-team/illia-tsybulenko-sihov.webp"
       alt: "Illia Tsybulenko-Sihov"
       title: "Illia Tsybulenko-Sihov"
@@ -342,16 +307,11 @@ Support:
 Gateway:
   0:
     0:
-      src: "/images/company-images/thingsboard-team-photos/gateway/illia-barkov.webp"
-      alt: "Illia Barkov"
-      title: "Illia Barkov"
-      description: "Product Owner"
-    1:
       src: "/images/company-images/thingsboard-team-photos/gateway/vitalii-bidochka.webp"
       alt: "Vitalii Bidochka"
       title: "Vitalii Bidochka"
       description: "Python Engineer"
-    2:
+    1:
       src: "/images/company-images/thingsboard-team-photos/gateway/vadym-yakymuk.webp"
       alt: "Vadym Yakymuk"
       title: "Vadym Yakymuk"
@@ -391,11 +351,6 @@ EDGE:
       title: "Andrii Landiak"
       description: "Java Engineer"
     2:
-      src: "/images/company-images/thingsboard-team-photos/edge/yevhenii-zahrebelnyi.webp"
-      alt: "Yevhenii Zahrebelnyi"
-      title: "Yevhenii Zahrebelnyi"
-      description: "Java Engineer"
-    3:
       src: "/images/company-images/thingsboard-team-photos/edge/yevheniia-mala.webp"
       alt: "Yevheniia Mala"
       title: "Yevheniia Mala"
