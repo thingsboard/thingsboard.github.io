@@ -1,26 +1,34 @@
 ---
 layout: docwithnav-pe
-title: Temperature & Humidity Sensors template
-description: Temperature & Humidity Sensors template overview
+title: Temperature & Humidity sensors template
+description: Temperature & Humidity sensors template overview
+
 solution-highlights:
     0:
-        image: /images/solutions/temperature_sensors/temperature-sensors-1.png
+        image: /images/solutions/temperature-sensors/temperature-humidity-sensors-template-1.png
     1:
-        image: /images/solutions/temperature_sensors/temperature-sensors-2.png
+        image: /images/solutions/temperature-sensors/temperature-humidity-sensors-template-2.png
+
+install-solution-template:
+    0:
+        image: /images/solutions/temperature-sensors/temperature-humidity-sensors-template-install-1.png
+        title: 'Go to the "Solution templates" page. Find "Temperature & Humidity sensors" and click "Install" to start the installation process.'
+    1:
+        image: /images/solutions/temperature-sensors/temperature-humidity-sensors-template-install-2.png
+        title: 'The solution is installed automatically. A window opens where you can review the solution instructions. Click "Close".'
     2:
-        image: /images/solutions/temperature_sensors/temperature-sensors-3.png
-    3:
-        image: /images/solutions/temperature_sensors/temperature-sensors-4.png
+        image: /images/solutions/temperature-sensors/temperature-humidity-sensors-template-install-3.png
+        title: 'The "Temperature & Humidity" dashboard opens automatically.'
 
 solution-alarms:
     0:
-        image: /images/solutions/temperature_sensors/temperature-and-humidity-alarm-rules-src.png
-        title: 'Navigate to "Device profiles". Select "Temperature Sensor" profile. Open "Alarm rules" tab.'
+        image: /images/solutions/temperature-sensors/temperature-humidity-sensors-template-3.png
+        title: 'Alarm generation is handled by alarm rules configured in the "Temperature Sensor" device profile.'
     1:
-        image: /images/solutions/temperature_sensors/temperature-and-humidity-edit-device-btn-src.png
+        image: /images/solutions/temperature-sensors/temperature-humidity-sensors-template-4.png
         title: 'Navigate to the solution dashboard. Click "Edit" button in the corresponding sensor row.'
     2:
-        image: /images/solutions/temperature_sensors/temperature-and-humidity-edit-device-src.png
+        image: /images/solutions/temperature-sensors/temperature-humidity-sensors-template-5.png
         title: 'Enable or disable temperature alarms and define thresholds.'
 
 ---

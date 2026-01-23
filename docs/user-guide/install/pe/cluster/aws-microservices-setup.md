@@ -145,6 +145,8 @@ Recommended CPU/memory resources allocation:
 - TB Web UI: 0.3 CPU / 0.5Gi memory
 - JS Executor: 0.1 CPU / 0.3Gi memory
 - Zookeeper: 0.3 CPU / 1Gi memory
+- Trendz (Optional): 2 CPU / 4Gi memory
+- Trendz Python Executor (Optional): 1 CPU / 4Gi memory
 
 ## Step 10. Installation
 
@@ -189,11 +191,33 @@ Every pod should be in the `READY` state.
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-## Step 13. Validate the setup
+## Step 13. Configure Trendz (Optional)
+
+### 13.1. Pull Trendz images from docker hub
+
+{% include templates/install/trendz/pull_trendz.md %}
+
+### 13.2. Create a Trendz database in the existing RDS instance
+
+{% include templates/install/trendz/eks/k8s-trendz-db-creating.md %}
+
+### 13.3. Trendz starting
+
+{% include templates/install/trendz/k8s-trendz-starting.md %}
+
+## Step 14. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 
+## Upgrading
+
+### Upgrading to new ThingsBoard version
+
 {% include templates/install/aws/eks-upgrading.md %}
+
+### Upgrading to new Trendz version (Optional)
+
+{% include templates/install/trendz/k8s-trendz-upgrading.md %}
 
 {% include templates/install/aws/eks-deletion.md %}
 

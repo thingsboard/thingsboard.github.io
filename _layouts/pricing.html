@@ -12,10 +12,11 @@
     </div>
 </section>
 
-{% include trendz-wizard.html %}
-{% include private-cloud-plan-calculator.html %}
+{% include scroll-progress-button.liquid %}
 
 {% include footer.html %}
+
+{% capture addons %}{% include pricing/prices/add-ons-pricing.json %}{% endcapture %}
 
 <script type="text/javascript">
     (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
@@ -26,16 +27,6 @@
 
     var ml_account = ml('accounts', '1017142', 'w0j5m5g7f5', 'load');
 
-    inViewportDefer(function() {
-        $("#pe-aws-pricing table th:not(:first-child), " +
-            "#pe-aws-pricing table td:not(:first-child)").inViewport(function(px){
-            if(px >= 20) {
-                $(this).addClass("animated flipInY");
-                return true;
-            }
-        });
-    });
-
     jqueryDefer(function () {
         initPricingState();
     });
@@ -43,6 +34,14 @@
     function initPricingState() {
         $(function(){
             setCloudServerDefault();
+            if (window.location.href.includes('section=thingsboard-ce')) {
+                window.history.replaceState(null, '', window.location.href.replace('section=thingsboard-ce', 'product=thingsboard-ce'));
+            }
+            if (window.location.href.includes('section=trendz-options') || window.location.href.includes('section=thingsboard-edge')) {
+                const url = new URL(window.location.href);
+                url.search = ''
+                window.history.replaceState(null, '', url.toString());
+            }
             window.addEventListener('popstate', onPopPricingState);
             onPopPricingState();
             setTimeout(()=> popCopyButton(), 200);
@@ -58,8 +57,12 @@
                 toggle.checked = true;
                 document.querySelectorAll(`#thingsboard-cloud .billing-toggle.solution-selector .label-text`).forEach(elem => elem.classList.toggle('selected'));
             }
+            setTopUpsCurrency('eur');
+            generateAddOnsCards('eur');
         } else {
             document.getElementById('Pricing_PE_Cloud_NorthAmerica')?.classList.add("defaultselection");
+            setTopUpsCurrency('usd');
+            generateAddOnsCards('usd');
         }
     }
 
@@ -68,7 +71,15 @@
         const navEntries = performance.getEntriesByType('navigation');
 
         if (Object.hasOwn(params, 'calculator') && !(navEntries.length > 0 && navEntries[0].type === 'reload')) {
-            elements.openCalculatorBtn.click();
+            tbPcUi.openBtn.click();
+        }
+        if (Object.hasOwn(params, 'calculatorPerpetual') && !(navEntries.length > 0 && navEntries[0].type === 'reload')) {
+            window.history.replaceState(null, '', window.location.href.replace('calculatorPerpetual', ''));
+            tbSmPUi.openBtn.click();
+        }
+        if (Object.hasOwn(params, 'calculatorPayg') && !(navEntries.length > 0 && navEntries[0].type === 'reload')) {
+            window.history.replaceState(null, '', window.location.href.replace('calculatorPayg', ''));
+            tbSmUi.openBtn.click();
         }
 
         let sectionId = params['section'] || params['active'];
@@ -123,9 +134,13 @@
         if (!event.target.checked) {
             solutionId = 'cloud-north-america';
             cookieValue = '/docs/paas/';
+            setTopUpsCurrency('usd');
+            generateAddOnsCards('usd');
         } else {
             solutionId = 'cloud-europe';
             cookieValue = '/docs/paas/eu/';
+            setTopUpsCurrency('eur');
+            generateAddOnsCards('eur');
         }
         setCookie("cloudServer", cookieValue, {expires: 365, path: '/'});
         setCloudServerHref();
@@ -139,9 +154,9 @@
     }
 
     function updateQueryParam(setParams, clear = false) {
-        var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-        for (var paramName of Object.keys(setParams)) {
-            var paramValue = setParams[paramName];
+        const params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        for (const paramName of Object.keys(setParams)) {
+            const paramValue = setParams[paramName];
             if (paramValue) {
                 params[paramName] = setParams[paramName];
             } else {
@@ -151,7 +166,7 @@
         if (clear) {
             delete params.faqSection;
         }
-        var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
+        let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
         if (window.location.hash && !clear) {
             newurl += window.location.hash;
         }
@@ -159,7 +174,7 @@
     }
 
     function setActivePricingSection(sectionId) {
-        var activateSelectProduct = sectionId === 'thingsboard-pe-options' || sectionId === 'trendz-options';
+        var activateSelectProduct = sectionId === 'thingsboard-pe-options' || sectionId === 'tbmq-options';
         $("li.menu-item").removeClass("active");
         $("li.menu-item#menu-item-"+sectionId).addClass("active");
         hidePricingContent();
@@ -212,10 +227,10 @@
         $('.pricing-div .pricing-section:not(.pricing-community):not(.always-display)').removeClass("active");
         $('.pricing-content-header .pricing-content-description:not(.always-display)').removeClass("active");
         if (sectionId) {
-            var $solutionButtonElement = $('.solution-selector .solution'+`[data-solutionid=${sectionId}]`);
+            const $solutionButtonElement = $('.solution-selector .solution'+`[data-solutionid=${sectionId}]`);
             $solutionButtonElement.addClass("active");
-            var id = $solutionButtonElement.attr("data-toggle");
-            var headerId = $solutionButtonElement.attr("data-description-toggle");
+            const id = $solutionButtonElement.attr("data-toggle");
+            const headerId = $solutionButtonElement.attr("data-description-toggle");
             $('.pricing-div .pricing-section'+id).addClass("active");
             $('.pricing-content-header .pricing-content-description'+headerId).addClass("active");
             switchFaqContainer(sectionId);
@@ -231,52 +246,56 @@
         $("div.pricing-content").css("display", "none");
     }
 
-    function getLicense(event, isPerpetual, productId, planId, productName, coupon, showConfirmDialog) {
+    function getLicense(event, productId, planId, productName, coupon, extraDeviceCount, extraSessionCount, extraThroughputCount, extraInstanceCount,
+                        extraDevInstanceCount, edgeEnabled, extraEdgeCount, trendzEnabled, whiteLabelingAddonEnabled, priorityHelpDeskEnabled,
+                        offlineLicenseEnabled) {
         event.preventDefault();
-        var e = $(event.target);
-        var url = "https://license.thingsboard.io/signup?createSubscription=true&perpetual=";
-        if (isPerpetual) {
-            url += "true";
-        } else {
-            url += "false";
-        }
+        let url = "https://license.thingsboard.io/signup?createSubscription=true";
         url += "&productId="+productId;
         url += "&planId="+planId;
         if (coupon) {
             url += "&coupon="+coupon;
         }
-
-        if(showConfirmDialog) {
-            openTrendzConfirmDialog(url, productName + '/' + productId);
-        } else {
-            reportPriceLink(url, productName + '/' + productId);
-            window.open(url, "_blank");
+        let items = {};
+        if (extraDeviceCount && extraDeviceCount !== '0') {
+            items.extraDeviceCount = Number(extraDeviceCount);
         }
-    }
-
-    function openTrendzConfirmDialog(url, product) {
-        var dialogTemplate = "<ul class='trndz_dialog_list'>\n" +
-            "<li>You won't be charged until after your free month.</li>\n" +
-            "<li>We'll remind you three days before your trial ends.</li>\n" +
-            "<li>Cancel anytime.</li>\n" +
-            "</ul>";
-
-        swal({
-            title: "Set up your Trendz License",
-            html: true,
-            text: dialogTemplate,
-            allowOutsideClick: true,
-            cancelButtonText: "Cancel",
-            showCancelButton: true,
-            confirmButtonText: "Proceed to License Portal",
-            confirmButtonColor: '#506dad',
-            customClass: 'trndz-swal-license'
-        }, function(isConfirm) {
-            if (isConfirm) {
-                reportPriceLink(url, product);
-                window.open(url, "_blank");
-            }
-        });
+        if (extraSessionCount && extraSessionCount !== '0') {
+            items.extraSessionCount = Number(extraSessionCount);
+        }
+        if (extraThroughputCount && extraThroughputCount !== '0') {
+            items.extraThroughputCount = Number(extraThroughputCount);
+        }
+        if (extraInstanceCount && extraInstanceCount !== '0') {
+            items.extraInstanceCount = Number(extraInstanceCount);
+        }
+        if (extraDevInstanceCount && extraDevInstanceCount !== '0') {
+            items.extraDevInstanceCount = Number(extraDevInstanceCount);
+        }
+        if (edgeEnabled && edgeEnabled === 'true') {
+            items.edgeEnabled = true;
+        }
+        if (extraEdgeCount && extraEdgeCount !== '0') {
+            items.extraEdgeCount = Number(extraEdgeCount);
+        }
+        if (trendzEnabled && trendzEnabled === 'true') {
+            items.trendzEnabled = true;
+        }
+        if (whiteLabelingAddonEnabled && whiteLabelingAddonEnabled === 'true') {
+            items.whiteLabelingAddonEnabled = true;
+        }
+        if (priorityHelpDeskEnabled && priorityHelpDeskEnabled === 'true') {
+            items.priorityHelpDeskEnabled = true;
+        }
+        if (offlineLicenseEnabled && offlineLicenseEnabled === 'true') {
+            items.offlineLicenseEnabled = true;
+        }
+        const itemsStr = JSON.stringify(items);
+        if (itemsStr !== '{}') {
+            url += "&items="+encodeURIComponent(itemsStr);
+        }
+        reportPriceLink(url, productName + '/' + productId);
+        window.open(url, "_blank");
     }
 
     function reportPriceLink(link, product) {
@@ -303,9 +322,15 @@
 
     function switchFaqContainer(containerId) {
         if (changeFaqHeader(containerId)) {
-            currentFaqContainer = containerId;
-            document.querySelectorAll('#FAQ section').forEach(el => el.classList.remove('active'));
-            document.getElementById(`faq-${containerId}`)?.classList.add('active');
+            const faqContainer = document.querySelector('.faq-content');
+            if (containerId === 'pe-perpetual') {
+                faqContainer?.classList.add('hidden');
+            } else {
+                faqContainer?.classList.remove('hidden');
+                currentFaqContainer = containerId;
+                document.querySelectorAll('#FAQ section').forEach(el => el.classList.remove('active'));
+                document.getElementById(`faq-${containerId}`)?.classList.add('active');
+            }
         }
     }
 
@@ -327,26 +352,20 @@
             case 'pe-perpetual':
                 correspondingHeader = 'ThingsBoard Professional Edition: Self-managed Perpetual FAQs';
                 break;
-            case 'trendz-pay-as-you-go':
-                correspondingHeader = 'Trendz Analytics: Self-managed Subscriptions FAQs';
+            case 'tbmq-private-cloud':
+                correspondingHeader = 'TBMQ Private Cloud FAQs';
+                tbmqPcInitTicks();
                 break;
-            case 'trendz-perpetual':
-                correspondingHeader = 'Trendz Analytics: Self-managed Perpetual FAQs';
+            case 'tbmq-ce':
+                correspondingHeader = 'TBMQ Community Edition FAQs';
                 break;
-            case 'trendz-cloud':
-                correspondingHeader = 'Trendz Analytics Cloud FAQs';
+            case 'tbmq-pe-pay-as-you-go':
+                correspondingHeader = 'TBMQ Self-managed PAYG FAQs';
+                tbmqPaygInitTicks();
                 break;
-            case 'edge-community':
-                correspondingHeader = 'Edge Community FAQs';
-                break;
-            case 'edge-pay-as-you-go':
-                correspondingHeader = 'Edge Subscriptions FAQs';
-                break;
-            case 'edge-perpetual':
-                correspondingHeader = 'Edge Perpetual FAQs';
-                break;
-            case 'tbmq':
-                correspondingHeader = 'TBMQ FAQs';
+            case 'tbmq-pe-perpetual':
+                correspondingHeader = 'TBMQ Self-managed Perpetual FAQs';
+                tbmqPerpInitTicks();
                 break;
         }
         if (correspondingHeader && document.getElementById('faq-header')) {
@@ -440,16 +459,174 @@
         window.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname + '?section=thingsboard-pe-options&product=thingsboard-private-cloud'
     }
 
-    function switchTrendzCloudRegion(event) {
-        setActiveSolutionSection(!event.target.checked ? 'trendz-cloud-north-america' : 'trendz-cloud-europe');
-        document.querySelectorAll(`#trendz-cloud .billing-toggle.solution-selector .label-text`)
-            .forEach(elem => {
-                elem.classList.toggle('selected');
-                elem.classList.toggle('defaultselection');
-            });
-    }
-</script>
+    function generateAddOnsCards(currency = 'usd') {
+        document.querySelectorAll('.add-ons').forEach(elem => {
+            const product = elem.dataset.productName;
+            const addOnsPricing = {{ addons }};
 
+            const getPrice = (item) => {
+                if (item && item.price) {
+                    if (typeof item.price === 'object') {
+                        return item.price[currency] || item.price['usd'];
+                    }
+                    return item.price;
+                }
+                return "<span>$99/month</span> ($1 000 one time setup fee)";
+            };
+
+            const edgePrice = getPrice(addOnsPricing[product].edge);
+            const trendzPrice = getPrice(addOnsPricing[product].trendz);
+            const wlPrice = getPrice(addOnsPricing[product].wl);
+
+            elem.innerHTML = `
+                <h2>Add-ons</h2>
+                <p>Customize your deployment with optional features to suit your business needs.</p>
+                <div class="cards">
+                    <div class="card">
+                        <img src="/images/pricing/edge-add-on-icon.svg" alt="Edge add on icon">
+                        <div class="text">
+                            <h3 data-faq-id="${addOnsPricing[product].edge.faq}" data-faq-link-size="50%" data-faq-tooltip="Run a local on-prem instance to keep operations running even when the internet is down.">Edge Computing</h3>
+                            <p>Process data where it is collected</p>
+                            <p>Starting from <span>${edgePrice}</span></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/images/pricing/trendz-add-on-icon.svg" alt="Trendz add on icon">
+                        <div class="text">
+                            <h3 data-faq-id="${addOnsPricing[product].trendz.faq}" data-faq-link-size="50%" data-faq-tooltip="Turn raw IoT data into actionable insights with advanced analytics and trend prediction.">Trendz Analytics</h3>
+                            <p>Advanced analytics for your solution</p>
+                            <p>Starting from <span>${trendzPrice}</span></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/images/pricing/wl-add-on-icon.svg" alt="White-labeling add on icon">
+                        <div class="text">
+                            <h3 data-faq-id="${addOnsPricing[product].wl.faq}" data-faq-link-size="50%" data-faq-tooltip="Launch a client-ready mobile app under your brand—your name, logo, colors, and a fully polished look & feel—so customers experience your product, not a third-party app.">White-labeled Mobile App</h3>
+                            <p>Сustomizable mobile application</p>
+                            <p>${wlPrice}</p>
+                        </div>
+                    </div>
+                </div>
+            `
+        });
+    }
+
+
+    let topUpsCurrentCurrency = 'usd'
+    function initTopUps() {
+        const topUpItems = document.querySelectorAll('.top-up-item');
+
+        topUpItems.forEach(item => {
+            const header = item.querySelector('.top-up-header');
+
+            header.addEventListener('click', () => {
+                const isExpanded = item.classList.contains('expanded');
+
+                if (isExpanded) {
+                    item.classList.remove('expanded');
+                } else {
+                    item.classList.add('expanded');
+                }
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTopUps);
+    } else {
+        initTopUps();
+    }
+    function setTopUpsCurrency(currency) {
+        topUpsCurrentCurrency = currency;
+        const priceElements = document.querySelectorAll('.top-ups-section .top-up-price');
+
+        priceElements.forEach(el => {
+            const price = el.dataset.price;
+            if (currency === 'eur') {
+                el.textContent = `€${price}`;
+            } else {
+                el.textContent = `$${price}`;
+            }
+        });
+    }
+
+
+    const infoIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M5.49976 3.5H4.49976V2.5H5.49976V3.5ZM5.49976 4.5H4.49976V7.5H5.49976V4.5ZM4.99976 1C2.79426 1 0.999756 2.7945 0.999756 5C0.999756 7.2055 2.79426 9 4.99976 9C7.20526 9 8.99976 7.2055 8.99976 5C8.99976 2.7945 7.20526 1 4.99976 1ZM4.99976 0C7.76126 0 9.99976 2.2385 9.99976 5C9.99976 7.7615 7.76126 10 4.99976 10C2.23826 10 -0.000244141 7.7615 -0.000244141 5C-0.000244141 2.2385 2.23826 0 4.99976 0Z" fill="black" fill-opacity="0.76"/></svg>`;
+    const chevronUpIcon = `<svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 7.41L6 2.83L10.59 7.41L12 6L6 0L0 6L1.41 7.41Z" fill="currentColor"/></svg>`;
+    const chevronDownIcon = `<svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 0.59L6 5.17L10.59 0.59L12 2L6 8L0 2L1.41 0.59Z" fill="currentColor"/></svg>`;
+    const copyIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 4V16C8 16.5304 8.21071 17.0391 8.58579 17.4142C8.96086 17.7893 9.46957 18 10 18H18C18.5304 18 19.0391 17.7893 19.4142 17.4142C19.7893 17.0391 20 16.5304 20 16V7.242C20 6.97556 19.9467 6.71181 19.8433 6.46624C19.7399 6.22068 19.5885 5.99824 19.398 5.812L16.083 2.57C15.7094 2.20466 15.2076 2.00007 14.685 2H10C9.46957 2 8.96086 2.21071 8.58579 2.58579C8.21071 2.96086 8 3.46957 8 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 18V20C16 20.5304 15.7893 21.0391 15.4142 21.4142C15.0391 21.7893 14.5304 22 14 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V9C4 8.46957 4.21071 7.96086 4.58579 7.58579C4.96086 7.21071 5.46957 7 6 7H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    const downloadIcon = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7,10 12,15 17,10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+    const formatCurrency = (value) => new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+    }).format(value).replace(/,/g, ' ');
+
+    const formatNumber = (value, fractionDigits = 0) => new Intl.NumberFormat('en-US', {
+        style: 'decimal',
+        maximumFractionDigits: fractionDigits
+    }).format(value).replace(/,/g, ' ');
+
+    const sliderProgress = (slider) => {
+        const progress = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+        slider.style.background = `linear-gradient(to right, #2A7DEC ${progress}%, #E0E1E2 ${progress}%)`;
+    };
+
+    const copyToClipboard = (button, message) => {
+        const textArea = document.createElement("textarea");
+        textArea.value = message;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+        } catch (err) {
+            console.error('Unable to copy', err);
+        }
+        document.body.removeChild(textArea);
+        button.classList.add('copied');
+        const tooltipEl = button.querySelector('.tooltip-text');
+        if (tooltipEl) {
+            const originalText = tooltipEl.innerHTML;
+            tooltipEl.innerHTML = "Copied!";
+            setTimeout(() => {
+                tooltipEl.innerHTML = originalText;
+                button.classList.remove('copied');
+            }, 1500);
+        }
+    };
+
+    const openModal = (modalElement) => {
+        modalElement.classList.add('visible');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = (modalElement) => {
+        modalElement.classList.remove('visible');
+        if (!document.querySelector('.modal-overlay.visible')) {
+            document.body.style.overflow = 'auto';
+        }
+    };
+
+    const downloadSummary = (state) => {
+        const blob = new Blob([state.clipboardMessage], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `thingsboard-pricing-summary-${new Date().toISOString().slice(0, 10)}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+</script>
+{% include pricing/tb-private-cloud-calculator.html %}
+{% include pricing/tb-payg-calculator.html %}
+{% include pricing/tb-perpetual-calculator.html %}
 {% include cookie-consent.html %}
 
 </body>

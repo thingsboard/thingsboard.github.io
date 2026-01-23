@@ -28,10 +28,7 @@
   redirect_from: []
 "/docs/devices-library/arduino-nano-rp2040-connect/":
   url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from:
-  - "/docs/samples/arduino/"
-  - "/docs/samples/arduino/temperature/"
-  - "/docs/samples/arduino/sim808-htu21d/"
+  redirect_from: []
 "/docs/devices-library/asset-management-tracker/":
   url: "/docs/devices-library/asset-management-tracker/"
   redirect_from: []
@@ -100,19 +97,12 @@
   redirect_from: []
 "/docs/devices-library/esp32-dev-kit-v1/":
   url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from:
-  - "/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/"
-  - "/docs/samples/esp32/"
-  - "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
-  - "/docs/samples/esp32/ota/"
+  redirect_from: []
 "/docs/devices-library/esp32-dev-kit-v4/":
   url: "/docs/devices-library/esp32-dev-kit-v4/"
   redirect_from: []
 "/docs/devices-library/esp32-pico-kit/":
   url: "/docs/devices-library/esp32-pico-kit/"
-  redirect_from: []
-"/docs/devices-library/guidelines/":
-  url: "/docs/devices-library/guidelines/"
   redirect_from: []
 "/docs/devices-library/helmet-sensor/":
   url: "/docs/devices-library/helmet-sensor/"
@@ -125,6 +115,9 @@
   redirect_from: []
 "/docs/devices-library/hummingboard-gate/":
   url: "/docs/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/devices-library/":
+  url: "/docs/devices-library/"
   redirect_from: []
 "/docs/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/devices-library/indoor-bluetooth-gateway/"
@@ -188,12 +181,7 @@
   redirect_from: []
 "/docs/devices-library/nodemcuv3/":
   url: "/docs/devices-library/nodemcuv3/"
-  redirect_from:
-  - "/docs/samples/esp8266/"
-  - "/docs/samples/esp8266/temperature/"
-  - "/docs/samples/esp8266/gpio/"
-  - "/docs/samples/nodemcu/"
-  - "/docs/samples/nodemcu/temperature/"
+  redirect_from: []
 "/docs/devices-library/nvidia-jetson-nano-developer-kit/":
   url: "/docs/devices-library/nvidia-jetson-nano-developer-kit/"
   redirect_from: []
@@ -235,11 +223,7 @@
   redirect_from: []
 "/docs/devices-library/raspberry-pi-4/":
   url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from:
-  - "/docs/samples/raspberry/"
-  - "/docs/samples/raspberry/gpio/"
-  - "/docs/samples/raspberry/gpio-android-things/"
-  - "/docs/samples/raspberry/temperature/"
+  redirect_from: []
 "/docs/devices-library/raspberry-pi-cm4/":
   url: "/docs/devices-library/raspberry-pi-cm4/"
   redirect_from: []
@@ -269,6 +253,9 @@
   redirect_from: []
 "/docs/devices-library/s26x-lorawan-temperature-sensor/":
   url: "/docs/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/devices-library/sensy32/":
+  url: "/docs/devices-library/sensy32/"
   redirect_from: []
 "/docs/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/devices-library/socketsync-bluetooth-gateway/"
@@ -381,11 +368,6 @@
 "/docs/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/devices-library/":
-  url: "/docs/devices-library/"
-  redirect_from:
-  - "/docs/samples/linkit-one/"
-  - "/docs/samples/linkit-one/gps/"
 "/docs/domains/":
   url: "/docs/domains/"
   redirect_from: []
@@ -431,8 +413,8 @@
 "/docs/edge/config/subscribe-to-attribute/":
   url: "/docs/edge/config/subscribe-to-attribute/"
   redirect_from: []
-"/docs/edge/devices-library/guidelines/":
-  url: "/docs/edge/devices-library/guidelines/"
+"/docs/edge/devices-library/":
+  url: "/docs/edge/devices-library/"
   redirect_from: []
 "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
   url: "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
@@ -445,9 +427,6 @@
   redirect_from: []
 "/docs/edge/devices-library/recomputer-r1100/":
   url: "/docs/edge/devices-library/recomputer-r1100/"
-  redirect_from: []
-"/docs/edge/devices-library/":
-  url: "/docs/edge/devices-library/"
   redirect_from: []
 "/docs/edge/edge-architecture/":
   url: "/docs/edge/edge-architecture/"
@@ -742,6 +721,9 @@
 "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/":
   url: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
   redirect_from: []
+"/docs/iot-gateway/help/":
+  url: "/docs/iot-gateway/help/"
+  redirect_from: []
 "/docs/iot-gateway/how-device-removing-renaming-works/":
   url: "/docs/iot-gateway/how-device-removing-renaming-works/"
   redirect_from: []
@@ -1008,14 +990,14 @@
 "/docs/mqtt-broker/security/overview/":
   url: "/docs/mqtt-broker/security/overview/"
   redirect_from: []
-"/docs/mqtt-broker/subscription/":
-  url: "/docs/mqtt-broker/subscription/"
-  redirect_from: []
 "/docs/mqtt-broker/troubleshooting/":
   url: "/docs/mqtt-broker/troubleshooting/"
   redirect_from: []
 "/docs/mqtt-broker/user-guide/backpressure/":
   url: "/docs/mqtt-broker/user-guide/backpressure/"
+  redirect_from: []
+"/docs/mqtt-broker/user-guide/clean-persistent-sessions/":
+  url: "/docs/mqtt-broker/user-guide/clean-persistent-sessions/"
   redirect_from: []
 "/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/":
   url: "/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/"
@@ -1189,9 +1171,6 @@
 "/docs/paas/devices-library/esp32-pico-kit/":
   url: "/docs/paas/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/paas/devices-library/guidelines/":
-  url: "/docs/paas/devices-library/guidelines/"
-  redirect_from: []
 "/docs/paas/devices-library/helmet-sensor/":
   url: "/docs/paas/devices-library/helmet-sensor/"
   redirect_from: []
@@ -1203,6 +1182,9 @@
   redirect_from: []
 "/docs/paas/devices-library/hummingboard-gate/":
   url: "/docs/paas/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/paas/devices-library/":
+  url: "/docs/paas/devices-library/"
   redirect_from: []
 "/docs/paas/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/paas/devices-library/indoor-bluetooth-gateway/"
@@ -1339,6 +1321,9 @@
 "/docs/paas/devices-library/s26x-lorawan-temperature-sensor/":
   url: "/docs/paas/devices-library/s26x-lorawan-temperature-sensor/"
   redirect_from: []
+"/docs/paas/devices-library/sensy32/":
+  url: "/docs/paas/devices-library/sensy32/"
+  redirect_from: []
 "/docs/paas/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/paas/devices-library/socketsync-bluetooth-gateway/"
   redirect_from: []
@@ -1450,9 +1435,6 @@
 "/docs/paas/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/paas/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/paas/devices-library/":
-  url: "/docs/paas/devices-library/"
-  redirect_from: []
 "/docs/paas/domains/":
   url: "/docs/paas/domains/"
   redirect_from:
@@ -1559,9 +1541,6 @@
 "/docs/paas/eu/devices-library/esp32-pico-kit/":
   url: "/docs/paas/eu/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/paas/eu/devices-library/guidelines/":
-  url: "/docs/paas/eu/devices-library/guidelines/"
-  redirect_from: []
 "/docs/paas/eu/devices-library/helmet-sensor/":
   url: "/docs/paas/eu/devices-library/helmet-sensor/"
   redirect_from: []
@@ -1573,6 +1552,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/hummingboard-gate/":
   url: "/docs/paas/eu/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/":
+  url: "/docs/paas/eu/devices-library/"
   redirect_from: []
 "/docs/paas/eu/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/paas/eu/devices-library/indoor-bluetooth-gateway/"
@@ -1709,6 +1691,9 @@
 "/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/":
   url: "/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/"
   redirect_from: []
+"/docs/paas/eu/devices-library/sensy32/":
+  url: "/docs/paas/eu/devices-library/sensy32/"
+  redirect_from: []
 "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/"
   redirect_from: []
@@ -1820,9 +1805,6 @@
 "/docs/paas/eu/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/paas/eu/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/paas/eu/devices-library/":
-  url: "/docs/paas/eu/devices-library/"
-  redirect_from: []
 "/docs/paas/eu/domains/":
   url: "/docs/paas/eu/domains/"
   redirect_from: []
@@ -1848,6 +1830,10 @@
 "/docs/paas/eu/":
   url: "/docs/paas/eu/"
   redirect_from: []
+"/docs/paas/eu/legacy-subscriptions/":
+  url: "/docs/paas/eu/legacy-subscriptions/"
+  redirect_from:
+  - "/products/paas/subscription/"
 "/docs/paas/eu/mobile-center/applications/":
   url: "/docs/paas/eu/mobile-center/applications/"
   redirect_from: []
@@ -1912,6 +1898,9 @@
 "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
+"/docs/paas/eu/samples/analytics/n8n-node/":
+  url: "/docs/paas/eu/samples/analytics/n8n-node/"
+  redirect_from: []
 "/docs/paas/eu/samples/analytics/ollama/":
   url: "/docs/paas/eu/samples/analytics/ollama/"
   redirect_from: []
@@ -1924,8 +1913,8 @@
 "/docs/paas/eu/solution-templates/air-quality-monitoring/":
   url: "/docs/paas/eu/solution-templates/air-quality-monitoring/"
   redirect_from: []
-"/docs/paas/eu/solution-templates/fleet-tracking/":
-  url: "/docs/paas/eu/solution-templates/fleet-tracking/"
+"/docs/paas/eu/solution-templates/assisted-living/":
+  url: "/docs/paas/eu/solution-templates/assisted-living/"
   redirect_from: []
 "/docs/paas/eu/solution-templates/fuel-level-monitoring/":
   url: "/docs/paas/eu/solution-templates/fuel-level-monitoring/"
@@ -1939,12 +1928,16 @@
 "/docs/paas/eu/solution-templates/scada-energy-management/":
   url: "/docs/paas/eu/solution-templates/scada-energy-management/"
   redirect_from: []
+"/docs/paas/eu/solution-templates/site-fleet-tracking/":
+  url: "/docs/paas/eu/solution-templates/site-fleet-tracking/"
+  redirect_from: []
 "/docs/paas/eu/solution-templates/smart-irrigation/":
   url: "/docs/paas/eu/solution-templates/smart-irrigation/"
   redirect_from: []
 "/docs/paas/eu/solution-templates/smart-office/":
   url: "/docs/paas/eu/solution-templates/smart-office/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/monitoring/facilities-monitoring-poc/"
 "/docs/paas/eu/solution-templates/smart-retail/":
   url: "/docs/paas/eu/solution-templates/smart-retail/"
   redirect_from: []
@@ -1960,9 +1953,11 @@
 "/docs/paas/eu/solution-templates/water-metering/":
   url: "/docs/paas/eu/solution-templates/water-metering/"
   redirect_from: []
-"/docs/paas/eu/subscription/":
-  url: "/docs/paas/eu/subscription/"
-  redirect_from: []
+"/docs/paas/eu/subscriptions/":
+  url: "/docs/paas/eu/subscriptions/"
+  redirect_from:
+  - "/products/paas/eu/subscription/"
+  - "/docs/paas/eu/subscription/"
 "/docs/paas/eu/tutorials/function-based-on-telemetry-from-two-devices/":
   url: "/docs/paas/eu/tutorials/function-based-on-telemetry-from-two-devices/"
   redirect_from: []
@@ -1989,6 +1984,9 @@
   redirect_from: []
 "/docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/alarm-rules/":
+  url: "/docs/paas/eu/user-guide/alarm-rules/"
   redirect_from: []
 "/docs/paas/eu/user-guide/alarms/":
   url: "/docs/paas/eu/user-guide/alarms/"
@@ -2260,6 +2258,9 @@
 "/docs/paas/eu/user-guide/secrets-storage/":
   url: "/docs/paas/eu/user-guide/secrets-storage/"
   redirect_from: []
+"/docs/paas/eu/user-guide/security/api-keys/":
+  url: "/docs/paas/eu/user-guide/security/api-keys/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/self-registration/":
   url: "/docs/paas/eu/user-guide/self-registration/"
   redirect_from: []
@@ -2390,6 +2391,10 @@
 "/docs/paas/":
   url: "/docs/paas/"
   redirect_from: []
+"/docs/paas/legacy-subscriptions/":
+  url: "/docs/paas/legacy-subscriptions/"
+  redirect_from:
+  - "/products/paas/subscription/"
 "/docs/paas/mobile-center/applications/":
   url: "/docs/paas/mobile-center/applications/"
   redirect_from: []
@@ -2454,6 +2459,9 @@
 "/docs/paas/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/paas/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
+"/docs/paas/samples/analytics/n8n-node/":
+  url: "/docs/paas/samples/analytics/n8n-node/"
+  redirect_from: []
 "/docs/paas/samples/analytics/ollama/":
   url: "/docs/paas/samples/analytics/ollama/"
   redirect_from: []
@@ -2466,8 +2474,8 @@
 "/docs/paas/solution-templates/air-quality-monitoring/":
   url: "/docs/paas/solution-templates/air-quality-monitoring/"
   redirect_from: []
-"/docs/paas/solution-templates/fleet-tracking/":
-  url: "/docs/paas/solution-templates/fleet-tracking/"
+"/docs/paas/solution-templates/assisted-living/":
+  url: "/docs/paas/solution-templates/assisted-living/"
   redirect_from: []
 "/docs/paas/solution-templates/fuel-level-monitoring/":
   url: "/docs/paas/solution-templates/fuel-level-monitoring/"
@@ -2481,12 +2489,16 @@
 "/docs/paas/solution-templates/scada-energy-management/":
   url: "/docs/paas/solution-templates/scada-energy-management/"
   redirect_from: []
+"/docs/paas/solution-templates/site-fleet-tracking/":
+  url: "/docs/paas/solution-templates/site-fleet-tracking/"
+  redirect_from: []
 "/docs/paas/solution-templates/smart-irrigation/":
   url: "/docs/paas/solution-templates/smart-irrigation/"
   redirect_from: []
 "/docs/paas/solution-templates/smart-office/":
   url: "/docs/paas/solution-templates/smart-office/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/monitoring/facilities-monitoring-poc/"
 "/docs/paas/solution-templates/smart-retail/":
   url: "/docs/paas/solution-templates/smart-retail/"
   redirect_from: []
@@ -2502,10 +2514,11 @@
 "/docs/paas/solution-templates/water-metering/":
   url: "/docs/paas/solution-templates/water-metering/"
   redirect_from: []
-"/docs/paas/subscription/":
-  url: "/docs/paas/subscription/"
+"/docs/paas/subscriptions/":
+  url: "/docs/paas/subscriptions/"
   redirect_from:
   - "/products/paas/subscription/"
+  - "/docs/paas/subscription/"
 "/docs/paas/tutorials/function-based-on-telemetry-from-two-devices/":
   url: "/docs/paas/tutorials/function-based-on-telemetry-from-two-devices/"
   redirect_from: []
@@ -2532,6 +2545,9 @@
   redirect_from: []
 "/docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/paas/user-guide/alarm-rules/":
+  url: "/docs/paas/user-guide/alarm-rules/"
   redirect_from: []
 "/docs/paas/user-guide/alarms/":
   url: "/docs/paas/user-guide/alarms/"
@@ -2803,6 +2819,9 @@
 "/docs/paas/user-guide/secrets-storage/":
   url: "/docs/paas/user-guide/secrets-storage/"
   redirect_from: []
+"/docs/paas/user-guide/security/api-keys/":
+  url: "/docs/paas/user-guide/security/api-keys/"
+  redirect_from: []
 "/docs/paas/user-guide/self-registration/":
   url: "/docs/paas/user-guide/self-registration/"
   redirect_from: []
@@ -3009,9 +3028,6 @@
 "/docs/pe/devices-library/esp32-pico-kit/":
   url: "/docs/pe/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/pe/devices-library/guidelines/":
-  url: "/docs/pe/devices-library/guidelines/"
-  redirect_from: []
 "/docs/pe/devices-library/helmet-sensor/":
   url: "/docs/pe/devices-library/helmet-sensor/"
   redirect_from: []
@@ -3023,6 +3039,9 @@
   redirect_from: []
 "/docs/pe/devices-library/hummingboard-gate/":
   url: "/docs/pe/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/pe/devices-library/":
+  url: "/docs/pe/devices-library/"
   redirect_from: []
 "/docs/pe/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/pe/devices-library/indoor-bluetooth-gateway/"
@@ -3159,6 +3178,9 @@
 "/docs/pe/devices-library/s26x-lorawan-temperature-sensor/":
   url: "/docs/pe/devices-library/s26x-lorawan-temperature-sensor/"
   redirect_from: []
+"/docs/pe/devices-library/sensy32/":
+  url: "/docs/pe/devices-library/sensy32/"
+  redirect_from: []
 "/docs/pe/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/pe/devices-library/socketsync-bluetooth-gateway/"
   redirect_from: []
@@ -3270,9 +3292,6 @@
 "/docs/pe/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/pe/devices-library/":
-  url: "/docs/pe/devices-library/"
-  redirect_from: []
 "/docs/pe/domains/":
   url: "/docs/pe/domains/"
   redirect_from: []
@@ -3303,8 +3322,8 @@
 "/docs/pe/edge/config/subscribe-to-attribute/":
   url: "/docs/pe/edge/config/subscribe-to-attribute/"
   redirect_from: []
-"/docs/pe/edge/devices-library/guidelines/":
-  url: "/docs/pe/edge/devices-library/guidelines/"
+"/docs/pe/edge/devices-library/":
+  url: "/docs/pe/edge/devices-library/"
   redirect_from: []
 "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
   url: "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
@@ -3317,9 +3336,6 @@
   redirect_from: []
 "/docs/pe/edge/devices-library/recomputer-r1100/":
   url: "/docs/pe/edge/devices-library/recomputer-r1100/"
-  redirect_from: []
-"/docs/pe/edge/devices-library/":
-  url: "/docs/pe/edge/devices-library/"
   redirect_from: []
 "/docs/pe/edge/edge-architecture/":
   url: "/docs/pe/edge/edge-architecture/"
@@ -3583,6 +3599,264 @@
 "/docs/pe/mobile-center/mobile-center/":
   url: "/docs/pe/mobile-center/mobile-center/"
   redirect_from: []
+"/docs/pe/mqtt-broker/api/":
+  url: "/docs/pe/mqtt-broker/api/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/application-shared-subscription/":
+  url: "/docs/pe/mqtt-broker/application-shared-subscription/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/architecture-details/persistent-app-client/":
+  url: "/docs/pe/mqtt-broker/architecture-details/persistent-app-client/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/architecture-details/persistent-device-client/":
+  url: "/docs/pe/mqtt-broker/architecture-details/persistent-device-client/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/architecture/":
+  url: "/docs/pe/mqtt-broker/architecture/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/faq/":
+  url: "/docs/pe/mqtt-broker/faq/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/":
+  url: "/docs/pe/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/getting-started/":
+  url: "/docs/pe/mqtt-broker/getting-started/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/help/":
+  url: "/docs/pe/mqtt-broker/help/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/image-gallery/":
+  url: "/docs/pe/mqtt-broker/image-gallery/"
+  redirect_from:
+  - "/docs/mqtt-broker/image-gallery/"
+"/docs/pe/mqtt-broker/":
+  url: "/docs/pe/mqtt-broker/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/aws-cluster-setup/":
+  url: "/docs/pe/mqtt-broker/install/cluster/aws-cluster-setup/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/azure-cluster-setup/":
+  url: "/docs/pe/mqtt-broker/install/cluster/azure-cluster-setup/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/docker-compose-setup/":
+  url: "/docs/pe/mqtt-broker/install/cluster/docker-compose-setup/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/gcp-cluster-setup/":
+  url: "/docs/pe/mqtt-broker/install/cluster/gcp-cluster-setup/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-aws/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-aws/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-azure/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-azure/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-gcp/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-gcp/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-minikube/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-minikube/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-options/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-options/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/helm-cluster-upgrading-options/":
+  url: "/docs/pe/mqtt-broker/install/cluster/helm-cluster-upgrading-options/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/minikube-cluster-setup/":
+  url: "/docs/pe/mqtt-broker/install/cluster/minikube-cluster-setup/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-with-from-version/":
+  url: "/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-with-from-version/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-without-from-version/":
+  url: "/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-without-from-version/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-with-from-version/":
+  url: "/docs/pe/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-with-from-version/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/config/":
+  url: "/docs/pe/mqtt-broker/install/config/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/docker-windows/":
+  url: "/docs/pe/mqtt-broker/install/docker-windows/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/docker/":
+  url: "/docs/pe/mqtt-broker/install/docker/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/ie-config/":
+  url: "/docs/pe/mqtt-broker/install/ie-config/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/installation-options/":
+  url: "/docs/pe/mqtt-broker/install/installation-options/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/install/upgrade-instructions/":
+  url: "/docs/pe/mqtt-broker/install/upgrade-instructions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/integrations/http/":
+  url: "/docs/pe/mqtt-broker/integrations/http/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/integrations/":
+  url: "/docs/pe/mqtt-broker/integrations/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/integrations/kafka/":
+  url: "/docs/pe/mqtt-broker/integrations/kafka/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/integrations/mqtt/":
+  url: "/docs/pe/mqtt-broker/integrations/mqtt/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/mqtt-client-credentials-management/":
+  url: "/docs/pe/mqtt-broker/mqtt-client-credentials-management/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/other/blocked-client/":
+  url: "/docs/pe/mqtt-broker/other/blocked-client/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/other/health/":
+  url: "/docs/pe/mqtt-broker/other/health/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/other/msg-delivery-strategy/":
+  url: "/docs/pe/mqtt-broker/other/msg-delivery-strategy/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/other/proxy-protocol/":
+  url: "/docs/pe/mqtt-broker/other/proxy-protocol/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/reference/100m-connections-performance-test/":
+  url: "/docs/pe/mqtt-broker/reference/100m-connections-performance-test/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/reference/1m-throughput-p2p-performance-test/":
+  url: "/docs/pe/mqtt-broker/reference/1m-throughput-p2p-performance-test/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/reference/3m-throughput-single-node-performance-test/":
+  url: "/docs/pe/mqtt-broker/reference/3m-throughput-single-node-performance-test/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/releases/":
+  url: "/docs/pe/mqtt-broker/releases/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/rest-api/":
+  url: "/docs/pe/mqtt-broker/rest-api/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/roadmap/":
+  url: "/docs/pe/mqtt-broker/roadmap/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/search/":
+  url: "/docs/pe/mqtt-broker/search/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/authentication/basic/":
+  url: "/docs/pe/mqtt-broker/security/authentication/basic/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/authentication/jwt/":
+  url: "/docs/pe/mqtt-broker/security/authentication/jwt/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/authentication/scram/":
+  url: "/docs/pe/mqtt-broker/security/authentication/scram/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/authentication/x509/":
+  url: "/docs/pe/mqtt-broker/security/authentication/x509/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/domains/":
+  url: "/docs/pe/mqtt-broker/security/domains/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/https/":
+  url: "/docs/pe/mqtt-broker/security/https/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/listeners/":
+  url: "/docs/pe/mqtt-broker/security/listeners/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/mqtts/":
+  url: "/docs/pe/mqtt-broker/security/mqtts/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/oauth-2-support/":
+  url: "/docs/pe/mqtt-broker/security/oauth-2-support/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/overview/":
+  url: "/docs/pe/mqtt-broker/security/overview/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/rbac/":
+  url: "/docs/pe/mqtt-broker/security/rbac/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/subscription/":
+  url: "/docs/pe/mqtt-broker/subscription/"
+  redirect_from:
+  - "/docs/mqtt-broker/subscription/"
+"/docs/pe/mqtt-broker/troubleshooting/":
+  url: "/docs/pe/mqtt-broker/troubleshooting/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/backpressure/":
+  url: "/docs/pe/mqtt-broker/user-guide/backpressure/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/clean-persistent-sessions/":
+  url: "/docs/pe/mqtt-broker/user-guide/clean-persistent-sessions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/":
+  url: "/docs/pe/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/keep-alive/":
+  url: "/docs/pe/mqtt-broker/user-guide/keep-alive/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/last-will/":
+  url: "/docs/pe/mqtt-broker/user-guide/last-will/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/mqtt-broker/":
+  url: "/docs/pe/mqtt-broker/user-guide/mqtt-broker/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/mqtt-client-type/":
+  url: "/docs/pe/mqtt-broker/user-guide/mqtt-client-type/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/mqtt-over-ws/":
+  url: "/docs/pe/mqtt-broker/user-guide/mqtt-over-ws/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/mqtt-protocol/":
+  url: "/docs/pe/mqtt-broker/user-guide/mqtt-protocol/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/qos/":
+  url: "/docs/pe/mqtt-broker/user-guide/qos/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/retained-messages/":
+  url: "/docs/pe/mqtt-broker/user-guide/retained-messages/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/shared-subscriptions/":
+  url: "/docs/pe/mqtt-broker/user-guide/shared-subscriptions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/topics/":
+  url: "/docs/pe/mqtt-broker/user-guide/topics/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/mail-server/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/mail-server/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/monitoring/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/monitoring/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/mqtt-client-credentials/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/mqtt-client-credentials/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/sessions/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/sessions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/settings/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/settings/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/shared-subscriptions/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/shared-subscriptions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/subscriptions/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/subscriptions/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/unauthorized-clients/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/unauthorized-clients/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/users/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/users/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/ui/websocket-client/":
+  url: "/docs/pe/mqtt-broker/user-guide/ui/websocket-client/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-management/":
+  url: "/docs/pe/mqtt-broker/user-management/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/white-labeling/":
+  url: "/docs/pe/mqtt-broker/white-labeling/"
+  redirect_from:
+  - "/docs/mqtt-broker/white-labeling/"
 "/docs/pe/reference/coap-api/":
   url: "/docs/pe/reference/coap-api/"
   redirect_from:
@@ -3696,6 +3970,9 @@
 "/docs/pe/releases/releases-table/v4-2-x/":
   url: "/docs/pe/releases/releases-table/v4-2-x/"
   redirect_from: []
+"/docs/pe/releases/releases-table/v4-3-x/":
+  url: "/docs/pe/releases/releases-table/v4-3-x/"
+  redirect_from: []
 "/docs/pe/releases/roadmap/":
   url: "/docs/pe/releases/roadmap/"
   redirect_from: []
@@ -3711,6 +3988,9 @@
 "/docs/pe/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/pe/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
+"/docs/pe/samples/analytics/n8n-node/":
+  url: "/docs/pe/samples/analytics/n8n-node/"
+  redirect_from: []
 "/docs/pe/samples/analytics/ollama/":
   url: "/docs/pe/samples/analytics/ollama/"
   redirect_from: []
@@ -3720,8 +4000,8 @@
 "/docs/pe/solution-templates/air-quality-monitoring/":
   url: "/docs/pe/solution-templates/air-quality-monitoring/"
   redirect_from: []
-"/docs/pe/solution-templates/fleet-tracking/":
-  url: "/docs/pe/solution-templates/fleet-tracking/"
+"/docs/pe/solution-templates/assisted-living/":
+  url: "/docs/pe/solution-templates/assisted-living/"
   redirect_from: []
 "/docs/pe/solution-templates/fuel-level-monitoring/":
   url: "/docs/pe/solution-templates/fuel-level-monitoring/"
@@ -3734,6 +4014,9 @@
   redirect_from: []
 "/docs/pe/solution-templates/scada-energy-management/":
   url: "/docs/pe/solution-templates/scada-energy-management/"
+  redirect_from: []
+"/docs/pe/solution-templates/site-fleet-tracking/":
+  url: "/docs/pe/solution-templates/site-fleet-tracking/"
   redirect_from: []
 "/docs/pe/solution-templates/smart-irrigation/":
   url: "/docs/pe/solution-templates/smart-irrigation/"
@@ -3783,6 +4066,9 @@
   redirect_from: []
 "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/pe/user-guide/alarm-rules/":
+  url: "/docs/pe/user-guide/alarm-rules/"
   redirect_from: []
 "/docs/pe/user-guide/alarms/":
   url: "/docs/pe/user-guide/alarms/"
@@ -3927,6 +4213,9 @@
 "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/"
   redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v4-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-3-x/"
+  redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-0-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-0-x/"
   redirect_from: []
@@ -3966,6 +4255,9 @@
 "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/"
   redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-3-x/"
+  redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/"
   redirect_from: []
@@ -4004,6 +4296,9 @@
   redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-3-x/"
   redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/"
@@ -4051,6 +4346,9 @@
 "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/"
   redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-3-x/"
+  redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/"
   redirect_from: []
@@ -4092,6 +4390,9 @@
   redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v4-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-3-x/"
   redirect_from: []
 "/docs/pe/user-guide/mail-templates/":
   url: "/docs/pe/user-guide/mail-templates/"
@@ -4198,6 +4499,9 @@
 "/docs/pe/user-guide/secrets-storage/":
   url: "/docs/pe/user-guide/secrets-storage/"
   redirect_from: []
+"/docs/pe/user-guide/security/api-keys/":
+  url: "/docs/pe/user-guide/security/api-keys/"
+  redirect_from: []
 "/docs/pe/user-guide/self-registration/":
   url: "/docs/pe/user-guide/self-registration/"
   redirect_from:
@@ -4295,6 +4599,9 @@
 "/docs/pe/user-guide/ui/tenants/":
   url: "/docs/pe/user-guide/ui/tenants/"
   redirect_from: []
+"/docs/pe/user-guide/ui/trendz-settings/":
+  url: "/docs/pe/user-guide/ui/trendz-settings/"
+  redirect_from: []
 "/docs/pe/user-guide/ui/trip-animation-widget/":
   url: "/docs/pe/user-guide/ui/trip-animation-widget/"
   redirect_from:
@@ -4381,6 +4688,9 @@
   - "/docs/reference/mqtt-api"
 "/docs/reference/mqtt-sparkplug-api/":
   url: "/docs/reference/mqtt-sparkplug-api/"
+  redirect_from: []
+"/docs/reference/mqtt-v5-errors-code/":
+  url: "/docs/reference/mqtt-v5-errors-code/"
   redirect_from: []
 "/docs/reference/msa/":
   url: "/docs/reference/msa/"
@@ -4482,6 +4792,9 @@
 "/docs/releases/releases-table/v4-2-x/":
   url: "/docs/releases/releases-table/v4-2-x/"
   redirect_from: []
+"/docs/releases/releases-table/v4-3-x/":
+  url: "/docs/releases/releases-table/v4-3-x/"
+  redirect_from: []
 "/docs/releases/roadmap/":
   url: "/docs/releases/roadmap/"
   redirect_from: []
@@ -4500,6 +4813,9 @@
   - "/docs/samples/analytics/spark-integration-with-thingsboard/"
 "/docs/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/samples/analytics/n8n-node/":
+  url: "/docs/samples/analytics/n8n-node/"
   redirect_from: []
 "/docs/samples/analytics/ollama/nginx/":
   url: "/docs/samples/analytics/ollama/nginx/"
@@ -4608,6 +4924,18 @@
   redirect_from: []
 "/docs/sitemap/":
   url: "/docs/sitemap/"
+  redirect_from: []
+"/docs/trendz/activation/how-to/":
+  url: "/docs/trendz/activation/how-to/"
+  redirect_from: []
+"/docs/trendz/activation/private-cloud/":
+  url: "/docs/trendz/activation/private-cloud/"
+  redirect_from: []
+"/docs/trendz/activation/public-cloud/":
+  url: "/docs/trendz/activation/public-cloud/"
+  redirect_from: []
+"/docs/trendz/activation/self-managed/":
+  url: "/docs/trendz/activation/self-managed/"
   redirect_from: []
 "/docs/trendz/ai-assistance-overview/":
   url: "/docs/trendz/ai-assistance-overview/"
@@ -4729,11 +5057,11 @@
 "/docs/trendz/install/kubernetes/":
   url: "/docs/trendz/install/kubernetes/"
   redirect_from: []
-"/docs/trendz/install/python-executor-configuration-linux/":
-  url: "/docs/trendz/install/python-executor-configuration-linux/"
+"/docs/trendz/install/old-docker-migrate/":
+  url: "/docs/trendz/install/old-docker-migrate/"
   redirect_from: []
-"/docs/trendz/install/python-executor-configuration-windows/":
-  url: "/docs/trendz/install/python-executor-configuration-windows/"
+"/docs/trendz/install/python-executor-configuration/":
+  url: "/docs/trendz/install/python-executor-configuration/"
   redirect_from: []
 "/docs/trendz/install/rhel/":
   url: "/docs/trendz/install/rhel/"
@@ -4885,6 +5213,9 @@
 "/docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
   redirect_from: []
+"/docs/user-guide/alarm-rules/":
+  url: "/docs/user-guide/alarm-rules/"
+  redirect_from: []
 "/docs/user-guide/alarms/":
   url: "/docs/user-guide/alarms/"
   redirect_from:
@@ -4908,8 +5239,26 @@
 "/docs/user-guide/bulk-provisioning/":
   url: "/docs/user-guide/bulk-provisioning/"
   redirect_from: []
+"/docs/user-guide/calculated-fields/geofencing-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/geofencing-calculated-field/"
+  redirect_from: []
 "/docs/user-guide/calculated-fields/":
   url: "/docs/user-guide/calculated-fields/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/propagation-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/propagation-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/related-entities-aggregation-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/related-entities-aggregation-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/script-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/script-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/simple-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/simple-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/time-series-data-aggregation-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/time-series-data-aggregation-calculated-field/"
   redirect_from: []
 "/docs/user-guide/certificates/":
   url: "/docs/user-guide/certificates/"
@@ -5565,6 +5914,9 @@
 "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/"
   redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v4-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v4-3-x/"
+  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/docker/v3-0-x/":
   url: "/docs/user-guide/install/upgrade-instructions/docker/v3-0-x/"
   redirect_from: []
@@ -5604,6 +5956,9 @@
 "/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/"
   redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-3-x/"
+  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/":
   url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/"
   redirect_from: []
@@ -5642,6 +5997,9 @@
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-3-x/"
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/":
   url: "/docs/user-guide/install/upgrade-instructions/"
@@ -5688,6 +6046,9 @@
 "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/"
   redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v4-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-3-x/"
+  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/windows/v3-0-x/":
   url: "/docs/user-guide/install/upgrade-instructions/windows/v3-0-x/"
   redirect_from: []
@@ -5726,6 +6087,9 @@
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/windows/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/windows/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v4-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v4-3-x/"
   redirect_from: []
 "/docs/user-guide/install/vc-executor-config/":
   url: "/docs/user-guide/install/vc-executor-config/"
@@ -6290,6 +6654,9 @@
   redirect_from: []
 "/docs/user-guide/scada/":
   url: "/docs/user-guide/scada/"
+  redirect_from: []
+"/docs/user-guide/security/api-keys/":
+  url: "/docs/user-guide/security/api-keys/"
   redirect_from: []
 "/docs/user-guide/ssl/coap-access-token/":
   url: "/docs/user-guide/ssl/coap-access-token/"

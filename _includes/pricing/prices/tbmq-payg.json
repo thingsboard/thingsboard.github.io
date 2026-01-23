@@ -1,0 +1,14 @@
+{
+  "basePrice": 15,
+  "includedSessions": 100,
+  "extraSessionsPrice": 0.05,
+  "includedThroughput": 100,
+  "extraThroughputPrice": 0.1,
+  "includedProdInstances": 1,
+  "extraProdInstancesPrice": 100,
+  "extraDevInstancesPrice": 50,
+  "whiteLabelingPrice": 100,
+  "priorityHelpDeskPrice": 300,
+  "productId": "6d811b30-f5ec-11f0-8e58-abbac8d0a38a",
+  "planId": "a2a848b0-f5ec-11f0-8e58-abbac8d0a38a"
+}

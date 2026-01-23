@@ -53,6 +53,18 @@ Where:
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-pe-node:{{ site.release.pe_full_ver }}`          - docker image.
 
+Also, this docker compose file contains Trendz Analytics add-on services:
+
+- `profiles: ['trendz']` - Trendz Analytics services have such profile
+- `8888:8888`            - connect local port 8888 to exposed internal HTTP port 8888
+- `trendz-conf`          - name of the docker volume that stores the Trendz's configuration files
+- `trendz-data`          - name of the docker volume that stores the Trendz's data
+- `trendz-python-executor-conf` - name of the docker volume that stores the Trendz python executor configuration files
+- `trendz-python-executor-data` - name of the docker volume that stores the Trendz python executor data
+- `trendz-postgres-data` - name of the docker volume that stores the Trendz PostgreSQL's data
+
+You can read more about Trendz Analytics [here](/docs/trendz/what-is-trendz/).
+
 ## Step 3. Initialize database schema & system assets
 
 Before you start ThingsBoard, initialize the database schema and load built-in assets by running:   
@@ -69,12 +81,12 @@ Environment variables:
 
 ## Step 4. Start the platform & tail logs
 
-Bring up all containers in detached mode, then follow the ThingsBoard logs (use PowerShell for the command below):
+It's possible to start the ThingsBoard with or without Trendz Analytics add-on.
 
-```bash
-docker compose up -d; docker compose logs -f thingsboard-pe
-```
-{: .copy-code}
+{% capture contenttogglespec %}
+With Trendz Analytics services%,%withTrendz%,%templates/install/docker-run-services-with-trendz.md%br%
+Only ThingsBoard services<small>(without Trendz services)</small>%,%coreServices%,%templates/install/docker-run-services.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="runOption" toggle-spec=contenttogglespec %}
 
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 
@@ -97,32 +109,18 @@ You can safely detach from the log stream (e.g. Ctrl+C); containers will continu
 
 ## Inspect logs & control container lifecycle
 
-If something goes wrong, you can stream the ThingsBoard container logs in real time:
-
-```bash
-docker compose logs -f thingsboard-pe
-```
-{: .copy-code}
-
-Bring down every container defined in your Compose file:
-
-```bash
-docker compose down
-```
-{: .copy-code}
-
-Launch all services in detached mode:
-
-```bash
-docker compose up -d
-```
-{: .copy-code}
+{% capture contenttogglespec %}
+With Trendz Analytics services%,%withTrendz%,%templates/install/docker-debug-with-trendz.md%br%
+Only ThingsBoard services<small>(without Trendz services)</small>%,%coreServices%,%templates/install/docker-debug.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="runOption" toggle-spec=contenttogglespec %}
 
 ## Upgrading
 {% capture upgrade_version_by_version%}
 **Note, that you have to upgrade versions one by one (for example 4.0.2 -> 4.1.0 -> 4.2.0 ,etc).**
 {% endcapture %}
 {% include templates/info-banner.md content=upgrade_version_by_version %}
+
+### Upgrading to new ThingsBoard version
 
 When a new PE release is available, follow these steps to update your installation without losing data:
 
@@ -142,6 +140,12 @@ docker compose run --rm -e UPGRADE_TB=true thingsboard-pe
 docker compose up -d
 ```
 {: .copy-code}
+
+### Upgrading to new Trendz version (Optional)
+
+Trendz Analytics have different version system, and should be updated separately from ThingsBoard platform main services.
+
+You can read how to upgrade Trendz Analytics [here](/docs/trendz/install/docker-windows/#upgrade-trendz-service).
 
 ## Troubleshooting
 

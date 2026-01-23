@@ -8,11 +8,11 @@ description: ThingsBoard Trendz Analytics upgrade instructions kubernetes
 * TOC
 {:toc}
 
-## Upgrading to 1.14.0
+## Upgrading to 1.15.0
 
-These steps are applicable for 1.13.2 Trendz Analytics version.
+These steps are applicable for 1.14.0 Trendz Analytics version.
 
-### Obtain Trendz Kubernetes scripts
+### Step 1. Obtain Trendz Kubernetes scripts
 
 Use the Kubernetes configuration files used for installation.
 If you did not save the files you need to download them again by the next link and fill in by necessary data as in the installation guide:
@@ -21,7 +21,7 @@ If you did not save the files you need to download them again by the next link a
 git clone https://github.com/thingsboard/trendz-k8s.git --depth 1
 ```   
 
-### Connect to your Kubernetes cluster
+### Step 2. Connect to your Kubernetes cluster
 
 You need to connect to the dedicated kube-config configuration
 Use the next commands:
@@ -31,7 +31,7 @@ kubectl config get-contexts
 kubectl config use-context <your config name>
 ```
 
-### Reduce pods count
+### Step 3. Reduce pods count
 
 The deployment must have only one pod for the next steps of a successful upgrade.
 Use this command to set the pod count:
@@ -40,20 +40,20 @@ Use this command to set the pod count:
 kubectl scale deployment trendz-app-deployment --replicas=1
 ```   
 
-### Create flag-file
+### Step 4. Create flag-file
 
 Create a file “.upgradeversion” inside the directory by calling the command that must be executed by Trendz pod.
 Run the command:
 ```text
-kubectl exec <POD_NAME> -- sh -c "echo '1.13.2' > /data/.upgradeversion"
+kubectl exec <POD_NAME> -- sh -c "echo '1.14.0' > /data/.upgradeversion"
 ```   
 You can get the pod name by the command:
 ```text
 kubectl get pods -l app=trendz-app-pod-label
 ```   
-Use another version instead of '1.13.2 if another is needed
+Use another version instead of '1.14.0 if another is needed
 
-### Change image version
+### Step 5. Change image version
 
 Open the **trendz-app-deployment.yml** file with the command
 ```text
@@ -63,7 +63,7 @@ and change the image version:
 
 ![image](/images/trendz/image-version-kuber.png)
 
-### Apply the deployment file
+### Step 6. Apply the deployment file
 
 Use the command to apply the new configuration of the deployment and wait until the pods are ready:
 
@@ -71,7 +71,7 @@ Use the command to apply the new configuration of the deployment and wait until 
 kubectl apply -f trendz-app-deployment.yml
 ``` 
 
-### Check the logs
+### Step 7. Check the logs
 
 Now check the logs and be sure that the instance is started successfully and the upgrade was performed.
 The logs can be opened by the command:
@@ -89,7 +89,7 @@ Current version is …, upgrade is not needed
 Started TrendzApplication in …
 ``` 
 
-### Increase pods count
+### Step 8. Increase pods count
 
 Now you can return your preferred pod count to the deployment.
 Use this command to set the pod count:
@@ -98,4 +98,6 @@ Use this command to set the pod count:
 kubectl scale deployment trendz-app-deployment --replicas=<pod-count>
 ``` 
 
+### Step 9. Check synchronization status in ThingsBoard
 
+After upgrade, it's necessary to check sync status for Trendz with ThingsBoard. You can find out how to do it [here](/docs/trendz/install/kubernetes#step-6-sync-thingsboard-with-trendz).

@@ -9,84 +9,57 @@ description: Connect Trendz Analytics platform to the ThingsBoard
 * TOC
 {:toc}
 
+## Trendz with ThingsBoard 4.2.1 or Older
 
-## Connect to ThingsBoard
-You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
+This guide explains how to connect Trendz with ThingsBoard 4.2.1 or older. We strongly recommend updating ThingsBoard
+to the latest version to access all Trendz and ThingsBoard features.
 
-<br>
+To install Trendz for ThingsBoard 4.2.1 or older:
 
-By default, Trendz expects that ThingsBoard is hosted on the same instance and accessible via an URL:
- 
- - http://localhost:9090
-    
-If your ThingsBoard installation is hosted on another instance/port - you have to update config with correct value:
+1. Start from step 1 of the installation guide.
+2. Before the `Start Trendz service` step, configure `TRENDZ_LICENSE_SECRET` and `TB_API_URL`.
+3. Complete all other steps, except for `Sync ThingsBoard With Trendz`.
+4. Perform [post-installation steps](/docs/trendz/post-installation-steps).
 
-Open Trendz configuration file:
+### Configure License Secret
+
+To interact with ThingsBoard 4.2.1 or older, you need a Trendz license secret key. If you do not have one, obtain it from the [ThingsBoard support team](/docs/contact-us).
+
+Edit the Trendz configuration file:
+
+```bash
+sudo nano /etc/trendz/conf/trendz.conf
+```
+
+Add the following line and replace `YOUR_LICENSE_SECRET_HERE` with your license key:
+
+```bash
+export TRENDZ_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
+```
+
+For Docker installations, update the `TRENDZ_LICENSE_SECRET` environment variable with the correct value.
+
+### Configure TB_API_URL
+
+By default, Trendz assumes ThingsBoard is hosted on the same instance and accessible at:
 
 ```
+http://localhost:9090
+```
+
+If ThingsBoard is hosted on a different instance or port, update the configuration accordingly:
+
+```bash
 sudo nano /usr/share/trendz/conf/trendz.conf
 ```
-    
-And update this property to the correct value:
+
+Set the correct URL:
 
 ```yml
 export TB_API_URL=http://localhost:9090
-```    
-    
-For docker installations - update environment variable ``TB_API_URL`` with the correct value.   
+```
 
-## Authentication and Security
-Trendz uses ThingsBoard as an authentication service. Any Tenant Administrator or Customer User can sign in into Trendz UI using their login\password that they use for authentication in the ThingsBoard.
-
-Same security restrictions that are configured on the ThingsBoard works in the Trendz Analytics. 
-
-- **Tenant Administrator** has access to all Devices/Assets
-- **Customer user** has access only to those Devices/Assets that they have permissions to view
-
-
-## Topology Discovery
-Trendz Topology represents the business model of Devices/Assets that was created in ThingsBoard. 
-Topology defines dimensions/fields that used for building visualizations and relation between Devices/Assets.
-Here are the core components of Trendz Topology:
-
-
-**Business Entity** - Definition of a group of Devices or Assets with same Device Type/Asset Type. Each Business Entity has:
-
-- **Criteria** - General properties that define how Devices/Assets fetched from the ThingsBoard
-- **Business Entity Field** - Represent field that is used during building visualizations. Field contains data type, label and query parameters used during fetching data from The thingsBoard.
-Here is a list of supported fields:
-    - Entity Name - the name of the Device or Asset
-    - Owner - who own device (administrator/customer)
-    - Attribute
-    - Telemetry
-- **Relations** - configured relations between Business Entities and their properties. Trendz Relations represent ThingsBoard relations between Devices and Assets
-
-### First Topology discovery
-
-
-After the first sign-in user should perform initial Topology Discovery. During this process, Trendz will analyze all Devices/Assets available in the ThingsBoard, their attributes/telemetry and all relations between them.
-As a result, Trendz will extract and save the collection of Business Entities. You can view and modify them on the `Settings` page.
-
-![image](/images/trendz/first-discovery.png)
-
-<br>
-
-![image](/images/trendz/discover-results.png)
- 
-### Manual Topology rediscovery
-Business Entity does not represent a single Device or Asset, but the query that used for fetching Device/Asset from the ThingsBoard. It means that you do not need to update topology if new Devices Assets with the same type were added on the ThingsBoard.
-
-When new Device/Asset types were added or attribute/telemetry with a new key was created in the ThingsBoard - you should update Topology. 
-
-
-Manual Topology Rediscovery will scan ThingsBoard again, detect modifications and update collection of Business Entities with required settings. 
-You can trigger this process on the `Settings` page by pressing `Refresh Topology`.
-
- 
-### Manual Modification
-Another option for updating topology is a manual modification of Business Entity properties. You can have as many Business Entities with similar properties as you want. 
-It may be useful in case when the same devices/assets represent different aspects of business solution. For example, single devices can monitor the environment and submit debug events for troubleshooting.
-By separating debug events from environment measurements into isolated Business Entities it becomes easier to build visualizations focused on a single aspect of your solution.
+For Docker installations, update the `TB_API_URL` environment variable with the correct value.
 
 
 ## Next Steps

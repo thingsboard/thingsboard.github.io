@@ -82,13 +82,13 @@ collections:
 release:
   branch: release-4.2
   branch_major_next: master
-  ver: 4.2.1
-  ce_ver: 4.2.1
-  ce_tag: v4.2.1
-  ce_full_ver: 4.2.1
-  pe_ver: 4.2.1pe
-  pe_full_ver: 4.2.1PE
-  wd_examples_commit: v4.2.1
+  ver: 4.3
+  ce_ver: 4.3
+  ce_tag: v4.3
+  ce_full_ver: 4.3.0
+  pe_ver: 4.3pe
+  pe_full_ver: 4.3.0PE
+  wd_examples_commit: v4.3
   # >>> EDGE
   edge_ver: 4.2
   edge_tag: v4.2
@@ -96,10 +96,13 @@ release:
   pe_edge_ver: 4.2pe
   pe_edge_full_ver: 4.2.0EDGEPE
   # <<< EDGE
-  ce_flutter_app_ver: 1.6.0
-  pe_flutter_app_ver: 1.6.0
-  ce_dart_client_ver: 4.0.0
-  pe_dart_client_ver: 4.0.0
+  ce_flutter_app_ver: 1.8.0
+  pe_flutter_app_ver: 1.8.0
+  ce_dart_client_ver: 4.1.0
+  pe_dart_client_ver: 4.1.0
+  # >>> TBMQ
   broker_full_ver: 2.2.0
   broker_branch: release-2.2.0
-  trendz_ver: 1.14.0
+  pe_broker_full_ver: 2.2.0PE
+  # <<< TBMQ
+  trendz_ver: 1.15.0

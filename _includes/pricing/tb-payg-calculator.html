@@ -1,0 +1,855 @@
+{% capture smPlans %}{% include pricing/prices/tb-payg.json %}{% endcapture %}
+<div id="smCalculatorModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div id="smCloseBtn" class="close-button">
+                <img src="/images/pricing/close-icon.svg" alt="Close icon">
+            </div>
+            <div class="card calculator">
+                <div class="calculator-header">
+                    <h2>Self-managed subscription calculator</h2>
+                </div>
+                <div class="input-parameters">
+                    <div class="input-group">
+                        <div class="input-label-group xs-row">
+                            <label for="sm-devices" class="label">
+                                Number of Devices
+                                <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                    <span class="tooltip-text">The total number of IoT devices that will connect to ThingsBoard</span>
+                                </span>
+                            </label>
+                            <input id="sm-devices" type="number" value="10" min="1" max="150000" class="input input-right" data-sm-input="devices">
+                        </div>
+                        <div class="slider-container snap-slider">
+                            <input type="range" id="sm-devicesSlider" min="0" max="5" step="0.01" value="0" class="slider" data-sm-slider="devices">
+                            <div class="tick-marks">
+                                <div class="tick-mark" data-index="0"><span class="tick"></span><span class="tick-label">10</span></div>
+                                <div class="tick-mark" data-index="1"><span class="tick"></span><span class="tick-label">50</span></div>
+                                <div class="tick-mark" data-index="2"><span class="tick"></span><span class="tick-label">100</span></div>
+                                <div class="tick-mark" data-index="3"><span class="tick"></span><span class="tick-label">500</span></div>
+                                <div class="tick-mark" data-index="4"><span class="tick"></span><span class="tick-label">1K</span></div>
+                                <div class="tick-mark" data-index="5"><span class="tick"></span><span class="tick-label infinity">&#8734;</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instances-section">
+                        <div class="instance-group">
+                            <div class="instance-info">
+                                <h4>
+                                    Production Instances
+                                    <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                        <span class="tooltip-text">Production instances handle your live data and real-time operations</span>
+                                    </span>
+                                </h4>
+                                <p id="smProdInstancesDescription">Maker includes 1 instance. Choose Prototype plan to add more for high availability (HA) and reliability.</p>
+                            </div>
+                            <div class="stepper-control unset-width" id="smProdInstancesStepper">
+                                <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease production instances">−</button>
+                                <input type="number" value="1" min="1" id="smProdInstances" aria-label="Production instances count" disabled>
+                                <button type="button" class="stepper-btn plus" data-action="increment" disabled aria-label="Increase production instances">+</button>
+                            </div>
+                        </div>
+                        <div class="instance-group">
+                            <div class="instance-info">
+                                <h4>
+                                    Development Instances
+                                    <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                        <span class="tooltip-text">Development instances for testing and CI/CD workflows</span>
+                                    </span>
+                                </h4>
+                                <p id="smDevInstancesDescription">Choose Prototype plan to add dev instances. Safely test new features without impacting your live data.</p>
+                            </div>
+                            <div class="stepper-control unset-width" id="smDevInstancesStepper">
+                                <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease development instances">−</button>
+                                <input type="number" value="0" min="0" id="smDevInstances" aria-label="Development instances count" disabled>
+                                <button type="button" class="stepper-btn plus" data-action="increment" disabled aria-label="Increase development instances">+</button>
+                            </div>
+                        </div>
+                        <div class="white-labeling-prompt" id="smWhiteLabelingPrompt">
+                            <span class="prompt-text">Need White Labeling?</span>
+                            <button type="button" class="prompt-link" id="smChoosePrototype">Choose Pilot Plan</button>
+                        </div>
+                    </div>
+                    <div class="input-group addons">
+                        <p class="label">
+                            Add-ons
+                            <span class="tooltip">
+                                <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                <span class="tooltip-text">Optional features to enhance your plan</span>
+                            </span>
+                        </p>
+                        <div class="add-ons-grid three-items">
+                            <div class="addon-card" data-sm-addon="edgeComputing" id="smEdgeCard">
+                                <div class="addon-badge hidden" id="smEdgeBadge">100% OFF</div>
+                                <div class="addon-header">
+                                    <span class="addon-title">
+                                        Edge Computing
+                                        <span class="tooltip">
+                                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                            <span class="tooltip-text">Deploy edge computing instances for local data processing</span>
+                                        </span>
+                                    </span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="smEdgeComputingToggle" data-sm-addon-toggle="edgeComputing">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <p class="addon-description" id="smEdgeDescription">Process data where it is collected.</p>
+                                <div class="addon-counter hidden" data-sm-addon-counter="edgeComputing" id="smEdgeCounter">
+                                    <label>Edge Instances</label>
+                                    <div class="stepper-control unset-width">
+                                        <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease edge instances">−</button>
+                                        <input type="number" value="1" min="1" id="smEdgeInstances" aria-label="Edge instances count">
+                                        <button type="button" class="stepper-btn plus" data-action="increment" aria-label="Increase edge instances">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addon-card" data-sm-addon="trendzAnalytics" id="smTrendzCard">
+                                <div class="addon-badge hidden" id="smTrendzBadge">100% OFF</div>
+                                <div class="addon-header">
+                                    <span class="addon-title">
+                                        Trendz Analytics
+                                        <span class="tooltip">
+                                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                            <span class="tooltip-text">Advanced analytics and visualization for your IoT data</span>
+                                        </span>
+                                    </span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="smTrendzAnalyticsToggle" data-sm-addon-toggle="trendzAnalytics">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <p class="addon-description">Advanced analytics for your solution.</p>
+                            </div>
+                            <div class="addon-card" data-sm-addon="mobileApp" id="smMobileAppCard">
+                                <div class="addon-header">
+                                    <span class="addon-title">
+                                        White-labeled Mobile App
+                                        <span class="tooltip">
+                                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                            <span class="tooltip-text">Customizable mobile app branded for your company</span>
+                                        </span>
+                                    </span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="smMobileAppToggle" data-sm-addon-toggle="mobileApp">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <p class="addon-description">Customizable mobile app for your end-users.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions-container">
+                    <div class="reset-container">
+                        <button id="smCalculatorReset" class="button reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div id="smResultsCard" class="card results"></div>
+        </div>
+    </div>
+</div>
+<script>
+    const tbSmPlans = {{ smPlans }};
+    const TB_SM_THRESHOLDS = [10, 50, 100, 500, 1000];
+    const TB_SM_MAX_DEVICES = 150000;
+    const TB_SM_ENTERPRISE_THRESHOLD = 50000;
+    const TB_SM_DESCRIPTIONS = {
+        Maker: {
+            production: 'Maker includes 1 instance. Choose Prototype plan to add more for high availability (HA) and reliability.',
+            development: 'Choose Prototype plan to add dev instances. Safely test new features without impacting your live data.'
+        },
+        Prototype: {
+            production: 'Your plan includes 1 instance. Add a 2nd instance for high availability (HA) to prevent downtime.',
+            development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.'
+        },
+        Pilot: {
+            production: 'Your plan includes 1 instance. Add a 2nd instance for high availability (HA) to prevent downtime.',
+            development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.'
+        },
+        Startup: {
+            production: 'Your 2 instances provide HA. Add more to scale your application and handle a larger processing load.',
+            development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.'
+        },
+        Business: {
+            production: 'Your plan includes 3 instances for HA. Add more at any time to horizontally scale your solution.',
+            development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.'
+        }
+    };
+
+    let tbSmState = {
+        clipboardMessage: '',
+        currentPlan: null,
+        debounceTimer: null,
+        deviceCount: 10,
+        prodInstances: 1,
+        devInstances: 0,
+        addons: {
+            edge: { enabled: false, count: 1 },
+            trendz: { enabled: false },
+            mobile: { enabled: false }
+        }
+    };
+
+    const tbSmUi = {
+        openBtn: document.getElementById('openSMCalculatorBtn'),
+        modal: document.getElementById('smCalculatorModal'),
+        closeBtn: document.getElementById('smCloseBtn'),
+        results: document.getElementById('smResultsCard'),
+        resetBtn: document.getElementById('smCalculatorReset'),
+        inputs: {
+            devices: document.getElementById('sm-devices'),
+            slider: document.getElementById('sm-devicesSlider'),
+            prod: document.getElementById('smProdInstances'),
+            dev: document.getElementById('smDevInstances'),
+            edge: document.getElementById('smEdgeInstances')
+        },
+        steppers: {
+            prod: document.getElementById('smProdInstancesStepper'),
+            dev: document.getElementById('smDevInstancesStepper'),
+            edge: document.getElementById('smEdgeCounter')
+        },
+        desc: {
+            prod: document.getElementById('smProdInstancesDescription'),
+            dev: document.getElementById('smDevInstancesDescription'),
+            edge: document.getElementById('smEdgeDescription')
+        },
+        toggles: {
+            edge: document.getElementById('smEdgeComputingToggle'),
+            trendz: document.getElementById('smTrendzAnalyticsToggle'),
+            mobile: document.getElementById('smMobileAppToggle')
+        },
+        cards: {
+            edge: document.getElementById('smEdgeCard'),
+            trendz: document.getElementById('smTrendzCard'),
+            mobile: document.getElementById('smMobileAppCard')
+        },
+        badges: {
+            edge: document.getElementById('smEdgeBadge'),
+            trendz: document.getElementById('smTrendzBadge')
+        },
+        wrappers: {
+            wlPrompt: document.getElementById('smWhiteLabelingPrompt'),
+            chooseProto: document.getElementById('smChoosePrototype')
+        }
+    };
+
+    const tbSmCopy = (btn) => copyToClipboard(btn, tbSmState.clipboardMessage);
+    const tbSmDownload = () => {
+        if (typeof downloadSummary === 'function') {
+            downloadSummary(tbSmState);
+        }
+    };
+
+    const tbSmGetPlan = (devices) => {
+        if (devices <= 10) return tbSmPlans.plans.find(p => p.name === 'Maker');
+        if (devices <= 50) return tbSmPlans.plans.find(p => p.name === 'Prototype');
+        if (devices <= 100) return tbSmPlans.plans.find(p => p.name === 'Pilot');
+        if (devices <= 500) return tbSmPlans.plans.find(p => p.name === 'Startup');
+        return tbSmPlans.plans.find(p => p.name === 'Business');
+    };
+
+    const tbSmSliderToDevices = (value) => {
+        if (value <= 4) {
+            return TB_SM_THRESHOLDS[Math.min(Math.round(value), TB_SM_THRESHOLDS.length - 1)];
+        }
+        return Math.round(1000 + (value - 4) * (TB_SM_MAX_DEVICES - 1000));
+    };
+
+    const tbSmDevicesToSlider = (devices) => {
+        if (devices <= 1000) {
+            const index = TB_SM_THRESHOLDS.findIndex(t => devices <= t);
+            return index !== -1 ? index : 4;
+        }
+        return 4 + (devices - 1000) / (TB_SM_MAX_DEVICES - 1000);
+    };
+
+    function tbSmInitTicks() {
+        requestAnimationFrame(() => {
+            const container = tbSmUi.modal.querySelector('.snap-slider');
+            if (!container) return;
+            const sliderInput = container.querySelector('input.slider');
+            if (!sliderInput) return;
+            const sliderWidth = sliderInput.offsetWidth;
+            const thumbWidth = 25;
+            let trackRatio = 0;
+            if (sliderWidth > 0) {
+                trackRatio = thumbWidth / sliderWidth;
+            }
+            container.querySelectorAll('.tick-mark').forEach((tick, index, arr) => {
+                const relativePos = index / (arr.length - 1);
+                const percent = ((trackRatio / 2) + (relativePos * (1 - trackRatio))) * 100;
+                tick.style.left = percent + '%';
+            });
+        });
+    }
+
+    const tbSmUpdateUI = (plan) => {
+        const isMaker = plan.name === 'Maker';
+        const hasWL = plan.wl === true;
+        const descriptions = TB_SM_DESCRIPTIONS[plan.name] || TB_SM_DESCRIPTIONS['Business'];
+        tbSmUi.desc.prod.textContent = descriptions.production;
+        tbSmUi.desc.dev.textContent = descriptions.development;
+
+        const setStepperState = (stepper, input, value, min, isDisabled) => {
+            stepper.querySelector('[data-action="decrement"]').disabled = isDisabled || value <= min;
+            stepper.querySelector('[data-action="increment"]').disabled = isDisabled;
+            input.disabled = isDisabled;
+            input.value = value;
+        };
+
+        if (isMaker) {
+            tbSmState.prodInstances = 1;
+            tbSmState.devInstances = 0;
+        } else {
+            tbSmState.prodInstances = Math.max(tbSmState.prodInstances, plan.includedProdInstances);
+        }
+
+        setStepperState(tbSmUi.steppers.prod, tbSmUi.inputs.prod, tbSmState.prodInstances, plan.includedProdInstances, isMaker);
+        setStepperState(tbSmUi.steppers.dev, tbSmUi.inputs.dev, tbSmState.devInstances, 0, isMaker);
+
+        tbSmUi.wrappers.wlPrompt.classList.toggle('hidden', hasWL);
+        tbSmUpdateAddons(plan);
+    };
+
+    const tbSmUpdateAddons = (plan) => {
+        const isMaker = plan.name === 'Maker';
+
+        const updateAddonState = (key, card, badge, toggle, counterEl, descEl) => {
+            const isEnabled = tbSmState.addons[key].enabled;
+            if (isMaker) {
+                card.classList.add('addon-free', 'active');
+                if (badge) badge.classList.remove('hidden');
+                toggle.checked = true;
+                toggle.disabled = true;
+                if (counterEl) counterEl.classList.add('hidden');
+                if (descEl) descEl.textContent = 'Process data where it is collected.';
+                if (tbSmState.addons[key].count) tbSmState.addons[key].count = 1;
+            } else {
+                card.classList.remove('addon-free');
+                if (badge) badge.classList.add('hidden');
+                toggle.disabled = false;
+                toggle.checked = isEnabled;
+                card.classList.toggle('active', isEnabled);
+                if (key === 'edge') {
+                    if (isEnabled) {
+                        tbSmState.addons.edge.count = Math.max(tbSmState.addons.edge.count, plan.edgeInstancesIncluded);
+                        tbSmUi.inputs.edge.value = tbSmState.addons.edge.count;
+                        counterEl.classList.remove('hidden');
+                        descEl.textContent = `${plan.edgeInstancesIncluded} Edge Computing instance${plan.edgeInstancesIncluded > 1 ? 's are' : ' is'} included.`;
+                        counterEl.querySelector('[data-action="decrement"]').disabled = tbSmState.addons.edge.count <= plan.edgeInstancesIncluded;
+                    } else {
+                        counterEl.classList.add('hidden');
+                        descEl.textContent = 'Process data where it is collected.';
+                    }
+                } else if (key === 'mobile') {
+                    card.classList.remove('addon-disabled');
+                }
+            }
+        };
+
+        updateAddonState('edge', tbSmUi.cards.edge, tbSmUi.badges.edge, tbSmUi.toggles.edge, tbSmUi.steppers.edge, tbSmUi.desc.edge);
+        updateAddonState('trendz', tbSmUi.cards.trendz, tbSmUi.badges.trendz, tbSmUi.toggles.trendz);
+
+        if (isMaker) {
+            tbSmUi.cards.mobile.classList.add('addon-disabled');
+            tbSmUi.toggles.mobile.checked = false;
+            tbSmUi.toggles.mobile.disabled = true;
+            tbSmState.addons.mobile.enabled = false;
+        } else {
+            updateAddonState('mobile', tbSmUi.cards.mobile, null, tbSmUi.toggles.mobile);
+        }
+    };
+
+    const tbSmToggleAddon = (key, isEnabled) => {
+        if (!tbSmState.currentPlan || tbSmState.currentPlan.name === 'Maker') return;
+        tbSmState.addons[key].enabled = isEnabled;
+        tbSmCalculate();
+        tbSmSendGTM();
+    };
+
+    const tbSmHandleStepper = (type, action) => {
+        const plan = tbSmState.currentPlan;
+        if (!plan || plan.name === 'Maker') return;
+
+        if (type === 'prod') {
+            const min = plan.includedProdInstances;
+            tbSmState.prodInstances = action === 'increment' ? tbSmState.prodInstances + 1 : Math.max(min, tbSmState.prodInstances - 1);
+            tbSmUi.inputs.prod.value = tbSmState.prodInstances;
+            tbSmUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbSmState.prodInstances <= min;
+        } else if (type === 'dev') {
+            tbSmState.devInstances = action === 'increment' ? tbSmState.devInstances + 1 : Math.max(0, tbSmState.devInstances - 1);
+            tbSmUi.inputs.dev.value = tbSmState.devInstances;
+            tbSmUi.steppers.dev.querySelector('[data-action="decrement"]').disabled = tbSmState.devInstances <= 0;
+        } else if (type === 'edge') {
+            const min = plan.edgeInstancesIncluded;
+            let val = tbSmState.addons.edge.count;
+            val = action === 'increment' ? val + 1 : Math.max(min, val - 1);
+            tbSmState.addons.edge.count = val;
+            tbSmUi.inputs.edge.value = val;
+            tbSmUi.steppers.edge.querySelector('[data-action="decrement"]').disabled = val <= min;
+        }
+        tbSmCalculate();
+        tbSmSendGTM();
+    };
+
+    const tbSmCalculate = () => {
+        const devices = tbSmState.deviceCount;
+
+        if (devices >= TB_SM_ENTERPRISE_THRESHOLD) {
+            tbSmDisplayEnterprise(devices);
+            return;
+        }
+
+        const plan = tbSmGetPlan(devices);
+        tbSmState.currentPlan = plan;
+        tbSmUpdateUI(plan);
+
+        const isMaker = plan.name === 'Maker';
+        const isBusiness = plan.name === 'Business';
+        const hasWL = plan.wl === true;
+
+        let totalPrice = plan.price;
+        let extraDevices = 0, extraDevicesCost = 0;
+
+        if (isBusiness && devices > plan.includedDevices) {
+            extraDevices = devices - plan.includedDevices;
+            extraDevicesCost = extraDevices * plan.extraDevicePrice;
+            totalPrice += extraDevicesCost;
+        }
+
+        const extraProd = !isMaker ? Math.max(0, tbSmState.prodInstances - plan.includedProdInstances) : 0;
+        const extraProdCost = extraProd * plan.extraProdInstancePrice;
+        totalPrice += extraProdCost;
+
+        const devCost = !isMaker ? tbSmState.devInstances * plan.devQaExtraInstancePrice : 0;
+        totalPrice += devCost;
+
+        const breakdown = {};
+
+        if (tbSmState.addons.edge.enabled || isMaker) {
+            if (isMaker) {
+                breakdown.edge = { isFree: true, cost: 0, total: 1, included: 1 };
+            } else {
+                const count = tbSmState.addons.edge.count;
+                const extraEdges = Math.max(0, count - plan.edgeInstancesIncluded);
+                tbSmState.addons.edge.extraEdgeCalc = extraEdges;
+                const extraEdgeCost = extraEdges * (plan.extraEdgePrice || 0);
+                const edgeTotal = plan.edgeMonthPrice + extraEdgeCost;
+                totalPrice += edgeTotal;
+                breakdown.edge = { isFree: false, base: plan.edgeMonthPrice, included: plan.edgeInstancesIncluded, total: count, extra: extraEdges, extraCost: extraEdgeCost, cost: edgeTotal };
+            }
+        }
+
+        if (tbSmState.addons.trendz.enabled || isMaker) {
+            if (isMaker) {
+                breakdown.trendz = { isFree: true, cost: 0, includedDevices: plan.includedDevices };
+            } else {
+                const trendzExtraCost = (isBusiness && extraDevices > 0 && plan.trendzExtraDevicePrice) ? extraDevices * plan.trendzExtraDevicePrice : 0;
+                const trendzTotal = plan.trendzMonthPrice + trendzExtraCost;
+                totalPrice += trendzTotal;
+                breakdown.trendz = {
+                    isFree: false,
+                    base: plan.trendzMonthPrice,
+                    includedDevices: plan.includedDevices,
+                    extra: extraDevices,
+                    extraCost: trendzExtraCost,
+                    cost: trendzTotal
+                };
+            }
+        }
+
+        if (tbSmState.addons.mobile.enabled && !isMaker) {
+            totalPrice += tbSmPlans.mobileApp;
+            breakdown.mobile = { cost: tbSmPlans.mobileApp, setup: tbSmPlans.mobileAppSetup };
+        }
+
+        tbSmDisplay({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice, isMaker, isBusiness, hasWL });
+    };
+
+    const tbSmCreateItem = (label, value, tooltip, skipPlaceholder) => `
+        <div class="result-item">
+            <span class="result-label">${label}:</span>
+            <span class="result-value">
+                ${value}${tooltip ? `<span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltip}</span></span>` : (skipPlaceholder ? '' : `<span class="tooltip-placeholder"></span>`)}
+            </span>
+        </div>`;
+
+    const tbSmDisplayEnterprise = (devices) => {
+        let msg = `Self-managed Pay-as-you-go Enterprise Request\n`;
+        msg += `- Devices: ${formatNumber(devices)}\n`;
+        msg += `- Prod Instances: ${formatNumber(tbSmState.prodInstances)}\n`;
+        msg += `- Development Instances: ${formatNumber(tbSmState.devInstances)}\n`;
+
+        const hasAddons = tbSmState.addons.edge.enabled || tbSmState.addons.trendz.enabled || tbSmState.addons.mobile.enabled;
+        if (hasAddons) {
+            msg += `\nAdd-ons:\n`;
+            if (tbSmState.addons.edge.enabled) {
+                msg += `- Edge Computing: ${tbSmState.addons.edge.count} instance(s)\n`;
+            }
+            if (tbSmState.addons.trendz.enabled) {
+                msg += `- Trendz Analytics: Enabled\n`;
+            }
+            if (tbSmState.addons.mobile.enabled) {
+                msg += `- White-labeled Mobile App: Enabled\n`;
+            }
+        }
+
+        tbSmState.clipboardMessage = msg;
+
+        tbSmUi.results.innerHTML = `
+            <div class="card-header enterprise-header">
+                <div class="header-top">
+                    <h3>Deployment Summary</h3>
+                    <div class="header-actions">
+                        <div id="smCopyButton" class="icon-button" title="Copy">${copyIcon}<span class="tooltip-text">Copy deployment summary</span></div>
+                        <div id="smDownloadButton" class="icon-button" title="Download">${downloadIcon}<span class="tooltip-text">Download summary</span></div>
+                    </div>
+                </div>
+                <h4 class="wrap">You are building at an impressive scale.</h4>
+            </div>
+            <div class="results-scroll-container">
+                <div class="results-section">
+                    <div class="section-content show">
+                        ${tbSmCreateItem('Devices', formatNumber(devices), null, true)}
+                        ${tbSmCreateItem('Prod Instances', formatNumber(tbSmState.prodInstances), null, true)}
+                        ${tbSmCreateItem('Development Instances', formatNumber(tbSmState.devInstances), null, true)}
+                    </div>
+                </div>
+                <p class="contact-us-text enterprise-text">You have reached a tier where economies of scale apply. Let's talk about aligning our pricing structure with your specific rollout schedule and volume requirements.</p>
+            </div>
+            <div class="results-footer">
+                <a id="smContactUs" href="/docs/contact-us/" class="button">Get Enterprise Quote</a>
+            </div>`;
+
+        const contactBtn = document.getElementById('smContactUs');
+        if (contactBtn) {
+            const subject = 'ThingsBoard Products';
+            contactBtn.href = `/docs/contact-us/?subject=${encodeURIComponent(subject)}&message=${encodeURIComponent(msg)}`;
+        }
+
+        document.getElementById('smCopyButton')?.addEventListener('click', e => tbSmCopy(e.currentTarget));
+        document.getElementById('smDownloadButton')?.addEventListener('click', tbSmDownload);
+    };
+
+    const tbSmDisplay = ({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice, isMaker, isBusiness, hasWL }) => {
+        let detailsHtml = `
+            <div class="results-section expandable" data-section="planDetails">
+                <div class="section-header" data-toggle="planDetails">
+                    <span class="section-title-with-chevron">${plan.name} ${chevronUpIcon}</span>
+                    <span class="section-value">
+                        ${formatCurrency(plan.price)}
+                        <span class="tooltip">${infoIcon}<span class="tooltip-text">Base plan price</span></span>
+                    </span>
+                </div>
+                <div class="section-content">
+                    ${tbSmCreateItem('Included Devices', formatNumber(plan.includedDevices))}
+                    ${tbSmCreateItem('Included Prod Instances', formatNumber(plan.includedProdInstances))}
+                    ${tbSmCreateItem('White Labeling', `<span class="badge ${hasWL ? 'enabled' : 'disabled'}">${hasWL ? 'Enabled' : 'Disabled'}</span>`, null, true)}
+                    ${tbSmCreateItem('Base Price', formatCurrency(plan.price), 'Monthly base price')}
+        `;
+
+        if (isBusiness && extraDevices > 0) {
+            detailsHtml += tbSmCreateItem('Extra Devices', formatNumber(extraDevices), 'Devices beyond included');
+            detailsHtml += tbSmCreateItem('Extra Devices Cost', formatCurrency(extraDevicesCost), `${formatNumber(extraDevices)} × ${formatCurrency(plan.extraDevicePrice)}`);
+        }
+        if (!isMaker && extraProd > 0) {
+            detailsHtml += tbSmCreateItem('Extra Prod Instances', formatNumber(extraProd), 'Additional production instances');
+            detailsHtml += tbSmCreateItem('Extra Prod Instances Cost', formatCurrency(extraProdCost), `${formatNumber(extraProd)} × ${formatCurrency(plan.extraProdInstancePrice)}`);
+        }
+        if (!isMaker && tbSmState.devInstances > 0) {
+            detailsHtml += tbSmCreateItem('Extra Dev Instances', formatNumber(tbSmState.devInstances), 'Development/QA instances');
+            detailsHtml += tbSmCreateItem('Extra Dev Instances Cost', formatCurrency(devCost), `${formatNumber(tbSmState.devInstances)} × ${formatCurrency(plan.devQaExtraInstancePrice)}`);
+        }
+        detailsHtml += '</div></div>';
+
+        const addonsHtml = tbSmGenAddons(breakdown, plan, isMaker);
+
+        let tooltips = [`${formatCurrency(plan.price)} (base)`];
+        if (extraDevicesCost) tooltips.push(`${formatCurrency(extraDevicesCost)} (extra devices)`);
+        if (extraProdCost) tooltips.push(`${formatCurrency(extraProdCost)} (extra prod)`);
+        if (devCost) tooltips.push(`${formatCurrency(devCost)} (dev)`);
+        if (breakdown.edge?.cost) tooltips.push(`${formatCurrency(breakdown.edge.cost)} (Edge)`);
+        if (breakdown.trendz?.cost) tooltips.push(`${formatCurrency(breakdown.trendz.cost)} (Trendz)`);
+        if (breakdown.mobile) tooltips.push(`${formatCurrency(breakdown.mobile.cost)} (Mobile)`);
+
+        tbSmUi.results.innerHTML = `
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="smCopyButton" class="icon-button" title="Copy">${copyIcon}</div>
+                        <div id="smDownloadButton" class="icon-button" title="Download">${downloadIcon}</div>
+                    </div>
+                </div>
+                <div class="optimal-plan-row">
+                    <span>Subscription plan:</span>
+                    <span class="plan-link">${plan.name}</span>
+                </div>
+            </div>
+            <div class="results-scroll-container">
+                ${detailsHtml}
+                <div class="addons-separator"><span>Add-ons</span></div>
+                ${addonsHtml}
+            </div>
+            <div class="results-footer">
+                <div class="results-total">
+                    <span>Total</span>
+                    <span class="total-value">
+                        ${formatCurrency(totalPrice)}/month
+                        <span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltips.join(' + ')}</span></span>
+                    </span>
+                </div>
+                <a id="smGetStarted" href="javascript:;" class="button" onClick="getLicense(event, '${plan.productId}', '${plan.planId}',
+                '${plan.name}', null, '${extraDevices}', null, null, '${extraProd}', '${tbSmState.devInstances}', '${tbSmState.addons.edge.enabled}',
+                '${tbSmState.addons.edge.extraEdgeCalc}', '${tbSmState.addons.trendz.enabled}')">Get started</a>
+            </div>`;
+
+        tbSmInitExpandable();
+        document.getElementById('smCopyButton')?.addEventListener('click', e => tbSmCopy(e.currentTarget));
+        document.getElementById('smDownloadButton')?.addEventListener('click', tbSmDownload);
+        tbSmUpdateClipboard({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice });
+    };
+
+    const tbSmGenAddons = (breakdown, plan, isMaker) => {
+        let html = '';
+
+        const section = (id, title, valueHtml, isExpandable, extraContent) => `
+            <div class="results-section ${isExpandable ? 'expandable' : ''}" data-section="${id}">
+                <div class="section-header" ${isExpandable ? `data-toggle="${id}"` : ''}>
+                    <span class="${isExpandable ? 'section-title-with-chevron' : 'section-title'}">
+                        ${title} ${isExpandable ? chevronUpIcon : ''}
+                    </span>
+                    ${valueHtml}
+                </div>
+                ${extraContent || ''}
+            </div>`;
+
+        const addButton = (id, cost) => {
+            const title = id === 'edgeComputing' ? 'Edge Computing' : id === 'trendzAnalytics' ? 'Trendz Analytics' : 'White-labeled Mobile App';
+            const isMobile = id === 'mobileApp';
+            return `
+            <div class="results-section inactive">
+                <div class="section-header">
+                    <span class="${isMobile ? 'section-title' : 'section-title-with-chevron'}">${title} ${isMobile ? '' : chevronDownIcon}</span>
+                    <span class="add-to-plan-btn" data-sm-addon="${id}">Add (${formatCurrency(cost)})</span>
+                </div>
+            </div>`;
+        };
+
+        if (tbSmState.addons.edge.enabled && breakdown.edge) {
+            const edge = breakdown.edge;
+            if (edge.isFree) {
+                html += section('edgeComputing', 'Edge Computing', `<span class="section-value strikethrough">${formatCurrency(7)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Free with Maker</span></span></span>`, true, `<div class="section-content">${tbSmCreateItem('Included Edges', 1)}</div>`);
+            } else {
+                let content = `<div class="section-content">`;
+                content += tbSmCreateItem('Included Edges', edge.included);
+                content += tbSmCreateItem('Add-on Base Price', formatCurrency(edge.base), 'Monthly Edge Computing fee');
+                if (edge.extra) {
+                    content += tbSmCreateItem('Extra Edges', edge.extra, 'Additional edge instances');
+                    content += tbSmCreateItem('Extra Edges Cost', formatCurrency(edge.extraCost), `${edge.extra} × ${formatCurrency(plan.extraEdgePrice)}`);
+                }
+                content += '</div>';
+                html += section('edgeComputing', 'Edge Computing', `<span class="section-value">${formatCurrency(edge.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Total Edge Computing cost</span></span></span>`, true, content);
+            }
+        } else if (!isMaker) {
+            html += addButton('edgeComputing', plan.edgeMonthPrice);
+        }
+
+        if (tbSmState.addons.trendz.enabled && breakdown.trendz) {
+            const trendz = breakdown.trendz;
+            if (trendz.isFree) {
+                html += section('trendzAnalytics', 'Trendz Analytics', `<span class="section-value strikethrough">${formatCurrency(12)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Free with Maker</span></span></span>`, true, `<div class="section-content">${tbSmCreateItem('Included Devices', plan.includedDevices)}</div>`);
+            } else {
+                let content = `<div class="section-content">`;
+                content += tbSmCreateItem('Included Devices', formatNumber(trendz.includedDevices));
+                content += tbSmCreateItem('Add-on Base Price', formatCurrency(trendz.base), 'Monthly Trendz Analytics fee');
+                if (trendz.extra > 0) {
+                    content += tbSmCreateItem('Extra Devices', formatNumber(trendz.extra), 'Devices beyond included');
+                    content += tbSmCreateItem('Extra Devices Cost', formatCurrency(trendz.extraCost), `${formatNumber(trendz.extra)} × ${formatCurrency(plan.trendzExtraDevicePrice)}`);
+                }
+                content += '</div>';
+                html += section('trendzAnalytics', 'Trendz Analytics', `<span class="section-value">${formatCurrency(trendz.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Total Trendz Analytics cost</span></span></span>`, true, content);
+            }
+        } else if (!isMaker) {
+            html += addButton('trendzAnalytics', plan.trendzMonthPrice);
+        }
+
+        if (tbSmState.addons.mobile.enabled && breakdown.mobile) {
+            html += section('mobileApp', 'White-labeled Mobile App', `<span class="section-value">${formatCurrency(breakdown.mobile.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Monthly: ${formatCurrency(tbSmPlans.mobileApp)}<br>Setup fee: ${formatCurrency(tbSmPlans.mobileAppSetup)} (one-time)</span></span></span>`, false, '');
+        } else if (!isMaker) {
+            html += addButton('mobileApp', tbSmPlans.mobileApp);
+        }
+
+        return html;
+    };
+
+    const tbSmInitExpandable = () => {
+        tbSmUi.results.querySelectorAll('.expandable .section-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const section = header.closest('.results-section');
+                section.classList.toggle('collapsed');
+                const chevron = header.querySelector('.chevron-icon');
+                if (chevron) chevron.outerHTML = section.classList.contains('collapsed') ? chevronDownIcon : chevronUpIcon;
+            });
+        });
+
+        tbSmUi.results.querySelectorAll('.add-to-plan-btn').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                const key = btn.dataset.smAddon === 'edgeComputing' ? 'edge' : btn.dataset.smAddon === 'trendzAnalytics' ? 'trendz' : 'mobile';
+                tbSmUi.toggles[key].checked = true;
+                tbSmToggleAddon(key, true);
+            });
+        });
+    };
+
+    const tbSmUpdateClipboard = ({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice }) => {
+        let msg = `Plan: ${plan.name} (${formatCurrency(plan.price)})\n- Devices: ${formatNumber(devices)}\n- Prod Instances: ${formatNumber(tbSmState.prodInstances)}\n- Dev Instances: ${formatNumber(tbSmState.devInstances)}\n`;
+        if (extraDevices) msg += `- Extra Devices: ${formatNumber(extraDevices)} (${formatCurrency(extraDevicesCost)})\n`;
+        if (extraProd) msg += `- Extra Prod Instances: ${formatNumber(extraProd)} (${formatCurrency(extraProdCost)})\n`;
+        if (tbSmState.devInstances) msg += `- Dev Instances Cost: ${formatCurrency(devCost)}\n`;
+        if (Object.keys(breakdown).length) {
+            msg += '\nAdd-ons:\n';
+            if (breakdown.edge) msg += breakdown.edge.isFree ? '- Edge: FREE\n' : `- Edge: ${formatCurrency(breakdown.edge.cost)} (Total: ${breakdown.edge.total})\n`;
+            if (breakdown.trendz) msg += breakdown.trendz.isFree ? '- Trendz: FREE\n' : `- Trendz: ${formatCurrency(breakdown.trendz.cost)}\n`;
+            if (breakdown.mobile) msg += `- Mobile App: ${formatCurrency(breakdown.mobile.cost)}\n`;
+        }
+        tbSmState.clipboardMessage = msg + `\nTotal: ${formatCurrency(totalPrice)}`;
+    };
+
+    const tbSmSendGTM = () => {
+        clearTimeout(tbSmState.debounceTimer);
+        tbSmState.debounceTimer = setTimeout(() => {
+            window.dataLayer?.push({
+                event: 'sm_calculator_interaction',
+                sm_calculator_devices: tbSmState.deviceCount,
+                sm_calculator_plan: tbSmState.currentPlan?.name || '',
+                sm_calculator_prod: tbSmState.prodInstances,
+                sm_calculator_dev: tbSmState.devInstances,
+                sm_calculator_addon_edge: tbSmState.addons.edge.enabled,
+                sm_calculator_addon_trendz: tbSmState.addons.trendz.enabled
+            });
+        }, 3000);
+    };
+
+    const tbSmInit = () => {
+        if (!tbSmUi.openBtn || !tbSmUi.modal) return;
+
+        tbSmUi.openBtn.addEventListener('click', () => {
+            openModal(tbSmUi.modal);
+            setTimeout(tbSmInitTicks, 50);
+            sliderProgress(tbSmUi.inputs.slider);
+            tbSmCalculate();
+        });
+
+        tbSmUi.closeBtn.addEventListener('click', () => closeModal(tbSmUi.modal));
+        tbSmUi.modal.addEventListener('click', e => e.target === tbSmUi.modal && closeModal(tbSmUi.modal));
+
+        tbSmUi.resetBtn.addEventListener('click', () => {
+            tbSmState = {
+                clipboardMessage: '',
+                currentPlan: null,
+                debounceTimer: null,
+                deviceCount: 10,
+                prodInstances: 1,
+                devInstances: 0,
+                addons: {
+                    edge: { enabled: false, count: 1 },
+                    trendz: { enabled: false },
+                    mobile: { enabled: false }
+                }
+            };
+            tbSmUi.inputs.devices.value = 10;
+            tbSmUi.inputs.slider.value = 0;
+            tbSmUi.inputs.prod.value = 1;
+            tbSmUi.inputs.dev.value = 0;
+            tbSmUi.inputs.edge.value = 1;
+            tbSmUi.toggles.edge.checked = false;
+            tbSmUi.toggles.trendz.checked = false;
+            tbSmUi.toggles.mobile.checked = false;
+            sliderProgress(tbSmUi.inputs.slider);
+            tbSmCalculate();
+            tbSmSendGTM();
+        });
+
+        const onDevicesChange = (val) => {
+            let devices = Math.max(1, Math.min(TB_SM_MAX_DEVICES, parseInt(val) || 1));
+            if (devices <= 1000) devices = TB_SM_THRESHOLDS.find(t => devices <= t) || 1000;
+            tbSmState.deviceCount = devices;
+            tbSmUi.inputs.devices.value = devices;
+            tbSmUi.inputs.slider.value = tbSmDevicesToSlider(devices);
+            sliderProgress(tbSmUi.inputs.slider);
+            tbSmCalculate();
+            tbSmSendGTM();
+        };
+
+        tbSmUi.inputs.devices.addEventListener('change', e => onDevicesChange(e.target.value));
+
+        tbSmUi.inputs.slider.addEventListener('input', e => {
+            tbSmState.deviceCount = tbSmSliderToDevices(parseFloat(e.target.value));
+            tbSmUi.inputs.devices.value = tbSmState.deviceCount;
+            sliderProgress(e.target);
+            tbSmCalculate();
+            tbSmSendGTM();
+        });
+
+        tbSmUi.inputs.slider.addEventListener('change', e => {
+            if (parseFloat(e.target.value) <= 4) {
+                const snapped = Math.round(e.target.value);
+                e.target.value = snapped;
+                sliderProgress(e.target);
+                tbSmState.deviceCount = tbSmSliderToDevices(snapped);
+                tbSmUi.inputs.devices.value = tbSmState.deviceCount;
+                tbSmCalculate();
+            }
+        });
+
+        const bindStepper = (stepper, type) => {
+            stepper.querySelectorAll('.stepper-btn').forEach(btn => {
+                btn.addEventListener('click', () => !btn.disabled && tbSmHandleStepper(type, btn.dataset.action));
+            });
+        };
+        bindStepper(tbSmUi.steppers.prod, 'prod');
+        bindStepper(tbSmUi.steppers.dev, 'dev');
+        bindStepper(tbSmUi.steppers.edge, 'edge');
+
+        tbSmUi.inputs.prod.addEventListener('change', e => {
+            if (e.target.disabled) return;
+            tbSmState.prodInstances = Math.max(tbSmState.currentPlan.includedProdInstances, parseInt(e.target.value) || 1);
+            e.target.value = tbSmState.prodInstances;
+            tbSmUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbSmState.prodInstances <= tbSmState.currentPlan.includedProdInstances;
+            tbSmCalculate();
+            tbSmSendGTM();
+        });
+
+        tbSmUi.inputs.dev.addEventListener('change', e => {
+            if (e.target.disabled) return;
+            tbSmState.devInstances = Math.max(0, parseInt(e.target.value) || 0);
+            e.target.value = tbSmState.devInstances;
+            tbSmUi.steppers.dev.querySelector('[data-action="decrement"]').disabled = tbSmState.devInstances <= 0;
+            tbSmCalculate();
+            tbSmSendGTM();
+        });
+
+        tbSmUi.inputs.edge.addEventListener('change', e => {
+            if (!tbSmState.currentPlan || tbSmState.currentPlan.name === 'Maker') return;
+            tbSmState.addons.edge.count = Math.max(tbSmState.currentPlan.edgeInstancesIncluded, parseInt(e.target.value) || 1);
+            e.target.value = tbSmState.addons.edge.count;
+            tbSmUi.steppers.edge.querySelector('[data-action="decrement"]').disabled = tbSmState.addons.edge.count <= tbSmState.currentPlan.edgeInstancesIncluded;
+            tbSmCalculate();
+            tbSmSendGTM();
+        });
+
+        tbSmUi.wrappers.chooseProto.addEventListener('click', () => onDevicesChange(100));
+
+        ['edge', 'trendz', 'mobile'].forEach(key => {
+            tbSmUi.toggles[key].addEventListener('change', e => !e.target.disabled && tbSmToggleAddon(key, e.target.checked));
+        });
+
+        window.addEventListener('resize', tbSmInitTicks);
+    };
+
+    tbSmInit();
+</script>

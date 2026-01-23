@@ -1,0 +1,1495 @@
+{% capture tbPcPlans %}{% include pricing/prices/tb-private-cloud.json %}{% endcapture %}
+
+<div id="tbPcCalculatorModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div id="tbPcCloseBtn" class="close-button">
+                <img src="/images/pricing/close-icon.svg" alt="Close icon">
+            </div>
+            <div class="card calculator">
+                <div class="calculator-header">
+                    <h2>Private Cloud plan calculator</h2>
+                    <div class="mode-tabs">
+                        <button class="mode-tab active" data-mode="basic">Basic</button>
+                        <button class="mode-tab" data-mode="advanced">
+                            Advanced
+                            <span class="tooltip">
+                                <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                <span class="tooltip-text">Enable multiple device profiles</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-parameters">
+                    <div class="device-profiles-container" id="tbPcDeviceProfilesContainer">
+                    </div>
+                    <div class="input-group addons">
+                        <p class="label">
+                            Add-ons
+                            <span class="tooltip">
+                                <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                <span class="tooltip-text">Optional features to enhance your plan</span>
+                            </span>
+                        </p>
+                        <div class="add-ons-grid">
+                            <div class="addon-card" id="tbPcEdgeCard" data-addon="edgeComputing">
+                                <div class="addon-header">
+                                    <span class="addon-title">
+                                        Edge Computing
+                                        <span class="tooltip">
+                                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                            <span class="tooltip-text">Deploy edge computing instances for local data processing</span>
+                                        </span>
+                                    </span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="tbPcEdgeToggle" data-addon-toggle="edgeComputing">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <p class="addon-description"><span id="tbPcEdgeIncludedText">10</span> Edge Computing instances are included.</p>
+                                <div class="addon-counter hidden" data-addon-counter="edgeComputing">
+                                    <label>Edge Instances</label>
+                                    <div class="stepper-control">
+                                        <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease edge instances">−</button>
+                                        <input type="number" value="10" min="1" id="tbPcEdgeInstances" aria-label="Edge instances count">
+                                        <button type="button" class="stepper-btn plus" data-action="increment" aria-label="Increase edge instances">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addon-card" id="tbPcTrendzCard" data-addon="trendzAnalytics">
+                                <div class="addon-header">
+                                    <span class="addon-title">
+                                        Trendz Analytics
+                                        <span class="tooltip">
+                                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                            <span class="tooltip-text">Advanced analytics and visualization for your IoT data</span>
+                                        </span>
+                                    </span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="tbPcTrendzToggle" data-addon-toggle="trendzAnalytics">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <p class="addon-description">Advanced analytics for your solution.</p>
+                            </div>
+
+                            <div class="addon-card" id="tbPcMobileAppCard" data-addon="mobileApp">
+                                <div class="addon-header">
+                                    <span class="addon-title">
+                                        White-labeled Mobile App
+                                        <span class="tooltip">
+                                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                            <span class="tooltip-text">Customizable mobile app branded for your company</span>
+                                        </span>
+                                    </span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="tbPcMobileAppToggle" data-addon-toggle="mobileApp">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <p class="addon-description">Customizable mobile app for your end-users.</p>
+                            </div>
+
+                            <div class="addon-card" id="tbPcDevQaCard" data-addon="devQaInstances">
+                                <div class="addon-header">
+                                    <span class="addon-title">
+                                        Dev & QA Instances
+                                        <span class="tooltip">
+                                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                            <span class="tooltip-text">Separate environments for development, testing, and CI/CD pipelines</span>
+                                        </span>
+                                    </span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="tbPcDevQaToggle" data-addon-toggle="devQaInstances">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <p class="addon-description">Environments for dev, test & CI/CD.</p>
+                                <div class="addon-counter hidden" data-addon-counter="devQaInstances">
+                                    <label>Dev Instances</label>
+                                    <div class="stepper-control">
+                                        <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease dev instances">−</button>
+                                        <input type="number" value="1" min="1" id="tbPcDevInstances" aria-label="Dev instances count">
+                                        <button type="button" class="stepper-btn plus" data-action="increment" aria-label="Increase dev instances">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions-container">
+                    <div class="reset-container">
+                        <button id="tbPcResetBtn" class="button reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div id="tbPcResultsCard" class="card results hidden"></div>
+        </div>
+    </div>
+    <div id="tbPcPayloadModal" class="payload-modal-overlay">
+        <div class="modal-content">
+            <div class="modal-wrapper">
+                <div class="modal-header">
+                    <h2>Upload sample to calculate data points</h2>
+                    <div id="tbPcClosePayloadModalBtn" class="close-button">
+                        <img src="/images/pricing/close-icon.svg" alt="Close icon">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="tbPcJsonInput">JSON value
+                        <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip-text">For simplicity, this editor supports only JSON format. While ThingsBoard supports other payload formats in real-world use cases, this calculator is designed to keep things easy and straightforward.</span>
+                        </span>
+                    </label>
+                    <textarea id="tbPcJsonInput" spellcheck="false"></textarea>
+                    <p id="tbPcErrorMessage"></p>
+                </div>
+                <div class="footer">
+                    <div class="data-points">
+                        Data points per message: <span id="tbPcDataPointCount">0</span>
+                    </div>
+                    <button class="button" id="tbPcApplyPayloadBtn">Apply payload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const tbPcPlans = {{ tbPcPlans }};
+
+    const TB_PC_SLIDER_BREAKPOINT = 100000;
+    const TB_PC_SLIDER_MAX = 120000;
+    const TB_PC_REAL_MAX = 400000;
+
+    const tbPcSliderToReal = (sliderVal) => {
+        if (sliderVal <= TB_PC_SLIDER_BREAKPOINT) return sliderVal;
+        return Math.round(TB_PC_SLIDER_BREAKPOINT + (sliderVal - TB_PC_SLIDER_BREAKPOINT) *
+            ((TB_PC_REAL_MAX - TB_PC_SLIDER_BREAKPOINT) / (TB_PC_SLIDER_MAX - TB_PC_SLIDER_BREAKPOINT)));
+    };
+
+    const tbPcRealToSlider = (realVal) => {
+        if (realVal <= TB_PC_SLIDER_BREAKPOINT) return realVal;
+        return TB_PC_SLIDER_BREAKPOINT + (realVal - TB_PC_SLIDER_BREAKPOINT) *
+            ((TB_PC_SLIDER_MAX - TB_PC_SLIDER_BREAKPOINT) / (TB_PC_REAL_MAX - TB_PC_SLIDER_BREAKPOINT));
+    };
+
+    let tbPcNextProfileId = 1;
+
+    let tbPcState = {
+        clipboardMessage: '',
+        optimalPlanName: '',
+        price: 0,
+        extraStoragePrice: 0,
+        debounceTimer: null,
+        isAdvancedMode: false,
+        billingPeriod: 'monthly',
+        deviceProfiles: [],
+        addons: {
+            edgeComputing: { enabled: false, instances: 10 },
+            trendzAnalytics: { enabled: false },
+            mobileApp: { enabled: false },
+            devQaInstances: { enabled: false, instances: 1 }
+        },
+        currentOptimalPlan: null
+    };
+
+    const tbPcUi = {
+        openBtn: document.getElementById('openCalculatorBtn'),
+        modal: document.getElementById('tbPcCalculatorModal'),
+        closeBtn: document.getElementById('tbPcCloseBtn'),
+        results: document.getElementById('tbPcResultsCard'),
+        resetBtn: document.getElementById('tbPcResetBtn'),
+        profilesContainer: document.getElementById('tbPcDeviceProfilesContainer'),
+        payloadModal: document.getElementById('tbPcPayloadModal'),
+        closePayloadBtn: document.getElementById('tbPcClosePayloadModalBtn'),
+        applyPayloadBtn: document.getElementById('tbPcApplyPayloadBtn'),
+        jsonInput: document.getElementById('tbPcJsonInput'),
+        dataPointCount: document.getElementById('tbPcDataPointCount'),
+        errorMessage: document.getElementById('tbPcErrorMessage'),
+        modeTabs: document.querySelectorAll('#tbPcCalculatorModal .mode-tab'),
+        toggles: {
+            edge: document.getElementById('tbPcEdgeToggle'),
+            trendz: document.getElementById('tbPcTrendzToggle'),
+            mobileApp: document.getElementById('tbPcMobileAppToggle'),
+            devQa: document.getElementById('tbPcDevQaToggle')
+        },
+        inputs: {
+            edgeInstances: document.getElementById('tbPcEdgeInstances'),
+            devInstances: document.getElementById('tbPcDevInstances')
+        },
+        cards: {
+            edge: document.getElementById('tbPcEdgeCard'),
+            trendz: document.getElementById('tbPcTrendzCard'),
+            mobileApp: document.getElementById('tbPcMobileAppCard'),
+            devQa: document.getElementById('tbPcDevQaCard')
+        },
+        edgeIncludedText: document.getElementById('tbPcEdgeIncludedText')
+    };
+
+    const tbPcDeviceProfileTemplate = `
+    <div class="device-profile" data-profile-id="{PROFILE_ID}">
+        <div class="wrapper">
+            <h3>Device profile {PROFILE_NUMBER}</h3>
+            <div class="remove-profile-btn hidden"><img src="/images/pricing/close-icon.svg" alt="Close icon"></div>
+            <div class="input-group">
+                <div class="input-label-group xs-row">
+                    <label for="tbPcDevices-{PROFILE_ID}" class="label">
+                        Number of Devices
+                        <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip-text">The total number of IoT devices that will connect to ThingsBoard</span>
+                        </span>
+                    </label>
+                    <input id="tbPcDevices-{PROFILE_ID}" type="number" value="5000" min="0" class="input input-right" data-profile-input="devices">
+                </div>
+                <div class="slider-container">
+                    <input type="range" id="tbPcDevicesSlider-{PROFILE_ID}" min="0" max="120000" step="100" value="5000" class="slider" data-profile-slider="devices">
+                    <div class="tick-marks">
+                        <div class="tick-mark" data-num="1"><span class="tick"></span><span class="tick-label">1</span></div>
+                        <div class="tick-mark" data-num="5000"><span class="tick"></span><span class="tick-label">5K</span></div>
+                        <div class="tick-mark" data-num="25000"><span class="tick"></span><span class="tick-label">25K</span></div>
+                        <div class="tick-mark" data-num="50000"><span class="tick"></span><span class="tick-label">50K</span></div>
+                        <div class="tick-mark" data-num="100000"><span class="tick"></span><span class="tick-label">100K</span></div>
+                        <div class="tick-mark" data-num="120000"><span class="tick"></span><span class="tick-label infinity">&#8734;</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-label-group">
+                    <label for="tbPcMessages-{PROFILE_ID}" class="label">
+                        Messages per Device
+                        <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip-text">How many messages each device sends in the selected time period</span>
+                        </span>
+                    </label>
+                    <div class="input-with-controls">
+                        <select id="tbPcMessageUnit-{PROFILE_ID}" class="select" data-profile-select="messageUnit">
+                            <option value="minute">Per minute</option>
+                            <option value="hour" selected>Per hour</option>
+                            <option value="day">Per day</option>
+                        </select>
+                        <div class="stepper-control">
+                            <button type="button" class="stepper-btn minus" data-stepper="messages" data-action="decrement" aria-label="Decrease messages">−</button>
+                            <input id="tbPcMessages-{PROFILE_ID}" type="number" value="1" min="1" class="input" data-profile-input="messages">
+                            <button type="button" class="stepper-btn plus" data-stepper="messages" data-action="increment" aria-label="Increase messages">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-label-group">
+                    <label for="tbPcDataPoints-{PROFILE_ID}" class="label">
+                        Data Points per Message
+                        <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip-text">How many data points are included in each message</span>
+                        </span>
+                    </label>
+                    <div class="input-with-controls">
+                        <button type="button" class="payload-btn" data-profile-payload-btn="{PROFILE_ID}">Submit payload</button>
+                        <div class="stepper-control">
+                            <button type="button" class="stepper-btn minus" data-stepper="dataPoints" data-action="decrement" aria-label="Decrease data points">−</button>
+                            <input id="tbPcDataPoints-{PROFILE_ID}" type="number" value="3" min="1" class="input" data-profile-input="dataPoints">
+                            <button type="button" class="stepper-btn plus" data-stepper="dataPoints" data-action="increment" aria-label="Increase data points">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-label-group">
+                    <label for="tbPcRetention-{PROFILE_ID}" class="label">
+                        Data Retention (Months)
+                        <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip-text">How long you need to store your data</span>
+                        </span>
+                    </label>
+                    <div class="input-with-controls">
+                        <div class="stepper-control">
+                            <button type="button" class="stepper-btn minus" data-stepper="retention" data-action="decrement" aria-label="Decrease retention">−</button>
+                            <input id="tbPcRetention-{PROFILE_ID}" type="number" value="12" min="1" max="1200" class="input" data-profile-input="retention">
+                            <button type="button" class="stepper-btn plus" data-stepper="retention" data-action="increment" aria-label="Increase retention">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add-profile-btn-container">
+            <div class="add-profile-btn">
+                <hr>
+                <img src="/images/pricing/pricing-plus-icon.svg" alt="Plus icon">
+                <span>Add device profile</span>
+                <hr>
+            </div>
+        </div>
+    </div>`;
+
+    const tbPcCopy = (btn) => copyToClipboard(btn, tbPcState.clipboardMessage);
+    const tbPcDownload = () => typeof downloadSummary === 'function' && downloadSummary(tbPcState);
+
+    function tbPcInitTicks() {
+        requestAnimationFrame(() => {
+            tbPcUi.modal.querySelectorAll('.slider-container').forEach(container => {
+                const sliderInput = container.querySelector('input.slider');
+                if (!sliderInput) return;
+
+                const min = parseInt(sliderInput.min, 10);
+                const max = parseInt(sliderInput.max, 10);
+                const range = max - min;
+                const sliderWidth = sliderInput.offsetWidth;
+                const thumbWidth = 25;
+                let trackRatio = sliderWidth > 0 ? thumbWidth / sliderWidth : 0;
+
+                container.querySelectorAll('.tick-mark').forEach(tick => {
+                    const tickValue = parseInt(tick.dataset.num, 10);
+                    const relativeValue = (tickValue - min) / range;
+                    const percent = ((trackRatio / 2) + (relativeValue * (1 - trackRatio))) * 100;
+                    tick.style.left = percent + '%';
+                });
+            });
+        });
+    }
+
+    const tbPcHandleAddonToggle = (addonName, enabled) => {
+        tbPcState.addons[addonName].enabled = enabled;
+
+        const card = tbPcUi.modal.querySelector(`[data-addon="${addonName}"]`);
+        const counter = card?.querySelector(`[data-addon-counter="${addonName}"]`);
+
+        if (card) card.classList.toggle('active', enabled);
+        if (counter) counter.classList.toggle('hidden', !enabled);
+
+        if (enabled) {
+            if (addonName === 'edgeComputing') {
+                const plan = tbPcState.currentOptimalPlan || tbPcPlans.plans[0];
+                const includedInstances = plan.edgeInstancesIncluded || 10;
+                tbPcState.addons.edgeComputing.instances = includedInstances;
+                if (tbPcUi.inputs.edgeInstances) tbPcUi.inputs.edgeInstances.value = includedInstances;
+                tbPcUpdateEdgeMinusBtn();
+            } else if (addonName === 'devQaInstances') {
+                tbPcState.addons.devQaInstances.instances = 1;
+                if (tbPcUi.inputs.devInstances) tbPcUi.inputs.devInstances.value = 1;
+                tbPcUpdateDevQaMinusBtn();
+            }
+        }
+
+        tbPcCalculate();
+        tbPcDebouncedGTM();
+    };
+
+    const tbPcUpdateEdgeMinusBtn = () => {
+        const plan = tbPcState.currentOptimalPlan || tbPcPlans.plans[0];
+        const includedInstances = plan.edgeInstancesIncluded || 10;
+        const currentValue = tbPcState.addons.edgeComputing.instances;
+
+        const counter = tbPcUi.modal.querySelector('[data-addon-counter="edgeComputing"]');
+        const minusBtn = counter?.querySelector('[data-action="decrement"]');
+        if (minusBtn) minusBtn.disabled = currentValue <= includedInstances;
+    };
+
+    const tbPcUpdateDevQaMinusBtn = () => {
+        const currentValue = tbPcState.addons.devQaInstances.instances;
+        const counter = tbPcUi.modal.querySelector('[data-addon-counter="devQaInstances"]');
+        const minusBtn = counter?.querySelector('[data-action="decrement"]');
+        if (minusBtn) minusBtn.disabled = currentValue <= 1;
+    };
+
+    const tbPcHandleCounterChange = (addonName, action, inputElement) => {
+        let currentValue = parseInt(inputElement.value) || 1;
+
+        if (addonName === 'edgeComputing') {
+            const plan = tbPcState.currentOptimalPlan || tbPcPlans.plans[0];
+            const includedInstances = plan.edgeInstancesIncluded || 10;
+
+            if (action === 'increment') currentValue++;
+            else if (action === 'decrement') currentValue = Math.max(includedInstances, currentValue - 1);
+
+            inputElement.value = currentValue;
+            tbPcState.addons.edgeComputing.instances = currentValue;
+            tbPcUpdateEdgeMinusBtn();
+        } else if (addonName === 'devQaInstances') {
+            if (action === 'increment') currentValue++;
+            else if (action === 'decrement') currentValue = Math.max(1, currentValue - 1);
+
+            inputElement.value = currentValue;
+            tbPcState.addons.devQaInstances.instances = currentValue;
+            tbPcUpdateDevQaMinusBtn();
+        }
+
+        tbPcCalculate();
+        tbPcDebouncedGTM();
+    };
+
+    const tbPcUpdateEdgeInstancesForPlan = (plan) => {
+        if (!tbPcState.addons.edgeComputing.enabled) return;
+
+        const includedInstances = plan.edgeInstancesIncluded || 10;
+        const currentInstances = tbPcState.addons.edgeComputing.instances;
+
+        if (currentInstances < includedInstances) {
+            tbPcState.addons.edgeComputing.instances = includedInstances;
+            if (tbPcUi.inputs.edgeInstances) tbPcUi.inputs.edgeInstances.value = includedInstances;
+        }
+
+        tbPcUpdateEdgeMinusBtn();
+    };
+
+    const tbPcUpdateUIAfterProfileChange = () => {
+        const allProfiles = tbPcUi.profilesContainer.querySelectorAll('.device-profile');
+        allProfiles.forEach((el, index) => {
+            const h3 = el.querySelector('h3');
+            if (h3) h3.textContent = `Device profile ${index + 1}`;
+
+            const removeBtn = el.querySelector('.remove-profile-btn');
+            if (removeBtn) {
+                if (tbPcState.deviceProfiles.length > 1 && tbPcState.isAdvancedMode) {
+                    removeBtn.classList.remove('hidden');
+                } else {
+                    removeBtn.classList.add('hidden');
+                }
+            }
+        });
+
+        tbPcUpdateAllStepperBtnStates();
+        tbPcCalculate();
+    };
+
+    const tbPcUpdateAllStepperBtnStates = () => {
+        tbPcUi.profilesContainer.querySelectorAll('.device-profile').forEach(profileEl => {
+            const profileId = parseInt(profileEl.dataset.profileId, 10);
+            const profileData = tbPcState.deviceProfiles.find(p => p.id === profileId);
+            if (!profileData) return;
+
+            const messagesInput = profileEl.querySelector('[data-profile-input="messages"]');
+            const messagesMinusBtn = profileEl.querySelector('[data-stepper="messages"][data-action="decrement"]');
+            if (messagesInput && messagesMinusBtn) messagesMinusBtn.disabled = parseInt(messagesInput.value) <= 1;
+
+            const dataPointsInput = profileEl.querySelector('[data-profile-input="dataPoints"]');
+            const dataPointsMinusBtn = profileEl.querySelector('[data-stepper="dataPoints"][data-action="decrement"]');
+            if (dataPointsInput && dataPointsMinusBtn) dataPointsMinusBtn.disabled = parseInt(dataPointsInput.value) <= 1;
+
+            const retentionInput = profileEl.querySelector('[data-profile-input="retention"]');
+            const retentionMinusBtn = profileEl.querySelector('[data-stepper="retention"][data-action="decrement"]');
+            if (retentionInput && retentionMinusBtn) retentionMinusBtn.disabled = parseInt(retentionInput.value) <= 1;
+        });
+    };
+
+    const tbPcAddDeviceProfile = (options = {}, init = false) => {
+        const {
+            initialValues = { devices: 5000, messages: 1, messageUnit: 'hour', dataPoints: 3, retention: 12 },
+            insertAfterId = null
+        } = options;
+
+        const profileId = tbPcNextProfileId++;
+        const profileData = {
+            id: profileId,
+            devices: initialValues.devices,
+            messages: initialValues.messages,
+            messageUnit: initialValues.messageUnit,
+            dataPoints: initialValues.dataPoints,
+            retention: initialValues.retention
+        };
+
+        let profileHtml = tbPcDeviceProfileTemplate
+            .replace(/{PROFILE_ID}/g, profileId)
+            .replace(/{PROFILE_NUMBER}/g, 0);
+
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = profileHtml.trim();
+        const profileElement = tempDiv.firstChild;
+
+        profileElement.querySelector(`[data-profile-input="devices"]`).value = profileData.devices;
+        profileElement.querySelector(`[data-profile-slider="devices"]`).value = profileData.devices;
+        profileElement.querySelector(`[data-profile-input="messages"]`).value = profileData.messages;
+        profileElement.querySelector(`[data-profile-select="messageUnit"]`).value = profileData.messageUnit;
+        profileElement.querySelector(`[data-profile-input="dataPoints"]`).value = profileData.dataPoints;
+        profileElement.querySelector(`[data-profile-input="retention"]`).value = profileData.retention;
+
+        const insertionIndex = (insertAfterId === null) ?
+            tbPcState.deviceProfiles.length :
+            tbPcState.deviceProfiles.findIndex(p => p.id === insertAfterId) + 1;
+
+        tbPcState.deviceProfiles.splice(insertionIndex, 0, profileData);
+
+        const referenceNode = (insertAfterId === null) ?
+            null :
+            tbPcUi.profilesContainer.querySelector(`[data-profile-id="${insertAfterId}"]`);
+
+        if (referenceNode) {
+            referenceNode.after(profileElement);
+        } else {
+            tbPcUi.profilesContainer.appendChild(profileElement);
+        }
+
+        if (tbPcState.isAdvancedMode) {
+            tbPcUi.profilesContainer.classList.add('advanced');
+        }
+
+        profileElement.querySelectorAll('.slider').forEach(sliderProgress);
+        tbPcUpdateUIAfterProfileChange();
+        tbPcInitTicks();
+
+        if (!init) tbPcDebouncedGTM();
+    };
+
+    const tbPcRemoveDeviceProfile = (profileId) => {
+        const profileIndex = tbPcState.deviceProfiles.findIndex(p => p.id === profileId);
+        if (profileIndex === -1) return;
+
+        tbPcState.deviceProfiles.splice(profileIndex, 1);
+
+        const profileElement = tbPcUi.profilesContainer.querySelector(`[data-profile-id="${profileId}"]`);
+        if (profileElement) profileElement.remove();
+
+        tbPcUpdateUIAfterProfileChange();
+        tbPcInitTicks();
+        tbPcDebouncedGTM();
+    };
+
+    const tbPcGetInputs = () => {
+        const { addons } = tbPcState;
+
+        let totalDataPointsPerMinute = 0;
+        let totalDevices = 0;
+
+        const profilesData = tbPcState.deviceProfiles.map(profile => {
+            let messagesPerMinute = profile.messages;
+            if (profile.messageUnit === 'hour') messagesPerMinute /= 60;
+            else if (profile.messageUnit === 'day') messagesPerMinute /= (24 * 60);
+
+            const profileDataPointsPerMinute = profile.devices * messagesPerMinute * profile.dataPoints;
+            totalDataPointsPerMinute += profileDataPointsPerMinute;
+            totalDevices += profile.devices;
+
+            return {
+                ...profile,
+                messagesPerMinute,
+                dataPointsPerMinute: profileDataPointsPerMinute
+            };
+        });
+
+        return {
+            deviceProfiles: profilesData,
+            totalDataPointsPerMinute,
+            totalDevices,
+            addons: {
+                edgeComputing: { enabled: addons.edgeComputing.enabled, instances: addons.edgeComputing.instances },
+                trendzAnalytics: { enabled: addons.trendzAnalytics.enabled },
+                mobileApp: { enabled: addons.mobileApp.enabled },
+                devQaInstances: { enabled: addons.devQaInstances.enabled, instances: addons.devQaInstances.instances }
+            }
+        };
+    };
+
+    const tbPcCalculate = () => {
+        const inputs = tbPcGetInputs();
+
+        const matchingPlans = tbPcPlans.plans.filter(plan =>
+            inputs.totalDataPointsPerMinute <= plan.maxMsgPerMin
+        );
+
+        if (matchingPlans.length === 0) {
+            const totalStorage = inputs.deviceProfiles.reduce((acc, profile) => {
+                const retentionInMinutes = profile.retention * 30 * 24 * 60;
+                const storageForProfile = (tbPcPlans.enterpriseBytesPerDataPoint * retentionInMinutes * profile.dataPointsPerMinute) / 1073741824;
+                return acc + storageForProfile;
+            }, 0);
+            tbPcDisplayEnterprise(inputs, inputs.totalDataPointsPerMinute, totalStorage);
+            return;
+        }
+
+        const planResults = matchingPlans.map(plan => {
+            const totalDevices = inputs.deviceProfiles.reduce((sum, p) => sum + p.devices, 0);
+            const extraDevices = Math.max(0, totalDevices - plan.includedDevices);
+            const extraDeviceCost = extraDevices * plan.extraDevicePrice;
+
+            const totalStorageNeededInGB = inputs.deviceProfiles.reduce((acc, profile) => {
+                const retentionInMinutes = profile.retention * 30 * 24 * 60;
+                const storageForProfile = (plan.bytesPerDataPoint * retentionInMinutes * profile.dataPointsPerMinute) / 1073741824;
+                return acc + (storageForProfile * plan.replicationFactor);
+            }, 0);
+
+            const extraStorage = Math.max(0, totalStorageNeededInGB - plan.storage);
+            const extraStorageCost = extraStorage * tbPcPlans.extraStorageCostPerGB;
+
+            const basePrice = plan.price + extraDeviceCost + extraStorageCost;
+
+            let addOnsCost = 0;
+            const addOnsBreakdown = {};
+
+            if (inputs.addons.edgeComputing.enabled) {
+                const edgeInstances = inputs.addons.edgeComputing.instances;
+                const extraEdges = Math.max(0, edgeInstances - plan.edgeInstancesIncluded);
+                const extraEdgesCost = extraEdges * plan.extraEdgePrice;
+                const edgeTotalCost = plan.edgeMonthPrice + extraEdgesCost;
+
+                addOnsCost += edgeTotalCost;
+                addOnsBreakdown.edgeComputing = {
+                    baseCost: plan.edgeMonthPrice,
+                    includedInstances: plan.edgeInstancesIncluded,
+                    totalInstances: edgeInstances,
+                    extraInstances: extraEdges,
+                    extraCost: extraEdgesCost,
+                    totalCost: edgeTotalCost
+                };
+            }
+
+            if (inputs.addons.trendzAnalytics.enabled) {
+                const trendzExtraDevicesCost = extraDevices * plan.trendzExtraDevicePrice;
+                const trendzTotalCost = plan.trendzMonthPrice + trendzExtraDevicesCost;
+
+                addOnsCost += trendzTotalCost;
+                addOnsBreakdown.trendzAnalytics = {
+                    includedDevices: plan.includedDevices,
+                    baseCost: plan.trendzMonthPrice,
+                    extraDevices: extraDevices,
+                    extraDevicesCost: trendzExtraDevicesCost,
+                    totalCost: trendzTotalCost
+                };
+            }
+
+            if (inputs.addons.mobileApp.enabled) {
+                addOnsCost += tbPcPlans.mobileApp;
+                addOnsBreakdown.mobileApp = {
+                    totalCost: tbPcPlans.mobileApp,
+                    setupFee: tbPcPlans.mobileAppSetup
+                };
+            }
+
+            if (inputs.addons.devQaInstances.enabled) {
+                const devQaInstances = inputs.addons.devQaInstances.instances;
+                const devQaCost = devQaInstances * plan.devQaExtraInstancePrice;
+
+                addOnsCost += devQaCost;
+                addOnsBreakdown.devQaInstances = {
+                    instances: devQaInstances,
+                    pricePerInstance: plan.devQaExtraInstancePrice,
+                    totalCost: devQaCost
+                };
+            }
+
+            return {
+                plan,
+                extraDevices,
+                extraDeviceCost,
+                storageNeeded: totalStorageNeededInGB,
+                extraStorage,
+                extraStorageCost,
+                basePrice,
+                addOnsCost,
+                addOnsBreakdown,
+                totalPrice: basePrice + addOnsCost,
+                dataPointsPerMinute: inputs.totalDataPointsPerMinute
+            };
+        });
+
+        const optimalPlan = planResults.reduce((prev, current) =>
+            (prev.totalPrice < current.totalPrice ? prev : current)
+        );
+
+        const previousPlan = tbPcState.currentOptimalPlan;
+        tbPcState.currentOptimalPlan = optimalPlan.plan;
+
+        if (tbPcUi.edgeIncludedText) {
+            tbPcUi.edgeIncludedText.textContent = optimalPlan.plan.edgeInstancesIncluded;
+        }
+
+        if (previousPlan && previousPlan.name !== optimalPlan.plan.name) {
+            tbPcUpdateEdgeInstancesForPlan(optimalPlan.plan);
+        }
+
+        if (optimalPlan.totalPrice > 10000) {
+            const totalStorage = inputs.deviceProfiles.reduce((acc, profile) => {
+                const retentionInMinutes = profile.retention * 30 * 24 * 60;
+                const storageForProfile = (tbPcPlans.enterpriseBytesPerDataPoint * retentionInMinutes * profile.dataPointsPerMinute) / 1073741824;
+                return acc + storageForProfile;
+            }, 0);
+            tbPcDisplayEnterprise(inputs, inputs.totalDataPointsPerMinute, totalStorage);
+            return;
+        }
+
+        tbPcDisplay(optimalPlan, inputs);
+    };
+
+    const tbPcCreateItem = (label, value, tooltip = null, noTooltip = false) => {
+        const tooltipHtml = tooltip ? `<span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltip}</span></span>` : '';
+        return `
+            <div class="result-item">
+                <span class="result-label">${label}:</span>
+                <span class="result-value${noTooltip ? ' no-tooltip' : ''}">${value}${tooltipHtml}</span>
+            </div>`;
+    };
+
+    const tbPcDisplay = (results, inputs) => {
+        const { plan, extraDevices, extraDeviceCost, storageNeeded, extraStorage,
+            extraStorageCost, totalPrice, dataPointsPerMinute, addOnsBreakdown } = results;
+
+        tbPcState.optimalPlanName = plan.name;
+
+        const isAnnual = tbPcState.billingPeriod === 'annual';
+        const finalPrice = isAnnual ? totalPrice * 0.9 : totalPrice;
+
+        tbPcState.price = finalPrice;
+        tbPcState.extraStoragePrice = extraStorageCost;
+
+        let storageUsedTooltip = 'Storage is calculated for each profile based on its data points and retention, then summed up.<br><br>';
+        inputs.deviceProfiles.forEach((p, index) => {
+            const retentionInMinutes = p.retention * 30 * 24 * 60;
+            const storageForProfile = (plan.bytesPerDataPoint * retentionInMinutes * p.dataPointsPerMinute * plan.replicationFactor) / 1073741824;
+            storageUsedTooltip += `Profile ${index + 1}: ${formatNumber(storageForProfile, 2)} GB<br>`;
+        });
+
+        const planDetailsHtml = `
+            <div class="results-section expandable" data-section="planDetails">
+                <div class="section-header" data-toggle="planDetails">
+                    <span class="section-title-with-chevron">${plan.name} ${chevronUpIcon}</span>
+                    <span class="section-value">
+                        ${formatCurrency(plan.price)}
+                        <span class="tooltip">${infoIcon}<span class="tooltip-text">Base plan price</span></span>
+                    </span>
+                </div>
+                <div class="section-content">
+                    ${tbPcCreateItem('Included Devices', formatNumber(plan.includedDevices, 0), null, true)}
+                    ${tbPcCreateItem('Data Points Rate', `${formatNumber(dataPointsPerMinute)} points/min`, 'The rate at which your devices generate data points that need to be processed and stored.')}
+                    ${tbPcCreateItem('Time-Series Database', plan.database, 'NoSQL (Cassandra) with a replication factor of 3 to store time-series data. Cassandra storage is more efficient—each data point occupies on average five times less space before replication. For workloads with large storage requirements, NoSQL-based plans are more cost-efficient thanks to their reduced storage footprint.')}
+                    ${tbPcCreateItem('Included Storage', `${formatNumber(plan.storage, 0)} GB`, `Storage included in the ${plan.name} plan.`)}
+                    ${tbPcCreateItem('White Labeling', '<span class="badge enabled">Enabled</span>')}
+                    ${tbPcCreateItem('Extra Devices', formatNumber(extraDevices, 0), 'Devices beyond what\'s included in your plan.')}
+                    ${tbPcCreateItem('Extra Device Cost', formatCurrency(extraDeviceCost), `The additional cost for devices beyond what\'s included in your base plan.<br>${formatCurrency(extraDeviceCost)} = ${formatNumber(extraDevices, 0)} extra devices × $${plan.extraDevicePrice}/device`)}
+                    ${tbPcCreateItem('Storage Used', `${formatNumber(storageNeeded, 2)} GB`, storageUsedTooltip)}
+                    ${tbPcCreateItem('Extra Storage', `${formatNumber(extraStorage, 2)} GB`, `The amount of storage exceeding what's included in your base plan. <br>${formatNumber(extraStorage, 2)} GB = ${formatNumber(storageNeeded, 2)} GB used - ${formatNumber(plan.storage, 0)} GB included`)}
+                    ${tbPcCreateItem('Extra Storage Cost', formatCurrency(extraStorageCost), `The additional cost for storage beyond what's included in your base plan. <br>${formatCurrency(extraStorageCost)} = ${formatNumber(extraStorage, 2)} GB × $${tbPcPlans.extraStorageCostPerGB}/GB`)}
+                </div>
+            </div>`;
+
+        const addOnsSectionsHtml = tbPcGenAddons(addOnsBreakdown, inputs, plan);
+
+        let totalTooltipParts = [`${formatCurrency(plan.price)} (base plan)`];
+        if (extraDeviceCost > 0) totalTooltipParts.push(`${formatCurrency(extraDeviceCost)} (extra devices)`);
+        if (extraStorageCost > 0) totalTooltipParts.push(`${formatCurrency(extraStorageCost)} (extra storage)`);
+        if (addOnsBreakdown.edgeComputing) totalTooltipParts.push(`${formatCurrency(addOnsBreakdown.edgeComputing.totalCost)} (Edge Computing)`);
+        if (addOnsBreakdown.trendzAnalytics) totalTooltipParts.push(`${formatCurrency(addOnsBreakdown.trendzAnalytics.totalCost)} (Trendz Analytics)`);
+        if (addOnsBreakdown.mobileApp) totalTooltipParts.push(`${formatCurrency(addOnsBreakdown.mobileApp.totalCost)} (Mobile App)`);
+        if (addOnsBreakdown.devQaInstances) totalTooltipParts.push(`${formatCurrency(addOnsBreakdown.devQaInstances.totalCost)} (Dev & QA)`);
+        let totalTooltip = totalTooltipParts.join(' + ');
+        if (isAnnual) totalTooltip = `(${totalTooltip}) - 10% Annual Discount`;
+
+        tbPcUi.results.classList.remove('hidden');
+        tbPcUi.results.innerHTML = `
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="tbPcCopyBtn" class="icon-button" title="Copy summary">${copyIcon}<span class="tooltip-text">Copy calculation summary</span></div>
+                        <div id="tbPcDownloadBtn" class="icon-button" title="Download">${downloadIcon}<span class="tooltip-text">Download summary</span></div>
+                    </div>
+                </div>
+                <div class="optimal-plan-row">
+                    <span>Optimal plan:</span>
+                    <span class="plan-link">${plan.name}</span>
+                </div>
+            </div>
+            <div class="results-scroll-container">
+                ${planDetailsHtml}
+                <div class="addons-separator"><span>Add-ons</span></div>
+                ${addOnsSectionsHtml}
+            </div>
+            <div class="results-footer">
+                <div class="toggle-container">
+                    <div class="billing-toggle">
+                        <span class="label-text ${!isAnnual ? 'selected' : ''}" id="tbPcLabelMonthly">Monthly</span>
+                        <label class="switch">
+                            <input type="checkbox" id="tbPcBillingSwitch" ${isAnnual ? 'checked' : ''}>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="label-text ${isAnnual ? 'selected' : ''}" id="tbPcLabelAnnual">Annual (Save 10%)</span>
+                    </div>
+                </div>
+                <div class="results-total">
+                    <span>Total</span>
+                    <span class="total-value">
+                        ${formatCurrency(finalPrice)}/month
+                        <span class="tooltip">${infoIcon}<span class="tooltip-text">${totalTooltip}</span></span>
+                    </span>
+                </div>
+                <a id="tbPcContactUs" class="button" href="/docs/contact-us/">Contact Us</a>
+            </div>`;
+
+        tbPcInitExpandable();
+        tbPcInitBillingToggle();
+
+        document.getElementById('tbPcCopyBtn')?.addEventListener('click', e => tbPcCopy(e.currentTarget));
+        document.getElementById('tbPcDownloadBtn')?.addEventListener('click', tbPcDownload);
+
+        tbPcUpdateClipboard(results, inputs);
+    };
+
+    const tbPcGenAddons = (breakdown, inputs, plan) => {
+        let html = '';
+
+        if (inputs.addons.edgeComputing.enabled && breakdown.edgeComputing) {
+            const edge = breakdown.edgeComputing;
+            html += `
+                <div class="results-section expandable" data-section="edgeComputing">
+                    <div class="section-header" data-toggle="edgeComputing">
+                        <span class="section-title-with-chevron">Edge Computing ${chevronUpIcon}</span>
+                        <span class="section-value">
+                            ${formatCurrency(edge.totalCost)}
+                            <span class="tooltip">${infoIcon}<span class="tooltip-text">Edge Computing add-on total</span></span>
+                        </span>
+                    </div>
+                    <div class="section-content">
+                        ${tbPcCreateItem('Add-on Base Price', formatCurrency(edge.baseCost), 'Monthly base price for Edge Computing')}
+                        ${tbPcCreateItem('Included Edges', formatNumber(edge.includedInstances, 0), 'Edge instances included with this plan')}
+                        ${tbPcCreateItem('Extra Edges', formatNumber(edge.extraInstances, 0), 'Additional edge instances beyond included')}
+                        ${tbPcCreateItem('Extra Edges Cost', formatCurrency(edge.extraCost), `${formatNumber(edge.extraInstances, 0)} × ${formatCurrency(plan.extraEdgePrice)}`)}
+                    </div>
+                </div>`;
+        } else {
+            html += `
+                <div class="results-section inactive" data-section="edgeComputing">
+                    <div class="section-header">
+                        <span class="section-title-with-chevron">Edge Computing ${chevronDownIcon}</span>
+                        <span class="add-to-plan-btn" data-addon="edgeComputing">Add to plan (${formatCurrency(plan.edgeMonthPrice)})</span>
+                    </div>
+                </div>`;
+        }
+
+        if (inputs.addons.trendzAnalytics.enabled && breakdown.trendzAnalytics) {
+            const trendz = breakdown.trendzAnalytics;
+            html += `
+                <div class="results-section expandable" data-section="trendzAnalytics">
+                    <div class="section-header" data-toggle="trendzAnalytics">
+                        <span class="section-title-with-chevron">Trendz Analytics ${chevronUpIcon}</span>
+                        <span class="section-value">
+                            ${formatCurrency(trendz.totalCost)}
+                            <span class="tooltip">${infoIcon}<span class="tooltip-text">Trendz Analytics add-on total</span></span>
+                        </span>
+                    </div>
+                    <div class="section-content">
+                        ${tbPcCreateItem('Add-on Base Price', formatNumber(trendz.baseCost, 0), 'Monthly base price for Trendz Analytics')}
+                        ${tbPcCreateItem('Included Devices', formatNumber(trendz.includedDevices, 0), 'Devices included with this plan')}
+                        ${tbPcCreateItem('Extra Devices', formatNumber(trendz.extraDevices, 0), 'Devices beyond plan\'s included count')}
+                        ${tbPcCreateItem('Extra Devices Cost', formatCurrency(trendz.extraDevicesCost), `${formatNumber(trendz.extraDevices, 0)} × ${formatCurrency(plan.trendzExtraDevicePrice)}`)}
+                    </div>
+                </div>`;
+        } else {
+            html += `
+                <div class="results-section inactive" data-section="trendzAnalytics">
+                    <div class="section-header">
+                        <span class="section-title-with-chevron">Trendz Analytics ${chevronDownIcon}</span>
+                        <span class="add-to-plan-btn" data-addon="trendzAnalytics">Add to plan (${formatCurrency(plan.trendzMonthPrice)})</span>
+                    </div>
+                </div>`;
+        }
+
+        if (inputs.addons.mobileApp.enabled && breakdown.mobileApp) {
+            html += `
+                <div class="results-section" data-section="mobileApp">
+                    <div class="section-header">
+                        <span class="section-title">White-labeled Mobile App</span>
+                        <span class="section-value">
+                            ${formatCurrency(breakdown.mobileApp.totalCost)}
+                            <span class="tooltip">${infoIcon}<span class="tooltip-text">Monthly: ${formatCurrency(tbPcPlans.mobileApp)}<br>One-time setup: ${formatCurrency(tbPcPlans.mobileAppSetup)}</span></span>
+                        </span>
+                    </div>
+                </div>`;
+        } else {
+            html += `
+                <div class="results-section inactive" data-section="mobileApp">
+                    <div class="section-header">
+                        <span class="section-title">White-labeled Mobile App</span>
+                        <span class="add-to-plan-btn" data-addon="mobileApp">Add to plan (${formatCurrency(tbPcPlans.mobileApp)})</span>
+                    </div>
+                </div>`;
+        }
+
+        if (inputs.addons.devQaInstances.enabled && breakdown.devQaInstances) {
+            const devQa = breakdown.devQaInstances;
+            html += `
+                <div class="results-section expandable" data-section="devQaInstances">
+                    <div class="section-header" data-toggle="devQaInstances">
+                        <span class="section-title-with-chevron">Dev & QA Instances ${chevronUpIcon}</span>
+                        <span class="section-value">
+                            ${formatCurrency(devQa.totalCost)}
+                            <span class="tooltip">${infoIcon}<span class="tooltip-text">Dev & QA Instances total</span></span>
+                        </span>
+                    </div>
+                    <div class="section-content">
+                        ${tbPcCreateItem('Extra Instances', formatNumber(devQa.instances, 0), 'Number of dev/QA instances')}
+                        ${tbPcCreateItem('Extra Instances Cost', formatCurrency(devQa.totalCost), `${formatNumber(devQa.instances, 0)} × ${formatCurrency(devQa.pricePerInstance)}`)}
+                    </div>
+                </div>`;
+        } else {
+            html += `
+                <div class="results-section inactive" data-section="devQaInstances">
+                    <div class="section-header">
+                        <span class="section-title-with-chevron">Dev & QA Instances ${chevronDownIcon}</span>
+                        <span class="add-to-plan-btn" data-addon="devQaInstances">Add to plan (${formatCurrency(plan.devQaExtraInstancePrice)})</span>
+                    </div>
+                </div>`;
+        }
+
+        return html;
+    };
+
+    const tbPcDisplayEnterprise = (inputs, totalDataPointsPerMinute, totalStorageNeededInGB) => {
+        const totalDevices = inputs.deviceProfiles.reduce((sum, p) => sum + p.devices, 0);
+        tbPcState.optimalPlanName = 'Enterprise';
+        tbPcState.price = 0;
+        tbPcState.extraStoragePrice = 0;
+
+        tbPcUi.results.classList.remove('hidden');
+        tbPcUi.results.innerHTML = `
+            <div class="card-header enterprise-header">
+                <div class="header-top">
+                    <h3>Deployment Summary</h3>
+                    <div class="header-actions">
+                        <div id="tbPcCopyBtn" class="icon-button" title="Copy summary">${copyIcon}<span class="tooltip-text">Copy deployment summary</span></div>
+                        <div id="tbPcDownloadBtn" class="icon-button" title="Download">${downloadIcon}<span class="tooltip-text">Download summary</span></div>
+                    </div>
+                </div>
+                <h4 class="wrap">You are building at an impressive scale.</h4>
+            </div>
+            <div class="results-scroll-container">
+                <div class="results-section">
+                    <div class="section-content show">
+                        ${tbPcCreateItem('Devices', formatNumber(totalDevices, 0), null, true)}
+                        ${tbPcCreateItem('Data Points Rate', `${formatNumber(totalDataPointsPerMinute)} points/minute`, null, true)}
+                        ${tbPcCreateItem('Estimated storage', `${formatNumber(totalStorageNeededInGB, 2)} GB`, null, true)}
+                    </div>
+                </div>
+                <p class="contact-us-text enterprise-text">You have reached a tier where economies of scale apply. Let's talk about aligning our pricing structure with your specific rollout schedule and volume requirements.</p>
+            </div>
+            <div class="results-footer">
+                <a id="tbPcContactUs" class="button" href="/docs/contact-us/">Get Enterprise Quote</a>
+            </div>`;
+
+        tbPcUpdateEnterpriseClipboard(inputs, totalDataPointsPerMinute, totalDevices, totalStorageNeededInGB);
+
+        document.getElementById('tbPcCopyBtn')?.addEventListener('click', e => tbPcCopy(e.currentTarget));
+        document.getElementById('tbPcDownloadBtn')?.addEventListener('click', tbPcDownload);
+    };
+
+    const tbPcUpdateEnterpriseClipboard = (inputs, totalDataPointsPerMinute, totalDevices, storageNeededInGB) => {
+        let message = `Private Cloud Enterprise Request\n`;
+        message += `- Devices: ${formatNumber(totalDevices, 0)}\n`;
+        message += `- Data Points Rate: ${formatNumber(totalDataPointsPerMinute, 2)} points/min\n`;
+        message += `- Estimated Storage: ${formatNumber(storageNeededInGB, 2)} GB\n`;
+
+        message += `\nDevice Profiles:\n`;
+        inputs.deviceProfiles.forEach((p, index) => {
+            message += `Profile ${index + 1}:\n`;
+            message += `  - Devices: ${formatNumber(p.devices, 0)}\n`;
+            message += `  - Messages: ${formatNumber(p.messages, 0)} per ${p.messageUnit}\n`;
+            message += `  - Data Points: ${formatNumber(p.dataPoints, 0)}\n`;
+            message += `  - Retention: ${formatNumber(p.retention, 0)} months\n`;
+        });
+
+        const { addons } = inputs;
+        const hasAddons = addons.edgeComputing.enabled || addons.trendzAnalytics.enabled || addons.mobileApp.enabled || addons.devQaInstances.enabled;
+
+        if (hasAddons) {
+            message += `\nAdd-ons:\n`;
+            if (addons.edgeComputing.enabled) {
+                message += `- Edge Computing: ${addons.edgeComputing.instances} instance(s)\n`;
+            }
+            if (addons.trendzAnalytics.enabled) {
+                message += `- Trendz Analytics: Enabled\n`;
+            }
+            if (addons.mobileApp.enabled) {
+                message += `- White-labeled Mobile App: Enabled\n`;
+            }
+            if (addons.devQaInstances.enabled) {
+                message += `- Dev & QA Instances: ${addons.devQaInstances.instances} instance(s)\n`;
+            }
+        }
+
+        tbPcState.clipboardMessage = message;
+
+        const contactButton = document.getElementById('tbPcContactUs');
+        if (contactButton) {
+            contactButton.href = `/docs/contact-us/?subject=${encodeURIComponent('Private Cloud')}&message=${encodeURIComponent(message)}`;
+        }
+    };
+
+    const tbPcInitExpandable = () => {
+        tbPcUi.results.querySelectorAll('.results-section.expandable .section-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const section = header.closest('.results-section');
+                section.classList.toggle('collapsed');
+                const chevron = header.querySelector('.chevron-icon');
+                if (chevron) chevron.outerHTML = section.classList.contains('collapsed') ? chevronDownIcon : chevronUpIcon;
+            });
+        });
+
+        tbPcUi.results.querySelectorAll('.add-to-plan-btn').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                const addonName = btn.dataset.addon;
+                const toggle = tbPcUi.modal.querySelector(`[data-addon-toggle="${addonName}"]`);
+                if (toggle) {
+                    toggle.checked = true;
+                    tbPcHandleAddonToggle(addonName, true);
+                }
+            });
+        });
+    };
+
+    const tbPcInitBillingToggle = () => {
+        const billingSwitch = document.getElementById('tbPcBillingSwitch');
+        if (billingSwitch) {
+            billingSwitch.addEventListener('change', e => {
+                tbPcState.billingPeriod = e.target.checked ? 'annual' : 'monthly';
+                tbPcCalculate();
+                tbPcDebouncedGTM();
+            });
+        }
+
+        document.getElementById('tbPcLabelMonthly')?.addEventListener('click', () => {
+            if (tbPcState.billingPeriod !== 'monthly') {
+                tbPcState.billingPeriod = 'monthly';
+                tbPcCalculate();
+                tbPcDebouncedGTM();
+            }
+        });
+
+        document.getElementById('tbPcLabelAnnual')?.addEventListener('click', () => {
+            if (tbPcState.billingPeriod !== 'annual') {
+                tbPcState.billingPeriod = 'annual';
+                tbPcCalculate();
+                tbPcDebouncedGTM();
+            }
+        });
+    };
+
+    const tbPcUpdateClipboard = (results, inputs) => {
+        let message;
+        const totalDevices = inputs.deviceProfiles.reduce((sum, p) => sum + p.devices, 0);
+        const isAnnual = tbPcState.billingPeriod === 'annual';
+
+        if (results.isEnterprise) {
+            message = `Optimal Plan: Enterprise\n- Data Points Rate: ${formatNumber(results.totalDataPointsPerMinute, 2)} points/min\n- Total Devices: ${formatNumber(results.totalDevices, 0)}\n- Estimated Storage: ${formatNumber(results.storageNeededInGB, 2)} GB`;
+        } else {
+            const { plan, extraDevices, extraDeviceCost, storageNeeded, extraStorage, extraStorageCost, totalPrice, addOnsBreakdown } = results;
+            const finalPrice = isAnnual ? totalPrice * 0.9 : totalPrice;
+            const billingText = isAnnual ? 'Annual (10% discount applied)' : 'Monthly';
+
+            message = `Optimal Plan: ${plan.name} (${formatCurrency(plan.price)})\n` +
+                `- Billing: ${billingText}\n` +
+                `- Data Points Rate: ${formatNumber(results.dataPointsPerMinute, 2)} points/min\n` +
+                `- Included Devices: ${formatNumber(plan.includedDevices, 0)}\n` +
+                `- Total Devices: ${formatNumber(totalDevices, 0)}\n` +
+                `- Extra Devices: ${formatNumber(extraDevices, 0)}\n` +
+                `- Extra Device Cost: ${formatCurrency(extraDeviceCost)}\n` +
+                `- Included Storage: ${formatNumber(plan.storage, 0)} GB\n` +
+                `- Storage Used: ${formatNumber(storageNeeded, 2)} GB\n` +
+                `- Extra Storage: ${formatNumber(extraStorage, 2)} GB\n` +
+                `- Extra Storage Cost: ${formatCurrency(extraStorageCost)}\n`;
+
+            const hasAddons = Object.keys(addOnsBreakdown).length > 0;
+            if (hasAddons) {
+                message += '\nAdd-ons:\n';
+
+                if (addOnsBreakdown.edgeComputing) {
+                    const edge = addOnsBreakdown.edgeComputing;
+                    message += `- Edge Computing: ${formatCurrency(edge.totalCost)}\n`;
+                    message += `  - Instances: ${edge.totalInstances} (${edge.includedInstances} included)\n`;
+                    if (edge.extraInstances > 0) message += `  - Extra Instances Cost: ${formatCurrency(edge.extraCost)}\n`;
+                }
+
+                if (addOnsBreakdown.trendzAnalytics) {
+                    const trendz = addOnsBreakdown.trendzAnalytics;
+                    message += `- Trendz Analytics: ${formatCurrency(trendz.totalCost)}\n`;
+                    if (trendz.extraDevices > 0) message += `  - Extra Devices Cost: ${formatCurrency(trendz.extraDevicesCost)}\n`;
+                }
+
+                if (addOnsBreakdown.mobileApp) {
+                    message += `- White-labeled Mobile App: ${formatCurrency(addOnsBreakdown.mobileApp.totalCost)} (monthly)\n`;
+                    message += `  - One-time setup fee: ${formatCurrency(addOnsBreakdown.mobileApp.setupFee)}\n`;
+                }
+
+                if (addOnsBreakdown.devQaInstances) {
+                    const devQa = addOnsBreakdown.devQaInstances;
+                    message += `- Dev & QA Instances: ${formatCurrency(devQa.totalCost)}\n`;
+                    message += `  - Instances: ${devQa.instances}\n`;
+                }
+            }
+
+            message += `\nTotal Monthly Cost: ${formatCurrency(finalPrice)}`;
+        }
+
+        message += `\n\nCalculator Input:`;
+        inputs.deviceProfiles.forEach((p, index) => {
+            message += `\nProfile ${index + 1}:`;
+            message += `\n - Devices: ${formatNumber(p.devices, 0)}`;
+            message += `\n - Messages: ${formatNumber(p.messages, 0)} per ${p.messageUnit}`;
+            message += `\n - Data Points: ${formatNumber(p.dataPoints, 0)}`;
+            message += `\n - Retention: ${formatNumber(p.retention, 0)} months`;
+        });
+
+        tbPcState.clipboardMessage = message;
+
+        const contactButton = document.getElementById('tbPcContactUs');
+        if (contactButton) {
+            contactButton.href = `/docs/contact-us/?subject=${encodeURIComponent('Private Cloud')}&message=${encodeURIComponent(message)}`;
+        }
+    };
+
+    const tbPcToggleAdvancedMode = (enableAdvanced, resetValues = true, init = false) => {
+        tbPcState.isAdvancedMode = enableAdvanced;
+
+        tbPcUi.modeTabs.forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.mode === (enableAdvanced ? 'advanced' : 'basic'));
+        });
+
+        if (enableAdvanced) {
+            tbPcUi.profilesContainer.classList.add('advanced');
+            if (tbPcState.deviceProfiles.length > 1) {
+                tbPcUi.profilesContainer.querySelectorAll('.remove-profile-btn').forEach(btn => btn.classList.remove('hidden'));
+            }
+        } else {
+            if (resetValues && tbPcState.deviceProfiles.length > 1) {
+                const firstProfileData = { ...tbPcState.deviceProfiles[0] };
+                tbPcUi.profilesContainer.innerHTML = '';
+                tbPcState.deviceProfiles = [];
+                tbPcAddDeviceProfile({ initialValues: firstProfileData });
+            }
+            tbPcUi.profilesContainer.classList.remove('advanced');
+            tbPcUi.profilesContainer.querySelectorAll('.remove-profile-btn').forEach(btn => btn.classList.add('hidden'));
+        }
+
+        tbPcUpdateUIAfterProfileChange();
+        tbPcInitTicks();
+
+        if (!init) tbPcDebouncedGTM();
+    };
+
+    const tbPcReset = () => {
+        tbPcState.deviceProfiles = [];
+        tbPcUi.profilesContainer.innerHTML = '';
+        tbPcAddDeviceProfile({}, true);
+
+        tbPcState.addons = {
+            edgeComputing: { enabled: false, instances: 10 },
+            trendzAnalytics: { enabled: false },
+            mobileApp: { enabled: false },
+            devQaInstances: { enabled: false, instances: 1 }
+        };
+
+        tbPcState.billingPeriod = 'monthly';
+
+        if (tbPcUi.toggles.edge) tbPcUi.toggles.edge.checked = false;
+        if (tbPcUi.toggles.trendz) tbPcUi.toggles.trendz.checked = false;
+        if (tbPcUi.toggles.mobileApp) tbPcUi.toggles.mobileApp.checked = false;
+        if (tbPcUi.toggles.devQa) tbPcUi.toggles.devQa.checked = false;
+
+        tbPcUi.modal.querySelectorAll('.addon-card').forEach(card => {
+            card.classList.remove('active');
+            const counter = card.querySelector('.addon-counter');
+            if (counter) counter.classList.add('hidden');
+        });
+
+        if (tbPcUi.inputs.edgeInstances) tbPcUi.inputs.edgeInstances.value = 10;
+        if (tbPcUi.inputs.devInstances) tbPcUi.inputs.devInstances.value = 1;
+
+        tbPcToggleAdvancedMode(false, false);
+        tbPcUi.modeTabs.forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.mode === 'basic');
+        });
+
+        tbPcInitTicks();
+        tbPcCalculate();
+        tbPcDebouncedGTM();
+    };
+
+    const tbPcHandleProfileInput = (event) => {
+        const input = event.target;
+        const profileElement = input.closest('.device-profile');
+        if (!profileElement) return;
+
+        if (input.type === 'number' && (input.value < 0 || input.value === null || input.value === '')) {
+            input.value = 0;
+        }
+
+        const profileId = parseInt(profileElement.dataset.profileId, 10);
+        const profileData = tbPcState.deviceProfiles.find(p => p.id === profileId);
+        if (!profileData) return;
+
+        const inputType = input.dataset.profileInput;
+        if (inputType) {
+            if (inputType === 'retention' && input.value > 1200) input.value = 1200;
+            profileData[inputType] = Number(input.value) || 0;
+            const slider = profileElement.querySelector(`[data-profile-slider="${inputType}"]`);
+            if (slider) {
+                slider.value = input.value;
+                sliderProgress(slider);
+            }
+        } else if (input.dataset.profileSelect === 'messageUnit') {
+            profileData.messageUnit = input.value;
+        }
+
+        tbPcUpdateAllStepperBtnStates();
+        tbPcCalculate();
+        tbPcDebouncedGTM();
+    };
+
+    const tbPcHandleProfileSlider = (event) => {
+        const slider = event.target;
+        const profileElement = slider.closest('.device-profile');
+        if (!profileElement) return;
+
+        const profileId = parseInt(profileElement.dataset.profileId, 10);
+        const profileData = tbPcState.deviceProfiles.find(p => p.id === profileId);
+        if (!profileData) return;
+
+        const sliderType = slider.dataset.profileSlider;
+        if (sliderType) {
+            let rawValue = Number(slider.value) || 0;
+            let finalValue = rawValue;
+
+            if (sliderType === 'devices') {
+                finalValue = tbPcSliderToReal(rawValue);
+            }
+
+            profileData[sliderType] = finalValue;
+            const input = profileElement.querySelector(`[data-profile-input="${sliderType}"]`);
+            if (input) input.value = finalValue;
+        }
+
+        sliderProgress(slider);
+        tbPcCalculate();
+        tbPcDebouncedGTM();
+    };
+
+    const tbPcHandleStepperClick = (event) => {
+        const btn = event.target.closest('.stepper-btn');
+        if (!btn || btn.disabled) return;
+
+        const profileElement = btn.closest('.device-profile');
+        if (!profileElement) return;
+
+        const stepperType = btn.dataset.stepper;
+        const action = btn.dataset.action;
+        const input = profileElement.querySelector(`[data-profile-input="${stepperType}"]`);
+
+        if (!input) return;
+
+        let currentValue = parseInt(input.value) || 1;
+        const minValue = parseInt(input.min) || 1;
+
+        if (action === 'increment') currentValue++;
+        else if (action === 'decrement') currentValue = Math.max(minValue, currentValue - 1);
+
+        input.value = currentValue;
+
+        const changeEvent = new Event('input', { bubbles: true });
+        input.dispatchEvent(changeEvent);
+    };
+
+    const tbPcHandlePayloadModal = (profileId) => {
+        tbPcUi.applyPayloadBtn.dataset.profileId = profileId;
+        const jsonString = tbPcUi.jsonInput.value;
+        tbPcUi.errorMessage.textContent = '';
+        tbPcUi.jsonInput.classList.remove('error');
+
+        if (jsonString.trim() === '') {
+            tbPcUi.jsonInput.placeholder = '{\n  "temperature": 42.2,\n  "humidity": 70,\n  "hvacEnabled": true,\n  "hvacState": "IDLE",\n  "configuration": {\n    "someNumber": 42,\n    "someArray": [1, 2, 3],\n    "someNestedObject": { "key": "value" }\n    }\n}';
+            tbPcUi.dataPointCount.textContent = '0';
+            tbPcUi.dataPointCount.parentElement.classList.remove('visible');
+            return;
+        }
+
+        try {
+            const parsedJson = JSON.parse(jsonString);
+            if (typeof parsedJson !== 'object' || parsedJson === null || Array.isArray(parsedJson)) {
+                throw new Error();
+            }
+            tbPcUi.dataPointCount.textContent = Object.keys(parsedJson).length;
+            tbPcUi.dataPointCount.parentElement.classList.add('visible');
+            tbPcUi.errorMessage.textContent = '';
+        } catch (error) {
+            tbPcUi.dataPointCount.textContent = '0';
+            tbPcUi.dataPointCount.parentElement.classList.remove('visible');
+            tbPcUi.errorMessage.textContent = 'Please enter a valid JSON value.';
+            tbPcUi.jsonInput.classList.add('error');
+        }
+    };
+
+    const tbPcHandleApplyPayload = () => {
+        const profileId = tbPcUi.applyPayloadBtn.dataset.profileId;
+        const dataPointsValue = tbPcUi.dataPointCount.textContent;
+        const profileData = tbPcState.deviceProfiles.find(p => p.id == profileId);
+
+        if (profileData && dataPointsValue && !tbPcUi.errorMessage.textContent) {
+            profileData.dataPoints = Number(dataPointsValue);
+            const profileElement = tbPcUi.profilesContainer.querySelector(`[data-profile-id="${profileId}"]`);
+            if (profileElement) {
+                const dataPointsInput = profileElement.querySelector(`[data-profile-input="dataPoints"]`);
+                if (dataPointsInput) dataPointsInput.value = dataPointsValue;
+            }
+            tbPcUpdateAllStepperBtnStates();
+            tbPcCalculate();
+            closeModal(tbPcUi.payloadModal);
+            tbPcDebouncedGTM();
+        }
+    };
+
+    const tbPcDebouncedGTM = () => {
+        clearTimeout(tbPcState.debounceTimer);
+        tbPcState.debounceTimer = setTimeout(tbPcSendGTM, 3000);
+    };
+
+    const tbPcSendGTM = () => {
+        if (typeof window.dataLayer === 'undefined') return;
+
+        const inputs = tbPcGetInputs();
+
+        const gtmData = {
+            'event': 'tb_private_cloud_calculator_interaction',
+            'tb_pc_devices': inputs.totalDevices,
+            'tb_pc_plan': tbPcState.optimalPlanName,
+            'tb_pc_price': tbPcState.price,
+            'tb_pc_extra_storage_cost': tbPcState.extraStoragePrice,
+            'tb_pc_addon_edge': inputs.addons.edgeComputing.enabled,
+            'tb_pc_addon_edge_instances': inputs.addons.edgeComputing.instances,
+            'tb_pc_addon_trendz': inputs.addons.trendzAnalytics.enabled,
+            'tb_pc_addon_mobile_app': inputs.addons.mobileApp.enabled,
+            'tb_pc_addon_dev_qa': inputs.addons.devQaInstances.enabled,
+            'tb_pc_addon_dev_qa_instances': inputs.addons.devQaInstances.instances,
+        };
+
+        for (let i = 0; i <= 9; i++) {
+            gtmData[`tb_pc_profile_${i}_json`] = null;
+        }
+
+        inputs.deviceProfiles.forEach((profile, index) => {
+            gtmData[`tb_pc_profile_${index}_json`] = JSON.stringify({
+                devices: parseInt(profile.devices) || 0,
+                msgs: parseInt(profile.messages) || 0,
+                unit: profile.messageUnit.charAt(0),
+                points: parseInt(profile.dataPoints) || 0,
+                retention: parseInt(profile.retention) || 0
+            });
+        });
+
+        window.dataLayer.push(gtmData);
+    };
+
+    const tbPcInit = () => {
+        if (!tbPcUi.openBtn || !tbPcUi.modal) return;
+
+        tbPcUi.openBtn.addEventListener('click', () => {
+            openModal(tbPcUi.modal);
+            tbPcInitTicks();
+            tbPcToggleAdvancedMode(false, false, true);
+            tbPcCalculate();
+        });
+
+        tbPcUi.closeBtn.addEventListener('click', () => closeModal(tbPcUi.modal));
+        tbPcUi.modal.addEventListener('click', event => {
+            if (event.target === tbPcUi.modal) closeModal(tbPcUi.modal);
+        });
+
+        tbPcUi.resetBtn.addEventListener('click', tbPcReset);
+
+        tbPcUi.modeTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const isAdvanced = tab.dataset.mode === 'advanced';
+                tbPcToggleAdvancedMode(isAdvanced);
+            });
+        });
+
+        tbPcUi.modal.querySelectorAll('[data-addon-toggle]').forEach(toggle => {
+            toggle.addEventListener('change', e => {
+                const addonName = e.target.dataset.addonToggle;
+                tbPcHandleAddonToggle(addonName, e.target.checked);
+            });
+        });
+
+        tbPcUi.modal.querySelectorAll('.addon-counter').forEach(counter => {
+            const addonCard = counter.closest('.addon-card');
+            const addonName = addonCard?.dataset.addon;
+            const input = counter.querySelector('input[type="number"]');
+
+            counter.querySelectorAll('.stepper-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (btn.disabled) return;
+                    tbPcHandleCounterChange(addonName, btn.dataset.action, input);
+                });
+            });
+
+            input?.addEventListener('change', () => {
+                let value = parseInt(input.value) || 1;
+
+                if (addonName === 'edgeComputing') {
+                    const plan = tbPcState.currentOptimalPlan || tbPcPlans.plans[0];
+                    const includedInstances = plan.edgeInstancesIncluded || 10;
+                    value = Math.max(includedInstances, value);
+                    tbPcState.addons.edgeComputing.instances = value;
+                    tbPcUpdateEdgeMinusBtn();
+                } else if (addonName === 'devQaInstances') {
+                    value = Math.max(1, value);
+                    tbPcState.addons.devQaInstances.instances = value;
+                    tbPcUpdateDevQaMinusBtn();
+                }
+
+                input.value = value;
+                tbPcCalculate();
+                tbPcDebouncedGTM();
+            });
+        });
+
+        tbPcUi.profilesContainer.addEventListener('input', event => {
+            if (event.target.matches('[data-profile-input]')) {
+                tbPcHandleProfileInput(event);
+            } else if (event.target.matches('[data-profile-slider]')) {
+                tbPcHandleProfileSlider(event);
+            }
+        });
+
+        tbPcUi.profilesContainer.addEventListener('change', event => {
+            if (event.target.matches('[data-profile-select]')) {
+                tbPcHandleProfileInput(event);
+            }
+        });
+
+        tbPcUi.profilesContainer.addEventListener('click', event => {
+            const stepperBtn = event.target.closest('.stepper-btn');
+            if (stepperBtn) {
+                tbPcHandleStepperClick(event);
+                return;
+            }
+
+            const removeBtn = event.target.closest('.remove-profile-btn');
+            const payloadBtn = event.target.closest('[data-profile-payload-btn]');
+            const addBtnContainer = event.target.closest('.add-profile-btn-container');
+
+            if (removeBtn) {
+                const profileElement = event.target.closest('.device-profile');
+                if (profileElement) tbPcRemoveDeviceProfile(parseInt(profileElement.dataset.profileId, 10));
+            } else if (payloadBtn) {
+                const profileId = payloadBtn.dataset.profilePayloadBtn;
+                openModal(tbPcUi.payloadModal);
+                tbPcHandlePayloadModal(profileId);
+            } else if (addBtnContainer) {
+                const profileElement = addBtnContainer.closest('.device-profile');
+                const profileId = profileElement ? parseInt(profileElement.dataset.profileId, 10) : null;
+                tbPcAddDeviceProfile({ insertAfterId: profileId });
+            }
+        });
+
+        tbPcUi.closePayloadBtn.addEventListener('click', () => closeModal(tbPcUi.payloadModal));
+        tbPcUi.payloadModal.addEventListener('click', e => {
+            if (e.target === tbPcUi.payloadModal) closeModal(tbPcUi.payloadModal);
+        });
+        tbPcUi.jsonInput.addEventListener('input', () => {
+            const profileId = tbPcUi.applyPayloadBtn.dataset.profileId;
+            if (profileId) tbPcHandlePayloadModal(profileId);
+        });
+        tbPcUi.applyPayloadBtn.addEventListener('click', tbPcHandleApplyPayload);
+
+        tbPcAddDeviceProfile({}, true);
+        tbPcToggleAdvancedMode(false, false, true);
+    };
+
+    tbPcInit();
+</script>

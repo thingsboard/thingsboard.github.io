@@ -3,6 +3,7 @@ tocs:
 - getting-started
 - guides
 - installation
+- how-to-activate-trendz
 docs-header:
 - toc: getting-started
   title: Getting Started
@@ -12,3 +13,5 @@ docs-header:
   title: Guides
 - toc: installation
   title: Installation
+- toc: how-to-activate-trendz
+  title: How To Activate Trendz

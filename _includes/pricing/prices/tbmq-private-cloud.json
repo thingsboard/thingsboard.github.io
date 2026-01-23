@@ -1,0 +1,11 @@
+{
+  "basePrice": 500,
+  "includedSessions": 5000,
+  "extraSessionsPrice": 0.05,
+  "includedThroughput": 1000,
+  "extraThroughputPrice": 0.1,
+  "extraDevInstancesPrice": 100,
+  "multiAZPrice": 400,
+  "networkTrafficIncluded": 200,
+  "extraNetworkTrafficPricePerGb": 0.1
+}

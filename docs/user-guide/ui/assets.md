@@ -70,6 +70,11 @@ unassign-from-customer:
         image: /images/user-guide/ui/assets/unassign-asset-from-customer-2-ce.png
         title: 'Confirm your action in the popup dialog.'
 
+asset-details-page:
+    0:
+        image: /images/user-guide/ui/assets/asset-details-page-1-ce.png
+        title: 'Clicking on an asset opens a window where you can access and manage various aspects of that asset.'
+
 ---
 
 {% include get-hosts-name.html %}

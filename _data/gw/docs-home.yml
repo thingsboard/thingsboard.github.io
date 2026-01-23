@@ -68,3 +68,5 @@ toc:
       path: /docs/iot-gateway/custom/serial-connector/
     - title: Methods and data types
       path: /docs/iot-gateway/custom/methods-and-datatypes/
+- title: Need help?
+  path: /docs/iot-gateway/help/

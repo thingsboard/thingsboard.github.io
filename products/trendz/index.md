@@ -3,28 +3,6 @@ layout: trendz
 title: IoT Anomaly Detection & Predictive Maintenance using AI
 description: IoT solution for real-time data analysis, anomaly detection, predictive maintenance, and forecasting. Predict asset RUL & time to failure and find root causes.
 
-cloudPlan:
-    0:
-        image: /images/trendz/cloud-1.webp
-        title: 'Log in to ThingsBoard Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
-    1:
-        image: /images/trendz/cloud-2.webp
-        title: 'Choose “ThingsBoard + Trendz” and select the most suitable plan for you'
-    2:
-        image: /images/trendz/cloud-3.webp
-        title: 'Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu'
-
-selfManagedPlan:
-    0:
-        image: /images/trendz/self-managed-1.png
-        title: 'Log into Licence Portal and create new Trendz Analytics Subscription'
-    1:
-        image: /images/trendz/self-managed-2.png
-        title: 'Get your license key'
-    2:
-        image: /images/trendz/self-managed-3.png
-        title: 'Follow the instructions to install Trendz the instructions to install Trendz Analytics to your server'
-
 ---
 
 <section class="pe-features trendz-features">

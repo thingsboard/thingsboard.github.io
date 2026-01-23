@@ -1,0 +1,126 @@
+bigheader: "TBMQ Professional Edition Documentation"
+abstract: "TBMQ PE"
+toc:
+- title: TBMQ Professional Edition
+  path: /docs/pe/mqtt-broker/
+- title: What is TBMQ Professional Edition?
+  path: /docs/pe/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/
+- title: Configuration
+  section:
+    - title: TBMQ PE
+      path: /docs/pe/mqtt-broker/install/config/
+    - title: TBMQ PE Integration Executor
+      path: /docs/pe/mqtt-broker/install/ie-config/
+- title: Security
+  section:
+    - title: Overview
+      path: /docs/pe/mqtt-broker/security/overview/
+    - title: MQTT over SSL
+      path: /docs/pe/mqtt-broker/security/mqtts/
+    - title: MQTT Listeners
+      path: /docs/pe/mqtt-broker/security/listeners/
+    - title: Authentication
+      section:
+      - title: Basic
+        path: /docs/pe/mqtt-broker/security/authentication/basic/
+      - title: X.509 Certificate Chain
+        path: /docs/pe/mqtt-broker/security/authentication/x509/
+      - title: JWT
+        new: true
+        path: /docs/pe/mqtt-broker/security/authentication/jwt/
+      - title: SCRAM
+        path: /docs/pe/mqtt-broker/security/authentication/scram/
+    - title: Enable HTTPS
+      path: /docs/pe/mqtt-broker/security/https/
+    - title: OAuth 2.0
+      path: /docs/pe/mqtt-broker/security/oauth-2-support/
+    - title: Domains
+      path: /docs/pe/mqtt-broker/security/domains/
+    - title: RBAC
+      path: /docs/pe/mqtt-broker/security/rbac/
+- title: Integration with ThingsBoard
+  path: /docs/pe/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/
+- title: MQTT Features
+  section:
+    - title: MQTT protocol
+      path: /docs/pe/mqtt-broker/user-guide/mqtt-protocol/
+    - title: MQTT broker
+      path: /docs/pe/mqtt-broker/user-guide/mqtt-broker/
+    - title: Topics & Wildcards
+      path: /docs/pe/mqtt-broker/user-guide/topics/
+    - title: Quality of Service (QoS)
+      path: /docs/pe/mqtt-broker/user-guide/qos/
+    - title: Non-Persistent and Persistent Sessions
+      path: /docs/pe/mqtt-broker/user-guide/clean-persistent-sessions/
+    - title: MQTT over WebSocket
+      path: /docs/pe/mqtt-broker/user-guide/mqtt-over-ws/
+    - title: Shared Subscriptions
+      path: /docs/pe/mqtt-broker/user-guide/shared-subscriptions/
+    - title: Retained Messages
+      path: /docs/pe/mqtt-broker/user-guide/retained-messages/
+    - title: Last Will & Testament
+      path: /docs/pe/mqtt-broker/user-guide/last-will/
+    - title: Keep Alive
+      path: /docs/pe/mqtt-broker/user-guide/keep-alive/
+- title: Other Features
+  new: true
+  section:
+    - title: TBMQ Client Type
+      path: /docs/pe/mqtt-broker/user-guide/mqtt-client-type/
+    - title: Blocked Clients
+      path: /docs/pe/mqtt-broker/other/blocked-client/
+    - title: Backpressure
+      path: /docs/pe/mqtt-broker/user-guide/backpressure/
+    - title: Msg Delivery Strategies
+      path: /docs/pe/mqtt-broker/other/msg-delivery-strategy/
+    - title: PROXY Protocol
+      path: /docs/pe/mqtt-broker/other/proxy-protocol/
+    - title: Health API
+      path: /docs/pe/mqtt-broker/other/health/
+- title: Integrations
+  new: true
+  section:
+    - title: Overview
+      path: /docs/pe/mqtt-broker/integrations/
+    - title: HTTP
+      path: /docs/pe/mqtt-broker/integrations/http/
+    - title: MQTT
+      path: /docs/pe/mqtt-broker/integrations/mqtt/
+    - title: Kafka
+      path: /docs/pe/mqtt-broker/integrations/kafka/
+- title: Administration UI
+  section:
+    - title: Monitoring
+      path: /docs/pe/mqtt-broker/user-guide/ui/monitoring/
+    - title: Sessions
+      path: /docs/pe/mqtt-broker/user-guide/ui/sessions/
+    - title: Subscriptions
+      path: /docs/pe/mqtt-broker/user-guide/ui/subscriptions/
+    - title: Unauthorized Clients
+      path: /docs/pe/mqtt-broker/user-guide/ui/unauthorized-clients/
+    - title: MQTT Client Credentials
+      path: /docs/pe/mqtt-broker/user-guide/ui/mqtt-client-credentials/
+    - title: WebSocket Client
+      path: /docs/pe/mqtt-broker/user-guide/ui/websocket-client/
+    - title: Application Shared Subscriptions
+      path: /docs/pe/mqtt-broker/user-guide/ui/shared-subscriptions/
+    - title: Users
+      path: /docs/pe/mqtt-broker/user-guide/ui/users/
+    - title: Settings
+      path: /docs/pe/mqtt-broker/user-guide/ui/settings/
+- title: White Labeling
+  section:
+    - title: Overview
+      path: /docs/pe/mqtt-broker/white-labeling/
+    - title: Image gallery
+      path: /docs/pe/mqtt-broker/image-gallery/
+- title: Private Cloud Subscription
+  path: /docs/pe/mqtt-broker/subscription/
+- title: Need Help?
+  path: /docs/pe/mqtt-broker/help/
+- title: Troubleshooting
+  path: /docs/pe/mqtt-broker/troubleshooting/
+- title: Release Notes
+  path: /docs/pe/mqtt-broker/releases/
+- title: Roadmap
+  path: /docs/pe/mqtt-broker/roadmap/

@@ -1,0 +1,1605 @@
+// SHARED CALCULATOR STYLES
+$primary-color: #2A7DEC
+$text-primary: #212121
+$text-secondary: #757575
+$text-muted: #707275
+$border-color: #E0E1E2
+$bg-light: #F4F8FE
+$bg-white: #fff
+
+%calculator-card
+  display: flex
+  flex-direction: column
+
+%calculator-base
+  background-color: $bg-white
+  border-radius: 16px
+  display: flex
+  flex-direction: column
+  .calculator-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 32px
+    flex-shrink: 0
+    h2
+      font-size: 28px
+      line-height: 36px
+      color: #000
+      margin: 0
+      font-weight: 500
+      text-align: left
+
+%results-base
+  background-color: $bg-light
+  border-radius: 16px
+  padding: 0
+  display: flex
+  flex-direction: column
+  .card-header
+    flex-shrink: 0
+    padding: 42px 48px 0
+  .results-scroll-container
+    flex: 1
+    overflow-y: auto
+    padding: 16px 48px
+    &::-webkit-scrollbar
+      width: 6px
+    &::-webkit-scrollbar-track
+      background: transparent
+    &::-webkit-scrollbar-thumb
+      background-color: #C1C1C1
+      border-radius: 3px
+    &::-webkit-scrollbar-thumb:hover
+      background-color: #A1A1A1
+  .results-footer
+    flex-shrink: 0
+    padding: 16px 42px 24px
+    background: $bg-light
+    position: relative
+
+// SHARED COMPONENT STYLES
+
+.modal-overlay, .embedded-calculator
+  .hidden
+    display: none
+
+  p
+    white-space: unset
+
+  .card-header
+    .header-top
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-bottom: 32px
+    h3
+      font-size: 28px
+      line-height: 44px
+      margin: 0
+      font-weight: 400
+      color: #202021
+    h4
+      font-size: 20px
+      line-height: 32px
+      font-weight: 400
+      color: #717274
+      margin: 0
+      padding-bottom: 24px
+      border-bottom: 1px solid #E0E1E2
+      &.wrap
+        white-space: normal
+    .header-actions
+      display: flex
+      gap: 8px
+      .icon-button
+        cursor: pointer
+        padding-top: 6px
+        border-radius: 4px
+        transition: background-color 0.2s ease
+        position: relative
+        color: #0E0E0F
+        &:hover
+          background-color: rgba(42, 125, 236, 0.1)
+          color: $primary-color
+          .tooltip-text
+            visibility: visible
+        svg
+          width: 24px
+          height: 24px
+        .tooltip-text
+          position: absolute
+          visibility: hidden
+          background-color: #000000c7
+          color: #fff
+          text-align: center
+          border-radius: 6px
+          padding: 5px 10px
+          font-size: 12px
+          right: 0
+          top: 32px
+          width: max-content
+          white-space: nowrap
+        &.copied
+          color: $primary-color
+    .optimal-plan-row
+      display: flex
+      justify-content: space-between
+      align-items: center
+      span
+        font-size: 20px
+        color: #202021
+        font-weight: 400
+        line-height: 32px
+      .plan-link
+        font-size: 18px
+        font-weight: 500
+        color: $primary-color
+    &.enterprise-header
+      h3
+        font-size: 28px
+        line-height: 44px
+        font-weight: 400
+        color: #202021
+      h4
+        font-size: 18px
+        line-height: 28px
+        font-weight: 400
+        color: #202021
+
+  .contact-us-text
+    font-size: 14px
+    color: #717274
+    margin-bottom: 16px
+    &.enterprise-text
+      font-size: 14px
+      line-height: 28px
+      font-weight: 400
+      color: #202021
+      margin-top: 16px
+      margin-bottom: 0
+      padding-top: 16px
+      border-top: 1px solid #E0E1E2
+
+  .instances-section
+    margin-bottom: 24px
+    .instance-group
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 16px 0
+      &:first-child
+        padding-top: 0
+      &:last-of-type
+        border-bottom: none
+      .instance-info
+        h4
+          font-size: 14px
+          line-height: 24px
+          font-weight: 500
+          color: $text-primary
+          margin: 0 0 4px 0
+          display: flex
+          align-items: center
+          .tooltip
+            margin-left: 5px
+            position: relative
+            &:hover
+              .tooltip-text
+                visibility: visible
+            img
+              width: 15px
+            .tooltip-text
+              position: absolute
+              z-index: 3
+              visibility: hidden
+              background-color: #000000c7
+              color: #fff
+              text-align: left
+              border-radius: 6px
+              padding: 5px 10px
+              font-size: 12px
+              left: 19px
+              top: -3px
+              width: 250px
+              line-height: 18px
+        p
+          font-size: 12px
+          line-height: 20px
+          font-weight: 400
+          color: $text-secondary
+          margin: 0
+          max-width: 400px
+    .white-labeling-prompt
+      display: flex
+      align-items: center
+      gap: 8px
+      padding-top: 16px
+      &.hidden
+        display: none
+      .prompt-text
+        font-size: 14px
+        font-style: italic
+        color: $text-muted
+      .prompt-link
+        font-size: 14px
+        font-weight: 500
+        color: $primary-color
+        background: none
+        border: none
+        cursor: pointer
+        padding: 0
+        &:hover
+          text-decoration: underline
+
+  .input-group
+    margin-bottom: 24px
+    &:last-child:not(.addons)
+      margin-bottom: 16px
+    &.addons
+      margin-top: 32px
+      margin-bottom: 16px
+      > .label
+        font-size: 16px
+        line-height: 24px
+        font-weight: 500
+        margin-bottom: 16px
+        color: #3D3D3D
+        display: flex
+        align-items: center
+        .tooltip
+          margin-left: 5px
+          position: relative
+          &:hover
+            .tooltip-text
+              visibility: visible
+          img
+            width: 15px
+          .tooltip-text
+            position: absolute
+            z-index: 3
+            visibility: hidden
+            background-color: #000000c7
+            color: #fff
+            text-align: left
+            border-radius: 6px
+            padding: 5px 10px
+            font-size: 12px
+            left: 19px
+            top: -3px
+            width: 200px
+            line-height: 18px
+    .input-label-group
+      display: flex
+      justify-content: space-between
+      align-items: center
+      .label
+        font-size: 14px
+        font-weight: 400
+        color: $text-primary
+        line-height: 24px
+        display: flex
+        align-items: center
+        margin-bottom: 0
+        .tooltip
+          margin-left: 5px
+          position: relative
+          margin-bottom: 2px
+          &:hover
+            .tooltip-text
+              visibility: visible
+          img
+            width: 15px
+          .tooltip-text
+            position: absolute
+            z-index: 3
+            visibility: hidden
+            background-color: #000000c7
+            color: #fff
+            text-align: left
+            border-radius: 6px
+            padding: 5px
+            font-size: 12px
+            left: 19px
+            top: -3px
+            width: 250px
+            line-height: 24px
+      .input-with-controls
+        display: flex
+        align-items: center
+        gap: 12px
+        .select
+          height: 40px
+          width: 145px
+          padding: 10px 32px 10px 12px
+          border: 1px solid $border-color
+          border-radius: 6px
+          font-size: 14px
+          font-weight: 400
+          color: $text-primary
+          appearance: none
+          background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2712%27%20height%3D%278%27%20viewBox%3D%270%200%2012%208%27%3E%3Cpath%20d%3D%27M1.41%200L6%204.58L10.59%200L12%201.41L6%207.41L0%201.41L1.41%200Z%27%20fill%3D%27%23333333%27/%3E%3C/svg%3E")
+          background-repeat: no-repeat
+          background-position: right 12px center
+          background-size: 10px
+          cursor: pointer
+          &:focus
+            outline: none
+            border-color: $primary-color
+      .payload-btn
+        height: 40px
+        padding: 10px 16px
+        border: 1px solid $border-color
+        border-radius: 6px
+        font-size: 14px
+        color: $text-primary
+        cursor: pointer
+        transition: all 0.2s ease
+        white-space: nowrap
+        &:hover
+          border-color: $primary-color
+          color: $primary-color
+      .input
+        padding: 10px 12px
+        border-radius: 6px
+        font-size: 14px
+        width: 100%
+        margin: 0
+        -moz-appearance: textfield
+        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+          -webkit-appearance: none
+        &:focus
+          outline: none
+          border-color: $primary-color
+        &.input-right
+          width: 120px
+          text-align: right
+          border: 1px solid $border-color
+
+  .stepper-control
+    &.unset-width
+      width: unset
+    width: 120px
+    display: flex
+    align-items: center
+    background-color: #D4E4FB
+    border-radius: 8px
+    padding: 2.5px
+    .stepper-btn
+      width: 36px
+      height: 36px
+      border: none
+      background: transparent
+      color: $text-primary
+      font-size: 20px
+      font-weight: 400
+      cursor: pointer
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: color 0.2s ease
+      flex-shrink: 0
+      &:hover:not(:disabled)
+        color: $primary-color
+      &:disabled
+        color: #B0B0B0
+        cursor: not-allowed
+    input
+      width: 50px
+      height: 36px
+      text-align: center
+      border: 1px solid $primary-color
+      border-radius: 6px
+      font-size: 14px
+      font-weight: 400
+      padding: 0
+      background: $bg-white
+      -moz-appearance: textfield
+      &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+        -webkit-appearance: none
+      &:focus
+        outline: none
+
+  .slider-container
+    width: 100%
+    margin-bottom: 46px
+    position: relative
+    .slider
+      position: relative
+      z-index: 2
+      -webkit-appearance: none
+      appearance: none
+      width: 100%
+      cursor: pointer
+      outline: none
+      height: 6px
+      background-color: $border-color
+      border-radius: 6px
+      margin: 0
+      &::-webkit-slider-runnable-track
+        border-radius: 6px
+      &::-moz-range-track
+        border-radius: 6px
+      &::-webkit-slider-thumb
+        -webkit-appearance: none
+        appearance: none
+        height: 25px
+        width: 25px
+        border-radius: 50%
+        border: none
+        background-color: $primary-color
+      &::-moz-range-thumb
+        height: 25px
+        width: 25px
+        background-color: $primary-color
+        border-radius: 50%
+        border: none
+    .tick-marks
+      position: absolute
+      width: 100%
+      top: 7px
+      left: 0
+      &.hidden
+        display: none
+      .tick-mark
+        display: flex
+        flex-direction: column
+        gap: 10px
+        position: absolute
+        z-index: 1
+        &:first-child, &:last-child
+          .tick
+            visibility: hidden
+        &:last-child
+          .tick-label
+            transform: translateX(-7px)
+        .tick
+          width: 2px
+          height: 12px
+          border: 2px solid $border-color
+          border-radius: 25%
+          box-sizing: border-box
+        .tick-label
+          transform: translateX(-10px)
+          font-size: 14px
+          font-weight: 400
+          line-height: 24px
+          color: $text-secondary
+          &.infinity
+            font-size: 28px
+            font-weight: 300
+    &.snap-slider
+      .tick-marks
+        .tick-mark
+          &:first-child
+            .tick
+              visibility: hidden
+
+  .add-ons-grid
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 16px
+    &.three-items
+      .addon-card:nth-child(3)
+        grid-column: 1
+
+  .addon-card
+    border: 1px solid #E0E0E0
+    border-radius: 12px
+    padding: 16px
+    transition: all 0.2s ease
+    background-color: $bg-white
+    position: relative
+    &.active
+      border-color: $primary-color
+      background-color: $bg-light
+    .addon-header
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      margin-bottom: 8px
+      .addon-title
+        font-size: 14px
+        line-height: 24px
+        font-weight: 500
+        color: #3B3C3D
+        display: flex
+        align-items: center
+        gap: 4px
+        flex-wrap: wrap
+        .tooltip
+          position: relative
+          &:hover
+            .tooltip-text
+              visibility: visible
+          img
+            width: 14px
+          .tooltip-text
+            position: absolute
+            z-index: 3
+            visibility: hidden
+            background-color: #000000c7
+            color: #fff
+            text-align: left
+            border-radius: 6px
+            padding: 5px 10px
+            font-size: 12px
+            left: 20px
+            top: -4px
+            width: 200px
+            line-height: 18px
+    .addon-description
+      font-size: 12px
+      line-height: 18px
+      color: $text-muted
+      margin-bottom: 20px
+    .addon-counter
+      display: flex
+      justify-content: space-between
+      align-items: center
+      &.hidden
+        display: none
+      label
+        font-size: 14px
+        color: #3B3C3D
+        margin-bottom: 0
+        font-weight: 400
+        line-height: 24px
+    &.addon-free
+      border-color: #E0E0E0
+      background-color: $bg-white
+      .addon-header
+        .addon-title
+          color: #9E9E9E
+      .addon-description
+        color: #9E9E9E
+      .toggle-switch
+        .slider
+          opacity: 0.6
+    &.addon-disabled
+      opacity: 0.6
+      .addon-header
+        .addon-title
+          color: #9E9E9E
+      .addon-description
+        color: #9E9E9E
+      .toggle-switch
+        .slider
+          background-color: $border-color
+          cursor: not-allowed
+    .addon-badge
+      position: absolute
+      top: -10px
+      left: 16px
+      background-color: #D4E5FB
+      color: $primary-color
+      font-size: 12px
+      font-weight: 500
+      line-height: 18px
+      padding: 2px 8px
+      border-radius: 4px
+      border: 1px solid rgba(42, 125, 236, 0.32)
+      &.hidden
+        display: none
+
+  .toggle-switch
+    position: relative
+    display: inline-block
+    width: 44px
+    height: 24px
+    flex-shrink: 0
+    input
+      opacity: 0
+      width: 0
+      height: 0
+      &:checked + .slider
+        background-color: $primary-color
+        &:before
+          transform: translateX(20px)
+    .slider
+      position: absolute
+      cursor: pointer
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: #ccc
+      transition: 0.3s
+      border-radius: 24px
+      &:before
+        position: absolute
+        content: ""
+        height: 18px
+        width: 18px
+        left: 3px
+        bottom: 3px
+        background-color: $bg-white
+        transition: 0.3s
+        border-radius: 50%
+
+  .results-section
+    &.inactive
+      .section-header
+        .section-title-with-chevron
+          .chevron-icon
+            color: #979A9E
+          &.addon-disabled-chevron
+            .chevron-icon
+              color: #C0C0C0
+              cursor: default
+    &.expandable
+      .section-header
+        cursor: pointer
+      .section-content
+        max-height: 500px
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out
+        opacity: 1
+    &.collapsed
+      .section-content
+        position: relative
+        z-index: -10
+        max-height: 0
+        opacity: 0
+        padding-top: 0
+        padding-bottom: 0
+    .section-header
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 8px 0
+      .section-title
+        font-size: 16px
+        line-height: 28px
+        font-weight: 500
+        color: #3B3C3D
+        &-with-chevron
+          font-size: 16px
+          line-height: 28px
+          font-weight: 500
+          color: #3B3C3D
+          display: flex
+          align-items: center
+          gap: 6px
+          .chevron-icon
+            width: 12px
+            height: 12px
+            color: #3B3C3D
+      .section-value
+        font-size: 14px
+        font-weight: 500
+        color: $text-primary
+        display: flex
+        align-items: center
+        gap: 6px
+        &.strikethrough
+          text-decoration: line-through
+          color: #9E9E9E
+        .strikethrough-text
+          text-decoration: line-through
+          color: #9E9E9E
+        .support-priority
+          color: $primary-color
+        .tooltip
+          position: relative
+          &:hover
+            .tooltip-text
+              visibility: visible
+          svg
+            width: 13px
+            height: 13px
+            vertical-align: middle
+          .tooltip-text
+            position: absolute
+            visibility: hidden
+            background-color: #000000c7
+            color: #fff
+            text-align: left
+            border-radius: 6px
+            padding: 5px 10px
+            font-size: 12px
+            right: 17px
+            width: 250px
+            line-height: 18px
+      .add-to-plan-btn
+        font-size: 14px
+        line-height: 24px
+        font-weight: 500
+        color: $primary-color
+        cursor: pointer
+        &:hover
+          color: #1a5cb8
+    .section-content
+      &.show
+        display: block
+      .result-item
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 4px 0
+        .result-label
+          font-size: 14px
+          color: $text-muted
+          line-height: 24px
+          font-weight: 400
+        .result-value
+          font-size: 14px
+          line-height: 24px
+          font-weight: 500
+          color: $text-muted
+          display: flex
+          align-items: center
+          gap: 4px
+          &.no-tooltip
+            padding-right: 21px
+          .strikethrough-text
+            text-decoration: line-through
+            color: #9E9E9E
+          .support-priority
+            color: $primary-color
+          .badge
+            padding: 2px 8px
+            border-radius: 4px
+            font-size: 14px
+            font-weight: 500
+            line-height: 24px
+            &.enabled
+              background-color: #D4E4FB
+              color: $primary-color
+              border: 1px solid #9EC3F6
+            &.disabled
+              background-color: #EDF1F6
+              color: #939599
+              border: 1px solid #D1D4D8
+          .tooltip
+            position: relative
+            &:hover
+              .tooltip-text
+                visibility: visible
+            svg
+              width: 12px
+              height: 12px
+              vertical-align: middle
+            .tooltip-text
+              position: absolute
+              visibility: hidden
+              background-color: #000000c7
+              color: #fff
+              text-align: left
+              border-radius: 6px
+              padding: 5px 10px
+              font-size: 12px
+              right: 17px
+              width: 270px
+              line-height: 18px
+          // Placeholder for consistent spacing when no tooltip
+          .tooltip-placeholder
+            display: inline-block
+            width: 16px
+
+  .addons-separator
+    display: flex
+    align-items: center
+    margin: 16px 0
+    span
+      padding: 0 12px
+      font-size: 12px
+      color: #717274
+      background: $bg-light
+    &::before, &::after
+      content: ''
+      flex: 1
+      height: 1px
+      background-color: #979A9D
+
+  .results-total
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 0 16px
+    span:first-child
+      font-size: 28px
+      line-height: 44px
+      font-weight: 500
+      color: $text-primary
+    .total-value
+      font-size: 28px
+      line-height: 44px
+      font-weight: 500
+      color: $text-primary
+      display: flex
+      align-items: center
+      gap: 6px
+      .tooltip
+        position: relative
+        &:hover
+          .tooltip-text
+            visibility: visible
+        svg
+          width: 14px
+          height: 14px
+          vertical-align: middle
+        .tooltip-text
+          position: absolute
+          visibility: hidden
+          background-color: #000000c7
+          color: #fff
+          text-align: left
+          border-radius: 6px
+          padding: 8px 12px
+          font-size: 12px
+          right: 0
+          top: 28px
+          width: 280px
+          line-height: 18px
+
+  .button
+    display: block
+    padding: 10px 26px
+    background-color: $primary-color
+    color: #fff
+    border: none
+    border-radius: 8px
+    font-size: 14px
+    font-weight: 500
+    text-align: center
+    text-decoration: none
+    cursor: pointer
+    transition: all 0.2s ease
+    &:hover
+      background-color: #1a5cb8
+    &.reset
+      margin-left: auto
+      background-color: $bg-white
+      color: $primary-color
+      width: 100%
+      max-width: 200px
+      border: solid 1px $primary-color
+      outline: none
+      &:hover
+        background-color: $bg-white
+        color: $primary-color
+        filter: brightness(1.1)
+
+  .pricing-disclaimer
+    font-size: 12px
+    color: #717274
+    text-align: center
+    margin-top: 8px
+    margin-bottom: 0
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+
+  .sla-upgrade-btn
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    margin-right: 6px
+    transition: transform 0.2s ease
+    &:hover
+      transform: scale(1.1)
+    .sla-arrow-icon
+      width: 20px
+      height: 20px
+
+  .sla-arrow-animated
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    animation: slaArrowFlyUp 0.5s ease-out forwards
+    .sla-arrow-icon
+      width: 20px
+      height: 20px
+
+  @keyframes slaArrowFlyUp
+    0%
+      opacity: 1
+      transform: translateY(0) scale(1)
+    100%
+      opacity: 0
+      transform: translateY(-25px) scale(0.8)
+
+  .toggle-container
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    margin-bottom: 8px
+
+    .billing-toggle
+      display: flex
+      align-items: center
+      gap: 12px
+
+      .label-text
+        font-size: 16px
+        color: #707275
+        font-weight: 400
+        cursor: pointer
+        &.selected
+          color: #202021
+
+      .switch
+        position: relative
+        display: inline-block
+        width: 42px
+        height: 24px
+        margin-bottom: 0
+
+        input
+          opacity: 0
+          width: 0
+          height: 0
+          &:checked + .slider:before
+            transform: translateX(18px)
+
+        .slider
+          position: absolute
+          cursor: pointer
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          background-color: $primary-color
+          transition: 0.4s
+          border-radius: 34px
+
+          &:before
+            position: absolute
+            content: ""
+            height: 18px
+            width: 18px
+            left: 3px
+            bottom: 3px
+            background-color: white
+            transition: 0.4s
+            border-radius: 50%
+
+// MODAL-SPECIFIC STYLES
+
+.modal-overlay
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: rgba(0, 0, 0, 0.5)
+  z-index: 8888
+  align-items: center
+  justify-content: center
+  &.visible
+    display: flex
+  .modal-content
+    display: flex
+    width: 1300px
+    padding: 8px
+    border-radius: 24px
+    background-color: #F7F9FC
+    max-height: min(912px, 100%)
+    overflow: hidden
+    .modal-body
+      display: flex
+      position: relative
+      flex: 1 1 0
+      .close-button
+        position: absolute
+        right: 9px
+        top: 8px
+        cursor: pointer
+        z-index: 10
+      .card
+        @extend %calculator-card
+        &.calculator
+          @extend %calculator-base
+          width: 60%
+          padding: 32px 12px 0 32px
+          height: 100%
+          display: flex
+          flex-direction: column
+          .calculator-header
+            flex-shrink: 0
+            .mode-tabs
+              display: flex
+              border-radius: 100px
+              border: 1px solid #DDEAFC
+              padding: 2px
+              .mode-tab
+                padding: 4px 20px
+                border: none
+                border-radius: 100px
+                font-size: 16px
+                line-height: 28px
+                font-weight: 400
+                color: $text-secondary
+                cursor: pointer
+                transition: all 0.2s ease
+                display: flex
+                align-items: center
+                gap: 4px
+                &.active
+                  background-color: $primary-color
+                  color: #fff
+                  box-shadow: 0 2px 4px rgba(42, 125, 236, 0.3)
+                  .tooltip
+                    img
+                      filter: invert(1)
+                &:hover:not(.active)
+                  color: $primary-color
+                .tooltip
+                  position: relative
+                  display: inline-flex
+                  margin-left: 2px
+                  &:hover
+                    .tooltip-text
+                      visibility: visible
+                  img
+                    width: 14px
+                    height: 14px
+                    opacity: 0.7
+                  .tooltip-text
+                    position: absolute
+                    z-index: 3
+                    visibility: hidden
+                    background-color: #000000c7
+                    color: #fff
+                    text-align: center
+                    border-radius: 6px
+                    padding: 5px 10px
+                    font-size: 12px
+                    left: 50%
+                    transform: translateX(-50%)
+                    top: 28px
+                    width: 180px
+                    line-height: 18px
+          .input-parameters
+            flex: 1
+            overflow-y: auto
+            overflow-x: hidden
+            padding-right: 20px
+            min-height: 0
+            &::-webkit-scrollbar
+              width: 6px
+            &::-webkit-scrollbar-track
+              background: #F1F1F1
+              border-radius: 3px
+            &::-webkit-scrollbar-thumb
+              background-color: #C1C1C1
+              border-radius: 3px
+            &::-webkit-scrollbar-thumb:hover
+              background-color: #A1A1A1
+            &:has(>.device-profiles-container.advanced)
+              padding-top: 10px
+          .actions-container
+            flex-shrink: 0
+            padding: 24px 0
+            .reset-container
+              width: 100%
+        &.results
+          @extend %results-base
+          width: 40%
+          height: 100%
+          display: flex
+          flex-direction: column
+          .card-header
+            flex-shrink: 0
+          .results-scroll-container
+            flex: 1
+            overflow-y: auto
+            min-height: 0
+          .results-footer
+            flex-shrink: 0
+
+  .device-profiles-container
+    .device-profile:only-child
+      .add-profile-btn-container
+        display: none
+    h3
+      display: none
+    .remove-profile-btn
+      position: absolute
+      right: 10px
+      top: 8px
+      cursor: pointer
+      img
+        width: 24px
+    &.advanced
+      .device-profile
+        .wrapper
+          border: 1px solid #BBD5F9
+          border-radius: 15px
+          position: relative
+          padding: 40px 14px 14px
+          margin-bottom: 24px
+          h3
+            display: block
+            position: absolute
+            top: -14px
+            background-color: $bg-white
+            padding: 0 4px
+            color: $primary-color
+            font-size: 16px
+            line-height: 28px
+            font-weight: 500
+            letter-spacing: 0.15px
+        .add-profile-btn-container
+          display: block
+          margin-bottom: 24px
+          cursor: pointer
+          &:hover
+            .add-profile-btn
+              span
+                display: inline
+          &.hidden
+            display: none
+          .add-profile-btn
+            display: flex
+            align-items: center
+            gap: 8px
+            hr
+              width: 100%
+              border: 1px solid $primary-color
+            img
+              width: 24px
+              height: 24px
+              border-radius: 50%
+              background-color: #EEF5FE
+            span
+              display: none
+              font-size: 16px
+              font-weight: 500
+              line-height: 28px
+              color: $primary-color
+              white-space: nowrap
+
+  .payload-modal-overlay
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 9999
+    background-color: rgba(0, 0, 0, 0.5)
+    display: none
+    align-items: center
+    justify-content: center
+    &.visible
+      display: flex
+    .modal-content
+      background-color: $bg-light
+      padding: 8px
+      border-radius: 24px
+      width: 100%
+      max-width: 800px
+      margin: 16px
+      overflow-y: auto
+      .modal-wrapper
+        background-color: $bg-white
+        padding: 32px
+        border-radius: 16px
+        position: relative
+        flex: 1
+        .modal-header
+          display: flex
+          justify-content: space-between
+          align-items: flex-start
+          margin-bottom: 24px
+          gap: 16px
+          h2
+            font-size: 24px
+            line-height: 32px
+            font-weight: 500
+            color: $text-primary
+            margin: 0
+          .close-button
+            cursor: pointer
+            padding: 4px
+            border-radius: 4px
+            &:hover
+              background-color: rgba(0, 0, 0, 0.05)
+            img
+              width: 24px
+              height: 24px
+        .input-group
+          position: relative
+          label
+            display: block
+            font-size: 14px
+            font-weight: 500
+            color: #3D3D3D
+            margin-bottom: 8px
+            .tooltip
+              position: relative
+              margin-left: 4px
+              &:hover
+                .tooltip-text
+                  visibility: visible
+              img
+                width: 14px
+                vertical-align: middle
+              .tooltip-text
+                position: absolute
+                z-index: 3
+                visibility: hidden
+                background-color: #000000c7
+                color: #fff
+                text-align: left
+                border-radius: 6px
+                padding: 5px 10px
+                font-size: 12px
+                left: 20px
+                top: -4px
+                width: 300px
+                line-height: 18px
+          #tbPcJsonInput
+            width: 100%
+            height: 250px
+            font-family: 'Inconsolata', monospace
+            font-size: 14px
+            line-height: 20px
+            color: $text-primary
+            border: 1px solid #BBD5F9
+            border-radius: 8px
+            padding: 16px
+            resize: vertical
+            &.error
+              border-color: #D12730
+            &::placeholder
+              color: #9E9E9E
+              opacity: 1
+            &:focus
+              outline: none
+              border-color: $primary-color
+          #errorMessage
+            position: absolute
+            bottom: -20px
+            color: #D12730
+            font-size: 12px
+        .footer
+          display: flex
+          align-items: center
+          justify-content: space-between
+          padding-top: 16px
+          gap: 16px
+          .data-points
+            font-size: 14px
+            color: #717274
+            span
+              font-weight: 600
+              color: $text-primary
+          #applyPayloadBtn
+            padding: 12px 24px
+            min-width: 140px
+
+// EMBEDDED CALCULATOR STYLES
+
+.embedded-calculator
+  border: 1px solid #D4E4FB
+  box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
+  border-radius: 24px
+  padding: 8px
+  margin-bottom: 40px
+  .calculator-body
+    display: flex
+    gap: 0
+    height: 720px
+  &#tbmqSmCalculator, &#tbmqPcCalculator
+    .calculator-body
+      height: 800px
+  .card
+    @extend %calculator-card
+    &.calculator
+      @extend %calculator-base
+      width: 60%
+      padding: 32px 12px 0 32px
+      height: 100%
+      display: flex
+      flex-direction: column
+      .calculator-header
+        flex-shrink: 0
+        .mode-tabs
+          display: flex
+          border-radius: 100px
+          border: 1px solid #DDEAFC
+          padding: 2px
+          .mode-tab
+            padding: 4px 20px
+            border: none
+            border-radius: 100px
+            font-size: 16px
+            line-height: 28px
+            font-weight: 400
+            color: $text-secondary
+            cursor: pointer
+            transition: all 0.2s ease
+            display: flex
+            align-items: center
+            gap: 4px
+            &.active
+              background-color: $primary-color
+              color: #fff
+              box-shadow: 0 2px 4px rgba(42, 125, 236, 0.3)
+              .tooltip
+                img
+                  filter: invert(1)
+            &:hover:not(.active)
+              color: $primary-color
+            .tooltip
+              position: relative
+              display: inline-flex
+              margin-left: 2px
+              &:hover
+                .tooltip-text
+                  visibility: visible
+              img
+                width: 14px
+                height: 14px
+                opacity: 0.7
+              .tooltip-text
+                position: absolute
+                z-index: 3
+                visibility: hidden
+                background-color: #000000c7
+                color: #fff
+                text-align: center
+                border-radius: 6px
+                padding: 5px 10px
+                font-size: 12px
+                left: 50%
+                transform: translateX(-50%)
+                top: 28px
+                width: 180px
+                line-height: 18px
+      .input-parameters
+        flex: 1
+        overflow-y: auto
+        overflow-x: hidden
+        padding-right: 20px
+        .tick-marks
+          top: 5px
+      .actions-container
+        flex-shrink: 0
+        padding: 24px 0
+        .reset-container
+          width: 100%
+    &.results
+      @extend %results-base
+      width: 40%
+      height: 100%
+      display: flex
+      flex-direction: column
+      .card-header
+        flex-shrink: 0
+      .results-scroll-container
+        flex: 1
+        overflow-y: auto
+        min-height: 0
+      .results-footer
+        flex-shrink: 0
+
+// RESPONSIVE STYLES - MODAL
+
+@media screen and (max-width: 1300px)
+  .modal-overlay
+    .modal-content
+      border-radius: 0
+
+@media screen and (max-width: 1100px)
+  .modal-overlay
+    .modal-content
+      max-height: 100vh
+      overflow-y: scroll
+      .modal-body
+        flex-direction: column
+        height: auto
+        .card
+          &.calculator, &.results
+            width: 100%
+            height: auto
+          &.calculator
+            .input-parameters
+              overflow-y: visible
+          &.results
+            .card-header
+              padding: 24px 24px 0
+            .results-scroll-container
+              overflow-y: visible
+              padding: 16px 24px
+
+@media screen and (max-width: 768px)
+  .modal-overlay
+    .modal-content
+      .modal-body
+        .card
+          &.calculator
+            .calculator-header
+              flex-direction: column
+              align-items: flex-start
+              gap: 16px
+              h2
+                font-size: 22px
+            .input-parameters
+              padding-right: 0
+    .add-ons-grid
+      grid-template-columns: 1fr
+
+@media screen and (max-width: 535px)
+  .modal-overlay
+    .input-group
+      .input-label-group
+        flex-direction: column
+        align-items: flex-start
+        gap: 8px
+        &.xs-row
+          flex-direction: row
+
+@media screen and (max-width: 599px)
+  .modal-overlay
+    .modal-content
+      padding: 0
+      .modal-body
+        flex-direction: column
+        height: auto
+        .card
+          border-radius: 0
+          height: auto
+          &.calculator
+            padding: 16px 16px 0
+            .calculator-header
+              h2
+                font-size: 20px
+            .input-parameters
+              overflow-y: visible
+          &.results
+            .card-header
+              padding: 16px 16px 0
+            .results-scroll-container
+              padding: 16px
+              overflow-y: visible
+            .results-footer
+              padding: 12px 16px 16px
+            .card-header
+              .header-top
+                h3
+                  font-size: 20px
+            .results-total
+              flex-direction: column
+              align-items: flex-start
+              gap: 8px
+              .total-value
+                font-size: 20px
+    .input-group
+      .input-with-controls
+        .select
+          min-width: 100px
+    .stepper-control
+      input
+        width: 45px
+    .addon-card
+      padding: 12px
+      .addon-header
+        .addon-title
+          font-size: 13px
+      .addon-description
+        font-size: 11px
+    .payload-modal-overlay
+      .modal-content
+        margin: 0
+        border-radius: 0
+        height: 100%
+        max-width: none
+        .modal-wrapper
+          height: 100%
+          border-radius: 0
+          padding: 16px
+          display: flex
+          flex-direction: column
+          .modal-header
+            h2
+              font-size: 18px
+          .input-group
+            flex: 1
+            #tbPcJsonInput
+              height: 200px
+          .footer
+            flex-direction: column
+            .data-points
+              width: 100%
+            #applyPayloadBtn
+              width: 100%
+
+// RESPONSIVE STYLES - EMBEDDED
+
+@media screen and (max-width: 1100px)
+  .embedded-calculator
+    &#tbmqSmCalculator, &#tbmqPcCalculator
+      .calculator-body
+        height: unset
+    .calculator-body
+      flex-direction: column
+      height: auto
+    .card
+      &.calculator, &.results
+        width: 100%
+        height: auto
+      &.calculator
+        .input-parameters
+          overflow-y: visible
+      &.results
+        .card-header
+          padding: 24px 24px 0
+        .results-scroll-container
+          overflow-y: visible
+          padding: 16px 24px
+
+@media screen and (max-width: 768px)
+  .embedded-calculator
+    .card
+      &.calculator
+        .calculator-header
+          flex-direction: column
+          align-items: flex-start
+          gap: 16px
+          h2
+            font-size: 22px
+        .input-parameters
+          padding-right: 0
+    .add-ons-grid
+      grid-template-columns: 1fr
+
+@media screen and (max-width: 535px)
+  .embedded-calculator
+    .input-group
+      .input-label-group
+        flex-direction: column
+        align-items: flex-start
+        gap: 8px
+        &.xs-row
+          flex-direction: row
+
+@media screen and (max-width: 599px)
+  .embedded-calculator
+    border-radius: 16px
+    padding: 0
+    .calculator-body
+      flex-direction: column
+      height: auto
+    .card
+      border-radius: 16px
+      height: auto
+      &.calculator
+        padding: 16px 16px 0
+        .calculator-header
+          h2
+            font-size: 20px
+        .input-parameters
+          overflow-y: visible
+      &.results
+        .card-header
+          padding: 16px 16px 0
+        .results-scroll-container
+          padding: 16px
+          overflow-y: visible
+        .results-footer
+          padding: 12px 16px 16px
+        .card-header
+          .header-top
+            h3
+              font-size: 20px
+        .results-total
+          flex-direction: column
+          align-items: flex-start
+          gap: 8px
+          .total-value
+            font-size: 20px
+    .stepper-control
+      input
+        width: 45px
+    .addon-card
+      padding: 12px
+      .addon-header
+        .addon-title
+          font-size: 13px
+      .addon-description
+        font-size: 11px

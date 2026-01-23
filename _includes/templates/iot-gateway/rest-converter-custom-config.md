@@ -2,21 +2,23 @@ A custom converter is converter written for some device:
 
 
 
-|**Parameter**|**Default value**|**Description**|
-|:-|:-|-
-| type                        | **custom**                      | Provides information to connector that custom converter will be uses for converting data from request.                            |
-| deviceNameExpression        | **SuperAnonDevice**             | Device name.                                                                                                                      |
-| deviceTypeExpression        | **default**                     | Devcie type.                                                                                                                      |
-| extension                   | **CustomRESTUplinkConverter**   | Name of custom converter class.                                                                                                   |
-| extension-config            |                                 | Configuration, for custom converter (You can put anything, there. It will be passed to the converter object on initialization).   |
-|   key                       | **Totaliser**                   |                                                                                                                                   |
-|   datatype                  | **float**                       |                                                                                                                                   |
-|   fromByte                  | **0**                           |                                                                                                                                   |
-|   toByte                    | **4**                           |                                                                                                                                   |
-|   byteorder                 | **big**                         |                                                                                                                                   |
-|   signed                    | **true**                        |                                                                                                                                   |
-|   multiplier                | **1**                           |                                                                                                                                   | 
-|--- 
+| **Parameter**                 | **Default value**             | **Description**                                                                                                                 |
+|:------------------------------|:------------------------------|---------------------------------------------------------------------------------------------------------------------------------
+| type                          | **custom**                    | Provides information to connector that custom converter will be uses for converting data from request.                          |
+| deviceNameExpression          | **SuperAnonDevice**           | Device name.                                                                                                                    |
+| deviceNameExpressionSource    | **constant**                  | Device name source.                                                                                                             |
+| deviceProfileExpressionSource | **constant**                  | Device profile source. It can be constant or request.                                                                           |
+| deviceProfileExpression       | **default**                   | Device profile name. It can be constant or request.                                                                                                           |
+| extension                     | **CustomRESTUplinkConverter** | Name of custom converter class.                                                                                                 |
+| extension-config              |                               | Configuration, for custom converter (You can put anything, there. It will be passed to the converter object on initialization). |
+| key                           | **Totaliser**                 |                                                                                                                                 |
+| datatype                      | **float**                     |                                                                                                                                 |
+| fromByte                      | **0**                         |                                                                                                                                 |
+| toByte                        | **4**                         |                                                                                                                                 |
+| byteorder                     | **big**                       |                                                                                                                                 |
+| signed                        | **true**                      |                                                                                                                                 |
+| multiplier                    | **1**                         |                                                                                                                                 | 
+| ---                           
 
 {% capture difference %}
   
@@ -29,20 +31,24 @@ A custom converter is converter written for some device:
 Mapping subsection in the configuration looks like:  
 
 ```json
-      "converter": {
-        "type": "custom",
-        "deviceNameExpression": "SuperAnonDevice",
-        "deviceTypeExpression": "default",
-        "extension": "CustomRestUplinkConverter",
-        "extension-config": [
-          {
-          "key": "Totaliser",
-          "datatype": "float",
-          "fromByte": 0,
-          "toByte": 4,
-          "byteorder": "big",
-          "signed": true,
-          "multiplier": 1
-          }]
-      }
+"converter": {
+    "type": "custom",
+    "deviceInfo": {
+      "deviceNameExpression": "SuperAnonDevice",
+      "deviceNameExpressionSource": "constant",
+      "deviceProfileExpressionSource": "constant",
+      "deviceProfileExpression": "default"
+    },
+    "extension": "CustomRestUplinkConverter",
+    "extensionConfig": {
+      "key": "Totaliser",
+      "datatype": "float",
+      "fromByte": 0,
+      "toByte": 4,
+      "byteorder": "big",
+      "signed": true,
+      "multiplier": 1
+    }
+  }
 ```
+{: .copy-code}

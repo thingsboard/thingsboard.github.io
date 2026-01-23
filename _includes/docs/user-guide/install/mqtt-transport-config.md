@@ -257,6 +257,12 @@
 			<td> db password</td>
 		</tr>
 		<tr>
+			<td>redis.username</td>
+			<td>REDIS_USERNAME</td>
+			<td></td>
+			<td> Redis username for ACL authentication (Redis 6.0+). Leave empty for legacy password-only auth</td>
+		</tr>
+		<tr>
 			<td>redis.ssl.enabled</td>
 			<td>TB_REDIS_SSL_ENABLED</td>
 			<td>false</td>
@@ -832,6 +838,12 @@
 			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_TOPIC_PROPERTIES</td>
 			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
 			<td> Kafka properties for Housekeeper tasks topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topics_cache_ttl_ms</td>
+			<td>TB_QUEUE_KAFKA_TOPICS_CACHE_TTL_MS</td>
+			<td>300000</td>
+			<td> Topics cache TTL in milliseconds. 5 minutes by default</td>
 		</tr>
 		<tr>
 			<td>queue.partitions.hash_function_name</td>

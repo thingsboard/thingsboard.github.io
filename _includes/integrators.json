@@ -337,6 +337,18 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Germany"],
+    "name": "Elbesoft IoT",
+    "contact": {
+      "href": "info@elbesoft-iot.com"
+    },
+    "site": {
+      "href": "elbesoft-iot.de/thingsboard",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["Germany", "Austria", "Switzerland"],
     "name": "one:solutions Engineering GmbH",
     "contact": {
@@ -556,10 +568,10 @@
     "country": ["Saudi Arabia"],
     "name": "LTS-Connecting Things",
     "contact": {
-      "href": "ihigazi@ltsrv.com"
+      "href": "info@ltsrv.com"
     },
     "site": {
-      "href": "ltsrv.com",
+      "href": "www.lts.sa",
       "target": "_blank"
     }
   },
@@ -1076,6 +1088,18 @@
     },
     "site": {
       "href": "wiifor.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Africa"],
+    "country": ["Senegal"],
+    "name": "Witniss IoT",
+    "contact": {
+      "href": "bassirou.ba@witniss-iot.com"
+    },
+    "site": {
+      "href": "witniss-iot.com",
       "target": "_blank"
     }
   },

@@ -3,7 +3,11 @@
 
 TBMQ offers user-friendly tools that enable users to monitor broker activity and conveniently access features through the **Home** and **Monitoring** pages.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/pe/mqtt-broker/user-guide/ui/home-page.png)
+{% else %}
 ![image](/images/mqtt-broker/user-guide/ui/home-page.png)
+{% endif %}
 
 ## Charts
 
@@ -18,17 +22,21 @@ At the top of the **Home** page, you will find a set of six charts that display 
 Please note that on the Monitoring page, users have the ability to delve deeper into the chart data. 
 They can zoom in on specific sections, set custom date ranges to display data, or open the charts in full-screen mode.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/pe/mqtt-broker/user-guide/ui/monitoring-page.png)
+{% else %}
 ![image](/images/mqtt-broker/user-guide/ui/monitoring-page.png)
+{% endif %}
 
 ## Sessions
 
 The Sessions card provides an overview of both connected and disconnected sessions. 
-Users can access comprehensive information about these sessions, including their status, duration, and additional details by going to the [Sessions](/docs/mqtt-broker/user-guide/ui/sessions/) page.
+Users can access comprehensive information about these sessions, including their status, duration, and additional details by going to the [Sessions](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/sessions/) page.
 
 ## Credentials
 
 The system displays the number of Client Credentials categorized into two types: **Device** and **Application**. 
-For more information regarding the different types of Credentials, please refer to the [documentation](/docs/mqtt-broker/user-guide/mqtt-client-type/).
+For more information regarding the different types of Credentials, please refer to the [documentation](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-client-type/).
 
 ![image](/images/mqtt-broker/user-guide/ui/sessions-credentials-card.png)
  
@@ -117,4 +125,8 @@ Services are automatically added to the registry on their first launch, and the 
 The key is not managed by TTL and entries are stored indefinitely. TBMQ does not automatically remove services from the registry, even if they stop running.
 You can manually delete a service from the UI (or using REST API) using the "Delete" button that is available only when the service status is `Outdated`.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/pe/mqtt-broker/user-guide/ui/resource-usage.png)
+{% else %}
 ![image](/images/mqtt-broker/user-guide/ui/resource-usage.png)
+{% endif %}

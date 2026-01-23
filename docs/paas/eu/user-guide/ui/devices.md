@@ -38,7 +38,7 @@ add-device-group-pe:
         image: /images/user-guide/entity-groups/create-entity-group-3-pe.png
         title: 'Your device group has been added.'
 
-device-details:
+editing-device:
     0:
         image: /images/user-guide/ui/devices/pe/device-details-1-pe.png
         title: 'In the devices list, locate and click on the desired asset, then click the "<b>pencil</b>" (✏️ <b>Edit</b>) icon on the right to open the edit form.'
@@ -161,29 +161,34 @@ telemetry-delete:
         title: 'Choose what you want to delete specifically: delete all data, delete all data except latest value, delete latest value, delete all data for time period. Confirm the deletion by clicking the "Apply" button.'
 
 alarms:
-    0:
-        image: /images/user-guide/ui/devices/pe/device-alarms-1-pe.png
-        title: 'This tab shows events (alarms) that identify issues with your devices.'
+  0:
+    image: /images/user-guide/ui/devices/pe/device-alarms-1-pe.png
+    title: 'This tab shows events (alarms) that identify issues with your devices.'
 
 events:
-    0:
-        image: /images/user-guide/ui/devices/pe/device-events-1-pe.png
-        title: 'Here, events related to the device are displayed, including system logs, errors, warnings, and other important moments in the device&#39;s lifecycle.'
+  0:
+    image: /images/user-guide/ui/devices/pe/device-events-1-pe.png
+    title: 'Here, events related to the device are displayed, including system logs, errors, warnings, and other important moments in the device&#39;s lifecycle.'
 
 relations:
-    0:
-        image: /images/user-guide/ui/devices/pe/device-relations-1-pe.png
-        title: 'This tab displays the relationships of this device with other devices, dashboards, assets, and other entities in the ThingsBoard system.'
+  0:
+    image: /images/user-guide/ui/devices/pe/device-relations-1-pe.png
+    title: 'This tab displays the relationships of this device with other devices, dashboards, assets, and other entities in the ThingsBoard system.'
 
 audit-logs:
-    0:
-        image: /images/user-guide/ui/devices/pe/device-audit-logs-1-pe.png
-        title: 'ThingsBoard provides the ability to track user actions in order to keep an audit log. It is possible to log user actions related to main entities: assets, devices, dashboard, rules, etc.'
+  0:
+    image: /images/user-guide/ui/devices/pe/device-audit-logs-1-pe.png
+    title: 'ThingsBoard provides the ability to track user actions in order to keep an audit log. It is possible to log user actions related to main entities: assets, devices, dashboard, rules, etc.'
 
 version-control:
+  0:
+    image: /images/user-guide/ui/devices/pe/device-version-control-1-pe.png
+    title: 'ThingsBoard version control service provides the ability to export and restore ThingsBoard Entities using Git.'
+
+device-details-page:
     0:
-        image: /images/user-guide/ui/devices/pe/device-version-control-1-pe.png
-        title: 'ThingsBoard version control service provides the ability to export and restore ThingsBoard Entities using Git.'
+        image: /images/user-guide/ui/devices/pe/device-details-page-1-pe.png
+        title: 'Click on the target device to open its <b>details window</b>.'
 
 ---
 

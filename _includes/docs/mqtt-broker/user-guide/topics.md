@@ -202,7 +202,7 @@ For example, if you set `MQTT_TOPIC_MAX_SEGMENTS_COUNT` to `2`, the broker will 
 
 ## Shared subscription topics
 
-It is also worth mentioning feature [shared subscriptions](/docs/mqtt-broker/user-guide/shared-subscriptions/) that are used to distribute messages across multiple subscribers, allowing for load balancing and efficient use of resources.
+It is also worth mentioning feature [shared subscriptions](/docs/{{docsPrefix}}mqtt-broker/user-guide/shared-subscriptions/) that are used to distribute messages across multiple subscribers, allowing for load balancing and efficient use of resources.
 
 Shared subscription topic has a **specific format** to differentiate it from regular topic. 
 

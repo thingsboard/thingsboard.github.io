@@ -1,6 +1,7 @@
-$pricing-color: #506dad
 
 .container
+  &.top
+    margin-bottom: 24px
   &.no-padding
     padding: 0
     @media (max-width: 1000px)
@@ -9,7 +10,243 @@ $pricing-color: #506dad
   @media (min-width: 1400px)
       max-width: 1400px
 
+  .add-ons
+    text-align: left
+    padding: 100px 0
+    position: relative
+    z-index: 10
+    background-color: #fff
+    box-shadow: 0 0 0 100vmax #fff
+    clip-path: inset(0 -100vmax)
+
+    h2
+      font-size: 36px
+      line-height: 48px
+      font-weight: 500
+      margin-bottom: 6px
+      @media (max-width: 599px)
+        font-size: 28px
+
+    &>p
+      font-size: 16px
+      font-weight: 400
+      color: #757575
+      line-height: 28px
+      margin-bottom: 40px
+
+    .cards
+      display: flex
+      gap: 24px
+      align-items: stretch
+      @media (max-width: 1400px)
+        flex-direction: column
+
+      .card
+        display: flex
+        gap: 20px
+        width: 100%
+        img
+          width: 96px
+          height: 96px
+          @media (max-width: 500px)
+            width: 66px
+            height: 66px
+        .text
+          display: flex
+          flex-direction: column
+          justify-content: space-between
+          h3
+            font-size: 24px
+            font-weight: 500
+            line-height: 36px
+          p:first-of-type
+            font-size: 16px
+            line-height: 29px
+          p
+            font-size: 14px
+            line-height: 24px
+            color: #3D3D3D
+            font-weight: 400
+            white-space: nowrap
+            @media (max-width: 500px)
+              white-space: wrap
+            span
+              font-size: 18px
+              font-weight: 500
+              line-height: 24px
+              color: #2A7DEC
+
+  .top-ups-section
+    padding: 80px 0
+    background-color: #F4F8FE
+
+    .top-ups-header
+      margin-bottom: 48px
+      h2
+        font-size: 36px
+        font-weight: 500
+        line-height: 48px
+        color: #212121
+        margin-bottom: 16px
+      p
+        font-size: 16px
+        font-weight: 400
+        line-height: 28px
+        color: #757575
+
+    .top-ups-content
+      display: flex
+      gap: 80px
+      @media (max-width: 1100px)
+        flex-direction: column
+        gap: 48px
+
+    .top-ups-column
+      flex: 1
+      h3
+        font-size: 28px
+        font-weight: 500
+        line-height: 44px
+        color: #212121
+        margin-bottom: 24px
+
+    .top-ups-list
+      display: flex
+      flex-direction: column
+
+    .top-up-item
+
+      &:last-child
+        border-bottom: none
+
+      .top-up-header
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 2px 0
+        cursor: pointer
+        transition: opacity 0.2s ease
+
+      .top-up-title
+        display: flex
+        align-items: center
+        gap: 8px
+        span
+          font-size: 16px
+          font-weight: 500
+          line-height: 24px
+          color: #212121
+
+        .chevron-icon
+          transition: transform 0.3s ease
+          transform: rotate(180deg)
+
+      .top-up-price
+        background-color: #fff
+        color: #212121
+        font-size: 14px
+        font-weight: 500
+        line-height: 24px
+        padding: 10px 20px
+        border-radius: 4px
+        width: 310px
+        text-align: center
+        @media (max-width: 599px)
+          width: unset
+          min-width: 120px
+
+      .top-up-details
+        max-height: 0
+        overflow: hidden
+        transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease
+        opacity: 0
+        padding: 0
+
+      .detail-row
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 2px 0
+        padding-left: 16px
+
+        .detail-label
+          font-size: 14px
+          font-weight: 400
+          line-height: 24px
+          color: #3D3D3D
+
+        .detail-value
+          font-size: 14px
+          font-weight: 400
+          line-height: 24px
+          padding: 10px 20px
+          color: #3D3D3D
+          background-color: #FBFCFF
+          width: 310px
+          text-align: center
+          @media (max-width: 599px)
+            min-width: 120px
+
+      &:not(.expanded)
+        .top-up-title
+          .chevron-icon
+            transform: rotate(180deg)
+
+      &.expanded
+        .top-up-title
+          .chevron-icon
+            transform: rotate(0deg)
+
+        .top-up-details
+          max-height: 200px
+          opacity: 1
+
+  @media (max-width: 768px)
+    .top-ups-section
+      padding: 60px 0
+      .top-ups-header
+        h2
+          font-size: 28px
+          line-height: 36px
+      .top-ups-column
+        h3
+          font-size: 24px
+          line-height: 36px
+
+  @media (max-width: 599px)
+    .top-ups-section
+      padding: 40px 0
+      .top-ups-header
+        margin-bottom: 32px
+        h2
+          font-size: 24px
+          line-height: 32px
+        p
+          font-size: 14px
+          line-height: 24px
+      .top-ups-column
+        h3
+          font-size: 20px
+          line-height: 30px
+          margin-bottom: 16px
+      .top-up-item
+        .top-up-header
+          padding: 12px 0
+        .top-up-title
+          span
+            font-size: 14px
+        .detail-row
+          gap: 4px
+          .detail-value
+            width: unset
+            text-align: left
+
 html#pricing
+  header
+    background-color: unset
+    box-shadow: unset
+    &.opened-burger
+      background-color: #fff
   .tCenter
     text-align: center
 
@@ -43,38 +280,9 @@ html#pricing
     width: 100%
     margin: auto
 
-    #thingsboard-edge
-      .pricing-content-header
-        @media (max-width: 600px)
-          .col.d-flex.justify-content-end
-            justify-content: center !important
-            .solution-selector
-              width: 100%
-              .solution
-                h3
-                  width: 100%
-                  text-align: center
-                  font-size: 14px
-                  line-height: 18px
-                  white-space: wrap
-    #trendz-self-managed
-      .pricing-content-header
-        @media (max-width: 415px)
-          .col.d-flex.justify-content-end
-            justify-content: center !important
-            .solution-selector
-              width: 100%
-              .solution
-                &.trendz-pay-as-you-go, &.trendz-perpetual
-                  padding-left: 14px
-                  padding-right: 14px
-                  h3
-                    width: 100%
-                    text-align: center
-                    font-size: 14px
-                    line-height: 18px
-
     .faq-content
+      &.hidden
+        display: none
       padding: 60px 15px 80px
       * + h2, * + h3, * + h4, * + h5, * + h6
         margin-top: 30px
@@ -150,9 +358,11 @@ html#pricing
               display: none
               &.active
                 display: block
+              div.item
+                overflow: visible
               div.item, div.load-more
                 border-bottom: 1.5px solid #3E9AF81F
-                overflow: visible
+
                 &.hidden
                   display: none
                 &:not(:last-of-type)
@@ -247,6 +457,11 @@ html#pricing
                   &:hover
                     .clipboard-btn
                       display: inline-block
+              div.item
+                transition: background-color 0.3s ease
+                &.highlight-answer
+                  animation: highlightFade 2s ease-out forwards
+
               div.load-more
                 & > h4.title
                   color: #0094FF
@@ -305,11 +520,8 @@ html#pricing
         font-size: 14px
         line-height: 24px
         color: #707275
-        @media (min-height: 1260px)
-          margin-bottom: 32px
         p
           font-size: 14px
-          min-height: 48px
           &.no-min-height
             min-height: unset
 
@@ -351,7 +563,7 @@ html#pricing
           display: none
         @media (min-width: 768px)
           min-height: 42px
-        span
+        &>span
           font-size: 18px
           line-height: 34px
           font-weight: 400
@@ -383,15 +595,20 @@ html#pricing
           position: absolute
           height: 18px
           width: 18px
-          margin-right: 11px
           margin-left: -32px
+          margin-top: 3px
         &.plus-icon
           &:before
             background: url("/images/pricing/pricing-plus-icon.svg") no-repeat
+        &.no-icon
+          &:before
+            display: none
         &.highlight
           font-weight: 500
         &:last-child
           padding: 0
+        b
+          font-weight: 500
 
     .pricing-square.support-cards
       padding: 24px 24px 80px
@@ -458,6 +675,13 @@ html#pricing
             line-height: 42px
         &.active
           border-radius: 22px
+      @media (max-width: 890px)
+        height: unset
+        flex-direction: column
+        gap: 10px
+        padding: 8px
+        .solution
+          padding: 10px
 
     a.faq-link
       &:after
@@ -467,20 +691,6 @@ html#pricing
       display: flex
       border: 1px solid rgba(0, 0, 0, 0.08)
       .solution
-        @media (max-width: 415px)
-          &.trendz-pay-as-you-go, &.trendz-perpetual
-            flex: 1
-            &::before
-              display: none !important
-        @media (max-width: 686px)
-          &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
-            flex: 1
-            &::before
-              display: none !important
-        @media (max-width: 1450px) and (min-width: 1200px)
-          &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
-            &::before
-              display: none !important
         position: relative
         color: #757575
         cursor: pointer
@@ -496,18 +706,7 @@ html#pricing
           a.faq-link
             &:after
               margin-left: 2px
-        &.trendz-pay-as-you-go, &.trendz-perpetual
-          @media (max-width: 415px)
-            a
-              display: none
-        &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
-          @media (max-width: 686px)
-            a
-              display: none
-          @media (max-width: 1450px) and (min-width: 1200px)
-            a
-              display: none
-        &.pay-as-you-go, &.perpetual, &.community-edition, &.thingsboard-cloud, &.thingsboard-private-cloud, &.trendz-cloud, &.thingsboard-pe, &.trendz-self-managed
+        &.thingsboard-ce, &.pay-as-you-go, &.perpetual, &.thingsboard-cloud, &.thingsboard-private-cloud, &.thingsboard-pe
           &:before
             content: ""
             display: inline-block
@@ -526,16 +725,16 @@ html#pricing
         &.perpetual
           &:before
             background: url("/images/pricing/perpetual-icon.svg") no-repeat
-        &.community-edition
+        &.thingsboard-ce
           &:before
-            background: url("/images/pricing/source-code-icon.svg") no-repeat
-        &.thingsboard-cloud, &.trendz-cloud
+            background: url("/images/pricing/community-edition-icon.svg") no-repeat
+        &.thingsboard-cloud
           &:before
             background: url("/images/pricing/cloud-icon.svg") no-repeat
         &.thingsboard-private-cloud
           &:before
             background: url("/images/pricing/private-cloud-icon.svg") no-repeat
-        &.thingsboard-pe, &.trendz-self-managed
+        &.thingsboard-pe
           &:before
             background: url("/images/pricing/self-icon.svg") no-repeat
 
@@ -567,9 +766,10 @@ html#pricing
       padding-top: 0
       padding-bottom: 60px
       background-color: #F4F8FE
+      &.no-padding-bottom
+        padding-bottom: 0
       .pricing-content-header
         padding-top: 20px
-        margin-bottom: 16px
         display: flex
         justify-content: space-between
         align-items: center
@@ -670,23 +870,24 @@ html#pricing
             line-height: 24px
 
       &#thingsboard-ce
-        padding-top: 60px
+        padding-top: 46px
         .pricing-div
           margin-top: 25px
 
+      &#tbmq-ce
+        padding-top: 46px
+
       .pricing-div
+        &.padding-bottom
+          padding-bottom: 100px
         .pricing-section
           display: none
           margin-bottom: 1.5rem
+          &.active
+            display: block
           .row > div
             @media (max-width: 1400px)
               margin-bottom: 16px
-          @media (min-height: 1260px)
-            margin-bottom: 64px
-            &.pricing-pay-as-you-go
-              margin-bottom: 17vh
-            &.pricing-community
-              margin-bottom: 30vh
           .cards-row
             display: flex
             justify-content: space-between
@@ -704,13 +905,16 @@ html#pricing
                 flex: 1
                 @media (max-width: 1280px)
                   flex-basis: calc(50% - 8px)
+            &.margin-bottom
+              margin-bottom: 50px
             .pricing-square
-              height: 460px
+              height: 480px
               box-shadow: unset
+              align-content: center
               &.unset-height
                 height: unset
               @media (min-height: 1260px)
-                height: 540px
+                height: 564px
               @media (max-width: 1919px)
                 height: auto
               @media (max-width: 1279px)
@@ -731,10 +935,11 @@ html#pricing
               .button, .button.secondary
                 @media (max-width: 1919px)
                   width: 100%
+                  min-width: 150px
               &.popular
                 position: relative
                 width: 290px
-                height: 477px
+                height: 487px
                 border: 1px solid #2A7DEC
                 box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
                 @media (min-height: 1260px)
@@ -755,6 +960,7 @@ html#pricing
                   border-radius: 4px
                   font-size: 12px
                   line-height: 21px
+                .button
                   font-weight: 400
               &.additional
                 display: none
@@ -768,8 +974,126 @@ html#pricing
                   font-size: 20px
                   font-weight: 400
                   line-height: 32px
-          &.active
-            display: block
+          .crd-container
+            margin-bottom: 0
+            padding-bottom: 100px
+            &.no-padding
+              padding-bottom: 0
+            &.padding-top
+              padding-top: 40px
+            h3
+              font-size: 36px
+              font-weight: 500
+              line-height: 48px
+              &:nth-of-type(1)
+                margin-bottom: 40px
+              &:nth-of-type(2)
+                margin-bottom: 23px
+            .crd
+              &.crd-only
+                margin-bottom: 0
+              &:after
+                content: ""
+                background-image: url(/images/pricing/logo-fade.svg)
+                background-size: contain
+                display: block
+                position: absolute
+                right: 40px
+                width: 376px
+                height: 376px
+                top: 117px
+                background-repeat: no-repeat
+              text-align: left
+              position: relative
+              background-color: #fff
+              border-radius: 24px
+              box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
+              padding: 46px
+              margin-bottom: 80px
+              margin-top: 80px
+              h3
+                margin-bottom: 12px
+              p
+                max-width: 906px
+                font-size: 14px
+                font-weight: 400
+                line-height: 24px
+                color: #3D3D3D
+                margin-bottom: 24px
+                &.subtitle
+                  margin-bottom: 16px
+              h4
+                font-size: 28px
+                font-weight: 500
+                line-height: 44px
+                color: #212121
+                margin-bottom: 24px
+              ul
+                margin-left: 32px
+                margin-bottom: 32px
+                li
+                  font-size: 14px
+                  font-weight: 400
+                  line-height: 24px
+                  color: #3D3D3D
+                  margin-bottom: 12px
+                  &:before
+                    background: url("/images/pricing/pricing-checkmark-icon.svg") no-repeat
+                    content: ""
+                    position: absolute
+                    height: 18px
+                    width: 18px
+                    margin-left: -32px
+                    margin-top: 3px
+                    @media (max-width)
+                      filter: blur(8px)
+            .benefits
+              text-align: left
+              .benefit-cards
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                @media (max-width: 1000px)
+                  grid-template-columns: unset
+                gap: 16px
+                margin-bottom: 80px
+                .benefit
+                  border-radius: 16px
+                  background-color: #fff
+                  padding: 24px
+                  padding-left: 64px
+                  h4
+                    font-size: 16px
+                    line-height: 28px
+                    font-weight: 500
+                    color: #212121
+                    margin-bottom: 8px
+                    &:before
+                      content: ""
+                      position: absolute
+                      height: 24px
+                      width: 24px
+                      margin-left: -36px
+                  &:nth-of-type(1)
+                    h4
+                      &:before
+                        background: url("/images/pricing/dollar-icon.svg") no-repeat
+                  &:nth-of-type(2)
+                    h4
+                      &:before
+                        background: url("/images/pricing/chart-icon.svg") no-repeat
+                  &:nth-of-type(3)
+                    h4
+                      &:before
+                        background: url("/images/pricing/infrastructure-icon.svg") no-repeat
+                  &:nth-of-type(4)
+                    h4
+                      &:before
+                        background: url("/images/pricing/gear-icon.svg") no-repeat
+                  p
+                    font-size: 14px
+                    font-weight: 400
+                    line-height: 24px
+                    color: #3D3D3D
         .indicator
           font-size: 28px
           line-height: 25px
@@ -780,7 +1104,11 @@ html#pricing
           text-align: center
         .btn-pricing
           margin-bottom: 16px
+          font-size: 18px
+          height: 48px
           min-width: 200px
+          line-height: 28px
+          border: solid 1px #2A7DEC
           @media (min-height: 1260px)
             margin-bottom: 32px
         .pricing-community
@@ -794,6 +1122,9 @@ html#pricing
               margin-top: 0
 
       .additional-content
+        margin-bottom: 100px
+        &.no-margin-bottom
+          margin-bottom: 0
         .button
           &.reset
             background-color: #fff
@@ -810,6 +1141,7 @@ html#pricing
         .plan-calculator-block
           display: flex
           padding: 32px 40px
+          margin-bottom: 100px
           align-items: center
           justify-content: space-between
           background-color: #fff
@@ -849,80 +1181,20 @@ html#pricing
               color: #757575
               line-height: 28px
 
-        .add-ons
-          text-align: left
-          padding: 56px 0
-
-          h2
-            font-size: 36px
-            line-height: 48px
-            font-weight: 500
-            margin-bottom: 24px
-            @media (max-width: 599px)
-              font-size: 28px
-
-          p
-            font-size: 16px
-            font-weight: 400
-            color: #757575
-            line-height: 28px
-            margin-bottom: 56px
-
-          .cards
-            display: flex
-            gap: 24px
-            align-items: stretch
-
-            @media (max-width: 959px)
-              flex-direction: column
-
-            .card
-              width: 100%
-              padding: 32px 24px
-              background-color: #fff
-              border-radius: 12px
-              border: 1px solid rgba(42, 125, 236, 0.16)
-              box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
-              text-align: center
-
-              h3
-                font-size: 24px
-                font-weight: 500
-                line-height: 36px
-                margin-bottom: 16px
-              h4
-                font-weight: 600
-                font-size: 32px
-                line-height: 60px
-                text-align: center
-                span
-                  font-size: 18px
-                  line-height: 34px
-                  font-weight: 400
-              p
-                font-size: 14px
-                line-height: 25px
-                color: #3D3D3D
-                margin-bottom: 0
-
         .plans-comparison
+          padding: 100px 0
           h2
             font-size: 36px
             line-height: 48px
             font-weight: 500
-            margin-bottom: 24px
             @media (max-width: 599px)
               font-size: 28px
-
-          p
-            font-size: 16px
-            line-height: 28px
-            margin-bottom: 56px
-            color: #757575
-            font-weight: 400
 
           .comparison-table-container
-            overflow-x: auto
+            overflow-x: unset
+
+            @media (max-width: 1400px)
+              overflow-x: auto
 
             table
               width: 100%
@@ -964,27 +1236,15 @@ html#pricing
                 color: #202021
                 font-weight: 400
                 min-width: 340px
-                position: sticky
+                position: unset
+                @media (max-width: 1400px)
+                  position: sticky
                 left: 0
                 border-radius: 0
                 @media  (max-width: 599px)
                   max-width: 165px
                   min-width: unset
                   padding: 8px
-
-      &#trendz-cloud
-        .pricing-div
-
-          .ml-form-embedWrapper
-            padding: 0 0 23px 0
-
-          li.pricing-square-item
-            margin: 20px 0 0
-
-          ul
-            padding: 0 0 0 20px
-            li
-              list-style: disc
 
     .pricing-header-divider
       height: 3px
@@ -1091,26 +1351,14 @@ html#pricing
               content: ""
               vertical-align: middle
               margin-right: 6px
-              width: 22px
-              height: 22px
-              @media (min-height: 1260px)
-                width: 32px
-                height: 32px
+              width: 27px
+              height: 27px
 
           &.tb-logo
             a:before
-              background: url('/images/pricing/thingsboard-icon.svg')
-          &.trendz-logo
-            a:before
-              background: url('/images/pricing/trendz-icon.svg')
-          &.tb-edge-logo
-            a:before
-              background: url('/images/edge/tb-edge-logo-black.svg')
-
-          &.tb-logo, &.trendz-logo, &.tb-edge-logo
-            a:before
-                filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
-                background-size: contain
+              background: url('/images/pricing/thingsboard-icon.svg') no-repeat
+              background-size: contain
+              filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
 
           &.active
             z-index: 5
@@ -1123,27 +1371,11 @@ html#pricing
                 border-color: #2A7DEC
                 border-width: 1px
                 margin: unset
-            &.tb-logo, &.trendz-logo, &.tb-edge-logo
+            &.tb-logo
               a:before
                 filter: brightness(0) saturate(100%) invert(37%) sepia(91%) saturate(1415%) hue-rotate(199deg) brightness(94%) contrast(96%)
-                background-size: contain
 
-.trndz-swal-license
-  .trndz_dialog_list
-    display: flex
-    flex-direction: column
-    align-items: center
-
-    li
-      margin-bottom: 20px
-      max-width: 200px
-      text-align: center
-
-  .sa-button-container
-    display: flex
-    justify-content: space-between
-
-.faq-link
+.faq-link, .container .add-ons .cards .card .text .faq-link, .pricing-content .container .additional-content .plans-comparison .comparison-table-container table tbody tr .faq-link
   position: relative
   display: inline-block
   font-family: 'Font Awesome 5 Free'
@@ -1151,13 +1383,142 @@ html#pricing
   vertical-align: super
   font-size: smaller
   cursor: pointer
+  z-index: 10
   &:after
     content: "\f059"
     position: absolute
     transform: translate(15%, -100%)
+  &:hover
+    z-index: 20
+    .faq-tooltip
+      visibility: visible
+      opacity: 1
+      transform: translateY(-50%)
+      transition-delay: 0s
+  .faq-tooltip
+    visibility: hidden
+    opacity: 0
+    position: absolute
+    top: -7px
+    left: calc(100% + 21px)
+    transform: translateY(-50%) translateX(-10px)
+    width: 258px
+    background-color: #fff
+    color: #3D3D3D
+    text-align: left
+    border-radius: 8px
+    padding: 16px
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.05)
+    border: 1px solid #E6F0FC
+    font-family: 'Roboto', sans-serif
+    font-size: 14px
+    line-height: 1.5
+    font-weight: 400
+    cursor: auto
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease
+    transition-delay: 0.1s
+    pointer-events: auto
+    text-decoration: none
+    white-space: normal
+    @media (max-width: 768px)
+      display: none
+    &:before
+      content: ''
+      position: absolute
+      top: 50%
+      right: 100%
+      margin-top: -8px
+      border-width: 8px
+      border-style: solid
+      border-color: transparent #E6F0FC transparent transparent
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 100%
+      margin-top: -7px
+      margin-right: -1px
+      border-width: 7px
+      border-style: solid
+      border-color: transparent #fff transparent transparent
+    p, p:first-child, p:last-child
+      margin-bottom: 8px
+      white-space: wrap
+      font-size: 14px
+      line-height: 24px
+      color: #3D3D3D
+      &:last-child
+        margin-bottom: 0
+    a
+      color: #2A7DEC
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+    .read-more-link
+      color: #2A7DEC
+      font-weight: 500
+      cursor: pointer
+      text-decoration: none
+      &:hover
+        text-decoration: underline
 
+.tippy-box[data-theme~="light"]
+  background-color: #fff
+  color: #3D3D3D
+  text-align: left
+  border-radius: 8px
+  padding: 0
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.05)
+  border: 1px solid #E6F0FC
+  font-family: 'Roboto', sans-serif
+  font-size: 14px
+  line-height: 1.5
+  font-weight: 400
+
+
+  .tippy-content
+    padding: 16px
+    max-width: 320px
+    width: max-content
+
+    .tooltip-content, .tooltip-content:first-child, .tooltip-content:last-child
+      margin: 0 0 8px 0
+      white-space: normal
+      font-size: 14px
+      line-height: 24px
+      color: #3D3D3D
+      &:last-child
+        margin-bottom: 0
+
+    a
+      color: #2A7DEC
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+
+    .read-more-link
+      color: #2A7DEC
+      font-weight: 500
+      cursor: pointer
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
 
 @media (max-width: 992px)
   #pricingContent .container
     max-width: unset
     width: 100%
+
+
+@keyframes highlightFade
+  0%
+    background-color: #F4F8FE
+    border-radius: 12px
+  70%
+    background-color: #F4F8FE
+    border-radius: 12px
+  100%
+    background-color: transparent
+    border-radius: 0

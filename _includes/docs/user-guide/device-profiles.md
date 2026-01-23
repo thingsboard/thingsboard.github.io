@@ -1,4 +1,3 @@
-
 * TOC
 {:toc}
 
@@ -13,8 +12,8 @@ Typical device profile settings include:
 - Configuring message [queue](#queue) for efficient message handling.
 - Defining **firmware** and **software** versions to be distributed automatically to devices.
 - Configuring [transport protocols](#transport-configuration) used for device communication.
-- Defining and managing [alarm rules](#alarm-rules).
-- Setting the [provision strategy](#device-provisioning).
+- Defining and managing [alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"}.
+- Setting the [provision strategy](/docs/{{docsPrefix}}user-guide/device-provisioning/){:target="_blank"}.
 
 ## Create device profile
 
@@ -222,153 +221,67 @@ Learn more about configuring the SNMP transport at [this link](/docs/{{docsPrefi
 
 {% include images-gallery.html imageCollection="snmp-transport-type" %}
 
-## Alarm rules
+## Device profile details
 
-**Alarm rules** in ThingsBoard define the conditions under which alarms are created, updated, or cleared. 
-They are a key component of automation that enables efficient real-time monitoring of device states and data.
+Clicking a device profile opens a details window where you can access and manage all aspects of that profile.
 
-Alarm rules are configured in device profiles, allowing centralized control over alarm logic for entire groups of similar device types.
+{% include images-gallery.html imageCollection="device-profile-details-page" %}
 
-**Alarm Rule Structure includes:**
-- **Alarm type** — a unique identifier for the alarm within the device profile.
-- **Advanced settings** — optional configuration for alarm propagation to related entities such as assets, customers, tenants, or other entities.
-- **Alarm creation condition** — define when an alarm is created or updated. This section includes:
-  - **Severity** — the level of criticality assigned to the alarm. ThingsBoard evaluates alarm conditions in descending order of severity.
-  For example, if the condition with Critical severity is true, the alarm is raised as Critical, and lower-severity conditions (e.g., Major, Minor, or Warning) are not evaluated.
-  Each severity level must be unique within a single alarm rule.
-  - **Alarm rule condition**:
-    - **Key filters** — a list of logical expressions based on device attributes or telemetry data.   
-    Example: (temperature < 0 OR temperature > 20) AND softwareVersion = '2.5.5' 
-    - **Condition type** — defines how the condition is triggered:
-      - **Simple** — the alarm is raised as soon as a matching event occurs. 
-      - **Duration** — the condition must be continuously true for a specific period (e.g., 5 minutes). 
-      - **Repeating** — the condition must occur repeatedly (e.g., 3 times in a row).
-    - **Schedule** — defines the time range during which the rule is active:
-      - **Active all the time**
-      - **Active at a specific times**
-      - **Custom**
-  - **Additional info** — an optional alarm details template that supports dynamic substitution of telemetry or attribute values using **${attributeName}** syntax.
-- **Alarm clear condition** — specifies the criteria for clearing or deactivating the alarm.
+<b><font size="3">Details</font></b>   
+This tab contains the core configuration of the device profile — general settings that define how devices of this type behave. Here you can configure the profile name, default dashboard, default rule chain, firmware/OS information, and other high-level parameters. These settings apply to all devices assigned to this profile.
 
-> By default, ThingsBoard sends notifications about alarm creation or updates to the ThingsBoard [Notification center](/docs/user-guide/notifications/){:target="_blank"}.   
-You can configure additional notification channels, including messages through the ThingsBoard mobile app, SMS, email, Slack, or Microsoft Teams. For detailed instructions on setting up these notification methods, please refer to the [ThingsBoard notifications documentation](/docs/user-guide/notifications/#alarm-1){:target="_blank"}.
+<b><font size="3">Transport Configuration</font></b>   
+Defines how devices communicate with the platform. This tab includes transport-specific settings for MQTT, HTTP, CoAP, LwM2M, or SNMP, depending on the selected transport type.
 
-### Alarm rule configurations
+Here you can configure:
+- authentication strategy
+- payload formats (JSON, Protobuf, custom)
+- topic/endpoint settings
+- request/response parameters
+- device-side and server-side transport behavior
 
-Let&#39;s explore some alarm rule configurations to better understand how it works.
+Transport configuration ensures consistent connectivity rules for all devices under this profile.
 
-#### Simple alarm condition
+<b><font size="3">Calculated fields</font></b>   
+Displays fields whose values are automatically computed using formulas based on device attributes or telemetry. These fields allow generating derived metrics without modifying device firmware. Calculated fields defined at the profile level apply to all devices using this profile. Learn more about Calculated fields [here](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"}.
 
-Imagine you want to monitor the temperature inside a fridge storing valuable goods.
-We&#39;ll assume you already have a device called **Thermometer**, which uses a device profile named **Thermostats**.
+<b><font size="3">Alarm rules</font></b>   
+Contains alarm rules associated with the device profile. These rules define when and how alarms should be generated across all devices in this profile, including:
+- trigger conditions 
+- severity levels 
+- alarm propagation and clearing logic 
+- optional actions (notifications, integrations, workflows)
 
-Create a **Critical** alarm when the temperature exceeds **10°C**:
+Centralized alarm rules simplify management and ensure consistent monitoring across device groups. 
 
-{% include images-gallery.html imageCollection="simple-alarm-condition" showListImageTitles="true" %} 
+Learn more about configuring alarm rules [here](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"}.
 
-#### Alarm condition with a duration
+<b><font size="3">Device provisioning</font></b>    
+Defines how devices assigned to this profile are created and authenticated. This section may include:
+- provisioning strategies (HTTP, MQTT, CoAP)
+- secret keys and token generation rules
+- provisioning templates
+- auto-registration behavior
 
-Modify the [simple alarm condition](#simple-alarm-condition) to trigger an alarm only if the temperature exceeds the threshold for a specific duration (e.g., 1 minute).   
+These settings streamline automated onboarding of new devices.
 
-Edit the existing alarm condition:
-- Change the condition type from **Simple** to **Duration**.
-- Specify the **duration** and **time unit**.
-- Click **Save** and apply changes.
-
-{% include images-gallery.html imageCollection="alarmСonditionsWithDuration" %}
-
-Now let&#39;s assume you would like to replace the 1 minute duration with a dynamic value that depends on the settings for a particular device, customer or tenant. 
-
-For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes){:target="_blank"} feature. 
-
-- Please create a server-side attribute **highTemperatureDurationThreshold** with the integer value "**1**: for your device.
-- Edit the alarm condition: 
-  - Go to the dynamic value of the alarm delay by pressing the "**Switch to dynamic value**" button.
-  - Select a value: current device, current customer or current tenant.
-  - Specify the attribute from which the alarm threshold value will be taken.
-  - You may optionally check "Inherit from owner".
-
-  > **Inheritance** allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes.
-
-  - Apply all changes.
-
-{% include images-gallery.html imageCollection="alarmСonditionsWithDuration2" %}
-
-#### Repeating alarm condition
-
-Let&#39;s assume we would like to modify [simple alarm condition](#simple-alarm-condition) and trigger an alarm only after a condition repeats several times (e.g., 3 times):
-
-For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "**Repeating**". We should also specify **3** as **count of events**.
-
-{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating" %}
-
-Now let&#39;s assume you would like to replace the set number of times the alarm condition is exceeded with a dynamic value that depends on the settings for a particular device, customer or tenant. 
-
-For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes){:target="_blank"} feature. 
-
-- Please create a server-side attribute **highTemperatureRepeatingThreshold**, with the integer value **3** for your device.
-- Edit the alarm condition:
-  - Go to the dynamic value of the repeating alarm condition by pressing the "**Switch to dynamic value**" button.
-  - Select a value: current device, current customer or current tenant.
-  - Specify the attribute from which the value will be taken, how many times the threshold value must be exceeded for an alarm to be triggered. 
-  - You may optionally check "Inherit from owner". 
-
-  > **Inheritance** allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes.
-
-  - Apply all changes.
-
-{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating2" %}
-
-#### Clear alarm rule
-
-Let&#39;s assume we would like to automatically clear the alarm if the temperature in the fridge goes back to normal.
-
-{% include images-gallery.html imageCollection="alarmСonditionsClear" showListImageTitles="true" %}
-
-#### Define alarm rule schedule
-
-Let&#39;s assume we would like an alarm rule to evaluate alarms only during working hours.
-
-{% include images-gallery.html imageCollection="alarmСonditionsSchedule" showListImageTitles="true" %}
-
-#### Advanced thresholds
-
-Let&#39;s assume we want our users to overwrite threshold values directly from the Dashboard UI. 
-We can also add a flag to enable or disable certain alarms for each device. To achieve this, we will use dynamic values in the alarm rule condition.
-
-We will use two attributes:
-- **temperatureAlarmFlag** (Boolean)
-- **temperatureAlarmThreshold** (Numeric)
-
-Our goal is to trigger an alarm when the following condition is met:
-**temperatureAlarmFlag** = **True** AND the **temperature value** is greater than **temperatureAlarmThreshold**.
-
-**1.** Add two **server attributes** to your device: **temperatureAlarmFlag** and **temperatureAlarmThreshold**.
-
-{% include images-gallery.html imageCollection="alarmСonditionsAdvanced1" %}
-
-**2. Edit the alarm condition:**
-  - Modify the temperature key filter</b> and change the <b>value type to dynamic</b>.
-  - Select a dynamic source type, enter <b>temperatureAlarmThreshold</b>, and click "<b>Update</b>". 
-  - Optionally, check "Inherit from owner". This allows the threshold value to be taken from the customer if it is not set at the device level. If it is not set at either the device or customer level, the rule will use the value from <b>tenant attributes</b>.
-  - Add another <b>key filter</b> for the <b>temperatureAlarmFlag</b>, then click "<b>Add</b>".
-  - Select the key type "<b>Attribute</b>", specify <b>temperatureAlarmFlag</b> attribute as the key name, and choose "<b>Boolean</b>" value type. Choose a <b>comparison operator</b> and enter <b>threshold value</b>. Then click "<b>Add</b>".
-  - Save all changes.
-
-{% include images-gallery.html imageCollection="alarmСonditionsAdvanced2" %}
-
-#### Dynamic thresholds based on the tenant or customer attributes
-
-[Advanced thresholds](#advanced-thresholds) demonstrates how to enable or disable rule based on the value of "temperatureAlarmFlag" attribute of the device. 
-But what if you would like to enable or disable certain rule for all devices that belong to a tenant or customer?
-To avoid configuration of the attribute for each device, you may configure alarm rule to compare constant value with the value of Tenant or Customer Attribute.
-For this purpose, you should use "Constant" key type and compare it with dynamic value. See configuration example below:
-
-{% include images-gallery.html imageCollection="alarmСonstantFilters" %}
-
-The technique mentioned above may be used to enable or disable rules or combine filters on device telemetry/attributes with filters on tenant or customer attributes.
-
-## Device provisioning
-
-Device provisioning allows a device to automatically register in ThingsBoard either during or after manufacturing. 
 See separate documentation [page](/docs/{{docsPrefix}}user-guide/device-provisioning/){:target="_blank"} for more details.
+
+<b><font size="3">Audit Log</font></b>   
+Displays records of all user actions performed on this device profile — changes to configuration, rules, provisioning settings, and more. Useful for troubleshooting, compliance, and tracking modifications over time.
+
+<b><font size="3">Version control</font></b>   
+Enables exporting, committing, and restoring the device profile configuration via the Git-based [version control](/docs/{{docsPrefix}}user-guide/version-control/){:target="_blank"} service. Supports backup, collaboration, and rollback to previous profile versions.
+
+<hr>
+
+## Next steps
+
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}
+
+<hr>
+
+## Your feedback
+
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

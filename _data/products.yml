@@ -85,3 +85,10 @@
   path: /docs/mqtt-broker/
   docsPrefix: /docs/mqtt-broker/
   getStarted: /docs/mqtt-broker/getting-started/
+- title: PE MQTT Broker
+  fulltitle: PE MQTT Broker
+  description: PE MQTT Broker Documentation
+  tag: mqtt-broker-pe
+  icon: /images/tbmq-icon.svg
+  path: /docs/pe/mqtt-broker/
+  docsPrefix: /docs/pe/mqtt-broker/

@@ -1,4 +1,11 @@
-> **Debug mode** is extremely useful for development and troubleshooting. 
-However, having it on all the time can significantly increase the disk space used by the database since all the debug data is stored there.
-<br>Therefore, starting from version 3.9, ThingsBoard stores all debug events for {{feature}} only during the first 15 minutes. After that, only failure events are retained. 
-These settings can be combined or completely disabled.
+<b><font size="3">Debug mode</font></b>
+
+Enabling debug mode allows you to track events, states, and potential errors related to the execution of {{ feature }}. This greatly simplifies development and troubleshooting.
+
+{% capture difference %}
+**Note:** Debug mode can quickly increase disk usage because all debug events are stored in the database.
+Starting from **ThingsBoard 3.9**, the platform stores the full set of debug events only during the first **15 minutes** after the {{ feature }} is created; afterward, only error events are retained.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Debug mode settings can be combined or disabled entirely.
