@@ -263,7 +263,7 @@ function resetLoadMore(categoryId) {
                 <div class="tb-faq-question tb-faq-hidden">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I try Professional Edition before purchasing?</div>
                     <div class="tb-faq-answer">
-                        <p>Yes, start a <b>30 days</b> free trial with <b>Maker plan</b> or <a href="/docs/contact-us/" target="_blank">request a demo</a>. The trial includes access to all PE features for evaluation.</p>
+                        <p>Yes, use the free <b>Maker plan</b>. The includes access to all PE features for evaluation, including add-ons - Edge computing and Trendz.</p>
                     </div>
                 </div>
                 <div class="tb-faq-question tb-faq-hidden">
