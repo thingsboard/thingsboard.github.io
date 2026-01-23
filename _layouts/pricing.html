@@ -294,6 +294,18 @@
         if (itemsStr !== '{}') {
             url += "&items="+encodeURIComponent(itemsStr);
         }
+        // Append UTM and fpr parameters from localStorage
+        const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+        utmKeys.forEach(function(key) {
+            const value = localStorage.getItem(key);
+            if (value) {
+                url += "&" + key + "=" + encodeURIComponent(value);
+            }
+        });
+        const fpr = localStorage.getItem('fpr');
+        if (fpr) {
+            url += "&fpr=" + encodeURIComponent(fpr);
+        }
         reportPriceLink(url, productName + '/' + productId);
         window.open(url, "_blank");
     }
