@@ -27,22 +27,23 @@ In addition to real-time processing, ThingsBoard supports calculated field [repr
 
 ### Creating a calculated field
 
-The process of creating a calculated field is the same for [Devices](/docs/pe/user-guide/ui/devices/){:target="_blank"}, [Assets](/docs/pe/user-guide/ui/assets/){:target="_blank"}, [Device profiles](/docs/pe/user-guide/device-profiles/){:target="_blank"}, or [Asset profiles](http://10.7.1.72:4000/docs/pe/user-guide/asset-profiles/){:target="_blank"}.
+> The process of creating a calculated field is the same for [Devices](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"}, [Assets](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"}, [Device profiles](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}, or [Asset profiles](/docs/{{docsPrefix}}user-guide/asset-profiles/){:target="_blank"}.
 
 - Open the "Calculated fields" page from the left-hand menu.
-- Click "+" &#8702; "Create new calculated field".
+- Click the "**+**" button in the top-right corner.
+- Select **Create new calculated field** from the dropdown menu.
 
 {% assign createCalculatedFieldCE = '
     ===
         image: /images/user-guide/calculated-fields/create-new-calculated-field-1-ce.png
-        title: Open the **Calculated fields** page from the left-hand menu.<br>Click **+** &#8702; **Create new calculated field**.
+        title: Open the **Calculated fields** page from the left-hand menu.<br>Click the "**+**" button in the top-right corner and select **Create new calculated field** from the dropdown menu.
 '
 %}
 
 {% assign createCalculatedFieldPE = '
     ===
         image: /images/user-guide/calculated-fields/create-new-calculated-field-1-pe.png
-        title: Open the **Calculated fields** page from the left-hand menu.<br>Click **+** &#8702; **Create new calculated field**.
+        title: Open the **Calculated fields** page from the left-hand menu.<br>Click the "**+**" button in the top-right corner and select **Create new calculated field** from the dropdown menu.
 '
 %}
 
@@ -189,7 +190,7 @@ The result can be stored as:
 
 ThingsBoard provides built-in tools that help you validate and troubleshoot calculated fields in real time.
 
-<br><b><font size="3">Enable debug mode</font></b> (_&#42; recommended during development_)
+<b><font size="3">Enable debug mode</font></b> (_&#42; recommended during development_)
 
 Each calculated field can be switched to Debug mode. When enabled, ThingsBoard records execution details for every run, including the input arguments that triggered the execution (e.g. incoming telemetry or attribute updates) and the calculation result or any execution problems (script errors, missing arguments, invalid values).
 
@@ -657,26 +658,20 @@ You can **export** the calculated field to a JSON file and **import** it into th
 
 <br><b><font size="4">Export calculated field</font></b>
 
-A calculated field can be exported either from the global **Calculated fields page** or from the **Calculated fields tab** of the target **entity or profile** to which the field is applied.   
-Click the **Export** button located in the corresponding calculated field row.
+- Navigate to the **Calculated fields** page.
+- Click the **Export** button located in the corresponding calculated field row. 
 
 {% assign exportCalculatedFieldCE = '
     ===
         image: /images/user-guide/calculated-fields/export-calculated-field-1-ce.png,
-        title: Navigate to the <b>Calculated fields</b> page and click the <b>Export<b> button located in the row of the specific calculated field.
-    ===
-        image: /images/user-guide/calculated-fields/export-calculated-field-2-ce.png,
-        title: Navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
+        title: Navigate to the <b>Calculated fields</b> page and click the <b>Export</b> button located in the row of the specific calculated field.
 '
 %}
 
 {% assign exportCalculatedFieldPE = '
     ===
         image: /images/user-guide/calculated-fields/export-calculated-field-1-pe.png,
-        title: Navigate to the <b>Calculated fields</b> page and click the <b>Export<b> button located in the row of the specific calculated field.
-    ===
-        image: /images/user-guide/calculated-fields/export-calculated-field-2-pe.png,
-        title: Navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
+        title: Navigate to the <b>Calculated fields</b> page and click the <b>Export</b> button located in the row of the specific calculated field.
 '
 %}
 
@@ -703,7 +698,7 @@ Steps to import:
         title: In the opened window, upload the JSON file with the calculated field configuration and click **Import**.
     ===
         image: /images/user-guide/calculated-fields/import-calculated-field-3-ce.png,
-        title: The edit window will open, allowing you to **specify the entity or profile** to which the calculated field will be applied.
+        title: In the dialog that opens, **specify the entity or profile** to which the calculated field will be applied.
     ===
         image: /images/user-guide/calculated-fields/import-calculated-field-4-ce.png,
         title: If there are any problems with arguments, they will be highlighted.
@@ -728,7 +723,7 @@ Steps to import:
         title: In the opened window, upload the JSON file with the calculated field configuration and click **Import**.
     ===
         image: /images/user-guide/calculated-fields/import-calculated-field-3-pe.png,
-        title: The edit window will open, allowing you to **specify the entity or profile** to which the calculated field will be applied.
+        title: In the dialog that opens, **specify the entity or profile** to which the calculated field will be applied.
     ===
         image: /images/user-guide/calculated-fields/import-calculated-field-4-pe.png,
         title: If there are any problems with arguments, they will be highlighted.
@@ -748,7 +743,7 @@ Steps to import:
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=importCalculatedFieldCE %}
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-{% include images-gallery.liquid imageCollection=importCalculatedFieldPE %}
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=importCalculatedFieldPE %}
 {% endif %}
 
 > **Note**: ensure the imported field is correctly applied and update any necessary parameters:
@@ -791,7 +786,7 @@ Each calculated field includes an action panel for managing the field:
 {% include images-gallery.liquid imageCollection=calculatedFieldsParametersPE %}
 {% endif %}
 
-<b><font size="4">View detailed information of the calculated field</font></b>
+<br><b><font size="4">View detailed information of the calculated field</font></b>
 
 Click the calculated field to view its details.
 
@@ -816,7 +811,7 @@ Click the calculated field to view its details.
 {% include images-gallery.liquid imageCollection=calculatedFieldsParameters2PE %}
 {% endif %}
 
-<b><font size="4">Modify the calculated field</font></b>
+<br><b><font size="4">Modify the calculated field</font></b>
 
 To modify the calculated field, click it to open the details view, then click the orange **pencil** button.   
 After making your changes, click the orange **check** button to apply the updates.

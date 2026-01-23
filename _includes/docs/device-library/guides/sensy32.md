@@ -12,15 +12,10 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The Sensy32]({{deviceVendorLink}}){: target="_blank"} is an IoT board designed for sensor enthusiasts, developers, and IoT creators.   
 Powered by ESP32-S3 and packed with a wide array of sensors, it enables seamless monitoring, analysis, and visualization of real-world data.   
 
-<br>
-
 The Sensy32 supports Wi-Fi and Bluetooth connectivity, complemented by two USB Type-C ports that enable charging and power supply, programming and firmware uploads, data communication, peripheral connectivity, and powering external devices such as sensors.
-
-<br>
 
 The Sensy32 board includes the following components and sensors:
 - UV Light Sensor

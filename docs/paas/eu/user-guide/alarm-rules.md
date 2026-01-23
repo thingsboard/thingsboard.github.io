@@ -8,17 +8,12 @@ description: Creating alarm rules
 step-1-add-alarm-rule-1:
     0:
         image: /images/user-guide/alarm-rules/step-1-add-alarm-rule-1-pe.png
-        title: 'Open the <b>Alarms</b> page from the left-hand menu. Go to the <b>Alarm rules</b> tab.<br>This page allows you to centrally manage all alarm rules in the system — both for individual entities and for profiles.'
-
-step-1-add-alarm-rule-2:
-    0:
-        image: /images/user-guide/alarm-rules/step-1-add-alarm-rule-2-pe.png
-        title: 'Create a rule directly in the settings of a particular: Device, Asset, Device profile, Asset profile, Customer. Click the <b>entity</b> or <b>profile</b> to open its details. Alarm rules are configured on the <b>Alarm rules</b> tab within the details of the selected entity or profile.'
+        title: '- Navigate to <b>Alarms</b> page &#8702; <b>Alarm rules</b> tab.<br>- Click the "<b>+</b>" button in the top-right corner and select <b>Create new alarm rule</b> from the dropdown menu.'
 
 step-2-general-section-1:
     0:
         image: /images/user-guide/alarm-rules/step-2-general-section-1-pe.png
-        title: 'Specify the <b>alarm type</b> — the name and unique identifier of the alarm.<br>If you create an alarm rule from the <b>global Alarm rules</b> page, you must additionally:<br>- Select the <b>Target entity type</b><br>- Specify the <b>specific entity or profile</b> that the rule should apply to.'
+        title: 'Specify the <b>alarm type</b> — the name and unique identifier of the alarm.<br>- Set the <b>entity type</b> - the target entity or entity profile where the alarm rule will be applied.'
 
 step-3-arguments-1:
     0:
@@ -142,7 +137,7 @@ step-6-propagate-alarm-2:
 step-6-propagate-alarm-3:
     0:
         image: /images/user-guide/alarm-rules/step-6-propagate-alarm-3-pe.png
-        title: '<b>Propagate alarm to entity owners hierarchy</b>.<br>Propagates the alarm up the entire ownership chain, ensuring visibility at every parent level: <b>Asset → Customer → Tenant</b>.'
+        title: '<b>Propagate alarm to entity owners hierarchy</b>.<br>Propagates the alarm up the entire ownership chain, ensuring visibility at every parent level: <b>Asset &#8702; Customer &#8702; Tenant</b>.'
 
 step-6-propagate-alarm-4:
     0:
@@ -157,33 +152,51 @@ step-7-save-rule-1:
         image: /images/user-guide/alarm-rules/step-7-save-rule-2-pe.png
         title: 'After saving, ThingsBoard will automatically begin creating, updating, and processing alarms according to the conditions, schedule, and propagation settings you defined.'
 
-
-
-alarm-rules-parameters:
+alarm-rules-parameters-1:
     0:
         image: /images/user-guide/alarm-rules/alarm-rules-parameters-1-pe.png
         title: 'Managing Alarm Rules in the Alarm rules list.'
 
+alarm-rules-parameters-2:
+    0:
+        image: /images/user-guide/alarm-rules/alarm-rules-parameters-2-pe.png
+        title: 'Click an alarm rule to view its detailed information.'
 
+alarm-rules-parameters-3:
+    0:
+        image: /images/user-guide/alarm-rules/alarm-rules-parameters-3-pe.png
+        title: 'To modify the alarm rule, click the rule. The alarm rule details window will open.<br>Click the <b>orange pencil</b> icon to switch to <b>edit mode</b>.'
+    1:
+        image: /images/user-guide/alarm-rules/alarm-rules-parameters-4-pe.png
+        title: 'After making the required changes, click the <b>orange checkmark</b> icon to apply and save the changes.'
+
+export-alarm-rule-1:
+    0:
+        image: /images/user-guide/alarm-rules/export-alarm-rule-1-pe.png
+        title: 'Navigate to <b>Alarms</b> page &#8702; <b>Alarm rules</b> tab.<br>Click the <b>Export</b> button located in the row of the specific alarm rule.'
 
 import-alarm-rule-1:
     0:
         image: /images/user-guide/alarm-rules/import-alarm-rule-1-pe.png
-        title: '- Navigate to <b>Alarms → Alarm rules</b>, or<br> open the details page of the required device, asset, or profile, and navigate to the <b>Alarm rules</b> tab.<br>- Click the "<b>+</b>" button in the top-right corner, and select <b>Import alarm rule</b> from the dropdown menu.'
+        title: '- Navigate to <b>Alarms</b> page &#8702; <b>Alarm rules</b> tab.<br>- Click the "<b>+</b>" button in the top-right corner, and select <b>Import alarm rule</b> from the dropdown menu.'
     1:
         image: /images/user-guide/alarm-rules/import-alarm-rule-2-pe.png
-        title: 'In the import dialog, drag and drop the JSON file or choose it manually. Click <b>Import</b> to upload the configuration.'
+        title: '- In the import dialog, drag and drop the JSON file or choose it manually.<br>- Click <b>Import</b> to upload the configuration.'
     2:
         image: /images/user-guide/alarm-rules/import-alarm-rule-3-pe.png
-        title: 'If required, update the <b>target profile or entity</b>. Verify that all arguments, telemetry keys, and attributes used by the rule exist in the current environment and update them if necessary. Finally, click <b>Add</b> to save the rule.'
-
-
+        title: '- Specify the <b>target profile or entity</b> for the imported alarm rule.<br>- Finally, click <b>Add</b> to save the rule.'
 
 alarm-rules-example-prepare-device-1:
     0:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-prepare-device-1-pe.png
-        title: 'Create a device named <b>Thermometer</b> that sends temperature telemetry.'
-  
+        title: 'Go to the <b>Devices</b> and <b>import device configuration</b> from a CSV file.'
+    1:
+        image: /images/user-guide/alarm-rules/examples/alarm-rules-example-prepare-device-2-pe.png
+        title: '<b>Time series:</b> temperature.'
+    2:
+        image: /images/user-guide/alarm-rules/examples/alarm-rules-example-prepare-device-3-pe.png
+        title: 'The imported <b>Thermometer</b> device publishes <b>temperature</b> as telemetry data.'
+
 alarm-rules-example-simple-1:
     0:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-simple-1-pe.png
@@ -340,5 +353,5 @@ alarm-rules-example-advanced-thresholds-2:
 ---
 
 {% assign docsPrefix = "paas/eu/" %}
-{% include get-hosts-name.html docsPrefix=docsPrefix %}
+{% include get-hosts-name.html docsTag="paas-eu" %}
 {% include docs/user-guide/alarm-rules.md %}
