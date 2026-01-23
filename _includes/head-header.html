@@ -696,18 +696,34 @@
                 if (Object.keys(params).length > 0) {
                     localStorage.setItem('utm', JSON.stringify(params));
                 }
+
+                // FirstPromoter: capture fpr parameter
+                const fpr = url.searchParams.get('fpr');
+                if (fpr) {
+                    localStorage.setItem('fpr', fpr);
+                }
             } catch (e) {}
         })();
         document.addEventListener('DOMContentLoaded', function() {
             const utms = localStorage.getItem('utm');
-            let search = '';
+            let searchParams = [];
+
+            // UTM parameters
             if (utms) {
                 let utm = {};
                 try {
                     utm = JSON.parse(utms);
                 } catch(e) {}
-                search = Object.keys(utm).map(key => `${key}=${encodeURIComponent(utm[key])}`).join('&');
+                searchParams = Object.keys(utm).map(key => `${key}=${encodeURIComponent(utm[key])}`);
             }
+
+            // Add FirstPromoter' parameter
+            const fpr = localStorage.getItem('fpr');
+            if (fpr) {
+                searchParams.push('fpr=' + encodeURIComponent(fpr));
+            }
+
+            const search = searchParams.join('&');
             if (search) {
                 const links = document.links;
 
