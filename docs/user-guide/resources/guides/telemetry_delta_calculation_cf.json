@@ -16,13 +16,16 @@
           "type": "TS_ROLLING"
         },
         "limit": 2,
-        "timeWindow": 300000
+        "timeWindow": 900000
       }
     },
     "expression": "var delta = 0;\n\nif (temperature.values.size() >= 2) {\n    delta = temperature.last - temperature.first;\n}\n\nreturn {\n    \"deltaTemperature\": Math.abs(toInt(delta))\n}",
     "output": {
+      "type": "TIME_SERIES",
       "name": "",
-      "type": "TIME_SERIES"
+      "strategy": {
+        "type": "RULE_CHAIN"
+      }
     }
   }
 }
