@@ -8,6 +8,17 @@ description: ThingsBoard Trendz Analytics upgrade instructions
 
 <ul id="markdown-toc">
         <li>
+          <a href="#upgrading-to-1150" id="markdown-toc-upgrading-to-1150">Upgrading to 1.15.0</a>
+          <ul>
+              <li>
+                  <a href="#ubuntucentos-1150" id="markdown-toc-ubuntucentos-1150">Ubuntu/CentOS</a>        
+              </li>
+              <li>
+                  <a href="#windows-1150" id="markdown-toc-windows-1150">Windows</a>        
+              </li>
+          </ul>
+        </li>
+        <li>
           <a href="#upgrading-to-1140" id="markdown-toc-upgrading-to-1140">Upgrading to 1.14.0</a>
           <ul>
               <li>
@@ -260,6 +271,104 @@ description: ThingsBoard Trendz Analytics upgrade instructions
   </li>  
 </ul>
 
+## Upgrading to 1.15.0
+
+These steps are applicable for 1.14.0 Trendz Analytics version.
+
+### Ubuntu/CentOS {#ubuntucentos-1150}
+
+{% capture tb_3_7_0_upgrade_note %}
+**Important note before upgrading to Trendz 1.15.0**
+
+If you are using Trendz behind **HAProxy**, make sure that the paths **`/trendz/`** and **`/apiTrendz/`** are routed to 
+the Trendz backend instead of **`/trendz`** and **`/apiTrendz`**. 
+
+Additionally, we highly recommend adding Trendz to the **ThingsBoard HAProxy configuration** so that Trendz is accessible from the **same domain as ThingsBoard**.
+
+{% endcapture %}
+{% include templates/warn-banner.md content=tb_3_7_0_upgrade_note %}
+
+#### Trendz Analytics package download
+
+{% capture tabspec %}trendz-download-1-15-0
+trendz-download-1-8-0-ubuntu,Ubuntu,shell,resources/1.15.0/trendz-ubuntu-download.sh,/docs/user-guide/install/resources/1.15.0/trendz-ubuntu-download.sh
+trendz-download-1-8-0-centos,CentOS,shell,resources/1.15.0/trendz-centos-download.sh,/docs/user-guide/install/resources/1.15.0/trendz-centos-download.sh{% endcapture %}  
+{% include tabs.html %}
+
+#### Trendz Analytics service upgrade
+
+* Stop Trendz Analytics service if it is running.
+
+```bash
+sudo service trendz stop
+```
+{: .copy-code}
+
+* Install latest Trendz Analytics service
+
+{% capture tabspec %}trendz-installation-1-15-0
+trendz-installation-1-8-0-ubuntu,Ubuntu,shell,resources/1.15.0/trendz-ubuntu-installation.sh,/docs/user-guide/install/resources/1.15.0/trendz-ubuntu-installation.sh
+trendz-installation-1-8-0-centos,CentOS,shell,resources/1.15.0/trendz-centos-installation.sh,/docs/user-guide/install/resources/1.15.0/trendz-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}
+
+**NOTE:** Package installer will ask you to merge your trendz configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+
+Execute regular upgrade script:
+
+```bash
+sudo /usr/share/trendz/bin/install/upgrade.sh
+```   
+
+#### Start the service
+
+```bash
+sudo service trendz start
+```
+{: .copy-code}
+
+#### Sync Trendz with ThingsBoard
+
+After upgrade, it's necessary to sync Trendz with ThingsBoard. You can find out how to do it [here](/docs/trendz/install/ubuntu#step-6-sync-thingsboard-with-trendz).
+
+### Windows {#windows-1150}
+
+#### Trendz Analytics package download
+
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.15.0.zip](https://dist.thingsboard.io/trendz-windows-1.15.0.zip).
+
+#### Trendz Analytics service upgrade
+
+* Stop Trendz service if it is running.
+
+```text
+net stop trendz
+```
+{: .copy-code}
+
+* Make a backup of previous Trendz Analytics configuration located in \<Trendz install dir\>\conf (for ex. C:\trendz\conf).
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old Trendz configuration files (from the backup you made in the first step) with new ones.
+
+* Finally, run **upgrade.bat** script to upgrade Trendz to the new version.
+
+**NOTE** Scripts listed above should be executed using Administrator Role.
+
+```text
+C:\trendz>upgrade.bat --fromVersion=1.14.0
+```
+
+#### Start the service
+
+```text
+net start trendz
+```
+{: .copy-code}
+
+#### Sync Trendz with ThingsBoard
+
+After upgrade, it's necessary to sync Trendz with ThingsBoard. You can find out how to do it [here](/docs/trendz/install/windows#step-6-sync-thingsboard-with-trendz).
+
 ## Upgrading to 1.14.0
 
 These steps are applicable for 1.13.2 Trendz Analytics version.
@@ -275,10 +384,10 @@ From version 1.14.0, python calculation fields and prediction models could be ut
 service which can be used only inside the docker.
 
 If you are already using Trendz Python Executor via Docker, it's necessary to update it to version 1.14.0 before Trendz update.
-You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration-linux/#how-to-migrate-trendz-python-executor-1133-to-trendz-python-executor-1140).
+You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration/#how-to-migrate-trendz-python-executor-1132-to-trendz-python-executor-1140).
 
 If you were not using Python Executor before, you need to install it via Docker. 
-You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration-linux/#python-executor-standalone-installation).
+You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration/#python-executor-standalone-installation).
 {% endcapture %}
 {% include templates/warn-banner.md content=tb_3_7_0_upgrade_note %}
 
@@ -329,10 +438,10 @@ From version 1.14.0, python calculation fields and prediction models could be ut
 service which can be used only inside the docker.
 
 If you are already using Trendz Python Executor via Docker, it's necessary to update it to version 1.14.0 before Trendz update.
-You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration-windows/#how-to-migrate-trendz-python-executor-1133-to-trendz-python-executor-1140).
+You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration/#how-to-migrate-trendz-python-executor-1132-to-trendz-python-executor-1140).
 
 If you were not using Python Executor before, you need to install it via Docker.
-You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration-windows/#python-executor-standalone-installation).
+You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration/#python-executor-standalone-installation).
 {% endcapture %}
 {% include templates/warn-banner.md content=tb_3_7_0_upgrade_note %}
 

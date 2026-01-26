@@ -89,6 +89,11 @@ share-asset-group:
         image: /images/user-guide/ui/assets/share-asset-group-2-pe.png
         title: 'Select the <b>target customer</b> from the dropdown list. (Optional) Specify the <b>user group</b> within that customer to share the asset group with. Confirm the action by clicking "<b>Share</b>".'
 
+asset-details-page:
+    0:
+        image: /images/user-guide/ui/assets/asset-details-page-1-pe.png
+        title: 'Clicking on an asset opens a window where you can access and manage various aspects of that asset.'
+
 ---
 
 {% assign docsPrefix = "paas/" %}

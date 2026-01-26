@@ -9,7 +9,7 @@ When combined with secure transport (TLS), it provides a reliable and widely ado
 ### Basic authentication overview
 
 Basic authentication allows MQTT clients to authenticate using credentials sent in the `CONNECT` packet — such as clientId, username, and password.
-TBMQ uses these credentials to generate a unique `credentialsId` and match against the stored [MQTT client credential](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) records using flexible matching strategies.
+TBMQ uses these credentials to generate a unique `credentialsId` and match against the stored [MQTT client credential](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/mqtt-client-credentials/) records using flexible matching strategies.
 To optimize authentication performance, TBMQ maintains credentials in Redis for fast lookups, while PostgreSQL ensures reliable persistence.
 The following sections explain provider configuration, credential matching, `credentialsId` generation, and how authorization is applied after successful authentication.
 
@@ -87,7 +87,7 @@ where:
 ### MQTTS Example based on Client ID, Username and Password
 
 One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
-Follow the [MQTT over SSL](/docs/mqtt-broker/security/mqtts/) guide to provision server certificate for your own TBMQ instance.
+Follow the [MQTT over SSL](/docs/{{docsPrefix}}mqtt-broker/security/mqtts/) guide to provision server certificate for your own TBMQ instance.
 
 Let's review a simple command to publish message using MQTT client ID, username and password to the TBMQ. The command is using MQTTS:
 

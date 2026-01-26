@@ -5,7 +5,7 @@ In the same way as other ThingsBoard family products, TBMQ uses [JWT](https://jw
 JWT tokens serve as a mechanism to exchange information securely. When a user logs in, their credentials are exchanged for a pair of JWT tokens: 
 an access token, which is used to authenticate API calls, and a refresh token, which is used to obtain a new access token once the original expires.
 These tokens contain essential information about the user’s identity and permissions, enabling secure communication with the platform.
-For more information, please refer to the [Administration REST API](https://thingsboard.io/docs/mqtt-broker/rest-api/#swagger-ui) documentation.
+For more information, please refer to the [Administration REST API](https://thingsboard.io/docs/{{docsPrefix}}mqtt-broker/rest-api/#swagger-ui) documentation.
 
 Starting from version [2.2.0](https://github.com/thingsboard/tbmq/releases/tag/v2.2.0), TBMQ also supports JWT-based authentication for MQTT clients as one of its pluggable MQTT authentication providers.
 This enables secure, flexible, and scalable identity verification without relying on static credentials like usernames or passwords.
@@ -13,7 +13,7 @@ Instead, clients present a signed token that contains all the necessary authenti
 
 ## JWT authentication overview
 
-When a client connects using a JWT token, TBMQ performs a multi-step validation process to verify the token, check its claims, and determine the client’s permissions.
+When a client connects using a JWT token, TBMQ performs a multistep validation process to verify the token, check its claims, and determine the client’s permissions.
 The client includes a signed JWT token in the `password` field of the `MQTT CONNECT` packet. 
 TBMQ uses the configured verifier (HMAC-based, PEM, or JWKS) to validate the token's signature. If the signature is valid, the broker proceeds to check the token’s claims. It validates:
 
@@ -287,7 +287,7 @@ mosquitto_pub -d -q 1 -h "YOUR_TBMQ_HOST" -p "1883" -t "sensors/temperature" -i 
 ### MQTTS Example based on HMAC-based algorithm
 
 One-way TLS ensures your client verifies the server’s identity using its certificate.
-Follow the [MQTT over SSL](/docs/mqtt-broker/security/mqtts/) guide to provision a server certificate for TBMQ.
+Follow the [MQTT over SSL](/docs/{{docsPrefix}}mqtt-broker/security/mqtts/) guide to provision a server certificate for TBMQ.
 
 Here’s an example of connecting with JWT authentication over MQTTS (TLS):
 

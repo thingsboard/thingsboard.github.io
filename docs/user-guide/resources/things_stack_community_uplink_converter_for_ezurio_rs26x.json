@@ -1,0 +1,42 @@
+{
+  "name": "Things Stack Community Uplink Converter for Ezurio RS26x",
+  "type": "UPLINK",
+  "integrationType": null,
+  "debugMode": false,
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1764237351305
+  },
+  "configuration": {
+    "scriptLang": "TBEL",
+    "decoder": null,
+    "tbelDecoder": "var data = decodeToJson(payload);\nvar deviceName = data.end_device_ids.device_id;\nvar deviceType = data.end_device_ids.application_ids.application_id;\n\nvar result = {};\n\nif (data.?uplink_message.?decoded_payload.?Temperature != null) {\n    result = {\n        deviceName: deviceName,\n        deviceType: deviceType,\n        telemetry: {\n            temperature: data.uplink_message.decoded_payload.Temperature,\n            battery_status: data.uplink_message.decoded_payload[\"Battery Status\"],\n            rssi: data.uplink_message.rx_metadata[0].rssi,\n            snr: data.uplink_message.rx_metadata[0].snr,\n            spreading_factor: data.uplink_message.settings.data_rate.lora.spreading_factor\n        }\n    };\n} else {\n    result = {\n        deviceName: deviceName,\n        deviceType: deviceType,\n        telemetry: {\n            rssi: data.uplink_message.rx_metadata[0].rssi,\n            snr: data.uplink_message.rx_metadata[0].snr,\n            spreading_factor: data.uplink_message.settings.data_rate.lora.spreading_factor\n        }\n    };\n}\n\nreturn result;",
+    "encoder": null,
+    "tbelEncoder": null,
+    "updateOnlyKeys": [
+      "fPort",
+      "bandwidth",
+      "frequency",
+      "net_id",
+      "cluster_id",
+      "cluster_address",
+      "device_id",
+      "join_eui",
+      "battery",
+      "eui",
+      "beep",
+      "channel",
+      "applicationId",
+      "devAddr",
+      "spreadingFactor",
+      "codeRate",
+      "tenantId"
+    ]
+  },
+  "additionalInfo": {
+    "description": ""
+  },
+  "edgeTemplate": false,
+  "converterVersion": 1
+}

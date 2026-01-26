@@ -1,0 +1,3 @@
+name;type;latitude;longitude;safeZone
+Buddy;pet-tracking;40.722220087035026;-73.63716375884461;"{""latitude"": 40.722420, ""longitude"": -73.637177, ""radius"": 40}"
+Rex;pet-tracking;40.72279365344575;-73.6344632283027;"{""latitude"": 40.722826, ""longitude"": -73.635079, ""radius"": 40}"

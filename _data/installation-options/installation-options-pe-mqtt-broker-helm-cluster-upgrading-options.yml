@@ -1,0 +1,37 @@
+mqttBrokerHelm:
+  0:
+    title: Minikube
+    description: This guide will help you set up TBMQ Cluster using the official Helm chart. Minikube is used as the reference environment for the self-hosted Kubernetes deployment.
+    link: /docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-minikube/#upgrading
+    icon: /images/install/cluster/minikube.svg
+    alt: Minikube logo
+    imageTitleAttribute: Deploy TBMQ Cluster using Helm in Minikube
+    imageWidth: 36
+    imageHeight: 36
+  1:
+    title: Amazon EKS
+    description: This guide will help you set up TBMQ Cluster using the official Helm chart on AWS using Elastic Kubernetes Service (EKS).
+    link: /docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-aws/#upgrading
+    icon: /images/install/cloud/eks.svg
+    alt: Amazon EKS logo
+    imageTitleAttribute: Deploy TBMQ Cluster using Helm on EKS cluster
+    imageWidth: 32
+    imageHeight: 36
+  2:
+    title: Azure
+    description: This guide will help you set up TBMQ Cluster using the official Helm chart on Azure using Azure Kubernetes Service (AKS).
+    link: /docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-azure/#upgrading
+    icon: /images/install/cloud/azure.svg
+    alt: Microsoft Azure logo
+    imageTitleAttribute: Deploy TBMQ Cluster using Helm on AKS cluster
+    imageWidth: 123
+    imageHeight: 36
+  3:
+    title: Google Cloud Platform
+    description: This guide will help you set up TBMQ Cluster using the official Helm chart on Google Cloud Platform (GCP) using Google Kubernetes Engine (GKE).
+    link: /docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-gcp/#upgrading
+    icon: /images/install/cloud/gcp.svg
+    alt: Google Cloud Platform logo
+    imageTitleAttribute: Deploy TBMQ Cluster using Helm on GKE cluster
+    imageWidth: 40
+    imageHeight: 36

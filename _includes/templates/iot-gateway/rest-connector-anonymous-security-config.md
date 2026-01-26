@@ -11,7 +11,10 @@ Anonymous auth is the most simple option. It is useful for testing.
 Security subsection in configuration file will look like this: 
 
 ```json
-    "security": {
-      "type": "anonymous"
-    }
+{
+  "security": {
+    "type": "anonymous"
+  }
+}
 ```
+{: .copy-code}

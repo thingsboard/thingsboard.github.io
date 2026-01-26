@@ -1,0 +1,655 @@
+{% capture tbmqPaygPricing %}{% include pricing/prices/tbmq-payg.json %}{% endcapture %}
+<div class="embedded-calculator" id="tbmqSmCalculator">
+    <div class="calculator-body">
+        <div class="card calculator">
+            <div class="calculator-header">
+                <h2>TBMQ Self-managed subscription calculator</h2>
+            </div>
+            <div class="input-parameters">
+                <div class="input-group">
+                    <div class="input-label-group xs-row">
+                        <label for="tbmq-sessions" class="label">
+                            Sessions
+                            <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                <span class="tooltip-text">Total unique logical states managed by the broker (identified by Client ID). Active connections and disconnected clients with persistent sessions both occupy quota slots.</span>
+                            </span>
+                        </label>
+                        <input id="tbmq-sessions" type="number" value="100" min="100" class="input input-right">
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="tbmq-sessionsSlider" min="0" max="6" step="0.001" value="0" class="slider">
+                        <div class="tick-marks">
+                            <div class="tick-mark" data-index="0"><span class="tick"></span><span class="tick-label">100</span></div>
+                            <div class="tick-mark" data-index="1"><span class="tick"></span><span class="tick-label">1K</span></div>
+                            <div class="tick-mark" data-index="2"><span class="tick"></span><span class="tick-label">2K</span></div>
+                            <div class="tick-mark" data-index="3"><span class="tick"></span><span class="tick-label">5K</span></div>
+                            <div class="tick-mark" data-index="4"><span class="tick"></span><span class="tick-label">10K</span></div>
+                            <div class="tick-mark" data-index="5"><span class="tick"></span><span class="tick-label">100K</span></div>
+                            <div class="tick-mark" data-index="6"><span class="tick"></span><span class="tick-label infinity">&#8734;</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-label-group xs-row">
+                        <label for="tbmq-throughput" class="label">
+                            Throughput (msg/sec)
+                            <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                <span class="tooltip-text">Combined number of MQTT PUBLISH packets processed per second, including both incoming (publisher) and outgoing (subscriber) messages.</span>
+                            </span>
+                        </label>
+                        <input id="tbmq-throughput" type="number" value="100" min="100" class="input input-right">
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="tbmq-throughputSlider" min="0" max="6" step="0.001" value="0" class="slider">
+                        <div class="tick-marks">
+                            <div class="tick-mark" data-index="0"><span class="tick"></span><span class="tick-label">100</span></div>
+                            <div class="tick-mark" data-index="1"><span class="tick"></span><span class="tick-label">1K</span></div>
+                            <div class="tick-mark" data-index="2"><span class="tick"></span><span class="tick-label">2K</span></div>
+                            <div class="tick-mark" data-index="3"><span class="tick"></span><span class="tick-label">5K</span></div>
+                            <div class="tick-mark" data-index="4"><span class="tick"></span><span class="tick-label">10K</span></div>
+                            <div class="tick-mark" data-index="5"><span class="tick"></span><span class="tick-label">20K</span></div>
+                            <div class="tick-mark" data-index="6"><span class="tick"></span><span class="tick-label infinity">&#8734;</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instances-section">
+                    <div class="instance-group">
+                        <div class="instance-info">
+                            <h4>
+                                Production Instances
+                                <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                    <span class="tooltip-text">Dedicated compute instances for your production environment. Add instances to enable clustering and High Availability (HA).</span>
+                                </span>
+                            </h4>
+                            <p>1 instance included. Add more for high availability (HA) and reliability.</p>
+                        </div>
+                        <div class="stepper-control unset-width" id="tbmqProdStepper">
+                            <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease production instances">−</button>
+                            <input type="number" value="1" min="1" id="tbmqProdInstances" aria-label="Production instances count">
+                            <button type="button" class="stepper-btn plus" data-action="increment" aria-label="Increase production instances">+</button>
+                        </div>
+                    </div>
+                    <div class="instance-group">
+                        <div class="instance-info">
+                            <h4>
+                                Development Instances
+                                <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                    <span class="tooltip-text">Compute instances used for development, testing, and CI/CD workflows.</span>
+                                </span>
+                            </h4>
+                            <p>Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.</p>
+                        </div>
+                        <div class="stepper-control unset-width" id="tbmqDevStepper">
+                            <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease development instances">−</button>
+                            <input type="number" value="0" min="0" id="tbmqDevInstances" aria-label="Development instances count">
+                            <button type="button" class="stepper-btn plus" data-action="increment" aria-label="Increase development instances">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group addons">
+                    <p class="label">
+                        Add-ons
+                        <span class="tooltip">
+                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip-text">Optional modules to extend platform functionality.</span>
+                        </span>
+                    </p>
+                    <div class="add-ons-grid">
+                        <div class="addon-card" id="tbmqWlCard">
+                            <div class="addon-header">
+                                <span class="addon-title">
+                                    White Labeling
+                                    <span class="tooltip">
+                                        <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                        <span class="tooltip-text">Customization of the platform interface with your corporate branding.</span>
+                                    </span>
+                                </span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="tbmqWlToggle">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <p class="addon-description">Customize UI to match your corporate branding.</p>
+                        </div>
+                        <div class="addon-card" id="tbmqHelpDeskCard">
+                            <div class="addon-header">
+                                <span class="addon-title">
+                                    Priority Help Desk
+                                    <span class="tooltip">
+                                        <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                        <span class="tooltip-text">Moves your support requests to a high-priority queue managed by experts.</span>
+                                    </span>
+                                </span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="tbmqHelpDeskToggle">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <p class="addon-description">Dedicated access to our prioritized support queue.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actions-container">
+                <div class="reset-container">
+                    <button id="tbmqResetBtn" class="button reset">Reset</button>
+                </div>
+            </div>
+        </div>
+        <div id="tbmqResultsCard" class="card results"></div>
+    </div>
+</div>
+
+<script>
+    const tbmqPaygPlan = {{ tbmqPaygPricing }};
+    const TB_MQ_MIN = 100;
+    const TB_MQ_MAX = 1000000;
+
+    const TB_MQ_SESSION_MARKS = [100, 1000, 2000, 5000, 10000, 100000, TB_MQ_MAX];
+    const TB_MQ_THROUGHPUT_MARKS = [100, 1000, 2000, 5000, 10000, 20000, TB_MQ_MAX];
+
+    let tbmqPaygState = {
+        clipboardMessage: '',
+        debounceTimer: null,
+        sessions: 100,
+        throughput: 100,
+        prodInstances: 1,
+        devInstances: 0,
+        addons: {
+            whiteLabeling: false,
+            priorityHelpDesk: false
+        }
+    };
+
+    const tbmqPaygUi = {
+        calculator: document.getElementById('tbmqSmCalculator'),
+        results: document.getElementById('tbmqResultsCard'),
+        resetBtn: document.getElementById('tbmqResetBtn'),
+        inputs: {
+            sessions: document.getElementById('tbmq-sessions'),
+            sessionsSlider: document.getElementById('tbmq-sessionsSlider'),
+            throughput: document.getElementById('tbmq-throughput'),
+            throughputSlider: document.getElementById('tbmq-throughputSlider'),
+            prod: document.getElementById('tbmqProdInstances'),
+            dev: document.getElementById('tbmqDevInstances')
+        },
+        steppers: {
+            prod: document.getElementById('tbmqProdStepper'),
+            dev: document.getElementById('tbmqDevStepper')
+        },
+        toggles: {
+            whiteLabeling: document.getElementById('tbmqWlToggle'),
+            priorityHelpDesk: document.getElementById('tbmqHelpDeskToggle')
+        },
+        cards: {
+            whiteLabeling: document.getElementById('tbmqWlCard'),
+            priorityHelpDesk: document.getElementById('tbmqHelpDeskCard')
+        }
+    };
+
+    const tbmqPaygCopy = (btn) => copyToClipboard(btn, tbmqPaygState.clipboardMessage);
+    const tbmqPaygDownload = () => typeof downloadSummary === 'function' && downloadSummary(tbmqPaygState);
+
+    const tbmqPaygSliderToValue = (sliderVal, marks) => {
+        const idx = Math.floor(sliderVal);
+        const frac = sliderVal - idx;
+        if (idx >= marks.length - 1) return marks[marks.length - 1];
+        return Math.round(marks[idx] + frac * (marks[idx + 1] - marks[idx]));
+    };
+
+    const tbmqPaygValueToSlider = (value, marks) => {
+        const clampedValue = Math.max(marks[0], Math.min(marks[marks.length - 1], value));
+
+        for (let i = 0; i < marks.length - 1; i++) {
+            if (clampedValue <= marks[i + 1]) {
+                return i + (clampedValue - marks[i]) / (marks[i + 1] - marks[i]);
+            }
+        }
+        return marks.length - 1;
+    };
+
+    function tbmqPaygInitTicks() {
+        requestAnimationFrame(() => {
+            tbmqPaygUi.calculator.querySelectorAll('.slider-container').forEach(container => {
+                const sliderInput = container.querySelector('input.slider');
+                if (!sliderInput) return;
+
+                const sliderWidth = sliderInput.offsetWidth;
+                const thumbWidth = 25;
+                const trackRatio = sliderWidth > 0 ? thumbWidth / sliderWidth : 0;
+
+                container.querySelectorAll('.tick-mark').forEach((tick, index, arr) => {
+                    const relativePos = index / (arr.length - 1);
+                    const percent = ((trackRatio / 2) + (relativePos * (1 - trackRatio))) * 100;
+                    tick.style.left = percent + '%';
+                });
+            });
+        });
+    }
+
+    const tbmqPaygUpdateUI = () => {
+        tbmqPaygUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbmqPaygState.prodInstances <= tbmqPaygPlan.includedProdInstances;
+        tbmqPaygUi.steppers.dev.querySelector('[data-action="decrement"]').disabled = tbmqPaygState.devInstances <= 0;
+
+        tbmqPaygUi.cards.whiteLabeling.classList.toggle('active', tbmqPaygState.addons.whiteLabeling);
+        tbmqPaygUi.cards.priorityHelpDesk.classList.toggle('active', tbmqPaygState.addons.priorityHelpDesk);
+    };
+
+    const tbmqPaygHandleStepper = (type, action) => {
+        if (type === 'prod') {
+            const min = tbmqPaygPlan.includedProdInstances;
+            tbmqPaygState.prodInstances = action === 'increment' ? tbmqPaygState.prodInstances + 1 : Math.max(min, tbmqPaygState.prodInstances - 1);
+            tbmqPaygUi.inputs.prod.value = tbmqPaygState.prodInstances;
+        } else if (type === 'dev') {
+            tbmqPaygState.devInstances = action === 'increment' ? tbmqPaygState.devInstances + 1 : Math.max(0, tbmqPaygState.devInstances - 1);
+            tbmqPaygUi.inputs.dev.value = tbmqPaygState.devInstances;
+        }
+        tbmqPaygCalculate();
+        tbmqPaygSendGTM();
+    };
+
+    const tbmqPaygCalculate = () => {
+        const plan = tbmqPaygPlan;
+        tbmqPaygUpdateUI();
+
+        const extraSessions = Math.max(0, tbmqPaygState.sessions - plan.includedSessions);
+        const extraThroughput = Math.max(0, tbmqPaygState.throughput - plan.includedThroughput);
+        const extraProd = Math.max(0, tbmqPaygState.prodInstances - plan.includedProdInstances);
+        const extraDev = tbmqPaygState.devInstances;
+
+        const isInitialState = extraSessions === 0 && extraThroughput === 0 && extraProd === 0 && extraDev === 0 &&
+            !tbmqPaygState.addons.whiteLabeling && !tbmqPaygState.addons.priorityHelpDesk;
+
+        const extraSessionsCost = extraSessions * plan.extraSessionsPrice;
+        const extraThroughputCost = extraThroughput * plan.extraThroughputPrice;
+        const extraProdCost = extraProd * plan.extraProdInstancesPrice;
+        const extraDevCost = extraDev * plan.extraDevInstancesPrice;
+
+        const subscriptionCost = plan.basePrice + extraSessionsCost + extraThroughputCost + extraProdCost + extraDevCost;
+
+        let totalPrice = isInitialState ? 0 : subscriptionCost;
+
+        const breakdown = { addons: {} };
+
+        if (tbmqPaygState.addons.whiteLabeling) {
+            totalPrice += plan.whiteLabelingPrice;
+            breakdown.addons.whiteLabeling = plan.whiteLabelingPrice;
+        }
+
+        if (tbmqPaygState.addons.priorityHelpDesk) {
+            totalPrice += plan.priorityHelpDeskPrice;
+            breakdown.addons.priorityHelpDesk = plan.priorityHelpDeskPrice;
+        }
+
+        let supportLevel = 'Community';
+        if (tbmqPaygState.addons.priorityHelpDesk) {
+            supportLevel = 'Priority Help Desk';
+        } else if (totalPrice >= 300) {
+            supportLevel = 'Help Desk';
+        }
+
+        tbmqPaygDisplay({
+            plan,
+            isInitialState,
+            subscriptionCost,
+            extraSessions,
+            extraSessionsCost,
+            extraThroughput,
+            extraThroughputCost,
+            extraProd,
+            extraProdCost,
+            extraDev,
+            extraDevCost,
+            breakdown,
+            totalPrice,
+            supportLevel
+        });
+    };
+
+    const tbmqPaygCreateItem = (label, value, tooltip, noTooltip) => `
+        <div class="result-item">
+            <span class="result-label">${label}:</span>
+            <span class="result-value${noTooltip ? ' no-tooltip' : ''}">
+                ${value}${tooltip ? `<span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltip}</span></span>` : ''}
+            </span>
+        </div>`;
+
+    const tbmqPaygDisplay = ({ plan, isInitialState, subscriptionCost, extraSessions, extraSessionsCost, extraThroughput, extraThroughputCost, extraProd, extraProdCost, extraDev, extraDevCost, breakdown, totalPrice, supportLevel }) => {
+        const subscriptionValueClass = isInitialState ? 'section-value strikethrough' : 'section-value';
+        const supportClass = supportLevel === 'Priority Help Desk' ? 'support-priority' : '';
+
+        const basePriceClass = isInitialState ? 'strikethrough-text' : '';
+
+        const buttonLabel = totalPrice > 0 ? 'Get Started' : 'Try 30 days for free';
+
+        let detailsHtml = `
+            <div class="results-section expandable" data-section="subscription">
+                <div class="section-header" data-toggle="subscription">
+                    <span class="section-title-with-chevron">Subscription ${chevronUpIcon}</span>
+                    <span class="${subscriptionValueClass}">
+                        ${formatCurrency(subscriptionCost)}
+                        <span class="tooltip">${infoIcon}<span class="tooltip-text">Total monthly subscription cost including extra resources (excluding add-ons).</span></span>
+                    </span>
+                </div>
+                <div class="section-content">
+                    ${tbmqPaygCreateItem('Included Sessions', formatNumber(plan.includedSessions), 'Number of sessions covered by this subscription plan\'s base price.')}
+                    ${tbmqPaygCreateItem('Included Throughput', formatNumber(plan.includedThroughput), 'Amount of throughput covered by this subscription plan\'s base price.')}
+                    ${tbmqPaygCreateItem('Included Prod Instances', formatNumber(plan.includedProdInstances), 'Number of production instances covered by this subscription plan\'s base price.')}
+                    ${tbmqPaygCreateItem('Support', `<span class="${supportClass}">${supportLevel}</span>`, supportLevel === 'Community' ? 'Self-service access to public knowledge base, documentation, and community forums.' : supportLevel === 'Help Desk' ? 'Help Desk access to the dedicated TBMQ expert team for technical resolution.' : 'Prioritized ticket handling via a high-priority queue managed by the expert team.')}
+                    ${tbmqPaygCreateItem('Base Price', `<span class="${basePriceClass}">${formatCurrency(plan.basePrice)}</span>`, 'Monthly subscription fee before extras and add-ons.')}`;
+
+        if (extraSessions > 0) {
+            detailsHtml += tbmqPaygCreateItem('Extra Sessions', formatNumber(extraSessions), 'Sessions exceeding the subscription plan\'s included number.');
+            detailsHtml += tbmqPaygCreateItem('Extra Sessions Cost', formatCurrency(extraSessionsCost), `${formatNumber(extraSessions)} extra sessions × ${formatCurrency(plan.extraSessionsPrice)}/session`);
+        }
+        if (extraThroughput > 0) {
+            detailsHtml += tbmqPaygCreateItem('Extra Throughput', formatNumber(extraThroughput), 'Throughput exceeding the subscription plan\'s included number.');
+            detailsHtml += tbmqPaygCreateItem('Extra Throughput Cost', formatCurrency(extraThroughputCost), `${formatNumber(extraThroughput)} extra msg/sec × ${formatCurrency(plan.extraThroughputPrice)} per msg/sec`);
+        }
+        if (extraProd > 0) {
+            detailsHtml += tbmqPaygCreateItem('Extra Prod Instances', formatNumber(extraProd), 'Production instances added beyond the subscription plan\'s included number.');
+            detailsHtml += tbmqPaygCreateItem('Extra Prod Instances Cost', formatCurrency(extraProdCost), `${formatNumber(extraProd)} extra prod instance × ${formatCurrency(plan.extraProdInstancesPrice)}/prod instance`);
+        }
+        if (extraDev > 0) {
+            detailsHtml += tbmqPaygCreateItem('Extra Dev Instances', formatNumber(extraDev), 'Development instances added beyond the subscription plan\'s included number.');
+            detailsHtml += tbmqPaygCreateItem('Extra Dev Instances Cost', formatCurrency(extraDevCost), `${formatNumber(extraDev)} extra dev instance × ${formatCurrency(plan.extraDevInstancesPrice)}/dev instance`);
+        }
+
+        detailsHtml += '</div></div>';
+
+        const addonsHtml = tbmqPaygGenAddons(breakdown, plan);
+
+        let tooltips = [];
+        if (!isInitialState) {
+            tooltips.push(`${formatCurrency(plan.basePrice)} (base)`);
+            if (extraSessionsCost) tooltips.push(`${formatCurrency(extraSessionsCost)} (sessions)`);
+            if (extraThroughputCost) tooltips.push(`${formatCurrency(extraThroughputCost)} (throughput)`);
+            if (extraProdCost) tooltips.push(`${formatCurrency(extraProdCost)} (prod)`);
+            if (extraDevCost) tooltips.push(`${formatCurrency(extraDevCost)} (dev)`);
+        }
+        if (breakdown.addons.whiteLabeling) tooltips.push(`${formatCurrency(breakdown.addons.whiteLabeling)} (White Labeling)`);
+        if (breakdown.addons.priorityHelpDesk) tooltips.push(`${formatCurrency(breakdown.addons.priorityHelpDesk)} (Priority Help Desk)`);
+
+        const tooltipText = tooltips.length ? tooltips.join(' + ') : 'Free 30-day trial';
+
+        tbmqPaygUi.results.innerHTML = `
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="tbmqCopyBtn" class="icon-button" title="Copy">${copyIcon}</div>
+                        <div id="tbmqDownloadBtn" class="icon-button" title="Download">${downloadIcon}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="results-scroll-container">
+                ${detailsHtml}
+                <div class="addons-separator"><span>Add-ons</span></div>
+                ${addonsHtml}
+            </div>
+            <div class="results-footer">
+                <div class="results-total">
+                    <span>Total</span>
+                    <span class="total-value">
+                        ${formatCurrency(totalPrice)}/month
+                        <span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltipText}</span></span>
+                    </span>
+                </div>
+                <a id="tbmqGetStarted" href="javascript:;" class="button" onClick="getLicense(event,
+                '${plan.productId}', '${plan.planId}', 'TBMQ-SM', 'CFQJ30PWTB', null, '${extraSessions}',
+                '${extraThroughput}', '${extraProd}', '${extraDev}', null, null, null, '${tbmqPaygState.addons.whiteLabeling}',
+                '${tbmqPaygState.addons.priorityHelpDesk}' )">${buttonLabel}</a>
+            </div>`;
+
+        tbmqPaygInitExpandable();
+        document.getElementById('tbmqCopyBtn')?.addEventListener('click', e => tbmqPaygCopy(e.currentTarget));
+        document.getElementById('tbmqDownloadBtn')?.addEventListener('click', tbmqPaygDownload);
+        tbmqPaygUpdateClipboard({ plan, subscriptionCost, extraSessions, extraSessionsCost, extraThroughput, extraThroughputCost, extraProd, extraProdCost, extraDev, extraDevCost, breakdown, totalPrice, supportLevel });
+    };
+
+    const tbmqPaygGenAddons = (breakdown, plan) => {
+        let html = '';
+
+        const addButton = (id, title, cost) => `
+            <div class="results-section inactive">
+                <div class="section-header">
+                    <span class="section-title">${title}</span>
+                    <span class="add-to-plan-btn" data-tbmq-addon="${id}">Add to plan (${formatCurrency(cost)})</span>
+                </div>
+            </div>`;
+
+        if (tbmqPaygState.addons.whiteLabeling) {
+            html += `<div class="results-section">
+                <div class="section-header">
+                    <span class="section-title">White Labeling</span>
+                    <span class="section-value">${formatCurrency(plan.whiteLabelingPrice)}<span class="tooltip">${infoIcon}<span class="tooltip-text">The recurring monthly cost for enabling custom branding in your environment.</span></span></span>
+                </div>
+            </div>`;
+        } else {
+            html += addButton('whiteLabeling', 'White Labeling', plan.whiteLabelingPrice);
+        }
+
+        if (tbmqPaygState.addons.priorityHelpDesk) {
+            html += `<div class="results-section">
+                <div class="section-header">
+                    <span class="section-title">Priority Help Desk</span>
+                    <span class="section-value">${formatCurrency(plan.priorityHelpDeskPrice)}<span class="tooltip">${infoIcon}<span class="tooltip-text">The recurring monthly cost for accessing the prioritized support queue.</span></span></span>
+                </div>
+            </div>`;
+        } else {
+            html += addButton('priorityHelpDesk', 'Priority Help Desk', plan.priorityHelpDeskPrice);
+        }
+
+        return html;
+    };
+
+    const tbmqPaygInitExpandable = () => {
+        tbmqPaygUi.results.querySelectorAll('.expandable .section-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const section = header.closest('.results-section');
+                section.classList.toggle('collapsed');
+                const chevron = header.querySelector('.chevron-icon');
+                if (chevron) chevron.outerHTML = section.classList.contains('collapsed') ? chevronDownIcon : chevronUpIcon;
+            });
+        });
+        tbmqPaygUi.results.querySelectorAll('.add-to-plan-btn').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                const key = btn.dataset.tbmqAddon;
+                tbmqPaygState.addons[key] = true;
+                tbmqPaygUi.toggles[key].checked = true;
+                tbmqPaygCalculate();
+                tbmqPaygSendGTM();
+            });
+        });
+    };
+
+    const tbmqPaygUpdateClipboard = ({ plan, subscriptionCost, extraSessions, extraSessionsCost, extraThroughput, extraThroughputCost, extraProd, extraProdCost, extraDev, extraDevCost, breakdown, totalPrice, supportLevel }) => {
+        let msg = `TBMQ Self-managed Subscription\n`;
+        msg += `- Sessions: ${formatNumber(tbmqPaygState.sessions)}\n`;
+        msg += `- Throughput: ${formatNumber(tbmqPaygState.throughput)} msg/sec\n`;
+        msg += `- Prod Instances: ${formatNumber(tbmqPaygState.prodInstances)}\n`;
+        msg += `- Dev Instances: ${formatNumber(tbmqPaygState.devInstances)}\n`;
+        msg += `- Support: ${supportLevel}\n`;
+        msg += `\nSubscription: ${formatCurrency(subscriptionCost)}\n`;
+        if (extraSessions) msg += `- Extra Sessions: ${formatNumber(extraSessions)} (${formatCurrency(extraSessionsCost)})\n`;
+        if (extraThroughput) msg += `- Extra Throughput: ${formatNumber(extraThroughput)} (${formatCurrency(extraThroughputCost)})\n`;
+        if (extraProd) msg += `- Extra Prod: ${formatNumber(extraProd)} (${formatCurrency(extraProdCost)})\n`;
+        if (extraDev) msg += `- Extra Dev: ${formatNumber(extraDev)} (${formatCurrency(extraDevCost)})\n`;
+
+        if (Object.keys(breakdown.addons).length) {
+            msg += '\nAdd-ons:\n';
+            if (breakdown.addons.whiteLabeling) msg += `- White Labeling: ${formatCurrency(breakdown.addons.whiteLabeling)}\n`;
+            if (breakdown.addons.priorityHelpDesk) msg += `- Priority Help Desk: ${formatCurrency(breakdown.addons.priorityHelpDesk)}\n`;
+        }
+        tbmqPaygState.clipboardMessage = msg + `\nTotal: ${formatCurrency(totalPrice)}/month`;
+    };
+
+    const tbmqPaygSendGTM = () => {
+        clearTimeout(tbmqPaygState.debounceTimer);
+        tbmqPaygState.debounceTimer = setTimeout(() => {
+            window.dataLayer?.push({
+                event: 'tbmq_sm_calculator_interaction',
+                tbmq_sessions: tbmqPaygState.sessions,
+                tbmq_throughput: tbmqPaygState.throughput,
+                tbmq_prod: tbmqPaygState.prodInstances,
+                tbmq_dev: tbmqPaygState.devInstances,
+                tbmq_addon_wl: tbmqPaygState.addons.whiteLabeling,
+                tbmq_addon_helpdesk: tbmqPaygState.addons.priorityHelpDesk
+            });
+        }, 3000);
+    };
+
+    const tbmqPaygInit = () => {
+        if (!tbmqPaygUi.calculator) return;
+
+        setTimeout(() => {
+            tbmqPaygInitTicks();
+            sliderProgress(tbmqPaygUi.inputs.sessionsSlider);
+            sliderProgress(tbmqPaygUi.inputs.throughputSlider);
+            tbmqPaygCalculate();
+        }, 300);
+
+        tbmqPaygUi.resetBtn.addEventListener('click', () => {
+            tbmqPaygState = {
+                clipboardMessage: '',
+                debounceTimer: null,
+                sessions: 100,
+                throughput: 100,
+                prodInstances: 1,
+                devInstances: 0,
+                addons: { whiteLabeling: false, priorityHelpDesk: false }
+            };
+            tbmqPaygUi.inputs.sessions.value = 100;
+            tbmqPaygUi.inputs.sessionsSlider.value = 0;
+            tbmqPaygUi.inputs.throughput.value = 100;
+            tbmqPaygUi.inputs.throughputSlider.value = 0;
+            tbmqPaygUi.inputs.prod.value = 1;
+            tbmqPaygUi.inputs.dev.value = 0;
+            tbmqPaygUi.toggles.whiteLabeling.checked = false;
+            tbmqPaygUi.toggles.priorityHelpDesk.checked = false;
+            sliderProgress(tbmqPaygUi.inputs.sessionsSlider);
+            sliderProgress(tbmqPaygUi.inputs.throughputSlider);
+            tbmqPaygCalculate();
+            tbmqPaygSendGTM();
+        });
+
+
+        const onSessionsInput = (val) => {
+            let calcVal = parseInt(val);
+            if(isNaN(calcVal)) calcVal = TB_MQ_MIN;
+
+            tbmqPaygState.sessions = Math.max(TB_MQ_MIN, calcVal);
+            tbmqPaygUi.inputs.sessionsSlider.value = tbmqPaygValueToSlider(tbmqPaygState.sessions, TB_MQ_SESSION_MARKS);
+            sliderProgress(tbmqPaygUi.inputs.sessionsSlider);
+            tbmqPaygCalculate();
+            tbmqPaygSendGTM();
+        };
+
+        const onSessionsBlur = (e) => {
+            let val = parseInt(e.target.value) || TB_MQ_MIN;
+            val = Math.max(TB_MQ_MIN, val);
+            tbmqPaygState.sessions = val;
+            e.target.value = val;
+
+            tbmqPaygUi.inputs.sessionsSlider.value = tbmqPaygValueToSlider(val, TB_MQ_SESSION_MARKS);
+            sliderProgress(tbmqPaygUi.inputs.sessionsSlider);
+            tbmqPaygCalculate();
+        };
+
+        tbmqPaygUi.inputs.sessions.addEventListener('input', e => onSessionsInput(e.target.value));
+        tbmqPaygUi.inputs.sessions.addEventListener('change', onSessionsBlur);
+
+        const onThroughputInput = (val) => {
+            let calcVal = parseInt(val);
+            if(isNaN(calcVal)) calcVal = TB_MQ_MIN;
+
+            tbmqPaygState.throughput = Math.max(TB_MQ_MIN, calcVal);
+            tbmqPaygUi.inputs.throughputSlider.value = tbmqPaygValueToSlider(tbmqPaygState.throughput, TB_MQ_THROUGHPUT_MARKS);
+            sliderProgress(tbmqPaygUi.inputs.throughputSlider);
+            tbmqPaygCalculate();
+            tbmqPaygSendGTM();
+        };
+
+        const onThroughputBlur = (e) => {
+            let val = parseInt(e.target.value) || TB_MQ_MIN;
+            val = Math.max(TB_MQ_MIN, val);
+            tbmqPaygState.throughput = val;
+            e.target.value = val;
+
+            tbmqPaygUi.inputs.throughputSlider.value = tbmqPaygValueToSlider(val, TB_MQ_THROUGHPUT_MARKS);
+            sliderProgress(tbmqPaygUi.inputs.throughputSlider);
+            tbmqPaygCalculate();
+        };
+
+        tbmqPaygUi.inputs.throughput.addEventListener('input', e => onThroughputInput(e.target.value));
+        tbmqPaygUi.inputs.throughput.addEventListener('change', onThroughputBlur);
+
+        tbmqPaygUi.inputs.prod.addEventListener('input', e => {
+            let val = parseInt(e.target.value);
+            tbmqPaygState.prodInstances = isNaN(val) ? tbmqPaygPlan.includedProdInstances : Math.max(1, val);
+
+            tbmqPaygCalculate();
+            tbmqPaygSendGTM();
+        });
+        tbmqPaygUi.inputs.prod.addEventListener('change', e => {
+            let val = parseInt(e.target.value) || tbmqPaygPlan.includedProdInstances;
+            tbmqPaygState.prodInstances = Math.max(tbmqPaygPlan.includedProdInstances, val);
+            e.target.value = tbmqPaygState.prodInstances;
+            tbmqPaygCalculate();
+        });
+
+        tbmqPaygUi.inputs.dev.addEventListener('input', e => {
+            let val = parseInt(e.target.value);
+            tbmqPaygState.devInstances = isNaN(val) ? 0 : Math.max(0, val);
+            tbmqPaygCalculate();
+            tbmqPaygSendGTM();
+        });
+        tbmqPaygUi.inputs.dev.addEventListener('change', e => {
+            let val = parseInt(e.target.value) || 0;
+            tbmqPaygState.devInstances = Math.max(0, val);
+            e.target.value = tbmqPaygState.devInstances;
+            tbmqPaygCalculate();
+        });
+
+        tbmqPaygUi.inputs.sessionsSlider.addEventListener('input', e => {
+            tbmqPaygState.sessions = tbmqPaygSliderToValue(parseFloat(e.target.value), TB_MQ_SESSION_MARKS);
+            tbmqPaygUi.inputs.sessions.value = tbmqPaygState.sessions;
+            sliderProgress(e.target);
+            tbmqPaygCalculate();
+            tbmqPaygSendGTM();
+        });
+
+        tbmqPaygUi.inputs.throughputSlider.addEventListener('input', e => {
+            tbmqPaygState.throughput = tbmqPaygSliderToValue(parseFloat(e.target.value), TB_MQ_THROUGHPUT_MARKS);
+            tbmqPaygUi.inputs.throughput.value = tbmqPaygState.throughput;
+            sliderProgress(e.target);
+            tbmqPaygCalculate();
+            tbmqPaygSendGTM();
+        });
+
+        const bindStepper = (stepper, type) => {
+            stepper.querySelectorAll('.stepper-btn').forEach(btn => {
+                btn.addEventListener('click', () => !btn.disabled && tbmqPaygHandleStepper(type, btn.dataset.action));
+            });
+        };
+        bindStepper(tbmqPaygUi.steppers.prod, 'prod');
+        bindStepper(tbmqPaygUi.steppers.dev, 'dev');
+
+
+        ['whiteLabeling', 'priorityHelpDesk'].forEach(key => {
+            tbmqPaygUi.toggles[key].addEventListener('input', e => {
+                tbmqPaygState.addons[key] = e.target.checked;
+                tbmqPaygCalculate();
+                tbmqPaygSendGTM();
+            });
+        });
+
+        window.addEventListener('resize', tbmqPaygInitTicks);
+    };
+
+    tbmqPaygInit();
+</script>

@@ -79,6 +79,7 @@ In the "General" tab you can set or change the following options:
     ![image](/images/user-guide/white-labeling/accent-palette.png)
 
  - Advanced CSS - you can stylize any elements of the ThingsBoard user interface as you wish. We will talk more about this functionality [below](#advanced-css);
+ - Override Trendz analytics Add-on name - by checking this option, the name of the analytics add-on will be overridden from Trendz to Advanced analytics across the platform.
  - Show/hide platform name and version - by checking this option, the name of the platform and its current version will be displayed in the lower left corner.
 
 ![image](/images/user-guide/white-labeling/show-platform-name-and-version.png)

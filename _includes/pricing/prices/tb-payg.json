@@ -1,0 +1,82 @@
+{
+  "mobileApp": 99,
+  "mobileAppSetup": 1000,
+  "plans": [
+    {
+      "name": "Maker",
+      "price": 10,
+      "includedDevices": 10,
+      "includedProdInstances": 1,
+      "extraProdInstancePrice": 100,
+      "devQaExtraInstancePrice": 50,
+      "edgeMonthPrice": 0,
+      "edgeInstancesIncluded": 1,
+      "trendzMonthPrice": 0,
+      "wl": false,
+      "productId": "b5a35ce0-f5ea-11f0-8e58-abbac8d0a38a",
+      "planId": "fe493b90-f5ea-11f0-8e58-abbac8d0a38a"
+    },
+    {
+      "name": "Prototype",
+      "price": 39,
+      "includedDevices": 50,
+      "includedProdInstances": 1,
+      "extraProdInstancePrice": 100,
+      "devQaExtraInstancePrice": 50,
+      "edgeMonthPrice": 7,
+      "edgeInstancesIncluded": 1,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 12,
+      "wl": false,
+      "productId": "b5a35ce0-f5ea-11f0-8e58-abbac8d0a38a",
+      "planId": "648c95a0-f5eb-11f0-8e58-abbac8d0a38a"
+    },
+    {
+      "name": "Pilot",
+      "price": 99,
+      "includedDevices": 100,
+      "includedProdInstances": 1,
+      "extraProdInstancePrice": 100,
+      "devQaExtraInstancePrice": 50,
+      "edgeMonthPrice": 19,
+      "edgeInstancesIncluded": 1,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 29,
+      "wl": true,
+      "productId": "b5a35ce0-f5ea-11f0-8e58-abbac8d0a38a",
+      "planId": "87f3b1e0-f5eb-11f0-8e58-abbac8d0a38a"
+    },
+    {
+      "name": "Startup",
+      "price": 299,
+      "includedDevices": 500,
+      "includedProdInstances": 2,
+      "extraProdInstancePrice": 100,
+      "devQaExtraInstancePrice": 50,
+      "edgeMonthPrice": 49,
+      "edgeInstancesIncluded": 2,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 89,
+      "wl": true,
+      "productId": "b5a35ce0-f5ea-11f0-8e58-abbac8d0a38a",
+      "planId": "b8ad2500-f5eb-11f0-8e58-abbac8d0a38a"
+    },
+    {
+      "name": "Business",
+      "price": 499,
+      "includedDevices": 1000,
+      "extraDevicePrice": 0.1,
+      "includedProdInstances": 3,
+      "extraProdInstancePrice": 100,
+      "devQaExtraInstancePrice": 50,
+      "edgeMonthPrice": 89,
+      "edgeInstancesIncluded": 3,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 149,
+      "trendzExtraDevicePrice": 0.03,
+      "wl": true,
+      "productId": "b5a35ce0-f5ea-11f0-8e58-abbac8d0a38a",
+      "planId": "f4b90050-f5eb-11f0-8e58-abbac8d0a38a"
+    }
+  ]
+}

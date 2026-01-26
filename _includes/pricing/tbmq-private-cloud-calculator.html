@@ -1,0 +1,889 @@
+{% capture tbmqPcPlan %}{% include pricing/prices/tbmq-private-cloud.json %}{% endcapture %}
+<div id="tbmqPcCalculator" class="embedded-calculator">
+    <div class="calculator-body">
+        <div class="card calculator">
+            <div class="calculator-header">
+                <h2>TBMQ Private Cloud calculator</h2>
+                <div class="mode-tabs">
+                    <button class="mode-tab active" data-mode="basic">Basic</button>
+                    <button class="mode-tab" data-mode="advanced">
+                        Advanced
+                        <span class="tooltip">
+                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip-text">Enable network traffic configuration</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="input-parameters">
+                <div class="input-group">
+                    <div class="input-label-group xs-row">
+                        <label for="tbmqPc-sessions" class="label">
+                            Sessions
+                            <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                <span class="tooltip-text">Total unique logical states managed by the broker (identified by Client ID). Active connections and disconnected clients with persistent sessions both occupy quota slots.</span>
+                            </span>
+                        </label>
+                        <input id="tbmqPc-sessions" type="number" value="5000" min="5000" class="input input-right">
+                    </div>
+                    <div class="slider-container" data-slider-type="sessions">
+                        <input type="range" id="tbmqPc-sessionsSlider" min="5000" max="110000" step="100" value="5000" class="slider">
+                        <div class="tick-marks">
+                            <div class="tick-mark" data-num="5000"><span class="tick"></span><span class="tick-label">5K</span></div>
+                            <div class="tick-mark" data-num="10000"><span class="tick"></span><span class="tick-label">10K</span></div>
+                            <div class="tick-mark" data-num="20000"><span class="tick"></span><span class="tick-label">20K</span></div>
+                            <div class="tick-mark" data-num="50000"><span class="tick"></span><span class="tick-label">50K</span></div>
+                            <div class="tick-mark" data-num="100000"><span class="tick"></span><span class="tick-label">100K</span></div>
+                            <div class="tick-mark" data-num="110000"><span class="tick"></span><span class="tick-label infinity">&#8734;</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-label-group xs-row">
+                        <label for="tbmqPc-throughput" class="label">
+                            Throughput (msg/sec)
+                            <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                <span class="tooltip-text">Combined number of MQTT PUBLISH packets processed per second, including both incoming (publisher) and outgoing (subscriber) messages.</span>
+                            </span>
+                        </label>
+                        <input id="tbmqPc-throughput" type="number" value="1000" min="1000" class="input input-right">
+                    </div>
+                    <div class="slider-container" data-slider-type="throughput">
+                        <input type="range" id="tbmqPc-throughputSlider" min="1000" max="30000" step="100" value="1000" class="slider">
+                        <div class="tick-marks">
+                            <div class="tick-mark" data-num="1000"><span class="tick"></span><span class="tick-label">1K</span></div>
+                            <div class="tick-mark" data-num="2000"><span class="tick"></span><span class="tick-label">2K</span></div>
+                            <div class="tick-mark" data-num="5000"><span class="tick"></span><span class="tick-label">5K</span></div>
+                            <div class="tick-mark" data-num="10000"><span class="tick"></span><span class="tick-label">10K</span></div>
+                            <div class="tick-mark" data-num="20000"><span class="tick"></span><span class="tick-label">20K</span></div>
+                            <div class="tick-mark" data-num="30000"><span class="tick"></span><span class="tick-label infinity">&#8734;</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group addons">
+                    <p class="label">
+                        Add-ons
+                        <span class="tooltip">
+                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip-text">Unlock advanced optional modules to extend platform functionality.</span>
+                        </span>
+                    </p>
+                    <div class="add-ons-grid">
+                        <div class="addon-card" id="tbmqPcMultiAzCard" data-addon="multiAz">
+                            <div class="addon-header">
+                                <span class="addon-title">
+                                    Multi-AZ Deployment
+                                    <span class="tooltip">
+                                        <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                        <span class="tooltip-text">Enable high availability (HA) and fault tolerance with deployment across multiple AZs and a guaranteed uptime SLA.</span>
+                                    </span>
+                                </span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="tbmqPcMultiAzToggle" data-addon-toggle="multiAz">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <p class="addon-description">Deployment in 3 availability zones with 99.99% SLA</p>
+                        </div>
+                        <div class="addon-card" id="tbmqPcDevQaCard" data-addon="devQa">
+                            <div class="addon-header">
+                                <span class="addon-title">
+                                    Dev & QA Instances
+                                    <span class="tooltip">
+                                        <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                        <span class="tooltip-text">Separate environments for development, testing, and CI/CD pipelines.</span>
+                                    </span>
+                                </span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="tbmqPcDevQaToggle" data-addon-toggle="devQa">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <p class="addon-description">Environments for dev, test & CI/CD</p>
+                            <div class="addon-counter hidden" data-addon-counter="devQa">
+                                <label>Dev Instances</label>
+                                <div class="stepper-control">
+                                    <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease dev instances">−</button>
+                                    <input type="number" value="1" min="1" id="tbmqPcDevInstances" aria-label="Dev instances count">
+                                    <button type="button" class="stepper-btn plus" data-action="increment" aria-label="Increase dev instances">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon-card hidden" id="tbmqPcNetworkCard" data-addon="networkTraffic">
+                            <div class="addon-header">
+                                <span class="addon-title">
+                                    Network Traffic
+                                    <span class="tooltip">
+                                        <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                        <span class="tooltip-text">Expand your data transfer capacity beyond the included lmit to ensure uninterrupted connectivity as your message volume scales.</span>
+                                    </span>
+                                </span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="tbmqPcNetworkToggle" data-addon-toggle="networkTraffic">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <p class="addon-description"><span id="tbmqPcNetworkIncludedText">200</span> GB included, add more as you scale.</p>
+                            <div class="addon-counter hidden" data-addon-counter="networkTraffic">
+                                <label>Extra Traffic (GB)</label>
+                                <div class="stepper-control">
+                                    <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease network traffic">−</button>
+                                    <input type="number" value="1" min="1" id="tbmqPcNetworkTraffic" aria-label="Extra network traffic">
+                                    <button type="button" class="stepper-btn plus" data-action="increment" aria-label="Increase network traffic">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actions-container">
+                <div class="reset-container">
+                    <button id="tbmqPcResetBtn" class="button reset">Reset</button>
+                </div>
+            </div>
+        </div>
+        <div id="tbmqPcResultsCard" class="card results"></div>
+    </div>
+</div>
+<script>
+    const tbmqPcPlan = {{ tbmqPcPlan }};
+
+    const TBMQ_PC_SESSIONS_MIN = 5000;
+    const TBMQ_PC_SESSIONS_BREAKPOINT = 100000;
+    const TBMQ_PC_SESSIONS_SLIDER_MAX = 110000;
+    const TBMQ_PC_SESSIONS_REAL_MAX = 1000000;
+
+    const TBMQ_PC_THROUGHPUT_MIN = 1000;
+    const TBMQ_PC_THROUGHPUT_BREAKPOINT = 20000;
+    const TBMQ_PC_THROUGHPUT_SLIDER_MAX = 30000;
+    const TBMQ_PC_THROUGHPUT_REAL_MAX = 1000000;
+
+    const tbmqPcSessionsSliderToReal = (sliderVal) => {
+        if (sliderVal <= TBMQ_PC_SESSIONS_BREAKPOINT) return sliderVal;
+        return Math.round(TBMQ_PC_SESSIONS_BREAKPOINT + (sliderVal - TBMQ_PC_SESSIONS_BREAKPOINT) *
+            ((TBMQ_PC_SESSIONS_REAL_MAX - TBMQ_PC_SESSIONS_BREAKPOINT) / (TBMQ_PC_SESSIONS_SLIDER_MAX - TBMQ_PC_SESSIONS_BREAKPOINT)));
+    };
+
+    const tbmqPcSessionsRealToSlider = (realVal) => {
+        if (realVal <= TBMQ_PC_SESSIONS_BREAKPOINT) return realVal;
+        return TBMQ_PC_SESSIONS_BREAKPOINT + (realVal - TBMQ_PC_SESSIONS_BREAKPOINT) *
+            ((TBMQ_PC_SESSIONS_SLIDER_MAX - TBMQ_PC_SESSIONS_BREAKPOINT) / (TBMQ_PC_SESSIONS_REAL_MAX - TBMQ_PC_SESSIONS_BREAKPOINT));
+    };
+
+    const tbmqPcThroughputSliderToReal = (sliderVal) => {
+        if (sliderVal <= TBMQ_PC_THROUGHPUT_BREAKPOINT) return sliderVal;
+        return Math.round(TBMQ_PC_THROUGHPUT_BREAKPOINT + (sliderVal - TBMQ_PC_THROUGHPUT_BREAKPOINT) *
+            ((TBMQ_PC_THROUGHPUT_REAL_MAX - TBMQ_PC_THROUGHPUT_BREAKPOINT) / (TBMQ_PC_THROUGHPUT_SLIDER_MAX - TBMQ_PC_THROUGHPUT_BREAKPOINT)));
+    };
+
+    const tbmqPcThroughputRealToSlider = (realVal) => {
+        if (realVal <= TBMQ_PC_THROUGHPUT_BREAKPOINT) return realVal;
+        return TBMQ_PC_THROUGHPUT_BREAKPOINT + (realVal - TBMQ_PC_THROUGHPUT_BREAKPOINT) *
+            ((TBMQ_PC_THROUGHPUT_SLIDER_MAX - TBMQ_PC_THROUGHPUT_BREAKPOINT) / (TBMQ_PC_THROUGHPUT_REAL_MAX - TBMQ_PC_THROUGHPUT_BREAKPOINT));
+    };
+
+    let tbmqPcState = {
+        clipboardMessage: '',
+        debounceTimer: null,
+        isAdvancedMode: false,
+        billingPeriod: 'monthly',
+        sessions: 5000,
+        throughput: 1000,
+        addons: {
+            multiAz: false,
+            devQa: {
+                enabled: false,
+                instances: 1
+            },
+            networkTraffic: {
+                enabled: false,
+                extraGb: 1
+            }
+        }
+    };
+
+    const tbmqPcUi = {
+        calculator: document.getElementById('tbmqPcCalculator'),
+        results: document.getElementById('tbmqPcResultsCard'),
+        resetBtn: document.getElementById('tbmqPcResetBtn'),
+        modeTabs: document.querySelectorAll('#tbmqPcCalculator .mode-tab'),
+        inputs: {
+            sessions: document.getElementById('tbmqPc-sessions'),
+            sessionsSlider: document.getElementById('tbmqPc-sessionsSlider'),
+            throughput: document.getElementById('tbmqPc-throughput'),
+            throughputSlider: document.getElementById('tbmqPc-throughputSlider'),
+            devInstances: document.getElementById('tbmqPcDevInstances'),
+            networkTraffic: document.getElementById('tbmqPcNetworkTraffic')
+        },
+        toggles: {
+            multiAz: document.getElementById('tbmqPcMultiAzToggle'),
+            devQa: document.getElementById('tbmqPcDevQaToggle'),
+            networkTraffic: document.getElementById('tbmqPcNetworkToggle')
+        },
+        cards: {
+            multiAz: document.getElementById('tbmqPcMultiAzCard'),
+            devQa: document.getElementById('tbmqPcDevQaCard'),
+            networkTraffic: document.getElementById('tbmqPcNetworkCard')
+        }
+    };
+
+    const tbmqPcCopy = (btn) => copyToClipboard(btn, tbmqPcState.clipboardMessage);
+    const tbmqPcDownload = () => typeof downloadSummary === 'function' && downloadSummary(tbmqPcState);
+
+    function tbmqPcInitTicks() {
+        requestAnimationFrame(() => {
+            tbmqPcUi.calculator.querySelectorAll('.slider-container').forEach(container => {
+                const sliderInput = container.querySelector('input.slider');
+                if (!sliderInput) return;
+
+                const min = parseInt(sliderInput.min, 10);
+                const max = parseInt(sliderInput.max, 10);
+                const range = max - min;
+                const sliderWidth = sliderInput.offsetWidth;
+                const thumbWidth = 25;
+                let trackRatio = sliderWidth > 0 ? thumbWidth / sliderWidth : 0;
+
+                container.querySelectorAll('.tick-mark').forEach(tick => {
+                    const tickValue = parseInt(tick.dataset.num, 10);
+                    const relativeValue = (tickValue - min) / range;
+                    const percent = ((trackRatio / 2) + (relativeValue * (1 - trackRatio))) * 100;
+                    tick.style.left = percent + '%';
+                });
+            });
+        });
+    }
+
+    const tbmqPcToggleAdvancedMode = (enableAdvanced) => {
+        tbmqPcState.isAdvancedMode = enableAdvanced;
+        tbmqPcUi.modeTabs.forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.mode === (enableAdvanced ? 'advanced' : 'basic'));
+        });
+
+        tbmqPcUi.cards.networkTraffic.classList.toggle('hidden', !enableAdvanced);
+
+        if (!enableAdvanced && tbmqPcState.addons.networkTraffic.enabled) {
+            tbmqPcState.addons.networkTraffic.enabled = false;
+            tbmqPcUi.toggles.networkTraffic.checked = false;
+            tbmqPcUi.cards.networkTraffic.classList.remove('active');
+            tbmqPcUi.cards.networkTraffic.querySelector('[data-addon-counter="networkTraffic"]').classList.add('hidden');
+        }
+
+        tbmqPcCalculate();
+        tbmqPcDebouncedGTM();
+    };
+
+    const tbmqPcHandleAddonToggle = (addonName, enabled) => {
+        if (addonName === 'multiAz') {
+            tbmqPcState.addons.multiAz = enabled;
+            tbmqPcUi.cards.multiAz.classList.toggle('active', enabled);
+        } else if (addonName === 'devQa') {
+            tbmqPcState.addons.devQa.enabled = enabled;
+            tbmqPcUi.cards.devQa.classList.toggle('active', enabled);
+            tbmqPcUi.cards.devQa.querySelector('[data-addon-counter="devQa"]').classList.toggle('hidden', !enabled);
+            if (enabled) {
+                tbmqPcState.addons.devQa.instances = 1;
+                tbmqPcUi.inputs.devInstances.value = 1;
+                tbmqPcUpdateDevQaMinusBtn();
+            }
+        } else if (addonName === 'networkTraffic') {
+            tbmqPcState.addons.networkTraffic.enabled = enabled;
+            tbmqPcUi.cards.networkTraffic.classList.toggle('active', enabled);
+            tbmqPcUi.cards.networkTraffic.querySelector('[data-addon-counter="networkTraffic"]').classList.toggle('hidden', !enabled);
+            if (enabled) {
+                tbmqPcState.addons.networkTraffic.extraGb = 1;
+                tbmqPcUi.inputs.networkTraffic.value = 1;
+                tbmqPcUpdateNetworkMinusBtn();
+            }
+        }
+
+        tbmqPcCalculate();
+        tbmqPcDebouncedGTM();
+    };
+
+    const tbmqPcUpdateDevQaMinusBtn = () => {
+        const counter = tbmqPcUi.cards.devQa.querySelector('[data-addon-counter="devQa"]');
+        const minusBtn = counter?.querySelector('[data-action="decrement"]');
+        if (minusBtn) minusBtn.disabled = tbmqPcState.addons.devQa.instances <= 1;
+    };
+
+    const tbmqPcUpdateNetworkMinusBtn = () => {
+        const counter = tbmqPcUi.cards.networkTraffic.querySelector('[data-addon-counter="networkTraffic"]');
+        const minusBtn = counter?.querySelector('[data-action="decrement"]');
+        if (minusBtn) minusBtn.disabled = tbmqPcState.addons.networkTraffic.extraGb <= 1;
+    };
+
+    const tbmqPcHandleCounterChange = (addonName, action, inputElement) => {
+        let currentValue = parseInt(inputElement.value) || 1;
+
+        if (action === 'increment') {
+            currentValue++;
+        } else if (action === 'decrement') {
+            currentValue = Math.max(1, currentValue - 1);
+        }
+
+        inputElement.value = currentValue;
+
+        if (addonName === 'devQa') {
+            tbmqPcState.addons.devQa.instances = currentValue;
+            tbmqPcUpdateDevQaMinusBtn();
+        } else if (addonName === 'networkTraffic') {
+            tbmqPcState.addons.networkTraffic.extraGb = currentValue;
+            tbmqPcUpdateNetworkMinusBtn();
+        }
+
+        tbmqPcCalculate();
+        tbmqPcDebouncedGTM();
+    };
+
+    const tbmqPcCalculate = () => {
+        const plan = tbmqPcPlan;
+
+        const extraSessions = Math.max(0, tbmqPcState.sessions - plan.includedSessions);
+        const extraThroughput = Math.max(0, tbmqPcState.throughput - plan.includedThroughput);
+
+        const extraSessionsCost = extraSessions * plan.extraSessionsPrice;
+        const extraThroughputCost = extraThroughput * plan.extraThroughputPrice;
+
+        let subscriptionCost = plan.basePrice + extraSessionsCost + extraThroughputCost;
+
+        const addOnsBreakdown = {};
+
+        if (tbmqPcState.addons.multiAz) {
+            addOnsBreakdown.multiAz = { totalCost: plan.multiAZPrice };
+        }
+
+        if (tbmqPcState.addons.devQa.enabled) {
+            const devQaCost = tbmqPcState.addons.devQa.instances * plan.extraDevInstancesPrice;
+            addOnsBreakdown.devQa = {
+                instances: tbmqPcState.addons.devQa.instances,
+                pricePerInstance: plan.extraDevInstancesPrice,
+                totalCost: devQaCost
+            };
+        }
+
+        if (tbmqPcState.addons.networkTraffic.enabled) {
+            const extraNetworkCost = tbmqPcState.addons.networkTraffic.extraGb * plan.extraNetworkTrafficPricePerGb;
+            addOnsBreakdown.networkTraffic = {
+                includedGb: plan.networkTrafficIncluded,
+                extraGb: tbmqPcState.addons.networkTraffic.extraGb,
+                pricePerGb: plan.extraNetworkTrafficPricePerGb,
+                totalCost: extraNetworkCost
+            };
+        }
+
+        const addOnsCost = Object.values(addOnsBreakdown).reduce((sum, addon) => sum + addon.totalCost, 0);
+        const totalPrice = subscriptionCost + addOnsCost;
+
+        const isAnnual = tbmqPcState.billingPeriod === 'annual';
+        const finalPrice = isAnnual ? totalPrice * 0.9 : totalPrice;
+
+        tbmqPcDisplay({
+            plan,
+            extraSessions,
+            extraSessionsCost,
+            extraThroughput,
+            extraThroughputCost,
+            subscriptionCost,
+            addOnsBreakdown,
+            totalPrice,
+            finalPrice,
+            isAnnual
+        });
+    };
+
+    const tbmqPcCreateItem = (label, value, tooltip) => `
+        <div class="result-item">
+            <span class="result-label">${label}:</span>
+            <span class="result-value">
+                ${value}${tooltip ? `<span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltip}</span></span>` : ''}
+            </span>
+        </div>`;
+
+    const tbmqPcDisplay = ({ plan, extraSessions, extraSessionsCost, extraThroughput, extraThroughputCost, subscriptionCost, addOnsBreakdown, totalPrice, finalPrice, isAnnual }) => {
+        const uptimeSla = tbmqPcState.addons.multiAz ? '99.99%' : '99.9%';
+        const showMultiAzQuickAdd = !tbmqPcState.addons.multiAz;
+
+        const slaValueHtml = showMultiAzQuickAdd
+            ? `<span class="sla-upgrade-btn" id="tbmqPcSlaUpgradeBtn" title="Enable Multi-AZ for 99.99% SLA"><svg class="sla-arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2A7DEC"/><path d="M12 16V8M12 8L8 12M12 8L16 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>${uptimeSla}`
+            : `<span style="display: inline-flex" id="tbmqPcSlaAnimationAnchor"></span>${uptimeSla}`;
+
+        let detailsHtml = `
+            <div class="results-section expandable" data-section="privateCloud">
+                <div class="section-header" data-toggle="privateCloud">
+                    <span class="section-title-with-chevron">Private Cloud ${chevronUpIcon}</span>
+                    <span class="section-value">
+                        ${formatCurrency(subscriptionCost)}
+                        <span class="tooltip">${infoIcon}<span class="tooltip-text">Total monthly Private Cloud cost including extra resources (excluding add-ons).</span></span>
+                    </span>
+                </div>
+                <div class="section-content">
+                    ${tbmqPcCreateItem('Included Sessions', formatNumber(plan.includedSessions), 'Number of sessions covered by the subscription base price.')}
+                    ${tbmqPcCreateItem('Included Throughput', `${formatNumber(plan.includedThroughput)} msg/sec`, 'Amount of throughput covered by the subscription base price.')}
+                    ${tbmqPcCreateItem('White Labeling', '<span class="badge enabled">Enabled</span>')}
+                    ${tbmqPcCreateItem('Uptime SLA', slaValueHtml, 'The guaranteed minimum monthly uptime for the Private Cloud service, excluding scheduled maintenance.')}
+                    ${tbmqPcCreateItem('Base Price', formatCurrency(plan.basePrice), 'Monthly subscription fee before extras and add-ons.')}`;
+
+        if (extraSessions > 0) {
+            detailsHtml += tbmqPcCreateItem('Extra Sessions', formatNumber(extraSessions), 'Sessions exceeding the subscription included number.');
+            detailsHtml += tbmqPcCreateItem('Extra Sessions Cost', formatCurrency(extraSessionsCost), `${formatNumber(extraSessions)} extra sessions × ${formatCurrency(plan.extraSessionsPrice)}/session`);
+        }
+        if (extraThroughput > 0) {
+            detailsHtml += tbmqPcCreateItem('Extra Throughput', `${formatNumber(extraThroughput)} msg/sec`, 'Throughput exceeding the subscription included number.');
+            detailsHtml += tbmqPcCreateItem('Extra Throughput Cost', formatCurrency(extraThroughputCost), `${formatNumber(extraThroughput)} extra msg/sec × ${formatCurrency(plan.extraThroughputPrice)} per msg/sec`);
+        }
+
+        detailsHtml += '</div></div>';
+
+        const addOnsHtml = tbmqPcGenAddons(addOnsBreakdown, plan);
+
+        let tooltipParts = [`${formatCurrency(plan.basePrice)} (base)`];
+        if (extraSessionsCost) tooltipParts.push(`${formatCurrency(extraSessionsCost)} (sessions)`);
+        if (extraThroughputCost) tooltipParts.push(`${formatCurrency(extraThroughputCost)} (throughput)`);
+        if (addOnsBreakdown.multiAz) tooltipParts.push(`${formatCurrency(addOnsBreakdown.multiAz.totalCost)} (Multi-AZ)`);
+        if (addOnsBreakdown.devQa) tooltipParts.push(`${formatCurrency(addOnsBreakdown.devQa.totalCost)} (Dev & QA)`);
+        if (addOnsBreakdown.networkTraffic) tooltipParts.push(`${formatCurrency(addOnsBreakdown.networkTraffic.totalCost)} (Network Traffic)`);
+        let totalTooltip = tooltipParts.join(' + ');
+        if (isAnnual) totalTooltip = `(${totalTooltip}) - 10% Annual Discount`;
+
+        tbmqPcUi.results.innerHTML = `
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="tbmqPcCopyBtn" class="icon-button" title="Copy">${copyIcon}</div>
+                        <div id="tbmqPcDownloadBtn" class="icon-button" title="Download">${downloadIcon}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="results-scroll-container">
+                ${detailsHtml}
+                <div class="addons-separator"><span>Add-ons</span></div>
+                ${addOnsHtml}
+            </div>
+            <div class="results-footer">
+                <div class="toggle-container">
+                    <div class="billing-toggle">
+                        <span class="label-text ${!isAnnual ? 'selected' : ''}" id="tbmqPcLabelMonthly">Monthly</span>
+                        <label class="switch">
+                            <input type="checkbox" id="tbmqPcBillingSwitch" ${isAnnual ? 'checked' : ''}>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="label-text ${isAnnual ? 'selected' : ''}" id="tbmqPcLabelAnnual">Annual (Save 10%)</span>
+                    </div>
+                </div>
+                <div class="results-total">
+                    <span>Total</span>
+                    <span class="total-value">
+                        ${formatCurrency(finalPrice)}/month
+                        <span class="tooltip">${infoIcon}<span class="tooltip-text">${totalTooltip}</span></span>
+                    </span>
+                </div>
+                <a id="tbmqPcContactUs" href="/docs/contact-us/" class="button">Contact Us</a>
+                <p class="pricing-disclaimer">Pricing calculation is estimate and depend on traffic volume</p>
+            </div>`;
+
+        tbmqPcInitExpandable();
+        tbmqPcInitBillingToggle();
+        tbmqPcInitSlaUpgradeBtn();
+
+        document.getElementById('tbmqPcCopyBtn')?.addEventListener('click', e => tbmqPcCopy(e.currentTarget));
+        document.getElementById('tbmqPcDownloadBtn')?.addEventListener('click', tbmqPcDownload);
+
+        tbmqPcUpdateClipboard({ plan, extraSessions, extraSessionsCost, extraThroughput, extraThroughputCost, addOnsBreakdown, finalPrice, isAnnual });
+    };
+
+    const tbmqPcGenAddons = (breakdown, plan) => {
+        let html = '';
+
+        if (tbmqPcState.addons.multiAz) {
+            html += `
+                <div class="results-section" data-section="multiAz">
+                    <div class="section-header">
+                        <span class="section-title">Multi-AZ Deployment</span>
+                        <span class="section-value">
+                            ${formatCurrency(plan.multiAZPrice)}
+                            <span class="tooltip">${infoIcon}<span class="tooltip-text">Recurring monthly cost for high availability (HA) and fault tolerance with deployment across multiple AZs and a guaranteed uptime SLA.</span></span>
+                        </span>
+                    </div>
+                </div>`;
+        } else {
+            html += `
+                <div class="results-section inactive" data-section="multiAz">
+                    <div class="section-header">
+                        <span class="section-title">Multi-AZ Deployment</span>
+                        <span class="add-to-plan-btn" data-addon="multiAz">Add to plan (${formatCurrency(plan.multiAZPrice)})</span>
+                    </div>
+                </div>`;
+        }
+
+        if (tbmqPcState.addons.devQa.enabled && breakdown.devQa) {
+            html += `
+                <div class="results-section expandable" data-section="devQa">
+                    <div class="section-header" data-toggle="devQa">
+                        <span class="section-title-with-chevron">Dev & QA Instances ${chevronUpIcon}</span>
+                        <span class="section-value">
+                            ${formatCurrency(breakdown.devQa.totalCost)}
+                            <span class="tooltip">${infoIcon}<span class="tooltip-text">Recurring monthly cost for dedicated instances used exclusively for development, testing, and QA environments.</span></span>
+                        </span>
+                    </div>
+                    <div class="section-content">
+                        ${tbmqPcCreateItem('Dev Instances', formatNumber(breakdown.devQa.instances), 'Number of dev/QA instances.')}
+                        ${tbmqPcCreateItem('Dev Instances Cost', formatCurrency(breakdown.devQa.totalCost), `${formatNumber(breakdown.devQa.instances)} × ${formatCurrency(breakdown.devQa.pricePerInstance)}`)}
+                    </div>
+                </div>`;
+        } else {
+            html += `
+                <div class="results-section inactive" data-section="devQa">
+                    <div class="section-header">
+                        <span class="section-title-with-chevron">Dev & QA Instances ${chevronDownIcon}</span>
+                        <span class="add-to-plan-btn" data-addon="devQa">Add to plan (${formatCurrency(plan.extraDevInstancesPrice)})</span>
+                    </div>
+                </div>`;
+        }
+
+        if (tbmqPcState.isAdvancedMode) {
+            if (tbmqPcState.addons.networkTraffic.enabled && breakdown.networkTraffic) {
+                html += `
+                    <div class="results-section expandable" data-section="networkTraffic">
+                        <div class="section-header" data-toggle="networkTraffic">
+                            <span class="section-title-with-chevron">Network traffic ${chevronUpIcon}</span>
+                            <span class="section-value">
+                                ${formatCurrency(breakdown.networkTraffic.totalCost)}
+                                <span class="tooltip">${infoIcon}<span class="tooltip-text">Recurring monthly cost for network traffic exceeding the subscription plan number.</span></span>
+                            </span>
+                        </div>
+                        <div class="section-content">
+                            ${tbmqPcCreateItem('Included Network Traffic', `${formatNumber(breakdown.networkTraffic.includedGb)} GB`, 'Amount of network traffic covered by this subscription plan\'s base price.')}
+                            ${tbmqPcCreateItem('Extra Network Traffic', `${formatNumber(breakdown.networkTraffic.extraGb)} GB`, 'Network traffic exceeding the subscription plan\'s included number.')}
+                        </div>
+                    </div>`;
+            } else {
+                const networkPrice = plan.extraNetworkTrafficPricePerGb;
+                html += `
+                    <div class="results-section inactive" data-section="networkTraffic">
+                        <div class="section-header">
+                            <span class="section-title-with-chevron">Network traffic ${chevronDownIcon}</span>
+                            <span class="add-to-plan-btn" data-addon="networkTraffic">Add to plan (${formatCurrency(networkPrice)}/GB)</span>
+                        </div>
+                    </div>`;
+            }
+        }
+
+        return html;
+    };
+
+    const tbmqPcInitExpandable = () => {
+        tbmqPcUi.results.querySelectorAll('.results-section.expandable .section-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const section = header.closest('.results-section');
+                section.classList.toggle('collapsed');
+                const chevron = header.querySelector('.chevron-icon');
+                if (chevron) chevron.outerHTML = section.classList.contains('collapsed') ? chevronDownIcon : chevronUpIcon;
+            });
+        });
+
+        tbmqPcUi.results.querySelectorAll('.add-to-plan-btn').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                const addonName = btn.dataset.addon;
+                if (addonName === 'multiAz') {
+                    tbmqPcState.addons.multiAz = true;
+                    tbmqPcUi.toggles.multiAz.checked = true;
+                    tbmqPcUi.cards.multiAz.classList.add('active');
+                } else if (addonName === 'devQa') {
+                    tbmqPcState.addons.devQa.enabled = true;
+                    tbmqPcUi.toggles.devQa.checked = true;
+                    tbmqPcUi.cards.devQa.classList.add('active');
+                    tbmqPcUi.cards.devQa.querySelector('[data-addon-counter="devQa"]').classList.remove('hidden');
+                } else if (addonName === 'networkTraffic') {
+                    tbmqPcState.addons.networkTraffic.enabled = true;
+                    tbmqPcUi.toggles.networkTraffic.checked = true;
+                    tbmqPcUi.cards.networkTraffic.classList.add('active');
+                    tbmqPcUi.cards.networkTraffic.querySelector('[data-addon-counter="networkTraffic"]').classList.remove('hidden');
+                }
+                tbmqPcCalculate();
+                tbmqPcDebouncedGTM();
+            });
+        });
+    };
+
+    const tbmqPcInitBillingToggle = () => {
+        const billingSwitch = document.getElementById('tbmqPcBillingSwitch');
+        if (billingSwitch) {
+            billingSwitch.addEventListener('input', e => {
+                tbmqPcState.billingPeriod = e.target.checked ? 'annual' : 'monthly';
+                tbmqPcCalculate();
+                tbmqPcDebouncedGTM();
+            });
+        }
+
+        document.getElementById('tbmqPcLabelMonthly')?.addEventListener('click', () => {
+            if (tbmqPcState.billingPeriod !== 'monthly') {
+                tbmqPcState.billingPeriod = 'monthly';
+                tbmqPcCalculate();
+                tbmqPcDebouncedGTM();
+            }
+        });
+
+        document.getElementById('tbmqPcLabelAnnual')?.addEventListener('click', () => {
+            if (tbmqPcState.billingPeriod !== 'annual') {
+                tbmqPcState.billingPeriod = 'annual';
+                tbmqPcCalculate();
+                tbmqPcDebouncedGTM();
+            }
+        });
+    };
+
+    const tbmqPcInitSlaUpgradeBtn = () => {
+        const slaUpgradeBtn = document.getElementById('tbmqPcSlaUpgradeBtn');
+        if (slaUpgradeBtn) {
+            slaUpgradeBtn.addEventListener('click', e => {
+                e.stopPropagation();
+
+                tbmqPcState.addons.multiAz = true;
+                tbmqPcUi.toggles.multiAz.checked = true;
+                tbmqPcUi.cards.multiAz.classList.add('active');
+
+                tbmqPcCalculate();
+                tbmqPcDebouncedGTM();
+
+                requestAnimationFrame(() => {
+                    const anchor = document.getElementById('tbmqPcSlaAnimationAnchor');
+                    if (anchor) {
+                        const animatedArrow = document.createElement('span');
+                        animatedArrow.style.display = 'inline-flex';
+                        animatedArrow.className = 'sla-arrow-animated';
+                        animatedArrow.innerHTML = `<svg class="sla-arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#2A7DEC"/><path d="M12 16V8M12 8L8 12M12 8L16 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+                        anchor.appendChild(animatedArrow);
+
+                        setTimeout(() => {
+                            animatedArrow.remove();
+                        }, 500);
+                    }
+                });
+            });
+        }
+    };
+
+    const tbmqPcUpdateClipboard = ({ plan, extraSessions, extraSessionsCost, extraThroughput, extraThroughputCost, addOnsBreakdown, finalPrice, isAnnual }) => {
+        const billingText = isAnnual ? 'Annual (10% discount applied)' : 'Monthly';
+        const uptimeSla = tbmqPcState.addons.multiAz ? '99.99%' : '99.9%';
+
+        let msg = `TBMQ Private Cloud\n`;
+        msg += `- Billing: ${billingText}\n`;
+        msg += `- Sessions: ${formatNumber(tbmqPcState.sessions)}\n`;
+        msg += `- Throughput: ${formatNumber(tbmqPcState.throughput)} msg/sec\n`;
+        msg += `- Uptime SLA: ${uptimeSla}\n`;
+        msg += `\nBase Price: ${formatCurrency(plan.basePrice)}\n`;
+        if (extraSessions) msg += `- Extra Sessions: ${formatNumber(extraSessions)} (${formatCurrency(extraSessionsCost)})\n`;
+        if (extraThroughput) msg += `- Extra Throughput: ${formatNumber(extraThroughput)} (${formatCurrency(extraThroughputCost)})\n`;
+
+        if (Object.keys(addOnsBreakdown).length) {
+            msg += '\nAdd-ons:\n';
+            if (addOnsBreakdown.multiAz) msg += `- Multi-AZ Deployment: ${formatCurrency(addOnsBreakdown.multiAz.totalCost)}\n`;
+            if (addOnsBreakdown.devQa) msg += `- Dev & QA Instances: ${addOnsBreakdown.devQa.instances} × ${formatCurrency(addOnsBreakdown.devQa.pricePerInstance)} = ${formatCurrency(addOnsBreakdown.devQa.totalCost)}\n`;
+            if (addOnsBreakdown.networkTraffic) msg += `- Network Traffic: ${addOnsBreakdown.networkTraffic.extraGb} GB extra × ${formatCurrency(addOnsBreakdown.networkTraffic.pricePerGb)}/GB = ${formatCurrency(addOnsBreakdown.networkTraffic.totalCost)}\n`;
+        }
+
+        tbmqPcState.clipboardMessage = msg + `\nTotal: ${formatCurrency(finalPrice)}/month`;
+    };
+
+    const tbmqPcDebouncedGTM = () => {
+        clearTimeout(tbmqPcState.debounceTimer);
+        tbmqPcState.debounceTimer = setTimeout(() => {
+            window.dataLayer?.push({
+                event: 'tbmq_private_cloud_calculator_interaction',
+                tbmq_pc_sessions: tbmqPcState.sessions,
+                tbmq_pc_throughput: tbmqPcState.throughput,
+                tbmq_pc_billing: tbmqPcState.billingPeriod,
+                tbmq_pc_addon_multi_az: tbmqPcState.addons.multiAz,
+                tbmq_pc_addon_dev_qa: tbmqPcState.addons.devQa.enabled,
+                tbmq_pc_addon_dev_qa_instances: tbmqPcState.addons.devQa.instances,
+                tbmq_pc_addon_network: tbmqPcState.addons.networkTraffic.enabled,
+                tbmq_pc_addon_network_extra_gb: tbmqPcState.addons.networkTraffic.extraGb
+            });
+        }, 3000);
+    };
+
+    const tbmqPcReset = () => {
+        tbmqPcState = {
+            clipboardMessage: '',
+            debounceTimer: null,
+            isAdvancedMode: false,
+            billingPeriod: 'monthly',
+            sessions: 5000,
+            throughput: 1000,
+            addons: {
+                multiAz: false,
+                devQa: { enabled: false, instances: 1 },
+                networkTraffic: { enabled: false, extraGb: 1 }
+            }
+        };
+
+        tbmqPcUi.inputs.sessions.value = 5000;
+        tbmqPcUi.inputs.sessionsSlider.value = 5000;
+        tbmqPcUi.inputs.throughput.value = 1000;
+        tbmqPcUi.inputs.throughputSlider.value = 1000;
+        tbmqPcUi.inputs.devInstances.value = 1;
+        tbmqPcUi.inputs.networkTraffic.value = 1;
+
+        tbmqPcUi.toggles.multiAz.checked = false;
+        tbmqPcUi.toggles.devQa.checked = false;
+        tbmqPcUi.toggles.networkTraffic.checked = false;
+
+        tbmqPcUi.cards.multiAz.classList.remove('active');
+        tbmqPcUi.cards.devQa.classList.remove('active');
+        tbmqPcUi.cards.networkTraffic.classList.remove('active');
+
+        tbmqPcUi.cards.devQa.querySelector('[data-addon-counter="devQa"]').classList.add('hidden');
+        tbmqPcUi.cards.networkTraffic.querySelector('[data-addon-counter="networkTraffic"]').classList.add('hidden');
+        tbmqPcUi.cards.networkTraffic.classList.add('hidden');
+
+        tbmqPcUi.modeTabs.forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.mode === 'basic');
+        });
+
+        sliderProgress(tbmqPcUi.inputs.sessionsSlider);
+        sliderProgress(tbmqPcUi.inputs.throughputSlider);
+
+        tbmqPcCalculate();
+        tbmqPcDebouncedGTM();
+    };
+
+    const tbmqPcInit = () => {
+        if (!tbmqPcUi.calculator) return;
+
+        setTimeout(() => {
+            tbmqPcInitTicks();
+            sliderProgress(tbmqPcUi.inputs.sessionsSlider);
+            sliderProgress(tbmqPcUi.inputs.throughputSlider);
+            tbmqPcCalculate();
+        }, 100);
+
+        tbmqPcUi.resetBtn.addEventListener('click', tbmqPcReset);
+
+        tbmqPcUi.modeTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tbmqPcToggleAdvancedMode(tab.dataset.mode === 'advanced');
+            });
+        });
+
+        const onSessionsInput = (val) => {
+            let calcVal = parseInt(val);
+            if(isNaN(calcVal)) calcVal = TBMQ_PC_SESSIONS_MIN;
+
+            tbmqPcState.sessions = Math.max(TBMQ_PC_SESSIONS_MIN, calcVal);
+
+            tbmqPcUi.inputs.sessionsSlider.value = Math.min(tbmqPcSessionsRealToSlider(tbmqPcState.sessions), TBMQ_PC_SESSIONS_SLIDER_MAX);
+            sliderProgress(tbmqPcUi.inputs.sessionsSlider);
+            tbmqPcCalculate();
+            tbmqPcDebouncedGTM();
+        };
+        const onSessionsBlur = (e) => {
+            let val = parseInt(e.target.value) || TBMQ_PC_SESSIONS_MIN;
+            val = Math.max(TBMQ_PC_SESSIONS_MIN, val);
+            tbmqPcState.sessions = val;
+            e.target.value = val;
+
+            tbmqPcUi.inputs.sessionsSlider.value = Math.min(tbmqPcSessionsRealToSlider(val), TBMQ_PC_SESSIONS_SLIDER_MAX);
+            sliderProgress(tbmqPcUi.inputs.sessionsSlider);
+            tbmqPcCalculate();
+        };
+        tbmqPcUi.inputs.sessions.addEventListener('input', e => onSessionsInput(e.target.value));
+        tbmqPcUi.inputs.sessions.addEventListener('change', onSessionsBlur);
+
+        tbmqPcUi.inputs.sessionsSlider.addEventListener('input', e => {
+            tbmqPcState.sessions = tbmqPcSessionsSliderToReal(parseFloat(e.target.value));
+            tbmqPcUi.inputs.sessions.value = tbmqPcState.sessions;
+            sliderProgress(e.target);
+            tbmqPcCalculate();
+            tbmqPcDebouncedGTM();
+        });
+
+        const onThroughputInput = (val) => {
+            let calcVal = parseInt(val);
+            if(isNaN(calcVal)) calcVal = TBMQ_PC_THROUGHPUT_MIN;
+
+            tbmqPcState.throughput = Math.max(TBMQ_PC_THROUGHPUT_MIN, calcVal);
+
+            tbmqPcUi.inputs.throughputSlider.value = Math.min(tbmqPcThroughputRealToSlider(tbmqPcState.throughput), TBMQ_PC_THROUGHPUT_SLIDER_MAX);
+            sliderProgress(tbmqPcUi.inputs.throughputSlider);
+            tbmqPcCalculate();
+            tbmqPcDebouncedGTM();
+        };
+        const onThroughputBlur = (e) => {
+            let val = parseInt(e.target.value) || TBMQ_PC_THROUGHPUT_MIN;
+            val = Math.max(TBMQ_PC_THROUGHPUT_MIN, val);
+            tbmqPcState.throughput = val;
+            e.target.value = val;
+
+            tbmqPcUi.inputs.throughputSlider.value = Math.min(tbmqPcThroughputRealToSlider(val), TBMQ_PC_THROUGHPUT_SLIDER_MAX);
+            sliderProgress(tbmqPcUi.inputs.throughputSlider);
+            tbmqPcCalculate();
+        };
+        tbmqPcUi.inputs.throughput.addEventListener('input', e => onThroughputInput(e.target.value));
+        tbmqPcUi.inputs.throughput.addEventListener('change', onThroughputBlur);
+
+        tbmqPcUi.inputs.throughputSlider.addEventListener('input', e => {
+            tbmqPcState.throughput = tbmqPcThroughputSliderToReal(parseFloat(e.target.value));
+            tbmqPcUi.inputs.throughput.value = tbmqPcState.throughput;
+            sliderProgress(e.target);
+            tbmqPcCalculate();
+            tbmqPcDebouncedGTM();
+        });
+
+        Object.keys(tbmqPcUi.toggles).forEach(addonName => {
+            tbmqPcUi.toggles[addonName]?.addEventListener('input', e => {
+                tbmqPcHandleAddonToggle(addonName, e.target.checked);
+            });
+        });
+
+        const devQaCounter = tbmqPcUi.cards.devQa.querySelector('[data-addon-counter="devQa"]');
+        devQaCounter?.querySelectorAll('.stepper-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!btn.disabled) tbmqPcHandleCounterChange('devQa', btn.dataset.action, tbmqPcUi.inputs.devInstances);
+            });
+        });
+        tbmqPcUi.inputs.devInstances?.addEventListener('input', e => {
+            let val = parseInt(e.target.value);
+            tbmqPcState.addons.devQa.instances = isNaN(val) ? 1 : Math.max(1, val);
+            tbmqPcUpdateDevQaMinusBtn();
+            tbmqPcCalculate();
+            tbmqPcDebouncedGTM();
+        });
+        tbmqPcUi.inputs.devInstances?.addEventListener('change', e => {
+            let val = Math.max(1, parseInt(e.target.value) || 1);
+            e.target.value = val;
+            tbmqPcState.addons.devQa.instances = val;
+            tbmqPcUpdateDevQaMinusBtn();
+            tbmqPcCalculate();
+            tbmqPcDebouncedGTM();
+        });
+
+        const networkCounter = tbmqPcUi.cards.networkTraffic.querySelector('[data-addon-counter="networkTraffic"]');
+        networkCounter?.querySelectorAll('.stepper-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!btn.disabled) tbmqPcHandleCounterChange('networkTraffic', btn.dataset.action, tbmqPcUi.inputs.networkTraffic);
+            });
+        });
+        tbmqPcUi.inputs.networkTraffic?.addEventListener('input', e => {
+            let val = parseInt(e.target.value);
+            tbmqPcState.addons.networkTraffic.extraGb = isNaN(val) ? 1 : Math.max(1, val);
+            tbmqPcUpdateNetworkMinusBtn();
+            tbmqPcCalculate();
+            tbmqPcDebouncedGTM();
+        });
+        tbmqPcUi.inputs.networkTraffic?.addEventListener('change', e => {
+            let val = Math.max(1, parseInt(e.target.value) || 1);
+            e.target.value = val;
+            tbmqPcState.addons.networkTraffic.extraGb = val;
+            tbmqPcUpdateNetworkMinusBtn();
+            tbmqPcCalculate();
+            tbmqPcDebouncedGTM();
+        });
+
+        window.addEventListener('resize', tbmqPcInitTicks);
+    };
+
+    tbmqPcInit();
+</script>

@@ -29,6 +29,8 @@ Explore a hands-on video course that provides detailed explanations on how to cr
     </div>
 </div>
 
+<hr>
+
 ## How to add, edit, and delete device
 
 Tenant administrators and users with appropriate permissions can create, edit, or delete devices in ThingsBoard.
@@ -60,6 +62,8 @@ You&#39;ll also receive a [notification](/docs/{{docsPrefix}}user-guide/notifica
 
 {% include images-gallery.html imageCollection="add-device-notification" %}
 
+<hr>
+
 {% unless docsPrefix == null %}
 <br>
 ### Creating device group
@@ -69,6 +73,8 @@ Devices can belong to one or multiple [groups](/docs/{{docsPrefix}}user-guide/gr
 To create a new device group:
 
 {% include images-gallery.html imageCollection="add-device-group-pe" showListImageTitles="true" %}
+
+<hr>
 
 ### Managing device groups. How to add, move, remove.
 
@@ -120,7 +126,9 @@ This action removes devices from the current group and adds them to the selected
 You can change the device name, its device profile, label, assign the firmware and software.
 To edit the device, you need to:
 
-{% include images-gallery.html imageCollection="device-details" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="editing-device" showListImageTitles="true" %}
+
+<hr>
 
 ### Deleting device
 
@@ -147,6 +155,8 @@ If successful, the device status will change from "**Inactive**" to "**Active**"
 
 {% include images-gallery.html imageCollection="check-connectivity" %}
 
+<hr>
+
 ## Manage device credentials
 
 Supported credential types:
@@ -158,6 +168,8 @@ Supported credential types:
 To change or manage credentials:
 
 {% include images-gallery.html imageCollection="manage-device-credentials" showListImageTitles="true" %}
+
+<hr>
 
 {% if docsPrefix == null %}
 ## Make device public
@@ -171,6 +183,8 @@ To make the device private again, follow these steps:
 {% include images-gallery.html imageCollection="make-device-private" showListImageTitles="true" %}
 
 > Once the device is made private, it will no longer be publicly accessible, and any **public [dashboards](/docs/user-guide/dashboards/){:target="_blank"}** referencing it will lose access to its data.
+
+<hr>
 
 ## Assign device to customer
 
@@ -204,6 +218,8 @@ To do this:
 
 A Tenant Administrator always has the right to reassign or revoke device ownership.
 
+<hr>
+
 ### Include customer entities
 
 On the "<b>Devices</b>" page there is an option "<b>Include customer entities</b>", which defines whether the list will display devices that belong to your customers.
@@ -216,6 +232,8 @@ You can share devices by adding them to a device group and then sharing the grou
 For detailed instructions, please see the section on how to [Share device group](#share-device-group).
 
 {% endif %}
+
+<hr>
 
 {% unless docsPrefix == null %}
 
@@ -277,77 +295,58 @@ After a device group has been shared, you can view, edit, or revoke permissions 
 
 Clicking on the device opens a window where you can access and manage various aspects of that device.
 
-### Copy device Id
+{% include images-gallery.html imageCollection="device-details-page" %}
 
-To retrieve the device&#39;s unique identifier in ThingsBoard:
-- Open the device&#39;s detail page by clicking on the device name in the list.
-- Click the "**Copy device Id**" button.
+<b><font size="3">Copy device ID</font></b>   
+Allows you to quickly retrieve the device&#39;s unique UUID. Click Copy device Id to copy it to your clipboard. The ID is used in API calls, integrations, and scripts.
 
-This will copy the Device ID (UUID) to your clipboard for use in scripts, API calls, or [integrations](/docs/{{docsPrefix}}user-guide/integrations/){:target="_blank"}.
+<b><font size="3">Copy device credentials</font></b>   
+Depending on the authentication type, you can copy:
+- **Access Token**
+- **MQTT Credentials**
 
-{% include images-gallery.html imageCollection="copy-device-id" %}
+Click the corresponding button to instantly obtain the credentials required for connecting the device to ThingsBoard.
 
-### Copy device credentials
+<b><font size="3">Attributes</font></b>   
 
-Depending on the [credentials type](#manage-device-credentials) in use, you can copy:
-- Access Token — by clicking "**Copy access token**"
-- MQTT Credentials — by clicking "**Copy MQTT credentials**"
+This tab displays client, server, and shared [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} — static or semi-static key-value pairs associated with the device. Typical examples include serial number, model, and firmware version.
 
-These credentials are required to authenticate your device when sending data or connecting via API.
+<b><font size="3">Latest telemetry</font></b>   
 
-{% include images-gallery.html imageCollection="copy-access-token" %}
+Shows the [latest telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} values sent by the device, including sensor readings, status updates, and other real-time parameters.
+- **Adding telemetry:** Click the "**+**" icon, enter the key name, value type, and value.
+- **Deleting telemetry:** Click the trash icon, choose the deletion mode (all data, latest value, all except latest, or by time period), and confirm the action.
 
-### Device attributes
+<b><font size="3">Calculated fields</font></b>   
+Displays fields whose values are computed from existing attributes or telemetry using formulas. This allows you to define derived parameters without modifying the device firmware. Learn more about Calculated fields [here](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"}.
 
-This tab displays the client, server, and shared attributes of the device. For example, serial number, model, and firmware version.
-[Attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} are static and semi-static key-value pairs associated with devices.
+<b><font size="3">Alarm rules</font></b>   
+Contains the rules that define how alarms are generated for the device. You can review conditions, thresholds, triggers, and configured alarm actions. Learn more about configuring alarm rules [here](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"}.
 
-{% include images-gallery.html imageCollection="attributes" %}
+<b><font size="3">Alarms</font></b>    
+Shows all active and historical [alarms](/docs/{{docsPrefix}}user-guide/alarms/){:target="_blank"} related to the device. Helps monitor device health, track warnings, and identify critical events.
 
-### Device telemetry
+<b><font size="3">Events</font></b>   
+Displays system events associated with the device, including logs, warnings, errors, and other lifecycle-related records. Useful for diagnostics and activity tracking.
 
-This tab shows the real-time telemetry data the device sends, such as sensor readings, status, and other measurable variables.
-[Time-series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} data points are available for storage, querying, and visualization. For example, temperature, humidity, and battery level.
+<b><font size="3">Relations</font></b>   
+Shows all directed [relations](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations){:target="_blank"} between this device and other entities, such as assets, devices, dashboards, and rule chains. Provides context on how the device fits into the overall system.
 
-{% include images-gallery.html imageCollection="telemetry" %}
+<b><font size="3">Audit logs</font></b>   
+Provides a record of user actions related to the device — creation, updates, configuration changes, and deletions. Useful for security auditing and traceability.
 
-**Adding telemetry.**
-You can manually add telemetry using the ThingsBoard UI. To do this, click the "plus" icon in the top right corner of the window. In the new window, enter the key name, select the value type, and enter the value.
+<b><font size="3">Version control</font></b>   
+Enables exporting and restoring ThingsBoard entities using the built-in Git-based [version control](/docs/{{docsPrefix}}user-guide/version-control/){:target="_blank"} service. Supports backup, collaboration, and configuration version management.
 
-{% include images-gallery.html imageCollection="telemetry-add-manually" %}
+<hr>
 
-**Deleting telemetry.**
-To delete telemetry, click the "trash can" icon next to the name of the telemetry key you want to delete. Choose what you want to delete specifically: delete all data, delete all data except latest value, delete latest value, delete all data for time period. Confirm the deletion by clicking the "Apply" button.
+## Next steps
 
-{% include images-gallery.html imageCollection="telemetry-delete" %}
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}
 
-### Device alarms
+<hr>
 
-This tab shows [alarms](/docs/{{docsPrefix}}user-guide/alarms/){:target="_blank"} that identify issues with your devices.
+## Your feedback
 
-{% include images-gallery.html imageCollection="alarms" %}
-
-### Device events
-
-Here, events related to the device are displayed, including system logs, errors, warnings, and other important moments in the device's lifecycle.
-
-{% include images-gallery.html imageCollection="events" %}
-
-### Device relations
-
-[Relations](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations){:target="_blank"} are directed connections to other entities. This tab displays the relationships of this device with other devices, dashboards, assets, and other entities in the ThingsBoard system.
-
-{% include images-gallery.html imageCollection="relations" %}
-
-### Device audit logs
-
-ThingsBoard provides the ability to track user actions in order to keep an audit log.
-It is possible to log user actions related to main entities: assets, devices, dashboard, rules, etc.
-
-{% include images-gallery.html imageCollection="audit-logs" %}
-
-### Version control
-
-ThingsBoard [version control](/docs/{{docsPrefix}}user-guide/version-control/){:target="_blank"} service provides the ability to export and restore ThingsBoard Entities using Git.
-
-{% include images-gallery.html imageCollection="version-control" %}
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

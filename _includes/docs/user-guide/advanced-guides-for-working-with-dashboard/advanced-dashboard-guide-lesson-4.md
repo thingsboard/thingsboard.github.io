@@ -1,212 +1,218 @@
 * TOC
 {:toc}
 
-We continue to develop our dashboard. In the previous lesson, we added and configured separate states for each device and configured them to display telemetry data. 
-We recommend reviewing it if you haven't done so yet.
+We continue developing our dashboard. In the previous lesson, we added and configured separate states for each device and configured them to display telemetry data.
+
+If you have not completed the previous lesson yet, we strongly recommend reviewing it before proceeding.
 
 <br>
 <p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/" class="button">Lesson 3: Adding and configuring individual states for each device</a></p>
 
 <br>
 
-In this lesson, we will talk about alarms.
+In this lesson, we focus on configuring alarm rules and visualizing alarms on the dashboard.   
+Specifically, we will:
+- Configure alarm rules for the Indoor Air Quality Sensor that generate alarms when temperature or humidity thresholds are violated, or when CO₂ levels exceed the defined limits.
+- Add dashboard widgets for monitoring active alarms.
+- Test alarm triggering, acknowledgment, and clearing.
 
-**An alarm** is a notification generated when a predefined condition or rule is met. Alarms are associated with entities such as devices, assets, customers, and others.
-
-Alarms in ThingsBoard are a powerful mechanism to monitor and react to critical events and conditions occurring in your IoT ecosystem. 
-An alarm represents a significant state or condition that requires attention, such as a device malfunction, a breach of predefined thresholds, or unexpected behavior in your system. 
-Understanding and effectively utilizing alarms is key to maintaining the health, performance, and security of your IoT infrastructure.
-
-**Core Concepts of Alarms in ThingsBoard:**
-
-- **Severity Levels**: Alarms are categorized by severity levels, which include Critical, Major, Minor, Warning, and Indeterminate. This categorization helps prioritize responses.
-
-- **Lifecycle States**: Each alarm has a lifecycle consisting of states such as Active, Cleared, and Acknowledged. The state transitions allow effective tracking and resolution.
-
-- **Rule-Based Triggers**: Alarms are triggered by rules defined in device profiles or rule chains. These rules evaluate incoming telemetry data, attribute changes, or other events.
-
-- **Visualization and Management**: ThingsBoard provides a centralized interface to view, filter, and manage alarms. This includes tools for real-time monitoring and historical analysis.
-
-By implementing alarms, you can automate responses to predefined conditions, improve operational efficiency, and ensure system reliability.
-
-<br>
-As you may recall, the **Indoor Air Quality Sensor** transmits telemetry values such as temperature, humidity, and CO2 levels to ThingsBoard.
-In this lesson, we will configure alarm rules for the Indoor Air Quality Sensor and add a widget to manage the device&#39;s alarms. Let&#39;s start.
+Let&#39;s get started.
 
 {% include default-carousel.liquid collectionMap = 'dashboard-lesson-4' nonActiveItemsVisibility = false %}
 
+<hr>
+
+An **alarm** is a notification generated when critical conditions defined in **alarm rules** are detected in your IoT system.
+
+For more information on [working with alarms](/docs/pe/user-guide/alarms/){:target="_blank"} and [configuring alarm rules](/docs/pe/user-guide/alarm-rules/){:target="_blank"}, refer to the relevant documentation.
+
 ## Adding alarm rules
 
-First, you need to define the rules that will trigger the alarm. The simplest way to create the alarm rule is to configure it within the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}. These rules specify the conditions under which reminders should be generated.
+The **Indoor Air Quality** sensor device that sends telemetry data such as temperature, humidity, and CO₂ levels to ThingsBoard uses the **air-sensor** device profile. 
 
-### Rules for devices that use the air-sensor device profile
-
-Devices using the **air-sensor** device profile transmit telemetry data such as temperature, humidity, and CO2 levels. 
-Let&#39;s configure alarm rules for each of these telemetry keys:
+Configure alarm rules for this profile to ensure they are applied to all sensors using the profile.
 
 #### High temperature alarm rule
 
-We will set two conditions for creating a high temperature alarm for the "temperature" key, and one condition for clear alarm:
+First, configure an alarm rule with the **High temperature** type using the following conditions:
+- If the temperature exceeds **24 °C** but does not exceed **26 °C** (inclusive), a **Major** severity alarm is created.
+- If the temperature exceeds **26 °C**, a **Critical** severity alarm is created.
+- If the temperature drops below **24 °C**, the alarm is automatically **cleared**.
 
-- An alarm with the severity type "Major" will be created if the temperature exceeds 24 °C but does not go above 26 °C (inclusive);
-- If the temperature exceeds 26 °C, an alarm with the severity type "Critical" will be created; 
-- When the temperature drops below 24 °C, the alarm will be cleared.
+<b><font size="4">1. Create new alarm rule</font></b>
 
-Let&#39;s start with adding the alarm rule condition with "Major" severity type:
+- Go to the **Alarm rules** tab of the **Alarms** page.
+- Click the "**+**" button in the top-right corner and select **Create new alarm rule**.
 
-- Go to the "Device profiles" page and click on the "air-sensor" device profile to open its details;
-- Navigate to the "Alarm rules" tab;
-- Enter editing mode by clicking the big orange pencil button, and click the "Add alarm rule" button;
-- Input the "High temperature alarm" as alarm type;
-- Check the "Propagate alarm to related entities" option in the advanced settings to propagate the alarm to all related entities.
-- Select "Major" severity, and click on the red "+" sign;
+{% include images-gallery.html imageCollection="high-temperature-alarm-rule-1" %} 
 
-{% include images-gallery.html imageCollection="major-high-temperature-alarm-rule" %} 
+<br><b><font size="4">2. Configure the General parameters</font></b>
 
-- Add alarm rule condition:
-  - Click the "Add key filter" button;
-  - In the opened window, click the "Add key filter" button;
-  - Set the following: 
-    - Key type: "Time series";
-    - Key name: "temperature";
-    - Value type: "Numeric";
-    - Click the "Add" button in the "Filters" section. Define conditions:
-      - For the first condition, select the "greater than" operation from the drop-down menu and input `24` as the threshold value. Click "Add";
-      - For the second condition, select the "less or equal" operation and input `26` as the threshold value. Click "Add" to confirm adding the key filter.
-  - Click the "Save" button to apply the alarm condition.
+In the **General** section, specify the following settings:
+- **Alarm type**: High temperature
+- **Entity type**: Device profile
+- **Device profile**: air-sensor
 
-Now, when the temperature value is between `24` °C  and `26` °C (inclusive), an alarm with the severity type "Major" will be created.
+{% include images-gallery.html imageCollection="high-temperature-alarm-rule-2" %}
 
-{% include images-gallery.html imageCollection="major-high-temperature-alarm-rule-2" %}
+<b><font size="4">3. Add an argument</font></b>
+
+Add an **argument** — the variable whose data will be used in the rule condition.
+
+In the **Arguments** section:
+- Click **Add argument** and fill in:
+  - **Entity type:** Current entity
+  - **Argument type:** Latest telemetry
+  - **Time series key:** <span class="code-light">temperature</span>
+  - **Argument name:** temperature
+- Click **Add**.
+
+{% include images-gallery.html imageCollection="high-temperature-alarm-rule-3" %}
+
+<br><b><font size="4">4. Add "Critical" trigger condition</font></b>
+
+Add an alarm trigger condition with **"Critical" severity** that is activated when the temperature exceeds **26 °C**.
+
+In the **Create condition** section, click **Add create condition**.
+
+- **Severity:** *Critical*
+- **Condition**
+  - Click **Add condition**.
+  - In the configuration window, click **Add argument filter** and specify:
+    - **General** block:
+      - **Argument:** temperature (the argument added earlier)
+      - **Value type:** *Numeric*
+    - **Filters** block:
+      - Click **Add** filter:
+        - **Operation:** *greater than*
+        - **Value source:** Static
+        - **Value:** 26
+    - Click **Add**.
+  - Click **Save**.
+
+{% include images-gallery.html imageCollection="high-temperature-alarm-rule-4" %}
+
+<br><b><font size="4">5. Add "Major" trigger condition</font></b>
+
+Add an alarm trigger condition with **"Major" severity** that is activated when the temperature is between **24 °C** and **26 °C**, inclusive.
+
+Click **Add create condition**.
+- **Severity:** *Major*
+- **Condition**
+  - Click **Add condition**.
+  - In the configuration window, click **Add argument filter** and specify:
+    - **General** block:
+      - **Argument:** temperature
+      - **Value type:** *Numeric*
+    - **Filters** block:
+      - Click **Add** filter:
+        - **Operation:** *greater than*
+        - **Value source:** Static
+        - **Value:** 24
+      - Add another condition. Click **Add**
+        - **Operation:** *less or equal*
+        - **Value source:** Static
+        - **Value:** 26
+    - Click **Add**.
+  - Click **Save**.
+
+{% include images-gallery.html imageCollection="high-temperature-alarm-rule-5" %}
+
+<br><b><font size="4">6. Add alarm clearing condition</font></b>
+
+Add an automatic alarm clear condition that is triggered when the temperature drops below **24 °C**.
+
+Click **Add clearing condition**.
+- **Severity:** *Major*
+- **Condition**
+  - Click **Add clearing condition**.
+  - In the configuration window, click **Add argument filter** and specify:
+    - **General** block:
+      - **Argument:** temperature
+      - **Value type:** *Numeric*
+    - **Filters** block:
+      - Click **Add**:
+        - **Operation:** *less or equal*
+        - **Value source:** Static
+        - **Value:** 24
+    - Click **Add**.
+  - Click **Save**.
+
+{% include images-gallery.html imageCollection="high-temperature-alarm-rule-6" %}
+
+<br><b><font size="4">7. Propagate alarm to related entities and save the rule</font></b>
+
+- Enable **Propagate alarm to related entities** in the advanced settings to automatically propagate the alarm to the asset and then to the building linked to this device.   
+Set **Relation type** to "Contains".
+- Click **Add** to save the rule configuration.
+
+The **High temperature** alarm rule will be created and activated.
+
+{% include images-gallery.html imageCollection="high-temperature-alarm-rule-7" %}
+
+> You can download a [JSON configuration file containing predefined high-temperature alarm rules](/docs/user-guide/resources/alarm-rules/high_temperature_alarm_rule.json){:target="_blank" download="high_temperature_alarm_rule.json"} and [import](/docs/pe/user-guide/alarm-rules/#import-alarm-rule){:target="_blank"} it into your ThingsBoard instance.
+
+### Creating additional alarm rules
+
+Using the same approach, configure the remaining alarm rules on your own.
+
+> ⚠️ Alternatively, you can download the preconfigured alarm rule configurations and [import](/docs/pe/user-guide/alarm-rules/#import-alarm-rule){:target="_blank"} them into your ThingsBoard instance.   
+Make sure to set the **"air-sensor" device profile** as the target entity of the alarm rule.
+
+{% include images-gallery.html imageCollection="all-alarms-rules" %}
+
+<b><font size="4">Low temperature</font></b>
+
+[Click to download the "Low temperature" alarm rule configuration (JSON)](/docs/user-guide/resources/alarm-rules/low_temperature_alarm_rule.json){:target="_blank" download="low_temperature_alarm_rule.json"}.
+
+**Configuration:**   
+&#8211; **Alarm creation:**   
+&#8195;&#8211; If the temperature drops below **20 °C** but not below **18 °C** (inclusive), an alarm of the severity type **"Major"** will be created.   
+&#8195;&#8211; If the temperature drops below **18 °C**, an alarm of the severity type **"Critical"** will be created.   
+&#8211; **Alarm clearing:**   
+&#8195;&#8211; When the temperature rises above **20 °C**, the alarm will be cleared.
+
+<b><font size="4">High humidity</font></b>
+
+[Click to download the "High humidity" alarm rule configuration (JSON)](/docs/user-guide/resources/alarm-rules/high_humidity_alarm_rule.json){:target="_blank" download="high_humidity_alarm_rule.json"}.
+
+**Configuration:**   
+&#8211; **Alarm creation:**   
+&#8195;&#8211; An alarm with severity type **"Major"** will be created if humidity rises above **60 %** but does not exceed **65 %** (inclusive).   
+&#8195;&#8211; An alarm with severity type **"Critical"** will be created if humidity exceeds **65 %**.   
+&#8211; **Alarm clearing:**   
+&#8195;&#8211; The alarm will clear when humidity drops below **60 %**.
+
+<b><font size="4">Low humidity</font></b>
+
+[Click to download the "Low humidity" alarm rule configuration (JSON)](/docs/user-guide/resources/alarm-rules/low_humidity_alarm_rule.json){:target="_blank" download="low_humidity_alarm_rule.json"}.
+
+**Configuration:**   
+&#8211; **Alarm creation:**   
+&#8195;&#8211; An alarm with severity type **"Major"** will be created if humidity drops below **40 %** but does not fall below **35 %** (inclusive).   
+&#8195;&#8211; An alarm with severity type **"Critical"** will be created if humidity drops below **35 %**.   
+&#8211; **Alarm clearing:**   
+&#8195;&#8211; The alarm will clear when humidity rises above **40 %**.
+
+<b><font size="4">High CO₂ levels</font></b>
+
+[Click to download the "High CO₂" alarm rule configuration (JSON)](/docs/user-guide/resources/alarm-rules/high_co₂_alarm_rule.json){:target="_blank" download="high_co₂_alarm_rule.json"}.
+
+**Configuration:**   
+&#8211; **Alarm creation:**   
+&#8195;&#8211; If the CO₂ level is equal to or exceeds **490 ppm**  but does not exceed **500 ppm**, the alarm with severity type **"Major"** will be created.   
+&#8195;&#8211; If the CO₂ level exceeds **500 ppm**, the alarm with severity type **"Critical"** will be triggered.   
+&#8211; **Alarm clearing:**   
+&#8195;&#8211; The alarm will be cleared when the CO₂ level drops below **490 ppm**.
 
 <br>
-Add one more alarm rule condition with severity type "Critical":
 
-- Click the "Add create condition" button;
-- Select "Critical" severity, and click on the red "+" sign;
-- Click the "Add key filter" button;
-- Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
-- Select the "greater than" operation from drop-down menu, and input `26` as the threshold value. Click "Add" to confirm adding key filter;
-- Click the "Save" button to apply the alarm condition.
+Configuring alarm rules for the **Energy Meter** and **Water Flow Meter** devices is slightly more complex. This is because the alarm must be triggered not by a single value, but by the hourly sum of telemetry values. 
+To achieve this, we will use [Calculated fields](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"} feature for additional calculations. Alarm rule configuration for these devices is covered in the next lessons.
 
-An alarm with the type "Critical" will be created if the temperature exceeds `26` °C.
-
-{% include images-gallery.html imageCollection="critical-high-temperature-alarm-rule" %}
-
-<br>
-Now, add the condition to clear the alarm:
-
-- Click the "Add clear condition" button;
-- Click on the red "+" sign;
-- Click the "Add key filter" button;
-- Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
-- Select the "less or equal" operation from drop-down menu, and input `24` as the threshold value. Click "Add" to confirm adding key filter;
-- Click the "Save" button to apply the alarm condition;
-- Finally, apply changes.
-
-The alarm will be automatically cleared when the temperature drops below `24` °C.
-
-{% include images-gallery.html imageCollection="high-temperature-clear-alarm-rule" %}
-
-Finally, the configured rule for creating a high-temperature alarm and the condition for clearing it will look as follows:
-
-{% include images-gallery.html imageCollection="final-high-temperature-alarm-rules" %}
-
-<br>
-
-**Now, drawing on your previous experience, you can independently configure the alarm rules for low temperature, high and low humidity, and high CO2 levels. Go ahead!**
-
-#### Low temperature alarm rule
-
-Set the following rules for creating and clearing a low air temperature alarm:
-
-Alarm creation:
-
-- If the temperature drops below `20` °C but not below `18` °C (inclusive), an alarm of the severity type "Major" will be created;
-- If the temperature drops below `18` °C, an alarm of the severity type "Critical" will be created.
-
-Alarm clearing:
-
-- When the temperature rises above `20` °C, the alarm will be cleared.
-
-{% include images-gallery.html imageCollection="final-low-temperature-alarm-rules" %}
-
-<br>
-**Rules for creating and clearing high and low humidity alarms**
-
-For the telemetry key "humidity", we will define two conditions for triggering a high humidity alarm and one condition for clearing the alarm:
-
-#### High humidity alarm rule
-
-Alarm creation:
-
-- An alarm with severity type "Major" will be created if humidity rises above `60` % but does not exceed `65` % (inclusive).
-- An alarm with severity type "Critical" will be created if humidity exceeds `65` %.
-
-Alarm clearing:
-
-- The alarm will clear when humidity drops below `60` %.
-
-{% include images-gallery.html imageCollection="final-high-humidity-alarm-rules" %}
-
-#### Low humidity alarm rule
-
-Alarm creation:
-
-- An alarm with severity type "Major" will be created if humidity drops below `40` % but does not fall below `35` % (inclusive).
-- An alarm with severity type "Critical" will be created if humidity drops below `35` %.
-
-Alarm clearing:
-
-- The alarm will clear when humidity rises above `40` %.
-
-{% include images-gallery.html imageCollection="final-low-humidity-alarm-rules" %}
-
-#### High CO2 alarm rule
-
-Finally, for the telemetry key "co2", we will define the following conditions for creating and clearing alarms:
-
-Alarm creation:
-
-- If the CO2 level is equal to or exceeds `490` ppm  but does not exceed `500` ppm, the alarm with severity type "Major" will be created.
-- If the CO2 level exceeds `500` ppm, the alarm with severity type "Critical" will be triggered.
-
-Alarm clearing:
-
-- The alarm will be cleared when the CO2 level drops below `490` ppm.
-
-{% include images-gallery.html imageCollection="final-co2-alarm-rules" %}
-
-<br>
 Now that we have defined all the alarm rules for the **air-sensor** device profile, the next step is to add a widget to manage the alarms.
 
-<br>
-
-**Import device profile**
-
-If, for any reason, you were unable to configure the rules mentioned above, you can [download the air-sensor device profile with pre-configured alarm rules](/docs/user-guide/advanced-guides-for-working-with-dashboard/files-from-tutorial/air_sensor_imported.json){:target="_blank"} and import it into your ThingsBoard instance.
-
-{% capture difference %}
-**Important!** If you choose to import the device profile, you will need to assign the new device profile **air-sensor(imported)** to all devices currently using the **air-sensor** device profile, specifically the **Indoor Air Quality Sensor** and **IAQ Sensor**.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
-## Customizing rule chain
-
-As you may recall, [we created a separate rule chain](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/#simulation-of-the-devices-telemetry-data){:target="_blank"} where telemetry for our devices is generated by generator nodes and directly stored in the database.
-However, for the reminder rules configured in the device profiles to work, messages from the generator nodes must pass through the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/#device-profile-rule-node){:target="_blank"} node before being stored in the database.
-The device profile rule node processes all incoming messages and reacts to the telemetry values.   
-Therefore, we need to add the device profile node in the [Device Telemetry Emulators rule chain](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/#simulation-of-the-devices-telemetry-data){:target="_blank"} before the "save timeseries" node.
-
-- Go to the "Rule chains" page, and open the "Device Telemetry Emulators" rule chain;
-- Remove all links from the "generator" nodes to the "save telemetry" node;
-- Find the "device profile" node in the node library, and drag it into the rule chain canvas;
-- Node configuration window will be opened. Name it "Device profile node", and click "Add";
-- Link the "generator" nodes to the "device profile" node. Select the "Success" link for these connections;
-- Connect the "device profile" node to the "save timeseries" node. Again, select the "Success" link;
-- Afterwards, save rule chain.
-
-{% include images-gallery.html imageCollection="customizing-rule-chain-1" %}
+<hr>
 
 ## Adding alarms table widget
 
@@ -224,11 +230,13 @@ A fully configured **air_sensor** state should look like this:
 <br>
 Now that the alarm rules have been defined and the widget for displaying active alarms has been added, let&#39;s test its functionality by sending telemetry values that exceed the threshold specified in the alarm rule.
 
+<hr>
+
 ## Alarm trigger testing
 
 To test the alarm triggering, it is not necessary to wait for the generator node to produce telemetry values exceeding the threshold. 
 We can manually send telemetry with a value that exceeds the threshold specified in the alarm rule. 
-As you may recall, if the temperature value exceeds 24°C, an alarm with a severity type of "Major" is triggered.
+As you may recall, if the temperature value exceeds 24 °C, an alarm with a severity type of "Major" is triggered.
 
 {% include images-gallery.html imageCollection="alarm-send-telemetry-1" showListImageTitles="true" %}
 
@@ -256,6 +264,8 @@ To clear an alarm, click the "Clear" icon next to the alarm event and confirm th
 
 {% include images-gallery.html imageCollection="clear-alarm-1" %}
 
+<hr>
+
 ## Adding alarm widget to all other states
 
 Next, we will add the alarm widget to each state of the dashboard to monitor alarms that appear on your device at any level of the dashboard.
@@ -282,6 +292,8 @@ Now, as you can see, the widget displays the alarms of the devices that have a r
 
 {% include images-gallery.html imageCollection="final-office-state-1" %}
 
+<hr>
+
 ### Adding alarm widget to building state
 
 Similar to the previous steps, we will add an alarm widget to the **building** state. This widget will display alarms from all devices associated with the selected building. We will also add this widget using the copy method.
@@ -291,6 +303,8 @@ Similar to the previous steps, we will add an alarm widget to the **building** s
 The alarm widget displays the alarms of the devices related to the selected building.
 
 {% include images-gallery.html imageCollection="add-alarm-widget-to-building-a-state-2" %}
+
+<hr>
 
 ### Adding alarm widget to buildings (default) state
 
@@ -302,16 +316,13 @@ Now, if there are alarms on your devices, they will be displayed in the alarms w
 
 {% include images-gallery.html imageCollection="add-alarm-widget-to-buildings-state-2" %}
 
-## Final view of the dashboard for this lesson
+<hr>
 
-Finally, your dashboard should look like this:
+## Final view of the dashboard for this lesson
 
 {% include images-gallery.html imageCollection="dashboard-final-lesson-4" %}
 
-The configuration of alarm creation rules for the Energy Meter and Water Flow Meter devices is slightly more complex. 
-This is because the alarm should not be triggered by a single value but by the sum of telemetry values over an hour. 
-To achieve this, we will use the [rule engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/){:target="_blank"} for additional calculations. 
-The configuration of alarm creation rules for these devices will be covered in the following lessons.
+<hr>
 
 ## Next step
 

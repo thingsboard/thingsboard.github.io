@@ -185,7 +185,7 @@ More details about the used products are available on their pages and manuals th
 Please feel free to get in touch with Decode Team if you have any additional questions.
 ## See also
 
-Browse other [samples](/docs/devices-library/) or explore guides related to main ThingsBoard features:
+Browse other [samples](/device-library/) or explore guides related to main ThingsBoard features:
 
  - [Device attributes](/docs/{{docsPrefix}}user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/{{docsPrefix}}user-guide/telemetry/) - how to collect telemetry data.

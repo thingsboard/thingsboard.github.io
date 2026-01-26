@@ -202,6 +202,16 @@ analyze time patterns, and explore general telemetry behavior. It also enables t
 ones using **AI Assistance** or **AI Suggestions**. All generated metrics can be fully integrated into the Trendz ecosystem 
 and used within **ThingsBoard**.
 
+You can find details how to use Trendz Analytics to explore metrics here:
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/r2pqMzdXEHE" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+## Interface
+ 
 You can access the Metric Explorer by clicking the ![image](/images/trendz/metric/overview/chart-icon-without-preview.svg) icon.
 
 The interface consists of three main sections:

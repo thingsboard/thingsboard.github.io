@@ -18,8 +18,8 @@ echo "You have selected project: $GCP_PROJECT, region: $GCP_REGION, gcp zones: $
 
 where:
 
-* first line uses gcloud command to fetch your current GCP project id. We will refer to it later in this guide using **$GCP_PROJECT**;
+* the first line uses gcloud command to fetch your current GCP project id. We will refer to it later in this guide using **$GCP_PROJECT**;
 * *us-central1* is one of the available compute [regions](https://cloud.google.com/compute/docs/regions-zones#available). We will refer to it later in this guide using **$GCP_REGION**;
 * *default* is a default GCP network name; We will refer to it later in this guide using **$GCP_NETWORK**;
 * *{{tbClusterName}}* is the name of your cluster. You may input a different name. We will refer to it later in this guide using **$TB_CLUSTER_NAME**;
-* *{{tbDbClusterName}}* is the name of your database server. You may input a different name. We will refer to it later in this guide using **$TB_DATABASE_NAME**;
+* *{{tbDbClusterName}}* is the name of your database server. You may input a different name. We will refer to it later in this guide using **$TB_DATABASE_NAME**.

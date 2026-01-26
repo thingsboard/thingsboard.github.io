@@ -131,43 +131,46 @@ step34:
 
 step4:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
-        title: 'Go to the "Device profiles" page of the "Profiles" section. Then click on the default device profile row to open its details;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-1-ce.png
+        title: 'Go to the <b>Devices</b> page in the <b>Entities</b> section.<br>Click <b>My New Device</b> to open its details, and navigate to the <b>Alarm rules</b> tab.<br>Click the "<b>+</b>" button, and select <b>Create new alarm rule</b>.'
     1:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-3-ce.png
-        title: 'Navigate to the "Alarm rules" tab and click "pencil" button to enter edit mode;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
+        title: 'In the <b>General</b> section, specify the <b>alarm type</b> — <i>High temperature</i> (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.'
     2:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-4-ce.png
-        title: 'Click "Add alarm rule" button;' 
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-3-ce.png
+        title: 'Add the argument — the data source that the rule will use when evaluating the conditions.'
     3:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-5-ce.png
-        title: 'Specify alarm type and click the "+" icon to add alarm rule condition;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-4-ce.png
+        title: 'Click <b>Add trigger condition</b>.'
     4:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-6-ce.png
-        title: 'Click the "Add key filter" button to specify a condition;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-5-ce.png
+        title: 'Keep the <b>Critical</b> severity level and click <b>Add condition</b>.'
     5:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-7-ce.png
-        title: 'Select a key type, enter a key name, and select a value type. Then, click "Add" button in the "Filters" section;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-6-ce.png
+        title: 'Click the <b>Add argument filter</b>.'
     6:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-8-ce.png
-        title: 'Select an operation and enter a threshold value. Click "Add" button in the lower right corner;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-7-ce.png
+        title: '<b>General:</b> <b>Argument:</b> temperature (the argument added earlier); <b>Value type:</b> Numeric<br><b>Filters:</b> Click <b>Add</b>; <b>Operation:</b> greater than; <b>Value source:</b> Static; <b>Value:</b> 25.<br>Click <b>Add</b>.'
     7:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-9-ce.png
-        title: 'Click "Save";'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-8-ce.png
+        title: '<b>Type:</b> Simple.<br><b>Save</b> condition.'
     8:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-9-ce.png
+        title: 'Finally, click the <b>Add</b>.'
+    9:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-10-ce.png
-        title: 'Finally, click "Apply changes".'        
+        title: 'The new alarm rule will be created and activated.'
 
 step5:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-1-ce.png
-        title: 'Notice that the new temperature telemetry causes a new active alarm;'
+        title: 'As soon as a new <b>temperature</b> value goes above the threshold, a new active alarm will appear on the dashboard.'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-2-ce.png
-        title: 'You may acknowledge and clear alarms using the "Alarms table" widget;'
+        title: 'You can <b>acknowledge</b> and <b>clear</b> alarms using the <b>Alarm table</b> widget.'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-3-ce.png
-        title: 'When you receive a new alarm, you will receive a message in the notification center. You can view the message by clicking on the bell icon in the upper right corner.'   
+        title: 'After the alarm is created, you will also receive a notification in the <b>Notification center</b>. Click the bell icon in the top-right corner to view the latest notifications.'
 
 notification-center:
     0:
@@ -312,6 +315,8 @@ This guide demonstrates basic usage of popular ThingsBoard features. You will le
 
 For simplicity, we&#39;ll visualize data from a temperature sensor.
 
+<hr>
+
 ## Video tutorial
 
 Prefer visual learning? Check out our step-by-step getting started video tutorial:
@@ -325,6 +330,8 @@ Prefer visual learning? Check out our step-by-step getting started video tutoria
 
 {% include templates/prerequisites.md %}
 
+<hr>
+
 ## Step 1. Provision device
 
 Let&#39;s add a device that sends temperature data to ThingsBoard:
@@ -337,11 +344,12 @@ You will also receive a notification upon adding devices. Click the bell icon (t
 
 [Learn more about notifications here](#step-6-alarm-notifications).
 
-<br>
 **Additional provisioning methods**
 - [Bulk provisioning](/docs/user-guide/bulk-provisioning/){:target="_blank"}: Import multiple devices via CSV through the UI.
 - [Device provisioning](/docs/user-guide/device-provisioning/){:target="_blank"}: Configure devices to self-register automatically. 
 - [REST API](/docs/api/){:target="_blank"} provisioning: Manage devices programmatically through APIs.
+
+<hr>
 
 ## Step 2. Connect device
 
@@ -351,6 +359,8 @@ Let&#39;s verify your device&#39;s connection to ThingsBoard:
 
 <br>
 Explore [ThingsBoard API reference](/docs/{{docsPrefix}}api){:target="_blank"}. Here you will find more detailed information about all supported protocols for connecting devices.
+
+<hr>
 
 ## Step 3. Create dashboard
 
@@ -416,24 +426,86 @@ To use dynamic entities (for example, devices of a certain type or related to a 
 Alias is a reference to a single entity or a group of entities that are used in the widgets. 
 You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
 
+<hr>
+
 ## Step 4. Configure alarm rules
 
-We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading exceeds 25 degrees.
-To do this, we should edit the device profile and add a new alarm rule. 
-The "My New Device" is using the "Default" device profile.
-We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/){:target="_blank"} for each corresponding device type, but we&#39;ll skip this step here for simplicity.
+We will use the [alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"} feature to define a rule that triggers when the temperature exceeds **25°C**.   
+Alarm rules can be configured either at the **device level** or at the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} level used by the target device.
 
-{% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
+> **Recommendation:** If the same rule needs to be applied to multiple devices, create it at the **Device profile** level.   
+This ensures centralized alarm logic management, simplifies maintenance, and eliminates configuration duplication.
+
+In this example, we will configure the alarm rule directly on the device "**My New Device**".
+
+<br><b><font size="4">Step 4.1 Open the device settings</font></b>
+- Go to the **Devices** page in the **Entities** section.
+- Click **My New Device** to open its details.
+- Navigate to the **Alarm rules** tab.
+- Click the "**+**" button and select **Create new alarm rule**.
+
+<b><font size="4">Step 4.2 Configure the General parameters</font></b>
+
+In the **General** section, specify the **alarm type** — *High temperature* (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.
+
+<b><font size="4">Step 4.3 Add argument</font></b>
+
+Before defining the alarm trigger condition, you must add at least one **argument** — the data source that the rule will use.
+
+In the **Arguments** section, click **Add argument** and fill in:
+- **Entity type:** *Current entity*
+- **Argument type:** *Latest telemetry*
+- **Time series key:** <span class="code-light">temperature</span>
+- **Argument name:** temperature
+- Click **Add**.
+
+This creates the <span class="code-light">temperature</span> variable that will be used in the alarm rule conditions.
+
+<b><font size="4">Step 4.4 Configure the alarm trigger condition</font></b>
+
+In the **Trigger condition** section, click **Add trigger condition**.
+
+- **Severity:** *Critical*
+- **Condition**
+  - Click **Add condition**.
+  - In the configuration window, click **Add argument filter** and specify:
+    - **General** block:
+      - **Argument:** temperature (the argument added earlier)
+      - **Value type:** *Numeric*
+    - **Filters** block:
+      - Click **Add**
+      - **Operation:** *greater than*
+      - **Value source:** Static
+      - **Value:** <span class="code-light">25</span>
+    - Click **Add**.
+  - **Type:** *Simple*
+  - Click **Save**.
+
+As a result, the alarm will trigger immediately when the temperature exceeds **25°C**.
+
+<b><font size="4">Save the rule</font></b>
+
+Click the **Add** button to save the new alarm creation rule.
+
+The rule takes effect immediately after it is saved.
+
+{% include images-gallery.html imageCollection="step4" %}
+
+We also recommend reviewing the [alarm rule configuration examples](/docs/{{docsPrefix}}user-guide/alarm-rules/#examples-of-alarm-rule-configurations/){:target="_blank"}
+
+<hr>
 
 ## Step 5. Create alarm
 
-Now, our alarm rule is active (see [Step 4](/docs/getting-started-guides/helloworld/#step-4-configure-alarm-rules)), 
-and we should send new telemetry on behalf of the device (see [Step 2](/docs/getting-started-guides/helloworld/#step-2-connect-device)) to trigger the alarm.
-Note that the temperature value should be 26 or higher to raise the alarm. Once we send a new temperature reading, we should immediately see a new alarm on our dashboard.
+Now that the alarm rule is active (see [Step 4](#step-4-configure-alarm-rules)), you need to send new telemetry data from the device (see [Step 2](#step-2-connect-device)) to trigger the alarm.
+
+> **Important:** The alarm will be created only when the temperature value exceeds the threshold of 25°C defined in the alarm creation condition.
+
+**What happens after sending telemetry**
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms){:target="_blank"}.
+<hr>
 
 ## Step 6. Alarm notifications
 
@@ -447,6 +519,8 @@ Additionally, [ThingsBoard Mobile Application](/docs/mobile/){:target="_blank"} 
 Follow [this guide](/docs/mobile/getting-started/){:target="_blank"} to install the ThingsBoard mobile app and set up notifications. 
 
 Enjoy exploring ThingsBoard!
+
+<hr>
 
 ## Step 7. Assign device and dashboard to customer
 
@@ -496,9 +570,13 @@ Finally, log in to ThingsBoard as a customer user.
 
 {% include images-gallery.html imageCollection="step75" showListImageTitles="true" %}
 
+<hr>
+
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
+
+<hr>
 
 ## Your feedback
 

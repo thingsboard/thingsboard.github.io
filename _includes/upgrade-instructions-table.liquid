@@ -1,0 +1,208 @@
+{% assign versionsCollection = site.data.upgrade-instructions-data %}
+
+<div class="releases-table upgrade-instructions-table{% if docsPrefix == "pe/" %} pe-table{% endif %}">
+    <div class="releases-table-content">
+        <div class="releases-table-header">
+            <div class="releases-table-header-item">Version</div>
+            <div class="releases-table-header-item">Release Date</div>
+            <div class="releases-table-header-item">Upgradable From</div>
+            <div class="releases-table-header-item"><a href="/docs/{{ docsPrefix }}releases/release-policy/">LTS</a></div>
+            <div class="releases-table-header-item">Release Notes</div>
+            <div class="releases-table-header-item">Upgrade Instructions</div>
+        </div>
+
+        <div class="releases-table-row">
+            {% for item in versionsCollection %}
+                {% assign version = item[0] %}
+
+                {% assign parts = version | split: "." %}
+                {% assign major = "v" | append: parts[0] %}
+                {% assign minor = parts[1] %}
+
+                {% assign versionFamily = major | append: "-" | append: minor | append: "-x" %}
+
+                {% assign hashBase = version | replace: ".", "" %}
+
+                {% assign hashLinkReleaseBase = "thingsboard" %}
+
+                {% if docsPrefix == "pe/" %}
+                    {% assign hashLinkReleaseBase = hashLinkReleaseBase | append: "-pe-" %}
+                {% else %}
+                    {% assign hashLinkReleaseBase = hashLinkReleaseBase | append: "-ce-" %}
+                {% endif %}
+
+                {% assign date = item[1].release-date | replace: " ", "-" | downcase %}
+
+                {% if docsPrefix == "pe/" and item[1].release-date-pe %}
+                    {% assign date = item[1].release-date-pe | replace: " ", "-" | downcase %}
+                {% endif %}
+
+                {% assign hashLinkRelease = "#" | append: hashLinkReleaseBase | append: "v" | append: hashBase | append: "-" | append: date %}
+
+                <div class="releases-table-content-wrapper"
+                     onclick="window.location='/docs/{{ docsPrefix }}releases/releases-table/{{ versionFamily }}/{{ hashLinkRelease }}'"
+                     style="cursor:pointer;"
+                     data-family="{{ versionFamily }}">
+                    <div class="releases-table-content">
+                        <div class="releases-table-content-item">v{{ version }}{% if docsPrefix == "pe/" %}PE{% endif %}</div>
+                        <div class="releases-table-content-item">
+                            {% assign releaseDate = item[1].release-date %}
+                            {% if item[1].release-date-pe %}
+                                {% assign releaseDate = item[1].release-date-pe %}
+                            {% endif %}
+
+                            {%- assign month_map =  "January:Jan,February:Feb,March:Mar,April:Apr,May:May,June:Jun,July:Jul,August:Aug,September:Sep,October:Oct,November:Nov,December:Dec" | split: "," -%}
+
+                            {%- assign release_month_full = releaseDate | date: "%B" -%}
+
+                            {%- for pair in month_map -%}
+                                {%- assign parts = pair | split: ":" -%}
+                                {%- if parts[0] == release_month_full -%}
+                                    {%- assign release_month_short = parts[1] -%}
+                                {%- endif -%}
+                            {%- endfor -%}
+
+                            <time datetime="{{ releaseDate | date: '%Y-%m-%d' }}">
+                                {{ releaseDate | date: "%-d" }} {{ release_month_short }} {{ releaseDate | date: "%Y" }}
+                            </time>
+                        </div>
+                        <div class="releases-table-content-item">v{{ item[1].upgradable-from }}{% if docsPrefix == "pe/" %}PE{% endif %}</div>
+
+                        <div class="releases-table-content-item lts-item">
+                            {%- if item[1].lts -%}
+                                <span class="lts-item-true">Available</span>
+                            {%- else -%}
+                                <span>Not-available</span>
+                            {%- endif -%}
+                        </div>
+
+                        <a href="/docs/{{ docsPrefix }}releases/releases-table/{{ versionFamily }}/{{ hashLinkRelease }}" class="releases-table-content-item version-link">
+                            <span>{{ version | replace: "-", "." }}</span>
+                            <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
+                        </a>
+
+                        {% assign hashLinkUpgradeBase = "upgrading-thingsboard" %}
+                        {% if docsPrefix == "pe/" %}
+                            {% assign hashLinkUpgradeBase = hashLinkUpgradeBase | append: "-pe-to-" %}
+                        {% else %}
+                            {% assign hashLinkUpgradeBase = hashLinkUpgradeBase | append: "-ce-to-" %}
+                        {% endif %}
+
+                        {% assign hashLinkUpgrade = "#" | append: hashLinkUpgradeBase | append: hashBase %}
+
+                        <div class="releases-table-content-item upgrade-instructions">
+                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Ubuntu Instructions">
+                                <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
+                            </a>
+                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="CentOS Instructions">
+                                <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
+                            </a>
+                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Windows Instructions">
+                                <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
+                            </a>
+                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/docker/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Instructions">
+                                <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
+                            </a>
+                            <a class="right-link" href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/docker-compose/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Compose Instructions">
+                                <img width="24" height="24" src="/images/install/cluster/docker-compose.svg" alt="Docker Compose Instructions">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="fixed-upgrade-scrollbar" id="fixedScrollbar">
+    <div class="scrollbar-inner"></div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        (function applyFamilyFilter() {
+            const params = new URLSearchParams(window.location.search);
+            const versionParam = params.get("version");
+            if (!versionParam) return;
+
+            const targetFamily = versionParam.replace(/\.x$/i, "").trim();
+            document
+                .querySelectorAll(".upgrade-instructions-table .releases-table-content-wrapper")
+                .forEach(function (row) {
+                    const rowFamily = row.getAttribute("data-family");
+                    if (rowFamily !== targetFamily) row.style.display = "none";
+                });
+        })();
+
+        const table = document.querySelector('.upgrade-instructions-table');
+        if (!table) return;
+
+        const content = table.querySelector('.releases-table-content');
+        const bar = document.getElementById('fixedScrollbar');
+        if (!content || !bar) return;
+
+        const inner = bar.querySelector('.scrollbar-inner');
+
+        function updateScrollBar() {
+            const rect = table.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+
+            const scrollWidth = content.scrollWidth;
+            const visibleWidth = table.clientWidth;
+
+            if (scrollWidth <= visibleWidth + 1) {
+                bar.style.display = 'none';
+                return;
+            }
+
+            const distanceBelowViewport = rect.bottom - viewportHeight;
+
+            const completelyAboveViewport = rect.bottom <= 0;
+            const completelyBelowViewport = rect.top >= viewportHeight;
+
+            if (completelyAboveViewport || completelyBelowViewport || distanceBelowViewport <= 30) {
+                bar.style.display = 'none';
+                return;
+            }
+
+            bar.style.display = 'block';
+
+            bar.style.width = rect.width + 'px';
+            bar.style.left = rect.left + 'px';
+
+            inner.style.width = scrollWidth + 'px';
+        }
+
+        updateScrollBar();
+
+        if ('ResizeObserver' in window) {
+            new ResizeObserver(updateScrollBar).observe(content);
+            new ResizeObserver(updateScrollBar).observe(table);
+        } else {
+            window.addEventListener('resize', updateScrollBar);
+        }
+
+        window.addEventListener('scroll', updateScrollBar);
+        window.addEventListener('resize', updateScrollBar);
+
+        let syncFromTable = false;
+        let syncFromBar = false;
+
+        table.addEventListener('scroll', () => {
+            if (syncFromBar) {
+                syncFromBar = false;
+                return;
+            }
+            syncFromTable = true;
+            bar.scrollLeft = table.scrollLeft;
+        });
+
+        bar.addEventListener('scroll', () => {
+            if (syncFromTable) {
+                syncFromTable = false;
+                return;
+            }
+            syncFromBar = true;
+            table.scrollLeft = bar.scrollLeft;
+        });
+    });
+</script>

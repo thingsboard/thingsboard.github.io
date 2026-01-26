@@ -23,7 +23,7 @@ TBMQ Kafka Integration processes messages and forwards them to an external Kafka
 
 Before setting up the integration, ensure the following:
 
-- A running **[TBMQ](/docs/mqtt-broker/install/installation-options/) instance**.
+- A running **[TBMQ](/docs/{{docsPrefix}}mqtt-broker/install/installation-options/) instance**.
 - An external service ready to receive Kafka message (e.g. **Confluent Cloud**).
 - A client capable of publishing MQTT messages (e.g., **TBMQ WebSocket Client**).
 

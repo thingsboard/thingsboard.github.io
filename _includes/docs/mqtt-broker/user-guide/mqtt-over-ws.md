@@ -41,7 +41,7 @@ This feature, combined with MQTT's publish/subscribe model, enables dynamic and 
 ## MQTT over WebSocket in TBMQ
 
 TBMQ utilizes two listeners, WS (WebSocket) and WSS (WebSocket Secure), to facilitate communication over WebSocket. 
-You can refer to the overview of these listeners provided [here](/docs/mqtt-broker/security/#ws-listener).
+You can refer to the overview of these listeners provided [here](/docs/{{docsPrefix}}mqtt-broker/security/#ws-listener).
 
 {% capture difference %}
 **Note:** For existing deployments prior v1.3.0, it's essential to update configuration files to enable WebSocket communication. 
@@ -50,7 +50,7 @@ To address this, pull the latest configuration files or update existing ones to 
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-For detailed WebSocket-related parameters, please refer to the provided [link](/docs/mqtt-broker/install/config/#mqtt-listeners-parameters) 
+For detailed WebSocket-related parameters, please refer to the provided [link](/docs/{{docsPrefix}}mqtt-broker/install/config/#mqtt-listeners-parameters) 
 (locate `LISTENER_WS_ENABLED` and related environment variables).
 
 ## Getting started
@@ -60,7 +60,7 @@ In this guide, we present an illustrative example of how to establish MQTT over 
 ### Installing TBMQ
 
 Before we delve in, make sure the TBMQ is successfully installed.
-To obtain detailed instructions on how to install TBMQ on different platforms, we recommend exploring the [Installation options](/docs/mqtt-broker/install/installation-options/) documentation.
+To obtain detailed instructions on how to install TBMQ on different platforms, we recommend exploring the [Installation options](/docs/{{docsPrefix}}mqtt-broker/install/installation-options/) documentation.
 
 For this guide, we will follow the below instructions for quick TBMQ installation.
 
@@ -234,8 +234,13 @@ Packet send... { cmd: 'disconnect' }
 Closing client...
 ```
 
-Moreover, you can utilize the [WebSocket client](/docs/mqtt-broker/user-guide/ui/websocket-client/) to subscribe to the topic and receive messages, allowing you to verify the result.
+Moreover, you can utilize the [WebSocket client](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/websocket-client/) to subscribe to the topic and receive messages, allowing you to verify the result.
+
+{% if docsPrefix == "pe/" %}
+![image](/images/pe/mqtt-broker/ws/ws_example.png)
+{% else %}
 ![image](/images/mqtt-broker/ws/ws_example.png)
+{% endif %}
 
 ### Connection details
 
@@ -261,7 +266,7 @@ This means clients might receive security warnings when connecting to the server
 Self-signed certificates are cost-effective for development or private networks but are not recommended for public or production environments due to trust issues with end users.
 {% capture difference %}
 If you're utilizing a self-signed certificate for the broker, it's crucial to manually include it within the browser's trust store to ensure seamless connectivity.
-This step is essential for [WebSocket client](/docs/mqtt-broker/user-guide/ui/websocket-client/) functionality within the browser environment.
+This step is essential for [WebSocket client](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/websocket-client/) functionality within the browser environment.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -286,10 +291,10 @@ like API keys or OAuth tokens, is commonly used to ensure secure communication.
 In non-browser environments such as Node.js, and programming languages like Python and Java, when utilizing the appropriate MQTT library, 
 two-way authentication functions seamlessly and remains an exceptionally effective security measure.
 
-Let's review the example. Make sure WSS listener is [enabled and configured](/docs/mqtt-broker/security/#wss-listener) properly. 
+Let's review the example. Make sure WSS listener is [enabled and configured](/docs/{{docsPrefix}}mqtt-broker/security/#wss-listener) properly. 
 
 For establishing a two-way authenticated connection, ensure that the MQTT client credentials of type 'X.509 Certificate Chain' are created, 
-with the client certificate Common Name (CN) specified. Refer to [this guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/#ssl-credentials) for detailed instructions.
+with the client certificate Common Name (CN) specified. Refer to [this guide](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/mqtt-client-credentials/#ssl-credentials) for detailed instructions.
 Replace `example.com` with your actual DNS and replace `/path/to/your/client/key/file.pem`, `/path/to/your/client/cert/file.pem`,
 and `/path/to/your/ca/cert/file.pem` with the respective paths to your certificate files.
 
