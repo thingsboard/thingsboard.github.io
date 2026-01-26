@@ -4,7 +4,7 @@ title: Edge Professional Edition upgrade instructions
 description: Edge upgrade instructions
 table-of-contents: "false"
 active-menu-item-click: "true"
-
+effective-url: '/docs/user-guide/install/pe/edge/upgrade-instructions/'
 ---
 
 {% assign docsPrefix = "pe/edge/" %}
