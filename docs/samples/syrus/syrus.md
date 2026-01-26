@@ -19,7 +19,7 @@ Here&#39;s a detailed integration example between Syrus 4G IoT Telematics Gatewa
 
 [Syrus 4G IoT Telematics Gateway.](https://syrus.pegasusgateway.com/syrdocs/syrus4/getting-started/)
 
-[Thingsboard Sign Up](https://demo.thingsboard.io/signup)
+[ThingsBoard Cloud](https://thingsboard.io/installations/)
 
 ## Provisioning the device for Thingsboard
 

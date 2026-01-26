@@ -91,10 +91,7 @@ For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00
 <br>
 Below are the examples of commands for publishing different types of telemetry data.
 
-{% if docsPrefix == null %}
-Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references your local installation.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
@@ -313,10 +310,7 @@ Where **$ACCESS_TOKEN** - device access token.
 
 Below are the examples of commands for publishing different types of telemetry data.
 
-{% if docsPrefix == null %}
-Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
@@ -431,10 +425,7 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute
 Where **$ACCESS_TOKEN** - device access token.
 {% endif %}
 
-{% if docsPrefix == null %}
-Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
@@ -518,10 +509,7 @@ Where **$ACCESS_TOKEN** - device access token.
 
 Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
 
-{% if docsPrefix == null %}
-Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}

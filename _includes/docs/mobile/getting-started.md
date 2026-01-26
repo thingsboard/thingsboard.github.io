@@ -1,17 +1,10 @@
 {% if docsPrefix == 'pe/' %}
 {% assign appPrefix = "ThingsBoard PE" %}
-{% assign appRepo = "https://github.com/thingsboard/flutter_thingsboard_pe_app.git" %}
 {% assign appProject = "flutter_thingsboard_pe_app" %}
 {% assign cloudApp = "[ThingsBoard Cloud](https://thingsboard.cloud/signup)" %}
-{% assign cloudEndpoint = "https://thingsboard.cloud" %}
-{% assign flutterAppVer = site.release.pe_flutter_app_ver %}
 {% else %}
 {% assign appPrefix = "ThingsBoard" %}
-{% assign appRepo = "https://github.com/thingsboard/flutter_thingsboard_app.git" %}
 {% assign appProject = "flutter_thingsboard_app" %}
-{% assign cloudApp = "[Live Demo](https://demo.thingsboard.io/signup)" %}
-{% assign cloudEndpoint = "https://demo.thingsboard.io" %}
-{% assign flutterAppVer = site.release.ce_flutter_app_ver %}
 {% endif %}
 
 * TOC
@@ -23,7 +16,7 @@ Welcome! This guide walks you through creating and configuring your own {{appPre
 
 ## Prerequisites
 
-- Access to a {{appPrefix}} instance. The easiest way is to use {{cloudApp}}{:target="_blank"} server. Alternatively, install {{appPrefix}} using the official [installation guide](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
+- Access to a {{appPrefix}} instance. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/). Alternatively, install {{appPrefix}} using the official [installation guide](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
 - Prepare the environment for building the {{appPrefix}} mobile application:
   - [Install the Flutter SDK](https://flutter.dev/docs/get-started/install){:target="_blank"} version that corresponds to your app version (see the [compatibility matrix](/docs/{% if docsPrefix == 'pe/' %}pe/{% endif %}mobile/#compatibility-table){:target="_blank"}).
   - (Recommended) [Configure your IDE (e.g., Visual Studio Code)](https://flutter.dev/docs/get-started/editor){:target="_blank"} for Flutter development.

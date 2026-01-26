@@ -1,11 +1,11 @@
 - tag: ce
-  hostLabel: ThingsBoard Demo
-  hostName: demo.thingsboard.io
-  mqttHostName: demo.thingsboard.io
-  coapHostName: demo.thingsboard.io
-  httpsUrl: https://demo.thingsboard.io
-  lwm2mHostName: demo.thingsboard.io
-  apiHostName: demo.thingsboard.io
+  hostLabel: localhost
+  hostName: localhost
+  mqttHostName: localhost
+  coapHostName: localhost
+  httpsUrl: https://localhost
+  lwm2mHostName: localhost
+  apiHostName: localhost
 - tag: pe
   hostLabel: ThingsBoard Cloud
   hostName: thingsboard.cloud

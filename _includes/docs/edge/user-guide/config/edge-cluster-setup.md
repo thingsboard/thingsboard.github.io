@@ -142,11 +142,7 @@ JAVA_OPTS="-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch"
 * **TB_QUEUE_TYPE:** Use _kafka_ as the queue type. The _in-memory_ value is not valid for a cluster deployment.
 * **CLOUD_ROUTING_KEY:** Put your edge key.
 * **CLOUD_ROUTING_SECRET:** Put your edge secret.
-{% if docsPrefix == "pe/edge/" %}
 * **CLOUD_RPC_HOST:** Use _thingsboard.cloud_ / _eu.thingsboard.cloud_ if you connect **Edge** to the [ThingsBoard Cloud (North America)](https://thingsboard.cloud/signup){: target="_blank"}/[ThingsBoard Cloud (Europe)](https://eu.thingsboard.cloud/signup){: target="_blank"} correspondingly, or an **IP address** of the machine with the **ThingsBoard PE Platform**.
-{% else %}
-* **CLOUD_RPC_HOST:** Use _demo.thingsboard.io_ if you connect **Edge** to the [ThingsBoard Demo](https://demo.thingsboard.io/login){: target="_blank"}, or an **IP address** of the machine with the **ThingsBoard Platform**.
-{% endif %}
 * **MONITORING_ENABLED:** To start cluster monitoring with [Grafana](https://grafana.com/){: target="_blank"} and/or [Prometheus](https://prometheus.io/){: target="_blank"} services, set the variable to _true_. 
 
   Learn how to **enable downlink messages monitoring** in this [article](/docs/{{docsPrefix}}user-guide/troubleshooting/#downlink-messages-from-cloud-to-edge){: target="_blank"}.

@@ -51,7 +51,7 @@ The following picture summarizes the connections for this simple project:
 
 This step contains instructions that are necessary to connect your device to ThingsBoard.
 
-Sign up ThingsBoard Web UI as [live-demo](https://demo.thingsboard.io/signup). See [Live Demo](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo) page for more details how to get your account.
+See [ThingsBoard Cloud](https://thingsboard.io/installations/) page for more details how to get your account.
 
 ### Device
 
@@ -114,7 +114,7 @@ Once you have your RTU-X connected to the PC, we can proceed with its configurat
 
 1. Go to *"Communications"*.
 2. Click on *"MQTT"*.
-3. On *"Interface"* select *"Modem"*. On *"Format"* select *"Thingsboard"*. On *"URI"* paste *"mqtt://demo.thingsboard.io:1883"*. On *"Password"* paste the Device Acces Token from *"Device"* step.
+3. On *"Interface"* select *"Modem"*. On *"Format"* select *"Thingsboard"*. On *"URI"* paste *"mqtt://thingsboard.cloud:1883"*. On *"Password"* paste the Device Acces Token from *"Device"* step.
 4. Click on *"Apply Changes"*.
 
 ![rtu5_step5](https://user-images.githubusercontent.com/61634031/134028854-17b5d9c8-c807-4b3b-a557-00ea5b25d7ac.png)

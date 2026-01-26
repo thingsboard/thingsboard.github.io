@@ -316,9 +316,13 @@ Change values of the following variables :
 
  - **entityId** - to your device id.
  
- In case of live-demo server : 
+ In case of North America ThingsBoard Cloud server : 
  
- - replace **host:port** with **demo.thingsboard.io** and choose secure connection - **wss://**
+ - replace **host:port** with **thingsboard.cloud** and choose secure connection - **wss://**
+
+In case of Europe ThingsBoard Cloud server :
+
+ - replace **host:port** with **eu.thingsboard.cloud** and choose secure connection - **wss://**
  
  In case of local installation :
  

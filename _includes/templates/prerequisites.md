@@ -1,7 +1,6 @@
 ## Prerequisites
 
 You will need a ThingsBoard server up and running.
-The easiest way to get started is with the [Live Demo](https://demo.thingsboard.io/signup){:target="_blank"} server.
 
 Alternatively, you can install ThingsBoard yourself using our [installation guides](/docs/user-guide/install/installation-options/){:target="_blank"}:
 

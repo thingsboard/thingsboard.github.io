@@ -26,7 +26,7 @@ As such, you cannot share ThingsBoard Edge between multiple tenants, and devices
 In such scenarios, separate ThingsBoard Edge instances would need to be provisioned for each tenant.
 {% else %}
 With ThingsBoard Edge, data analysis and management is brought to the edge, where data generation happens. 
-It synchronizes effortlessly with ThingsBoard CE, whether it's a [demo](https://demo.thingsboard.io/){: target="_blank"} or an on-premise installation, according to your business requirements.
+It synchronizes effortlessly with ThingsBoard CE according to your business requirements.
 
 ThingsBoard Edge CE is designed for a **single** tenant and/or **single** customer. 
 Sharing ThingsBoard Edge between multiple tenants or customers is not feasible, and devices from different tenants or customers cannot be connected to a single ThingsBoard Edge.

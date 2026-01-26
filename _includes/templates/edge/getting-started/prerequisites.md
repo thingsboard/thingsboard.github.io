@@ -27,10 +27,12 @@ On-premise Server<br><small>Connect Edge to local server</small>%,%on-premise%,%
 {% include content-toggle.liquid content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}
 {% if currentThingsBoardVersion == "ThingsBoard Community Edition" %}
-{% capture contenttogglespec2 %}
-Live Demo<br><small>Connect Edge to<br>https://demo.thingsboard.io</small>%,%cloud%,%templates/edge/ce-cloud.md%br%
-On-premise Server<br><small>Connect Edge to local server</small>%,%on-premise%,%templates/edge/on-premise-cloud.md{% endcapture %}
-{% include content-toggle.liquid content-toggle-id="cloudType" toggle-spec=contenttogglespec2 %}
+Once **Edge** is installed, you’ll be able to access the interface via [http://localhost:18080](http://localhost:18080){:target="_blank"}.
+This URL will be referred to as **EDGE_URL** throughout the rest of this tutorial.
+
+To log in, use the same credentials as **SERVER_URL**:
+* **Username:** tenant@thingsboard.org
+* **Password:** tenant
 {% endif %}
 
 {% include templates/edge/oauth2-not-supported.md %}
