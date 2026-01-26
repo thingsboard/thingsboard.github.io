@@ -11,16 +11,6 @@ Where
 - **$ACCESS_TOKEN** is device access token.
 
 {% endif %}
-{% if docsPrefix == null %}
-
-If you use live demo server, the command will look like this:
-
-```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
-```
-{: .copy-code}
-
-{% endif %}
 {% if docsPrefix == "paas/" or docsPrefix == "paas/eu/"%}
 
 ```shell

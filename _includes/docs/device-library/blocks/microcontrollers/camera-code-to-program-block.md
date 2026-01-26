@@ -1,6 +1,6 @@
 
 Now it’s time to program the board to connect to ThingsBoard.  
-To do this, you can use the code below. It contains all required functionality for this guide.W
+To do this, you can use the code below. It contains all required functionality for this guide.
 
 ```cpp
 #include <Arduino_MQTT_Client.h>
@@ -177,9 +177,9 @@ bool initCamera() {
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
   config.pixel_format = PIXFORMAT_JPEG;
-  config.fb_count = 1;{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
+  config.fb_count = 1;
   config.frame_size = FRAMESIZE_240X240;
-  config.jpeg_quality = 10;{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
+  config.jpeg_quality = 10;
 
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {

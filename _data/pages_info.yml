@@ -4814,9 +4814,6 @@
 "/docs/samples/roltek/roltek/":
   url: "/docs/samples/roltek/roltek/"
   redirect_from: []
-"/docs/samples/sample/sample/":
-  url: "/docs/samples/sample/sample/"
-  redirect_from: []
 "/docs/samples/senquip/":
   url: "/docs/samples/senquip/"
   redirect_from: []

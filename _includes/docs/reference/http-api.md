@@ -45,15 +45,6 @@ Where
 - **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
-```
-{: .copy-code}
-
-{% endif %}
 {% if docsPrefix contains "paas/" %}
 
 ```shell
@@ -105,13 +96,7 @@ Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host 
 
 Execute the command:
 
-{% if docsPrefix == null %}
-```shell
-curl -v -X POST --data "{"temperature":42,"humidity":73}" https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 curl -v -X POST --data "{"temperature":42,"humidity":73}" http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
@@ -140,13 +125,7 @@ Telemetry data:
 
 Execute the command:
 
-{% if docsPrefix == null %}
-```shell
-curl -v -X POST -d @telemetry-data-as-object.json https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 curl -v -X POST -d @telemetry-data-as-object.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
@@ -185,13 +164,7 @@ The content of the JSON file:
 
 Execute the command:
 
-{% if docsPrefix == null %}
-```shell
-curl -v -X POST -d @telemetry-data-as-array.json https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 curl -v -X POST -d @telemetry-data-as-array.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
@@ -220,13 +193,7 @@ The content of the JSON file:
 
 Execute the command:
 
-{% if docsPrefix == null %}
-```shell
-curl -v -X POST -d @telemetry-data-with-ts.json https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 curl -v -X POST -d @telemetry-data-with-ts.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
@@ -288,15 +255,6 @@ Where
 - **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
-```
-{: .copy-code}
-
-{% endif %}
 {% if docsPrefix contains "paas/" %}
 
 ```shell
@@ -322,13 +280,7 @@ Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host 
 
 **Example 1**. Publish client-side attributes update
 
-{% if docsPrefix == null %}
-```shell
-curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3": 43.0}" https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3": 43.0}" http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
 ```
@@ -350,13 +302,7 @@ curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3"
 
 **Example 2**. Publish client-side attributes update from the [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file.
 
-{% if docsPrefix == null %}
-```shell
-curl -v -X POST -d @new-attributes-values.json https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 curl -v -X POST -d @new-attributes-values.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
 ```
@@ -406,15 +352,6 @@ Where
 - **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
-```
-{: .copy-code}
-
-{% endif %}
 {% if docsPrefix contains "paas/" %}
 
 ```shell
@@ -435,12 +372,6 @@ Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with you
 Execute the command. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 
-{% if docsPrefix == null %}
-```shell
-curl -v -X GET "https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2"
-```
-{: .copy-code}
-{% endif %}
 {% if docsPrefix == "pe/" %}
 ```shell
 curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
@@ -487,15 +418,6 @@ Where
 - **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/updates
-```
-{: .copy-code}
-
-{% endif %}
 {% if docsPrefix contains "paas/" %}
 
 ```shell
@@ -519,12 +441,6 @@ Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with you
 Execute the command. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 
-{% if docsPrefix == null %}
-```shell
-curl -v -X GET https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/updates?timeout=20000
-```
-{: .copy-code}
-{% endif %}
 {% if docsPrefix == "pe/" %}
 ```shell
 curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/updates?timeout=20000
@@ -569,15 +485,6 @@ Where
 - **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-
-{% endif %}
 {% if docsPrefix contains "paas/" %}
 
 ```shell
@@ -614,15 +521,6 @@ It is possible to reply to them using POST request to the following URL:
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/{$id}
-```
-{: .copy-code}
-
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 {: .copy-code}
 
@@ -716,15 +614,6 @@ Where
 - **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-
-{% endif %}
 {% if docsPrefix contains "paas/" %}
 
 ```shell
@@ -801,15 +690,6 @@ Where
 - **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/claim
-```
-{: .copy-code}
-
-{% endif %}
 {% if docsPrefix contains "paas/" %}
 
 ```shell
@@ -849,15 +729,6 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/provision
 
 Where **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
 {% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-https://demo.thingsboard.io/api/v1/provision
-```
-{: .copy-code}
-
-{% endif %}
 {% if docsPrefix contains "paas/" %}
 
 ```shell
@@ -892,15 +763,6 @@ Where
 - **$ACCESS_TOKEN** - the device access token;  
 - **$TITLE** - the firmware title;  
 - **$VERSION** - the version of the target firmware.
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
-```
-{: .copy-code}
-
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
