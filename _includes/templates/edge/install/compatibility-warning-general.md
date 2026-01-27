@@ -3,9 +3,9 @@
 <summary style="font-size: 16px; font-weight: semibold; cursor: pointer;">Version Compatibility Rules - Read before proceeding</summary>
 <p></p>
 {% if page.url contains 'upgrade-instructions' %}
-<p>Before upgrading ThingsBoard Edge, ensure that <b>ThingsBoard Server</b> is <a href="/docs/user-guide/install/{{docsPrefix}}upgrade-instructions/" target="_blank">updated to the latest version</a>.</p>
+<p>Before upgrading ThingsBoard Edge, ensure that <b>ThingsBoard Server</b> is <a href="/docs/{{peDocsPrefix}}user-guide/install/upgrade-instructions/" target="_blank">updated to the latest version</a>.</p>
 {% else %}
-<p>Before installing ThingsBoard Edge, ensure that <b>ThingsBoard Server</b> is <a href="/docs/user-guide/install/{{peDocsPrefix}}installation-options/" target="_blank">installed</a> and <a href="/docs/user-guide/install/{{peDocsPrefix}}upgrade-instructions/" target="_blank">updated</a> to the latest version.</p>
+<p>Before installing ThingsBoard Edge, ensure that <b>ThingsBoard Server</b> is <a href="/docs/{{peDocsPrefix}}user-guide/install/installation-options/" target="_blank">installed</a> and <a href="/docs/{{peDocsPrefix}}user-guide/install/upgrade-instructions/" target="_blank">updated</a> to the latest version.</p>
 {% endif %}
 <p>Additionally, verify that the <b>ThingsBoard Edge and ThingsBoard Server versions are compatible</b>.</p>
 

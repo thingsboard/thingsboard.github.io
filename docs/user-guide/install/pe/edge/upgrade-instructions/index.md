@@ -7,6 +7,7 @@ active-menu-item-click: "true"
 effective-url: '/docs/user-guide/install/pe/edge/upgrade-instructions/'
 ---
 
+{% assign peDocsPrefix = "pe/" %}
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/install/compatibility-warning-general.md %}
 {% include get-hosts-name.html docsPrefix=docsPrefix %}
