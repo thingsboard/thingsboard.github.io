@@ -8,12 +8,6 @@ For this reason, predefined configurations for calculated fields and alarm rules
 
 After importing these configurations into your ThingsBoard instance, you can explore their structure, logic, and behavior, and later adapt them for your own use cases.
 
-Before proceeding, it is strongly recommended to review the following ThingsBoard documentation:
-- [Calculated fields](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"} - learn how to compute new telemetry values based on incoming data.
-- [Alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules){:target="_blank"} - learn how to define alarm trigger conditions to promptly respond to abnormal conditions.
-
-These concepts are essential for understanding the configuration described below.
-
 <hr>
 
 ## Use case
@@ -29,40 +23,43 @@ This workflow represents a common real-time monitoring and anomaly detection sce
 
 <hr>
 
-## 1. Import demo device
+## Prerequisites
 
-Start by importing a demo device that publishes temperature telemetry.
+Before proceeding, it is recommended to review the following ThingsBoard documentation:
+- [Calculated fields](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"} - learn how to compute new telemetry values based on incoming data.
+- [Alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules){:target="_blank"} - learn how to define alarm trigger conditions to promptly respond to abnormal conditions.
+
+These concepts are essential for understanding the configuration described below.
+
+<hr>
+
+## 1. Add demo device
+
+Start by adding a demo device that publishes temperature telemetry.
 
 The device serves as the source of telemetry data used by the calculated field and alarm rules.
 
-**Actions**
-1. Download the CSV file containing the device configuration:   
-   [thermometer_device_data.csv](/docs/user-guide/resources/guides/thermometer_device_data.csv){:target="_blank" download="thermometer_device_data.csv"}   
-2. Navigate to **Entities** **&#8702;** **Devices**.
-3. Click the **&#43;** (**Add**) button in the top-right corner and select **Import device**.
-4. [Upload the CSV file](/docs/user-guide//bulk-provisioning/#upload-file){:target="_blank"} and follow the import wizard instructions.   
+<b><font size="3">Actions</font></b>
 
-**CSV configuration details:**
-- CSV delimiter: <span class="code-light">,</span>
-- Column mapping:
-  - Name: Thermometer
-  - Type: thermostat
+1. Navigate to **Entities** **&#8702;** **Devices**.
+2. Click the **&#43;** (**Add**) button in the top-right corner, select **Add new device** and create:
+   - Device name: Thermometer
+   - Device profile: thermostat
 
-After the import is completed, the device is registered in ThingsBoard and ready to publish telemetry data.
+The device is registered in ThingsBoard and ready to publish telemetry data.
 
 <hr>
 
 ## 2. Import a calculated field for telemetry delta
 
-A calculated field is used to compute new telemetry values based on incoming data.
-
 The provided configuration calculates the temperature delta over the last 15 minutes and stores the result as a new telemetry key: <span class="code-light">deltaTemperature</span>.
 
-**Actions**
+<b><font size="3">Actions</font></b>
+
 1. Download the calculated field configuration file:   
    [telemetry_delta_calculation_cf.json](/docs/user-guide/resources/guides/telemetry_delta_calculation_cf.json){:target="_blank" download="telemetry_delta_calculation_cf.json"}.
 2. Navigate to the **Calculated fields** page.
-3. Click the **&#43;** (**Add**) button in the top-right corner and select **Import calculated field** .
+3. Click the **&#43;** (**Add**) button in the top-right corner and select **Import calculated field**.
 4. [Upload the calculated field configuration file](/docs/{{docsPrefix}}user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"}.
 5. Select the <span class="code-light">thermostat</span> [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} as the target entity so the calculated field is applied automatically to all relevant devices.
 6. Click **Add** to complete the import.
@@ -126,7 +123,8 @@ To confirm that everything works as expected, publish two temperature values wit
 **Verification steps**
 
 1. Publish an initial temperature value (for example, <span class="code-light">25</span>).   
-   The easiest way is to use the [check connectivity](/docs/getting-started-guides/helloworld-pe/#step-2-connect-device){:target="_blank"} feature. Alternatively, execute the command below&#42;.
+   The easiest way is to use the [check connectivity](/docs/getting-started-guides/helloworld-pe/#step-2-connect-device){:target="_blank"} feature. Alternatively, execute the command below&#42;:   
+   **&#42;** Make sure to replace {% if docsPrefix == null or docsPrefix == "pe/" %}**$THINGSBOARD_HOST_NAME** with the hostname or IP address of your ThingsBoard instance, and {% endif %}**$ACCESS_TOKEN** with the Thermostat device access token.   
    {% if docsPrefix == null or docsPrefix == "pe/" %}
    ```bash
    curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header Content-Type:application/json --data "{temperature:25}"
@@ -145,15 +143,13 @@ To confirm that everything works as expected, publish two temperature values wit
    ```
    {: .copy-code}
    {% endif %} 
-   **&#42;** Make sure to replace {% if docsPrefix == null or docsPrefix == "pe/" %}**$THINGSBOARD_HOST_NAME** with the hostname or IP address of your ThingsBoard instance, and {% endif %}**$ACCESS_TOKEN** with the Thermostat device access token.   
 
 2. Open the device **Latest telemetry** tab to monitor incoming data in real time.   
    At this stage, you should see the following telemetry keys:
-   - <span class="code-light">temperature</span> = 25 
-   - <span class="code-light">deltaTemperature</span> = 0 (only one value is available)
+   - <span class="code-light">temperature = 25</span>
+   - <span class="code-light">deltaTemperature> = 0</span (only one value is available)
 
-3. Publish a second temperature value within 15 minutes (for example, <span class="code-light">32</span>).
-   Make sure to replace {% if docsPrefix == null or docsPrefix == "pe/" %}**$THINGSBOARD_HOST_NAME** with the hostname or IP address of your ThingsBoard instance, and {% endif %}**$ACCESS_TOKEN** with the Thermostat device access token.   
+3. Publish a second temperature value within 15 minutes (for example, <span class="code-light">32</span>).   
    {% if docsPrefix == null or docsPrefix == "pe/" %}
    ```bash
    curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header Content-Type:application/json --data "{temperature:32}"
@@ -174,7 +170,7 @@ To confirm that everything works as expected, publish two temperature values wit
    {% endif %}
 
 4. After the second update:
-   - <span class="code-light">deltaTemperature</span> = 7 
+   - <span class="code-light">deltaTemperature = 7</span>
    - The alarm is triggered because the threshold is exceeded
 
 5. Open the **Alarms** tab to verify the alarm status.

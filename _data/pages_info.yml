@@ -1928,6 +1928,9 @@
 "/docs/paas/eu/tutorials/telemetry-delta-calculation/":
   url: "/docs/paas/eu/tutorials/telemetry-delta-calculation/"
   redirect_from: []
+"/docs/paas/eu/tutorials/validate-incoming-telemetry/":
+  url: "/docs/paas/eu/tutorials/validate-incoming-telemetry/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/access-token/":
   url: "/docs/paas/eu/user-guide/access-token/"
   redirect_from: []
@@ -2200,9 +2203,6 @@
   redirect_from: []
 "/docs/paas/eu/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/":
   url: "/docs/paas/eu/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/"
-  redirect_from: []
-"/docs/paas/eu/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/":
-  url: "/docs/paas/eu/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/"
   redirect_from: []
 "/docs/paas/eu/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/":
   url: "/docs/paas/eu/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/"
@@ -2489,6 +2489,9 @@
 "/docs/paas/tutorials/telemetry-delta-calculation/":
   url: "/docs/paas/tutorials/telemetry-delta-calculation/"
   redirect_from: []
+"/docs/paas/tutorials/validate-incoming-telemetry/":
+  url: "/docs/paas/tutorials/validate-incoming-telemetry/"
+  redirect_from: []
 "/docs/paas/user-guide/access-token/":
   url: "/docs/paas/user-guide/access-token/"
   redirect_from: []
@@ -2761,9 +2764,6 @@
   redirect_from: []
 "/docs/paas/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/":
   url: "/docs/paas/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/"
-  redirect_from: []
-"/docs/paas/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/":
-  url: "/docs/paas/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/"
   redirect_from: []
 "/docs/paas/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/":
   url: "/docs/paas/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/"
@@ -3974,6 +3974,9 @@
 "/docs/pe/tutorials/telemetry-delta-calculation/":
   url: "/docs/pe/tutorials/telemetry-delta-calculation/"
   redirect_from: []
+"/docs/pe/tutorials/validate-incoming-telemetry/":
+  url: "/docs/pe/tutorials/validate-incoming-telemetry/"
+  redirect_from: []
 "/docs/pe/user-guide/access-token/":
   url: "/docs/pe/user-guide/access-token/"
   redirect_from: []
@@ -4399,9 +4402,6 @@
   redirect_from: []
 "/docs/pe/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/":
   url: "/docs/pe/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/"
-  redirect_from: []
-"/docs/pe/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/":
-  url: "/docs/pe/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/"
   redirect_from: []
 "/docs/pe/user-guide/rule-engine-2-5/queues/":
   url: "/docs/pe/user-guide/rule-engine-2-5/queues/"
@@ -5119,6 +5119,9 @@
   redirect_from: []
 "/docs/tutorials/telemetry-delta-calculation/":
   url: "/docs/tutorials/telemetry-delta-calculation/"
+  redirect_from: []
+"/docs/tutorials/validate-incoming-telemetry/":
+  url: "/docs/tutorials/validate-incoming-telemetry/"
   redirect_from: []
 "/docs/user-guide/access-token/":
   url: "/docs/user-guide/access-token/"
@@ -6315,14 +6318,8 @@
 "/docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/":
   url: "/docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/":
-  url: "/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/"
-  redirect_from: []
 "/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/":
   url: "/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/"
-  redirect_from: []
-"/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/":
-  url: "/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/"
   redirect_from: []
 "/docs/user-guide/rule-engine-2-5/queues/":
   url: "/docs/user-guide/rule-engine-2-5/queues/"
