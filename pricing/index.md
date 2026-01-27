@@ -25,55 +25,52 @@ defaultActivePricingSection: thingsboard-pe-options
         </nav>
     </div>
     <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
-        <div class="product-selector product-selector-outlined">
+        <div class="product-selector product-selector-outlined"> 
             <div id="Pricing_CE"
                  class="solution thingsboard-ce gtm_button"
                  data-product-id="thingsboard-ce"
                  onClick="activateProductSection('thingsboard-ce')">
-                <h3 id="Pricing_CE" class="gtm_button" data-faq-id="what-is-tb-ce" data-faq-tooltip="Community Edition is the free, open-source starting point—perfect for fast pilots and proof-of-value. Start small, validate quickly, and scale up when you’re ready."
-                    data-faq-link-size="70%">Community Edition</h3>
+                <h3 id="Pricing_CE" class="gtm_button faq" data-faq-id="what-is-tb-ce"
+                    data-faq-tooltip="Community Edition is the free, open-source starting point—perfect for fast pilots and proof-of-value. Start small, validate quickly, and scale up when you’re ready.">Community Edition<a class="faq-link faq-link-70"></a></h3>
             </div>
             <div id="Pricing_PE_Cloud"
                  class="solution thingsboard-cloud active defaultselection gtm_button"
                  data-product-id="thingsboard-cloud"
                  onClick="activateProductSection('thingsboard-cloud')">
-                <h3 id="Pricing_PE_Cloud" class="gtm_button" data-faq-id="tb-cloud-definition" data-faq-tooltip="Public Cloud is fully managed ThingsBoard—built for speed. We handle infrastructure, upgrades, and reliability so your team can focus on shipping IoT solutions faster."
-                    data-faq-link-size="70%">Public Cloud</h3>
+                <h3 id="Pricing_PE_Cloud" class="gtm_button faq" data-faq-id="tb-cloud-definition"
+                    data-faq-tooltip="Public Cloud is fully managed ThingsBoard—built for speed. We handle infrastructure, upgrades, and reliability so your team can focus on shipping IoT solutions faster.">Public Cloud<a class="faq-link faq-link-70"></a></h3>
             </div>
             <div id="Pricing_PE_PrivateCloud"
                  class="solution thingsboard-private-cloud gtm_button"
                  data-product-id="thingsboard-private-cloud"
                  onClick="activateProductSection('thingsboard-private-cloud')">
-                <h3 id="Pricing_PE_PrivateCloud" class="gtm_button" data-faq-id="tb-private-cloud-what-does-thingsboard-private-cloud-stand-for" data-faq-tooltip="Private Cloud is a dedicated, isolated ThingsBoard Professional Edition cluster run by us for you. You get enterprise-grade control and security—without the ops overhead."
-                    data-faq-link-size="70%">Private Cloud</h3>
+                <h3 id="Pricing_PE_PrivateCloud" class="gtm_button faq" data-faq-id="tb-private-cloud-what-does-thingsboard-private-cloud-stand-for"
+                    data-faq-tooltip="Private Cloud is a dedicated, isolated ThingsBoard Professional Edition cluster run by us for you. You get enterprise-grade control and security—without the ops overhead.">Private Cloud<a class="faq-link faq-link-70"></a></h3>'
             </div>
-            <div id="Pricing_PE_SM" class="solution thingsboard-pe gtm_button" data-product-id="thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
-                <h3 id="Pricing_PE_SM" class="gtm_button" data-faq-id="pe-pay-as-you-go-self-managed-definition" data-faq-link-size="70%" data-faq-tooltip="Self-managed lets you run ThingsBoard on your own infrastructure (on-prem or cloud). Ideal when you need full environment control and prefer to manage operations in-house.">Self-managed</h3>
+            <div id="Pricing_PE_SM" class="solution thingsboard-pe gtm_button faq" data-product-id="thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
+                <h3 id="Pricing_PE_SM" class="gtm_button faq" data-faq-id="pe-pay-as-you-go-self-managed-definition" data-faq-tooltip="Self-managed lets you run ThingsBoard on your own infrastructure (on-prem or cloud). Ideal when you need full environment control and prefer to manage operations in-house.">Self-managed<a class="faq-link faq-link-70"></a></h3>
             </div>
         </div>
     </div>
     <div id="tbmq-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
         <div class="product-selector product-selector-outlined">
             <div id="Pricing_TBMQ_CE"
-                 class="solution thingsboard-ce tbmq-ce gtm_button"
+                 class="solution thingsboard-ce tbmq-ce gtm_button faq"
                  data-product-id="tbmq-ce"
                  onClick="activateProductSection('tbmq-ce')">
-                <h3 id="Pricing_TBMQ_CE" class="gtm_button" data-faq-id="what-is-tbmq-ce"
-                    data-faq-link-size="70%">Community Edition</h3>
+                <h3 id="Pricing_TBMQ_CE" class="gtm_button faq" data-faq-id="what-is-tbmq-ce">Community Edition<a class="faq-link faq-link-70"></a></h3>
             </div>
             <div id="Pricing_TBMQ_PE"
-                 class="solution thingsboard-pe tbmq-pe active defaultselection gtm_button"
+                 class="solution thingsboard-pe tbmq-pe active defaultselection gtm_button faq"
                  data-product-id="tbmq-pe"
                  onClick="activateProductSection('tbmq-pe')">
-                <h3 id="Pricing_TBMQ_PE" class="gtm_button" data-faq-id="tbmq-payg-sm-definition"
-                    data-faq-link-size="70%">Self-managed</h3>
+                <h3 id="Pricing_TBMQ_PE" class="gtm_button faq" data-faq-id="tbmq-payg-sm-definition">Self-managed<a class="faq-link faq-link-70"></a></h3>
             </div>
             <div id="Pricing_TBMQ_PrivateCloud"
-                 class="solution thingsboard-private-cloud tbmq-private-cloud gtm_button"
+                 class="solution thingsboard-private-cloud tbmq-private-cloud gtm_button faq"
                  data-product-id="tbmq-private-cloud"
                  onClick="activateProductSection('tbmq-private-cloud')">
-                <h3 id="Pricing_TBMQ_PrivateCloud" class="gtm_button" data-faq-id="tbmq-stand-for"
-                    data-faq-link-size="70%">Private Cloud</h3>
+                <h3 id="Pricing_TBMQ_PrivateCloud" class="gtm_button faq" data-faq-id="tbmq-stand-for">Private Cloud<a class="faq-link faq-link-70"></a></h3>
             </div>
         </div>
     </div>
@@ -151,9 +148,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">5 devices</div>
                         <div class="pricing-square-item">5 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">10M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
-                            Community support
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">10M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
+                            Community support<a class="faq-link"></a>
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -174,9 +171,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">50 devices</div>
                         <div class="pricing-square-item">50 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">50M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
-                            Community support
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">50M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
+                            Community support<a class="faq-link"></a>
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -198,11 +195,11 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">100 devices</div>
                         <div class="pricing-square-item">100 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">100M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Official technical support channel for priority assistance. Get expert guidance to accelerate your rollout and optimize platform usage.">
-                            Help desk
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">100M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Official technical support channel for priority assistance. Get expert guidance to accelerate your rollout and optimize platform usage.">
+                            Help desk<a class="faq-link"></a>
                         </div>
-                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
+                        <div class="pricing-square-item highlight faq" data-faq-id="tb-cloud-white-labeling">White labeling<a class="faq-link"></a></div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
@@ -221,11 +218,11 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">500 devices</div>
                         <div class="pricing-square-item">500 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">500M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
-                            Priority help desk
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">500M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
+                            Priority help desk<a class="faq-link"></a>
                         </div>
-                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling" data-faq-tooltip="Brand the platform as your own. Fully customize it with your own logo, domain, color scheme, and menu items.">White labeling</div>
+                        <div class="pricing-square-item highlight faq" data-faq-id="tb-cloud-white-labeling" data-faq-tooltip="Brand the platform as your own. Fully customize it with your own logo, domain, color scheme, and menu items.">White labeling<a class="faq-link"></a></div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
@@ -244,12 +241,12 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">1 000 devices</div>
                         <div class="pricing-square-item">1 000 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">1B data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
-                            Priority help desk
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">1B data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
+                            Priority help desk<a class="faq-link"></a>
                         </div>
-                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling" data-faq-tooltip="Brand the platform as your own. Fully customize it with your own logo, domain, color scheme, and menu items.">White labeling</div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-exceed-plan-limits" data-faq-tooltip="Supports scaling up to 5,000 devices. For large-scale deployments exceeding this, a <a target='_blank' href='/pricing/?section=thingsboard-pe-options&product=thingsboard-private-cloud'>Private Cloud</a> transition is recommended for enhanced cost-efficiency and dedicated resources.">$0.30 per extra device</div>
+                        <div class="pricing-square-item highlight faq" data-faq-id="tb-cloud-white-labeling" data-faq-tooltip="Brand the platform as your own. Fully customize it with your own logo, domain, color scheme, and menu items.">White labeling<a class="faq-link"></a></div>
+                        <div class="pricing-square-item plus-icon highlight faq" data-faq-id="tb-cloud-exceed-plan-limits" data-faq-tooltip="Supports scaling up to 5,000 devices. For large-scale deployments exceeding this, a <a target='_blank' href='/pricing/?section=thingsboard-pe-options&product=thingsboard-private-cloud'>Private Cloud</a> transition is recommended for enhanced cost-efficiency and dedicated resources.">$0.30 per extra device<a class="faq-link"></a></div>
                     </div>
                     <div class="pricing-square additional">
                         <h2 class="no-margin">Require dedicated infrastructure for unique enterprise needs?</h2>
@@ -275,9 +272,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">5 devices</div>
                         <div class="pricing-square-item">5 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">10M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
-                            Community support
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">10M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
+                            Community support<a class="faq-link"></a>
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -298,9 +295,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">50 devices</div>
                         <div class="pricing-square-item">50 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">50M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
-                            Community support
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">50M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
+                            Community support<a class="faq-link"></a>
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -322,11 +319,11 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">100 devices</div>
                         <div class="pricing-square-item">100 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">100M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
-                            Help desk
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">100M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
+                            Help desk<a class="faq-link"></a>
                         </div>
-                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
+                        <div class="pricing-square-item highlight faq" data-faq-id="tb-cloud-white-labeling">White labeling<a class="faq-link"></a></div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
@@ -345,11 +342,11 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">500 devices</div>
                         <div class="pricing-square-item">500 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">500M data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
-                            Priority help desk
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">500M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
+                            Priority help desk<a class="faq-link"></a>
                         </div>
-                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
+                        <div class="pricing-square-item highlight faq" data-faq-id="tb-cloud-white-labeling">White labeling<a class="faq-link"></a></div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
@@ -368,12 +365,12 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">1 000 devices</div>
                         <div class="pricing-square-item">1 000 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">1B data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
-                            Priority help desk
+                        <div class="pricing-square-item faq"  data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">1B data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
+                            Priority help desk<a class="faq-link"></a>
                         </div>
-                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-exceed-plan-limits">€0.30 per extra device</div>
+                        <div class="pricing-square-item highlight faq" data-faq-id="tb-cloud-white-labeling">White labeling<a class="faq-link"></a></div>
+                        <div class="pricing-square-item plus-icon highlight faq" data-faq-id="tb-cloud-exceed-plan-limits">€0.30 per extra device<a class="faq-link"></a></div>
                     </div>
                     <div class="pricing-square additional">
                         <h2 class="no-margin">Require dedicated infrastructure for unique enterprise needs?</h2>
@@ -648,9 +645,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item highlight">5 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Calculated as the sum of all telemetry data points (key/value pairs) plus any messages without measurements (like RPC calls). This aggregate reflects your real-time platform throughput.">50 000 msg/minute</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-faq-tooltip="Includes 500 GB to store your platform data (telemetry, attributes, events, files). Near the limit: prune old data, add storage, or upgrade plan.">500 GB of storage included</div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="You can add more devices anytime. After 5,000 included devices, extra devices are $0.10 per device per month.">$0.10 per extra device</div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Calculated as the sum of all telemetry data points (key/value pairs) plus any messages without measurements (like RPC calls). This aggregate reflects your real-time platform throughput.">50 000 msg/minute<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-faq-tooltip="Includes 500 GB to store your platform data (telemetry, attributes, events, files). Near the limit: prune old data, add storage, or upgrade plan.">500 GB of storage included<a class="faq-link"></a></div>
+                        <div class="pricing-square-item plus-icon highlight faq" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="You can add more devices anytime. After 5,000 included devices, extra devices are $0.10 per device per month.">$0.10 per extra device<a class="faq-link"></a></div>
                     </div>
                     <div class="pricing-square">
                         <h2>Growth</h2>
@@ -673,9 +670,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item highlight">25 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee </div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Calculated as the sum of all telemetry data points (key/value pairs) plus any messages without measurements (like RPC calls). This aggregate reflects your real-time platform throughput.">100 000 msg/minute</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-faq-tooltip="Includes 1 TB to store your platform data (telemetry, attributes, events, files). Near the limit: prune old data, add storage, or upgrade plan.">1 TB of storage included</div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="You can add more devices anytime. After 25,000 included devices, extra devices are $0.09 per device per month.">$0.09 per extra device</div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Calculated as the sum of all telemetry data points (key/value pairs) plus any messages without measurements (like RPC calls). This aggregate reflects your real-time platform throughput.">100 000 msg/minute<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-faq-tooltip="Includes 1 TB to store your platform data (telemetry, attributes, events, files). Near the limit: prune old data, add storage, or upgrade plan.">1 TB of storage included<a class="faq-link"></a></div>
+                        <div class="pricing-square-item plus-icon highlight faq" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="You can add more devices anytime. After 25,000 included devices, extra devices are $0.09 per device per month.">$0.09 per extra device<a class="faq-link"></a></div>
                     </div>
                     <div class="pricing-square">
                         <h2>Scale</h2>
@@ -698,17 +695,17 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item highlight">50 000 devices included</div>
                         <div class="pricing-square-item">99.95% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Calculated as the sum of all telemetry data points (key/value pairs) plus any messages without measurements (like RPC calls). This aggregate reflects your real-time platform throughput.">500 000 msg/minute</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-faq-tooltip="Includes 2 TB to store your platform data (telemetry, attributes, events, files). Near the limit: prune old data, add storage, or upgrade plan.">2 TB of storage included</div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="You can add more devices anytime. After 50,000 included devices, extra devices are $0.08 per device per month.">$0.08 per extra device</div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-faq-tooltip="Calculated as the sum of all telemetry data points (key/value pairs) plus any messages without measurements (like RPC calls). This aggregate reflects your real-time platform throughput.">500 000 msg/minute<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-faq-tooltip="Includes 2 TB to store your platform data (telemetry, attributes, events, files). Near the limit: prune old data, add storage, or upgrade plan.">2 TB of storage included<a class="faq-link"></a></div>
+                        <div class="pricing-square-item plus-icon highlight faq" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="You can add more devices anytime. After 50,000 included devices, extra devices are $0.08 per device per month.">$0.08 per extra device<a class="faq-link"></a></div>
                     </div>
                     <div class="pricing-square">
                         <h2>Enterprise</h2>
                         <div class="pricing-square-description">
                             <p>Tailored architecture, pricing, and SLAs to fit your business.</p>
                         </div>
-                        <h4 class="pricing-square-price always-display">
-                            Custom <span data-faq-id="tb-private-cloud-what-features-are-unique-to-the-enterprise-plan" data-faq-link-size="70%" data-faq-tooltip="Enterprise pricing built around your scale. Share your devices, msg/min, and retention and we’ll right-size the architecture and quote the best-fit package."></span>
+                        <h4 class="pricing-square-price always-display faq" data-faq-id="tb-private-cloud-what-features-are-unique-to-the-enterprise-plan" data-faq-tooltip="Enterprise pricing built around your scale. Share your devices, msg/min, and retention and we’ll right-size the architecture and quote the best-fit package.">
+                            Custom<a class="faq-link faq-link-50"></a>
                         </h4>
                         <div>
                             <a id="Pricing_PE_PrivateCloud_Enterprise" class="button secondary btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=I%20am%20interested%20in%20Enterprise%20plan%20for%20Private%20Cloud">
@@ -720,7 +717,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">Custom SLA</div>
                         <div class="pricing-square-item">Unlimited message rate</div>
                         <div class="pricing-square-item">Unlimited storage</div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="Need more than 100,000 devices? Extra devices are < $0.05/device/month — contact us for the best rate."><$0.05 per extra device</div>
+                        <div class="pricing-square-item plus-icon highlight faq" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-faq-tooltip="Need more than 100,000 devices? Extra devices are < $0.05/device/month — contact us for the best rate."><$0.05 per extra device<a class="faq-link"></a></div>
                     </div>
                 </div>
             </div>
@@ -750,14 +747,14 @@ defaultActivePricingSection: thingsboard-pe-options
                         </thead>
                         <tbody>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-is-automatic-backup">Automatic backups</td>
+                                <td class="faq" data-faq-id="tb-private-cloud-what-is-automatic-backup">Automatic backups<a class="faq-link"></a></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-is-included-in-the-monthly-subscription-fee">24/7 Monitoring</td>
+                                <td class="faq" data-faq-id="tb-private-cloud-what-is-included-in-the-monthly-subscription-fee">24/7 Monitoring<a class="faq-link"></a></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
@@ -778,28 +775,28 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">NoSQL Database</td>
+                                <td class="faq" data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">NoSQL Database<a class="faq-link"></a></td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-are-custom-data-retention-policies">Custom data retention policies</td>
+                                <td class="faq" data-faq-id="tb-private-cloud-what-are-custom-data-retention-policies">Custom data retention policies<a class="faq-link"></a></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-does-geo-region-deployment-selection-include">Geo-region deployment choice</td>
+                                <td class="faq" data-faq-id="tb-private-cloud-what-does-geo-region-deployment-selection-include">Geo-region deployment choice<a class="faq-link"></a></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-does-multi-az-database-replication-mean">Multi-AZ database replication</td>
+                                <td class="faq" data-faq-id="tb-private-cloud-what-does-multi-az-database-replication-mean">Multi-AZ database replication<a class="faq-link"></a></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
@@ -813,21 +810,21 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-are-high-availability-services-available-as-an-add-on">High availability services</td>
+                                <td class="faq" data-faq-id="tb-private-cloud-are-high-availability-services-available-as-an-add-on">High availability services<a class="faq-link"></a></td>
                                 <td></td>
                                 <td></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window">Maintenance window picking</td>
+                                <td class="faq" data-faq-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window">Maintenance window picking<a class="faq-link"></a></td>
                                 <td></td>
                                 <td></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-is-included-in-service-reviews-and-architecture-consultations">Service reviews & architecture consults</td>
+                                <td class="faq" data-faq-id="tb-private-cloud-what-is-included-in-service-reviews-and-architecture-consultations">Service reviews & architecture consults<a class="faq-link"></a></td>
                                 <td></td>
                                 <td></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
@@ -865,7 +862,7 @@ defaultActivePricingSection: thingsboard-pe-options
                          data-toggle="#payAsYouGo"
                          data-description-toggle="#payAsYouGoHeader"
                          onClick="activateSolutionSection('pe-pay-as-you-go')">
-                        <h3 id="Pricing_PE_SM_PayAsYouGo" class="gtm_button" data-faq-tooltip="Pay-as-you-go is a flexible monthly subscription. Scale up as you grow and pay for the capacity you need (tiers based on devices/assets)." data-faq-id="pe-pay-as-you-go-self-managed-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
+                        <h3 id="Pricing_PE_SM_PayAsYouGo" class="gtm_button faq" data-faq-tooltip="Pay-as-you-go is a flexible monthly subscription. Scale up as you grow and pay for the capacity you need (tiers based on devices/assets)." data-faq-id="pe-pay-as-you-go-self-managed-subscription-plans">Pay-as-you-go<a class="faq-link faq-link-70"></a></h3>
                     </div>
                     <div id="Pricing_PE_SM_Perpetual"
                          data-solutionId="pe-perpetual"
@@ -873,7 +870,7 @@ defaultActivePricingSection: thingsboard-pe-options
                          data-toggle="#perpetual"
                          data-description-toggle="#perpetualHeader"
                          onClick="activateSolutionSection('pe-perpetual')">
-                        <h3 id="Pricing_PE_SM_Perpetual" class="gtm_button" data-faq-tooltip="Perpetual is a one-time license that turns your IoT platform into a long-term asset—predictable costs, full control of your roadmap, and a strong foundation for enterprise scale." data-faq-id="pe-perpetual-perpetual-meaning" data-faq-link-size="70%">Perpetual</h3>
+                        <h3 id="Pricing_PE_SM_Perpetual" class="gtm_button faq" data-faq-tooltip="Perpetual is a one-time license that turns your IoT platform into a long-term asset—predictable costs, full control of your roadmap, and a strong foundation for enterprise scale." data-faq-id="pe-perpetual-perpetual-meaning">Perpetual<a class="faq-link faq-link-70"></a></h3>
                     </div>
                 </div>
             </div>
@@ -902,8 +899,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">10 devices</div>
                         <div class="pricing-square-item">10 assets</div>
                         <div class="pricing-square-item">1 production instance</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
-                            Community support
+                        <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
+                            Community support<a class="faq-link"></a>
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -929,8 +926,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">50 devices</div>
                         <div class="pricing-square-item">50 assets</div>
                         <div class="pricing-square-item">1 production instance</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
-                            Community support
+                        <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
+                            Community support<a class="faq-link"></a>
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -957,8 +954,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">100 devices</div>
                         <div class="pricing-square-item">100 assets</div>
                         <div class="pricing-square-item">1 production instance</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Official technical support channel for priority assistance. Get expert guidance to accelerate your rollout and optimize platform usage.">
-                            Help desk
+                        <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Official technical support channel for priority assistance. Get expert guidance to accelerate your rollout and optimize platform usage.">
+                            Help desk<a class="faq-link"></a>
                         </div>
                         <div class="pricing-square-item highlight">White labeling</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -984,8 +981,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">500 devices</div>
                         <div class="pricing-square-item">500 assets</div>
                         <div class="pricing-square-item">2 production instances</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
-                            Priority help desk
+                        <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
+                            Priority help desk<a class="faq-link"></a>
                         </div>
                         <div class="pricing-square-item highlight">White labeling</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -1011,8 +1008,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">1 000 devices</div>
                         <div class="pricing-square-item">1 000 assets</div>
                         <div class="pricing-square-item">3 production instances</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
-                            Priority help desk
+                        <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
+                            Priority help desk<a class="faq-link"></a>
                         </div>
                         <div class="pricing-square-item highlight">White labeling</div>
                         <div class="pricing-square-item plus-icon highlight">$0.1 per extra device</div>
@@ -1129,7 +1126,7 @@ defaultActivePricingSection: thingsboard-pe-options
                          data-toggle="#tbmqPayAsYouGo"
                          data-description-toggle="#tbmqPayAsYouGoHeader"
                          onClick="activateSolutionSection('tbmq-pe-pay-as-you-go')">
-                        <h3 id="Pricing_TBMQ_PE_PAYG" class="gtm_button" data-faq-id="tbmq-payg-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
+                        <h3 id="Pricing_TBMQ_PE_PAYG" class="gtm_button faq" data-faq-id="tbmq-payg-plans">Pay-as-you-go<a class="faq-link faq-link-70"></a></h3>
                     </div>
                     <div id="Pricing_TBMQ_PE_Perpetual"
                          data-solutionId="tbmq-pe-perpetual"
@@ -1137,7 +1134,7 @@ defaultActivePricingSection: thingsboard-pe-options
                          data-toggle="#tbmqPerpetual"
                          data-description-toggle="#tbmqPerpetualHeader"
                          onClick="activateSolutionSection('tbmq-pe-perpetual')">
-                        <h3 id="Pricing_TBMQ_PE_Perpetual" class="gtm_button" data-faq-id="tbmq-perp-def" data-faq-link-size="70%">Perpetual</h3>
+                        <h3 id="Pricing_TBMQ_PE_Perpetual" class="gtm_button faq" data-faq-id="tbmq-perp-def">Perpetual<a class="faq-link faq-link-70"></a></h3>
                     </div>
                 </div>
             </div>
