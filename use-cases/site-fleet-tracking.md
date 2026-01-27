@@ -19,7 +19,7 @@ contactUsModal: "true"
                 <p class="text">Clay mining operations present a high-risk, high-movement environment, where visibility, safety, and fuel efficiency are critical. Coordinating fleets of excavators and haul trucks across loading, unloading, and restricted zones requires more than GPS — it demands precision logic and real-time automation.</p>
             </div>
             <div class="demo-button">
-                <a id="UseCases_FleetTracking_ViewLiveDemo" target="_blank" href="https://tbqa.cloud/dashboard/2548a890-f521-11f0-9c52-afa8a748f5e9?publicId=3b728e20-3d08-11ee-be4b-434ecc9fc7b7" class="button gtm_button">View live demo</a>
+                <a id="UseCases_FleetTracking_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/3b0ab5a0-f838-11f0-a24d-13b2783631c6?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
             </div>
         </div>
         <div class="long">
@@ -353,7 +353,7 @@ contactUsModal: "true"
                 <div class=image>${getImage(0)}</div>
             </div>
             <div class="buttons-block">
-                <a id="UseCases_FleetTracking_ViewLiveDemo" target="_blank" href="https://tbqa.cloud/dashboard/2548a890-f521-11f0-9c52-afa8a748f5e9?publicId=3b728e20-3d08-11ee-be4b-434ecc9fc7b7" class="button gtm_button">View live demo</a>
+                <a id="UseCases_FleetTracking_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/3b0ab5a0-f838-11f0-a24d-13b2783631c6?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
                 <a id="UseCases_FleetTracking_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
 
