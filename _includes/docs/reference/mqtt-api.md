@@ -80,11 +80,8 @@ Where **1451649600512** is a [unix timestamp](https://en.wikipedia.org/wiki/Unix
 <br>
 Below are the examples of commands for publishing different types of telemetry data.
 
-{% if docsPrefix == nil %}
-Don't forget to replace <code>{{mqttHostName}}</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
-Don't forget to replace <code>{{mqttHostName}}</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+{% if docsPrefix == nil or docsPrefix == "pe/" %}
+Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
@@ -197,10 +194,7 @@ v1/devices/me/attributes
 
 Below are the examples of how to publish client-side device attributes.
 
-{% if docsPrefix == null %}
-Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
@@ -221,10 +215,17 @@ Telemetry data:
 
 Execute the command:
 
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+```shell
+mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+```
+{: .copy-code}
+{% else %}
 ```shell
 mosquitto_pub -d -h "{{mqttHostName}}" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
 ```
 {: .copy-code}
+{% endif %}
 
 **Example 2**. Publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file.
 
@@ -270,10 +271,7 @@ v1/devices/me/attributes/response/+
 The following example is written in javascript and is based on mqtt.js. 
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
-{% if docsPrefix == null %}
-Save the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace the hostname "<code>demo.thingsboard.io</code>" to your host. In this example, the hostname references live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 Save the "[mqtt-js-attributes-request.js](/docs/pe/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace the hostname "<code>127.0.0.1</code>" to your host. In this example, the hostname reference your local installation.
 {% endif %}
 {% if docsPrefix contains 'paas/' %}
@@ -322,10 +320,7 @@ When a shared attribute is changed by one of the server-side components (such as
 {"key1":"value1"}
 ```
 
-{% if docsPrefix == null %}
-For the following example, don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 For the following example, don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
@@ -374,12 +369,8 @@ v1/devices/me/rpc/response/$request_id
 The following example is written in javascript and is based on mqtt.js. 
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
-{% if docsPrefix == null %}
-Save the "[mqtt-js-rpc-from-server.js](/docs/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace the hostname "<code>demo.thingsboard.io</code>" with your host.
-In this example, the hostname references live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
-Save the "[mqtt-js-rpc-from-server.js](/docs/pe/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace the hostname "<code>127.0.0.1</code>" with your host.
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+Save the "[mqtt-js-rpc-from-server.js](/docs/pe/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace the hostname "<code>$THINGSBOARD_HOST_NAME</code>" with your host.
 In this example, the hostname reference your local installation.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
@@ -432,12 +423,8 @@ v1/devices/me/rpc/response/$request_id
 The following example is written in javascript and is based on mqtt.js. 
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
-{% if docsPrefix == null %}
-Save the "[mqtt-js-rpc-from-client.js](/docs/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace the hostname "<code>demo.thingsboard.io</code>" to your host.
-In this example, the hostname references live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
-Save the "[mqtt-js-rpc-from-client.js](/docs/pe/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace the hostname "<code>127.0.0.1</code>" to your host.
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+Save the "[mqtt-js-rpc-from-client.js](/docs/pe/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace the hostname "<code>$THINGSBOARD_HOST_NAME</code>" to your host.
 In this example, the hostname reference your local installation.
 {% endif %}
 {% if docsPrefix contains "paas/" %}

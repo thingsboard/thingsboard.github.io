@@ -13,7 +13,7 @@ With the help of ThingsBoard MCP, you can:
 
 Before you begin, ensure that you have:
 
-- An account at {% if docsPrefix == nil %}[ThingsBoard Demo](https://demo.thingsboard.io/signup){: target="_blank"}{% endif %}{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}[ThingsBoard Cloud](https://thingsboard.cloud/signup){: target="_blank"}{% endif %}{% if docsPrefix == "paas/eu/" %}[EU ThingsBoard Cloud](https://eu.thingsboard.cloud/signup){: target="_blank"}{% endif %} or a self-hosted ThingsBoard installation on your own {% if docsPrefix == nil %}[infrastructure](/docs/user-guide/install/installation-options/){: target="_blank"}{% endif %}{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}[infrastructure](/docs/user-guide/install/pe/installation-options/){: target="_blank"}{% endif %}.
+- An account at {% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "paas/" %}[ThingsBoard Cloud](https://thingsboard.cloud/signup){: target="_blank"}{% endif %}{% if docsPrefix == "paas/eu/" %}[EU ThingsBoard Cloud](https://eu.thingsboard.cloud/signup){: target="_blank"}{% endif %} or a self-hosted ThingsBoard installation on your own {% if docsPrefix == nil %}[infrastructure](/docs/user-guide/install/installation-options/){: target="_blank"}{% endif %}{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}[infrastructure](/docs/user-guide/install/pe/installation-options/){: target="_blank"}{% endif %}.
 - Authentication credentials (username and password) with sufficient permissions.
 - An <b>LLM Agent</b> (e.g., Claude Desktop) capable of running MCP Servers.
 

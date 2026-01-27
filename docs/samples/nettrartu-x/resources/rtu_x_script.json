@@ -32,7 +32,7 @@
   "mqtt": {
     "iface": 2,
     "format": 2,
-    "uri": "mqtt://demo.thingsboard.io:1883",
+    "uri": "mqtt://mqtt.thingsboard.cloud:1883",
     "client_id": "yhrXgmEKlGqwZiJie2y1",
     "user": "yhrXgmEKlGqwZiJie2y1",
     "password": "",

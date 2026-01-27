@@ -22,11 +22,8 @@ Before you begin, ensure you have the following:
 - **ThingsBoard instance**:
     - **Local/On-premise instance**: Self-hosted ThingsBoard installation on your own [infrastructure](/docs/{{docsPrefix}}user-guide/install/installation-options/){: target="_blank"}, or
 {% endif %}
-{% if docsPrefix == nil %}
-    - **ThingsBoard Demo**: Free Community instance available at [demo.thingsboard.io](https://demo.thingsboard.io/signup){: target="_blank"}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-    - **ThingsBoard Cloud**: Fully managed cloud service available at [thingsboard.cloud](https://thingsboard.cloud/signup){: target="_blank"}
+{% if docsPrefix == nil or docsPrefix == "pe/" %}
+    - **ThingsBoard Cloud**: Fully managed cloud service available at [ThingsBoard Cloud](https://thingsboard.io/installations/){: target="_blank"}
 {% endif %}
 {% if docsPrefix == "paas/" %}
 - **ThingsBoard Cloud**: Fully managed cloud service available at [thingsboard.cloud](https://thingsboard.cloud/signup){: target="_blank"}
