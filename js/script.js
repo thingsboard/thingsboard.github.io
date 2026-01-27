@@ -163,10 +163,7 @@ var tb = (function () {
 			$('[data-faq-id]').each(function () {
 				let faqAnchor = this;
 				let nodeId = this.getAttribute('data-faq-id');
-				let fontSize = this.getAttribute('data-faq-link-size') || 'smaller';
-				let faqLink = newDOMElement('a', 'faq-link');
-				$(faqLink).css('fontSize', fontSize);
-				faqAnchor.appendChild(faqLink);
+				let faqLink = $(faqAnchor).children('a')[0];
 				$(faqLink).on('click', function() {
 					navigateToFaq(nodeId);
 				});
@@ -178,10 +175,9 @@ var tb = (function () {
 					let nodeId = this.getAttribute('data-faq-id');
 					let faqLink = $(faqAnchor).children('a')[0];
 					let contentSource = document.querySelector('div[data-item-id="' + nodeId + '"] .container');
-
-					if (contentSource) {
+					let customTooltip = this.getAttribute('data-faq-tooltip');
+					if (contentSource || customTooltip) {
 						let fullText = $(contentSource).text().trim().replace(/\s+/g, ' ');
-						let customTooltip = this.getAttribute('data-faq-tooltip');
 						let charsPerLine = 24;
 						let maxLines = 5;
 						let maxChars = charsPerLine * maxLines;
@@ -1531,7 +1527,7 @@ var tb = (function () {
 	});
 })();
 
-//script for tabs (on-premises, live demo, cloud) in installation option
+//script for tabs (on-premises, cloud) in installation option
 (function () {
 	$(document).ready(function () {
 

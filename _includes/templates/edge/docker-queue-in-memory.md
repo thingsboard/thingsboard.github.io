@@ -19,7 +19,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb-edge
       CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
-      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.1 or demo.thingsboard.io
+      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.1
     volumes:
       - tb-edge-data:/data
       - tb-edge-logs:/var/log/tb-edge

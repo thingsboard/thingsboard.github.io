@@ -13,7 +13,7 @@ The "details" button allows reviewing low-level details of the logged action.
 
 ## REST API
 
-It is possible to fetch audit logs via [REST API](https://demo.thingsboard.io/swagger-ui.html#/audit-log-controller). 
+It is possible to fetch audit logs via [REST API](/docs/{{docsPrefix}}reference/rest-api/). 
 There are several API calls that allow to fetch entities related to particular user, entity, customer or fetch all records using page links.  
 
 {% unless docsPrefix contains "paas/" %}

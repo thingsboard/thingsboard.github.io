@@ -38,7 +38,7 @@ Enter the following lines into the "environment" block within the file:
 * Specify the proxy server for **HTTP** and **HTTPS** connections in the **HTTP_PROXY** and **HTTPS_PROXY** lines, correspondingly 
   * _For example: HTTP_PROXY=http://user:password@proxy.example.com:8080_
 * List addresses that should bypass the proxy in the **NO_PROXY** line 
-  * _For example: NO_PROXY=localhost,127.0.0.1,postgres,demo.thingsboard.io_
+  * _For example: NO_PROXY=localhost,127.0.0.1,postgres,thingsboard.cloud_
 
 The expected result:
 {% include images-gallery.html imageCollection="configs" %}

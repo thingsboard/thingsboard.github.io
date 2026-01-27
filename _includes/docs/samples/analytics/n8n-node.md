@@ -67,11 +67,8 @@ Before you begin, ensure you have the following:
 - **ThingsBoard instance**:
     - **Local/On-premise instance**: Self-hosted ThingsBoard installation on your own [infrastructure](/docs/{{docsPrefix}}user-guide/install/installation-options/){: target="_blank"}, or
 {% endif %}
-{% if docsPrefix == nil %}
-    - **ThingsBoard Demo**: Free Community instance available at [demo.thingsboard.io](https://demo.thingsboard.io/signup){: target="_blank"}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-    - **ThingsBoard Cloud**: Fully managed cloud service available at [thingsboard.cloud](https://thingsboard.cloud/signup){: target="_blank"}
+{% if docsPrefix == nil or docsPrefix == "pe/" %}
+    - **ThingsBoard Cloud**: Fully managed cloud service available [here](https://thingsboard.io/installations/choose-region/){: target="_blank"}
 {% endif %}
 {% if docsPrefix == "paas/" %}
 - **ThingsBoard Cloud**: Fully managed cloud service available at [thingsboard.cloud](https://thingsboard.cloud/signup){: target="_blank"}
@@ -144,7 +141,7 @@ Connect n8n to your ThingsBoard instance:
 1. Click **+** (top-left) → **Credentials**
 2. Search for **ThingsBoard API** → **Continue**
 3. Fill in your ThingsBoard details:
-   - **Base URL**: Your instance URL (e.g., {% if docsPrefix == nil %}`https://demo.thingsboard.io`{% elsif docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% elsif docsPrefix == "pe/" or docsPrefix == "paas/" %}`https://thingsboard.cloud`{% endif %})
+   - **Base URL**: Your instance URL (e.g., {% if docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% else %}`https://thingsboard.cloud`{% endif %})
    - **Username**: Your email
    - **Password**: Your password
 4. Click **Save**

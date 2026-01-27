@@ -1,1 +1,1 @@
-cat new-attributes-values.json | mqtt pub -d -h "demo.thingsboard.io" -t "v1/devices/me/attributes" -u '$ACCESS_TOKEN' -s -m ""
+cat new-attributes-values.json | mqtt pub -d -h "localhost" -t "v1/devices/me/attributes" -u '$ACCESS_TOKEN' -s -m ""

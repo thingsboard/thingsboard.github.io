@@ -33,7 +33,7 @@ Once you complete this sample/tutorial, you will see your sensor data on a dashb
 
 ### Software
  - [RTU+ Configuration Interface](https://nettra.tech).
- - You will need to have ThingsBoard server up and running. Use either [Live Demo](/docs/user-guide/live-demo/) or [Installation Guide](/docs/user-guide/install/installation-options/) to install ThingsBoard.
+ - You will need to have ThingsBoard server up and running. Use either [ThingsBoard Cloud](https://thingsboard.io/installations/) or [Installation Guide](/docs/user-guide/install/installation-options/) to install ThingsBoard.
 
 ## Connection diagram
 
@@ -46,7 +46,7 @@ The following picture summarizes the connections for this simple project:
 
 This step contains instructions that are necessary to connect your device to ThingsBoard.
 
-Sign up ThingsBoard Web UI as [live-demo](https://demo.thingsboard.io/signup). See [Live Demo](/docs/user-guide/live-demo/) page for more details how to get your account.
+Sign in to your ThingsBoard server Web UI.
 
 ### Device
 
@@ -104,7 +104,7 @@ Once you have your RTU+ connected to the PC, we can proceed with its configurati
 3. Fill the ***MQTT*** boxes as follow:
    <br><br>
    **Interfaz** : Ethernet &nbsp;&nbsp; **Puerto** : 1883<br>
-   **Servidor** : ThingsBoard HOST/IP address that is accessible within your local network. Specify `demo.thingsboard.io` if you are using [live demo](https://demo.thingsboard.io/) server.<br>
+   **Servidor** : ThingsBoard HOST/IP address that is accessible within your local network. Specify `mqtt.thingsboard.cloud` if you are using [ThingsBoard Cloud](https://thingsboard.cloud/) server.<br>
    **Usuario** : $RTU_DEMO_TOKEN (provided in *Device* subsection)<br>
    **Contraseña** : Leave empty<br>
    **Client ID** : RTU+<br>
@@ -114,7 +114,7 @@ Once you have your RTU+ connected to the PC, we can proceed with its configurati
 4. Fill the ***Time Synchronization*** boxes as follow:
    <br><br>
    **Interfaz** : NTP Ethernet<br>
-   **Servidor** : ThingsBoard HOST/IP address that is accessible within your local network. Specify `demo.thingsboard.io` if you are using [live demo](https://demo.thingsboard.io/) server.<br>
+   **Servidor** : ThingsBoard HOST/IP address that is accessible within your local network. Specify `thingsboard.cloud` if you are using [ThingsBoard Cloud](https://thingsboard.cloud/) server.<br>
    **Frecuencia** : 10<br>
    **Huso** : Write your time zone<br>
 
@@ -204,7 +204,7 @@ while(1)
 
 ## Data visualization
 
-Finally, open ThingsBoard Web UI in the Live Demo server with same user and password as *ThingsBoard configuration* section.
+Finally, open ThingsBoard Web UI with same user and password as *ThingsBoard configuration* section.
 
 Go to *"Devices"* section and locate *"RTU+ Device"*, open device details and switch to *"Latest telemetry"* tab.
 If all is configured correctly you should be able to see latest values of *"temperature"* in the table.<br><br>
