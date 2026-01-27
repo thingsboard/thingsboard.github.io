@@ -2,7 +2,7 @@
 layout: pricing
 title: Support plans
 description: ThingsBoard professional support plans for IoT projects, cloud infrastructure support
-defaultActivePricingSection: thingsboard-pe
+defaultActivePricingSection: professional-support
 redirect_from: "docs/services/support/"
 ---
 
@@ -15,12 +15,12 @@ redirect_from: "docs/services/support/"
        </div>
        <nav id="inner-navigation" class="inner-navigation">
          <ul id="menu-pricing-navigation-1" class="menu">
-            <li id="menu-item-thingsboard-ce" class="menu-item tb-logo">
-                <a id="Serv_Support_CS" class="gtm_button" href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')
+            <li id="menu-item-community-support" class="menu-item tb-logo">
+                <a id="Serv_Support_CS" class="gtm_button" href="javascript:void(0);" onClick="activatePricingSection('community-support')
 ">Community support</a>
             </li>
-            <li id="menu-item-thingsboard-pe" class="menu-item tb-logo active">
-                <a id="Serv_Support_PS" class="gtm_button" href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')
+            <li id="menu-item-professional-support" class="menu-item tb-logo active">
+                <a id="Serv_Support_PS" class="gtm_button" href="javascript:void(0);" onClick="activatePricingSection('professional-support')
 ">Professional support</a>
             </li>
          </ul>
@@ -30,7 +30,7 @@ redirect_from: "docs/services/support/"
     </div>
 </div>
 
-<div id="thingsboard-ce" class="pricing-content" style="display: none;">
+<div id="community-support" class="pricing-content" style="display: none;">
     <div class="pricing-div">
         <div class="container">
             <div class="pricing-section pricing-community active" id="community">
@@ -75,7 +75,7 @@ redirect_from: "docs/services/support/"
 </div>
 
 
-<div id="thingsboard-pe" class="pricing-content">
+<div id="professional-support" class="pricing-content">
     <div class="container">
         <div class="pricing-content-header row">
             <div class="pricing-content-description pricing-cloud active col-lg-6">
