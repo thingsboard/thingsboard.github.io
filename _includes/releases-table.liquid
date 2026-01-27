@@ -1,9 +1,16 @@
-{%- assign prefix = "docs/" | append: docsPrefix | append: "releases/releases-table/" -%}
+{%- if docsPrefix == "edge/" -%}
+    {%- assign prefix = "docs/" | append: docsPrefix | append: "releases/releases-table/" -%}
+{% elsif docsPrefix == "pe/edge/" %}
+    {%- assign prefix = "docs/" | append: docsPrefix | append: "releases/releases-table/" -%}
+{%- else -%}
+    {%- assign prefix = "docs/" | append: docsPrefix | append: "releases/releases-table/" -%}
+{%- endif -%}
+
 
 {%- assign releases = site.pages | where_exp: "p", "p.path contains prefix" -%}
 {%- assign releases = releases | sort: "path" | reverse -%}
 
-<div class="releases-table{% if docsPrefix == "pe/" %} pe-table{% endif %}">
+<div class="releases-table{% if docsPrefix == "pe/" %} pe-table{% elsif docsPrefix == "edge/" %} edge-table{% elsif docsPrefix == "pe/edge/" %} pe-edge-table{% endif %}">
     <div class="releases-table-content">
         <div class="releases-table-header">
             <div class="releases-table-header-item">Version</div>
@@ -36,7 +43,9 @@
                             {%- endfor -%}
 
                             <div class="releases-table-content-item">
-                                {{ version | replace: "-", "." | replace: ".x", "" }}{% if docsPrefix == "pe/" %}PE{% endif %}
+                                {{ version | replace: "-", "." | replace: ".x", "" }}{% if docsPrefix == "pe/" %}PE
+                                {%- elsif docsPrefix == "edge/" or docsPrefix == "pe/edge/" -%}Edge
+                                {%- endif -%}
                             </div>
 
                             <div class="releases-table-content-item">
@@ -52,12 +61,13 @@
 
                             {% if page.lts %}
                                 <a href="/docs/{{ docsPrefix }}releases/release-policy/"
-                                   class="releases-table-content-item version-link version-link-lts">
-                                <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}">
+                                   class="releases-table-content-item version-link version-link-lts"
+                                   target="_blank">
+                                <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% elsif docsPrefix == "edge/" %}#2260A7{% elsif docsPrefix == "pe/edge/" %}#009688{% else %}#2a7dec{% endif %}">
                                     Active LTS
                                 </span>
                                     <i class="fas fa-external-link-alt"
-                                       style="color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}"></i>
+                                       style="color: {% if docsPrefix == "pe/" %}#1F8B4D{% elsif docsPrefix == "edge/" %}#2260A7{% elsif docsPrefix == "pe/edge/" %}#009688{% else %}#2a7dec{% endif %}"></i>
                                 </a>
                             {% else %}
                                 <div class="releases-table-content-item">Standard</div>
@@ -96,9 +106,15 @@
                             </a>
 
                             <div class="releases-table-content-item upgrade-link">
-                                <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/?version={{ version }}">
+                            {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ version }}" target="_blank">
                                     Upgrade
                                 </a>
+                            {% else %}
+                                <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/?version={{ version }}" target="_blank">
+                                    Upgrade
+                                </a>
+                            {% endif %}
                             </div>
 
                         </div>
@@ -108,9 +124,9 @@
         </div>
     </div>
 </div>
-<ul class="legend{% if docsPrefix == "pe/" %} pe{% endif %}">
-    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Active LTS</a> - releases supported for 18 months from initial release date</li>
-    <li>Standard - releases supported for 6 months from initial release date</li>
+<ul class="legend{% if docsPrefix == "pe/" %} pe{% elsif docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} edge{% endif %}">
+    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/" target="_blank">Active LTS</a> - releases are supported for 18 months from the initial release date.</li>
+    <li>Standard - releases are supported for six months from the initial release date.</li>
 </ul>
 <div class="fixed-upgrade-scrollbar" id="fixedScrollbar">
     <div class="scrollbar-inner"></div>
