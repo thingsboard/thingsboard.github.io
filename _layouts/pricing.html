@@ -425,7 +425,7 @@
     }
 
     function popCopyButton() {
-        if (document.querySelector('.item').querySelector('.title')) {
+        if (document.querySelector('.item')?.querySelector('.title')) {
             document.querySelectorAll('.item').forEach(el => {
                 const clipButton = $(`
                 <button class="clipboard-btn" onmousedown="this.style.backgroundColor='#e8f1ff'"

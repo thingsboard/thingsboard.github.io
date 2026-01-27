@@ -322,7 +322,7 @@ description:
       </div>
       <div class="comparison-row">
         <p>Support Model</p>
-        <p><a href="/services/support/?section=thingsboard-ce" target="_blank">Community</a></p>
+        <p><a href="/services/support/?section=community-support" target="_blank">Community</a></p>
         <p><a href="/pricing/?section=thingsboard-pe-options&product=thingsboard-pe&faqSection=supportAndAssistance#pe-pay-as-you-go-support-included" target="_blank">Advanced + SLA</a></p>
       </div>
     </div>
