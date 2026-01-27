@@ -252,7 +252,7 @@ function switchTbmqFaqTab(tabId) {
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">Does TBMQ support MQTT over WebSocket?</div>
                     <div class="tbmq-faq-answer">
-                        <p>Yes. TBMQ supports <b>MQTT over WebSocket</b> and <b>Secure WebSocket (WSS)</b>, allowing browser-based applications and web dashboards to publish and subscribe to topics in real time. You can enable the WebSocket endpoints by default on:</p>
+                        <p>Yes, TBMQ supports <b>MQTT over WebSocket</b> and <b>Secure WebSocket (WSS)</b>, allowing browser-based applications and web dashboards to publish and subscribe to topics in real time. You can enable the WebSocket endpoints by default on:</p>
                         <ul>
                             <li><b>8084</b> – MQTT over WebSocket</li>
                             <li><b>8085</b> – MQTT over Secure WebSocket (WSS)</li>
@@ -341,7 +341,7 @@ function switchTbmqFaqTab(tabId) {
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">Does TBMQ support JWT authentication?</div>
                     <div class="tbmq-faq-answer">
-                        <p>Yes. TBMQ supports <b>JWT (JSON Web Token)</b>–based authentication through authentication providers. This approach enables clients to connect securely using signed tokens instead of static credentials. JWT support is ideal for dynamic or short-lived sessions where credentials are issued by an external identity service.</p>
+                        <p>Yes, TBMQ supports <b>JWT (JSON Web Token)</b>-based authentication through authentication providers. This approach enables clients to connect securely using signed tokens instead of static credentials. JWT support is ideal for dynamic or short-lived sessions where credentials are issued by an external identity service.</p>
                     </div>
                 </div>
                 <div class="tbmq-faq-question">
@@ -369,7 +369,7 @@ function switchTbmqFaqTab(tabId) {
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">Does TBMQ support shared subscriptions?</div>
                     <div class="tbmq-faq-answer">
-                        <p>Yes. TBMQ supports <b>shared subscriptions</b> as defined by the MQTT 5.0 specification. Shared subscriptions allow multiple clients to consume messages from the same topic group in a <b>load-balanced</b> manner. This feature is especially useful for scaling message processing horizontally — for example, distributing telemetry data processing among several backend services.</p>
+                        <p>Yes, TBMQ supports <b>shared subscriptions</b> as defined by the MQTT 5.0 specification. Shared subscriptions allow multiple clients to consume messages from the same topic group in a <b>load-balanced</b> manner. This feature is especially useful for scaling message processing horizontally — for example, distributing telemetry data processing among several backend services.</p>
                     </div>
                 </div>
                 <div class="tbmq-faq-question">

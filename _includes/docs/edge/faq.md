@@ -148,13 +148,13 @@ function resetEdgeLoadMore(categoryId) {
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What is ThingsBoard Edge {{edgeName}}?</div>
                     <div class="edge-faq-answer">
                         {% if docsPrefix == "pe/edge/" %}
-                        <p>ThingsBoard Professional Edition is the commercial version of ThingsBoard, an advanced IoT platform designed for production and enterprise IoT solutions.</p>
-                        <p>It offers comprehensive features including white-labeling, role-based access control (RBAC), advanced integrations, and enterprise-grade capabilities.</p>
+                        <p>ThingsBoard Edge Professional Edition (PE) is the commercial version of ThingsBoard Edge, an advanced IoT platform designed for managing and processing IoT data at the edge in production-grade and enterprise environments.</p>
+                        <p>It offers comprehensive features including white-labeling, role-based access control (RBAC), advanced integrations, and enterprise-grade capabilities, while maintaining seamless synchronization with ThingsBoard Server.</p>
                         {% else %}
                         <p><b>ThingsBoard Edge Community Edition (CE)</b> is a free, open-source platform designed specifically for edge computing scenarios. It provides essential capabilities for managing and analyzing IoT data at the edge, while staying seamlessly synchronized with the ThingsBoard Server (Cloud or On-premise).</p>
                         {% endif %}
                         <p><b>New to edge computing?</b> Edge computing means processing data where it's generated rather than sending everything to the cloud.</p> 
-                        <p>See <a href="/docs/{{docsPrefix}}getting-started-guides/what-is-edge/" target="_blank">What is Edge?</a>  for a detailed introduction, or jump to our <a href="/docs/{{docsPrefix}}getting-started/" target="_blank">Getting Started</a> to begin working with ThingsBoard Edge.</p>
+                        <p>See <a href="/docs/{{docsPrefix}}getting-started-guides/what-is-edge/" target="_blank">What is Edge?</a> for a detailed introduction, or jump to our <a href="/docs/{{docsPrefix}}getting-started/" target="_blank">Getting Started</a> to begin working with ThingsBoard Edge.</p>
                     </div>
                 </div>
                 <div class="edge-faq-question">
@@ -170,9 +170,9 @@ function resetEdgeLoadMore(categoryId) {
                     <div class="edge-faq-answer">
                         {% if docsPrefix == "pe/edge/" %}
                         <p>Edge {{edgeName}} is an <b>add-on to your ThingsBoard PE subscription</b>. Your plan includes a base number of Edge instances, and you can purchase additional instances as needed.</p>
-                        <p>See the <a href="/pricing/" target="_blank">Pricing Page</a> for details on what's included with each plan or contact your System Administrator.</p>
+                        <p>See the <a href="/pricing/" target="_blank">Pricing Page</a> for details on what's included with each plan, or contact your System Administrator.</p>
                         {% else %}
-                        <p>Edge {{edgeName}} is <b>open-source</b> and <b>free to download</b>. Install from our <a href="/docs/user-guide/install/{{docsPrefix}}installation-options/" target="_blank">documentation</a> or access source code on <a href="https://github.com/thingsboard/thingsboard-edge" target="_blank">GitHub</a></p>
+                        <p>Edge {{edgeName}} is <b>open-source</b> and <b>free to download</b>. Install it from our <a href="/docs/user-guide/install/{{docsPrefix}}installation-options/" target="_blank">documentation</a> or access the source code on <a href="https://github.com/thingsboard/thingsboard-edge" target="_blank">GitHub</a>.</p>
                         <p>You'll need a ThingsBoard Server instance to connect Edge to. See our <a href="/docs/{{docsPrefix}}getting-started/" target="_blank">Getting Started</a> guide for complete setup instructions.</p> 
                         {% endif %}
                     </div>
@@ -200,12 +200,10 @@ function resetEdgeLoadMore(categoryId) {
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">I have devices that use proprietary protocols. Can Edge connect to them?</div>
                     <div class="edge-faq-answer">
                         <p>Yes. Edge natively supports <a href="/docs/{{docsPrefix}}reference/mqtt-api/" target="_blank">MQTT</a>, <a href="/docs/{{docsPrefix}}reference/coap-api/" target="_blank">CoAP</a>, <a href="/docs/{{docsPrefix}}reference/http-api/" target="_blank">HTTP</a>, <a href="/docs/{{docsPrefix}}reference/snmp-api/" target="_blank">SNMP</a>, and <a href="/docs/{{docsPrefix}}reference/lwm2m-api/" target="_blank">LwM2M</a>. For other protocols, use: </p>
-                        <ul>
-                        <li>The <a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">ThingsBoard IoT Gateway</a> to bridge legacy devices. Gateway supports <a href="/docs/iot-gateway/config/modbus/" target="_blank">Modbus</a>, <a href="/docs/iot-gateway/config/bacnet/" target="_blank">BACnet</a>, <a href="/docs/iot-gateway/config/opc-ua/" target="_blank">OPC-UA</a>, and more, and is available at no extra cost.</li>
+                        <p>For other protocols, use the <a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">ThingsBoard IoT Gateway</a> to bridge legacy devices. Gateway supports <a href="/docs/iot-gateway/config/modbus/" target="_blank">Modbus</a>, <a href="/docs/iot-gateway/config/bacnet/" target="_blank">BACnet</a>, <a href="/docs/iot-gateway/config/opc-ua/" target="_blank">OPC-UA</a>, and more, and is available at no extra cost. </p>
                         {% if docsPrefix == "pe/edge/" %}
-                        <li>The <a href="/docs/{{docsPrefix}}user-guide/integrations/" target="_blank">Platform Integrations</a> to connect via <a href="/docs/{{docsPrefix}}user-guide/integrations/opc-ua/" target="_blank">OPC-UA</a>, <a href="/docs/{{docsPrefix}}user-guide/integrations/chirpstack/" target="_blank">ChirpStack</a>, and 30+ other systems using <a href="/docs/user-guide/integrations/#converters-library" target="_blank">convertor library</a>.</li>
+                        <p>Or, the <a href="/docs/{{docsPrefix}}user-guide/integrations/" target="_blank">Platform Integrations</a> to connect via <a href="/docs/{{docsPrefix}}user-guide/integrations/opc-ua/" target="_blank">OPC-UA</a>, <a href="/docs/{{docsPrefix}}user-guide/integrations/chirpstack/" target="_blank">ChirpStack</a>, and 30+ other systems using <a href="/docs/user-guide/integrations/#converters-library" target="_blank">convertor library</a>.</p>
                         {% endif %}
-                        </ul>
                     </div>
                 </div>
                 <div class="edge-faq-question edge-faq-hidden">
@@ -230,24 +228,24 @@ function resetEdgeLoadMore(categoryId) {
                         <p><b>Community Edition</b> is free and open-source.</p>
                         <p><b>Professional Edition</b> is commercial and adds:</p>
                         <ul>
-                        <li><b>White-labeling:</b> Deploy under your company's brand</li>
-                        <li><b>Solution templates:</b> Pre-built IoT solutions ready to install with dashboards, rule chains, and sample devices</li>
-                        <li><b>Converter library:</b> Ready-to-use decoder functions for 100+ devices across 6 LoRaWAN networks</li>
-                        <li><b>Scheduler:</b> Automate report generation, attribute updates, and device commands</li>
+                        <li><b>White-labeling:</b> Deploy under your company's brand.</li>
+                        <li><b>Solution templates:</b> Pre-built IoT solutions ready to install with dashboards, rule chains, and sample devices.</li>
+                        <li><b>Converter library:</b> Ready-to-use decoder functions for 100+ devices across 6 LoRaWAN networks.</li>
+                        <li><b>Scheduler:</b> Automate report generation, attribute updates, and device commands.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Do I need Edge PE if I'm building a commercial product?</div>
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Do I need PE Edge if I'm building a commercial product?</div>
                     <div class="edge-faq-answer">
                         <p>Not necessarily. <b>Community Edition is production-ready</b> and supports commercial deployments. You can build, sell, and deploy commercial products on CE.</p>
                         <p>The choice between CE and PE depends on your specific requirements.</p>
                         <p>Consider PE if you need to:</p>
                         <ul>
-                        <li>Deliver a branded product to customers</li>
-                        <li>Connect legacy equipment via OPC-UA or other industrial protocols</li>
-                        <li>Deploy pre-built solutions (irrigation, water metering, waste management, etc.)</li>
-                        <li>Manage multiple end-customers with hierarchical access control</li>
+                        <li>Deliver a branded product to customers.</li>
+                        <li>Connect legacy equipment via OPC-UA or other industrial protocols.</li>
+                        <li>Deploy pre-built solutions (irrigation, water metering, waste management, etc.).</li>
+                        <li>Manage multiple end-customers with hierarchical access control.</li>
                         </ul>
                     </div>
                 </div>
@@ -256,29 +254,29 @@ function resetEdgeLoadMore(categoryId) {
                     <div class="edge-faq-answer">
                         <p>No. Edge <b>edition must match</b> your ThingsBoard Server edition:</p>
                         <ul>
-                        <li>Edge CE connects to ThingsBoard Server CE</li>
-                        <li>Edge PE connects to ThingsBoard Server PE</li>
+                        <li>CE Edge connects to ThingsBoard CE Server.</li>
+                        <li>PE Edge connects to ThingsBoard PE Server.</li>
                         </ul>
-                        <p>PE-specific features (white-labeling, solution templates, integrations, etc.) require both Edge PE and Server PE to function.</p>
+                        <p>PE-specific features (white-labeling, solution templates, integrations, etc.) require both PE Edge and PE Server to function.</p>
                     </div>
                 </div>
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How many Edge instances can connect to one Server?</div>
                     <div class="edge-faq-answer">
                         <ul>
-                        <li><b>Edge CE:</b> The number of Edge instances is unlimited.</li>
-                        <li><b>Edge PE:</b> The number of included Edge instances depends on your ThingsBoard PE plan. You can add extra Edge instances for an additional monthly cost. Check your plan details or contact your administrator to see how many Edge instances are included.</li>
+                        <li><b>CE Edge:</b> The number of Edge instances is unlimited.</li>
+                        <li><b>PE Edge:</b> The number of included Edge instances depends on your ThingsBoard PE plan. You can add extra Edge instances for an additional monthly cost. Check your plan details or contact your administrator to see how many Edge instances are included.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I migrate from Edge CE to Edge PE?</div>
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I migrate from CE Edge to PE Edge?</div>
                     <div class="edge-faq-answer">
                         <p>Yes, but it requires upgrading your entire system:</p>
                         <ul>
                         <li><b>Upgrade your ThingsBoard Server</b> from CE to PE.</li>
-                        <li><b>Purchase the Edge Computing add-on</b> for your PE license</li>
-                        <li><b>Reinstall Edge</b> using PE packages</li>
+                        <li><b>Purchase the Edge Computing add-on</b> for your PE license.</li>
+                        <li><b>Reinstall Edge</b> using PE packages.</li>
                         </ul>
                         <p><b>Before upgrading:</b> Back up any custom dashboards, rule chains, or configurations. <a href="/docs/contact-us/" target="_blank">Consult</a> our support team for assistance or see our <a href="/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/" target="_blank">migration guide</a> for step-by-step instructions.</p>
                     </div>
@@ -298,20 +296,20 @@ function resetEdgeLoadMore(categoryId) {
                         {% if docsPrefix == "pe/edge/" %}
                         <p>Edge <b>{{edgeName}}</b> includes all <b>Community Edition</b> features plus:</p>
                         <ul>
-                        <li><b>UI customization</b>: <a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/" target="_blank">White-labeling</a> and <a href="/docs/{{peDocsPrefix}}user-guide/custom-menu/" target="_blank">custom menu</a> configuration</li>
-                        <li><b>Solution templates</b>: <a href="/docs/{{peDocsPrefix}}solution-templates/overview/" target="_blank">Pre-built IoT solutions</a> ready to install</li>
-                        <li><b>Platform Integrations</b>: <a href="/docs/{{docsPrefix}}user-guide/integrations/" target="_blank">Connect</a> to OPC-UA servers, and other systems with <a href="/docs/user-guide/integrations/#converters-library" target="_blank">ready-to-use decoders</a> for 100+ devices</li>
-                        <li><b>Scheduler</b>: <a href="/docs/{{docsPrefix}}user-guide/scheduler/" target="_blank">Automate</a> reports, commands, and updates</li>
-                        <li><b>Customer hierarchy</b>: Organize multiple end-customers with isolated access</li>
+                        <li><b>UI customization</b>: <a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/" target="_blank">White-labeling</a> and <a href="/docs/{{peDocsPrefix}}user-guide/custom-menu/" target="_blank">custom menu</a> configuration.</li>
+                        <li><b>Solution templates</b>: <a href="/docs/{{peDocsPrefix}}solution-templates/overview/" target="_blank">Pre-built IoT solutions</a> ready to install.</li>
+                        <li><b>Platform Integrations</b>: <a href="/docs/{{docsPrefix}}user-guide/integrations/" target="_blank">Connect</a> to OPC-UA servers, and other systems with <a href="/docs/user-guide/integrations/#converters-library" target="_blank">ready-to-use decoders</a> for 100+ devices.</li>
+                        <li><b>Scheduler</b>: <a href="/docs/{{docsPrefix}}user-guide/scheduler/" target="_blank">Automate</a> reports, commands, and updates.</li>
+                        <li><b>Customer hierarchy</b>: Organize multiple end-customers with isolated access.</li>
                         </ul>
                         {% else %}
                         <p>Edge <b>{{edgeName}}</b> provides complete edge computing functionality:</p>
                         <ul>
-                        <li><b>Device connectivity</b>: MQTT, CoAP, HTTP, SNMP, and LwM2M protocols</li>
-                        <li><b>Local data processing</b>: Rule engine for real-time analytics and automation</li>
-                        <li><b>Visualization</b>: Dashboard creation and customization</li>
-                        <li><b>Data management</b>: Device telemetry collection and attribute management</li>
-                        <li><b>Open-source</b>: Fully open-source with active community support</li>
+                        <li><b>Device connectivity</b>: MQTT, CoAP, HTTP, SNMP, and LwM2M protocols.</li>
+                        <li><b>Local data processing</b>: Rule engine for real-time analytics and automation.</li>
+                        <li><b>Visualization</b>: Dashboard creation and customization.</li>
+                        <li><b>Data management</b>: Device telemetry collection and attribute management.</li>
+                        <li><b>Open-source</b>: Fully open-source with active community support.</li>
                         </ul>
                         {% endif %}
                     </div>
@@ -332,15 +330,6 @@ function resetEdgeLoadMore(categoryId) {
                         {% endif %}
                     </div>
                 </div>
-                {% if docsPrefix == "edge/" %}
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does Edge {{edgeName}} support UI customization options, such as white-labeling or custom menu?</div>
-                    <div class="edge-faq-answer">
-                        <p><a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/" target="_blank">White-labeling</a> and <a href="/docs/{{peDocsPrefix}}user-guide/custom-menu/" target="_blank">custom menu</a> configuration are <b>Professional Edition</b> features that provide UI customization without code changes.</p>
-                        <p><b>{{edgeName}}</b> is open-source, allowing developers to customize the interface by modifying the source code.</p>
-                    </div>
-                </div>
-                {% endif %}
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does ThingsBoard Edge {{edgeName}} support AI or machine learning integrations?</div>
                     <div class="edge-faq-answer">
@@ -351,8 +340,8 @@ function resetEdgeLoadMore(categoryId) {
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I integrate devices that are connected via third-party systems such as LoRAWAN?</div>
                     <div class="edge-faq-answer">
-                        <p>Not out-of-the-box. To connect with third-party platforms like LoRaWAN networks, you would need to develop custom integration code.</p>
-                        <p>Professional Edition provides <b>ready-to-use Platform Integrations</b> for LoRaWAN networks (ChirpStack, TTN, Loriot), OPC-UA servers, and 30+ other platforms. See <a href="/docs/{{docsPrefix}}user-guide/integrations/" target="_blank">Edge Integrations documentation</a> for more details.</p>
+                        <p>Not out-of-the-box for Community Edition. To connect with third-party platforms like LoRaWAN networks, you would need to develop custom integration code.</p>
+                        <p>Professional Edition provides <b>ready-to-use Platform Integrations</b> for LoRaWAN networks (ChirpStack, TTN, Loriot), OPC-UA servers, and 30+ other platforms. See <a href="/docs/pe/edge/user-guide/integrations/" target="_blank">Edge Integrations documentation</a> for more details.</p>
                     </div>
                 </div>
                 <div class="edge-faq-question">
@@ -363,25 +352,34 @@ function resetEdgeLoadMore(categoryId) {
                         <p>Refer to <a href="/docs/{{docsPrefix}}config/edge-cluster-setup/" target="_blank">Edge Cluster Setup documentation</a> for more details.</p>
                     </div>
                 </div>
-                <div class="edge-faq-question edge-faq-hidden">
+                <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What databases and uplink message storages does ThingsBoard Edge support?</div>
                     <div class="edge-faq-answer">
-                        <p>Edge {{edgeName}} supports <b>pure SQL and a hybrid SQL + NoSQL</b> (for telemetry storage) approaches, which are:</p>
+                        <p>Edge {{edgeName}} supports <b>pure SQL and hybrid SQL + NoSQL</b> (for telemetry storage) approaches:</p>
                         <ul>
-                        <li><b>PostgreSQL</b>: Default, suitable for most deployments.</li>
-                        <li><b>PostgreSQL + Cassandra</b>: Hybrid approach for high-volume telemetry - 1M+ devices or >5,000 msg/sec.</li>
+                            <li><b>PostgreSQL</b>: The default; suitable for most deployments.</li>
+                            <li><b>PostgreSQL + Cassandra</b>: A hybrid approach for high-volume telemetry (1M+ devices or >5,000 msg/sec).</li>
                         </ul>
                         <p>Edge also supports different <b>uplink message storages</b>:</p>
                         <ul>
-                        <li><b>PostgreSQL</b>: Built-in default, <b>suitable for PoC and testing environments</b> - not for production or any sort of cluster deployments.</li>
-                        <li><b>Kafka</b>: Recommended for production deployments.</li>
+                            <li><b>PostgreSQL</b>: The built-in default, <b>suitable for PoC and low-load environments</b> — not recommended for production or cluster deployments with high volumes of uplink messages.</li>
+                            <li><b>Kafka</b>: Recommended for production deployments.</li>
                         </ul>
                     </div>
                 </div>
+                {% if docsPrefix == "edge/" %}
+                <div class="edge-faq-question edge-faq-hidden">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does Edge {{edgeName}} support UI customization options, such as white-labeling or custom menu?</div>
+                    <div class="edge-faq-answer">
+                        <p><a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/" target="_blank">White-labeling</a> and <a href="/docs/{{peDocsPrefix}}user-guide/custom-menu/" target="_blank">custom menu</a> configuration are <b>Professional Edition</b> features that provide UI customization without code changes.</p>
+                        <p><b>{{edgeName}}</b> is open-source, allowing developers to customize the interface by modifying the source code.</p>
+                    </div>
+                </div>
+                {% endif %}
                 <div class="edge-faq-question edge-faq-hidden">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I automate device management and telemetry processing?</div>
                     <div class="edge-faq-answer">
-                        <p>Yes. you can. The <a href="/docs/edge/rule-engine/rule-chain-templates/" target="_blank">Rule Engine</a> allows you to automate device workflows, data processing, and alerts based on incoming telemetry.</p>
+                        <p>Yes. you can. The <a href="/docs/{{docsPrefix}}rule-engine/rule-chain-templates/" target="_blank">Rule Engine</a> allows you to automate device workflows, data processing, and alerts based on incoming telemetry.</p>
                         <p>For example, you can automatically provision devices, transform data, trigger actions based on thresholds, or forward telemetry to external systems.</p>
                     </div>
                 </div>
@@ -415,12 +413,12 @@ function resetEdgeLoadMore(categoryId) {
                     <div class="edge-faq-answer">
                         <p>Partially. Edge version X.Y.Z works with:</p>
                         <ul>
-                        <li>Server version X.Y.Z (<b>same version</b>)</li>
-                        <li>Server versions X.Y+1 and X.Y+2 (<b>up to two minor versions ahead)</b>)</li>
+                        <li>Server version X.Y.Z (<b>same version</b>).</li>
+                        <li>Server versions X.Y+1 and X.Y+2 (<b>up to two minor versions ahead</b>).</li>
                         </ul>
                         <p><b>Edge does not work with older Server versions.</b></p>
                         <p>Example: Edge 3.8.0 works with Server 3.8.0, 3.8.1, and 3.9.0 — but not with Server 3.7.x or earlier. If your Edge is newer than your Server, upgrade the Server first.</p>
-                        <p>See also <a href="/docs/{{docsPrefix}}releases/" target="_blank">Edge Release Notes</a></p>
+                        <p>See also <a href="/docs/{{docsPrefix}}releases/" target="_blank">Edge Release Notes</a>.</p>
                     </div>
                 </div>
                 <div class="edge-faq-question">
@@ -428,10 +426,10 @@ function resetEdgeLoadMore(categoryId) {
                     <div class="edge-faq-answer">
                         <p>Less than you might think. Edge runs on:</p>
                         <ul>
-                        <li>Raspberry Pi or similar single-board computers</li>
-                        <li>Industrial gateways</li>
-                        <li>Mini PCs or embedded systems</li>
-                        <li><b>Any machine with 1GB+ RAM for light workloads, 4GB+ for heavy use</b></li>
+                        <li>Raspberry Pi or similar single-board computers.</li>
+                        <li>Industrial gateways.</li>
+                        <li>Mini PCs or embedded systems.</li>
+                        <li><b>Any machine with 1GB+ RAM for light workloads, 4GB+ for heavy use</b>.</li>
                         </ul>
                     </div>
                 </div>

@@ -154,23 +154,37 @@ function resetLoadMore(categoryId) {
         <div class="tb-faq-answers">
             <div id="tb-faq-cat-general" class="tb-faq-category active">
                 <div class="tb-faq-question">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What is ThingsBoard?</div>
+                    {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/"%}
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What is ThingsBoard Cloud?</div>
+                    {% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What is ThingsBoard Professional Edition?</div>
+                    {% else %}
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What is ThingsBoard Community Edition?</div>
+                    {% endif %}
                     <div class="tb-faq-answer">
-                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>ThingsBoard Professional Edition (PE) is an advanced IoT platform designed <b>for production-grade deployments, offering enterprise features, white-labeling, advanced security, and official support.</b> It is ideal for businesses looking to deploy scalable, reliable IoT solutions with professional backing.</p>
-                        <p>ThingsBoard is an IoT platform for <b>data collection, processing, visualization, and device management</b>. It provides out-of-the-box components and APIs to significantly accelerate development and lower costs while maintaining control of your solution and data.</p>
-                        <p>See <a href="/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard?</a> to learn more about the platform's architecture and capabilities, or jump to our <a href="/docs/getting-started-guides/helloworld-pe/" target="_blank">Getting Started Guide</a> to begin building your first IoT project.</p>
+                        <p>ThingsBoard is an IoT platform for <b>data collection, processing, visualization, and device management</b>. It enables you to accelerate development and lower costs by providing out-of-the-box components and APIs while maintaining full control over your solution and data.</p>
+                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/"%}
+                        <p>ThingsBoard Cloud is a <b>fully managed, scalable, and fault-tolerant Platform-as-a-Service (PaaS)</b> for your IoT applications. It offers all the advanced features of the Professional Edition without the overhead of manual installation, maintenance, or infrastructure updates, allowing you to focus entirely on building your solution.</p>
+                        <p>Learn more about the platform's architecture in our <a href="/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard?</a> guide, or jump straight to the <a href="/docs/{{docsPrefix}}getting-started-guides/helloworld/" target="_blank">Getting Started Guide</a> to build your first project.</p>
+                        {% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                        <p>ThingsBoard Professional Edition (PE) is an enterprise-grade IoT platform designed for <b>production-ready deployments</b>. It adds critical business features such as white-labeling, advanced security, multi-customer management, and official technical support, making it ideal for businesses requiring a reliable, professionally backed solution.</p>
+                        <p>Learn more about the platform's architecture in our <a href="/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard?</a> guide, or jump straight to the <a href="/docs/getting-started-guides/helloworld-pe/" target="_blank">Getting Started Guide</a> to build your first project.</p>
                         {% else %}
-                        <p>ThingsBoard Community Edition (CE) is the free and open-source IoT platform for collecting, storing, analyzing, and visualizing data from IoT devices. It is designed for developers and businesses who want full control over their IoT infrastructure without licensing fees.</p>
-                        <p>ThingsBoard is an <b>open-source IoT platform</b> for data collection, processing, visualization, and device management. It provides out-of-the-box components and APIs to significantly accelerate development and lower costs while maintaining control of your solution and data.</p>
-                        <p>See <a href="/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard?</a> to learn more about the platform's architecture and capabilities, or jump to our <a href="/docs/getting-started-guides/helloworld/" target="_blank">Getting Started Guide</a> to begin building your first IoT project.</p>
-                        {% endif %}
+                        <p>ThingsBoard Community Edition (CE) is a <b>free, open-source IoT platform</b> for collecting, storing, and analyzing data from IoT devices. It is designed for developers and organizations that want full control over their own IoT infrastructure and source code without any licensing fees.</p>
+                        <p>Learn more about the platform's architecture in our <a href="/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard?</a> guide, or jump straight to the <a href="/docs/getting-started-guides/helloworld/" target="_blank">Getting Started Guide</a> to build your first project.</p>
+                       {% endif %}
                     </div>
                 </div>
                 <div class="tb-faq-question">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Is ThingsBoard free?</div>
+                    {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Is ThingsBoard Professional Edition free?</div>
+                    {% else %}
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Is ThingsBoard Community Edition free?</div>
+                    {% endif %}
                     <div class="tb-faq-answer">
-                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" %}
+                        <p>You can start with the Free plan. But higher plans require <b>a paid subscription</b>.</p>
+                        {% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <p>No, Professional Edition requires <b>a paid subscription</b>.</p>
                         {% else %}
                         <p>Yes, it <b>is completely free</b>, with no licensing fees or hidden costs.</p>
@@ -178,34 +192,92 @@ function resetLoadMore(categoryId) {
                     </div>
                 </div>
                 <div class="tb-faq-question">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What's the difference between Community Edition and Professional Edition?</div>
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What's the difference between Community and Professional Edition?</div>
                     <div class="tb-faq-answer">
-                        <p><b>Community Edition</b> is free and open-source, suitable for development, testing, and production use without licensing costs. It includes essential features for IoT device management, data collection, visualization, and rule processing.</p>
-                        <p><b>Professional Edition</b> includes all features from CE and offers advanced features such as <a href="/docs/pe/user-guide/white-labeling/" target="_blank">white-labeling</a>, <a href="/docs/pe/user-guide/rbac/" target="_blank">role-based access control (RBAC)</a>, <a href="/docs/user-guide/integrations/" target="_blank">platform integrations</a>, <a href="/docs/pe/solution-templates/overview/" target="_blank">solution templates</a>, <a href="/docs/pe/user-guide/scheduler/" target="_blank">scheduler</a>, and enterprise support.</p>
-                        <p>See the <a href="/products/thingsboard-pe/" target="_blank">PE product page</a> for detailed <b>feature comparison table</b>.</p>
+                        <p><b>Community Edition (CE)</b> is a free, open-source platform suitable for development, testing, and production use without licensing costs. It includes essential features for IoT device management, data collection, visualization, and rule processing.</p>
+                        <p><b>Professional Edition (PE)</b> includes all CE features and offers advanced capabilities such as <a href="/docs/pe/user-guide/white-labeling/" target="_blank">white-labeling</a>, <a href="/docs/pe/user-guide/rbac/" target="_blank">role-based access control (RBAC)</a>, <a href="/docs/user-guide/integrations/" target="_blank">platform integrations</a>, <a href="/docs/pe/solution-templates/overview/" target="_blank">solution templates</a>, <a href="/docs/pe/user-guide/scheduler/" target="_blank">scheduler</a>, and enterprise support.</p>
+                        <p>See the <a href="/products/thingsboard-pe/" target="_blank">PE product page</a> for a detailed <b>feature comparison table</b>.</p>
                     </div>
                 </div>
-                {% unless page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                 <div class="tb-faq-question">
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">How do I get started with ThingsBoard?</div>
+                    <div class="tb-faq-answer">
+                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/"%}
+                        <p>Sign up for <a href="https://thingsboard.cloud/signup" target="_blank">ThingsBoard Cloud</a> for immediate access.</p>
+                        {% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                        <p>Sign up for <a href="https://thingsboard.cloud/signup" target="_blank">ThingsBoard Cloud</a> for immediate access or follow our <a href="/docs/pe/user-guide/install/installation-options/" target="_blank">installation guide</a> to deploy PE on your own infrastructure.</p>
+                        {% else %}
+                        <p>Install ThingsBoard CE locally by following our <a href="/docs/user-guide/install/installation-options/" target="_blank">installation guide</a>.</p>
+                        {% endif %}
+                        <p>To connect your first device and build dashboards, explore the <a href="/docs/{{docsPrefix}}getting-started-guides/helloworld/" target="_blank">Getting Started Guide</a>.</p>
+                    </div>
+                </div>
+                <div class="tb-faq-question">
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Are there API rate limits?</div>
+                    <div class="tb-faq-answer">
+                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" %}
+                        <p>Yes. Each ThingsBoard Cloud plan includes specific usage quotas and API rate limits. Please refer to the <a href="/docs/{{docsPrefix}}subscriptions/" target="_blank">Subscription Plans</a> page for detailed information on these limits.</p>
+                        {% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                        <p>The Professional Edition software does not impose built-in API rate limits. However, actual throughput and performance are determined by the capacity of your self-managed infrastructure.</p>
+                        {% else %}
+                        <p>ThingsBoard Community Edition does not have built-in API rate limits; however, system performance and request handling are subject to the limitations of the infrastructure on which it is hosted.</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="tb-faq-question">
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Are there device limits?</div>
+                    <div class="tb-faq-answer">
+                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" %}
+                        <p>Limits depend on your selected subscription plan. ThingsBoard Cloud plans range from 5 devices (Maker) up to 1,000 devices (Business). For <b>Business</b> plans, you can purchase additional device capacity as needed.</p>
+                        {% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                        <p>Device limits are determined by your license type. Self-managed Professional Edition subscriptions typically range from 10 devices (Maker) to 1,000 devices (Business). <b>Business</b> licenses allow for the purchase of additional device packs.</p>
+                        {% else %}
+                        <p>No, the Community Edition does not impose programmatic device limits. The number of devices you can connect is only limited by your server's hardware resources.</p>
+                        {% endif %}
+                        {% unless docsPrefix contains 'paas/' %}
+                        <p>The ThingsBoard platform is designed to be <b>horizontally scalable</b>. By utilizing a <a href="https://en.wikipedia.org/wiki/Consistent_hashing" target="_blank">consistent-hashing</a> load balancing algorithm between cluster nodes, the system ensures high availability and performance. Actual capacity depends on your specific usage scenarios and data throughput requirements.</p>
+                        <p>For instance, even a cluster of commodity hardware can support <a href="/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#1-million-smart-meters-tco" target="_blank">several million</a> devices connected via MQTT.</p>
+                        {% endunless %}
+                    </div>
+                </div>
+                <div class="tb-faq-question tb-faq-hidden">
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">How to connect my device?</div>
+                    <div class="tb-faq-answer">
+                        <p>ThingsBoard provides <a href="/docs/{{docsPrefix}}reference/mqtt-api" target="_blank">MQTT</a>, <a href="/docs/{{docsPrefix}}reference/coap-api" target="_blank">CoAP</a>, <a href="/docs/{{docsPrefix}}reference/http-api" target="_blank">HTTP</a>, and <a href="/docs/{{docsPrefix}}reference/lwm2m-api" target="_blank">LwM2M</a> protocols support. <b>Existing</b> devices may be connected to the platform using <b><a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">ThingsBoard Gateway</a></b>. You can find more information on the <a href="/docs/{{docsPrefix}}reference/protocols/" target="_blank">connectivity</a> page.</p>
+                    </div>
+                </div>
+                <div class="tb-faq-question tb-faq-hidden">
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Do I need to use an SDK?</div>
+                    <div class="tb-faq-answer">
+                        <p>No, many IoT devices cannot afford the overhead of embedding a third-party SDK. ThingsBoard provides a simple API over common IoT protocols, allowing you to choose any client-side library you prefer or use your own. Some useful references include:</p>
+                        <ul>
+                            <li><a href="https://github.com/mqtt/mqtt.github.io/wiki/libraries" target="_blank">List of MQTT client-side libraries</a></li>
+                            <li><a href="https://libcoap.net/" target="_blank">C-implementation for CoAP</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% unless docsPrefix contains 'paas/' %}
+                <div class="tb-faq-question tb-faq-hidden">
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Where can I host ThingsBoard?</div>
+                    <div class="tb-faq-answer">
+                        <p>You can host ThingsBoard in the cloud, on-premises, or locally on your laptop, PC, or even a Raspberry Pi. We recommend getting started with a Docker installation:</p>
+                        <ul>
+                            <li><a href="/docs/user-guide/install/{{docsPrefix}}docker/" target="_blank">Linux & macOS</a></li>
+                            <li><a href="/docs/user-guide/install/{{docsPrefix}}docker-windows/" target="_blank">Windows</a></li>
+                        </ul>
+                        <p>You can also take a look at the <a href="/docs/user-guide/install/{{docsPrefix}}cluster-setup/" target="_blank">cluster setup</a> guide.</p>
+                    </div>
+                </div>
+                {% endunless %}
+                {% unless page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                <div class="tb-faq-question tb-faq-hidden">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I use Community Edition for commercial projects?</div>
                     <div class="tb-faq-answer">
                         <p>Yes. CE is licensed under <a href="https://github.com/thingsboard/thingsboard/blob/master/LICENSE" target="_blank">Apache 2.0</a>, allowing commercial use without restrictions. You can build, sell, and deploy commercial products on CE.</p>
                     </div>
                 </div>
                 {% endunless %}
-                <div class="tb-faq-question">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">How do I get started with ThingsBoard?</div>
-                    <div class="tb-faq-answer">
-                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Start with <a href="https://thingsboard.cloud/signup" target="_blank">ThingsBoard Cloud</a> for immediate access, or follow our <a href="/docs/pe/user-guide/install/installation-options/" target="_blank">installation guide</a> to deploy PE on your infrastructure.</p>
-                        <p>To connect your first device and build dashboards, explore the <a href="/docs/getting-started-guides/helloworld-pe/" target="_blank">Getting Started Guide</a>.</p>
-                        {% else %}
-                        <p>Start with <a href="https://demo.thingsboard.io/signup" target="_blank">Live Demo</a> for immediate access, or install ThingsBoard CE locally by following <a href="/docs/user-guide/install/installation-options/" target="_blank">installation guide</a>.</p>
-                        <p>To connect your first device and build dashboards, explore the <a href="/docs/getting-started-guides/helloworld/" target="_blank">Getting Started Guide</a>.</p>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="tb-faq-question">
+                <div class="tb-faq-question tb-faq-hidden">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I migrate from CE to PE?</div>
                     <div class="tb-faq-answer">
                         <p>Yes, you can migrate from ThingsBoard Community Edition to Professional Edition <b>without losing telemetry data and/or configurations</b>. The upgrade process preserves your existing setup, ensuring a seamless transition.</p>
@@ -213,30 +285,16 @@ function resetLoadMore(categoryId) {
                         <p>See the <a href="/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/" target="_blank">ThingsBoard instructions for upgrading from Community Edition</a>. Back up your data before starting.</p>
                     </div>
                 </div>
-                <div class="tb-faq-question{% unless page.docsPrefix contains 'paas/' or docsPrefix contains 'paas/' or page.docsPrefix == 'pe/' or docsPrefix == 'pe/' %} tb-faq-hidden{% endunless %}">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What protocols does ThingsBoard support?</div>
-                    <div class="tb-faq-answer">
-                        <p>ThingsBoard supports <a href="/docs/{{docsPrefix}}reference/mqtt-api" target="_blank">MQTT</a>, <a href="/docs/{{docsPrefix}}reference/coap-api" target="_blank">CoAP</a>, <a href="/docs/{{docsPrefix}}reference/http-api" target="_blank">HTTP</a>, <a href="/docs/{{docsPrefix}}reference/lwm2m-api" target="_blank">LwM2M</a>, and <a href="/docs/{{docsPrefix}}reference/snmp-api" target="_blank">SNMP</a>.</p>
-                        <p>For legacy devices, use <a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">ThingsBoard IoT Gateway</a> which supports Modbus, BACnet, OPC-UA, and more.</p>
-                    </div>
-                </div>
                 <div class="tb-faq-question tb-faq-hidden">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Are there device limits?</div>
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">How can I check which version of ThingsBoard I’m currently using?</div>
                     <div class="tb-faq-answer">
-                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Limits vary by subscription plan. Cloud plans range from 30 devices (Maker) to unlimited (Enterprise). Self-managed subscriptions range from 10 devices (Maker) to unlimited (Enterprise).</p>
+                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" %}
+                        <p>ThingsBoard Cloud is a fully managed platform that is regularly updated to the latest version by the ThingsBoard team, so you don't need to worry about maintenance or upgrades.</p>
+                        {% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                        <p>There are several ways to check the platform version in ThingsBoard Professional Edition. The easiest way is to log in as SysAdmin. On the home page, you will find a widget in the bottom-left corner of the screen displaying the current platform version and indicating whether an upgrade is available.</p>
+                        <p>Alternatively, if you don’t have access to the SysAdmin account, open <a href="/docs/{{docsPrefix}}user-guide/white-labeling/" target="_blank">White-Labeling</a> tab from the side menu. Enable the <b>Show platform name and version</b> option to see the current version of the platform.</p>
                         {% else %}
-                        <p>No, there are no programmatic limits, but performance depends on your server(s) capacity.</p>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="tb-faq-question tb-faq-hidden">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Are there API rate limits?</div>
-                    <div class="tb-faq-answer">
-                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Yes, each Cloud plan has specific API and rate limits. Self-managed plans have no programmatic API limits but depend on infrastructure capacity.</p>
-                        {% else %}
-                        <p>No built-in API rate limits in the software itself, but performance depends on infrastructure.</p>
+                        <p>The easiest way is to log in as SysAdmin. On the home page, you will find a widget in the bottom-left corner of the screen showing the current platform version and whether an upgrade is available.</p>
                         {% endif %}
                     </div>
                 </div>
@@ -254,16 +312,60 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Does ThingsBoard support white-labeling?</div>
                     <div class="tb-faq-answer">
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Yes, white-labeling is available starting from the Prototype plan and above.</p>
+                        <p>Yes, white-labeling is available starting from the <b>Pilot</b> plan and above.</p>
                         {% else %}
                         <p>No, white-labeling is available only in the Professional Edition.</p>
                         {% endif %}
                     </div>
                 </div>
                 <div class="tb-faq-question tb-faq-hidden">
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I replace the default ThingsBoard logo in the menu?</div>
+                    <div class="tb-faq-answer">
+                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" %}
+                        <p>In the ThingsBoard Cloud, all branding can be configured directly from the user interface using the built-in <a href="/docs/{{docsPrefix}}user-guide/white-labeling/#customize-thingsboard-web-interface" target="_blank">White-Labeling</a> module.</p>
+                        <p>Here’s what you can do in just a few clicks:</p>
+                        <ul>
+                            <li>Replace the ThingsBoard logo and favicon with your own corporate visuals;</li>
+                            <li>Customize login and system pages to greet users with your brand from the start;</li>
+                            <li>Adjust color schemes and styles (primary, accent colors, logo size, CSS tweaks) to match your identity;</li>
+                            <li>Preview changes live before applying them;</li>
+                            <li>Configure custom domain: map your own domain name (e.g., portal.company.com) so users access the platform via your branded URL.</li>
+                        </ul>
+                        <p>And it doesn’t stop at the logo. With ThingsBoard Cloud you can:</p>
+                        <ul>
+                            <li>Set up custom <a href="/docs/{{docsPrefix}}user-guide/mail-templates/" target="_blank">email templates</a>, so all platform notifications reflect your brand;</li>
+                            <li>Add <a href="/docs/{{docsPrefix}}user-guide/custom-translation/" target="_blank">custom translations</a>, ensuring the platform “speaks” your users’ language;</li>
+                            <li>Create <a href="/docs/{{docsPrefix}}user-guide/custom-menu/" target="_blank">custom menus</a>, adapting navigation to your business workflows.</li>
+                        </ul>
+                        <p>This gives you a fully branded platform: your users see your logo, your colors, your emails, and even your tailored menus.</p>
+                        {% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                        <p>In the Professional Edition, all branding can be configured directly from the user interface using the built-in <a href="/docs/{{docsPrefix}}user-guide/white-labeling/#customize-thingsboard-web-interface" target="_blank">White-Labeling</a> module.</p>
+                        <p>Here’s what you can do in just a few clicks:</p>
+                        <ul>
+                            <li>Replace the ThingsBoard logo and favicon with your own corporate visuals;</li>
+                            <li>Customize login and system pages to greet users with your brand from the start;</li>
+                            <li>Adjust color schemes and styles (primary, accent colors, logo size, CSS tweaks) to match your identity;</li>
+                            <li>Preview changes live before applying them;</li>
+                            <li>Configure custom domains: map your own domain name (e.g., portal.company.com) so users access the platform via your branded URL.</li>
+                        </ul>
+                        <p>And it doesn’t stop at the logo. With PE you can:</p>
+                        <ul>
+                            <li>Set up custom <a href="/docs/{{docsPrefix}}user-guide/mail-templates/" target="_blank">email templates</a>, so all platform notifications reflect your brand;</li>
+                            <li>Add <a href="/docs/{{docsPrefix}}user-guide/custom-translation/" target="_blank">custom translations</a>, ensuring the platform “speaks” your users’ language;</li>
+                            <li>Create <a href="/docs/{{docsPrefix}}user-guide/custom-menu/" target="_blank">custom menus</a>, adapting navigation to your business workflows.</li>
+                        </ul>
+                        <p>This gives you a fully branded platform: your users see your logo, your colors, your emails, and even your tailored menus.</p>
+                        {% else %}
+                        <p>The Community Edition does not include a built-in white-labeling feature. However, it is technically possible to replace the default ThingsBoard logo by modifying the source code and rebuilding the platform. This requires development expertise and familiarity with ThingsBoard’s codebase. Please note that such changes will need to be reapplied after each upgrade of the platform.</p>
+                        <p>If you need a more streamlined and configurable option, we recommend considering the Professional Edition. With Professional Edition, you can effortlessly upload your own logo and favicon, customize login and system pages, adjust colors and branding palettes, and even tailor <a href="/docs/pe/user-guide/mail-templates/" target="_blank">email templates</a>, <a href="/docs/pe/user-guide/custom-translation/" target="_blank">translations</a>, and <a href="/docs/pe/user-guide/custom-menu/" target="_blank">custom menus</a> - all directly from the user interface, without touching the code. This empowers your organization to deliver a fully branded, professional-grade experience to your customers and tenants in just a few clicks.</p>
+                        <p>More details: <a href="/docs/pe/user-guide/white-labeling/#customize-thingsboard-web-interface" target="_blank">PE White-Labeling Guide</a>.</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="tb-faq-question tb-faq-hidden">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I try Professional Edition before purchasing?</div>
                     <div class="tb-faq-answer">
-                        <p>Yes, use the free <b>Maker plan</b>. The includes access to all PE features for evaluation, including add-ons - Edge computing and Trendz.</p>
+                        <p>Yes, use the <b>Free plan</b>. This includes access to all PE features for evaluation, including add-ons - Edge computing and Trendz.</p>
                     </div>
                 </div>
                 <div class="tb-faq-question tb-faq-hidden">
@@ -272,7 +374,7 @@ function resetLoadMore(categoryId) {
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <p>Professional Edition is proprietary software. Source code is not publicly available.</p>
                         {% else %}
-                        <p>The source code is available on <a href="https://github.com/thingsboard/thingsboard" target="_blank">GitHub</a>. You can fork, modify, and contribute to the project under the <a href="https://github.com/thingsboard/thingsboard/blob/master/LICENSE" target="_blank">Apache 2.0 license</a>.</p>
+                        <p>The source code is available on <a href="https://github.com/thingsboard/thingsboard" target="_blank">GitHub</a>. You can fork, modify, and contribute to the project under the <a href="https://github.com/thingsboard/thingsboard/blob/master/LICENSE" target="_blank">Apache 2.0 license</a>. It is free for both personal and commercial usage, and you can deploy it anywhere.</p>
                         {% endif %}
                     </div>
                 </div>
@@ -282,7 +384,7 @@ function resetLoadMore(categoryId) {
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <p>Professional Edition is closed-source and does not accept external contributions.</p>
                         {% else %}
-                        <p>Yes! Pull requests and contributions are welcome on <a href="https://github.com/thingsboard/thingsboard/" target="_blank">GitHub</a>. Check the <a href="https://github.com/thingsboard/thingsboard/pulls" target="_blank">contribution guidelines</a> before submitting.</p>
+                        <p>Yes! Pull requests and contributions are welcome on <a href="https://github.com/thingsboard/thingsboard/" target="_blank">GitHub</a>.</p>
                         {% endif %}
                     </div>
                 </div>
@@ -295,13 +397,13 @@ function resetLoadMore(categoryId) {
                 <div class="tb-faq-question">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What is a ThingsBoard Add-on?</div>
                     <div class="tb-faq-answer">
-                        <p>Add-ons are complementary <b>products that extend</b> ThingsBoard Professional Edition capabilities. They integrate seamlessly with your ThingsBoard instance and require a PE subscription to use. Add-ons include <b>ThingsBoard Edge PE</b> (edge computing), and <b>Trendz Analytics</b> (advanced analytics/AI).</p>
+                        <p>Add-ons are complementary <b>products that extend</b> ThingsBoard Professional Edition capabilities. They integrate seamlessly with your ThingsBoard instance and require a PE subscription to use. Add-ons include <b>ThingsBoard PE Edge</b> (edge computing), and <b>Trendz Analytics</b> (advanced analytics/AI).</p>
                     </div>
                 </div>
                 <div class="tb-faq-question">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What add-ons are available for ThingsBoard?</div>
                     <div class="tb-faq-answer">
-                        <p><a href="/docs/pe/edge/getting-started-guides/what-is-edge/" target="_blank">ThingsBoard Edge PE</a> and <a href="/docs/trendz/what-is-trendz/" target="_blank">Trendz Analytics.</a></p>
+                        <p><a href="/docs/pe/edge/getting-started-guides/what-is-edge/" target="_blank">ThingsBoard PE Edge</a> and <a href="/docs/trendz/what-is-trendz/" target="_blank">Trendz Analytics.</a></p>
                     </div>
                 </div>
                 <div class="tb-faq-question">
@@ -325,17 +427,17 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I use Edge and/or Trendz add-ons with ThingsBoard Community Edition?</div>
                     <div class="tb-faq-answer">
                         <ul>
-                            <li><b>Edge:</b> No. Edge edition must match your ThingsBoard Server edition. Edge PE connects to ThingsBoard PE Server. However, you can use <b>Edge CE</b> with ThingsBoard CE Server. It's free and open-source as well as ThingsBoard CE.</li>
+                            <li><b>Edge:</b> No. Edge edition must match your ThingsBoard Server edition. PE Edge connects to ThingsBoard PE Server. However, you can use <b>CE Edge</b> with ThingsBoard CE Server. It's free and open-source as well as ThingsBoard CE.</li>
                             <li><b>Trendz Analytics:</b> No, Trendz requires ThingsBoard Professional Edition.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="tb-faq-question tb-faq-hidden">
+                <div class="tb-faq-question">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I use Edge and/or Trendz without ThingsBoard?</div>
                     <div class="tb-faq-answer">
                         <p>No, they are both designed to complement the capabilities of ThingsBoard, not to function as standalone solutions. Neither can operate independently:</p>
                         <ul>
-                            <li><b>Edge PE:</b> Requires connection to sync with ThingsBoard PE Server (Cloud, Private Cloud, or self-managed).</li>
+                            <li><b>PE Edge:</b> Requires connection to sync with ThingsBoard PE Server (Cloud, Private Cloud, or self-managed).</li>
                             <li><b>Trendz Analytics:</b> Requires ThingsBoard PE as its data source. </li>
                         </ul>
                     </div>
@@ -356,14 +458,14 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What is ThingsBoard Private Cloud?</div>
                     <div class="tb-faq-answer">
                         <p>ThingsBoard Private Cloud is a <b>fully managed, isolated ThingsBoard Professional Edition cluster</b> that our team deploys and operates for you.</p>
-                        <p>We provision the infrastructure, keep the platform patched and monitored 24×7, run automated backups, and provide an SLA-backed uptime guarantee (99%–99.99%, depending on plan). During onboarding, you choose the region that best fits your compliance or latency requirements—EU, North America, or APAC.</p>
+                        <p>We provision the infrastructure, keep the platform patched and monitored 24×7, run automated backups, and provide an SLA-backed uptime guarantee (99%-99.99%, depending on plan). During onboarding, you choose the region that best fits your compliance or latency requirements - EU, North America, or APAC.</p>
                         <p><b>All environments are hosted in ISO 27001/PCI-DSS-certified data centers.</b> Your engineers can stay focused on building IoT applications instead of managing DevOps.</p>
                     </div>
                 </div>
                 <div class="tb-faq-question">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">How is Private Cloud different from ThingsBoard Cloud?</div>
                     <div class="tb-faq-answer">
-                        <p>Private Cloud provides a dedicated, isolated environment for your organization, whereas ThingsBoard Cloud is a shared multi-tenant SaaS platform. Private Cloud offers enhanced security, custom SLAs, and infrastructure isolation for compliance-sensitive industries.</p>
+                        <p>Private Cloud provides a dedicated, isolated environment for your organization, whereas ThingsBoard Cloud is a shared multi-tenant SaaS platform.</p>
                         <p>Private Cloud offers <b>enhanced security, custom SLAs</b>, and <b>infrastructure isolation</b> for compliance-sensitive industries.</p>
                     </div>
                 </div>
@@ -374,14 +476,14 @@ function resetLoadMore(categoryId) {
                         <ul>
                         <li><b>Zero DevOps overhead</b>: No infrastructure management or DevOps required.</li> 
                         <li><b>Guaranteed availability</b>: 99.9-99.99% uptime SLA with service credits.</li> 
-                        <li><b>Faster time-to-market</b>: Deployed in 1-2 hours vs. weeks for self-hosting</li>
-                        <li><b>Scalability</b>: Kubernetes infrastructure grows with your traffic</li> 
+                        <li><b>Faster time-to-market</b>: Deployed in 1-2 hours vs. weeks for self-hosting.</li>
+                        <li><b>Scalability</b>: Kubernetes infrastructure grows with your traffic.</li> 
                         <li><b>Predictable cost</b>: One monthly fee replaces infrastructure and staffing expenses.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="tb-faq-question">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What is ‘uptime’ and how do you calculate it?</div>
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What is "uptime" and how do you calculate it?</div>
                     <div class="tb-faq-answer">
                         <p>Uptime measures platform availability as a percentage of time services are operational during the billing month.</p>
                         <p><b>Formula:</b> Uptime (%) = ((Total Time – Downtime) / Total Time) × 100.</p>
@@ -415,7 +517,7 @@ function resetLoadMore(categoryId) {
                 <div class="tb-faq-question tb-faq-hidden">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Is Private Cloud compliant with security standards?</div>
                     <div class="tb-faq-answer">
-                        <p>Private Cloud is designed to support compliance requirements including <b></b>GDPR, HIPAA, and ISO 27001</p>. Specific compliance certifications depend on your deployment configuration and service agreement.</p>
+                        <p>Private Cloud is designed to support compliance requirements including <b>GDPR, HIPAA, and ISO 27001</b>. Specific compliance certifications depend on your deployment configuration and service agreement.</p>
                     </div>
                 </div>
                 <div class="tb-faq-question tb-faq-hidden">
@@ -440,13 +542,13 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I use AI for predictive maintenance?</div>
                     <div class="tb-faq-answer">
                         <p>Yes, ThingsBoard includes built-in AI integration capabilities. You can use the <a href="/docs/user-guide/rule-engine-2-0/nodes/external/ai-request/" target="_blank">AI Request node</a> to send telemetry data to machine learning models for predictive analytics, anomaly detection, and maintenance scheduling.</p>
-                        <p>See predictive maintenance example for implementation details.</p>
+                        <p>See the predictive maintenance example for implementation details.</p>
                     </div>
                 </div>
                 <div class="tb-faq-question">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Which AI providers are supported?</div>
                     <div class="tb-faq-answer">
-                        <p>ThingsBoard supports OpenAI, Azure OpenAI, and custom API endpoints. You can integrate any AI service that provides a REST API.</p>
+                        <p>ThingsBoard supports a variety of AI providers, including, but not limited to, OpenAI, Azure OpenAI, and custom API endpoints. Check the <a href="/docs/{{docsPrefix}}samples/analytics/ai-models/" target="_blank">AI models</a> page for more details.</p>
                     </div>
                 </div>
                 <div class="tb-faq-question">
@@ -467,15 +569,6 @@ function resetLoadMore(categoryId) {
                         <p>ThingsBoard integration is included, but you need subscriptions to external AI services (OpenAI, Azure, etc.) if using those providers. Custom AI endpoints are entirely under your control.</p>
                     </div>
                 </div>
-                <div class="tb-faq-question tb-faq-hidden">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I process AI requests in batches?</div>
-                    <div class="tb-faq-answer">
-                        <p>Yes, the Rule Engine allows batch processing. Aggregate telemetry data and send batched requests to AI endpoints to optimize costs and performance.</p>
-                    </div>
-                </div>
-                <div class="tb-faq-load-more" onclick="loadMoreTbFaq(this)">
-                    <div class="title">Load more FAQ</div>
-                </div>
             </div>
             <div id="tb-faq-cat-deployment" class="tb-faq-category">
                 <div class="tb-faq-question">
@@ -484,15 +577,15 @@ function resetLoadMore(categoryId) {
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <p>Professional Edition offers three deployment options:</p>
                         <ul>
-                        <li><b>ThingsBoard Cloud:</b> Fully managed SaaS (North America or EU regions)</li>
-                        <li><b>Private Cloud:</b> Dedicated managed instance in your choice of region</li>
-                        <li><b>Self-managed:</b> On your infrastructure—on-premise or cloud (AWS, Azure, GCP, DigitalOcean), Docker, or Kubernetes</li>
+                        <li><b>ThingsBoard Cloud:</b> Fully managed SaaS (North America or EU regions).</li>
+                        <li><b>Private Cloud:</b> Dedicated managed instance in your choice of a region.</li>
+                        <li><b>Self-managed:</b> On your infrastructure—on-premise or cloud (AWS, Azure, GCP, DigitalOcean), Docker, or Kubernetes.</li>
                         </ul>
                         {% else %}
                         <p>Community Edition can be installed on:</p>
                         <ul>
                         <li><b>On-premise</b> servers or virtual machines. Docker and Kubernetes deployments are supported.</li>
-                        <li><b>Cloud platforms:</b> AWS, Microsoft Azure, DigitalOcean, Google Cloud Platform</li>
+                        <li><b>Cloud platforms:</b> AWS, Microsoft Azure, DigitalOcean, Google Cloud Platform.</li>
                         </ul>
                         {% endif %}
                     </div>
@@ -500,12 +593,12 @@ function resetLoadMore(categoryId) {
                 <div class="tb-faq-question">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Does ThingsBoard support clustering?</div>
                     <div class="tb-faq-answer">
-                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <p>Yes, clustering is supported in all deployment options.</p>
+                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                        <p>See <a href="/docs/user-guide/install/pe/cluster-setup/" target="_blank">cluster setup guide</a> for configuration details.</p>
                         {% else %}
-                        <p>Yes, clustering is fully supported in the Community Edition.</p>
+                        <p>See <a href="/docs/user-guide/install/cluster-setup/" target="_blank">cluster setup guide</a> for configuration details.</p>
                         {% endif %}
-                        <p>See <a href="/docs/user-guide/install/{{docsPrefix}}cluster-setup/" target="_blank">cluster setup guide</a> for configuration details.</p>
                     </div>
                 </div>
                 <div class="tb-faq-question">
@@ -519,24 +612,25 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">How many devices can ThingsBoard handle?</div>
                     <div class="tb-faq-answer">
                     {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Device capacity varies by deployment type:</p>
+                        <p>Device capacity is determined by your specific deployment and subscription tier:</p>
                         <ul>
-                        <li><b>ThingsBoard Cloud</b>: Plan-based limits (30 devices for Maker up to unlimited for Enterprise).</li>
-                        <li><b>Private Cloud</b>: Plan-based allocations (5K-100K+ devices).</li>
-                        <li><b>Self-managed</b>: No software limits—capacity depends on your infrastructure (tens of thousands on single server, millions in clusters).</li>
+                            <li><b>ThingsBoard Cloud</b>: Usage is governed by your plan (e.g., 5 devices for Free, up to 1,000 for Business). Additional device capacity can be added to <b>Business</b> plans.</li>
+                            <li><b>Private Cloud</b>: Tailored for high-scale needs, with typical allocations ranging from 5,000 to over 100,000+ devices.</li>
+                            <li><b>Self-managed (PE)</b>: Licensing limits apply (e.g., 10 devices for Maker, up to 1,000 for Business). Like the Cloud version, <b>Business</b> licenses support purchasing additional device packs.</li>
                         </ul>
-                        {% else %}
-                        <p>There are <b>no software limits</b> on device count. The number of devices depends on your hardware capacity, database configuration, and deployment architecture (standalone vs cluster). A single server can handle tens of thousands of devices; clustered deployments can scale to millions</p>
-                        {% endif %}
+                    {% else %}
+                        <p>There are <b>no programmatic software limits</b> on the number of devices in the Community Edition. The capacity of your system depends entirely on your hardware resources, database configuration, and deployment architecture (standalone vs. cluster).</p>
+                        <p>A single modern server can typically handle tens of thousands of devices, while <b>clustered deployments</b> can scale to support millions of concurrent connections.</p>
+                    {% endif %}
                     </div>
                 </div>
                 <div class="tb-faq-question">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What databases does ThingsBoard support?</div>
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Where does ThingsBoard store data?</div>
                     <div class="tb-faq-answer">
                         <p>ThingsBoard supports two database approaches:</p>
                         <ul>
-                        <li><b>Pure SQL</b>: PostgreSQL database which is default and recommended for development and production environments with reasonable load (< 5000 msg/sec).</li>
-                        <li><b>Hybrid database</b>: PostgreSQL+Cassandra or PostgreSQL+TimescaleDB for 1M+ devices in production or high data ingestion rate (> 5000 msg/sec). </li>
+                        <li><b>Pure SQL</b>: PostgreSQL database which is default and recommended for development and production environments with a reasonable load (< 5000 msg/sec).</li>
+                        <li><b>Hybrid database</b>: PostgreSQL + Cassandra for 1M+ devices in production or high data ingestion rate (> 5000 msg/sec). </li>
                         </ul>
                     </div>
                 </div>
@@ -546,7 +640,7 @@ function resetLoadMore(categoryId) {
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <p>Yes, ThingsBoard Cloud supports multi-tenancy, with each <b>tenant requiring its own subscription</b>.</p>
                         <p>Within a tenant, a customer hierarchy can be established, allowing tenant administrators to manage multiple customers under a single subscription. This structure provides sufficient flexibility and access control for most use cases, ensuring a well-organized and efficient management model.</p>
-                        <p>ThingsBoard Enterprise subscription offers multi-tenancy within a single plan.</p>
+                        <p>ThingsBoard Self-managed subscription offers multi-tenancy within a single plan.</p>
                         {% else %}
                         <p>Yes, the ThingsBoard Community Edition supports multi-tenancy out of the box.</p>
                         {% endif %}
@@ -555,7 +649,7 @@ function resetLoadMore(categoryId) {
                 <div class="tb-faq-question tb-faq-hidden">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Does ThingsBoard support OTA (Over-the-Air) firmware updates?</div>
                     <div class="tb-faq-answer">
-                        <p>Yes, the ThingsBoard supports OTA (Over-the-Air) firmware updates.</p>
+                        <p>Yes, ThingsBoard supports OTA (Over-the-Air) firmware updates.</p>
                     </div>
                 </div>
                 <div class="tb-faq-question tb-faq-hidden">
@@ -564,15 +658,15 @@ function resetLoadMore(categoryId) {
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <p>API charges depend on your deployment type:</p>
                         <ul>
-                        <li><b>ThingsBoard Cloud & Private Cloud</b>: API requests are included in your subscription with no additional charges</li>
-                        <li><b>Self-managed:</b>: No charges or programmatic limits on API requests.</li>
+                        <li><b>ThingsBoard Cloud & Private Cloud</b>: API requests are included in your subscription with no additional charges.</li>
+                        <li><b>Self-managed</b>: No charges or programmatic limits on API requests.</li>
                         </ul>
                         {% else %}
                         <p>No. Community Edition has no charges or limits on API requests. However, performance depends on your server capacity and infrastructure.</p>
                         {% endif %}
                     </div>
                 </div>
-                {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+                {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" %}
                 <div class="tb-faq-question tb-faq-hidden">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What happens if I exceed my plan's API limits?</div>
                     <div class="tb-faq-answer">
@@ -584,7 +678,7 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Is there a mobile app for ThingsBoard?</div>
                     <div class="tb-faq-answer">
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Yes. Professional Edition offers <a href="/products/mobile-pe/" target="_blank">PE Mobile Application</a> - advanced mobile app with enterprise features and white-labeling.</p>
+                        <p>Yes. Professional Edition offers <a href="/products/mobile-pe/" target="_blank">PE Mobile Application</a> - an advanced mobile app with enterprise features and white-labeling.</p>
                         {% else %}
                         <p>Yes. ThingsBoard <a href="/products/mobile/" target="_blank">Mobile Application</a> is free and open-source (Apache 2.0 license). It's available for iOS and Android and works with ThingsBoard CE Server.</p>
                         {% endif %}
@@ -594,7 +688,11 @@ function resetLoadMore(categoryId) {
                 <div class="tb-faq-question tb-faq-hidden">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What happens to my data if I cancel my subscription?</div>
                     <div class="tb-faq-answer">
-                        <p>Your data will be retained for a short period before being permanently deleted.</p>
+                        <p>Data handling upon cancellation depends on your deployment model:</p>
+                        <ul>
+                            <li><b>ThingsBoard Cloud & Private Cloud</b>: Following cancellation, your data will be permanently deleted from our servers.</li>
+                            <li><b>Self-managed (PE)</b>: Since the platform is hosted on your own infrastructure, all data remains stored in your environment. You retain full ownership and control over the data and may decide whether to keep, export, or delete it.</li>
+                        </ul>
                     </div>
                 </div>
                 {% endif %}
@@ -607,7 +705,7 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Is my ThingsBoard instance secure?</div>
                     <div class="tb-faq-answer">
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Security depends on deployment type:</p>
+                        <p>Security depends on a deployment type:</p>
                         <ul>
                         <li><b>Cloud/Private Cloud</b> deployments are hosted in ISO 27001/SOC 2 compliant infrastructure.</li>
                         <li><b>Self-managed</b> security depends on your infrastructure setup. It requires you to manage infrastructure security, network configuration, and SSL/TLS setup.</li>
@@ -623,10 +721,11 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-answer">
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <p>Yes, transport encryption (TLS/SSL) is supported. Additional encryption features may depend on your subscription plan and deployment type.</p>
+                        <p>For data-at-rest encryption, configure database-level encryption. See <a href="/docs/pe/user-guide/ui/security-settings/" target="_blank">security documentation</a> for setup instructions.</p>
                         {% else %}
                         <p>Yes, the Community Edition includes transport encryption (TLS/SSL).</p>
+                        <p>For data-at-rest encryption, configure database-level encryption. See <a href="/docs/user-guide/ui/security-settings/" target="_blank">security documentation</a> for setup instructions.</p>
                         {% endif %}
-                        <p>For data-at-rest encryption, configure database-level encryption. See <a href="/docs/{{docsPrefix}}user-guide/ui/security-settings/" target="_blank">security documentation</a> for setup instructions.</p>
                     </div>
                 </div>
                 <div class="tb-faq-question">
@@ -634,10 +733,11 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-answer">
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <p>Yes, SSO and OAuth are supported with additional enterprise features in PE.</p>
+                        <p>See <a href="/docs/pe/user-guide/ui/security-settings/" target="_blank">security documentation</a> for setup instructions.</p>
                         {% else %}
                         <p>Yes, the Community Edition includes SSO (Single Sign-On) and OAuth functionality.</p>
+                        <p>See <a href="/docs/user-guide/ui/security-settings/" target="_blank">security documentation</a> for setup instructions.</p>
                         {% endif %}
-                        <p>For data-at-rest encryption, configure database-level encryption. See <a href="/docs/{{docsPrefix}}user-guide/ui/security-settings/" target="_blank">security documentation</a> for setup instructions.</p>
                     </div>
                 </div>
                 <div class="tb-faq-question">
@@ -645,7 +745,7 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-answer">
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <ul>
-                        <li><b>Cloud:</b> Your data is stored in either North America or the EU, depending on the cloud region (US or European) you choose. With the Enterprise subscription, you can choose any region or specific country for data storage.</li>
+                        <li><b>Cloud:</b> Your data is stored in either North America or the EU, depending on the cloud region (US or European) you choose.</li>
                         <li><b>Private Cloud/Self-managed:</b> Yes, you have full control over data storage location.</li>
                         </ul>
                         {% else %}
@@ -662,10 +762,11 @@ function resetLoadMore(categoryId) {
                 <div class="tb-faq-question">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Does ThingsBoard support role-based access control (RBAC)?</div>
                     <div class="tb-faq-answer">
-                        <p>Community Edition supports a <b>straight-forward security model</b> with three main roles: System administrator, Tenant administrator, and Customer user. A system administrator is able to manage tenants, while a tenant administrator manages devices, dashboards, customers, and other entities that belong to a particular tenant. Customer user is able to view dashboards and control devices that are assigned to a specific customer.</p>
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <p>Yes, ThingsBoard supports <a href="/docs/pe/user-guide/rbac/" target="_blank">RBAC</a>.</p>
                         <p>Professional Edition includes advanced RBAC with custom roles, hierarchical permissions, and group-based access control.</p>
+                        {% else %}
+                        <p>Community Edition supports a <b>straight-forward security model</b> with three main roles: System administrator, Tenant administrator, and Customer user. A system administrator is able to manage tenants, while a tenant administrator manages devices, dashboards, customers, and other entities that belong to a particular tenant. Customer user is able to view dashboards and control devices that are assigned to a specific customer.</p>
                         {% endif %}
                     </div>
                 </div>
@@ -674,7 +775,8 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-answer">
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
                         <ul>
-                        <li><b>Cloud/Private Cloud:</b> Infrastructure is ISO 27001/SOC 2 compliant. GDPR compliance depends on how you configure and use the platform.</li>
+                        <li><b>Cloud:</b> Infrastructure is ISO 27001/SOC 2 compliant.</li>
+                        <li><b>Private Cloud:</b> GDPR compliance depends on how you configure and use the platform.</li>
                         <li><b>Self-managed:</b> Compliance depends on your infrastructure and practices.</li>
                         </ul>
                         {% else %}
@@ -686,18 +788,12 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I integrate with external authentication providers?</div>
                     <div class="tb-faq-answer">
                         <p>Yes, ThingsBoard supports OAuth2, LDAP, and SAML integration.</p>
-                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Professional Edition includes additional SSO options.</p>
-                        {% endif %}
                     </div>
                 </div>
                 <div class="tb-faq-question tb-faq-hidden">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Are there audit logs?</div>
                     <div class="tb-faq-answer">
-                        <p>Yes, ThingsBoard logs user actions, API calls, and system events.</p>
-                        {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Professional Edition provides enhanced audit logging with detailed tracking and export capabilities.</p>
-                        {% endif %}
+                        <p>Yes, ThingsBoard logs user actions.</p>
                     </div>
                 </div>
                 <div class="tb-faq-load-more" onclick="loadMoreTbFaq(this)">
@@ -709,7 +805,7 @@ function resetLoadMore(categoryId) {
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What support is available for ThingsBoard?</div>
                     <div class="tb-faq-answer">
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Starting from version 4.2, we offer <a href="/docs/{{docsPrefix}}releases/release-policy/" target="_blank">Long-Term Support (LTS)</a> versions for production users with extended security updates and stability improvements.</p>
+                        <p>Starting from version 4.2, we offer <a href="/docs/pe/releases/release-policy/" target="_blank">Long-Term Support (LTS)</a> versions for production users with extended security updates and stability improvements.</p>
                         <p>You can always <a href="/docs/contact-us/" target="_blank">contact us</a> with any questions. Community support is available to all users.</p>
                         {% else %}
                         <p>The ThingsBoard team does not provide dedicated support for Community Edition users. Support is community-driven through <a href="https://github.com/thingsboard/thingsboard" target="_blank">GitHub</a> (report issues, contribute), <a href="https://stackoverflow.com/questions/tagged/thingsboard" target="_blank">Stack Overflow</a> (developer questions), <a href="/docs/{{docsPrefix}}" target="_blank">Documentation</a> (guides and tutorials), <a href="https://www.youtube.com/thingsboard" target="_blank">Youtube channel</a> (tutorials).</p>
