@@ -66,8 +66,7 @@ the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-cod
 
 **Examples**
 
-Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
-In this example, the hostname references live demo server.
+Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token.
 
 **Example 1.** Connect a device.
 
@@ -121,8 +120,7 @@ If something goes wrong during the disconnecting, the PUBACK will return with th
 **Example**
 
 Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
-In this example, the hostname references live demo server. Also, make sure that the device is connected before 
-disconnecting it.
+Also, make sure that the device is connected before disconnecting it.
 
 In order to inform ThingsBoard that device is disconnected from the Gateway, one needs to publish following message:
 
@@ -182,8 +180,7 @@ If something goes wrong during the publishing, the PUBACK will return with the c
 
 **Example**
 
-Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
-In this example, the hostname references live demo server.
+Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token.
 
 In order to publish client-side device attributes to ThingsBoard platform, one needs to publish following message:
 
@@ -322,8 +319,7 @@ If something goes wrong during the publishing, the PUBACK will return with the c
 
 **Example**
 
-Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
-In this example, the hostname references live demo server.
+Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token.
 
 In order to publish device telemetry to ThingsBoard platform, one needs to publish following message:
 
@@ -417,7 +413,7 @@ Per-device parameters:
 **Example**
 
 Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
-In this example, the hostname references live demo server. Also, make sure that the device is connected before testing claiming.
+Also, make sure that the device is connected before testing claiming.
 
 In order to inform ThingsBoard platform to start claiming process for devices, one needs to publish following message:
 

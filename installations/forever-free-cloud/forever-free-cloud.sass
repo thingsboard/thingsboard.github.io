@@ -1,0 +1,99 @@
+#choose-region
+  color: #555555
+  position: relative
+  background-color: #fff
+  width: 100%
+
+  .intro
+    padding: 120px 30px 55px
+    width: 830px
+    max-width: 100%
+    margin: 0 auto
+    text-align: center
+
+    @media (max-width: 1279px)
+      padding: 72px 12px 55px
+
+    @media (max-width: 959px)
+      padding: 56px 24px 48px
+
+    @media (max-width: 599px)
+      padding: 40px 16px 24px
+
+    h1
+      font-size: 48px
+      font-weight: 600
+      line-height: 54px
+      margin-bottom: 24px
+
+      @media (max-width: 599px)
+        font-size: 32px
+
+    .details
+      color: #707275
+      font-size: 14px
+      line-height: 18px
+      margin-bottom: 40px
+
+      @media (max-width: 599px)
+        margin-bottom: 24px
+
+      p
+        font-size: 18px
+        line-height: 28px
+        letter-spacing: 0.027px
+        &.margin
+          margin-bottom: 1rem
+
+        @media (max-width: 599px)
+          font-size: 16px
+          line-height: 24px
+
+    .region-button-section
+      display: flex
+      gap: 24px
+
+      @media (max-width: 959px)
+        justify-content: center
+        align-items: center
+
+      @media (max-width: 599px)
+        flex-direction: column
+
+      .button
+        flex: 1
+        border: 1px solid var(--tb-main-color)
+        box-shadow: 0 12px 16px 0 rgba(42, 125, 236, 0.16)
+        transition-property: background-color, box-shadow, color, filter
+
+        @media (max-width: 959px)
+          width: 200px
+          max-width: 200px
+
+        &:hover
+          filter: none
+          color: var(--tb-main-color)
+          background-color: unset
+          box-shadow: none
+
+  .map-container
+    margin-bottom: 55px
+    padding-left: 0
+    padding-right: 0
+
+    object
+      display: block
+      width: 90%
+      max-width: 1550px
+      margin: 0 auto
+
+    @media (max-width: 959px)
+      padding-left: 24px
+      padding-right: 24px
+      object
+        width: 100%
+
+    @media (max-width: 599px)
+      margin-bottom: 40px
+      padding-left: 16px
+      padding-right: 16px

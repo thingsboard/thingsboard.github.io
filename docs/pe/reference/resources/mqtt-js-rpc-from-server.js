@@ -1,5 +1,5 @@
 var mqtt = require('mqtt');
-var client  = mqtt.connect('mqtt://127.0.0.1',{
+var client  = mqtt.connect('mqtt://$THINGSBOARD_HOST_NAME',{
     username: process.env.TOKEN
 });
 

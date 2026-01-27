@@ -204,7 +204,7 @@ while(1)
 
 ## Data visualization
 
-Finally, open ThingsBoard Web UI in the Live Demo server with same user and password as *ThingsBoard configuration* section.
+Finally, open ThingsBoard Web UI with same user and password as *ThingsBoard configuration* section.
 
 Go to *"Devices"* section and locate *"RTU+ Device"*, open device details and switch to *"Latest telemetry"* tab.
 If all is configured correctly you should be able to see latest values of *"temperature"* in the table.<br><br>

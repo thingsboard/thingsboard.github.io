@@ -135,7 +135,8 @@ Also we need say to ThingsBoard that we want to connect this device and get the 
 <br>
 
 
-After this you need to replace the THINGSBOARD_HOST and ACCESS_TOKEN in the script below, with your values. In case you use Live demo, populate <b>thingsboard.cloud</b> as THINGSBOARD_HOST
+After this you need to replace the THINGSBOARD_HOST and ACCESS_TOKEN in the script below, with your values. 
+In case you use ThingsBoard Cloud, populate either <b>mqtt.thingsboard.cloud</b> (for North America) or <b>mqtt.eu.thingsboard.cloud</b> (for Europe) as THINGSBOARD_HOST
 
 ```python
 #

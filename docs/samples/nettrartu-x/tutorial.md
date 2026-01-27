@@ -39,7 +39,7 @@ Once you complete this sample/tutorial, you will see your sensor data on a dashb
 
 ### Software
  - [RTU-X Configuration Interface](http://wiki.nettra.tech/en/downloads).
- - You will need to have ThingsBoard server up and running. Use either [Live Demo](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo) or [Installation Guide](https://thingsboard.io/docs/user-guide/install/ubuntu/) to install ThingsBoard.
+ - You will need to have ThingsBoard server up and running. Use either [ThingsBoard Cloud](https://thingsboard.io/installations/){:target="_blank"} or [Installation Guide](https://thingsboard.io/docs/user-guide/install/ubuntu/) to install ThingsBoard.
 
 ## Connection diagram
 
@@ -153,7 +153,7 @@ while (1)
 
 ## Data visualization
 
-Finally, open ThingsBoard Web UI in the Live Demo server with same user and password as *ThingsBoard configuration* section.
+Finally, open ThingsBoard Web UI with same user and password as *ThingsBoard configuration* section.
 
 Go to *"Devices"* section and locate *"RTU-X Device"*, open device details and switch to *"Latest telemetry"* tab.
 If all is configured correctly you should be able to see latest values of *"variable"* in the table.<br><br>
