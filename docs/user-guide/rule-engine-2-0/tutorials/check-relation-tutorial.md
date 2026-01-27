@@ -309,7 +309,7 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 - Use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api), for posting telemetry from the device **Smoke Detector**. <br>
 
 {% highlight bash %}
-curl -v -X POST -d '{"smoke":"true"}' http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d '{"smoke":"true"}' https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 
 **you need to replace $ACCESS_TOKEN with the actual device token**
 {% endhighlight %}

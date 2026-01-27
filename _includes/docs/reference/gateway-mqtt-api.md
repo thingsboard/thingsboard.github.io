@@ -66,15 +66,14 @@ the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-cod
 
 **Examples**
 
-Don’t forget to replace `demo.thingsboard.io` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
-In this example, the hostname references live demo server.
+Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token.
 
 **Example 1.** Connect a device.
 
 In order to inform ThingsBoard that device is connected to the Gateway, one needs to publish following message:
 
 ```bash
-mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/connect" -u "$ACCESS_TOKEN" -m '{"device": "Device A"}'
+mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/connect" -u "$ACCESS_TOKEN" -m '{"device": "Device A"}'
 ```
 {: .copy-code}
 
@@ -84,7 +83,7 @@ In order to inform ThingsBoard that device is connected to the Gateway with a sp
 publish following message:
 
 ```bash
-mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/connect" -u "$ACCESS_TOKEN" -m '{"device": "Device A", "type": "Sensor A"}'
+mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/connect" -u "$ACCESS_TOKEN" -m '{"device": "Device A", "type": "Sensor A"}'
 ```
 {: .copy-code}
 
@@ -120,14 +119,13 @@ If something goes wrong during the disconnecting, the PUBACK will return with th
 
 **Example**
 
-Don’t forget to replace `demo.thingsboard.io` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
-In this example, the hostname references live demo server. Also, make sure that the device is connected before 
-disconnecting it.
+Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
+Also, make sure that the device is connected before disconnecting it.
 
 In order to inform ThingsBoard that device is disconnected from the Gateway, one needs to publish following message:
 
 ```bash
-mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/disconnect" -u "$ACCESS_TOKEN" -m '{"device": "Device A"}'
+mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/disconnect" -u "$ACCESS_TOKEN" -m '{"device": "Device A"}'
 ```
 {: .copy-code}
 
@@ -182,13 +180,12 @@ If something goes wrong during the publishing, the PUBACK will return with the c
 
 **Example**
 
-Don’t forget to replace `demo.thingsboard.io` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
-In this example, the hostname references live demo server.
+Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token.
 
 In order to publish client-side device attributes to ThingsBoard platform, one needs to publish following message:
 
 ```bash
-mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/attributes" -u "$ACCESS_TOKEN" -m '{"Device A": { "fw_version": "1.0", "battery": 87 }}'
+mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/attributes" -u "$ACCESS_TOKEN" -m '{"Device A": { "fw_version": "1.0", "battery": 87 }}'
 ```
 {: .copy-code}
 
@@ -322,13 +319,12 @@ If something goes wrong during the publishing, the PUBACK will return with the c
 
 **Example**
 
-Don’t forget to replace `demo.thingsboard.io` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
-In this example, the hostname references live demo server.
+Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token.
 
 In order to publish device telemetry to ThingsBoard platform, one needs to publish following message:
 
 ```bash
-mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/telemetry" -u "$ACCESS_TOKEN" -m '{"Device A": [{"ts": 1700000000000, "values": {"temperature": 23.5, "humidity": 61 }}]}'
+mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/telemetry" -u "$ACCESS_TOKEN" -m '{"Device A": [{"ts": 1700000000000, "values": {"temperature": 23.5, "humidity": 61 }}]}'
 ```
 {: .copy-code}
 
@@ -416,13 +412,13 @@ Per-device parameters:
 
 **Example**
 
-Don’t forget to replace `demo.thingsboard.io` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
-In this example, the hostname references live demo server. Also, make sure that the device is connected before testing claiming.
+Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
+Also, make sure that the device is connected before testing claiming.
 
 In order to inform ThingsBoard platform to start claiming process for devices, one needs to publish following message:
 
 ```bash
-mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/claim" -u "$ACCESS_TOKEN" -m '{"Device A": {"secretKey": "mySecret", "durationMs": 60000}}'
+mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/claim" -u "$ACCESS_TOKEN" -m '{"Device A": {"secretKey": "mySecret", "durationMs": 60000}}'
 ```
 {: .copy-code}
 

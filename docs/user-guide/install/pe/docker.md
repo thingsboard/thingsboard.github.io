@@ -86,8 +86,8 @@ Environment variables:
 It's possible to start the ThingsBoard with or without Trendz Analytics add-on. 
 
 {% capture contenttogglespec %}
-With Trendz Analytics services%,%withTrendz%,%templates/install/docker-run-services-with-trendz.md%br%
-Only ThingsBoard services<small>(without Trendz services)</small>%,%coreServices%,%templates/install/docker-run-services.md{% endcapture %}
+ThingsBoard%,%coreServices%,%templates/install/docker-run-services.md%br%
+ThingsBoard + Trendz add-on%,%withTrendz%,%templates/install/docker-run-services-with-trendz.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="runOption" toggle-spec=contenttogglespec %}
 
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
@@ -112,8 +112,8 @@ You can safely detach from the log stream (e.g. Ctrl+C); containers will continu
 ## Inspect logs & control container lifecycle
 
 {% capture contenttogglespec %}
-With Trendz Analytics services%,%withTrendz%,%templates/install/docker-debug-with-trendz.md%br%
-Only ThingsBoard services<small>(without Trendz services)</small>%,%coreServices%,%templates/install/docker-debug.md{% endcapture %}
+ThingsBoard%,%coreServices%,%templates/install/docker-debug.md%br%
+ThingsBoard + Trendz add-on%,%withTrendz%,%templates/install/docker-debug-with-trendz.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="runOption" toggle-spec=contenttogglespec %}
 
 ## Upgrading

@@ -46,8 +46,6 @@ Please replace **PUT_YOUR_CLOUD_IP** with an IP address of the machine where {{a
 
 **NOTE**: **thingsboard.cloud** uses SSL protocol for edge communication. 
 Please change **CLOUD_RPC_SSL_ENABLED** to **true** as well.
-{% else %}
-* Use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation.
 {% endif %}
 * Use **localhost** in case edge is running on the same machine where cloud instance is running. 
 * Use **X.X.X.X** IP address in case edge is connecting to the cloud instance in the same network or in the docker.
