@@ -148,7 +148,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">5 devices</div>
                         <div class="pricing-square-item">5 assets</div>
-                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">10M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">1M data points/month<a class="faq-link"></a></div>
                         <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support<a class="faq-link"></a>
                         </div>
@@ -171,7 +171,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">50 devices</div>
                         <div class="pricing-square-item">50 assets</div>
-                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">50M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">10M data points/month<a class="faq-link"></a></div>
                         <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support<a class="faq-link"></a>
                         </div>
@@ -272,7 +272,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">5 devices</div>
                         <div class="pricing-square-item">5 assets</div>
-                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">10M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">1M data points/month<a class="faq-link"></a></div>
                         <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support<a class="faq-link"></a>
                         </div>
@@ -295,7 +295,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">50 devices</div>
                         <div class="pricing-square-item">50 assets</div>
-                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">50M data points/month<a class="faq-link"></a></div>
+                        <div class="pricing-square-item faq" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-faq-tooltip="A data point is defined as a single telemetry measurement (e.g., temperature=22). Your monthly allowance covers all incoming data across your device fleet. Additional Traffic Packs are available on-demand. See full details on the <a target='_blank' href='/docs/paas/subscriptions/'>plans definition page</a>.">10M data points/month<a class="faq-link"></a></div>
                         <div class="pricing-square-item faq" data-faq-id="tb-cloud-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support<a class="faq-link"></a>
                         </div>
