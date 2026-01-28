@@ -1,7 +1,7 @@
 
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign deviceVendorLink = "https://en.radionode365.com/kr/product/product_view.php?idx=102&part_idx=1" %}
-{% assign officialManualLink = "/docs/device-library/resources/manuals/rn172wcd-user-manual-v1.01.pdf" %}
+{% assign officialManualLink = "/docs/devices-library/resources/manuals/rn172wcd-user-manual-v1.01.pdf" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
