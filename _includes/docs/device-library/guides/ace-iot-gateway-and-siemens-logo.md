@@ -29,7 +29,7 @@ To continue with this guide, we will need the following:
 
 ## Import Rule chain
 
-Download [ACE Rule Chain](/docs/device-library/resources/dashboards/ready-to-go-devices/ACE-rule-chain.json){:target="_blank" download="ace-rule-chain.json"} and import.
+Download [ACE Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/ACE-rule-chain.json){:target="_blank" download="ace-rule-chain.json"} and import.
 
 To import rule chain from а JSON file, you should:
 

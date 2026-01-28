@@ -17,7 +17,7 @@ The device should be in devices list. You can check the data by clicking the dev
 In order to get more user-friendly view - you can use [dashboard](/docs/pe/user-guide/dashboards){: target="_blank"}.
 Download a simple dashboard for this device. It is configured to display a data from "Count people all", "Max count people", "Signal strength", "Region count" and "Occupancy" timeseries keys of device with name "eui-24e124538b223213".
 
-{% include /docs/device-library/blocks/basic/thingsboard-upload-example-dashboard.md exampleDashboardPath="/docs/device-library/resources/dashboards/ready-to-go-devices/vs-121-sensor-dashboard.json" %}  
+{% include /docs/device-library/blocks/basic/thingsboard-upload-example-dashboard.md exampleDashboardPath="/docs/devices-library/resources/dashboards/ready-to-go-devices/vs-121-sensor-dashboard.json" %}  
 
 To open the imported dashboard, click on it. Then you should specify your device in entity alias of the dashboard.
 
