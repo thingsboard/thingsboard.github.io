@@ -27,7 +27,7 @@
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}edge/getting-started/" target="_blank">
-            <img class="feature-logo" src="/images/feature-logo/getting-started.svg" alt="Getting started icon">
+            <img class="feature-logo" src="https://img.thingsboard.io/feature-logo/getting-started.svg" alt="Getting started icon">
             <h3 class="feature-title">Getting started</h3>
             <div class="feature-text">
                 Set up your first Edge instance and connect a device. Takes 15-30 minutes.
@@ -36,7 +36,7 @@
     </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/user-guide/install/{{docsPrefix}}edge/installation-options/" target="_blank">
-            <img class="feature-logo" src="/images/feature-logo/install.svg" alt="Install icon">
+            <img class="feature-logo" src="https://img.thingsboard.io/feature-logo/install.svg" alt="Install icon">
             <h3 class="feature-title">Installation</h3>
             <div class="feature-text">
                 Deploy on Docker, Ubuntu, CentOS, Windows, or Raspberry Pi.
@@ -45,7 +45,7 @@
     </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}edge/use-cases/overview/" target="_blank">
-            <img class="feature-logo" src="/images/feature-logo/tutorials.svg" alt="Tutorials icon">
+            <img class="feature-logo" src="https://img.thingsboard.io/feature-logo/tutorials.svg" alt="Tutorials icon">
             <h3 class="feature-title">Edge Use Cases</h3>
             <div class="feature-text">
                 Deployment scenarios, traffic reduction, and local data processing.
@@ -54,7 +54,7 @@
     </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}edge/faq/" target="_blank">
-            <img class="feature-logo" src="/images/feature-logo/faq.svg" alt="Question icon">
+            <img class="feature-logo" src="https://img.thingsboard.io/feature-logo/faq.svg" alt="Question icon">
             <h3 class="feature-title">FAQ</h3>
             <div class="feature-text">
                 Common questions about Edge capabilities, limitations, and configuration.
