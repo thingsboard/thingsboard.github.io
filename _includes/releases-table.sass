@@ -121,6 +121,42 @@
               border: 1px solid #00695C
               background: rgba(0, 105, 92, 0.08)
 
+.releases-table.edge-table
+  background: rgba(34, 96, 167, 0.06)
+  border: 12px solid rgba(34, 96, 167, 0.001)
+  .releases-table-content-wrapper
+    .releases-table-content
+      &:hover
+        border-left: 3px solid #2260A7
+      .releases-table-content-item
+        &.version-link.version-link-lts
+          &:hover
+            text-decoration-color: #2260A7
+        &.upgrade-link
+          a
+            &:hover
+              color: #2260A7
+              border: 1px solid #2260A7
+              background: rgba(34, 96, 167, 0.08)
+
+.releases-table.pe-edge-table
+  background: rgba(0, 150, 136, 0.06)
+  border: 12px solid rgba(0, 150, 136, 0.001)
+  .releases-table-content-wrapper
+    .releases-table-content
+      &:hover
+        border-left: 3px solid #009688
+      .releases-table-content-item
+        &.version-link.version-link-lts
+          &:hover
+            text-decoration-color: #009688
+        &.upgrade-link
+          a
+            &:hover
+              color: #009688
+              border: 1px solid #009688
+              background: rgba(0, 150, 136, 0.08)
+
 .releases-table.upgrade-instructions-table
   margin: 30px 0
   .releases-table-content
@@ -220,6 +256,16 @@
   li.list-link
     &::marker, a
       color: var(--tb-main-color)
+
+.legend.edge
+  li.list-link
+    &::marker, a
+      color: #2260A7
+
+.legend.pe-edge
+  li.list-link
+    &::marker, a
+      color: #009688
 
 .fixed-upgrade-scrollbar
   position: fixed

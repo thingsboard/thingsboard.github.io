@@ -1,12 +1,21 @@
 liveDemo:
   0:
-    title: ThingsBoard
-    description: Create your personal account on the live demo server. It is totally free!
-    link: https://demo.thingsboard.io/signup
-    icon: /images/thingsboard_small_icon.svg
-    alt: Thingsboard logo
-    imageTitleAttribute: Try ThingsBoard live demo for free
-    imageWidth: 72
+    title: North America
+    description: ThingsBoard Cloud is a fully managed, scalable and fault-tolerant platform for your IoT applications.
+    link: https://thingsboard.cloud/signup
+    icon: /images/thingsboard_pe_small_icon.svg
+    alt: Thingsboard PE logo
+    imageTitleAttribute: ThingsBoard Professional Edition
+    imageWidth: 39
+    imageHeight: 36
+  1:
+    title: Europe
+    description: ThingsBoard Cloud is a fully managed, scalable and fault-tolerant platform for your IoT applications.
+    link: https://eu.thingsboard.cloud/signup
+    icon: /images/thingsboard_pe_small_icon.svg
+    alt: Thingsboard PE logo
+    imageTitleAttribute: ThingsBoard Professional Edition
+    imageWidth: 39
     imageHeight: 36
 onPremise:
   0:

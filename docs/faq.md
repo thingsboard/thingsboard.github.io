@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: FAQ
+title: Frequently Asked Questions
 description: ThingsBoard FAQ
 
 ---

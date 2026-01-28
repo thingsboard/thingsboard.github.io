@@ -1,21 +1,6 @@
 
 Now it’s time to program the board to connect to ThingsBoard.  
-To do this, you can use the code below. It contains all required functionality for this guide.  
-
-{% capture demoExample %}
-If you want to use [**demo.thingsboard.io**](https://demo.thingsboard.io), please notice that it has a size limit for the MQTT messages - **1024 bytes per message**.  
-  
-In this case you can reduce the resolution, quality and cut the encoded photo.  
-To do this you can change the value of variable **DEMO_MODE** to **1**:  
-<code>
-#define DEMO_MODE 1  
-</code>
-
-{% endcapture %}
-
-{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
-{% include templates/warn-banner.md content=demoExample %}
-{% endunless %}
+To do this, you can use the code below. It contains all required functionality for this guide.
 
 ```cpp
 #include <Arduino_MQTT_Client.h>
@@ -23,8 +8,6 @@ To do this you can change the value of variable **DEMO_MODE** to **1**:
 #include <WiFi.h>
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
-
-#define DEMO_MODE {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}0{% else %}1{% endif %}
 
 #include <Server_Side_RPC.h>
 #include <Attribute_Request.h>
@@ -194,14 +177,9 @@ bool initCamera() {
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
   config.pixel_format = PIXFORMAT_JPEG;
-  config.fb_count = 1;{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
-  if (DEMO_MODE == 1) {
-    config.frame_size = FRAMESIZE_96X96;
-    config.jpeg_quality = 63;
-  } else { {% endunless %}
+  config.fb_count = 1;
   config.frame_size = FRAMESIZE_240X240;
-  config.jpeg_quality = 10;{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
-  }{% endunless %}
+  config.jpeg_quality = 10;
 
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {
@@ -229,10 +207,7 @@ bool captureImage() {
   return true;
 }
 
-void encode(const uint8_t *data, size_t length) { {% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
-  if (DEMO_MODE == 1) {
-    length = 756;
-  }{% endunless %} 
+void encode(const uint8_t *data, size_t length) { 
   size_t size = base64_encode_expected_len(length) + 1;
   base64_encodestate _state;
   base64_init_encodestate(&_state);
@@ -519,7 +494,6 @@ Necessary variables for connection:
 | THINGSBOARD_PORT | **1883U**                    | ThingsBoard server MQTT port. Can be default for this guide.                                                                                 |
 | MAX_MESSAGE_SIZE | **100U*1024**                | Maximal size of MQTT messages. Should be more than picture size + ~1024 or more.                                                             |
 | SERIAL_DEBUG_BAUD | **1883U**                    | Baud rate for serial port. Can be default for this guide.                                                                                    |
-| DEMO_MODE | **1**                        | If you want to use **demo.thingsboard.io** set this value to **1**. This reduces the resolution, quality and cut the encoded photo to avoid size limit. |
 
 ```cpp
 ...

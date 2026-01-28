@@ -1,7 +1,7 @@
 
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign deviceVendorLink = "https://en.radionode365.com/kr/product/product_view.php?idx=111&part_idx=1" %}
-{% assign officialManualLink = "/docs/device-library/resources/manuals/rn172wcd-user-manual-v1.01.pdf" %}
+{% assign officialManualLink = "/docs/devices-library/resources/manuals/rn172wcd-user-manual-v1.01.pdf" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
@@ -353,7 +353,7 @@ ThingsBoard provides many widget options to choose from. For example, select a *
 
 A sample dashboard featuring the Indoor temperature chart card, Indoor humidity chart card, and Temperature and Humidity history line chart.
 
-You can [download this dashboard in JSON format](/docs/device-library/resources/dashboards/rn172plus/temp-and-rh-dashboard.json){:target="_blank" download="temp-and-rh-dashboard.json"} and [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your own ThingsBoard instance.
+You can [download this dashboard in JSON format](/docs/devices-library/resources/dashboards/rn172plus/temp-and-rh-dashboard.json){:target="_blank" download="temp-and-rh-dashboard.json"} and [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your own ThingsBoard instance.
 
 ![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-20.png)
 {% include add-device-banner.liquid %}

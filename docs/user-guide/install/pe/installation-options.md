@@ -25,7 +25,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                     <ul id="menu-install-navigation-1" class="menu">
                         <li id="menu-item-liveDemo" class="menu-item tb-live-demo" data-tab="liveDemo">
                             <p>
-                                <img src="/images/pricing/saas-icon.svg" title="Try ThingsBoard in live demo mode" alt="Live demo icon" width="28" height="28">
+                                <img src="/images/pricing/saas-icon.svg" title="Try ThingsBoard Cloud" alt="Live demo icon" width="28" height="28">
                                 <span>SaaS</span>
                             </p>
                         </li>

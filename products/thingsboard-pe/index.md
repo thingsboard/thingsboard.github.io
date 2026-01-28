@@ -111,7 +111,7 @@ description:
           <img class="preview" src="/images/pe/scheduler.svg" alt="scheduler" loading="lazy" width="532" height="565">
           <div class="right-textblock feature-des"><h3 class="item-heading">Reporting</h3>
             <p>Generate great looking reports using dashboards visualization capabilities. Generate reports by schedule or export by demand.</p>
-            <a class="read-more-button" href="/docs/pe/user-guide/reporting/" aria-label="Read more about reporting">Read more
+            <a class="read-more-button" href="/docs/pe/user-guide/reporting/reporting-key-concepts/" aria-label="Read more about reporting">Read more
               <i class="fas fa-chevron-right arrow first"></i>
               <i class="fas fa-chevron-right arrow second"></i>
               <i class="fas fa-chevron-right arrow third"></i>
@@ -322,7 +322,7 @@ description:
       </div>
       <div class="comparison-row">
         <p>Support Model</p>
-        <p><a href="/services/support/?section=thingsboard-ce" target="_blank">Community</a></p>
+        <p><a href="/services/support/?section=community-support" target="_blank">Community</a></p>
         <p><a href="/pricing/?section=thingsboard-pe-options&product=thingsboard-pe&faqSection=supportAndAssistance#pe-pay-as-you-go-support-included" target="_blank">Advanced + SLA</a></p>
       </div>
     </div>

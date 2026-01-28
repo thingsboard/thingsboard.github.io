@@ -40,7 +40,5 @@ toc:
     section:
     - title: Add & remove devices from groups dynamically
       path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
-- title: Live Demo Server
-  path: /docs/user-guide/live-demo/
 - title: Local Demo Account
   path: /docs/samples/demo-account/

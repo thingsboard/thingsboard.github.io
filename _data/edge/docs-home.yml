@@ -96,9 +96,13 @@ toc:
       path: /docs/edge/use-cases/manage-alarms-rpc-requests/
     - title: Data filtering and traffic reduce
       path: /docs/edge/use-cases/data-filtering-traffic-reduce/
+- title: Versions & Support
+  section:
+    - title: Releases
+      path: /docs/edge/releases/releases-table/
+    - title: Release & support policy
+      path: /docs/edge/releases/release-policy/
+    - title: Roadmap
+      path: /docs/edge/releases/roadmap/
 - title: Troubleshooting
   path: /docs/edge/user-guide/troubleshooting/
-- title: Release Notes
-  path: /docs/edge/releases/
-- title: Roadmap
-  path: /docs/edge/roadmap/

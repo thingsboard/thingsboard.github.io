@@ -219,7 +219,7 @@ Now it&#39;s time to program the board to read data, display it on the Sensy boa
 
 To do this, you can use the code below. It contains all required functionality for this guide.
 
-> Click to download the **source code**: [thingsboard.ino](/docs/device-library/resources/sensy32/thingsboard.ino){:target="_blank" download="thingsboard.ino"}
+> Click to download the **source code**: [thingsboard.ino](/docs/devices-library/resources/sensy32/thingsboard.ino){:target="_blank" download="thingsboard.ino"}
 
 {% capture difference %}
 ⚠️ Don&#39;t forget to replace placeholders with your real WiFi network SSID, password, ThingsBoard device access token.
@@ -269,7 +269,7 @@ To do this, you can either create your own dashboard using custom widgets or imp
 In this example we will upload a ready-to-use dashboard. You can also customize it or create your own.
 
 To import the ready-to-use dashboard, follow these steps:
-- First download the [My Dashboard](/docs/device-library/resources/dashboards/sensy32/sensy32-demo-dashboard.json){:target="_blank" download="sensy32-demo-dashboard.json"} file.
+- First download the [My Dashboard](/docs/devices-library/resources/dashboards/sensy32/sensy32-demo-dashboard.json){:target="_blank" download="sensy32-demo-dashboard.json"} file.
 
 {% assign importDashboard = '
     ===

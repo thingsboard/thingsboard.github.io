@@ -425,7 +425,7 @@
     }
 
     function popCopyButton() {
-        if (document.querySelector('.item').querySelector('.title')) {
+        if (document.querySelector('.item')?.querySelector('.title')) {
             document.querySelectorAll('.item').forEach(el => {
                 const clipButton = $(`
                 <button class="clipboard-btn" onmousedown="this.style.backgroundColor='#e8f1ff'"
@@ -497,7 +497,7 @@
                     <div class="card">
                         <img src="/images/pricing/edge-add-on-icon.svg" alt="Edge add on icon">
                         <div class="text">
-                            <h3 data-faq-id="${addOnsPricing[product].edge.faq}" data-faq-link-size="50%" data-faq-tooltip="Run a local on-prem instance to keep operations running even when the internet is down.">Edge Computing</h3>
+                            <h3 class="faq" data-faq-id="${addOnsPricing[product].edge.faq}" data-faq-tooltip="Run a local on-prem instance to keep operations running even when the internet is down.">Edge Computing<a class="faq-link faq-link-50"></a></h3>
                             <p>Process data where it is collected</p>
                             <p>Starting from <span>${edgePrice}</span></p>
                         </div>
@@ -505,7 +505,7 @@
                     <div class="card">
                         <img src="/images/pricing/trendz-add-on-icon.svg" alt="Trendz add on icon">
                         <div class="text">
-                            <h3 data-faq-id="${addOnsPricing[product].trendz.faq}" data-faq-link-size="50%" data-faq-tooltip="Turn raw IoT data into actionable insights with advanced analytics and trend prediction.">Trendz Analytics</h3>
+                            <h3 class="faq" data-faq-id="${addOnsPricing[product].trendz.faq}" data-faq-tooltip="Turn raw IoT data into actionable insights with advanced analytics and trend prediction.">Trendz Analytics<a class="faq-link faq-link-50"></a></h3>
                             <p>Advanced analytics for your solution</p>
                             <p>Starting from <span>${trendzPrice}</span></p>
                         </div>
@@ -513,7 +513,7 @@
                     <div class="card">
                         <img src="/images/pricing/wl-add-on-icon.svg" alt="White-labeling add on icon">
                         <div class="text">
-                            <h3 data-faq-id="${addOnsPricing[product].wl.faq}" data-faq-link-size="50%" data-faq-tooltip="Launch a client-ready mobile app under your brand—your name, logo, colors, and a fully polished look & feel—so customers experience your product, not a third-party app.">White-labeled Mobile App</h3>
+                            <h3 class="faq" data-faq-id="${addOnsPricing[product].wl.faq}" data-faq-tooltip="Launch a client-ready mobile app under your brand—your name, logo, colors, and a fully polished look & feel—so customers experience your product, not a third-party app.">White-labeled Mobile App<a class="faq-link faq-link-50"></a></h3>
                             <p>Сustomizable mobile application</p>
                             <p>${wlPrice}</p>
                         </div>

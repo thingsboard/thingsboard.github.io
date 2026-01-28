@@ -57,7 +57,7 @@ Defines where the argument value comes from:
 - Another **Device or Asset** — references telemetry or attributes from a different device or asset.
 - **Customer** — retrieves data from the associated customer entity.
 - **Current tenant** — uses data from the tenant entity.
-- **Current owner** — data from the owner of the current entity
+- **Current owner** — data from the owner of the current entity.
 
 {% include images-gallery.html imageCollection="step-3-arguments-2" %}
 
@@ -147,7 +147,7 @@ Click **Add argument filter** and configure:
 
 **2. Configure filters**   
 Under **Filters**, click **Add** and specify:
-- **Operation** — the comparison operator, such as: *equal, not equal, missing for, greater than, less than, greater or equal, less or equal, starts with, ends with, contains, not contains, in, not in*ю
+- **Operation** — the comparison operator, such as: *equal, not equal, missing for, greater than, less than, etc*.
 - **Value source** — select one of the following:
   - **Static** — use a fixed predefined value 
   - **Dynamic** — use a value retrieved from another argument 

@@ -1,27 +1,32 @@
 4.3.0:
   upgradable-from: "4.2.1.x"
   release-date: Jan 20 2026
+  release-date-edge: Jan 21, 2026
   lts: "true"
   upgrade: "true"
   x: "true"
 4.2.1.1:
   upgradable-from: "4.2.1"
   release-date: Dec 24 2025
+  release-date-edge: Jan 21, 2026
   lts: "true"
   upgrade: "false"
 4.2.1:
   upgradable-from: "4.2.0"
   release-date: Oct 15 2025
+  release-date-edge: Jan 21, 2026
   lts: "true"
   x: "true"
 4.2.0:
   upgradable-from: "4.1.0"
   release-date: Aug 15 2025
+  release-date-edge: Sep 4, 2025
   lts: "true"
   x: "true"
 4.1.0:
   upgradable-from: "4.0.2"
   release-date: Jul 3 2025
+  release-date-edge: July 23, 2025
   x: "true"
   windows:
     zip: "true"
@@ -34,6 +39,7 @@
 4.0.1:
   upgradable-from: "3.9.1"
   release-date: Apr 22 2025
+  release-date-edge: May 15, 2025
   x: "true"
 4.0.0:
   upgradable-from: "3.9.1"
@@ -42,11 +48,13 @@
 3.9.1:
   upgradable-from: "3.9"
   release-date: Feb 19 2025
+  release-date-edge: Mar 14, 2025
   windows:
     zip: "true"
 3.9.0:
   upgradable-from: "3.8.1"
   release-date: Dec 31 2024
+  release-date-edge: Jan 13, 2025
   manual-version-upgrade: "true"
 3.8.1:
   upgradable-from: "3.8"
@@ -55,41 +63,53 @@
 3.8.0:
   upgradable-from: "3.7"
   release-date: Oct 3 2024
+  release-date-edge: Oct 15, 2024
   manual-version-upgrade: "true"
   manual-version-upgrade-label: "3.7.0"
 3.7.0:
   upgradable-from: "3.6.4"
   release-date: Jun 17 2024
+  release-date-edge: Jun 18, 2024
   manual-version-upgrade: "true"
 3.6.4:
   upgradable-from: "3.6.3"
   release-date: Apr 11 2024
+  release-date-edge: Apr 11, 2024
   manual-version-upgrade: "true"
 3.6.3:
   upgradable-from: "3.6.2"
   release-date: Mar 18 2024
+  release-date-edge: Mar 18, 2024
   manual-version-upgrade: "true"
 3.6.2:
   upgradable-from: "3.6.1"
   release-date: Dec 28 2023
+  release-date-edge: Dec 28, 2023
   manual-version-upgrade: "true"
 3.6.1:
   upgradable-from: "3.6"
   release-date: Nov 13 2023
   manual-version-upgrade: "true"
+  release-date-edge: Nov 14, 2023
   manual-version-upgrade-label: "3.6.0"
 3.6.0:
   upgradable-from: "3.5.1"
   release-date: Sep 21 2023
+  release-date-edge: Sep 22, 2023
   manual-version-upgrade: "true"
+3.5.1.1:
+  upgradable-from: "3.5.1"
+  release-date-edge: Jul 4, 2023
 3.5.1:
   upgradable-from: "3.5"
   release-date: May 31 2023
+  release-date-edge: Jun 1, 2023
   manual-version-upgrade: "true"
   manual-version-upgrade-label: "3.5.0"
 3.5.0:
   upgradable-from: "3.4.4"
   release-date: May 9 2023
+  release-date-edge: May 10, 2023
   manual-version-upgrade: "true"
 3.4.4:
   upgradable-from: "3.4.3"
@@ -98,6 +118,7 @@
 3.4.3:
   upgradable-from: "3.4.2"
   release-date: December 21 2022
+  release-date-edge: December 22, 2022
   upgrade: "false"
 3.4.2:
   upgradable-from: "3.4.1"
@@ -106,17 +127,20 @@
 3.4.1:
   upgradable-from: "3.4"
   release-date: August 18 2022
+  release-date-edge: August 19, 2022
   manual-version-upgrade: "true"
   manual-version-upgrade-label: "3.4.0"
 3.4:
   upgradable-from: "3.3.4.1"
   release-date: July 19 2022
+  release-date-edge: July 21, 2022
   manual-version-upgrade: "true"
   manual-version-upgrade-label: "3.3.4"
 3.3.4.1:
   upgradable-from: "3.3.4"
   release-date: March 22 2022
   release-date-pe: March 18 2022
+  release-date-edge: May 2, 2022
   upgrade: "false"
   windows:
     zip: "true"
