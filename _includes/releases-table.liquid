@@ -16,6 +16,7 @@
         </div>
 
         <div class="releases-table-row">
+            {% assign active_lts_already_set = false %}
             {% for page in releases %}
                 {% if page.name != "index.md" %}
                     {% assign version = page.name | split: "." | first %}
@@ -51,11 +52,18 @@
 
 
                             {% if page.lts %}
+                                {% if active_lts_already_set == false %}
+                                    {% assign lts_label = "Active LTS" %}
+                                    {% assign active_lts_already_set = true %}
+                                {% else %}
+                                    {% assign lts_label = "Maintenance LTS" %}
+                                {% endif %}
+
                                 <a href="/docs/{{ docsPrefix }}releases/release-policy/"
                                    class="releases-table-content-item version-link version-link-lts">
-                                <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}">
-                                    Active LTS
-                                </span>
+                                    <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}">
+                                        {{ lts_label }}
+                                    </span>
                                     <i class="fas fa-external-link-alt"
                                        style="color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}"></i>
                                 </a>
@@ -110,6 +118,7 @@
 </div>
 <ul class="legend{% if docsPrefix == "pe/" %} pe{% endif %}">
     <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Active LTS</a> - releases supported for 18 months from initial release date</li>
+    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Maintenance LTS</a> - older LTS releases still supported within the LTS window</li>
     <li>Standard - releases supported for 6 months from initial release date</li>
 </ul>
 <div class="fixed-upgrade-scrollbar" id="fixedScrollbar">
