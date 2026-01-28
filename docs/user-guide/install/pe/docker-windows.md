@@ -121,12 +121,6 @@ docker compose up -d
 ```
 {: .copy-code}
 
-## Troubleshooting
-
-### DNS issues
-
-{% include templates/troubleshooting/dns-issues-windows.md %}
-
 ## Post-installation steps
 
 ### \[Optional\] Install Trendz Analytics
@@ -155,6 +149,12 @@ You can read more about Trendz Analytics [here](/docs/trendz/what-is-trendz/).
 Trendz Analytics has a different version system, and should be updated separately from ThingsBoard platform main services.
 
 You can read how to upgrade Trendz Analytics [here](/docs/trendz/install/docker/#upgrade-trendz-service).
+
+## Troubleshooting
+
+### DNS issues
+
+{% include templates/troubleshooting/dns-issues-windows.md %}
 
 ## Next steps
 
