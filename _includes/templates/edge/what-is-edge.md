@@ -5,10 +5,6 @@
 {% assign appPrefix = "ThingsBoard CE" %}
 {% endif %}
 
-{% if docsPrefix != 'pe/edge/' %}
-<h2>Interested in the Professional Edition? Explore the ThingsBoard PE Edge Documentation <a style="pointer-events: all;" href="/docs/pe/edge/">Here</a>.</h2>
-{% endif %}
-
 {% capture tb-open-source %}
 ThingsBoard is an open-source IoT platform that provides a robust suite of features for data collection, processing, visualization, and device management.
 If you are a new platform user, we suggest reading [**What is ThingsBoard?**](/docs/getting-started-guides/what-is-thingsboard/){: target="_blank"} before proceeding with ThingsBoard Edge.  
@@ -31,6 +27,13 @@ It synchronizes effortlessly with ThingsBoard CE according to your business requ
 ThingsBoard Edge CE is designed for a **single** tenant and/or **single** customer. 
 Sharing ThingsBoard Edge between multiple tenants or customers is not feasible, and devices from different tenants or customers cannot be connected to a single ThingsBoard Edge.
 In such cases, multiple ThingsBoard Edge instances need to be provisioned for each tenant or customer.
+{% endif %}
+
+{% if docsPrefix != 'pe/edge/' %}
+{% capture difference %}
+Looking for **white-labeling** or **premium features**? <a href="/docs/pe/edge/" target="_blank">Explore Edge Professional Edition documentation →</a>
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 {% endif %}
 
 <br>
