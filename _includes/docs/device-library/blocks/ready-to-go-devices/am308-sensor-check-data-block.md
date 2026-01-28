@@ -17,9 +17,9 @@ The device should be in devices list. You can check the data by click on it and 
 In order to get more user-friendly view - you can use [dashboards](/docs/pe/user-guide/dashboards){: target="_blank"}.  
 You can download a simple dashboard for this device, it is configured to display a data from "pir", "light level", "beep", "battery level", "Temperature", "Humidity", "CO2", "Pressure", "TVOC", "PM2.5", "PM10" and "Signal strength" telemetry keys for device with name "eui-24e124538b223213".
 
-{% include /docs/device-library/blocks/basic/thingsboard-upload-example-dashboard.md exampleDashboardPath="/docs/device-library/resources/dashboards/ready-to-go-devices/am308-device-dashboard.json" %}
+{% include /docs/device-library/blocks/basic/thingsboard-upload-example-dashboard.md exampleDashboardPath="/docs/devices-library/resources/dashboards/ready-to-go-devices/am308-device-dashboard.json" %}
 
-{% include /docs/device-library/blocks/basic/thingsboard-change-entity-alias-block.md exampleDashboardPath="/docs/device-library/resources/dashboards/ready-to-go-devices/am308-device-dashboard.json" %}
+{% include /docs/device-library/blocks/basic/thingsboard-change-entity-alias-block.md exampleDashboardPath="/docs/devices-library/resources/dashboards/ready-to-go-devices/am308-device-dashboard.json" %}
 
 Example of the dashboard with data:
 
