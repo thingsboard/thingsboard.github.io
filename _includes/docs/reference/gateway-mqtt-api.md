@@ -1,33 +1,45 @@
-
 * TOC
 {:toc}
 
-## Introduction
-
 A Gateway in ThingsBoard is a special type of device that acts as a bridge between external devices and the platform. 
-It maintains a single MQTT connection to ThingsBoard while proxying data for many physical devices behind it.
+It maintains a single MQTT connection to ThingsBoard while proxying data for multiple physical devices connected behind it.
 
-The Gateway itself is also a normal ThingsBoard device. It can use the standard 
-[MQTT Device API](/docs/{{docsPrefix}}reference/mqtt-api/) to:
-- Report its own telemetry and attributes.
-- Receive configuration updates.
-- Execute RPC commands.
+The gateway itself is also a standard ThingsBoard device. It can use the [MQTT Device API](/docs/{{docsPrefix}}reference/mqtt-api/){:target="_blank"} to:
+- Publish its own telemetry and attributes
+- Receive configuration updates
+- Execute RPC commands
 
-The API describes the Gateway-specific MQTT topics and payload formats. Also, the API is used by the open-source 
-[ThingsBoard IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/).
+In addition, this API defines gateway-specific MQTT topics and payload formats and is used by the open-source [ThingsBoard IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/){:target="_blank"}.
 
 {% capture difference %}
-For device-level MQTT details (authentication, QoS, payload format, etc.), refer to the 
-[MQTT Device API](/docs/{{docsPrefix}}reference/mqtt-api/).
+For device-level MQTT details (authentication, QoS, payload format, etc.), refer to the [MQTT Device API](/docs/{{docsPrefix}}reference/mqtt-api/){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## Prerequisites
+<hr>
 
-In order to try examples from this documentation, you need to install an MQTT client tool. You can use the following 
-[instructions](/docs/{{docsPrefix}}reference/gateway-mqtt-api/#troubleshooting) to install `mosquitto_pub` and `mosquitto_sub` command-line tools.
+## Client libraries setup
 
-## Device Connect API
+Many MQTT client libraries are available for different platforms and languages.
+
+The examples in this guide use:   
+&#8194;**&#8226;**&#8194;**Mosquitto** (command-line tools)   
+&#8194;**&#8226;**&#8194;**MQTT.js** (JavaScript)
+
+Use the instructions below to install the following command-line utilities:   
+&#8194;**&#8226;**&#8194;<span class="code-light">mosquitto_pub</span>   
+&#8194;**&#8226;**&#8194;<span class="code-light">mosquitto_sub</span>
+
+Select your operating system to continue with the installation steps:
+
+{% capture connectdevicetogglespec %}
+MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld-pe/mqtt-linux.md%br%
+MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld-pe/mqtt-windows.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
+
+<hr>
+
+## Device connect API
 
 Use this API to inform ThingsBoard that a device behind the Gateway is now connected and ready to exchange data.
 
@@ -60,13 +72,20 @@ v1/gateway/connect
 
 It is recommended to wait for the PUBACK response to ensure that the device connection was successful.
 If something goes wrong during the connection, for example, the device limit is exceeded, the PUBACK will return with 
-the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/).
+the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 **Examples**
 
-Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token.
+{% unless docsPrefix contains "paas/" %}
+
+> ⚠️ In all examples on this page, the hostname refers to a **local** ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} installation.   
+If your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} instance is deployed on a different host, replace <code>localhost</code> with the appropriate hostname or IP address.
+
+{% endunless %}
+
+> Don&#39;t forget to replace <code>$ACCESS_TOKEN</code> with your device&#39;s access token.
 
 **Example 1.** Connect a device.
 
@@ -87,7 +106,9 @@ mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/connect" -u "$ACCESS_TOKEN" -
 ```
 {: .copy-code}
 
-## Device Disconnect API
+<hr>
+
+## Device disconnect API
 
 Use this API to inform ThingsBoard that a device behind the Gateway is no longer active.
 
@@ -113,13 +134,14 @@ v1/gateway/disconnect
 {% capture difference %}
 **Only for MQTT v.5**
 
-If something goes wrong during the disconnecting, the PUBACK will return with the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/).
+If something goes wrong during the disconnecting, the PUBACK will return with the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 **Example**
 
-Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
+> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your device&#39;s access token.
+
 Also, make sure that the device is connected before disconnecting it.
 
 In order to inform ThingsBoard that device is disconnected from the Gateway, one needs to publish following message:
@@ -129,17 +151,28 @@ mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/disconnect" -u "$ACCESS_TOKEN
 ```
 {: .copy-code}
 
+<hr>
+
 ## Attributes API
 
 ThingsBoard attributes API allows devices to:
 
-- Upload [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes to the server.
-- Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the ThingsBoard platform.
-- Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the ThingsBoard platform.
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+- Upload [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types){:target="_blank"} device attributes to the server.
+- Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types){:target="_blank"} and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types){:target="_blank"} device attributes from ThingsBoard platform.
+- Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types){:target="_blank"} device attributes from ThingsBoard platform.
+{% endif %}
+{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+- Upload [client-side](/docs/pe/user-guide/attributes/#attribute-types){:target="_blank"} device attributes to the server.
+- Request [client-side](/docs/pe/user-guide/attributes/#attribute-types){:target="_blank"} and [shared](/docs/pe/user-guide/attributes/#attribute-types){:target="_blank"} device attributes from ThingsBoard platform.
+- Subscribe to [shared](/docs/pe/user-guide/attributes/#attribute-types){:target="_blank"} device attributes from ThingsBoard platform.
+{% endif %}
 
-### Publish attribute to the ThingsBoard platform
+<hr>
 
-Use this topic to publish client-side device attributes to the ThingsBoard platform. All attributes in the payload 
+### Publish attribute to ThingsBoard
+
+Use this topic to publish client-side device attributes to ThingsBoard platform. All attributes in the payload 
 are stored as client-side attributes for the corresponding devices.
 
 **Topic:**
@@ -174,13 +207,13 @@ v1/gateway/attributes
 {% capture difference %}
 **Only for MQTT v.5**
 
-If something goes wrong during the publishing, the PUBACK will return with the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/).
+If something goes wrong during the publishing, the PUBACK will return with the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 **Example**
 
-Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token.
+> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your device&#39;s access token.
 
 In order to publish client-side device attributes to ThingsBoard platform, one needs to publish following message:
 
@@ -189,7 +222,9 @@ mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/attributes" -u "$ACCESS_TOKEN
 ```
 {: .copy-code}
 
-### Request attribute values from the ThingsBoard platform
+<hr>
+
+### Request attribute values from ThingsBoard
 
 Use this API to request client-side or shared device attributes from ThingsBoard platform. Make attention that you 
 need to subscribe to the response topic first in order to receive the response.
@@ -226,7 +261,9 @@ Fields:
 - **client** – optional. An array of client-side attribute keys to request.
 - **shared** – optional. An array of shared attribute keys to request.
 
-### Subscribe to attribute updates from the ThingsBoard platform
+<hr>
+
+### Subscribe to attribute updates from ThingsBoard
 
 Use this topic to subscribe to shared device attribute changes. Take attention that you need to subscribe to the topic 
 first in order to receive updates.
@@ -254,6 +291,8 @@ v1/gateway/attributes
 Fields:
 - **device** – the device name in ThingsBoard.
 - **data** – map of updated shared attributes.
+
+<hr>
 
 ## Telemetry upload API
 
@@ -313,13 +352,13 @@ Fields:
 {% capture difference %}
 **Only for MQTT v.5**
 
-If something goes wrong during the publishing, the PUBACK will return with the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/).
+If something goes wrong during the publishing, the PUBACK will return with the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 **Example**
 
-Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token.
+> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your device&#39;s access token.
 
 In order to publish device telemetry to ThingsBoard platform, one needs to publish following message:
 
@@ -327,6 +366,8 @@ In order to publish device telemetry to ThingsBoard platform, one needs to publi
 mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/telemetry" -u "$ACCESS_TOKEN" -m '{"Device A": [{"ts": 1700000000000, "values": {"temperature": 23.5, "humidity": 61 }}]}'
 ```
 {: .copy-code}
+
+<hr>
 
 ## RPC API
 
@@ -377,10 +418,12 @@ Make attention that the **id** in the response message should match the **id** f
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+<hr>
+
 ## Claiming devices API
 
 ThingsBoard supports a claiming mechanism that allows end users to take ownership of pre-provisioned devices. For 
-conceptual details, see [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) guide.
+conceptual details, see [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices){:target="_blank"} guide.
 
 **Topic:**
 
@@ -412,7 +455,8 @@ Per-device parameters:
 
 **Example**
 
-Don’t forget to replace `{{mqttHostName}}` with your host and `$ACCESS_TOKEN` with your gateway’s access token. 
+> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your device&#39;s access token.
+
 Also, make sure that the device is connected before testing claiming.
 
 In order to inform ThingsBoard platform to start claiming process for devices, one needs to publish following message:
@@ -422,18 +466,13 @@ mosquitto_pub -h "{{mqttHostName}}" -t "v1/gateway/claim" -u "$ACCESS_TOKEN" -m 
 ```
 {: .copy-code}
 
+<hr>
+
 ## Protocol customization
 
-MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).
+MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt){:target="_blank"}.
 
-## Troubleshooting
-
-**Commands `mosquitto_pub` or `mosquitto_sub` doesn't execute?**
-
-{% capture connectdevicetogglespec %}
-MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld-pe/mqtt-linux.md%br%
-MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld-pe/mqtt-windows.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
+<hr>
 
 ## Next steps
 
