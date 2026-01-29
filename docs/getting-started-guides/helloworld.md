@@ -319,14 +319,10 @@ For simplicity, we&#39;ll visualize data from a temperature sensor.
 
 ## Prerequisites
 
-You will need a ThingsBoard server up and running.
-To save time, you can skip the installation and use **ThingsBoard Cloud**;
-simply follow the getting started guide for the [North America](/docs/paas/getting-started-guides/helloworld/) or [Europe](/docs/paas/eu/getting-started-guides/helloworld/) region.
+You will need a ThingsBoard server up and running:
 
-Alternatively, you can install ThingsBoard yourself using our [installation guides](/docs/user-guide/install/installation-options/){:target="_blank"}:
-
--   For **Windows** users, follow this [installation guide](/docs/user-guide/install/docker-windows/){:target="_blank"}.
--   For **Linux** and **MacOS** users, follow this [installation guide](/docs/user-guide/install/docker/){:target="_blank"}.
+* **ThingsBoard Cloud:** The fastest way to start with zero setup. Click for the [North America](/docs/paas/getting-started-guides/helloworld/) or [Europe](/docs/paas/eu/getting-started-guides/helloworld/) region (these links lead to a separate "Getting Started" guide for our managed service).
+* **Self-Managed Installation:** Alternatively, you can manually install ThingsBoard using our guides for [Windows (Docker)](/docs/user-guide/install/docker-windows/){:target="_blank"} or [Linux and MacOS (Docker)](/docs/user-guide/install/docker/){:target="_blank"}.
 
 <hr>
 

@@ -68,7 +68,7 @@
   <h2>Need more opportunities?</h2>
   <p>Start with pre-built solution templates, connect legacy equipment via 30+ integration protocols, and white-label everything as your own product.</p>
   <div class="banner-actions">
-    <a href="/docs/contact-us/" class="btn-primary" target="_blank">Request a Demo</a>
+    <a href="/docs/contact-us/?subject=ThingsBoard%20Products" class="btn-primary" target="_blank">Contact us</a>
   </div>
 </div>
 {% endif %}

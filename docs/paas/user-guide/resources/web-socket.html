@@ -4,16 +4,16 @@
 
     <script type="text/javascript">
         function WebSocketAPIExample() {
-            var token = "YOUR_JWT_TOKEN";
-            var entityId = "YOUR_DEVICE_ID";
-            var webSocket = new WebSocket("ws(s)://host:port/api/ws");
+            var token = "$YOUR_JWT_TOKEN";
+            var entityId = "$YOUR_DEVICE_ID";
+            var webSocket = new WebSocket("wss://thingsboard.cloud/api/ws");
 
-            if (entityId === "YOUR_DEVICE_ID") {
+            if (entityId === "$YOUR_DEVICE_ID") {
                 alert("Invalid device id!");
                 webSocket.close();
             }
 
-            if (token === "YOUR_JWT_TOKEN") {
+            if (token === "$YOUR_JWT_TOKEN") {
                 alert("Invalid JWT token!");
                 webSocket.close();
             }

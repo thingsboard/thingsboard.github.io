@@ -7,9 +7,9 @@
   lwm2mHostName: localhost
   apiHostName: localhost
 - tag: pe
-  hostLabel: ThingsBoard Cloud
-  hostName: thingsboard.cloud
-  mqttHostName: mqtt.thingsboard.cloud
+  hostLabel: localhost
+  hostName: localhost
+  mqttHostName: localhost
   coapHostName: coap.thingsboard.cloud
   httpsUrl: https://thingsboard.cloud
   lwm2mHostName: lwm2m.thingsboard.cloud
@@ -30,3 +30,19 @@
   httpsUrl: https://eu.thingsboard.cloud
   lwm2mHostName: lwm2m.eu.thingsboard.cloud
   apiHostName: eu.thingsboard.cloud
+- tag: edge
+  hostLabel: localhost
+  hostName: localhost
+  mqttHostName: localhost
+  coapHostName: localhost
+  httpsUrl: https://localhost
+  lwm2mHostName: localhost
+  apiHostName: localhost
+- tag: pe-edge
+  hostLabel: localhost
+  hostName: localhost
+  mqttHostName: localhost
+  coapHostName: localhost
+  httpsUrl: https://localhost
+  lwm2mHostName: localhost
+  apiHostName: localhost

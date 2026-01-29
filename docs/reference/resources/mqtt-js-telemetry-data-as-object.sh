@@ -1,1 +1,1 @@
-cat telemetry-data-as-object.json | mqtt pub -v -h "localhost" -t "v1/devices/me/telemetry" -u '$ACCESS_TOKEN' -s -m ""
+cat telemetry-data-as-object.json | mqtt pub -v -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/telemetry" -u '$ACCESS_TOKEN' -s -m ""
