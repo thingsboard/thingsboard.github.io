@@ -78,10 +78,10 @@ First, add a gateway device to your ThingsBoard instance by following these step
 
 {% assign createNewGatewayDevice = '
   ===
-    image: /images/gateway/dashboard/gateway-getting-started-1-ce.png,
+    image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-1-ce.png,
     title: Go to the "**Entities**" > "**Gateways**" page and click the "**plus**" icon in the upper right corner to add a new gateway.
   ===
-    image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
+    image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-2-ce.png,
     title: In the opened modal window input the gateway name(e.g., "My Gateway"), specify the "**default**" device profile, and click "**Create**".
 '
 %}
@@ -103,13 +103,13 @@ nano /etc/thingsboard-gateway/config/tb_gateway.json
 
 {% assign configureGateway = '
     ===
-        image: /images/gateway/install/configure-gateway-1-ce.png,
+        image: https://img.thingsboard.io/gateway/install/configure-gateway-1-ce.png,
         title: Click the "**General configuration**" button;
     ===
-        image: /images/gateway/install/configure-gateway-2-ce.png,
+        image: https://img.thingsboard.io/gateway/install/configure-gateway-2-ce.png,
         title: Copy **Access token** on the "**General**" tab;
     ===
-        image: /images/gateway/install/configure-gateway-3-ce.png,
+        image: https://img.thingsboard.io/gateway/install/configure-gateway-3-ce.png,
         title: Open Terminal and execute the following command: `nano /etc/thingsboard-gateway/config/tb_gateway.json`. Paste copied access token and replace platform&#39;s host and port with yours. Save changes and exit from nano.
 '
 %}
@@ -131,10 +131,10 @@ nano /etc/thingsboard-gateway/config/tb_gateway.json
 
 {% assign configureGatewayLogs = '
     ===
-        image: /images/gateway/install/configure-gateway-4-ce.png,
+        image: https://img.thingsboard.io/gateway/install/configure-gateway-4-ce.png,
         title: Click the "**General configuration**" button;
     ===
-        image: /images/gateway/install/configure-gateway-5-ce.png,
+        image: https://img.thingsboard.io/gateway/install/configure-gateway-5-ce.png,
         title: Navigate to the "**Logs**" tab and replace the "**File path**" field value to `/var/log/thingsboard-gateway` in all tabs. Then, click "**Save**".
 '
 %}
@@ -152,7 +152,7 @@ thingsboard-gateway
 
 {% assign configureCorrectGateway = '
     ===
-        image: /images/gateway/install/configure-gateway-6-ce.png,
+        image: https://img.thingsboard.io/gateway/install/configure-gateway-6-ce.png,
         title: If everything is done correctly, you will see the gateway status set to `Active`.
 '
 %}
