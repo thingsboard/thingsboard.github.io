@@ -132,7 +132,7 @@
         </div>
     </div>
 </div>
-<ul class="legend{% if docsPrefix == "pe/" %} pe{% endif %}">
+<ul class="legend{% if docsPrefix == "pe/" %} pe{% elsif docsPrefix == "edge/" %} edge{% elsif docsPrefix == "pe/edge/" %} pe-edge{% endif %}">
     <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Active LTS</a> - releases supported for 18 months from initial release date</li>
     <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Maintenance LTS</a> - older LTS releases still supported within the LTS window</li>
     <li>Standard - releases supported for 6 months from initial release date</li>
