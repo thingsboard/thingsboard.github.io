@@ -23,6 +23,7 @@
         </div>
 
         <div class="releases-table-row">
+            {% assign active_lts_already_set = false %}
             {% for page in releases %}
                 {% if page.name != "index.md" %}
                     {% assign version = page.name | split: "." | first %}
@@ -60,14 +61,21 @@
 
 
                             {% if page.lts %}
+                                {% if active_lts_already_set == false %}
+                                    {% assign lts_label = "Active LTS" %}
+                                    {% assign active_lts_already_set = true %}
+                                {% else %}
+                                    {% assign lts_label = "Maintenance LTS" %}
+                                {% endif %}
+
                                 <a href="/docs/{{ docsPrefix }}releases/release-policy/"
-                                   class="releases-table-content-item version-link version-link-lts"
-                                   target="_blank">
-                                <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% elsif docsPrefix == "edge/" %}#2260A7{% elsif docsPrefix == "pe/edge/" %}#009688{% else %}#2a7dec{% endif %}">
-                                    Active LTS
-                                </span>
+                                   class="releases-table-content-item version-link version-link-lts">
+                                    <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% elsif docsPrefix == "edge/" %}#2260A7{% elsif docsPrefix == "pe/edge/" %}#009688{% else %}#2a7dec{% endif %}">
+                                        {{ lts_label }}
+                                    </span>
                                     <i class="fas fa-external-link-alt"
-                                       style="color: {% if docsPrefix == "pe/" %}#1F8B4D{% elsif docsPrefix == "edge/" %}#2260A7{% elsif docsPrefix == "pe/edge/" %}#009688{% else %}#2a7dec{% endif %}"></i>
+                                       style="color: {% if docsPrefix == "pe/" %}#1F8B4D{% elsif docsPrefix == "edge/" %}#2260A7{% elsif docsPrefix == "pe/edge/" %}#009688{% else %}#2a7dec{% endif %}">
+                                    </i>
                                 </a>
                             {% else %}
                                 <div class="releases-table-content-item">Standard</div>
@@ -124,9 +132,10 @@
         </div>
     </div>
 </div>
-<ul class="legend{% if docsPrefix == "pe/" %} pe{% elsif docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} edge{% endif %}">
-    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/" target="_blank">Active LTS</a> - releases are supported for 18 months from the initial release date.</li>
-    <li>Standard - releases are supported for six months from the initial release date.</li>
+<ul class="legend{% if docsPrefix == "pe/" %} pe{% elsif docsPrefix == "edge/" %} edge{% elsif docsPrefix == "pe/edge/" %} pe-edge{% endif %}">
+    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Active LTS</a> - releases supported for 18 months from initial release date</li>
+    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Maintenance LTS</a> - older LTS releases still supported within the LTS window</li>
+    <li>Standard - releases supported for 6 months from initial release date</li>
 </ul>
 <div class="fixed-upgrade-scrollbar" id="fixedScrollbar">
     <div class="scrollbar-inner"></div>
