@@ -1,7 +1,6 @@
-{% capture update_server_first %}
-<details>
-<summary style="font-size: 16px; font-weight: semibold; cursor: pointer;">Version Compatibility Rules - Read before proceeding</summary>
-<p></p>
+{% capture infoWired %}
+<p>Version Compatibility Rules - Read before proceeding
+</p>
 {% if page.url contains 'upgrade-instructions' %}
 <p>Before upgrading ThingsBoard Edge, ensure that <b>ThingsBoard Server</b> is <a href="/docs/{{peDocsPrefix}}user-guide/install/upgrade-instructions/" target="_blank">updated to the latest version</a>.</p>
 {% else %}
@@ -17,7 +16,6 @@
 <li>Example: ThingsBoard Edge 3.9.1 <span style="color:red"><strong>does not support</strong></span> ThingsBoard Server 3.8.0 or earlier versions. The ThingsBoard Server must be <a href="/docs/user-guide/install/{{peDocsPrefix}}upgrade-instructions/" target="_blank">upgraded to the latest version</a> first.</li></ul>
 </ul>
 <p><strong>Note:</strong> If you run an older version of ThingsBoard Edge (e.g., version 3.6.0), the ThingsBoard team cannot guarantee the availability or proper functioning of all features.</p>
-
-</details>
 {% endcapture %}
-{% include templates/warn-banner.md content=update_server_first %}
+{% include templates/warn-banner.md content=infoWired %}
+
