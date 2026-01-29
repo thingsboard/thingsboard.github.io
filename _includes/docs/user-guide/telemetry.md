@@ -310,23 +310,12 @@ where
  
 ### Example 
 
-Change values of the following variables : 
-
- - **token** - to the JWT token which you can get using the [following link](/docs/{{docsPrefix}}reference/rest-api/#rest-api-auth).
-
- - **entityId** - to your device id.
- 
- In case of North America ThingsBoard Cloud server : 
- 
- - replace **host:port** with **thingsboard.cloud** and choose secure connection - **wss://**
-
-In case of Europe ThingsBoard Cloud server :
-
- - replace **host:port** with **eu.thingsboard.cloud** and choose secure connection - **wss://**
- 
- In case of local installation :
- 
- - replace **host:port** with **127.0.0.1:8080** and choose **ws://**
+Replace the following variables with your actual values:
+- <code>$YOUR_JWT_TOKEN</code> - the JWT token obtained using the [REST API authentication endpoint](/docs/{{docsPrefix}}reference/rest-api/#rest-api-auth){:target="_blank"}.
+- <code>$YOUR_DEVICE_ID</code> - the unique identifier of your device.
+{% if docsPrefix == nil or docsPrefix == "pe/" %}
+- <code>$THINGSBOARD_HOST_PORT</code> — the hostname and port (e.g. `127.0.0.1:8080`) where your ThingsBoard instance is running.
+{% endif %}
  
 {% capture tabspec %}web-socket
 A,web-socket.html,html,resources/web-socket.html,/docs/{{docsPrefix}}user-guide/resources/web-socket.html{% endcapture %}  
