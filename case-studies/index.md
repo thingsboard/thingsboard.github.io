@@ -73,6 +73,16 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
+        <div class="client-card" id="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/x-telia.webp');">
+                <a class="content" href="/case-studies/xtelia">
+                    <img style="height: 35px" class="logo" src="/images/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo">
+                    <p>Smart signage at scale: X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
         <div class="client-card" id="Smart energy">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('/images/case-studies/oxi.webp');">
                 <a class="content" href="/case-studies/oxi">
@@ -93,13 +103,13 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart city">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/x-telia.webp');">
-                <a class="content" href="/case-studies/xtelia">
-                    <img style="height: 35px" class="logo" src="/images/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo">
-                    <p>Smart signage at scale: X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</p>
+        <div class="client-card" id="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/energenix.webp');">
+                <a class="content" href="/case-studies/energenix">
+                    <img class="logo" src="/images/case-studies/energenix.svg" title="Energenix" alt="Energenix logo">
+                    <p>Scaling renewable energy intelligence: how Energenix uses ThingsBoard to monitor and optimize 120+ MW of solar power assets</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</span>
+                    <span class="visually-hidden">about how Energenix uses ThingsBoard to monitor and optimize 120+ MW of solar power assets</span>
                 </a>
             </div>
         </div>
