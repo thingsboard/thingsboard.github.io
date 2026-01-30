@@ -101,11 +101,15 @@ Click **Add trigger condition** and configure the following parameters:
 
 #### Severity
 
-**Severity** defines the criticality of the alarm at the moment it is created.   
-It affects incident prioritization, UI representation, and automation workflows (Rule Engine, notification rules, etc.).
+In ThingsBoard, **alarm severity** indicates how critical an alarm condition is and helps prioritize response actions.   
+The following severity levels are available:
+- <span style="color:#d12730">Critical</span> — Indicates a severe condition that requires **immediate action**, such as equipment failure, safety risks, or conditions that may cause data loss or system downtime. 
+- <span style="color:#f66716">Major</span> — Represents a significant issue that can impact system operation but is **not immediately critical**, for example, performance degradation or operation outside recommended parameters. 
+- <span style="color:#faa405">Minor</span> — Used for less severe problems that should be **monitored or addressed later**, such as temporary threshold violations or early warning conditions. 
+- <span style="color:#f2da05">Warning</span> — Indicates a **potential or emerging issue** that does not yet affect normal operation but may require attention if it persists. 
+- <span style="color:#9e9e9e">Indeterminate</span> — Used when an alarm is raised but the **severity cannot be clearly determined**, often due to incomplete data or ambiguous conditions.
 
-Available severity levels:   
-**Critical**, **Major**, **Minor**, **Warning**, **Indeterminate**.
+Choosing the appropriate severity helps ensure effective monitoring, escalation, and response in IoT systems.
 
 <b><font size="3">How severity works</font></b>
 

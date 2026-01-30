@@ -229,9 +229,9 @@
       title: Transform telemetry using previous record
       subtitle: Learn how to configure Rule Engine to calculate “delta” of the counter readings based on current and previous reading.
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
+    - path: /docs/tutorials/create-clear-alarms/
       title: Create & clear alarms
-      subtitle: Learn how to configure Rule Engine to create and clear alarms based on incoming data from devices.
+      subtitle: Learn how to configure alarm rules to trigger and clear alarms based on incoming device data.
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/
       title: Working with Alarm details

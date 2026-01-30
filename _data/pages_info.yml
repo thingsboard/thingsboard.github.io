@@ -1922,6 +1922,9 @@
   redirect_from:
   - "/products/paas/eu/subscription/"
   - "/docs/paas/eu/subscription/"
+"/docs/paas/eu/tutorials/create-clear-alarms/":
+  url: "/docs/paas/eu/tutorials/create-clear-alarms/"
+  redirect_from: []
 "/docs/paas/eu/tutorials/function-based-on-telemetry-from-two-devices/":
   url: "/docs/paas/eu/tutorials/function-based-on-telemetry-from-two-devices/"
   redirect_from: []
@@ -2191,9 +2194,6 @@
   redirect_from: []
 "/docs/paas/eu/user-guide/rule-engine-2-0/re-getting-started/":
   url: "/docs/paas/eu/user-guide/rule-engine-2-0/re-getting-started/"
-  redirect_from: []
-"/docs/paas/eu/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/":
-  url: "/docs/paas/eu/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/"
   redirect_from: []
 "/docs/paas/eu/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/":
   url: "/docs/paas/eu/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/"
@@ -2483,6 +2483,9 @@
   redirect_from:
   - "/products/paas/subscription/"
   - "/docs/paas/subscription/"
+"/docs/paas/tutorials/create-clear-alarms/":
+  url: "/docs/paas/tutorials/create-clear-alarms/"
+  redirect_from: []
 "/docs/paas/tutorials/function-based-on-telemetry-from-two-devices/":
   url: "/docs/paas/tutorials/function-based-on-telemetry-from-two-devices/"
   redirect_from: []
@@ -2752,9 +2755,6 @@
   redirect_from: []
 "/docs/paas/user-guide/rule-engine-2-0/re-getting-started/":
   url: "/docs/paas/user-guide/rule-engine-2-0/re-getting-started/"
-  redirect_from: []
-"/docs/paas/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/":
-  url: "/docs/paas/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/"
   redirect_from: []
 "/docs/paas/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/":
   url: "/docs/paas/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/"
@@ -3968,6 +3968,9 @@
 "/docs/pe/solution-templates/water-metering/":
   url: "/docs/pe/solution-templates/water-metering/"
   redirect_from: []
+"/docs/pe/tutorials/create-clear-alarms/":
+  url: "/docs/pe/tutorials/create-clear-alarms/"
+  redirect_from: []
 "/docs/pe/tutorials/function-based-on-telemetry-from-two-devices/":
   url: "/docs/pe/tutorials/function-based-on-telemetry-from-two-devices/"
   redirect_from: []
@@ -4390,9 +4393,6 @@
   redirect_from: []
 "/docs/pe/user-guide/rule-engine-2-0/re-getting-started/":
   url: "/docs/pe/user-guide/rule-engine-2-0/re-getting-started/"
-  redirect_from: []
-"/docs/pe/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/":
-  url: "/docs/pe/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/"
   redirect_from: []
 "/docs/pe/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/":
   url: "/docs/pe/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/"
@@ -5113,6 +5113,9 @@
   redirect_from: []
 "/docs/trendz/widget-settings/":
   url: "/docs/trendz/widget-settings/"
+  redirect_from: []
+"/docs/tutorials/create-clear-alarms/":
+  url: "/docs/tutorials/create-clear-alarms/"
   redirect_from: []
 "/docs/tutorials/function-based-on-telemetry-from-two-devices/":
   url: "/docs/tutorials/function-based-on-telemetry-from-two-devices/"
@@ -6284,9 +6287,6 @@
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/":
   url: "/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/"
-  redirect_from: []
-"/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/":
-  url: "/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/"
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/":
   url: "/docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/"

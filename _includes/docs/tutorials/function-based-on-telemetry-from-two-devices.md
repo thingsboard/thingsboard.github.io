@@ -5,6 +5,11 @@ This guide demonstrates how to calculate a telemetry delta using data from two d
 
 As an example, we calculate the temperature difference between indoor and outdoor thermometers installed in a warehouse. The calculated value is stored as a new telemetry key and can be used for monitoring, visualization, or alerting.
 
+This guide is introductory and focuses on demonstrating the core capabilities of the platform, rather than building configurations from scratch.   
+For this reason, predefined calculated field configuration are provided and imported during the setup.
+
+After importing these configurations into your ThingsBoard instance, you can examine their structure, logic, and behavior, and then adapt them to suit your own use cases.
+
 <hr>
 
 ## Use case
@@ -38,9 +43,9 @@ In this example, the asset represents a warehouse and is used to store aggregate
 
 **Create the asset:**
 1. Navigate to **Entities** **&#8702;** **Assets**.
-2. Click the **&#43;** (**Add**) button in the top-right corner, select **Add new asset** and create: 
-   - Asset name: Warehouse A 
-   - Asset profile: warehouse
+2. Click the **&#43;** (**Add**) button in the top-right corner, select **Add new asset** and create:   
+&#8194;&#8226;&#8194;**Asset name**: Warehouse A   
+&#8194;&#8226;&#8194;**Asset profile**: warehouse
 
 **Create two devices:**
 1. Download the CSV file containing the device configuration:   
@@ -50,10 +55,10 @@ In this example, the asset represents a warehouse and is used to store aggregate
 4. [Upload the CSV file](/docs/user-guide/bulk-provisioning/#upload-file){:target="_blank"} and follow the import wizard instructions.
 
 **CSV configuration details:**
-- CSV delimiter: <span class="code-light">,</span>
-- Column mapping:
-   - Name: Indoor Thermometer, Outdoor Thermometer
-   - Type: thermometer
+- **CSV delimiter**: <span class="code-light">,</span>
+- **Column mapping**:
+   - **Name**: Indoor Thermometer, Outdoor Thermometer
+   - **Type**: thermometer
 
 <hr>
 

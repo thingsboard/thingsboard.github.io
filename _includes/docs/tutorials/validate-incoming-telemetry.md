@@ -5,6 +5,11 @@ This guide explains how to validate incoming telemetry data in ThingsBoard and d
 
 As an example, we validate temperature readings received from a Thermometer sensor and ensure that only values within the supported range are stored in the database.
 
+The guide is introductory and focuses on demonstrating the core platform capabilities rather than building configurations from scratch.    
+For this reason, predefined rule chain configurations are provided and imported during the setup process.
+
+After importing these configurations into your ThingsBoard instance, you can explore their structure, logic, and behavior, and later adapt them for your own use cases.
+
 <hr>
 
 ## Use case
@@ -28,7 +33,7 @@ Before proceeding, review the [Rule Engine](/docs/user-guide/rule-engine-2-0/ove
 
 <hr>
 
-## Validation Logic
+## Validation logic
 
 Incoming messages may **contain or omit** the <span class="code-light">temperature</span> field.   
 Telemetry validation follows these rules:
@@ -37,19 +42,15 @@ Telemetry validation follows these rules:
 
 Only messages that meet these conditions are stored in the database.
 
-<hr>
+<br>
 
-## 1. Import the validation rule chain
-
-Telemetry validation is implemented using a rule chain that filters incoming messages before they are saved.
-
-Rule chain behavior:
+Telemetry validation is implemented using a [rule chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} that filters incoming messages before they are saved. Rule chain behavior:
 - Routes **all messages from devices using this rule chain** to a [filter node](/docs/user-guide/rule-engine-2-0/nodes/filter/script){:target="_blank"} with the temperature validation script
 - Forwards **validated telemetry** to the [save timeseries node](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries){:target="_blank"}, which stores data in the database
 
 This rule chain ensures that only valid temperature readings are stored, while invalid values are filtered out before persistence.
 
-<b><font size="3">Actions</font></b>
+## 1. Import the validation rule chain
 
 1. Download the rule chain configuration file:   
    [validate_incoming_telemetry_rule_chain.json](/docs/user-guide/resources/guides/validate_incoming_telemetry_rule_chain.json){:target="_blank" download="validate_incoming_telemetry_rule_chain.json"}.
@@ -58,7 +59,7 @@ This rule chain ensures that only valid temperature readings are stored, while i
 4. [Upload the rule chain configuration file](/docs/{{docsPrefix}}user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} and click **Import**.
 5. Click **Apply changes** to finalize the import.
 
-<b><font size="3">Script used in this example</font></b>
+<br><b><font size="3">Script used in this example</font></b>
 
 ```javascript
 return typeof msg.temperature === 'undefined' || (msg.temperature >= -40 && msg.temperature <= 80);
@@ -69,11 +70,11 @@ return typeof msg.temperature === 'undefined' || (msg.temperature >= -40 && msg.
 - <span class="code-light">typeof msg.temperature === 'undefined'</span> **&#8702;** allows messages that do not include temperature data to pass through unchanged.
 - <span class="code-light">(msg.temperature >= -40 && msg.temperature <= 80)</span> **&#8702;** validates that the temperature value is within the supported range.
 
+<hr>
+
 ## 2. Add demo device
 
 Next, create a demo device that publishes temperature telemetry and ensure it uses the imported validation rule chain.
-
-<b><font size="3">Actions</font></b>
 
 1. Navigate to **Entities** **&#8702;** **Devices**.
 2. Click the **&#43;** (**Add**) button in the top-right corner, select **Add new device** and create:
@@ -89,7 +90,7 @@ From this point onward, all telemetry published by devices using this profile is
 ## Test the configuration
 
 To verify that the validation works as expected, open the device&#39;s **Latest telemetry** tab to monitor incoming data in real time, then publish the test telemetry messages.   
-You can use the [Check connectivity](/docs/getting-started-guides/helloworld-pe/#step-2-connect-device){:target="_blank"} feature, or execute the command below&#42;:
+You can use the [Check connectivity](/docs/{{docsPrefix}}user-guide/ui/devices/#check-connectivity){:target="_blank"} feature, or execute the command below&#42;:
 
 1. Temperature **within** the valid range (for example, <span class="code-light">25</span>).   
    {% if docsPrefix == null or docsPrefix == "pe/" %}

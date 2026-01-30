@@ -42,9 +42,9 @@ The device serves as the source of telemetry data used by the calculated field a
 <b><font size="3">Actions</font></b>
 
 1. Navigate to **Entities** **&#8702;** **Devices**.
-2. Click the **&#43;** (**Add**) button in the top-right corner, select **Add new device** and create:
-   - Device name: Thermometer
-   - Device profile: thermostat
+2. Click the **&#43;** (**Add**) button in the top-right corner, select **Add new device** and create:   
+&#8194;&#8226;&#8194;**Device name**: Thermometer   
+&#8194;&#8226;&#8194;**Device profile**: thermostat
 
 The device is registered in ThingsBoard and ready to publish telemetry data.
 
@@ -100,9 +100,9 @@ return {
 
 Configure the [alarm rule](/docs/{{docsPrefix}}user-guide/alarm-rules){:target="_blank"} that react to changes in the <span class="code-light">deltaTemperature</span> key value.
 
-Alarm logic:
-- Trigger the alarm when <span class="code-light">deltaTemperature ≥ 5</span>
-- Clear the alarm when <span class="code-light">deltaTemperature < 5</span>
+**Alarm logic:**   
+&#8194;&#8226;&#8194;Trigger the alarm when <span class="code-light">deltaTemperature ≥ 5</span>   
+&#8194;&#8226;&#8194;Clear the alarm when <span class="code-light">deltaTemperature < 5</span>
 
 **Actions**
 1. Download the alarm rule configuration file:   
@@ -122,8 +122,8 @@ To confirm that everything works as expected, publish two temperature values wit
 
 **Verification steps**
 
-1. Publish an initial temperature value (for example, <span class="code-light">25</span>).   
-   The easiest way is to use the [check connectivity](/docs/getting-started-guides/helloworld-pe/#step-2-connect-device){:target="_blank"} feature. Alternatively, execute the command below&#42;:   
+1. Publish an initial temperature value (for example, 25).   
+   The easiest way is to use the [check connectivity](/docs/{{docsPrefix}}user-guide/ui/devices/#check-connectivity){:target="_blank"} feature. Alternatively, execute the command below&#42;:   
    **&#42;** Make sure to replace {% if docsPrefix == null or docsPrefix == "pe/" %}**$THINGSBOARD_HOST_NAME** with the hostname or IP address of your ThingsBoard instance, and {% endif %}**$ACCESS_TOKEN** with the Thermostat device access token.   
    {% if docsPrefix == null or docsPrefix == "pe/" %}
    ```bash
@@ -149,7 +149,7 @@ To confirm that everything works as expected, publish two temperature values wit
    - <span class="code-light">temperature = 25</span>
    - <span class="code-light">deltaTemperature> = 0</span (only one value is available)
 
-3. Publish a second temperature value within 15 minutes (for example, <span class="code-light">32</span>).   
+3. Publish a second temperature value within 15 minutes (for example, 32).   
    {% if docsPrefix == null or docsPrefix == "pe/" %}
    ```bash
    curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header Content-Type:application/json --data "{temperature:32}"
