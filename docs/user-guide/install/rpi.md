@@ -72,6 +72,14 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
+## Post-installation steps
+
+### Upgrading to new ThingsBoard version
+
+The upgrade procedure for Raspberry Pi is identical to the Ubuntu instructions.
+
+{% include templates/install/upgrade-thingsboard.md %}
+
 ## Troubleshooting
 
 {% include templates/install/troubleshooting.md %}

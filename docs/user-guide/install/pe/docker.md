@@ -7,6 +7,8 @@ description: Installing ThingsBoard PE IoT Platform using Docker (Linux or MacOS
 redirect_from: "/docs/pe/user-guide/install/docker/"
 ---
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
 

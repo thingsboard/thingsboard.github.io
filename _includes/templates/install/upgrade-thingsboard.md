@@ -8,4 +8,11 @@ When a new ThingsBoard release becomes available, we provide a streamlined updat
 {% endcapture %}
 {% include templates/info-banner.md content=sequentiall_upgrade_note %}
 
-Please refer to our official [Upgrade Instructions](/docs/pe/user-guide/install/upgrade-instructions/) for detailed steps tailored to your current deployment environment.
+{% assign upgrade_url = "/docs/user-guide/install/upgrade-instructions/" %}
+
+{% if docsPrefix == "pe/" %}
+  {% assign upgrade_url = "/docs/pe/user-guide/install/upgrade-instructions/" %}
+{% endif %}
+
+Please refer to our official <a href="{{ upgrade_url }}">Upgrade Instructions</a> for detailed steps tailored to your current deployment environment.
+

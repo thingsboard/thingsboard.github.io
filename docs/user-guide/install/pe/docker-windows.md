@@ -7,9 +7,10 @@ description: Installing ThingsBoard PE IoT Platform using Docker (Windows)
 redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 ---
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
-
 
 This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker on Windows. 
 This guide covers standalone ThingsBoard PE installation.

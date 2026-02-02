@@ -75,11 +75,13 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 {% assign dockerComposeFileLocation = "" %}
 {% include templates/install/docker/docker-compose-setup-running.md %}
 
-## Upgrading
-
-{% include templates/install/upgrade-docker-compose.md %}
+## Post-installation steps
 
 {% include templates/install/generate_certificate_docker-compose.md %}
+
+### Upgrading to new ThingsBoard version
+
+{% include templates/install/upgrade-thingsboard.md %}
 
 ## Next steps
 

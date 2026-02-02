@@ -103,10 +103,6 @@ docker compose up -d
 
 ## Post-installation steps
 
-### Configure HAProxy to enable HTTPS
-
-{% include templates/install/ubuntu-haproxy-postinstall.md %}
-
 ### Upgrading to new ThingsBoard version
 
 {% include templates/install/upgrade-thingsboard.md %}

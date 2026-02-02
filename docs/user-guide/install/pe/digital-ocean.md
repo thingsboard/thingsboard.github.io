@@ -9,6 +9,8 @@ This guide describes how to install ThingsBoard Professional Edition on DigitalO
 Using this guide you will install "Bring Your Own License" version of the product.
 Basically, you get the license directly from ThingsBoard, Inc, but purchase corresponding server instances and infrastructure from DigitalOcean.       
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
 
