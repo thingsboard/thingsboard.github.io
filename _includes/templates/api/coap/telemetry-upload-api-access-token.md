@@ -1,23 +1,20 @@
 Send POST request to the following URL:
 
-{% if (docsPrefix == null) or (docsPrefix == "pe/") %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
+coap://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** is your localhost, or the platform address;
-- **$ACCESS_TOKEN** is device access token.
-
-{% endif %}
-{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/"%}
+{% else %}
 
 ```shell
 coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** is device access token.
-
 {% endif %}
+
+> ⚠️ Don&#39;t forget to replace {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> with your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}<code>$ACCESS_TOKEN</code> with your device&#39;s access token.

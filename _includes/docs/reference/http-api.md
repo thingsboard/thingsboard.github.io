@@ -1,10 +1,12 @@
+{% if docsPrefix == nil or docsPrefix == "pe/" %}
+{% assign HOST_NAME = "$THINGSBOARD_HOST_NAME" %}
+{% endif %}
+{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+{% assign HOST_NAME = "$THINGSBOARD_EDGE_HOST_NAME" %}
+{% endif %}
 
 * TOC
 {:toc}
-
-## Getting started
-
-### HTTP basics
 
 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is a general-purpose network protocol that can be used in IoT applications. 
 You can find more information about HTTP [here](https://www.w3.org/Protocols/rfc2616/rfc2616.txt).
@@ -12,37 +14,48 @@ HTTP protocol is TCP based and uses request-response model.
 
 ThingsBoard server nodes act as an HTTP Server that supports both HTTP and HTTPS protocols.
 
-### Client libraries setup
+<hr>
 
-You can find HTTP client libraries for different programming languages on the web. The examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
+## Client libraries setup
+
+Many HTTP client libraries are available for different platforms and languages.
+The examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
+
+{% unless docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 In order to setup this tool, you can use instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
+{% endunless %}
 
-### HTTP Authentication and error codes
 
-In this article, we will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
-The application needs to include **$ACCESS_TOKEN** as a path parameter in each HTTP request.
-Possible error codes and their reasons:
+<hr>
 
-* **400 Bad Request** - Invalid URL, request parameters or body.
-* **401 Unauthorized** - Invalid **$ACCESS_TOKEN**.
-* **404 Not Found** - Resource not found.
+## HTTP Authentication and error codes
+
+This guide uses **access token–based authentication**. 
+The application needs to include **access token** as a path parameter in each HTTP request.
+
+**Possible error codes and their reasons:**
+- **400 Bad Request** - Invalid URL, request parameters or body
+- **401 Unauthorized** - Invalid **access token**
+- **404 Not Found** - Requested resource does not exist
 
 {% include templates/api/key-value-format.md %}
 
 Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 
+<hr>
+
 ## Telemetry upload API
 
 In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
+http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
 Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
+- **{{HOST_NAME}}** - the hostname or IP address your platform is running on;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
@@ -82,37 +95,29 @@ For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00
 <br>
 Below are the examples of commands for publishing different types of telemetry data.
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references your local installation.
-{% endif %}
-{% if docsPrefix contains "paas/" %}
-Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
-{% endif %}
-{% if docsPrefix == "edge/" %}
-Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references your local installation.
-{% endif %}
+> ⚠️ Don&#39;t forget to replace {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}<code>$ACCESS_TOKEN</code> is your device&#39;s access token.
 
-**Example 1**. Publish data as an object without timestamp (server-side timestamp will be used).
+**Example 1**.   
+Publish data as an object without timestamp (server-side timestamp will be used).
 
 Execute the command:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-curl -v -X POST --data "{"temperature":42,"humidity":73}" http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST --data "{"temperature":42,"humidity":73}" http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
+
 ```shell
 curl -v -X POST --data "{"temperature":42,"humidity":73}" {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-curl -v -X POST --data "{"temperature":42,"humidity":73}" http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-```
-{: .copy-code}
+
 {% endif %}
 
 Telemetry data:
@@ -121,28 +126,28 @@ Telemetry data:
 {"temperature":42,"humidity":73}
 ```
 
-**Example 2**. Publish data as an object without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-object.json**](/docs/reference/resources/telemetry-data-as-object.json) file.
+**Example 2**.   
+Publish data as an object without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-object.json**](/docs/reference/resources/telemetry-data-as-object.json) file.
 
 Execute the command:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+
 ```shell
-curl -v -X POST -d @telemetry-data-as-object.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d @telemetry-data-as-object.json http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
+
 ```shell
 curl -v -X POST -d @telemetry-data-as-object.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
+
 {% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-curl -v -X POST -d @telemetry-data-as-object.json http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-```
-{: .copy-code}
-{% endif %}
+
 
 The content of the JSON file:
 
@@ -160,27 +165,25 @@ The content of the JSON file:
 }
 ```
 
-**Example 3**. Publish data as an array of objects without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-array.json**](/docs/reference/resources/telemetry-data-as-array.json) file.
+**Example 3**.   
+Publish data as an array of objects without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-array.json**](/docs/reference/resources/telemetry-data-as-array.json) file.
 
 Execute the command:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-curl -v -X POST -d @telemetry-data-as-array.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d @telemetry-data-as-array.json http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
+
 ```shell
 curl -v -X POST -d @telemetry-data-as-array.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-curl -v -X POST -d @telemetry-data-as-array.json http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-```
-{: .copy-code}
+
 {% endif %}
 
 The content of the JSON file:
@@ -193,23 +196,20 @@ The content of the JSON file:
 
 Execute the command:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-curl -v -X POST -d @telemetry-data-with-ts.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d @telemetry-data-with-ts.json http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
+
 ```shell
 curl -v -X POST -d @telemetry-data-with-ts.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-curl -v -X POST -d @telemetry-data-with-ts.json http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-```
-{: .copy-code}
+
 {% endif %}
 
 The content of the JSON file:
@@ -233,6 +233,8 @@ The content of the JSON file:
 }
 ```
 
+<hr>
+
 ## Attributes API
 
 ThingsBoard attributes API allows devices to
@@ -240,20 +242,19 @@ ThingsBoard attributes API allows devices to
 * Upload [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes to the server.
 * Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 * Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
- 
+
+<hr>
+
 ### Publish attribute update to the server
 
 In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
+http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
@@ -262,27 +263,22 @@ Where
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
+
+Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
+
+<br>
 
 Below are the examples of commands for publishing different types of telemetry data.
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
-{% endif %}
-{% if docsPrefix contains "paas/" %}
-Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
-{% endif %}
-{% if docsPrefix == "edge/" %}
-Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
-{% endif %}
+**Example 1**.   
+Publish client-side attributes update
 
-**Example 1**. Publish client-side attributes update
-
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3": 43.0}" http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
+curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3": 43.0}" http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -292,33 +288,25 @@ curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3"
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "edge/" %}
+
+**Example 2**.   
+Publish client-side attributes update from the [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file.
+
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+
 ```shell
-curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3": 43.0}" http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
+curl -v -X POST -d @new-attributes-values.json http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
 ```
 {: .copy-code}
-{% endif %}
 
-
-**Example 2**. Publish client-side attributes update from the [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file.
-
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-```shell
-curl -v -X POST -d @new-attributes-values.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
-```
-{: .copy-code}
 {% endif %}
 {% if docsPrefix contains "paas/" %}
+
 ```shell
 curl -v -X POST -d @new-attributes-values.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-curl -v -X POST -d @new-attributes-values.json http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
-```
-{: .copy-code}
+
 {% endif %}
 
 The content of the JSON file:
@@ -338,20 +326,19 @@ The content of the JSON file:
 ```
 {: .copy-code}
 
+<hr>
+
 ### Request attribute values from the server
 
 In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
+http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
-{% endif %}
+- {% endif %}
 {% if docsPrefix contains "paas/" %}
 
 ```shell
@@ -359,36 +346,28 @@ Where
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
 {% endif %}
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
-{% endif %}
-{% if docsPrefix contains "paas/" %}
-Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
-{% endif %}
-{% if docsPrefix == "edge/" %}
-Execute the command. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
-{% endif %}
+Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
 
-{% if docsPrefix == "pe/" %}
+<br>
+
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
+curl -v -X GET http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 {: .copy-code}
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
+
 ```shell
 curl -v -X GET "{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2"
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-curl -v -X GET "http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2"
-```
-{: .copy-code}
+
 {% endif %}
 
 Result:
@@ -404,19 +383,19 @@ However, it is still possible to have same keys for client, shared or even serve
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+<hr>
+
 ### Subscribe to attribute updates from the server
 
 In order to subscribe to shared device attribute changes, send GET request with optional "timeout" request parameter to the following URL:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+
 ```shell
-http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/updates
+http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes/updates
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
@@ -425,39 +404,28 @@ Where
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
+
+Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
 
 Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
-{% endif %}
-{% if docsPrefix contains "paas/" %}
-Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
-{% endif %}
-{% if docsPrefix == "edge/" %}
-Execute the command. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
-{% endif %}
-
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/updates?timeout=20000
+curl -v -X GET http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes/updates?timeout=20000
 ```
 {: .copy-code}
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
+
 ```shell
 curl -v -X GET {{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/updates?timeout=20000
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-curl -v -X GET http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/updates?timeout=20000
-```
-{: .copy-code}
+
 {% endif %}
 
 Result:
@@ -465,9 +433,13 @@ Result:
 {"client":{"attribute1":"value1","attribute2":true}}
 ```
 
+<hr>
+
 ## JSON value support
 
 {% include templates/api/json.md %}
+
+<hr>
 
 ## RPC API
 
@@ -475,15 +447,16 @@ Result:
 
 In order to subscribe to RPC commands from the server, send GET request with optional "timeout" request parameter to the following URL:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
+http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
+Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
@@ -518,9 +491,9 @@ where
 
 It is possible to reply to them using POST request to the following URL:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/{$id}
+http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 {: .copy-code}
 
@@ -541,41 +514,36 @@ Where
 **Let's look at an example**:
 
 - Use **RPC debug terminal** widget in your ThingsBoard instance;
+- Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag.
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-- Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 
 ```shell
-curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
+curl -v -X GET http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
 ```
 {: .copy-code}
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
-- Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 curl -v -X GET {{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-- Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
-```shell
-curl -v -X GET http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
-```
-{: .copy-code}
 {% endif %}
+
+Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
 
 - Send an RPC request "connect" to the device using **RPC debug terminal** widget;
-
-- Save the "[rpc-response.json](/docs/reference/resources/rpc-response.json)" file to your PC;
-
+- Save the [rpc-response.json](/docs/reference/resources/rpc-response.json){:target="_blank" download="rpc-response.json"} file to your PC;
 - In the second terminal window simulate sending a response from the device to the server:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-curl -v -X POST -d @rpc-response.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/1 --header "Content-Type:application/json"
+curl -v -X POST -d @rpc-response.json http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/rpc/1 --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -585,34 +553,30 @@ curl -v -X POST -d @rpc-response.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc/1 --
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-curl -v -X POST -d @rpc-response.json http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/1 --header "Content-Type:application/json"
-```
-{: .copy-code}
-{% endif %}
 
-- You should receive a response from the device:
+You should receive a response from the device:
 
 ```shell
 {"result":"ok"}
 ```
 
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 {% include images-gallery.html imageCollection="server-side-rpc" %}
+{% endif %}
+
+<hr>
 
 ### Client-side RPC
 
 In order to send RPC commands to the server, send POST request to the following URL:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
+http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
@@ -621,17 +585,18 @@ Where
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
 
 Both request and response body should be valid JSON documents. The content of the documents is specific to the rule node that will handle your request.
 
+Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
+
 <br>
-**Let's look at an example**:
 
-- Add two nodes to the Rule Chain: "**script**" and "**rpc call reply**";
-
+**Example**
+- In the {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}**Edge** {% endif %}**Root Rule Chain** add two nodes: [script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script){:target="_blank"} and [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply){:target="_blank"}.
 - In the **script** node enter the function:
 
 ```shell
@@ -639,56 +604,53 @@ return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
 ```
 {: .copy-code}
 
-- Save the "[rpc-client-request.json](/docs/reference/resources/rpc-client-request.json)" file to your PC;
+- Save the [rpc-client-request.json](/docs/reference/resources/rpc-client-request.json){:target="_blank" download="rpc-client-request.json"} file to your PC;
+- Now, send request to the server using the command below:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-- Now, send request to the server using the command below. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 
 ```shell
-curl -X POST -d @rpc-client-request.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc --header "Content-Type:application/json"
+curl -X POST -d @rpc-client-request.json http://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/rpc --header "Content-Type:application/json"
 ```
 {: .copy-code}
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
-- Now, send request to the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 curl -X POST -d @rpc-client-request.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc --header "Content-Type:application/json"
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-- Now, send request to the server using the command below. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
-```shell
-curl -X POST -d @rpc-client-request.json http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc --header "Content-Type:application/json"
-```
-{: .copy-code}
 {% endif %}
 
-- You should receive a response from the server:
+You should receive a response from the server:
 
 ```shell
 {"time":"2016 11 21 12:54:44.287"}
 ```
 
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 {% include images-gallery.html imageCollection="client-side-rpc" %}
+{% endif %}
+
+<hr>
 
 ## Claiming devices
 
-Please see the corresponding article to get more information about the [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) feature.
+The Device Claiming feature allows end users to securely associate a device with their account after the device has been deployed and connected to ThingsBoard.
+For a detailed explanation of the device claiming workflow and supported scenarios, refer to the {% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix contains "paas/" %}[Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices){:target="_blank"}{% endif %}{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}[Claiming devices](/docs/user-guide/claiming-devices){:target="_blank"}{% endif %} documentation.
 
-In order to initiate claiming device, send POST request to the following URL:
+**Claiming request**   
+To initiate the device claiming process, the device must send a POST request to the following endpoint:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+
 ```shell
-http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/claim
+http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
@@ -697,37 +659,47 @@ Where
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
 
-The supported data format is:
+Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
+
+**Request payload**   
+The request body must contain the following JSON structure:
 
 ```json
 {"secretKey":"value", "durationMs":60000}
 ```
 
+**Payload fields**
+- **secretKey** — a secret value used to authorize the claiming process
+- **durationMs** — the time window (in milliseconds) during which the device can be claimed
+
 {% capture difference %}
-**Please note**
-<br>
-that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
+**Please note** that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+<hr>
+
 ## Device provisioning
 
-Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning) feature.
+Device provisioning allows devices to be registered dynamically without manual creation in the ThingsBoard UI.
+For a detailed explanation of the provisioning process and supported scenarios, refer to the {% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix contains "paas/" %}[Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning){:target="_blank"}{% endif %}{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}[Device provisioning](/docs/user-guide/device-provisioning){:target="_blank"}{% endif %} documentation.
 
-In order to initiate device provisioning, send POST request to the following URL:
+**Provisioning request**
+To initiate device provisioning, send a POST request to the following endpoint:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-http(s)://$THINGSBOARD_HOST_NAME/api/v1/provision
+http(s)://{{HOST_NAME}}/api/v1/provision
 ```
 {: .copy-code}
 
-Where **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
+Where **{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.
+
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
@@ -735,9 +707,11 @@ Where **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is r
 {{httpsUrl}}/api/v1/provision
 ```
 {: .copy-code}
+
 {% endif %}
 
-The supported data format is:
+**Request Payload**   
+The provisioning request must use the following JSON format:
 
 ```json
 {
@@ -747,22 +721,28 @@ The supported data format is:
 }
 ```
 
+**Payload fields**   
+- **deviceName** — the name of the device to be provisioned.
+- **provisionDeviceKey** — the provisioning key configured in ThingsBoard.
+- **provisionDeviceSecret** — the provisioning secret associated with the provisioning key.
+
+If the provided credentials are valid, ThingsBoard automatically creates the device (if it does not already exist) and returns the device credentials, allowing the device to start communicating with the platform.
+
+<hr>
+
 ## Firmware API
 
-When ThingsBoard initiates the firmware update over HTTP it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
-To receive the shared attribute updates, the device has to GET request
+When ThingsBoard initiates the firmware update over HTTP it sets the _fw_title_, _fw_version_, _fw_checksum_, _fw_checksum_algorithm_ shared attributes.
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+To receive firmware update information and download the firmware, the device must send a GET request to the following endpoint:
+
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+
 ```shell
-http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
+http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - the device access token;  
-- **$TITLE** - the firmware title;  
-- **$VERSION** - the version of the target firmware.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
@@ -771,16 +751,21 @@ Where
 ```
 {: .copy-code}
 
-Where
-- **$ACCESS_TOKEN** - the device access token;
-- **$TITLE** - the firmware title;
-- **$VERSION** - the version of the target firmware.
-
 {% endif %}
+
+Parameters   
+{% unless docsPrefix contains "paas/" %}&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address{% endunless %}   
+&#8194;&#8226;&#8194;**$ACCESS_TOKEN** is your device&#39;s access token   
+&#8194;&#8226;&#8194;**$TITLE** - the firmware title   
+&#8194;&#8226;&#8194;**$VERSION** - the target firmware version
+
+<hr>
 
 ## Protocol customization
 
-HTTP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/http).
+HTTP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/http){:target="_blank"}.
+
+<hr>
 
 ## Next steps
 

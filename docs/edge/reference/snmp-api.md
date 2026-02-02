@@ -41,4 +41,6 @@ deviceProfileConfiguring5:
         image: /images/reference/snmp-api/snmp-api-device-profile-configuring-6-pe.png
 ---
 
+{% assign docsPrefix = "edge/" %}
+{% include get-hosts-name.html docsTag="edge" %}
 {% include docs/reference/snmp-api.md %}

@@ -79,10 +79,10 @@ mosquitto_pub -d -q 1 -h "{{mqttHostName}}" -p "1883" -t "v1/devices/me/telemetr
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} 
 
 > ⚠️ **Don&#39;t forget to replace:**   
-> &#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> with your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge" %} Edge{% endif %} hostname or IP address.   
+> &#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> with your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
 > &#8194;&#8226;&#8194;<code>$ACCESS_TOKEN</code> with your device&#39;s access token.
 
 ```bash
@@ -91,7 +91,7 @@ mosquitto_pub -d -q 1 -h "{{HOST_NAME}}" -p "1883" -t "v1/devices/me/telemetry" 
 {: .copy-code}
 
 **Example**   
-In this example, <code>{{HOST_NAME}}</code> refers to your <code>local</code> ThingsBoard {% if docsPrefix == "edge/" or docsPrefix == "pe/edge" %}Edge {% endif %}installation, and <code>$ACCESS_TOKEN</code> is set to <code>ABC123</code>.
+In this example, <code>{{HOST_NAME}}</code> refers to your <code>local</code> ThingsBoard {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}Edge {% endif %}installation, and <code>$ACCESS_TOKEN</code> is set to <code>ABC123</code>.
 
 ```bash
 mosquitto_pub -d -q 1 -h "localhost" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25}
@@ -279,7 +279,7 @@ v1/devices/me/attributes
 ```
 {: .copy-code}
 
-<br><b><font size="3">Examples</font></b>   
+<b><font size="3">Examples</font></b>   
 Below are the examples of how to publish client-side device attributes.
 
 > ⚠️ Don&#39;t forget to replace {% unless docsPrefix contains "paas/" %}   
@@ -298,9 +298,9 @@ Telemetry data:
 
 Execute the command:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+mosquitto_pub -d -h "{{HOST_NAME}}" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
 ```
 {: .copy-code}
 {% else %}
@@ -358,23 +358,14 @@ v1/devices/me/attributes/response/+
 The following example is written in javascript and is based on mqtt.js. 
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
-{% if docsPrefix == nil or docsPrefix == "pe/" %}
-**1.** Save the [mqtt-js-attributes-request.js](/docs/pe/reference/resources/mqtt-js-attributes-request.js){:target="_blank" download="mqtt-js-attributes-request.js"} file to your PC. 
+**1.** Save the [mqtt-js-attributes-request.js](/docs/{{docsPrefix}}reference/resources/mqtt-js-attributes-request.js){:target="_blank" download="mqtt-js-attributes-request.js"} file to your PC.
 
-> ⚠️ In this example, the hostname refers to a **local ThingsBoard installation**.   
-> If your ThingsBoard instance is deployed on a different host, make sure to replace <code>localhost</code> with the appropriate hostname or IP address.
+{% unless docsPrefix contains 'paas/' %}
 
-{% endif %}
-{% if docsPrefix contains 'paas/' %}
-**1.** Save the [mqtt-js-attributes-request.js](/docs/paas/reference/resources/mqtt-js-attributes-request.js){:target="_blank" download="mqtt-js-attributes-request.js"} file to your PC.
-{% endif %}
-{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
-**1.** Save the [mqtt-js-attributes-request.js](/docs/edge/reference/resources/mqtt-js-attributes-request.js){:target="_blank" download="mqtt-js-attributes-request.js"} file to your PC.
+> ⚠️ In this example, the hostname refers to a **local ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} installation**.   
+> If your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} instance is deployed on a different host, make sure to replace <code>localhost</code> with the appropriate hostname or IP address.
 
-> ⚠️ In this example, the hostname refers to a **local ThingsBoard Edge installation**.   
-> If your ThingsBoard Edge instance is deployed on a different host, make sure to replace <code>localhost</code> with the appropriate hostname or IP address.
-
-{% endif %}
+{% endunless %}
 
 {% capture tabspec %}mqtt-attributes-request
 A,The content of the "mqtt-js-attributes-request.js" file:,javascript,resources/mqtt-js-attributes-request.js,/docs/reference/resources/mqtt-js-attributes-request.js{% endcapture %}
@@ -666,7 +657,8 @@ These limits help control load and ensure stable operation when multiple devices
 
 ## Claiming devices
 
-Please see the corresponding article to get more information about the [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices){:target="_blank"} feature.
+The Device Claiming feature allows end users to securely associate a device with their account after the device has been deployed and connected to ThingsBoard.
+For a detailed explanation of the device claiming workflow and supported scenarios, refer to the {% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix contains "paas/" %}[Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices){:target="_blank"}{% endif %}{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}[Claiming devices](/docs/user-guide/claiming-devices){:target="_blank"}{% endif %} documentation.
 
 In order to initiate claiming device, send PUBLISH message to the following topic:
 
@@ -691,9 +683,11 @@ In case the **durationMs** is not specified, the system parameter **device.claim
 
 ## Device provisioning
 
-Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning){:target="_blank"} feature.
+Device provisioning allows devices to be registered dynamically without manual creation in the ThingsBoard UI.
+For a detailed explanation of the provisioning process and supported scenarios, refer to the {% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix contains "paas/" %}[Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning){:target="_blank"}{% endif %}{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}[Device provisioning](/docs/user-guide/device-provisioning){:target="_blank"}{% endif %} documentation.
 
-In order to initiate device provisioning, send Provisioning request to the following topic:
+**Provisioning request**   
+To initiate device provisioning, send Provisioning request to the following topic:
 
 ```shell
 /provision
@@ -702,7 +696,8 @@ In order to initiate device provisioning, send Provisioning request to the follo
 
 Also, you should set **username** or **clientId** to *provision*.
 
-The supported data format is:
+**Request Payload**   
+The provisioning request must use the following JSON format:
 
 ```json
 {
@@ -711,6 +706,13 @@ The supported data format is:
   "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw"
 }
 ```
+
+**Payload fields**
+- **deviceName** — the name of the device to be provisioned.
+- **provisionDeviceKey** — the provisioning key configured in ThingsBoard.
+- **provisionDeviceSecret** — the provisioning secret associated with the provisioning key.
+
+If the provided credentials are valid, ThingsBoard automatically creates the device (if it does not already exist) and returns the device credentials, allowing the device to start communicating with the platform.
 
 <hr>
 
