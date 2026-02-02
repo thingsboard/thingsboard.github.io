@@ -19,6 +19,9 @@
 {%- assign curr_major = curr_parts[0] -%}
 {%- assign curr_minor = curr_parts[1] -%}
 
+{%- assign curr_major_n = curr_major | plus: 0 -%}
+{%- assign curr_minor_n = curr_minor | plus: 0 -%}
+
 {%- assign prev_major = prev_parts[0] -%}
 {%- assign prev_minor = prev_parts[1] -%}
 
@@ -69,6 +72,20 @@ In order to upgrade to {{ current_version_with_platform | upcase }} you need to 
 {%- endif -%}
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
+
+{%- if curr_major_n > 4 -%}
+  {%- if docsPrefix == "pe/" -%}
+    {% include templates/install/pe-tb-products-upgrade-compatibility.md %}
+  {%- else -%}
+    {% include templates/install/tb-products-upgrade-compatibility.md %}
+  {%- endif -%}
+{%- elsif curr_major_n == 4 and curr_minor_n >= 3 -%}
+  {%- if docsPrefix == "pe/" -%}
+    {% include templates/install/pe-tb-products-upgrade-compatibility.md %}
+  {%- else -%}
+    {% include templates/install/tb-products-upgrade-compatibility.md %}
+  {%- endif -%}
+{%- endif -%}
 
 {% if current_version == "3.8" and docsPrefix != "pe/" %}
 #### Install PostgreSQL contrib package (For CentOS only)

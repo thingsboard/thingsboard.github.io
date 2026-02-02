@@ -1,4 +1,4 @@
-## Generate certificate for HTTPS
+### Generate certificate for HTTPS
 We using HAproxy for proxying traffic to containers and for web UI by default we using 80 and 443 ports. For using HTTPS with a valid certificate, execute these commands:
 ```
 docker exec haproxy-certbot certbot-certonly --domain your_domain --email your_email

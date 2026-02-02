@@ -159,6 +159,12 @@ The Thingsboard Web Report Microservice service is starting.
 The Thingsboard Web Report Microservice service was started successfully.
 ```
 
+## Post-installation steps
+
+### Upgrading to new ThingsBoard version
+
+{% include templates/install/upgrade-thingsboard.md %}
+
 ## Troubleshooting
 
 The log files are located in **logs** folder ("C:\Program Files (x86)\thingsboard\logs" in our case).
