@@ -154,7 +154,13 @@ WebReport service <small>(Install service and dependencies manually)</small>%,%s
 
 ## Post-installation steps
 
+### Configure HAProxy to enable HTTPS
+
 {% include templates/install/rhel-haproxy-postinstall.md %}
+
+### Upgrading to new ThingsBoard version
+
+{% include templates/install/upgrade-thingsboard.md %}
 
 ## Troubleshooting
 

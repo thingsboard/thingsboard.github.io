@@ -1,0 +1,52 @@
+{
+  "type": "SIMPLE",
+  "name": "Temperature delta based on 2 devices",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1769185707911
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "SIMPLE",
+    "arguments": {
+      "IndoorTemperature": {
+        "refEntityId": {
+          "entityType": "DEVICE",
+          "id": "77281820-f86f-11f0-b422-89b7a795a343"
+        },
+        "refEntityKey": {
+          "key": "temperature",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      },
+      "outdoorTemperature": {
+        "refEntityId": {
+          "entityType": "DEVICE",
+          "id": "7d957310-f86f-11f0-b422-89b7a795a343"
+        },
+        "refEntityKey": {
+          "key": "temperature",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      }
+    },
+    "expression": "abs(IndoorTemperature - outdoorTemperature)",
+    "output": {
+      "type": "TIME_SERIES",
+      "name": "deltaTemperature",
+      "decimalsByDefault": 2,
+      "strategy": {
+        "type": "IMMEDIATE",
+        "ttl": 0,
+        "saveTimeSeries": true,
+        "saveLatest": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    },
+    "useLatestTs": false
+  }
+}

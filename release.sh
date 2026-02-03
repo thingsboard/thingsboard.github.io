@@ -3,7 +3,7 @@
 echo "$(date +"%H:%M") Replacing image urls.. "
 
 extensions=( "*.md" "*.yml" "*.html" "*.liquid" "*.sass" "*.css" "*.js" "*.json" "*.sql" "*.cql")
-cleanup_dirs=( "user-guide" "reference" "edge" "lwm2m")
+cleanup_dirs=( "user-guide" "reference" "edge" "lwm2m" "gateway" "devices-library", "samples")
 
 # Detect OS and set sed in-place edit flags
 if [[ "$OSTYPE" == "darwin"* ]]; then

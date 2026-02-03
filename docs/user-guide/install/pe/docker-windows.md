@@ -7,9 +7,10 @@ description: Installing ThingsBoard PE IoT Platform using Docker (Windows)
 redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 ---
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
-
 
 This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker on Windows. 
 This guide covers standalone ThingsBoard PE installation.
@@ -94,36 +95,11 @@ You can safely detach from the log stream (e.g. Ctrl+C); containers will continu
 
 {% include templates/install/docker-debug.md %}
 
-## Upgrading
-{% capture upgrade_version_by_version%}
-**Note, that you have to upgrade versions one by one (for example 4.0.2 -> 4.1.0 -> 4.2.0 ,etc).**
-{% endcapture %}
-{% include templates/info-banner.md content=upgrade_version_by_version %}
-
-### Upgrading to new ThingsBoard version
-
-When a new PE release is available, follow these steps to update your installation without losing data:
-
-{% capture old_manifests_info %}
-**If you are upgrading using previous version of deployment files, make sure to follow steps described in this [instruction](/docs/user-guide/install/pe/old-docker-migrate/) first.**
-{% endcapture %}
-{% include templates/warn-banner.md content=old_manifests_info %}
-
-1. Change the version of the `thingsboard/tb-pe-node` and `thingsboard/tb-web-report` in the `docker-compose.yml` file to the new version (e.g. {{ site.release.pe_full_ver }}) 
-
-2. Execute the following commands:
- 
-```bash
-docker pull thingsboard/tb-pe-node:{{ site.release.pe_full_ver }}
-docker compose stop thingsboard-pe
-docker compose run --rm -e UPGRADE_TB=true thingsboard-pe
-docker compose up -d
-```
-{: .copy-code}
-
 ## Post-installation steps
 
-### \[Optional\] Install Trendz Analytics
+### Install Trendz Analytics
+
+You may optionally install Trendz Analytics any time using the following steps:
 
 {% include templates/install/windows-pe-docker-trendz.md %}
 
@@ -149,6 +125,10 @@ You can read more about Trendz Analytics [here](/docs/trendz/what-is-trendz/).
 Trendz Analytics has a different version system, and should be updated separately from ThingsBoard platform main services.
 
 You can read how to upgrade Trendz Analytics [here](/docs/trendz/install/docker/#upgrade-trendz-service).
+
+### Upgrading to new ThingsBoard version
+
+{% include templates/install/upgrade-thingsboard.md %}
 
 ## Troubleshooting
 

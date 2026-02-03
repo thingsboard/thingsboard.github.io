@@ -35,7 +35,10 @@ These upgrade steps are applicable for the latest ThingsBoard Community Edition 
 
 #### ThingsBoard PE package download
 
-{% include resources.liquid pe="true" last="true" kind="ubuntu-download" %}
+```bash
+wget https://dist.thingsboard.io/thingsboard-{{ site.release.pe_ver }}.deb
+```
+{: .copy-code}
 
 #### ThingsBoard PE service upgrade
 
@@ -48,7 +51,10 @@ sudo service thingsboard stop
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
-{% include resources.liquid pe="true" last="true" kind="ubuntu-installation" %}
+```bash
+sudo dpkg -i thingsboard-{{ site.release.pe_ver }}.deb
+```
+{: .copy-code}
 
 {% capture difference %}
 **NOTE:**
@@ -84,7 +90,10 @@ These upgrade steps are applicable for the latest ThingsBoard Community Edition 
 
 #### ThingsBoard PE package download
 
-{% include resources.liquid pe="true" last="true" kind="centos-download" %}
+```bash
+wget https://dist.thingsboard.io/thingsboard-{{ site.release.pe_ver }}.rpm
+```
+{: .copy-code}
 
 #### ThingsBoard PE service upgrade
 
@@ -97,7 +106,10 @@ sudo service thingsboard stop
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
-{% include resources.liquid pe="true" last="true" kind="centos-installation" %}
+```bash
+sudo rpm -Uvh thingsboard-{{ site.release.pe_ver }}.rpm
+```
+{: .copy-code}
 
 {% capture difference %}
 **NOTE:**

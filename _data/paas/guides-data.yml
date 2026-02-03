@@ -213,37 +213,33 @@
   subtitle: Learn how to process data in ThingsBoard.
   id: DataProcessing
   section:
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+    - path: /docs/paas/tutorials/validate-incoming-telemetry/
       title: Validate incoming telemetry
       subtitle: Learn how to configure Rule Engine to discard invalid telemetry readings based on JavaScript filter function.
       pe: false
     - path: /docs/paas/tutorials/telemetry-delta-calculation/
       title: Telemetry delta calculation
       subtitle: Learn how to calculate telemetry delta readings using the Calculated fields feature.
-      pe: true
+      pe: false
     - path: /docs/paas/tutorials/function-based-on-telemetry-from-two-devices/
       title: Data function based on telemetry from 2 devices
       subtitle: Learn how to generate a new telemetry value based on telemetry readings from multiple devices using the Calculated fields feature.
-      pe: true
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
-      title: Transform incoming telemetry
-      subtitle: Learn how to configure Rule Engine to transform incoming telemetry based on JavaScript function before it is stored to the database.
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
       title: Transform telemetry using previous record
       subtitle: Learn how to configure Rule Engine to calculate “delta” of the counter readings based on current and previous reading.
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
+    - path: /docs/tutorials/create-clear-alarms/
       title: Create & clear alarms
-      subtitle: Learn how to configure Rule Engine to create and clear alarms based on incoming data from devices.
+      subtitle: Learn how to configure alarm rules to trigger and clear alarms based on incoming device data.
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/
       title: Working with Alarm details
       subtitle: Learn how to configure Alarm Details function in Alarm nodes and how to add an Alarm widget to the dashboard.
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
+    - path: /docs/tutorials/send-email/
       title: Send email on alarm
-      subtitle: Learn how to configure Rule Engine to send email when new alarm is created.
+      subtitle: Learn how to send an email notification when a new alarm is created.
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/
       title: Send email to customer

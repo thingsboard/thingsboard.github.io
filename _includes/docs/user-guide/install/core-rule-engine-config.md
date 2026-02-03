@@ -3804,7 +3804,7 @@
 		<tr>
 			<td>transport.gateway.dashboard.sync.branch</td>
 			<td>TB_GATEWAY_DASHBOARD_SYNC_BRANCH</td>
-			<td>release/4.2.0</td>
+			<td>release/4.3.0</td>
 			<td> Branch of gateways dashboard repository to work with</td>
 		</tr>
 		<tr>
