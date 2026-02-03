@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-##  Server common parameters
+##   Server common parameters
 
 <table>
 	<thead>
@@ -490,7 +490,7 @@
 			<td>service.type</td>
 			<td>TB_SERVICE_TYPE</td>
 			<td>tb-report</td>
-			<td> service type</td>
+			<td> Type of report service</td>
 		</tr>
 		<tr>
 			<td>service.id</td>
@@ -502,7 +502,7 @@
 			<td>service.tb_core.base_url</td>
 			<td>TB_CORE_BASE_URL</td>
 			<td>http://localhost:8080</td>
-			<td> ThingsBoard Core service URL, used for communication with ThingsBoard Core (e.g. for REST API calls, etc.)</td>
+			<td> Base URL of the ThingsBoard Core service</td>
 		</tr>
 		<tr>
 			<td>reports.web_report.base_url</td>

@@ -41,14 +41,10 @@ To add a new device:
 - Navigate to **Entities** &#10230; **Devices**. {% unless docsPrefix == null %}By default, you will see the "**All**" device group.{% endunless %}
 - Click the "**+**" icon in the upper-right corner and select "**Add new device**" from drop-down menu.
 - In the device creation form, fill in the required fields:
-    - **Name** – a unique name for the device.
-    - **[Device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}** – by default, the profile is set to "**default**", but you can choose a different profile if needed.
-    {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
-    - **Owner and groups:** Helps with organization and access control.
-      - **Owner**: Select the owner from the dropdown list. The device will be created at that owner’s level. By default, the field is pre-filled with the Customer or Tenant name based on where you add the device. You can change it before confirming adding.
-      - **Groups**: Optional field. Add the device to existing device groups or create a new one at the selected owner level. Note: every device is automatically added to the "**All**" group of that owner.      
-    {% endif %}
-- Optional fields such as **Label** or **Description** can be filled in if needed.
+  - **Name** – a unique name for the device.
+  - **[Device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}** – by default, the profile is set to "**default**", but you can choose a different profile if needed.
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}- If required, you can fill in additional fields such as label or description, assign a different owner to the device, and add the device to a [group](#creating-device-group).{% endif %}
+{% if (docsPrefix == nil %}- Optional fields such as **Label** or **Description** can be filled in if needed.{% endif %}
 - Click "**Add**".
 
 Device successfully created and is now available in the list.
@@ -65,7 +61,7 @@ You&#39;ll also receive a [notification](/docs/{{docsPrefix}}user-guide/notifica
 <hr>
 
 {% unless docsPrefix == null %}
-<br>
+
 ### Creating device group
 
 Devices can belong to one or multiple [groups](/docs/{{docsPrefix}}user-guide/groups/){:target="_blank"}, which helps organize and manage them effectively.
@@ -121,7 +117,7 @@ This action removes devices from the current group and adds them to the selected
 
 {% endunless %}
 
-### Editing device
+### Edit device
 
 You can change the device name, its device profile, label, assign the firmware and software.
 To edit the device, you need to:
@@ -130,7 +126,7 @@ To edit the device, you need to:
 
 <hr>
 
-### Deleting device
+### Delete device
 
 You can delete a device using one of the following ways:
 
@@ -149,6 +145,7 @@ To verify if your device is successfully connected to ThingsBoard:
 - Select:
   - [Communication protocol](/docs/{{docsPrefix}}reference/protocols/){:target="_blank"} ([MQTT](/docs/{{docsPrefix}}reference/mqtt-api){:target="_blank"}, [HTTP](/docs/{{docsPrefix}}reference/http-api){:target="_blank"}, etc.)
   - Operating system
+- If required, install the necessary client tools.
 - Copy the generated command and run it in a **Terminal**.
 
 If successful, the device status will change from "**Inactive**" to "**Active**", and telemetry data (e.g., temperature) will appear.
