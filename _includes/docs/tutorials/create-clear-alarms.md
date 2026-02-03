@@ -174,8 +174,7 @@ After each step, observe the alarm state in the **Alarms page** or on a dashboar
 
 ## See also
 
-- [Validate and filter incoming telemetry](/docs/{{docsPrefix}}tutorials/validate-incoming-telemetryd){:target="_blank"}
-- [Add an alarms widget to a dashboard to visualize the alarms](/docs/{{docsPrefix}}tutorials/create-clear-alarms-with-details/#configure-dashboard){:target="_blank"}
+- [Validate and filter incoming telemetry](/docs/{{docsPrefix}}tutorials/validate-incoming-telemetry){:target="_blank"}
 - [Send email notifications on alarm events](/docs/{{docsPrefix}}tutorials/send-email/){:target="_blank"}
 
 <hr>

@@ -237,9 +237,9 @@
       title: Working with Alarm details
       subtitle: Learn how to configure Alarm Details function in Alarm nodes and how to add an Alarm widget to the dashboard.
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
+    - path: /docs/tutorials/send-email/
       title: Send email on alarm
-      subtitle: Learn how to configure Rule Engine to send email when new alarm is created.
+      subtitle: Learn how to send an email notification when a new alarm is created.
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/
       title: Send email to customer
