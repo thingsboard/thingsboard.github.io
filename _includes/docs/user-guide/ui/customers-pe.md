@@ -37,6 +37,8 @@ The tenant administrator can add a new customer using the following steps.
 
 ## Create customer user
 
+A **Customer User** is a user account associated with a specific Customer. Customer users have **read-only access** and can view only the entities assigned to their Customer.
+
 {% include images-gallery.html imageCollection="add-customer-user" showListImageTitles="true" %}
 
 {% capture difference %}

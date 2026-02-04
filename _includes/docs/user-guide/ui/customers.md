@@ -3,7 +3,7 @@
 
 A **Customer** in ThingsBoard represents a distinct business entity — an individual or an organization — that purchases or uses a tenant&#39;s devices and/or assets. A customer may also represent a department or subdivision within the tenant&#39;s organization.
 
-A customer user belongs to the customer and has read permissions to view dashboards and other entities assigned by the tenant administrator.
+A **Customer User** is a user account associated with a specific Customer. Customer users have **read-only access** and can view only the entities assigned to their Customer.
 
 In Thingsboard Community Edition a customer user cannot create their own customers, users, or subcustomers.
 

@@ -6,297 +6,6 @@ title: Getting Started with ThingsBoard
 description: Getting started with ThingsBoard open-source IoT platform and simulated IoT devices
 redirect_from: "/docs/samples/"
 
-step1:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png 
-        title: 'Log in to ThingsBoard and navigate to the "Devices" page of the "Entities" section.'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png 
-        title: 'Click on the "+" icon in the top right corner of the table and select "Add new device" from drop-down menu.'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png 
-        title: 'Enter a device name (e.g., "My New Device") No other changes required at this time. Click "Add".'
-    3:
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
-        title: 'A window for checking the device connection will open — we&#39;ll skip this step for now and return to connection checking in the next step.'
-    4:
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
-        title: 'Congratulations, you&#39;ve added your first device! As you add more devices, they will be added at the top of the table, as the table automatically sorts devices by their creation time, with the newest ones listed first.'
-
-step11:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-6-ce.png 
-        title: 'You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.'
-
-step2:
-    0:
-        image: /images/helloworld/getting-started-ce/check-connectivity-device-1-ce.png
-        title: 'Click on your device, then click the "Check connectivity” button in the "Device details" window.'
-    1:
-        image: /images/helloworld/getting-started-ce/check-connectivity-device-2-ce.png
-        title: 'In the opened window, choose your messaging protocol and operating system. Install any necessary client tools and copy the provided command.'
-    2:
-        image: /images/helloworld/getting-started-ce/check-connectivity-device-3-ce.png
-        title: 'Execute the copied command in Terminal. Once telemetry data (e.g., temperature readings) is successfully published, the device status will change from "Inactive" to "Active," and you&#39;ll see the data displayed. You can now close the connectivity window.'
-
-step21:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
-        title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings.'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
-        title: 'Close the device details tab and refresh the "Devices" table. The device state should be changed from "Inactive" to "Active".'
-
-step31:
-    0:
-        image: /images/helloworld/getting-started-ce/create-dashboard-1-ce.png
-        title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. Then, click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu.'
-    1:
-        image: /images/helloworld/getting-started-ce/create-dashboard-2-ce.png
-        title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add".'
-    2:
-        image: /images/helloworld/getting-started-ce/create-dashboard-3-ce.png
-        title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner.'
-    3:
-        image: /images/helloworld/getting-started-ce/create-dashboard-4-ce.png
-        title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sorting is based on the creation timestamp.'
-
-step32:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-0-ce.png
-        title: 'Enter dashboard edit mode. Simply open the dashboard and click the "Edit mode" button found in the upper right corner of the screen;'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-1-ce.png
-        title: 'Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-2-ce.png
-        title: 'Find the "Tables" widget bundle and click on it;'
-    3:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-3-ce.png
-        title: 'Select the "Entities table" widget;'
-    4:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-4-ce.png
-        title: 'The "Add Widget" window will appear. Specify the previously created device "My New Device" as the data source in the "Device" field. The "name" key has already been added to the "Columns" section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
-    5:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-5-ce.png
-        title: 'Click on the newly appeared data key input field. A list of available data keys will open. Select "temperature" data key;'
-    6:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-6-ce.png
-        title: 'Click the "Add" button in the bottom right corner of the widget to complete adding the widget.'
-    7:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-7-ce.png
-        title: 'To make the widget slightly larger, simply grab the bottom right corner and drag it. Once you&#39;re happy with the new size, don&#39;t forget to click "Save" to save your changes to the dashboard.'
-
-step33:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-1-ce.png
-        title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-2-ce.png
-        title: 'Find the "Charts" widget bundle and click on it;'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-3-ce.png
-        title: 'Select the "Time series сhart" widget;'
-    3:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-4-ce.png
-        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. In the "Series" section, specify the data key "temperature" to start monitoring the temperature values of the device. Then, click "Add";'
-    4:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-5-ce.png
-        title: 'Resize the widget and apply changes. Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default. Click "Save" to apply changes;'
-
-step33_2:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-6-ce.png
-        title: 'You can also adjust the time interval for displaying data in the widget, change the aggregation function, and specify the grouping interval. To do this, open the Time window and make the necessary adjustments. Update the time window settings by clicking the "Update" button.'
-
-step34:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-1-ce.png
-        title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-2-ce.png
-        title: 'Find the "Alarm widgets" bundle and click on it;'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-3-ce.png
-        title: 'Select "Alarms table" widget;'
-    3:
-        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-4-ce.png
-        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. Next, we will configure the filters. All alarms have specific severities and statuses. Mark those you want to see in the widget. If none are marked, all alarms will be displayed regardless of their status or severity;'
-    4:
-        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-5-ce.png
-        title: 'Congratulations! You have added the alarm widget. By default, new widgets are added one below the other, stacking downwards. Let&#39;s organize our widgets a bit to tidy up their arrangement. Drag the "Time series chart" widget to the top right corner of the dashboard to make room for the "Alarms table" widget;'   
-    5:
-        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-6-ce.png
-        title: 'Scroll down, find the "Alarms table" widget, and drag it over to a free spot. Adjust its size to fit your needs. After you&#39;re done tweaking, click "Save" to save the dashboard.'
-
-step4:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-1-ce.png
-        title: 'Go to the <b>Devices</b> page in the <b>Entities</b> section.<br>Click <b>My New Device</b> to open its details, and navigate to the <b>Alarm rules</b> tab.<br>Click the "<b>+</b>" button, and select <b>Create new alarm rule</b>.'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
-        title: 'In the <b>General</b> section, specify the <b>alarm type</b> — <i>High temperature</i> (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-3-ce.png
-        title: 'Add the argument — the data source that the rule will use when evaluating the conditions.'
-    3:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-4-ce.png
-        title: 'Click <b>Add trigger condition</b>.'
-    4:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-5-ce.png
-        title: 'Keep the <b>Critical</b> severity level and click <b>Add condition</b>.'
-    5:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-6-ce.png
-        title: 'Click the <b>Add argument filter</b>.'
-    6:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-7-ce.png
-        title: '<b>General:</b> <b>Argument:</b> temperature (the argument added earlier); <b>Value type:</b> Numeric<br><b>Filters:</b> Click <b>Add</b>; <b>Operation:</b> greater than; <b>Value source:</b> Static; <b>Value:</b> 25.<br>Click <b>Add</b>.'
-    7:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-8-ce.png
-        title: '<b>Type:</b> Simple.<br><b>Save</b> condition.'
-    8:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-9-ce.png
-        title: 'Finally, click the <b>Add</b>.'
-    9:
-        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-10-ce.png
-        title: 'The new alarm rule will be created and activated.'
-
-step5:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-1-ce.png
-        title: 'As soon as a new <b>temperature</b> value goes above the threshold, a new active alarm will appear on the dashboard.'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-2-ce.png
-        title: 'You can <b>acknowledge</b> and <b>clear</b> alarms using the <b>Alarm table</b> widget.'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-3-ce.png
-        title: 'After the alarm is created, you will also receive a notification in the <b>Notification center</b>. Click the bell icon in the top-right corner to view the latest notifications.'
-
-notification-center:
-    0:
-        image: /images/helloworld/getting-started-ce/notification-center-getting-started-1-ce.png
-        title: 'The ThingsBoard Notification center allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.'
-
-step71:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-1-ce.png
-        title: 'Navigate to the Customers page. Click the "+" sign to add a customer;'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-2-ce.png
-        title: 'Input customer title and click "Add".'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-3-ce.png
-        title: 'The new customer has been created.'
-
-step72:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-1-ce.png
-        title: 'Open "Devices" page, then select your device to open its details;'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-2-ce.png
-        title: 'Click "Assign to customer" button;'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-3-ce.png
-        title: 'Select the customer to whom you want to assign the device, and then click "Assign";'
-    3:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-4-ce.png
-        title: 'You have changed the owner of the device. In the "Customer" column, you can see the owners name of the device;'
-
-step72_1:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-5-ce.png
-        title: 'Navigate to "Customers" page to make sure that the device is assigned to your customer. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-6-ce.png
-        title: 'The device is with your client.'
-
-step72_2:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-8-ce.png
-        title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu;'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-9-ce.png
-        title: 'Input device name (for example, "Thermostat") and select the customer in the "Assign to customer" field to whom you want to assign the new device. Then, click "Add";'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-10-ce.png
-        title: 'Close check connectivity window;'
-    3:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-11-ce.png
-        title: 'The device has been created, and it immediately belongs to the selected customer.'
-
-step73:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-3-ce.png
-        title: 'Open "Dashboards" page. Mark your dashboard and click the "Assign dashboards" icon;'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-4-ce.png
-        title: 'Mark "My New Customer" and click "Assign";'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-5-ce.png
-        title: 'Navigate to the "Customers" page. Click "Manage customer dashboards" icon for "My New Customer";'
-    3:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-6-ce.png
-        title: '"My New Dashboard" is assigned to your customer.'
-
-step74:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-1-ce.png
-        title: 'Navigate to "Customers" page. Find your customer in the list of customers and then click on the "Manage customer users" icon;'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-2-ce.png
-        title: 'Click the "Add user" icon in the top right corner of the table;'
-    2:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-3-ce.png
-        title: 'Specify email that you will use to login as a customer user and click "Add";'
-    3:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-4-ce.png
-        title: 'Copy the activation link and save it to a safe place. You will use it later to set the password. Click "OK";'
-    4:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-6-ce.png
-        title: 'Click on the created user to open details. Click "pencil" icon to enter edit mode;'
-    5:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-7-ce.png
-        title: 'Select your "My New Dashboard" as default dashboard and check "Always fullscreen". Apply changes.'
-
-step75:
-    0:
-        image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-1-ce.png
-        title: 'Paste the previously copied link into a new browser tab and press the "Enter" key. Now create a password by entering it twice and clicking "Create Password".'
-    1:
-        image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
-        title: 'You are now logged in as a customer user. You may browse the data and acknowledge/clear alarms.'
-
-mqttWindows:
-    0:
-        image: /images/helloworld/hello-world-step-3-item-1.png
-        title: 'Create new MQTT Client with the properties listed in screenshots below.' 
-    1:
-        image: /images/helloworld/hello-world-step-3-item-2.png
-        title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click "Publish" button.' 
-
-mosquitto-windows:
-    0:
-        image: /images/helloworld/getting-started-pe/mosquitto-windows-1.png
-        title: 'Press the Win + X, then select "System". Then click on the "System" page;'
-    1:
-        image: /images/helloworld/getting-started-pe/mosquitto-windows-2.png
-        title: 'Navigate to the "About" section, then click "Advanced system settings";'
-    2:
-        image: /images/helloworld/getting-started-pe/mosquitto-windows-3.png
-        title: 'In the "System Properties" pop-up window, click "Environment Variables" button on the "Advanced" tab;'
-    3:
-        image: /images/helloworld/getting-started-pe/mosquitto-windows-4.png
-        title: 'In the "Environment Variables" pop-up window, select the "Path", then click on the "Edit" button;'
-    4:
-        image: /images/helloworld/getting-started-pe/mosquitto-windows-5.png
-        title: 'In the "Edit environment variable" pop-up window click on the "New" button and add the path to the directory containing &#39;mosquitto_pub.exe&#39; and &#39;mosquitto_sub.exe&#39; (&#39;C:\Program Files\mosquitto&#39; by default). Click "OK" button;'
-    5:
-        image: /images/helloworld/getting-started-pe/mosquitto-windows-6.png
-        title: 'Click "OK" button to save changes in the environment variables;'
-    6:
-        image: /images/helloworld/getting-started-pe/mosquitto-windows-7.png
-        title: 'Finally, click "OK" button to apply all changes in the system properties.'
-
 ---
 
 * TOC
@@ -304,273 +13,333 @@ mosquitto-windows:
 
 {% include get-hosts-name.html %}
 
-This guide demonstrates basic usage of popular ThingsBoard features. You will learn how to:
+This guide introduces the core ThingsBoard concepts and helps you get started with IoT data in just a few minutes.
 
-- Connect devices to ThingsBoard
-- Push data from devices to ThingsBoard
-- Build real-time dashboards
-- Create a Customer and assign the dashboard with them.
-- Define thresholds and trigger alarms
-- Set up notifications.
-
-For simplicity, we&#39;ll visualize data from a temperature sensor.
+By following this guide, you will learn how to:
+- connect a device to ThingsBoard
+- publish telemetry data
+- visualize data on dashboards
+- configure alarms and notifications
+- securely share data with customers
 
 <hr>
 
 ## Prerequisites
 
-You will need a ThingsBoard server up and running:
+You need ThingsBoard server up and running. 
+To save time, you can skip local installation and use **ThingsBoard Cloud**. Simply follow the Getting Started guide for your region: [North America](/docs/paas/getting-started-guides/helloworld/) or [Europe](/docs/paas/eu/getting-started-guides/helloworld/).
 
-* **ThingsBoard Cloud:** The fastest way to start with zero setup. Click for the [North America](/docs/paas/getting-started-guides/helloworld/) or [Europe](/docs/paas/eu/getting-started-guides/helloworld/) region (these links lead to a separate "Getting Started" guide for our managed service).
-* **Self-Managed Installation:** Alternatively, you can manually install ThingsBoard using our guides for [Windows (Docker)](/docs/user-guide/install/docker-windows/){:target="_blank"} or [Linux and MacOS (Docker)](/docs/user-guide/install/docker/){:target="_blank"}.
-
-<hr>
-
-## Step 1. Provision device
-
-Let&#39;s add a device that sends temperature data to ThingsBoard:
-
-{% include images-gallery.html imageCollection="step1" showListImageTitles="true" %}
-
-You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.
-
-{% include images-gallery.html imageCollection="step11" %}
-
-[Learn more about notifications here](#step-6-alarm-notifications).
-
-**Additional provisioning methods**
-- [Bulk provisioning](/docs/user-guide/bulk-provisioning/){:target="_blank"}: Import multiple devices via CSV through the UI.
-- [Device provisioning](/docs/user-guide/device-provisioning/){:target="_blank"}: Configure devices to self-register automatically. 
-- [REST API](/docs/api/){:target="_blank"} provisioning: Manage devices programmatically through APIs.
+Alternatively, you can deploy ThingsBoard on your own infrastructure using our guides for [Windows (Docker)](/docs/user-guide/install/docker-windows/){:target="_blank"} or [Linux / MacOS (Docker)](/docs/user-guide/install/docker/){:target="_blank"}.
 
 <hr>
 
-## Step 2. Connect device
+## Log in to ThingsBoard
 
-Let&#39;s verify your device&#39;s connection to ThingsBoard:
+Open the ThingsBoard web interface. On the login page, you can:
+- **Sign up** using{% unless docsPrefix contains "paas/" %} Google, GitHub, Apple, or{% endunless %} an email and password.
+- **Sign in** using existing account credentials.
 
-{% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
+After successful authentication, you will be redirected to the ThingsBoard interface.
+All further steps in this guide are performed at the [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants/){:target="_blank"} level.
 
-<br>
-Explore [ThingsBoard API reference](/docs/{{docsPrefix}}api){:target="_blank"}. Here you will find more detailed information about all supported protocols for connecting devices.
-
-<hr>
-
-## Step 3. Create dashboard
-
-A dashboard in ThingsBoard allows users to visualize and monitor data collected from IoT devices.
-
-Let&#39;s create a dashboard and add three widgets to it in order to display a list of entities and their latest values, as well as show alarm signals related to the specified entity.
-
-### Step 3.1 Create an empty dashboard
-
-To create a new dashboard, follow these steps:
-
-{% include images-gallery.html imageCollection="step31" showListImageTitles="true" %}
-
-### Step 3.2 Add an Entities table widget
-
-The "Entities table" widget displays a list of entities and their latest values.
-The list of entities corresponds to selected devices or other entities, and filters with the ability of additional full-text search and pagination options.
-
-To add the table widget we need to select it from the widget library. Widgets are grouped into widget bundles.
-Each widget has a data source. This is how the widget "knows" what data to display.
-To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
-
-Let&#39;s add your first widget:
-
-{% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}
-
-Congratulations! You&#39;ve added your first widget.
-
-In the "Entities table" widget, there are two columns.
-The first column displays the device&#39;s name, and the second column displays the value of the "temperature" key (device telemetry).
-So, each column corresponds to an added key.
-
-Now you are able to send a new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
-
-### Step 3.3 Add a Chart widget
-
-Chart widgets allow you to display time series data with customizable line charts and bar charts.
-
-To add the chart widget we need to select it from the widget library.
-Chart widget displays multiple historical values of the same data key ("temperature" in our case).
-We should also configure the time window to use the chart widget.
-
-{% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
-
-Congratulations! You have added the chart widget. Now you are able to send a new telemetry reading, and it will immediately appear in the chart.
-
-You can also adjust the time interval for displaying data in the widget, change the aggregation function, and specify the grouping interval.
-To do this, open the [Time window](/docs/user-guide/dashboards/#time-window){:target="_blank"} and make the necessary adjustments. Update the time window settings by clicking the "Update" button.
-
-{% include images-gallery.html imageCollection="step33_2" %}
-
-### Step 3.4 Add an Alarms table widget
-
-The alarms table widget displays alarms related to the specified entity in the certain time window.
-Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
-
-{% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
-
-Now it&#39;s time to configure alarm rules and raise some alarms.
-
-> **Note:** in this documentation, we are using a single device as a data source for the widgets. 
-To use dynamic entities (for example, devices of a certain type or related to a certain asset) as data source, you should use the alias.
-Alias is a reference to a single entity or a group of entities that are used in the widgets. 
-You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
+> **Note:** Available login options and branding may differ between ThingsBoard Cloud and self-hosted deployments.
 
 <hr>
 
-## Step 4. Configure alarm rules
+## Step 1. Provision a Device {#step-1-provision-device}
 
-We will use the [alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"} feature to define a rule that triggers when the temperature exceeds **25°C**.   
-Alarm rules can be configured either at the **device level** or at the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} level used by the target device.
+A [Device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"} in ThingsBoard represents a physical or virtual IoT device connected to the platform. 
+Devices publish telemetry and attributes and can receive control commands.
 
-> **Recommendation:** If the same rule needs to be applied to multiple devices, create it at the **Device profile** level.   
-This ensures centralized alarm logic management, simplifies maintenance, and eliminates configuration duplication.
+Create a device that will act as the telemetry source for the platform.
+1. Navigate to **Entities &#8702; Devices** from the main menu.
+2. Click **&#43;** (**Add**) in the upper-right corner and select **Add new device**. 
+3. Enter a device name (for example, **Thermometer**). 
+4. Click **Add** to complete the device creation.
+5. A connectivity check dialog appears. Close it for now — you will return to it in the next step.
 
-In this example, we will configure the alarm rule directly on the device "**My New Device**".
-
-<br><b><font size="4">Step 4.1 Open the device settings</font></b>
-- Go to the **Devices** page in the **Entities** section.
-- Click **My New Device** to open its details.
-- Navigate to the **Alarm rules** tab.
-- Click the "**+**" button and select **Create new alarm rule**.
-
-<b><font size="4">Step 4.2 Configure the General parameters</font></b>
-
-In the **General** section, specify the **alarm type** — *High temperature* (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.
-
-<b><font size="4">Step 4.3 Add argument</font></b>
-
-Before defining the alarm trigger condition, you must add at least one **argument** — the data source that the rule will use.
-
-In the **Arguments** section, click **Add argument** and fill in:
-- **Entity type:** *Current entity*
-- **Argument type:** *Latest telemetry*
-- **Time series key:** <span class="code-light">temperature</span>
-- **Argument name:** temperature
-- Click **Add**.
-
-This creates the <span class="code-light">temperature</span> variable that will be used in the alarm rule conditions.
-
-<b><font size="4">Step 4.4 Configure the alarm trigger condition</font></b>
-
-In the **Trigger condition** section, click **Add trigger condition**.
-
-- **Severity:** *Critical*
-- **Condition**
-  - Click **Add condition**.
-  - In the configuration window, click **Add argument filter** and specify:
-    - **General** block:
-      - **Argument:** temperature (the argument added earlier)
-      - **Value type:** *Numeric*
-    - **Filters** block:
-      - Click **Add**
-      - **Operation:** *greater than*
-      - **Value source:** Static
-      - **Value:** <span class="code-light">25</span>
-    - Click **Add**.
-  - **Type:** *Simple*
-  - Click **Save**.
-
-As a result, the alarm will trigger immediately when the temperature exceeds **25°C**.
-
-<b><font size="4">Save the rule</font></b>
-
-Click the **Add** button to save the new alarm creation rule.
-
-The rule takes effect immediately after it is saved.
-
-{% include images-gallery.html imageCollection="step4" %}
-
-We also recommend reviewing the [alarm rule configuration examples](/docs/{{docsPrefix}}user-guide/alarm-rules/#examples-of-alarm-rule-configurations/){:target="_blank"}
+The device is successfully created and registered in ThingsBoard. It is ready to send telemetry data and be used in subsequent steps.
 
 <hr>
 
-## Step 5. Create alarm
+## Step 2. Connect the Device {#step-2-connect-device}
 
-Now that the alarm rule is active (see [Step 4](#step-4-configure-alarm-rules)), you need to send new telemetry data from the device (see [Step 2](#step-2-connect-device)) to trigger the alarm.
+ThingsBoard provides built-in connectivity examples for sending telemetry using different protocols. It allows you to quickly test connectivity, validate credentials, and confirm that incoming data is processed correctly.
 
-> **Important:** The alarm will be created only when the temperature value exceeds the threshold of 25°C defined in the alarm creation condition.
+> To learn how to connect devices based on your technology stack or connectivity solution, see the available [connection guides](/docs/guides/#AnchorIDConnectYourDevice){:target="_blank"}.
 
-**What happens after sending telemetry**
+Verify the device connection to ThingsBoard by publishing test telemetry data:
+1. Click on device to open its details.
+2. Click **Check connectivity**. 
+3. Choose a messaging protocol and platform-specific client tool. 
+4. Copy the generated command and execute it in a Terminal. The provided command publishes a temperature value of 25.
 
-{% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
+Once telemetry is published successfully:
+- The device status changes from **Inactive &#8702; Active**
+- Telemetry is displayed on the device&#39;s **Latest telemetry** tab.
 
-<hr>
-
-## Step 6. Alarm notifications
-
-The ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"} allows personalized notifications to end-users regarding device activities, environmental changes, or events in your IoT ecosystem, and more. 
-Notifications can be delivered via email, SMS, or integrated third-party systems.
-
-{% include images-gallery.html imageCollection="notification-center" %}
-
-Additionally, [ThingsBoard Mobile Application](/docs/mobile/){:target="_blank"} provides instant push notifications directly to your smartphone, ensuring you&#39;re always informed of critical events wherever you are.
-
-Follow [this guide](/docs/mobile/getting-started/){:target="_blank"} to install the ThingsBoard mobile app and set up notifications. 
-
-Enjoy exploring ThingsBoard!
+For additional protocols and API options,[ThingsBoard API reference](/docs/api/){:target="_blank"}.
 
 <hr>
 
-## Step 7. Assign device and dashboard to customer
+## Step 3. Visualize data on Dashboard {#step-3-create-dashboard}
 
-One of the most important ThingsBoard features is the ability to assign Dashboards to Customers. 
-You may assign different devices to different customers. Then, you may create a Dashboard(s) and assign it to multiple customers.
-Each customer user will see his own devices and will not be able to see devices or any other data that belongs to a different customer.
+A [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} is a configurable user interface composed of widgets that visualize telemetry, alarms, and other data from IoT entities, allow users to control devices, and highlight abnormal behavior, enabling real-time monitoring, analysis, and response to events.
 
-We have already created a Device (see [Step 1](#step-1-provision-device)), and a Dashboard (see [Step 3](#step-3-create-dashboard)).
-Now it&#39;s time to create a Customer and a Customer User and make sure they will have access to the device's data and the dashboard.
+Create a dashboard to visualize telemetry and alarm data from the device.
+1. Navigate to **Dashboards**.
+2. Click **&#43;** (**Add**) in the upper-right corner and select **Create new dashboard**.
+3. Name it **My Dashboard** and click **Add**.
 
-### Step 7.1 Create customer
+The dashboard has been created. It opens automatically, so you can start adding widgets right away.
 
-Let&#39;s create a customer with the title "My New Customer". Please see the instruction below:
+### Step 3.1 Add a Value card widget
 
-{% include images-gallery.html imageCollection="step71" showListImageTitles="true" %}
+A [Widget](/docs/{{docsPrefix}}user-guide/widgets/){:target="_blank"} in ThingsBoard is a configurable UI component used on dashboards to visualize data, control devices, or display alarms and events.
+Its enabling interactive monitoring and management of IoT systems.
 
-### Step 7.2 Assign the device to customer
+Add a **Value card** widget to display the latest temperature value.
+1. In dashboard edit mode, click Add widget.
+2. Select the **Cards** widget bundle. 
+3. Add the **Value card** widget. 
+4. Configure the data source:   
+   &#8211;&#8195;Set **Thermometer** as the data source.   
+   &#8211;&#8195;Use **temperature** as the telemetry key.
+5. Click **Add**.
+6. Resize the widget if necessary.
 
-Let&#39;s assign device to the customer. The customer users will have ability to read and write telemetry and send commands to devices. 
+The widget now displays the latest temperature reported by the device.
 
-{% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
+> This guide uses a single device as the widget data source.
+For dynamic or multi-entity dashboards, use [entity aliases](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
 
-Make sure that the device is assigned to your customer.
+### Step 3.2 Add a Time series chart widget
 
-{% include images-gallery.html imageCollection="step72_1" showListImageTitles="true" %}
+A **Time series chart** visualizes how telemetry values change over time.
 
-You can make the customer the owner of the device during its creation stage. To do this, follow this steps:
+Add a chart to display temperature history:
+1. Click **Add widget**. 
+2. Choose the **Charts** widget bundle. 
+3. Select **Time series chart**. 
+4. Set the **Thermometer** as the data source. 
+5. In **Series**, specify **temperature** as the series key.
+6. Click **Add**. 
+7. Adjust the widget size if needed.
 
-{% include images-gallery.html imageCollection="step72_2" showListImageTitles="true" %}
+The chart now displays temperature values over time.
 
-### Step 7.3 Assign the dashboard to customer
+Send several telemetry updates (see [Step 2](#step-2-connect-the-device)). The chart updates automatically as new data arrives.
 
-Let&#39;s share our dashboard with the customer. The customer users will have read-only access to the dashboard. 
+You can customize the [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"}, aggregation, and grouping settings in the widget configuration.
 
-{% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
+### Step 3.3 Add an Alarms table widget
 
-### Step 7.4 Create customer user
+An **Alarms table** widget displays alarms associated with selected entities, including severity and status.
 
-Now, let&#39;s create a user that will belong to the customer and will have `read-only` access both to the dashboard and the device.
-You may optionally configure the dashboard to appear just after user logs in to the platform&#39;s web UI.
+Add an alarms table to the dashboard:
+1. In edit mode, click **Add widget**. 
+2. Choose the **Alarm widgets** bundle. 
+3. Select **Alarms table**. 
+4. Set **Thermometer** as the data source. 
+5. Configure alarm severity and status filters as needed.   
+   Mark those you want to see in the widget. If none are marked, all alarms will be displayed regardless of their status or severity. 
+6. Click **Add**.
+7. Resize and position the widget.
+8. **Save** the dashboard.
+9. Click **Save** in the top-right corner of the dashboard to save it.
 
-{% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
+The dashboard now provides real-time visibility into both telemetry data and active alarms.
 
-### Step 7.5 Activate customer user
+## Step 4. Alarms & Notifications
 
-Finally, log in to ThingsBoard as a customer user.
+An [Alarm](/docs/{{docsPrefix}}user-guide//alarms/){:target="_blank"} in ThingsBoard represents an abnormal event, condition violation, or critical state change associated with your entities, such as devices, assets, customers, or other system components.
 
-{% include images-gallery.html imageCollection="step75" showListImageTitles="true" %}
+Alarms are generated automatically when conditions defined in [alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"} are met.
+
+In this step, you configure an alarm rule that detects high temperature and observe how alarms and notifications work in practice.
+
+<hr>
+
+### Step 4.1 Configure alarm rules {#step-4-configure-alarm-rules}
+
+Define an alarm rule that generates an alarm when the temperature exceeds 25 °C.
+
+Configure the alarm rule at the device profile level to ensure the same logic is applied to all devices using this profile.
+
+<b><font size="3">Create the alarm rule</font></b>
+1. Navigate to **Alarms &#8702; Alarm rules**. 
+2. Click **&#43;** (**Add**) in the upper-right corner and select **Create new alarm rule**.
+
+<b><font size="3">Configure general settings</font></b>   
+1. **Alarm type**: <span class="code-light">High temperature</span>
+2. **Target entity**: <span class="code-light">default</span> device profile
+
+<b><font size="3">Add a telemetry argument</font></b>   
+1. Click **Add argument**
+2. Configure the argument:   
+   &#8194;&#8226;&#8194;**Entity type**: **Current entity**   
+   &#8194;&#8226;&#8194;**Argument type**: **Latest telemetry**   
+   &#8194;&#8226;&#8194;**Time series key**: <span class="code-light">temperature</span>   
+   &#8194;&#8226;&#8194;**Argument name**: <span class="code-light">temperature</span>   
+3. Click **Add**
+
+This creates the <span class="code-light">temperature</span> variable used in the alarm condition.
+
+<b><font size="3">Define the trigger condition</font></b>   
+1. Click **Add trigger condition**.
+2. Set **Severity** to **Critical**.
+3. **Add a condition** in **Script** mode:
+   ```javascript
+   // Triggers an alarm when temperature is above 25 degrees
+   return temperature > 25;
+   ```
+   {:.copy-code} 
+4. Click **Save**.
+
+<b><font size="3">Save the rule</font></b>
+
+Click **Add** to save and activate the alarm rule.
+
+The alarm will now be triggered whenever the temperature exceeds **25 °C**.
+
+<hr>
+
+### Step 4.2 Trigger an Alarm {#step-5-create-alarm}
+
+Publish a telemetry value greater than 25 °C (for example, <span class="code-light">26</span>), as described in [Step 2](#step-2-connect-device).
+
+When the threshold is crossed:
+- a new **active alarm** appears on the dashboard;
+- the alarm can be **acknowledged** or **cleared** using the alarm widget;
+- a notification is generated in the **Notification center**.
+
+This demonstrates how ThingsBoard detects and reacts to critical conditions in real time.
+
+<hr>
+
+### Alarm notifications {#step-6-alarm-notifications}
+
+ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"} allows you to send personalized notifications to end users about device activity, alarms, and system events in your IoT ecosystem.
+
+Notifications can be delivered via email, SMS, or integrations with third-party systems.
+
+> To learn how to configure email notifications for alarms, see the [Send email on alarm](/docs/tutorials/send-email/){:target="_blank"} guide.
+
+Use the [ThingsBoard Mobile Application](/docs/mobile/){:target="_blank"} to enable push notifications that instantly deliver alerts about critical events in your IoT ecosystem directly to your smartphone—wherever you are.
+
+<hr>
+
+## Step 5. Share data with Customers {#step-7-assign-device-and-dashboard-to-customer}
+
+ThingsBoard supports multi-tenancy, allowing you to securely share devices and dashboards with different customers while keeping their data isolated.
+Each customer user must be able to see only the devices and dashboards assigned to their customer and must not have access to devices, dashboards, or any other data belonging to another customer.
+
+In this step, you will:
+- create a Customer and a Customer User
+- assign a device and dashboard to the Customer
+- verify that the Customer User can access only the assigned data
+
+This demonstrates how ThingsBoard ensures secure data isolation between customers.
+
+<hr>
+
+### Step 5.1 Create a Customer and a Customer User
+
+A [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"} in ThingsBoard is a logical container used to isolate data and provide controlled access for external users under a Tenant. It typically represents a department, business unit, or subdivision within the tenant’s organization.
+
+Create a Customer:
+1. Navigate to the **Customers**. 
+2. Click the **&#43;** (**Add customer**). 
+3. Enter **My New Customer** as the title.   
+   Optionally, provide an address, phone number, or other additional details. 
+4. Click **Add**.
+
+The customer is created and ready for assigned devices, dashboards, and create users.
+
+<hr>
+
+A **Customer User** is a user account associated with a specific Customer. Customer users have **read-only access** and can view only the entities assigned to their Customer.
+
+Create a Customer User:
+1. In the **Customers** list, click **Manage customer users** for the newly created customer. 
+2. Click **Add user** in the top-right corner. 
+3. Enter the user&#39;s email address.   
+   Optionally, specify the first name, last name, phone number, preferred UI language, and unit system. 
+4. Click **Add**.
+5. **Copy the activation link** and store it in a secure place—you will use it later to sign in to ThingsBoard. 
+6. Click **OK** to finish.
+
+A customer user account is created and ready for activation.
+
+<hr>
+
+### Step 5.2 Assign the Device to the Customer
+
+To allow Customer Users to view telemetry and interact with the device, assign the device to the Customer.
+1. In the **Customers** list, click **Manage customer devices** for **My New Customer**. 
+2. Click the **Assign new device** in the top right corner of the table. 
+3. Click **Assign new device**. 
+4. Select **Thermometer** and click **Assign**.
+
+The device is now assigned to the customer.
+
+<hr>
+
+### Step 5.3 Assign the Dashboard to the Customer
+
+Share the dashboard with the customer so they can visualize device data. Customer users will have read-only access and will not be able to add, modify, or remove widgets.
+1. In the **Customers** list, click **Manage customer dashboards** for **My New Customer**.
+2. Click the **Assign new dashboard** in the top right corner of the table. 
+3. Select **My Dashboard** and click **Assign**.
+
+Customer Users now have **read-only access** to the dashboard.
+
+> **Optionally**:
+You can configure a dashboard to be displayed immediately after the user logs in to the ThingsBoard web UI.   
+- In the **Customers** list, click **Manage customer users** for **My New Customer**.
+- Click the created user to open its details.
+- Click the orange **pencil** icon to enter edit mode.
+- Set **My Dashboard** as the **default dashboard**.
+- Enable **Always fullscreen**.
+- Apply changes.
+
+<hr>
+
+### Step 5.4 Activate the Customer User
+
+Activate the Customer User account and sign in to ThingsBoard.
+1. Paste the previously copied **activation link** in a new browser tab and press **Enter**.
+2. Create a password by entering it twice, then click **Create Password**. 
+
+You are now logged in to ThingsBoard as a **Customer User**. 
+
+With this role, the user can:
+- view assigned devices and their telemetry data on dashboards
+- monitor alarms related to assigned devices
+- acknowledge and clear alarms
 
 <hr>
 
 ## Next steps
 
-{% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
+Use the knowledge gained in this guide as a foundation for expanding your IoT solution—add more devices, improve dashboards, automate workflows, and integrate with external systems.
 
-<hr>
+Continue with the following guides to explore advanced features and production-ready configurations. 
+
+<br><b><font size="4">Learn how to</font></b>
+- [connect devices based on your technology stack or connectivity solution](/docs/guides/#AnchorIDConnectYourDevice){:target="_blank"}
+- [process and react to incoming data, including validating and filtering telemetry, calculating deltas, transforming values, and triggering actions such as alarms, notifications, or messages](/docs/guides#AnchorIDDataProcessing){:target="_blank"}
+- [manage devices programmatically using APIs](/docs/api/){:target="_blank"}
+- [perform bulk provisioning by importing multiple devices from a CSV file via the UI](/docs/user-guide/bulk-provisioning/){:target="_blank"}
+- [configure devices for automatic self-registration](/docs/user-guide/device-provisioning/){:target="_blank"}
+- [compute new values from incoming data using Calculated fields](/docs/user-guide/calculated-fields/){:target="_blank"}
+- [explore advanced ThingsBoard features](/docs/guides/#AnchorIDAdvancedFeatures){:target="_blank"}.
+
+<br><b><font size="4">Prefer watching videos?</font></b>
+
+Explore step-by-step [video tutorials](/docs/guides/#AnchorIDDataVisualization){:target="_blank"} that demonstrate how to design advanced ThingsBoard dashboards.
+
+<hr> 
 
 ## Your feedback
 
