@@ -5,4 +5,5 @@ description: TBMQ FAQ
 
 ---
 
+{% assign tbmqName = "Community Edition" %}
 {% include docs/mqtt-broker/faq.md %}

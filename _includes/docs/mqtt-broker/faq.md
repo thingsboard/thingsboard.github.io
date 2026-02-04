@@ -78,7 +78,7 @@ function switchTbmqFaqTab(tabId) {
 }
 </script>
 
-<h2>MQTT Broker</h2>
+<h2>TBMQ - {{tbmqName}}</h2>
 
 <div class="tbmq-faq-wrapper">
     <div class="tbmq-faq-sections">
