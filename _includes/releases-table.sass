@@ -247,6 +247,19 @@
                 filter: brightness(0) saturate(100%) invert(57%) sepia(2%) saturate(45%) hue-rotate(44deg) brightness(88%) contrast(90%)
                 transition: ease-in-out 0.3s
 
+.trendz-table
+  .releases-table-content
+    .releases-table-header-item, .releases-table-content-item
+      &:nth-child(4)
+        min-width: 176px
+      &:nth-child(5)
+        min-width: unset
+      &:nth-child(6)
+        min-width: 141px
+      &:nth-child(7)
+        text-align: center
+        min-width: 240px
+
 .legend
   li.list-link
     &::marker, a

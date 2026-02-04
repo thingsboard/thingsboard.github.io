@@ -5102,6 +5102,105 @@
 "/docs/trendz/install/ubuntu/":
   url: "/docs/trendz/install/ubuntu/"
   redirect_from: []
+"/docs/trendz/install/upgrade-instructions/centos/v1-10-x/":
+  url: "/docs/trendz/install/upgrade-instructions/centos/v1-10-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/centos/v1-11-x/":
+  url: "/docs/trendz/install/upgrade-instructions/centos/v1-11-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/centos/v1-12-x/":
+  url: "/docs/trendz/install/upgrade-instructions/centos/v1-12-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/centos/v1-13-x/":
+  url: "/docs/trendz/install/upgrade-instructions/centos/v1-13-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/centos/v1-14-x/":
+  url: "/docs/trendz/install/upgrade-instructions/centos/v1-14-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/centos/v1-15-x/":
+  url: "/docs/trendz/install/upgrade-instructions/centos/v1-15-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/centos/v1-8-x/":
+  url: "/docs/trendz/install/upgrade-instructions/centos/v1-8-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/centos/v1-9-x/":
+  url: "/docs/trendz/install/upgrade-instructions/centos/v1-9-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/docker/v1-10-x/":
+  url: "/docs/trendz/install/upgrade-instructions/docker/v1-10-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/docker/v1-11-x/":
+  url: "/docs/trendz/install/upgrade-instructions/docker/v1-11-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/docker/v1-12-x/":
+  url: "/docs/trendz/install/upgrade-instructions/docker/v1-12-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/docker/v1-13-x/":
+  url: "/docs/trendz/install/upgrade-instructions/docker/v1-13-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/docker/v1-14-x/":
+  url: "/docs/trendz/install/upgrade-instructions/docker/v1-14-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/docker/v1-15-x/":
+  url: "/docs/trendz/install/upgrade-instructions/docker/v1-15-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/docker/v1-8-x/":
+  url: "/docs/trendz/install/upgrade-instructions/docker/v1-8-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/docker/v1-9-x/":
+  url: "/docs/trendz/install/upgrade-instructions/docker/v1-9-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/":
+  url: "/docs/trendz/install/upgrade-instructions/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/ubuntu/v1-10-x/":
+  url: "/docs/trendz/install/upgrade-instructions/ubuntu/v1-10-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/ubuntu/v1-11-x/":
+  url: "/docs/trendz/install/upgrade-instructions/ubuntu/v1-11-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/ubuntu/v1-12-x/":
+  url: "/docs/trendz/install/upgrade-instructions/ubuntu/v1-12-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/ubuntu/v1-13-x/":
+  url: "/docs/trendz/install/upgrade-instructions/ubuntu/v1-13-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/ubuntu/v1-14-x/":
+  url: "/docs/trendz/install/upgrade-instructions/ubuntu/v1-14-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/ubuntu/v1-15-x/":
+  url: "/docs/trendz/install/upgrade-instructions/ubuntu/v1-15-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/ubuntu/v1-8-x/":
+  url: "/docs/trendz/install/upgrade-instructions/ubuntu/v1-8-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/ubuntu/v1-9-x/":
+  url: "/docs/trendz/install/upgrade-instructions/ubuntu/v1-9-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/windows/v1-10-x/":
+  url: "/docs/trendz/install/upgrade-instructions/windows/v1-10-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/windows/v1-11-x/":
+  url: "/docs/trendz/install/upgrade-instructions/windows/v1-11-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/windows/v1-12-x/":
+  url: "/docs/trendz/install/upgrade-instructions/windows/v1-12-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/windows/v1-13-x/":
+  url: "/docs/trendz/install/upgrade-instructions/windows/v1-13-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/windows/v1-14-x/":
+  url: "/docs/trendz/install/upgrade-instructions/windows/v1-14-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/windows/v1-15-x/":
+  url: "/docs/trendz/install/upgrade-instructions/windows/v1-15-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/windows/v1-8-x/":
+  url: "/docs/trendz/install/upgrade-instructions/windows/v1-8-x/"
+  redirect_from: []
+"/docs/trendz/install/upgrade-instructions/windows/v1-9-x/":
+  url: "/docs/trendz/install/upgrade-instructions/windows/v1-9-x/"
+  redirect_from: []
 "/docs/trendz/install/windows/":
   url: "/docs/trendz/install/windows/"
   redirect_from: []
@@ -5131,6 +5230,36 @@
   redirect_from: []
 "/docs/trendz/prediction/":
   url: "/docs/trendz/prediction/"
+  redirect_from: []
+"/docs/trendz/releases/release-policy/":
+  url: "/docs/trendz/releases/release-policy/"
+  redirect_from: []
+"/docs/trendz/releases/releases-table/":
+  url: "/docs/trendz/releases/releases-table/"
+  redirect_from: []
+"/docs/trendz/releases/releases-table/v1-10-x/":
+  url: "/docs/trendz/releases/releases-table/v1-10-x/"
+  redirect_from: []
+"/docs/trendz/releases/releases-table/v1-11-x/":
+  url: "/docs/trendz/releases/releases-table/v1-11-x/"
+  redirect_from: []
+"/docs/trendz/releases/releases-table/v1-12-x/":
+  url: "/docs/trendz/releases/releases-table/v1-12-x/"
+  redirect_from: []
+"/docs/trendz/releases/releases-table/v1-13-x/":
+  url: "/docs/trendz/releases/releases-table/v1-13-x/"
+  redirect_from: []
+"/docs/trendz/releases/releases-table/v1-14-x/":
+  url: "/docs/trendz/releases/releases-table/v1-14-x/"
+  redirect_from: []
+"/docs/trendz/releases/releases-table/v1-15-x/":
+  url: "/docs/trendz/releases/releases-table/v1-15-x/"
+  redirect_from: []
+"/docs/trendz/releases/releases-table/v1-8-x/":
+  url: "/docs/trendz/releases/releases-table/v1-8-x/"
+  redirect_from: []
+"/docs/trendz/releases/releases-table/v1-9-x/":
+  url: "/docs/trendz/releases/releases-table/v1-9-x/"
   redirect_from: []
 "/docs/trendz/releases/":
   url: "/docs/trendz/releases/"

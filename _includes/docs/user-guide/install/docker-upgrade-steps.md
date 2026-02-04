@@ -19,5 +19,5 @@
   docker compose run --rm -e UPGRADE_TB=true thingsboard-ce 
   docker compose up -d
   ```
-  {: .copy-code}
+  {: .copy-code} 
 {% endif %} 
