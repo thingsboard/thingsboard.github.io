@@ -17,20 +17,20 @@ If you are upgrading from version {{ previous_version }}, you must run the scrip
 
 2. Execute the following commands:
 
- ```bash
- docker pull thingsboard/tb-node:{{ current_version }}
- docker compose stop thingsboard-ce
- ```
- {: .copy-code}
+```bash
+docker pull thingsboard/tb-node:{{ current_version }}
+docker compose stop thingsboard-ce
+```
+{: .copy-code}
 
- {% include templates/warn-banner.md content=update_note %}
+{% include templates/warn-banner.md content=update_note %}
 
- ```bash
- docker compose run --rm -e UPGRADE_TB=true thingsboard-ce 
- ```
- {: .copy-code}  
+```bash
+docker compose run --rm -e UPGRADE_TB=true thingsboard-ce 
+```
+{: .copy-code}  
 
- ```bash
- docker compose up -d
- ```   
- {: .copy-code}
+```bash
+docker compose up -d
+```   
+{: .copy-code}

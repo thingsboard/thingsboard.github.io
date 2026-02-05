@@ -10,7 +10,7 @@
   hostLabel: localhost
   hostName: localhost
   mqttHostName: localhost
-  coapHostName: coap.thingsboard.cloud
+  coapHostName: localhost
   httpsUrl: https://thingsboard.cloud
   lwm2mHostName: lwm2m.thingsboard.cloud
   apiHostName: YOUR_SERVER_HOSTNAME
