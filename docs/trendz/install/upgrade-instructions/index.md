@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-trendz
-title: Upgrade instructions
+title: Trendz Analytics upgrade instructions
 description: Trendz Analytics upgrade instructions
 table-of-contents: "false"
 active-menu-item-click: "true"

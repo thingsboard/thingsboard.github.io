@@ -9,10 +9,13 @@
         <div class="releases-table-header">
             <div class="releases-table-header-item">Version</div>
             <div class="releases-table-header-item">Release Date</div>
-            <div class="releases-table-header-item">Upgradable From</div>
-            {% if docsPrefix == "trendz/" %}
-                <div class="releases-table-header-item">ThingsBoard Support</div>
-            {% endif %}
+            <div class="releases-table-header-item">
+                {% if docsPrefix == "trendz/" %}
+                    ThingsBoard Support
+                {% else %}
+                    Upgradable From
+                {% endif %}
+            </div>
             <div class="releases-table-header-item"><a href="/docs/{{ docsPrefix }}releases/release-policy/" target="_blank">LTS</a></div>
             <div class="releases-table-header-item">Release Notes</div>
             <div class="releases-table-header-item">Upgrade Instructions</div>
@@ -112,24 +115,25 @@
                                 {{ releaseDate | date: "%-d" }} {{ release_month_short }} {{ releaseDate | date: "%Y" }}
                             </time>
                         </div>
-                        <div class="releases-table-content-item">
-                            {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
-                                {% if item[1].upgradable-from-edge %}
-                                    v{{ item[1].upgradable-from-edge }}
-                                {% else %}
-                                    v{{ item[1].upgradable-from }}
-                                {% endif %}
-                            {% else %}
-                                v{{ item[1].upgradable-from }}
-                            {% endif %}
-                            {%- if docsPrefix == "pe/" -%}PE
-                            {%- elsif docsPrefix == "edge/" -%}Edge
-                            {%- elsif docsPrefix == "pe/edge/" -%}PE Edge
-                            {%- endif -%}
-                        </div>
 
                         {%- if docsPrefix == "trendz/" -%}
                             <div class="releases-table-content-item">Up to v{{ item[1].tbVersion }}</div>
+                        {%- else -%}
+                            <div class="releases-table-content-item">
+                                {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+                                    {% if item[1].upgradable-from-edge %}
+                                        v{{ item[1].upgradable-from-edge }}
+                                    {% else %}
+                                        v{{ item[1].upgradable-from }}
+                                    {% endif %}
+                                {% else %}
+                                    v{{ item[1].upgradable-from }}
+                                {% endif %}
+                                {%- if docsPrefix == "pe/" -%}PE
+                                {%- elsif docsPrefix == "edge/" -%}Edge
+                                {%- elsif docsPrefix == "pe/edge/" -%}PE Edge
+                                {%- endif -%}
+                            </div>
                         {%- endif -%}
 
                         <div class="releases-table-content-item lts-item">
@@ -188,16 +192,16 @@
                                     <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
                                 </a>
                             {% elsif docsPrefix == "trendz/" %}
-                                <a href="/docs/{{ docsPrefix }}/install/upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Ubuntu Instructions">
+                                <a href="/docs/{{ docsPrefix }}install/upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Ubuntu Instructions">
                                     <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
                                 </a>
-                                <a href="/docs/{{ docsPrefix }}/install/upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="CentOS Instructions">
+                                <a href="/docs/{{ docsPrefix }}install/upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="CentOS Instructions">
                                     <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
                                 </a>
-                                <a href="/docs/{{ docsPrefix }}/install/upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Windows Instructions">
+                                <a href="/docs/{{ docsPrefix }}install/upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Windows Instructions">
                                     <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
                                 </a>
-                                <a href="/docs/{{ docsPrefix }}/install/upgrade-instructions/docker/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Instructions">
+                                <a href="/docs/{{ docsPrefix }}install/upgrade-instructions/docker/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Instructions">
                                     <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
                                 </a>    
                             {% else %}

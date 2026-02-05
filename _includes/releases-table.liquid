@@ -22,6 +22,9 @@
             <div class="releases-table-header-item cur-patch">Current Patch</div>
             <div class="releases-table-header-item">Support</div>
             <div class="releases-table-header-item">End of Life</div>
+            {% if docsPrefix == "trendz/" %}
+                <div class="releases-table-header-item">ThingsBoard Support</div>
+            {% endif %}
             <div class="releases-table-header-item">Release Notes & Highlights</div>
             <div class="releases-table-header-item">Instructions</div>
         </div>
@@ -111,6 +114,10 @@
                                     {{ target_ts | date: "%-d" }} {{ target_month_short }} {{ target_ts | date: "%Y" }}
                                 {% endif %}
                             </div>
+
+                            {% if docsPrefix == "trendz/" %}
+                                <div class="releases-table-content-item">Up to v{{ page.tbVersion }}</div>
+                            {% endif %}
 
                             <a href="{{ page.url }}" class="releases-table-content-item version-link" target="_blank">
                                 <span>{{ page.release-note-label }}</span>

@@ -16,7 +16,7 @@ It’s written for platform administrators, SREs, DevOps engineers, and technica
 ## Trendz Analytics versioning
 
 Trendz Analytics version numbers reflect the scope of changes introduced in each release. This follows semantic versioning principles, helping you gauge the potential impact of upgrading.
-Trendz Analytics version numbers have four parts: <span class="code-light">MAJOR.MINOR.MAINTENANCE.PATCH</span>. For example, version <span class="code-light">1.15.1.0</span> indicates major version 4, minor version 2, maintenance 1 and patch level 0.
+Trendz Analytics version numbers have four parts: <span class="code-light">MAJOR.MINOR.MAINTENANCE.PATCH</span>. For example, version <span class="code-light">1.15.0.3</span> indicates major version 1, minor version 15, maintenance 0 and patch level 3.
 
 The version number is incremented based on the level of change included in the release.
 
@@ -60,8 +60,6 @@ The version number is incremented based on the level of change included in the r
 
 <span class="code-light">1.15.1.0</span> — First maintenance release; expect upgrade scripts
 
-<span class="code-light">1.15.1.3</span> — Hotfixes on top of <span class="code-light">1.15.1.3</span>; zero‑downtime within <span class="code-light">1.15.1.x</span>
-
 ## Lifecycle & Support (How long versions are supported?)
 
 ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. Customers using LTS releases can be confident that their critical systems will be protected and operate reliably.
@@ -79,7 +77,7 @@ ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. 
     <tr>
       <td><b>LTS</b></td>
       <td>Announced yearly; for stable, long-term production use.</td>
-      <td><b>18 months</b> from initial LTS GA (e.g., 1.15.0.0 release date)</td>
+      <td><b>18 months</b> from initial LTS GA (e.g., 1.15.0 release date)</td>
       <td>Annually</td>
     </tr>
     <tr>
@@ -97,7 +95,7 @@ ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. 
 
 1. **Prefer the latest LTS line** in Active Support.
 
-2. To stay up to date with hotfixes, track the line’s **PATCH** updates only (same MAINTENANCE number, e.g., <span class="code-light">1.15.1.0</span> → <span class="code-light">1.15.1.3</span>).
+2. To stay up to date with hotfixes, track the line’s **PATCH** updates only (same MAINTENANCE number, e.g., <span class="code-light">1.15.0.0</span> → <span class="code-light">1.15.0.3</span>).
 
 3. **Schedule maintenance windows** to adopt new **MAINTENANCE** releases when needed (e.g., <span class="code-light">1.15.0.x</span> → <span class="code-light">1.15.1.0</span>).
 
@@ -116,15 +114,15 @@ ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. 
   <tbody>
     <tr>
       <td>M.m.P.p</td>
-      <td>1.15.1.0</td>
+      <td>1.15.0.0</td>
       <td>Production</td>
       <td>Immutable</td>
     </tr>
     <tr>
       <td>M.m.P</td>
-      <td>1.15.1-latest</td>
+      <td>1.15.0-latest</td>
       <td>Automatic safe patches</td>
-      <td> Floating (within 1.15.1.x)</td>
+      <td> Floating (within 1.15.0.x)</td>
     </tr>
     <tr>
       <td>latest</td>
@@ -137,9 +135,9 @@ ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. 
 
 **Recommendations**
 
-- **Production:** Pin to the immutable full tag (e.g., 1.15.1.0). You update only when you change the tag.
+- **Production:** Pin to the immutable full tag (e.g., 1.15.0.0). You update only when you change the tag.
 
-- **Auto security hotfixes (no downtime):** Use 1.15.1.1, 1.15.1.2, … , but never jump to 1.15.2.0.
+- **Auto security hotfixes (no downtime):** Use 1.15.0.1, 1.15.0.2, … , but never jump to 1.15.1.0.
 
 - **Avoid latest in production.** It may include breaking changes and is not covered by the LTS policy.
 

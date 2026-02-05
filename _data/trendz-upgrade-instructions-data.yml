@@ -15,7 +15,7 @@
   release-date: Jun 27 2025
   x: "true"
 1.13.1:
-  upgradable-from: "1.13.0"
+  upgradable-from: "1.7.0"
   tbVersion: "4.0.1"
   release-date: May 2 2025
   x: "true"
