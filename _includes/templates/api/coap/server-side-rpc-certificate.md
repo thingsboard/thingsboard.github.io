@@ -1,15 +1,16 @@
 Send GET request with observe flag to the following URL:
 
-{% if docsPrefix == null or docsPrefix == "pe/"%}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/rpc
+coap://{{HOST_NAME}}/api/v1/rpc
 ```
 {: .copy-code}
 
-Where **$THINGSBOARD_HOST_NAME** is your localhost, or the platform address.
-  
+> ⚠️ Where <code>{{HOST_NAME}}</code> is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.
+
 {% endif %}
 {% if docsPrefix == "paas/" or docsPrefix == "paas/eu/"%}
+
 ```shell
 coap://{{coapHostName}}/api/v1/rpc
 ```
@@ -30,22 +31,23 @@ Once subscribed, a client may receive RPC requests. An example of RPC request bo
 }
 ```
 
-Where
+> Where   
+&#8194;&#8226;&#8194;**id** - request id, integer request identifier   
+&#8194;&#8226;&#8194;**method** - RPC method name, string   
+&#8194;&#8226;&#8194;**params** - RPC method params, custom json object
 
-- **id** - request id, integer request identifier;
-- **method** - RPC method name, string;
-- **params** - RPC method params, custom json object.
+To reply to an RPC request, send a POST request to the following URL
 
-and can reply to them using POST request to the following URL:
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 
-{% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/rpc/{$id}
+coap://{{HOST_NAME}}/api/v1/rpc/{$id}
 ```
 {: .copy-code}
 
 {% endif %}
 {% if docsPrefix == "paas/" or docsPrefix == "paas/eu/"%}
+
 ```shell
 coap://{{coapHostName}}/api/v1/rpc/{$id}
 ```
@@ -53,34 +55,27 @@ coap://{{coapHostName}}/api/v1/rpc/{$id}
 
 {% endif %}
 
-Where **$id** is an integer request identifier.
+> Where <code>$id</code> is an integer request identifier.
 
 <br>
-**Let's look at an example**:
+
+**Example**
 
 - Use **RPC debug terminal** widget in your ThingsBoard instance;
+- Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag.
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-- Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host:
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 
 ```shell
-coap-client -m get coap://$THINGSBOARD_HOST_NAME/api/v1/rpc -s 100 -B 100
+coap-client -m get coap://{{HOST_NAME}}/api/v1/rpc -s 100 -B 100
 ```
 {: .copy-code}
+
 {% endif %}
 {% if docsPrefix == "paas/" or docsPrefix == "paas/eu/"%}
-- Subscribe to RPC commands from the server using the command below:
 
 ```shell
 coap-client -m get coap://{{coapHostName}}/api/v1/rpc -s 100 -B 100
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-- Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host:
-
-```shell
-coap-client -m get coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/rpc -s 100 -B 100
 ```
 {: .copy-code}
 {% endif %}
@@ -92,27 +87,24 @@ The "`B`" options stands for break (the operation will be break after desired ti
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-- Send an RPC request "connect" to the device using **RPC debug terminal** widget;
-
-- Save the "[rpc-response.json](/docs/reference/resources/rpc-response.json)" file to your PC;
-
+- Send an RPC request "connect" to the device using **RPC debug terminal** widget.
+- Save the [rpc-response.json](/docs/reference/resources/rpc-response.json){:target="_blank" download="rpc-response.json"} file to your PC.
 - In the second terminal window simulate sending a response from the device to the server:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-coap-client -f rpc-response.json -m post coap://$THINGSBOARD_HOST_NAME/api/v1/rpc/1
+coap-client -f rpc-response.json -m post coap://{{HOST_NAME}}/api/v1/rpc/1
 ```
 {: .copy-code}
+
+> ⚠️ Replace <code>{{HOST_NAME}}</code> with your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.
+
+
 {% endif %}
 {% if docsPrefix == "paas/" or docsPrefix == "paas/eu/"%}
+
 ```shell
 cat rpc-response.json | coap post coap://{{coapHostName}}/api/v1/rpc/1
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-coap-client -f rpc-response.json -m post coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/rpc/1
 ```
 {: .copy-code}
 {% endif %}
@@ -123,4 +115,6 @@ coap-client -f rpc-response.json -m post coap://$THINGSBOARD_EDGE_HOST_NAME/api/
 {"result":"ok"}
 ```
 
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 {% include images-gallery.html imageCollection="server-side-rpc-certificate" %}
+{% endif %}

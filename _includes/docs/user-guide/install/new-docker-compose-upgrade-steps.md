@@ -12,25 +12,25 @@ If you are upgrading from version {{ previous_version }}, you must run the scrip
 {% endcapture %}
 1. Change the parameter `TB_VERSION` in the `.env` file.
 
-  ```.env
-  TB_VERSION={{ current_version }}
-  ```
+```.env
+TB_VERSION={{ current_version }}
+```
 
 2. Execute the following commands:
     
- ```bash
- ./docker-stop-services.sh  
- ```
- {: .copy-code}  
+```bash
+./docker-stop-services.sh  
+```
+{: .copy-code}  
 
- {% include templates/warn-banner.md content=update_note %}
+{% include templates/warn-banner.md content=update_note %}
 
- ```bash
- ./docker-upgrade-tb.sh
- ```
- {: .copy-code}  
+```bash
+./docker-upgrade-tb.sh
+```
+{: .copy-code}  
 
- ```bash
- ./docker-start-services.sh
- ```
- {: .copy-code}
+```bash
+./docker-start-services.sh
+```
+{: .copy-code}

@@ -4,20 +4,23 @@
 
 2. Execute the following commands:
 
-
 {% if include.skipUpgrade %}
-  ```bash
-  docker pull thingsboard/tb-node:{{ current_version }}
-  docker compose stop thingsboard-ce 
-  docker compose up -d
-  ```
-  {: .copy-code}
+
+```bash
+docker pull thingsboard/tb-node:{{ current_version }}
+docker compose stop thingsboard-ce 
+docker compose up -d
+```
+{: .copy-code}
+
 {% else %}
-  ```bash
-  docker pull thingsboard/tb-node:{{ current_version }}
-  docker compose stop thingsboard-ce
-  docker compose run --rm -e UPGRADE_TB=true thingsboard-ce 
-  docker compose up -d
-  ```
-  {: .copy-code}
+
+```bash
+docker pull thingsboard/tb-node:{{ current_version }}
+docker compose stop thingsboard-ce
+docker compose run --rm -e UPGRADE_TB=true thingsboard-ce 
+docker compose up -d
+```
+{: .copy-code}
+
 {% endif %} 

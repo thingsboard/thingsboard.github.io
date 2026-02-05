@@ -9,11 +9,11 @@ It’s written for platform administrators, SREs, DevOps engineers, and technica
 ## ThingsBoard versioning
 
 ThingsBoard version numbers reflect the scope of changes introduced in each release. This follows semantic versioning principles, helping you gauge the potential impact of upgrading.
-ThingsBoard version numbers have four parts: <span class="code-light">MAJOR.MINOR.MAINTENANCE.PATCH</span>. For example, version <span class="code-light">4.2.1.0</span> indicates major version 4, minor version 2, maintenece 1 and patch level 0.
+ThingsBoard version numbers have four parts: <span class="code-light">MAJOR.MINOR.MAINTENANCE.PATCH</span>. For example, version <span class="code-light">4.2.1.0</span> indicates major version 4, minor version 2, maintenance 1 and patch level 0.
 
 The version number is incremented based on the level of change included in the release.
 
-<table style="width:70%">
+<table style="width:75%">
   <thead>
     <tr>
       <td style="width: 20%"><b>Level</b></td>
@@ -34,8 +34,8 @@ The version number is incremented based on the level of change included in the r
     </tr>
     <tr>
       <td>MAINTENANCE</td>
-      <td>Bug fixes/security vulnerabilities/framework upgrades that may require upgrade scripts</td>
-      <td>Yes</td>
+      <td>Bug fixes, security fixes, <b>framework upgrades</b><br><small><b>Note:</b> Upgrade scripts are usually required, but <u>not always</u> (e.g. Angular 18→20)</small></td>
+      <td>May be required</td>
     </tr>
     <tr>
       <td>PATCH</td>
@@ -55,12 +55,13 @@ The version number is incremented based on the level of change included in the r
 
 <span class="code-light">4.2.1.3</span> — Hotfixes on top of <span class="code-light">4.2.1.0</span>; zero‑downtime within <span class="code-light">4.2.1.x</span>
 
+<span class="code-light">4.2.2.0</span> — Maintenance release: includes Angular upgrade (18 → 20). No DB scripts required, but potential UI impact.
 
 ## Lifecycle & Support (How long versions are supported?)
 
 ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. Customers using LTS releases can be confident that their critical systems will be protected and operate reliably.
 
-<table style="width:70%">
+<table style="width:75%">
   <thead>
     <tr>
       <td style="width: 20%"><b>Release Type</b></td>
@@ -95,10 +96,15 @@ ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. 
 
 3. **Schedule maintenance windows** to adopt new **MAINTENANCE** releases when needed (e.g., <span class="code-light">4.2.0.x</span> → <span class="code-light">4.2.1.0</span>).
 
+4. **Framework upgrades in MAINTENANCE releases** (e.g., Angular 18 → 20):
+   * We provide **full backward compatibility for the core platform** and **do not require any upgrade scripts**.
+   * However, **custom UI code** (widgets or custom CSS) that depends on internal component structure or CSS variable names **may break**.
+   * This can affect **up to 1% of users** with heavy customizations.
+   * **Recommendation:** Always test custom UI in a staging environment before upgrading to such MAINTENANCE releases.
 
 ## Docker Hub Tagging Strategy
 
-<table style="width:70%">
+<table style="width:75%">
   <thead>
     <tr>
       <td style="width: 20%"><b>Tag</b></td>
@@ -118,7 +124,7 @@ ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. 
       <td>M.m.P</td>
       <td>4.2.1-latest</td>
       <td>Automatic safe patches</td>
-      <td> Floating (within 4.2.1.x)</td>
+      <td>Floating (within 4.2.1.x)</td>
     </tr>
     <tr>
       <td>latest</td>

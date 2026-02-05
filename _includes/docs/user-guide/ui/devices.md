@@ -140,15 +140,25 @@ Second way:
 
 ## Check connectivity
 
-To verify if your device is successfully connected to ThingsBoard:
-- Open the "**Device details**" window and click "**Check connectivity**".
-- Select:
-  - [Communication protocol](/docs/{{docsPrefix}}reference/protocols/){:target="_blank"} ([MQTT](/docs/{{docsPrefix}}reference/mqtt-api){:target="_blank"}, [HTTP](/docs/{{docsPrefix}}reference/http-api){:target="_blank"}, etc.)
-  - Operating system
-- If required, install the necessary client tools.
-- Copy the generated command and run it in a **Terminal**.
+**Check connectivity** is a built-in feature that provides ready-to-use commands for testing device connectivity to ThingsBoard using different communication protocols. It allows you to quickly verify network access, validate credentials, and confirm that incoming telemetry is processed correctly.
 
-If successful, the device status will change from "**Inactive**" to "**Active**", and telemetry data (e.g., temperature) will appear.
+Using this feature, you can publish test telemetry data (for example, a temperature value of 25) and immediately ensure that the device is able to communicate with the platform.
+
+**To verify device connectivity:**
+1. Click on device to open its details page. 
+2. Click **Check connectivity**. 
+3. Select the [communication protocol](/docs/{{docsPrefix}}reference/protocols/){:target="_blank"} ([MQTT](/docs/{{docsPrefix}}reference/mqtt-api){:target="_blank"}, [HTTP](/docs/{{docsPrefix}}reference/http-api){:target="_blank"}, etc.) and your operating system. 
+4. Copy the generated command and execute it in a terminal.
+
+If the connection is successful:
+- The device status changes from **Inactive** to **Active**.
+- Telemetry data appears on the **Latest telemetry** tab.
+
+{% capture difference %}
+For guidance on connecting devices based on your technology stack, see the available [connection guides](/docs/guides/#AnchorIDGettingStartedGuides){:target="_blank"}.<br>
+For advanced protocols and API options, refer to the [ThingsBoard API reference](/docs/{{docsPrefix}}reference/protocols/){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 {% include images-gallery.html imageCollection="check-connectivity" %}
 

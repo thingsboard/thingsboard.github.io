@@ -6,4 +6,5 @@ redirect_from: "/docs/pe/edge/reference/mqtt-api"
 ---
 
 {% assign docsPrefix = "pe/edge/" %}
+{% include get-hosts-name.html docsTag="pe-edge" %}
 {% include docs/reference/mqtt-api.md %}

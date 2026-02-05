@@ -6,4 +6,5 @@ description: Provides a **natural language interface** for LLMs and AI agents to
 ---
 
 {% assign docsPrefix = "pe/edge/" %}
+{% include get-hosts-name.html docsTag="pe-edge" %}
 {% include docs/reference/mcp-server.md %}
