@@ -50,7 +50,7 @@ Each metric produces **one output telemetry key (Metric name)** by applying one 
 
 Click the **Add metric** button and fill in the required fields:
 - **Metric name**: output telemetry key name (e.g., tempAvg, tempMax)
-- **Aggregation**: Average / Min / Max / Sum / Count / Count unique
+- **Aggregation**: Average / Min / Max / Sum / Count
 - **Argument name**: the argument whose value is being aggregated.
 - **Default value**: used if the interval contains no data
 
