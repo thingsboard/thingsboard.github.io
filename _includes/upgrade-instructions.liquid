@@ -7,6 +7,10 @@
 {% assign family_minor = family_parts[1] %}
 
 {% for item in upgarde_instructions_data %}
+{% if item[1].vulnerable == 'true' %}
+    {% continue %}
+{% endif %}
+
 {% assign version = item[0] %}
 {% assign data = item[1] %}
 
@@ -25,6 +29,14 @@
 {% assign display_version = parts[0] | append: "." | append: parts[1] %}
 {% endif %}
 
+{% assign base_version = display_version %}
+{% assign patch_status = "false" %}
+
+{% if item[1].patch == "true" %}
+    {% assign patch_status = "true" %}
+    {% assign base_version = parts[0] | append: "." | append: parts[1] | append: "." | append: parts[2] %}
+{% endif %}
+
 {% assign prev_version = data.upgradable-from %}
 {% assign display_prev_version = prev_version %}
 
@@ -36,11 +48,15 @@
 {% endif %}
 
 {% if os == "windows" %}
-{% include windows-upgrade-instructions.md version=display_version prev_version=display_prev_version x=data.x update_status=data.upgrade zip=data.windows.zip applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% include windows-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade zip=data.windows.zip applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
 {% elsif os == "ubuntu" %}
-{% include ubuntu-upgrade-instructions.md version=display_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% include ubuntu-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
 {% elsif os == "centos" %}
-{% include centos-upgrade-instructions.md version=display_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% include centos-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% elsif os == "docker" %}
+{% include docker-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions %}
+{% elsif os == "docker-compose" %}
+{% include docker-compose-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions %}
 {% endif %}
 {% endif %}
 

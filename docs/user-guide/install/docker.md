@@ -101,25 +101,11 @@ Launch all services in detached mode:
 docker compose up -d
 ```
 
-## Upgrading
-{% capture upgrade_version_by_version%}
-**Note, that you have to upgrade versions one by one (for example 4.0.2 -> 4.1.0 -> 4.2.0 ,etc).**
-{% endcapture %}
-{% include templates/info-banner.md content=upgrade_version_by_version %}
+## Post-installation steps
 
-When a new CE release is available, follow these steps to update your installation without losing data:
+### Upgrading to new ThingsBoard version
 
-1. Change the version of the `thingsboard/tb-node` in the `docker-compose.yml` file to the new version (e.g. {{ site.release.ce_full_ver }}) 
-
-2. Execute the following commands:
- 
-```bash
-docker pull thingsboard/tb-node:{{ site.release.ce_full_ver }}
-docker compose stop thingsboard-ce
-docker compose run --rm -e UPGRADE_TB=true thingsboard-ce
-docker compose up -d
-```
-{: .copy-code}
+{% include templates/install/upgrade-thingsboard.md %}
 
 ## Troubleshooting
 

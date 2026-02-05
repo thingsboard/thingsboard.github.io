@@ -9,6 +9,8 @@ This guide describes how to install ThingsBoard Professional Edition on DigitalO
 Using this guide you will install "Bring Your Own License" version of the product.
 Basically, you get the license directly from ThingsBoard, Inc, but purchase corresponding server instances and infrastructure from DigitalOcean.       
 
+{% assign docsPrefix = "pe/" %}
+
 * TOC
 {:toc}
 
@@ -24,7 +26,13 @@ for Ubuntu and complete the installation steps.
 
 ## Post-installation steps
 
+### Configure HAProxy to enable HTTPS
+
 {% include templates/install/ubuntu-haproxy-postinstall.md %}
+
+### Upgrading to new ThingsBoard version
+
+{% include templates/install/upgrade-thingsboard.md %}
 
 ## Troubleshooting
 

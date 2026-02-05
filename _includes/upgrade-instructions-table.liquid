@@ -15,6 +15,10 @@
             {% for item in versionsCollection %}
                 {% assign version = item[0] %}
 
+                {% if item[1].vulnerable == 'true' %}
+                    {% continue %}
+                {% endif %}
+
                 {%- comment -%}Filter versions based on edition{%- endcomment -%}
                 {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
                     {% unless item[1].release-date-edge %}
@@ -32,7 +36,11 @@
 
                 {% assign versionFamily = major | append: "-" | append: minor | append: "-x" %}
 
-                {% assign hashBase = version | replace: ".", "" %}
+                {% if parts.size == 3 and parts[2] == "0" %}
+                    {% assign hashBase = parts[0] | append: parts[1] %}
+                {% else %}
+                    {% assign hashBase = version | replace: ".", "" %}
+                {% endif %}
 
                 {% assign hashLinkReleaseBase = "thingsboard" %}
 
@@ -112,7 +120,7 @@
                         </div>
 
                         <div class="releases-table-content-item lts-item">
-                            {%- if item[1].lts -%}
+                            {%- if item[1].lts == 'true' -%}
                                 <span class="lts-item-true">Available</span>
                             {%- else -%}
                                 <span>Not-available</span>
@@ -136,6 +144,19 @@
                         {% endif %}
 
                         {% assign hashLinkUpgrade = "#" | append: hashLinkUpgradeBase | append: hashBase %}
+
+                        {% assign version = item[0] %}
+                        {% assign parts = version | split: "." %}
+
+                        {% if item[1].patch == "true" %}
+                            {%- assign major = parts[0] -%}
+                            {%- assign minor = parts[1] -%}
+                            {%- assign minor = parts[2] -%}
+
+                            {%- assign base_version = parts[0] | append: parts[1] | append: parts[2] -%}
+
+                            {% assign hashLinkUpgrade = "#" | append: hashLinkUpgradeBase | append: "latest-" | append: base_version | append: "-" | append: hashBase %}
+                        {% endif %}
 
                         <div class="releases-table-content-item upgrade-instructions">
                             {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}

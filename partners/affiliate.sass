@@ -1,0 +1,746 @@
+$affiliate-bg: #F4F8FE
+$tb-primary: #2A7DEC
+$affiliate-green: #1F8B4D
+$affiliate-text-primary: #202021
+$affiliate-text-secondary: #3D3D3D
+$affiliate-text-disabled: rgba(0, 0, 0, 0.38)
+$affiliate-card-shadow: -4px 15px 50px -20px rgba(37, 51, 69, 0.15), 0 0 8px rgba(37, 51, 69, 0.08)
+
+#affiliate
+    body
+        background-color: $affiliate-bg
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 1100px
+            background-image: url('/images/affiliate/background.svg')
+            background-size: cover
+            background-position: top center
+            background-repeat: no-repeat
+            z-index: 0
+            pointer-events: none
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%)
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%)
+    footer
+        position: static
+
+    section
+        background-color: transparent
+        position: relative
+
+    header
+        background-color: transparent
+        box-shadow: none
+        &.opened-burger
+            background-color: #fff
+
+    .affiliate-main
+        position: relative
+        z-index: 1
+        max-width: 1080px
+        margin: 0 auto
+
+    .btn-primary
+        display: inline-flex
+        align-items: center
+        justify-content: flex-start
+        gap: 8px
+        min-width: 200px
+        height: 48px
+        background: $tb-primary
+        border-radius: 6px
+        font-size: 16px
+        font-weight: 500
+        color: white
+        text-decoration: none
+        padding: 0 16px 0 24px
+        box-shadow: 0 4px 16px rgba(42, 125, 236, 0.24)
+        transition: background 0.3s ease, box-shadow 0.3s ease
+        position: relative
+        overflow: hidden
+        &:hover
+            background: darken($tb-primary, 8%)
+            color: white
+            text-decoration: none
+            box-shadow: 0 6px 20px rgba(42, 125, 236, 0.32)
+            svg
+                transform: translateX(5px)
+            &::after
+                opacity: 1
+                transform: translateX(0)
+        &::after
+            content: ''
+            position: absolute
+            right: 16px
+            top: 50%
+            margin-top: -10px
+            width: 20px
+            height: 20px
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.16691 15.6667L13.0002 9.83333L7.16691 4' stroke='white' stroke-width='1.66667' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+            background-size: contain
+            background-repeat: no-repeat
+            opacity: 0
+            transform: translateX(-10px)
+            transition: opacity 0.3s ease, transform 0.3s ease
+        svg
+            width: 20px
+            height: 20px
+            flex-shrink: 0
+            transition: transform 0.3s ease
+
+    .btn-outline
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        min-width: 200px
+        height: 48px
+        background: transparent
+        border: 1px solid $tb-primary
+        border-radius: 6px
+        font-size: 16px
+        font-weight: 500
+        color: $tb-primary
+        text-decoration: none
+        padding: 16px
+        transition: all 0.3s ease
+        &:hover
+            background: rgba(42, 125, 236, 0.08)
+            color: $tb-primary
+            text-decoration: none
+
+
+    #hero
+        padding: 150px 0 50px
+        .hero-content
+            display: flex
+            align-items: center
+            justify-content: space-between
+            gap: 40px
+        .hero-text
+            max-width: 433px
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 24px
+            text-align: left
+        .affiliate-tag
+            display: inline-flex
+            align-items: center
+            gap: 8px
+            background: #E3F0E9
+            border: 1px solid rgba(31, 139, 77, 0.24)
+            border-radius: 16px
+            padding: 2px 12px
+            width: fit-content
+            .tag-dot
+                width: 8px
+                height: 8px
+                background: $affiliate-green
+                border-radius: 50%
+            span:last-child
+                font-size: 16px
+                line-height: 28px
+                font-weight: 500
+                color: $affiliate-green
+        h1
+            font-size: 56px
+            font-weight: 600
+            line-height: 120%
+            color: $affiliate-text-primary
+            letter-spacing: 0.14px
+            .blue-text
+                color: $tb-primary
+        .hero-description
+            font-size: 18px
+            font-weight: 400
+            line-height: 30px
+            color: $affiliate-text-secondary
+        .hero-image
+            position: relative
+
+        .notification-card
+            position: absolute
+            display: flex
+            align-items: center
+            gap: 12px
+            padding: 13.4px
+            background: rgba(255, 255, 255, 0.9)
+            -webkit-backdrop-filter: blur(8px)
+            border: 1px solid rgba(255, 255, 255, 0.32)
+            border-radius: 16px
+            box-shadow: 0 24px 10px rgba(59, 72, 94, 0), 0 15px 9px rgba(59, 72, 94, 0.01), 0 9px 8px rgba(59, 72, 94, 0.03), 0 4px 5px rgba(59, 72, 94, 0.05), 0 1px 3px rgba(59, 72, 94, 0.06)
+            opacity: 0
+            transform: translateY(20px) scale(0.8)
+            &.card-1
+                top: 22%
+                left: -5%
+                animation: cardAppear 0.3s ease-out forwards
+                animation-delay: 1.1s
+            &.card-2
+                top: 44%
+                right: 3%
+                animation: cardAppearLarge 0.3s ease-out forwards
+                animation-delay: 0.8s
+            &.card-3
+                bottom: 19%
+                left: -1%
+                animation: cardAppear 0.3s ease-out forwards
+                animation-delay: 0.5s
+            .notification-icon
+                width: 36px
+                height: 36px
+                flex-shrink: 0
+                img
+                    width: 100%
+                    height: 100%
+            .notification-text
+                flex: 1
+                display: flex
+                flex-direction: column
+                gap: 2px
+                text-align: left
+                margin-right: 25px
+                .notification-brand
+                    font-size: 11.859px
+                    font-weight: 500
+                    color: $affiliate-text-disabled
+                    line-height: 120%
+                .notification-title
+                    font-size: 14.238px
+                    font-weight: 600
+                    color: $affiliate-text-secondary
+            .notification-amount
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                gap: 2px
+                .notification-time
+                    font-size: 11.859px
+                    line-height: 120%
+                    color: $affiliate-text-disabled
+                .notification-value
+                    font-size: 14.238px
+                    font-weight: 600
+                    color: $affiliate-text-primary
+
+        @keyframes cardAppear
+            to
+                opacity: 1
+                transform: translateY(0) scale(1)
+
+        @keyframes cardAppearLarge
+            to
+                opacity: 1
+                transform: translateY(0) scale(1.1)
+
+
+    .chart-card
+        position: relative
+        .chart-image
+            width: 100%
+            height: auto
+
+    #calculator
+        padding: 50px 0 80px
+        .calculator-card
+            margin: 0 auto
+            background: white
+            border-radius: 24px
+            padding: 40px
+            box-shadow: $affiliate-card-shadow
+            max-width: 900px
+            .calculator-header
+                text-align: center
+                margin-bottom: 36px
+                h2
+                    font-size: 36px
+                    font-weight: 500
+                    color: $affiliate-text-primary
+                    margin: 0 0 16px
+                p
+                    font-size: 16px
+                    color: $affiliate-text-secondary
+                    a
+                        color: $tb-primary
+                        text-decoration: none
+                        font-weight: 500
+                        &:hover
+                            text-decoration: underline
+            .slider-container
+                margin-bottom: 24px
+            .profit-slider
+                -webkit-appearance: none
+                appearance: none
+                width: 100%
+                height: 6px
+                background: linear-gradient(to right, $tb-primary 0%, $tb-primary 9%, #E0E1E2 9%, #E0E1E2 100%)
+                border-radius: 6px
+                outline: none
+                cursor: pointer
+                margin-bottom: 16px
+                &::-webkit-slider-runnable-track
+                    border-radius: 6px
+                &::-moz-range-track
+                    border-radius: 6px
+                &::-webkit-slider-thumb
+                    -webkit-appearance: none
+                    appearance: none
+                    height: 25px
+                    width: 25px
+                    border-radius: 50%
+                    border: none
+                    background-color: $tb-primary
+                    cursor: pointer
+                &::-moz-range-thumb
+                    height: 25px
+                    width: 25px
+                    background-color: $tb-primary
+                    border-radius: 50%
+                    border: none
+                    cursor: pointer
+            .slider-labels
+                display: flex
+                justify-content: space-between
+                font-size: 16px
+                color: $affiliate-text-secondary
+                font-weight: 500
+            .profit-display
+                background: #F4F8FE
+                border: 1px solid rgba(42, 125, 236, 0.24)
+                border-radius: 16px
+                padding: 40px
+                text-align: center
+                #customerCount
+                    color: $tb-primary
+                    font-weight: 600
+                .profit-amount
+                    font-size: 56px
+                    font-weight: 600
+                    color: $affiliate-text-primary
+                    display: block
+                    margin-bottom: 12px
+                p
+                    font-size: 14px
+                    color: $affiliate-text-secondary
+                    margin: 0 0 12px
+                .profit-bonus
+                    font-size: 14px
+                    font-weight: 500
+                    color: $tb-primary
+
+    #commission
+        padding: 0 0 80px
+        .commission-card
+            background: white
+            border-radius: 24px
+            padding: 40px
+            box-shadow: $affiliate-card-shadow
+            display: flex
+            gap: 96px
+            .commission-item
+                flex: 1
+                display: flex
+                flex-direction: column
+                gap: 12px
+                .commission-icon
+                    width: 64px
+                    height: 64px
+                    img
+                        width: 100%
+                        height: 100%
+                .commission-rate
+                    font-size: 28px
+                    font-weight: 600
+                    color: $affiliate-text-primary
+                    line-height: 44px
+                p
+                    font-size: 16px
+                    line-height: 28px
+                    color: $affiliate-text-secondary
+
+    #audience
+        padding: 0 0 80px
+        h2
+            font-size: 36px
+            font-weight: 500
+            line-height: 48px
+            color: $affiliate-text-primary
+            margin: 0 0 40px
+        .audience-cards
+            display: flex
+            gap: 16px
+        .audience-card
+            flex: 1
+            background: white
+            border: 1px solid rgba(42, 125, 236, 0.16)
+            border-radius: 24px
+            padding: 40px
+            display: flex
+            flex-direction: column
+            transition: box-shadow 0.3s ease
+            &:hover
+                box-shadow: 0 15px 50px -20px rgba(37, 51, 69, 0.15), 0 0 8px 0 rgba(37, 51, 69, 0.08)
+            .audience-icon
+                width: 56px
+                height: 56px
+                margin-bottom: 24px
+                img
+                    width: 100%
+                    height: 100%
+            h3
+                font-size: 20px
+                font-weight: 500
+                line-height: 32px
+                color: $affiliate-text-primary
+                margin: 0 0 8px
+            p
+                font-size: 16px
+                line-height: 28px
+                color: $affiliate-text-secondary
+                margin: 0 0 24px
+                flex: 1
+            .btn-outline
+                background: $tb-primary
+                color: white
+                border-color: $tb-primary
+                &:hover
+                    background: darken($tb-primary, 8%)
+                    color: white
+
+    #success
+        padding: 0 0 80px
+        .success-content
+            display: flex
+            align-items: flex-start
+            gap: 60px
+        .success-text
+            flex: 1
+            max-width: 480px
+            .success-tag
+                display: inline-flex
+                align-items: center
+                gap: 8px
+                background: #E4EEFD
+                border: 1px solid rgba(42, 125, 236, 0.24)
+                border-radius: 16px
+                padding: 4px 12px
+                margin-bottom: 16px
+                img
+                    width: 16px
+                    height: 16px
+                span
+                    font-size: 14px
+                    font-weight: 500
+                    color: $tb-primary
+            h2
+                font-size: 36px
+                font-weight: 500
+                line-height: 1.3
+                color: $affiliate-text-primary
+                margin: 0 0 24px
+                .blue-text
+                    color: $tb-primary
+            .success-description
+                font-size: 16px
+                line-height: 28px
+                color: $affiliate-text-secondary
+                margin: 0 0 32px
+            .success-list
+                display: flex
+                flex-direction: column
+                gap: 24px
+            .success-item
+                display: flex
+                gap: 16px
+                align-items: flex-start
+                .success-item-icon
+                    width: 24px
+                    height: 24px
+                    margin-top: 3.1px
+                    flex-shrink: 0
+                    img
+                        width: 100%
+                        height: 100%
+                .success-item-content
+                    h4
+                        font-size: 18px
+                        font-weight: 500
+                        line-height: 28px
+                        color: $affiliate-text-primary
+                        margin: 0 0 4px
+                    p
+                        font-size: 14px
+                        line-height: 24px
+                        color: $affiliate-text-secondary
+        .success-image
+            width: 435px
+            img
+                width: 100%
+                height: auto
+
+    #faq
+        padding: 0 0 80px
+        h2
+            font-size: 36px
+            font-weight: 500
+            line-height: 48px
+            color: $affiliate-text-primary
+            text-align: center
+            margin: 0 0 48px
+        .faq-list
+            margin: 0 auto
+        .faq-item
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08)
+            &:last-child
+                border-bottom: none
+        .faq-question
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: space-between
+            gap: 16px
+            padding: 20px 0
+            background: transparent
+            border: none
+            cursor: pointer
+            text-align: left
+            span
+                font-size: 20px
+                font-weight: 500
+                line-height: 32px
+                color: $affiliate-text-primary
+            .faq-arrow
+                flex-shrink: 0
+                color: $affiliate-text-disabled
+                transition: transform 0.3s ease
+            &[aria-expanded="true"] .faq-arrow
+                transform: rotate(180deg)
+        .faq-answer
+            max-height: 0
+            overflow: hidden
+            opacity: 0
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out
+            p
+                font-size: 16px
+                line-height: 28px
+                font-weight: 400
+                color: $affiliate-text-secondary
+                padding-bottom: 20px
+        .faq-item.active .faq-answer
+            max-height: 200px
+            opacity: 1
+            transition: max-height 0.3s ease-in, opacity 0.3s ease-in
+
+    #cta
+        padding: 0 0 80px
+        .cta-card
+            background: white
+            border-radius: 24px
+            padding: 48px
+            box-shadow: $affiliate-card-shadow
+            display: flex
+            flex-direction: column
+            align-items: center
+            text-align: center
+            h2
+                font-size: 36px
+                line-height: 48px
+                font-weight: 600
+                color: $affiliate-text-primary
+                margin: 0 0 16px
+            p
+                font-size: 18px
+                line-height: 30px
+                color: $affiliate-text-secondary
+                margin-bottom: 32px
+            .btn-primary
+                margin-bottom: 12px
+            .cta-note
+                font-size: 14px
+                line-height: 24px
+                color: #9E9E9E
+                margin-bottom: 0
+
+@media screen and (max-width: 1279px)
+    #affiliate
+        .affiliate-main
+            padding: 0 40px
+        .btn-primary
+            font-size: 16px
+        #hero
+            padding: 150px 0 80px
+            h1
+                font-size: 48px
+            .hero-description
+                font-size: 16px
+        .notification-card
+            &.card-1
+                left: -5%
+            &.card-2
+                right: -5%
+            &.card-3
+                left: -5%
+        #calculator
+            padding: 0 0 80px
+            .profit-display
+                .profit-amount
+                    font-size: 48px
+        #commission
+            padding: 0 0 80px
+            .commission-card
+                padding: 24px
+                p
+                    font-size: 14px
+        #audience
+            padding: 0 0 80px
+            .audience-card
+                padding: 24px
+                p
+                    font-size: 14px
+                .btn-outline
+                    font-size: 16px
+        #success
+            padding: 0 0 80px
+        #faq
+            padding: 0 0 80px
+            .faq-question
+                span
+                    font-size: 18px
+            .faq-answer
+                p
+                    font-size: 14px
+        #cta
+            padding: 0 0 80px
+            .cta-card
+                h2
+                    font-size: 36px
+
+@media screen and (max-width: 959px)
+    #affiliate
+        #hero
+            padding: 120px 0 40px
+            .hero-content
+                flex-direction: column
+            .hero-text
+                max-width: 100%
+            .hero-image
+                width: 100%
+                max-width: 480px
+                margin: 0 auto
+        #calculator
+            .calculator-card
+                padding: 32px 24px 24px
+            .profit-display
+                .profit-amount
+                    font-size: 40px
+        #commission
+            .commission-card
+                flex-direction: column
+                gap: 32px
+        #audience
+            h2
+                font-size: 28px
+            .audience-cards
+                flex-direction: column
+        #success
+            .success-content
+                flex-direction: column
+            .success-text
+                max-width: 100%
+            .success-image
+                width: 100%
+                max-width: unset
+                margin: 0 auto
+            .success-item-content
+                h4
+                    font-size: 18px
+            h2
+                font-size: 28px
+        #faq
+            h2
+                font-size: 28px
+        #cta
+            .cta-card
+                h2
+                    font-weight: 500
+                p
+                    font-size: 16px
+
+@media screen and (max-width: 599px)
+    #affiliate
+        .affiliate-main
+            padding: 0 24px
+        #hero
+            padding: 120px 0 30px
+            h1
+                font-size: 40px
+            .hero-description
+                font-size: 16px
+            .hero-image
+                max-width: 100%
+            .notification-card
+                padding: 10px
+                gap: 8px
+                border-radius: 12px
+                .notification-icon
+                    width: 28px
+                    height: 28px
+                .notification-text
+                    margin-right: 15px
+                    .notification-brand
+                        font-size: 10px
+                    .notification-title
+                        font-size: 12px
+                .notification-amount
+                    .notification-time
+                        font-size: 10px
+                    .notification-value
+                        font-size: 12px
+                &.card-1
+                    left: -3%
+                    top: 18%
+                &.card-2
+                    right: 1%
+                    top: 40%
+                &.card-3
+                    left: -3%
+                    bottom: 22%
+        #calculator
+            padding: 30px 0 60px
+            .calculator-card
+                .profit-display
+                    padding: 24px
+                    .profit-amount
+                        font-size: 40px
+        #commission
+            padding: 0 0 60px
+            .commission-card
+                padding: 24px
+                .commission-rate
+                    font-size: 20px
+        #audience
+            padding: 0 0 60px
+            h2
+                font-size: 32px
+            .audience-card
+                padding: 24px
+        #success
+            padding: 0 0 60px
+            h2
+                font-size: 32px
+        #faq
+            padding: 0 0 60px
+            h2
+                font-size: 32px
+            .faq-question span
+                font-size: 16px
+        #cta
+            padding: 0 0 60px
+            .cta-card
+                padding: 40px 20px
+                h2
+                    font-size: 32px

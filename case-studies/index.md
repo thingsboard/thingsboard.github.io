@@ -43,7 +43,7 @@ itemsPerPage: "9"
         {% endfor %}
     </div>
     <section id="case-studies-clients">
-        <div class="client-card" id="Cold chain monitoring">
+        <div class="client-card" data-category="Cold chain monitoring">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/ariot.webp');">
                 <a class="content" href="/case-studies/ariot">
                     <img style="height: 75px" class="logo" src="/images/case-studies/ariot.svg" title="ARIOT IOT TEKNOLOJILERI" alt="ARIOT IOT TEKNOLOJILERI logo">
@@ -53,7 +53,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Industry 4.0">
+        <div class="client-card" data-category="Industry 4.0">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/super-bock-group.webp');">
                 <a class="content" href="/case-studies/super-bock">
                     <img class="logo" src="/images/case-studies/super-bock-group.svg" title="Super Bock Group" alt="Super Bock Group logo">
@@ -63,7 +63,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart city">
+        <div class="client-card" data-category="Smart city">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('/images/case-studies/kiotera.webp');">
                 <a class="content" href="/case-studies/kiotera">
                     <img class="logo" src="/images/case-studies/kiotera.svg" title="KIOTERA" alt="KIOTERA logo">
@@ -73,27 +73,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart energy">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('/images/case-studies/oxi.webp');">
-                <a class="content" href="/case-studies/oxi">
-                    <img class="logo" src="/images/case-studies/oxi.svg" title="OXI Trade" alt="OXI Trade logo">
-                    <p>Empowering alternative energy: how OXI TRADE streamlined IoT infrastructure with ThingsBoard</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about how OXI TRADE streamlined IoT infrastructure with ThingsBoard</span>
-                </a>
-            </div>
-        </div>
-        <div class="client-card" id="Smart city">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tjk-solutions.webp');">
-                <a class="content" href="/case-studies/tjk-solutions">
-                    <img class="logo" src="/images/case-studies/tjk-solutions.svg" title="TJK-Solutions" alt="TJK-Solutions logo">
-                    <p>Securing Critical Communication: How TJK-Solutions Uses ThingsBoard to Monitor Meshtastic Infrastructure in Disaster Response</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about securing Critical Communication: How TJK-Solutions Uses ThingsBoard to Monitor Meshtastic Infrastructure in Disaster Response</span>
-                </a>
-            </div>
-        </div>
-        <div class="client-card" id="Smart city">
+        <div class="client-card" data-category="Smart city">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/x-telia.webp');">
                 <a class="content" href="/case-studies/xtelia">
                     <img style="height: 35px" class="logo" src="/images/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo">
@@ -103,7 +83,37 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Industry 4.0">
+        <div class="client-card" data-category="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('/images/case-studies/oxi.webp');">
+                <a class="content" href="/case-studies/oxi">
+                    <img class="logo" src="/images/case-studies/oxi.svg" title="OXI Trade" alt="OXI Trade logo">
+                    <p>Empowering alternative energy: how OXI TRADE streamlined IoT infrastructure with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how OXI TRADE streamlined IoT infrastructure with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" data-category="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tjk-solutions.webp');">
+                <a class="content" href="/case-studies/tjk-solutions">
+                    <img class="logo" src="/images/case-studies/tjk-solutions.svg" title="TJK-Solutions" alt="TJK-Solutions logo">
+                    <p>Securing Critical Communication: How TJK-Solutions Uses ThingsBoard to Monitor Meshtastic Infrastructure in Disaster Response</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about securing Critical Communication: How TJK-Solutions Uses ThingsBoard to Monitor Meshtastic Infrastructure in Disaster Response</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" data-category="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/energenix.webp');">
+                <a class="content" href="/case-studies/energenix">
+                    <img class="logo" src="/images/case-studies/energenix.svg" title="Energenix" alt="Energenix logo">
+                    <p>Scaling renewable energy intelligence: how Energenix uses ThingsBoard to monitor and optimize 120+ MW of solar power assets</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how Energenix uses ThingsBoard to monitor and optimize 120+ MW of solar power assets</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" data-category="Industry 4.0">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/dacor.webp');">
                 <a class="content" href="/case-studies/dacor">
                     <img class="logo" src="/images/case-studies/dacor.svg" title="süc//dacor GmbH" alt="süc//dacor GmbH logo">
@@ -113,7 +123,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart city">
+        <div class="client-card" data-category="Smart city">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iioote.webp');">
                 <a class="content" href="/case-studies/iioote">
                     <img style="height: 35px" class="logo" src="/images/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo">
@@ -123,7 +133,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart energy">
+        <div class="client-card" data-category="Smart energy">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/comet.webp');">
                 <a class="content" href="/case-studies/comet">
                     <img style="height: 42px" class="logo" src="/images/case-studies/comet.svg" title="co.met" alt="comet logo">
@@ -133,7 +143,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart infrastructure">
+        <div class="client-card" data-category="Smart infrastructure">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/obb.webp');">
                 <a class="content" href="/case-studies/obb-infra">
                     <img class="logo" src="/images/case-studies/obb.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo">
@@ -143,7 +153,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Cold chain monitoring">
+        <div class="client-card" data-category="Cold chain monitoring">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/senseing.webp');">
                 <a class="content" href="/case-studies/senseing">
                     <img class="logo" src="/images/case-studies/senseing.svg" title="SenseING GmbH" alt="SenseING GmbH logo">
@@ -153,7 +163,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart city">
+        <div class="client-card" data-category="Smart city">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/awake.webp');">
                 <a class="content" href="/case-studies/awake">
                     <img style="height: 35px" class="logo" src="/images/case-studies/awake.svg" title="Awake" alt="Awake">
@@ -163,7 +173,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart agriculture">
+        <div class="client-card" data-category="Smart agriculture">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/agrolog.webp');">
                 <a class="content" href="/case-studies/agrolog">
                     <img class="logo" src="/images/case-studies/agrolog.svg" title="Agrolog" alt="ASG-Tech logo">
@@ -173,7 +183,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Facility management">
+        <div class="client-card" data-category="Facility management">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/suessco.webp');">
                 <a class="content" href="/case-studies/suessco">
                     <img class="logo" src="/images/case-studies/suessco.svg" title="SuessCo Sensors GmbH" alt="SuessCo Sensors GmbH logo">
@@ -183,7 +193,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart IoT solution">
+        <div class="client-card" data-category="Smart IoT solution">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/asg-tech.webp');">
                 <a class="content" href="/case-studies/asg-tech">
                     <img class="logo" src="/images/case-studies/asg-tech.svg" title="ASG-Tech" alt="ASG-Tech logo">
@@ -193,7 +203,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Telecom">
+        <div class="client-card" data-category="Telecom">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/t-mobile-cz.webp');">
                 <a class="content" href="/case-studies/t-mobile-cz">
                     <img style="height: 87px" class="logo" src="/images/case-studies/t-mobile-cz.svg" title="T-Mobile-CZ" alt="T-Mobile-CZ logo">
@@ -203,7 +213,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart agriculture">
+        <div class="client-card" data-category="Smart agriculture">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/keners.webp');">
                 <a class="content" href="/case-studies/keners">
                     <img class="logo" src="/images/case-studies/keners.svg" title="Keners" alt="Keners logo">
@@ -213,7 +223,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart energy">
+        <div class="client-card" data-category="Smart energy">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/berliner-energieinstitut.webp');">
                 <a class="content" href="/case-studies/berliner-energieinstitut">
                     <img class="logo" src="/images/case-studies/berliner-energieinstitut.svg" title="Berliner Energieinstitut" alt="Berliner Energieinstitut logo">
@@ -223,7 +233,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart energy">
+        <div class="client-card" data-category="Smart energy">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/e2cbms.webp');">
                 <a class="content" href="/case-studies/e2cbms">
                     <img style="height: 87px" class="logo" src="/images/case-studies/e2cbms.svg" title="Environmental Energy Controls" alt="Environmental Energy Controls logo">
@@ -233,7 +243,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart energy">
+        <div class="client-card" data-category="Smart energy">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/circutor.webp');">
                 <a class="content" href="/case-studies/circutor">
                     <img style="height: 42px" class="logo" src="/images/case-studies/circutor.svg" title="co.met" alt="circutor logo">
@@ -243,7 +253,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Facility management">
+        <div class="client-card" data-category="Facility management">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/oneserve.webp');">
                 <a class="content" href="/case-studies/oneserve">
                     <img class="logo" src="/images/case-studies/oneserve.svg" title="Oneserve" alt="Oneserve logo">
@@ -253,7 +263,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart IoT solution">
+        <div class="client-card" data-category="Smart IoT solution">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/mdeg.webp');">
                 <a class="content" href="/case-studies/mdeg">
                     <img style="height: 87px" class="logo" src="/images/case-studies/mdeg.svg" title="mdeg" alt="mdeg logo">
@@ -263,7 +273,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart infrastructure">
+        <div class="client-card" data-category="Smart infrastructure">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tps.webp');">
                 <a class="content" href="/case-studies/tps">
                     <img style="height: 87px" class="logo" src="/images/case-studies/tps.svg" title="TPS" alt="TPS logo">
@@ -273,7 +283,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart energy">
+        <div class="client-card" data-category="Smart energy">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/nettra.webp');">
                 <a class="content" href="/case-studies/nettra">
                     <img class="logo" src="/images/case-studies/nettra.svg" title="Nettra" alt="Nettra logo">
@@ -283,7 +293,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart infrastructure">
+        <div class="client-card" data-category="Smart infrastructure">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/kalitec.webp');">
                 <a class="content" href="/case-studies/kalitec">
                     <img class="logo" src="/images/case-studies/kalitec.svg" title="Kalitec" alt="Kalitec logo">
@@ -293,7 +303,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Warehouse monitoring">
+        <div class="client-card" data-category="Warehouse monitoring">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/vypin.webp');">
                 <a class="content" href="/case-studies/vypin">
                     <img class="logo" src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
@@ -303,7 +313,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Telecom">
+        <div class="client-card" data-category="Telecom">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tektelic.webp');">
                 <a class="content" href="/case-studies/tektelic">
                     <img style="height: 56px" class="logo" src="/images/case-studies/tektelic.svg" title="TEKTELIC" alt="TEKTELIC logo">
@@ -313,7 +323,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Industry 4.0">
+        <div class="client-card" data-category="Industry 4.0">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iona.webp');">
                 <a class="content" href="/case-studies/iona">
                     <img class="logo" src="/images/case-studies/iona.svg" title="IONA Tech" alt="IONA Tech logo">

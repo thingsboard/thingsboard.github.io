@@ -1335,7 +1335,8 @@ var tb = (function () {
 			}
 
 			content.forEach(item => {
-				const itemIds = item.id.split('|');
+				const categoryAttr = item.dataset.category || item.id;
+				const itemIds = categoryAttr.split('|');
 				const currentItemStatus = checkedIds.some(id => itemIds.includes(id));
 				const shouldBeVisible = currentItemStatus || itemIds[0] === 'all';
 
