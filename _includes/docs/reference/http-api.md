@@ -19,28 +19,34 @@ ThingsBoard server nodes act as an HTTP Server that supports both HTTP and HTTPS
 ## Client libraries setup
 
 Many HTTP client libraries are available for different platforms and languages.
-The examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
+The examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL){:target="_blank"}.
 
-{% unless docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
-In order to setup this tool, you can use instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
-{% endunless %}
+**Install curl for Linux**
+```bash
+sudo apt-get install curl
+```
+{: .copy-code}
 
+> Starting with Windows 10 build 17063 and macOS 10.2 6C115 (Jaguar), cURL is available by default.
 
 <hr>
 
-## HTTP Authentication and error codes
+## HTTP authentication method
 
-This guide uses **access token–based authentication**. 
-The application needs to include **access token** as a path parameter in each HTTP request.
+ThingsBoard supports [access token](/docs/user-guide/ssl/http-access-token/){:target="_blank"}-based authentication to secure HTTP connections. For each HTTP request, the client must include the access token as part of the request URL.
+
+> The examples in this guide use **access token–based authentication**.
 
 **Possible error codes and their reasons:**
 - **400 Bad Request** - Invalid URL, request parameters or body
 - **401 Unauthorized** - Invalid **access token**
 - **404 Not Found** - Requested resource does not exist
 
+<hr>
+
 {% include templates/api/key-value-format.md %}
 
-Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
+Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization){:target="_blank"} for more details.
 
 <hr>
 
@@ -54,9 +60,6 @@ http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
-Where
-- **{{HOST_NAME}}** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
@@ -65,9 +68,11 @@ Where
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
+
+> ⚠️ Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}<code>$ACCESS_TOKEN</code> is the device&#39;s access token.
 
 The simplest supported data formats are:
 
@@ -89,7 +94,7 @@ In case your device is able to get the client-side timestamp, you can use follow
 {"ts":1451649600512, "values":{"key1":"value1", "key2":"value2"}}
 ```
 
-Where **1451649600512** is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) with milliseconds precision.
+Where **1451649600512** is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time){:target="_blank"} with milliseconds precision.
 For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00.512 GMT'
 
 <br>
@@ -127,7 +132,7 @@ Telemetry data:
 ```
 
 **Example 2**.   
-Publish data as an object without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-object.json**](/docs/reference/resources/telemetry-data-as-object.json) file.
+Publish data as an object without timestamp (server-side timestamp will be used) using data from [telemetry-data-as-object.json](/docs/reference/resources/telemetry-data-as-object.json){:target="_blank" download="telemetry-data-as-object.json"} file.
 
 Execute the command:
 
@@ -166,7 +171,7 @@ The content of the JSON file:
 ```
 
 **Example 3**.   
-Publish data as an array of objects without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-array.json**](/docs/reference/resources/telemetry-data-as-array.json) file.
+Publish data as an array of objects without timestamp (server-side timestamp will be used) using data from [telemetry-data-as-array.json](/docs/reference/resources/telemetry-data-as-array.json){:target="_blank" download="telemetry-data-as-array.json"} file.
 
 Execute the command:
 
@@ -192,7 +197,7 @@ The content of the JSON file:
 [{"key1":"value1"}, {"key2":true}]
 ```
 
-**Example 4**. Publish data as an object with timestamp (telemetry timestamp will be used) using data from [**telemetry-data-with-ts.json**](/docs/reference/resources/telemetry-data-with-ts.json) file.
+**Example 4**. Publish data as an object with timestamp (telemetry timestamp will be used) using data from [telemetry-data-with-ts.json](/docs/reference/resources/telemetry-data-with-ts.json){:target="_blank" download="telemetry-data-with-ts.json"} file.
 
 Execute the command:
 
@@ -239,9 +244,9 @@ The content of the JSON file:
 
 ThingsBoard attributes API allows devices to
 
-* Upload [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes to the server.
-* Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
-* Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
+* Upload [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types){:target="_blank"} device attributes to the server.
+* Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types){:target="_blank"} and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types){:target="_blank"} device attributes from the server.
+* Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types){:target="_blank"} device attributes from the server.
 
 <hr>
 
@@ -265,10 +270,9 @@ http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes
 
 {% endif %}
 
-Where {% unless docsPrefix contains "paas/" %}   
-&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
-&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
-
+> Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}<code>$ACCESS_TOKEN</code> is the device&#39;s access token.
 <br>
 
 Below are the examples of commands for publishing different types of telemetry data.
@@ -290,7 +294,7 @@ curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3"
 {% endif %}
 
 **Example 2**.   
-Publish client-side attributes update from the [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file.
+Publish client-side attributes update from the [new-attributes-values.json](/docs/reference/resources/new-attributes-values.json){:target="_blank" download="new-attributes-values.json"} file.
 
 {% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 
@@ -338,7 +342,7 @@ http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,at
 ```
 {: .copy-code}
 
-- {% endif %}
+{% endif %}
 {% if docsPrefix contains "paas/" %}
 
 ```shell
@@ -348,9 +352,9 @@ http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,at
 
 {% endif %}
 
-Where {% unless docsPrefix contains "paas/" %}   
-&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
-&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
+> Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}<code>$ACCESS_TOKEN</code> is the device&#39;s access token.
 
 <br>
 
@@ -406,9 +410,9 @@ http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/attributes/updates
 
 {% endif %}
 
-Where {% unless docsPrefix contains "paas/" %}   
-&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
-&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
+> Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}<code>$ACCESS_TOKEN</code> is the device&#39;s access token.
 
 Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
 
@@ -453,10 +457,6 @@ http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
-Where {% unless docsPrefix contains "paas/" %}   
-&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
-&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
-
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
@@ -465,9 +465,11 @@ Where {% unless docsPrefix contains "paas/" %}
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
+
+> Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}<code>$ACCESS_TOKEN</code> is the device&#39;s access token.
 
 Once subscribed, a client may receive rpc request or a timeout message if there are no requests to a particular device.
 An example of RPC request body is shown below:
@@ -483,11 +485,10 @@ An example of RPC request body is shown below:
 }
 ```
 
-where 
-
- - **id** - request id, integer request identifier
- - **method** - RPC method name, string
- - **params** - RPC method params, custom json object 
+> Where   
+&#8194;&#8226;&#8194;**id** - request id, integer request identifier   
+&#8194;&#8226;&#8194;**method** - RPC method name, string   
+&#8194;&#8226;&#8194;**params** - RPC method params, custom json object
 
 It is possible to reply to them using POST request to the following URL:
 
@@ -507,11 +508,10 @@ http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/rpc/{$id}
 
 {% endif %}
 
-Where
-- **$id** is an integer request identifier.
+> Where <code>$id</code> is an integer request identifier.
 
 <br>
-**Let's look at an example**:
+**Let&#39;s look at an example**:
 
 - Use **RPC debug terminal** widget in your ThingsBoard instance;
 - Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag.
@@ -533,9 +533,9 @@ curl -v -X GET {{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
 
 {% endif %}
 
-Where {% unless docsPrefix contains "paas/" %}   
-&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
-&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
+> Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}<code>$ACCESS_TOKEN</code> is the device&#39;s access token.
 
 - Send an RPC request "connect" to the device using **RPC debug terminal** widget;
 - Save the [rpc-response.json](/docs/reference/resources/rpc-response.json){:target="_blank" download="rpc-response.json"} file to your PC;
@@ -576,7 +576,6 @@ http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
-
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 
@@ -587,20 +586,20 @@ http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/rpc
 
 {% endif %}
 
-Both request and response body should be valid JSON documents. The content of the documents is specific to the rule node that will handle your request.
+> Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}<code>$ACCESS_TOKEN</code> is the device&#39;s access token.
 
-Where {% unless docsPrefix contains "paas/" %}   
-&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
-&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
+Both request and response body should be valid JSON documents. The content of the documents is specific to the rule node that will handle your request.
 
 <br>
 
 **Example**
-- In the {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}**Edge** {% endif %}**Root Rule Chain** add two nodes: [script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script){:target="_blank"} and [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply){:target="_blank"}.
+- In the {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}**Edge** {% endif %}**Root Rule Chain** add two nodes: [transformation script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script){:target="_blank"} and [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply){:target="_blank"}. Connect them to "[Log RPC from Device](/docs/user-guide/rule-engine-2-0/nodes/action/log){:target="_blank"}" action node with "**Success**" link.
 - In the **script** node enter the function:
 
 ```shell
-return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
+return {msg: {time: new Date()}, metadata: metadata, msgType: msgType};
 ```
 {: .copy-code}
 
@@ -627,7 +626,7 @@ curl -X POST -d @rpc-client-request.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc -
 You should receive a response from the server:
 
 ```shell
-{"time":"2016 11 21 12:54:44.287"}
+{"time":"Thursday, February 5, 2026, 9:08:22 AM Coordinated Universal Time"}
 ```
 
 {% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
@@ -661,9 +660,9 @@ http(s)://{{HOST_NAME}}/api/v1/$ACCESS_TOKEN/claim
 
 {% endif %}
 
-Where {% unless docsPrefix contains "paas/" %}   
-&#8194;&#8226;&#8194;**{{HOST_NAME}}** is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
-&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** is your device&#39;s access token.
+> Where {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> is your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}<code>$ACCESS_TOKEN</code> is the device&#39;s access token.
 
 **Request payload**   
 The request body must contain the following JSON structure:

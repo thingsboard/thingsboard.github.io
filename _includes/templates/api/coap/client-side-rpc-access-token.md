@@ -25,11 +25,11 @@ Both request and response body should be valid JSON documents. The content of th
 <br>
 **Example**
 
-- In the {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}**Edge** {% endif %}**Root Rule Chain** add two nodes: [script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script){:target="_blank"} and [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply){:target="_blank"}.
+- In the {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}**Edge** {% endif %}**Root Rule Chain** add two nodes: [transformation script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script){:target="_blank"} and [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply){:target="_blank"}. Connect them to "[Log RPC from Device](/docs/user-guide/rule-engine-2-0/nodes/action/log){:target="_blank"}" action node with "**Success**" link.
 - In the **script** node enter the function:
 
 ```shell
-return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
+return {msg: {time: new Date()}, metadata: metadata, msgType: msgType};
 ```
 {: .copy-code}
 
@@ -59,7 +59,7 @@ cat rpc-client-request.json | coap post coap://{{coapHostName}}/api/v1/$ACCESS_T
 - You should receive a response from the server:
 
 ```shell
-{"time":"2016 11 21 12:54:44.287"}
+{"time":"Thursday, February 5, 2026, 9:08:22 AM Coordinated Universal Time"}
 ```
 
 {% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}

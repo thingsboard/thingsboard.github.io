@@ -31,13 +31,12 @@ Once subscribed, a client may receive RPC requests. An example of RPC request bo
 }
 ```
 
-Where
+> Where   
+&#8194;&#8226;&#8194;**id** - request id, integer request identifier   
+&#8194;&#8226;&#8194;**method** - RPC method name, string   
+&#8194;&#8226;&#8194;**params** - RPC method params, custom json object
 
-- **id** - request id, integer request identifier;
-- **method** - RPC method name, string;
-- **params** - RPC method params, custom json object.
-
-and can reply to them using POST request to the following URL:
+To reply to an RPC request, send a POST request to the following URL
 
 {% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 
@@ -56,7 +55,7 @@ coap://{{coapHostName}}/api/v1/rpc/{$id}
 
 {% endif %}
 
-Where **$id** is an integer request identifier.
+> Where <code>$id</code> is an integer request identifier.
 
 <br>
 

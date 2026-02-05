@@ -36,13 +36,13 @@ npm install coap-cli -g
 {% include templates/info-banner.md content=difference %}
 
 **Install coap-client**
-- **Ubuntu 20.04:** 
+- **Ubuntu 20.04+** 
   ```bash
   sudo apt install libcoap2-bin
   ```
   {: .copy-code}
 
-- for **Ubuntu 18.04:**
+- for **Ubuntu 18.04**
   ```bash
   sudo apt install libcoap1-bin
   ```
@@ -55,10 +55,10 @@ npm install coap-cli -g
 ThingsBoard supports two authentication mechanisms to secure COAP connections.
 
 **Supported methods**:
-- [Access token](/docs/{{docsPrefix}}user-guide/access-token/){:target="_blank"}. Uses a unique device access token included as a path parameter in each CoAP request.
-- [X.509 certificates](/docs/{{docsPrefix}}user-guide/certificates/){:target="_blank"}. Uses digital certificates to authenticate devices and establish secure communication based on **public key infrastructure (PKI)**.
+- [Access token](/docs/{{docsPrefix}}user-guide/ssl/coap-access-token/){:target="_blank"}. Uses a unique device access token included as a path parameter in each CoAP request.
+- [X.509 certificates](/docs/{{docsPrefix}}user-guide/ssl/coap-x509-certificates/){:target="_blank"}. Uses digital certificates to authenticate devices and establish secure communication based on **public key infrastructure (PKI)**.
 
-> This guide uses **access token–based authentication**. 
+> The examples in this guide use **access token–based authentication**.
 
 **Possible error codes and their reasons:**
 - **4.00 Bad Request** - Invalid URL, parameters, or payload

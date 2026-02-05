@@ -52,8 +52,7 @@ ThingsBoard supports multiple authentication mechanisms to secure MQTT connectio
 
 Topic names and payload formats for MQTT communication are configured via the **Device profile**. For more details, see [here](/docs/user-guide/device-profiles/#mqtt-transport-type){:target="_blank"}.
 
-> **Note**   
-  This guide uses **access token–based authentication**.
+> The examples in this guide use **access token–based authentication**.
 
 <hr>
 
@@ -509,11 +508,12 @@ Your MQTT gateway device will receive a service RPC about removal or renaming of
 In order to send RPC commands to server, send PUBLISH message to the following topic:
 
 ```shell
-v1/devices/me/rpc/request/$request_id
+v1/devices/me/rpc/request/$REQUEST_ID
 ```
 {: .copy-code}
 
-where **$request_id** is an integer request identifier.
+> Where <code>$REQUEST_ID</code> is an integer request identifier.
+
 The response from server will be published to the following topic:
 
 ```shell
@@ -547,11 +547,11 @@ A,The content of the "mqtt-js-rpc-from-client.js" file,javascript,resources/mqtt
 {% include tabs.html %}
 
 **2.** Now, follow these steps:
-- In the {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}**Edge** {% endif %}**Root Rule Chain** add two nodes: [script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script){:target="_blank"} and [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply){:target="_blank"}.
+- In the {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}**Edge** {% endif %}**Root Rule Chain** add two nodes: [transformation script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script){:target="_blank"} and [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply){:target="_blank"}. Connect them to "[Log RPC from Device](/docs/user-guide/rule-engine-2-0/nodes/action/log){:target="_blank"}" action node with "**Success**" link.
 - In the **script** node enter the function:
 
 ```shell
-return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
+return {msg: {time: new Date()}, metadata: metadata, msgType: msgType};
 ```
 {: .copy-code}
 
@@ -565,7 +565,11 @@ node mqtt-js-rpc-from-client.js
 ```
 {: .copy-code}
 
-- You should receive a response from the server.
+You should receive a response from the server:
+
+```shell
+{"time":"Thursday, February 5, 2026, 9:08:22 AM Coordinated Universal Time"}
+```
 
 {% unless docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 {% include images-gallery.html imageCollection="client-side-rpc" %}
