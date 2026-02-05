@@ -3,7 +3,7 @@ layout: device
 title: How to connect Vapeless Gas detection indoor Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN
-vendor: NanoSensorics
+vendor: Nano Sensorics
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: vapeless-gas-detection-indoor-sensor.png
 converters20: true

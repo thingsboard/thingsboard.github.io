@@ -74,7 +74,7 @@
                     {% if pageFile != 'guidelines.md' %}
                         {% assign deviceName = page.title | replace: "How to connect ", "" | replace: "How to install ThingsBoard Edge on ", "" | replace: " to ThingsBoard?", "" | replace: "?", "" %}
                         {% assign deviceImg = "/images/devices-library/" | append: page.deviceImageFileName %}
-                        <a href="{{ page.url }}" class="card"  data-hardware-types="{{ page.hardwareType | join: '|' }}" data-connectivity="{{ page.connectivity | join: '|' }}" data-industry="{{ page.industry | join: '|' }}" data-use-cases="{{ page.useCase | join: '|' }}">
+                        <a href="{{ page.url }}" class="card"  data-hardware-types="{{ page.hardwareType | join: '|' }}" data-connectivity="{{ page.connectivity | join: '|' }}" data-industry="{{ page.industry | join: '|' }}" data-use-cases="{{ page.useCase | join: '|' }}"{% if page.vendor %} data-vendor="{{ page.vendor }}"{% endif %}>
                             <div class="card-wrapper">
                                 <div class="card-image">
                                     <img class="logo" src="{{ deviceImg }}" loading="lazy">

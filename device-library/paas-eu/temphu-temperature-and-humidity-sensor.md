@@ -3,7 +3,7 @@ layout: device
 title: How to connect TempHu Temperature and Humidity Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN
-vendor: NanoSensorics
+vendor: Nano Sensorics
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: temphu-temperature-and-humidity-sensor.png
 converters20: true
