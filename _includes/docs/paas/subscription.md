@@ -687,17 +687,16 @@ See product [homepage](/products/trendz/){:target="_blank"} for more details.
 
 ## How to cancel my subscription?
 
-To terminate your ThingsBoard Cloud subscription, follow these steps:
+To cancel your ThingsBoars {{cloudPrefix}} Cloud subscription, follow these steps:
 
-- Log in to ThingsBoard Cloud as Tenant Administrator;
-- Navigate to the "**Plan and billing**" page in the main navigation menu;
-- Locate the **Management** section, which contains your subscription details and options to control it;
-- Click the "**Cancel subscription**" button and follow the instructions to cancel your subscription;
-- Confirm the action by clicking the "**Cancel subscription**" button in the confirmation window.
+- Navigate to **Plan and billing**. 
+- Click **Cancel subscription**. 
+- Follow the on-screen instructions. 
+- Confirm the cancellation by clicking **Cancel subscription** in the confirmation dialog.
 
-{% capture difference %}
+{% capture update-only-keys-cluster-mode %}
 **Note:**
 <br>
 This action cannot be undone. This will **permanently delete** your tenant account, all devices, assets, dashboards, rule-chains, users and other entities, all telemetry data and alarms.
 {% endcapture %}
-{% include templates/info-banner.md content=difference %}
+{% include templates/warn-banner.md content=update-only-keys-cluster-mode %}

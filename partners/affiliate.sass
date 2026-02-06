@@ -168,7 +168,8 @@ $affiliate-card-shadow: -4px 15px 50px -20px rgba(37, 51, 69, 0.15), 0 0 8px rgb
             align-items: center
             gap: 12px
             padding: 13.4px
-            background: rgba(255, 255, 255, 0.9)
+            background: rgba(255, 255, 255, 0.8)
+            backdrop-filter: blur(4px)
             -webkit-backdrop-filter: blur(8px)
             border: 1px solid rgba(255, 255, 255, 0.32)
             border-radius: 16px
@@ -309,7 +310,7 @@ $affiliate-card-shadow: -4px 15px 50px -20px rgba(37, 51, 69, 0.15), 0 0 8px rgb
                 color: $affiliate-text-secondary
                 font-weight: 500
             .profit-display
-                background: #F4F8FE
+                background: $affiliate-bg
                 border: 1px solid rgba(42, 125, 236, 0.24)
                 border-radius: 16px
                 padding: 40px
@@ -371,14 +372,11 @@ $affiliate-card-shadow: -4px 15px 50px -20px rgba(37, 51, 69, 0.15), 0 0 8px rgb
         .audience-card
             flex: 1
             background: white
-            border: 1px solid rgba(42, 125, 236, 0.16)
             border-radius: 24px
             padding: 40px
             display: flex
             flex-direction: column
-            transition: box-shadow 0.3s ease
-            &:hover
-                box-shadow: 0 15px 50px -20px rgba(37, 51, 69, 0.15), 0 0 8px 0 rgba(37, 51, 69, 0.08)
+            box-shadow: $affiliate-card-shadow
             .audience-icon
                 width: 56px
                 height: 56px
@@ -510,7 +508,6 @@ $affiliate-card-shadow: -4px 15px 50px -20px rgba(37, 51, 69, 0.15), 0 0 8px rgb
                 color: $affiliate-text-primary
             .faq-arrow
                 flex-shrink: 0
-                color: $affiliate-text-disabled
                 transition: transform 0.3s ease
             &[aria-expanded="true"] .faq-arrow
                 transform: rotate(180deg)
@@ -526,7 +523,7 @@ $affiliate-card-shadow: -4px 15px 50px -20px rgba(37, 51, 69, 0.15), 0 0 8px rgb
                 color: $affiliate-text-secondary
                 padding-bottom: 20px
         .faq-item.active .faq-answer
-            max-height: 200px
+            max-height: 500px
             opacity: 1
             transition: max-height 0.3s ease-in, opacity 0.3s ease-in
 
