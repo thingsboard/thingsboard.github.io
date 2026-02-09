@@ -109,7 +109,7 @@ How it works:
 - additional updates arriving within the interval do not trigger aggregation again
 - after the interval ends, aggregation run again using the latest available data
 
-> Minimum time between telemetry aggregations: 60 seconds.
+> Minimum time between telemetry aggregations: 10 seconds.
 
 This prevents excessive reprocessing and reduces system load in high-frequency environments.
 
@@ -254,7 +254,7 @@ The field will:
         title: Second metric settings:<br>- **Metric name:** maxTemperature<br>- **Aggregation:** Maximum<br>- **Value source:** key<br>- **Argument name:** temperature.
     ===
         /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-11-ce.png
-        title: Deduplication interval: 60 seconds.<br>The output value will be stored as a telemetry. Click **Add** to save the calculation field.
+        title: Deduplication interval: 10 seconds.<br>The output value will be stored as a telemetry. Click **Add** to save the calculation field.
 '
 %}
 

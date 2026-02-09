@@ -1,8 +1,8 @@
 The CoAP client has to issue the GET request to
 
-{% if docsPrefix == null or docsPrefix == "pe/"%}
+{% if docsPrefix == nil or docsPrefix == "pe/" or docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
 ```shell
-coap get coap://$THINGSBOARD_HOST_NAME/api/v1/firmware?title=$TITLE&version=$VERSION
+coap get coap://{{HOST_NAME}}/api/v1/firmware?title=$TITLE&version=$VERSION
 ```
 {: .copy-code}
 

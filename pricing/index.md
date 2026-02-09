@@ -45,7 +45,7 @@ defaultActivePricingSection: thingsboard-pe-options
                  data-product-id="thingsboard-private-cloud"
                  onClick="activateProductSection('thingsboard-private-cloud')">
                 <h3 id="Pricing_PE_PrivateCloud" class="gtm_button faq" data-faq-id="tb-private-cloud-what-does-thingsboard-private-cloud-stand-for"
-                    data-faq-tooltip="Private Cloud is a dedicated, isolated ThingsBoard Professional Edition cluster run by us for you. You get enterprise-grade control and security—without the ops overhead.">Private Cloud<a class="faq-link faq-link-70"></a></h3>'
+                    data-faq-tooltip="Private Cloud is a dedicated, isolated ThingsBoard Professional Edition cluster run by us for you. You get enterprise-grade control and security—without the ops overhead.">Private Cloud<a class="faq-link faq-link-70"></a></h3>
             </div>
             <div id="Pricing_PE_SM" class="solution thingsboard-pe gtm_button faq" data-product-id="thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
                 <h3 id="Pricing_PE_SM" class="gtm_button faq" data-faq-id="pe-pay-as-you-go-self-managed-definition" data-faq-tooltip="Self-managed lets you run ThingsBoard on your own infrastructure (on-prem or cloud). Ideal when you need full environment control and prefer to manage operations in-house.">Self-managed<a class="faq-link faq-link-70"></a></h3>
@@ -898,7 +898,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">10 devices</div>
                         <div class="pricing-square-item">10 assets</div>
-                        <div class="pricing-square-item">1 production instance</div>
+                        <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-production-instances" data-faq-tooltip="A single production node to run your solution. Perfect for getting to market quickly. Can be easily expanded into a cluster.">
+                            1 production instance<a class="faq-link"></a>
+                        </div>
                         <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support<a class="faq-link"></a>
                         </div>
@@ -925,7 +927,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">50 devices</div>
                         <div class="pricing-square-item">50 assets</div>
-                        <div class="pricing-square-item">1 production instance</div>
+                        <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-production-instances" data-faq-tooltip="A single production node to run your solution. Perfect for getting to market quickly. Can be easily expanded into a cluster.">
+                            1 production instance<a class="faq-link"></a>
+                        </div>
                         <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Leverage the collective expertise of the ThingsBoard community. Report bugs, request features, and find technical solutions alongside thousands of developers on our <a href='https://github.com/thingsboard/thingsboard/issues' target='_blank'>GitHub Issues page</a>.">
                             Community support<a class="faq-link"></a>
                         </div>
@@ -953,7 +957,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">100 devices</div>
                         <div class="pricing-square-item">100 assets</div>
-                        <div class="pricing-square-item">1 production instance</div>
+                        <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-production-instances" data-faq-tooltip="A single production node to run your solution. Perfect for getting to market quickly. Can be easily expanded into a cluster.">
+                            1 production instance<a class="faq-link"></a>
+                        </div>
                         <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Official technical support channel for priority assistance. Get expert guidance to accelerate your rollout and optimize platform usage.">
                             Help desk<a class="faq-link"></a>
                         </div>
@@ -980,7 +986,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">500 devices</div>
                         <div class="pricing-square-item">500 assets</div>
-                        <div class="pricing-square-item">2 production instances</div>
+                        <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-production-instances" data-faq-tooltip="Enables a basic cluster configuration. Running two nodes provides High Availability (HA) and redundancy, ensuring your platform stays online if one node fails.">
+                            2 production instances<a class="faq-link"></a>
+                        </div>
                         <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
                             Priority help desk<a class="faq-link"></a>
                         </div>
@@ -1007,7 +1015,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <div class="pricing-square-item">1 000 devices</div>
                         <div class="pricing-square-item">1 000 assets</div>
-                        <div class="pricing-square-item">3 production instances</div>
+                        <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-production-instances" data-faq-tooltip="Supports a robust High Availability (HA) cluster. Three nodes allow for superior horizontal scaling and load balancing, designed for high-traffic environments and maximum uptime.">
+                            3 production instances<a class="faq-link"></a>
+                        </div>
                         <div class="pricing-square-item faq" data-faq-id="pe-pay-as-you-go-support-included" data-faq-tooltip="Get priority handling in the support desk—faster response, faster resolution, and fewer blockers as you scale and run production workloads.">
                             Priority help desk<a class="faq-link"></a>
                         </div>
@@ -2762,7 +2772,18 @@ defaultActivePricingSection: thingsboard-pe-options
                             <p>Maker: 10 devices<br>Prototype: 50 devices<br>Pilot: 100 devices<br>Startup: 500 devices<br>Business: 1000 devices, with the option to purchase additional devices at $0.10 per device per month</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-exceed-limits" data-title="What happens if I exceed my plan’s device or asset limit?">
+                    <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-production-instances" data-title="What does the number of production instances mean?">
+                        <div class="container">
+                            <p>A <b>Production Instance</b> refers to a single node of the ThingsBoard platform within your deployment. While one instance is enough to run your solution, multiple instances allow you to operate in <b>Cluster Mode</b>. <br><br></p>
+                            <p>By running multiple instances, you achieve:</p>
+                            <ul>
+                                <li><b>High Availability (HA):</b> Your system remains operational even if a node goes down.</li>
+                                <li><b>Horizontal Scalability:</b> Distribute the processing load across multiple servers to handle more devices and data.</li>
+                                <li><b>Reliability:</b> Built-in redundancy for mission-critical IoT applications.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-exceed-limits" data-title="What happens if I exceed my plan's device or asset limit?">
                         <div class="container">
                             <p>You will need to upgrade to a higher-tier plan. With the Business plan, you also have the option to purchase additional devices at $0.10 per device per month.</p>
                         </div>

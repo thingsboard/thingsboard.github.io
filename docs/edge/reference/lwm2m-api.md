@@ -161,4 +161,6 @@ deviceNoSec_create_save:
 
 ---
 
+{% assign docsPrefix = "edge/" %}
+{% include get-hosts-name.html docsTag="edge" %}
 {% include docs/reference/lwm2m-api.md %}
