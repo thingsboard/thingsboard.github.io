@@ -73,6 +73,16 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
+        <div class="client-card" data-category="Smart IoT solution">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/onedata.webp');">
+                <a class="content" href="/case-studies/onedata">
+                    <img class="logo" src="/images/case-studies/onedata.svg" title="OneData" alt="OneData logo">
+                    <p>Visual Transformation: How OneData boosted 60-70% Efficiency at a multi-speciality hospital</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how OneData boosted hospital efficiency with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
         <div class="client-card" data-category="Smart city">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/x-telia.webp');">
                 <a class="content" href="/case-studies/xtelia">
@@ -123,16 +133,6 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" data-category="Smart city">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iioote.webp');">
-                <a class="content" href="/case-studies/iioote">
-                    <img style="height: 35px" class="logo" src="/images/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo">
-                    <p>From Prototyping to Commercial Services: How iiOOTE Scaled IoT with ThingsBoard</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about iiOOTE deploys LoRaWAN™ parking management with ThingsBoard</span>
-                </a>
-            </div>
-        </div>
         <div class="client-card" data-category="Smart energy">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/comet.webp');">
                 <a class="content" href="/case-studies/comet">
@@ -140,6 +140,16 @@ itemsPerPage: "9"
                     <p>Powering the future of utilities: co.met GmbH’s IoT breakthrough with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about Powering the future of utilities: co.met GmbH’s IoT breakthrough with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" data-category="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iioote.webp');">
+                <a class="content" href="/case-studies/iioote">
+                    <img style="height: 35px" class="logo" src="/images/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo">
+                    <p>From Prototyping to Commercial Services: How iiOOTE Scaled IoT with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about iiOOTE deploys LoRaWAN™ parking management with ThingsBoard</span>
                 </a>
             </div>
         </div>
