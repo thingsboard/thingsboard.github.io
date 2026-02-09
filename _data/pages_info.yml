@@ -6271,15 +6271,6 @@
 "/docs/user-guide/notifications/":
   url: "/docs/user-guide/notifications/"
   redirect_from: []
-"/docs/user-guide/oauth/azure/":
-  url: "/docs/user-guide/oauth/azure/"
-  redirect_from: []
-"/docs/user-guide/oauth/oauth0/":
-  url: "/docs/user-guide/oauth/oauth0/"
-  redirect_from: []
-"/docs/user-guide/oauth/okta/":
-  url: "/docs/user-guide/oauth/okta/"
-  redirect_from: []
 "/docs/user-guide/oauth-2-support/":
   url: "/docs/user-guide/oauth-2-support/"
   redirect_from: []
