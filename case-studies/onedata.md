@@ -176,7 +176,7 @@ description: OneData Software Solutions transforms multi-specialty hospital oper
         </div>
         <div class="block">
             <div class="text">
-                <h3>Alerts and security</h3>
+                <h3>Alarms and security</h3>
                 <p>Configurable notifications via SMS/email, plus RBAC and encryption, ensure secure, proactive operations, preventing breaches while scaling seamlessly.</p>
             </div>
             <div class="image-container">
