@@ -382,10 +382,13 @@
   - path: /docs/user-guide/oauth-2-support/#login-with-auth0
     title: OAuth0 OAuth example
     subtitle: Learn how to step-by-step setup OAuth with OAuth0.
-  - path: /docs/user-guide/oauth-2-support
+  - path: /docs/user-guide/oauth-2-support/#login-with-okta
     title: OAuth0 Okta example
     subtitle: Learn how to step-by-step setup OAuth with Okta.
-  - path: /docs/user-guide/oauth-2-support
+  - path: /docs/user-guide/oauth-2-support/#login-with-keycloak
+    title: OAuth0 Keycloak example
+    subtitle: Learn how to step-by-step setup OAuth with Keycloak.
+  - path: /docs/user-guide/oauth-2-support/#login-with-azure
     title: OAuth0 Azure Active Directory example
     subtitle: Learn how to step-by-step setup OAuth with Azure Active Directory.
 

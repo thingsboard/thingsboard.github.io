@@ -1,8 +1,11 @@
 {%- assign pe = include.pe -%}
+{%- assign trendz = include.trendz -%}
 {%- assign last = include.last -%}
 
 {%- if pe == "true" -%}
     {%- assign data = site.data.pe.resources -%}
+{%- elsif trendz == "true" -%}
+    {%- assign data = site.data.trendz.resources -%}
 {%- else -%}
     {%- assign data = site.data.resources -%}
 {%- endif -%}
