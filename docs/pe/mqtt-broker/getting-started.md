@@ -39,4 +39,5 @@ check-connectivity:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% assign tbmqSuffix = "PE" %}
 {% include docs/mqtt-broker/getting-started.md %}
