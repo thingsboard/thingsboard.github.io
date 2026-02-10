@@ -825,11 +825,11 @@ https://my.thingsboard.instance/login/oauth2/code/
 
 {% assign Azure1 = '
     ===
-        image: /images/user-guide/oauth-2-support/azure/azure-go-for-ad.png,
+        image: https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-go-for-ad.png,
     ===
-        image: /images/user-guide/oauth-2-support/azure/azure-go-for-and-create-application.png,
+        image: https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-go-for-and-create-application.png,
     ===
-        image: /images/user-guide/oauth-2-support/azure/azure-create-application.png,
+        image: https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-create-application.png,
 '
 %}
 
@@ -845,13 +845,13 @@ Finally, open the **Certificates & secrets** tab, and click **+ New client secre
 
 {% assign Azure2 = '
     ===
-        image: /images/user-guide/oauth-2-support/azure/azure-application-general-data.png,
+        image: https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-application-general-data.png,
         title: Now we are on the **Overview** page, where we can find the **Application (client) ID** and the **Client name** that we specified earlier.
     ===
-        image: /images/user-guide/oauth-2-support/azure/azure-application-authentication.png,
+        image: https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-application-authentication.png,
         title: Next, open the **Authentication** tab. Make sure to enable authorization on the **access token-based**. **Save** changes.
     ===
-        image: /images/user-guide/oauth-2-support/azure/azure-application-secrets.png,
+        image: https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-application-secrets.png,
         title: Finally, open the **Certificates & secrets** tab, and click **+ New client secret**. Save created key **value** (**Client Secret**).
 '
 %}
@@ -876,7 +876,7 @@ From this document, you will need the following endpoints:
 
 {% assign Azure2 = '
     ===
-        image: /images/user-guide/oauth-2-support/azure/azure-application-endpoints.png,
+        image: https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-application-endpoints.png,
 '
 %}
 

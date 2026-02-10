@@ -117,11 +117,11 @@ In the last step, fill in the following fields:
 
 When integration configured and ready to use, we need to go to **Rule Chains**, choose **"Root Rule Chain"** and here create rule node **Integration Downlink**. Input some name here, choose earlier created Tuya integration, and tap **Add**.
 
-![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
 
 After these steps, we need to tap on a right grey circle of rule node **message type switch** and drag this circle to left side of **Integration Downlink**. In pop-up window add **"RPC Request to Device"** link, and tap **Add**. **Save** the Root Rule Chain.
 
-![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
 
 ## Uplink message
 
@@ -140,32 +140,32 @@ To visualize the Smart Plug data and test RPC commands, we will create the **Tuy
 - Drag the previously downloaded JSON file into the window. 
 - Tap **Import**.
 
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-1-pe.png)
 
 - Open the **Tuya Smart Plug** dashboard.
 - Enter **Edit mode**, and update **Entity aliases** - specify your device as target device in the **smartPlug** alias
 
-![image](/images/user-guide/integrations/tuya/tuya-alias-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-alias-1-pe.png)
 
 {% capture difference %}
 **NOTE:** Time series data keys of your device may differ from those presented. If necessary, you will need to replace them, according to the documentation for your device (for each widget).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/user-guide/integrations/tuya/tuya-edit-timeseries-data-keys-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-edit-timeseries-data-keys-pe.png)
 
 <br>
 If you have everything configured correctly, you will see Smart Plug status light (on/off) and telemetry for the last hour: voltage, power, and current.
 
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-2-pe.png)
 
 Smart Plug status light is green. Try to switch off the Smart Plug by clicking on the **On/Off Round switch**
 
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
 
 The Smart Plug status indicator turns grey. Power consumption stops.
 
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
 
 ## Next steps
 
