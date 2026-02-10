@@ -34,9 +34,11 @@ This sandbox environment allows you to explore TBMQ features without any install
 You can start publishing and subscribing to topics immediately using these credentials.
 To access the TBMQ UI and explore sessions, subscriptions, and other features, [sign up](https://demo.tbmq.io/signup){:target="_blank"} for a free account.
 
-**Note:** The demo instance provides read-only access to the UI. You can observe all sessions, subscriptions, and broker statistics, but cannot modify configurations.
-
-If you prefer to run TBMQ locally with full administrative access, proceed to the [Install TBMQ locally](#install-tbmq-locally) section.
+{% capture demo_note %}
+The demo instance provides read-only access to the UI. You can observe all sessions, subscriptions, and broker statistics, but cannot modify configurations.
+If you prefer to run TBMQ locally with full administrative access, proceed to the [Install TBMQ locally](#install-tbmq-{{tbmqSuffixLc}}-locally) section.
+{% endcapture %}
+{% include templates/info-banner.md content=demo_note %}
 
 ## Install TBMQ {{tbmqSuffix}} locally
 
@@ -89,7 +91,10 @@ sysadmin
 
 ## Configure client authentication & authorization
 
-**Note:** If you are using the [demo instance](https://demo.tbmq.io){:target="_blank"}, skip this section. Demo credentials are pre-configured and ready to use.
+{% capture auth_note %}
+If you are using the [demo instance](https://demo.tbmq.io){:target="_blank"}, skip this section. Demo credentials are pre-configured and ready to use.
+{% endcapture %}
+{% include templates/info-banner.md content=auth_note %}
 
 To secure the connection to the broker, [enable Basic authentication](/docs/{{docsPrefix}}mqtt-broker/security/authentication/basic/).
 
