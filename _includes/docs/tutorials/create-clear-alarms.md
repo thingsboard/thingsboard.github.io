@@ -25,7 +25,7 @@ Before proceeding, review the [Alarm rules](/docs/{{docsPrefix}}user-guide/alarm
 
 You will also need a device to test alarm triggering. You can use an existing device or [create a new one](/docs/{{docsPrefix}}user-guide/ui/devices/#adding-new-device){:target="_blank"} by following these steps:
 1. Navigate to **Entities &#8702; Devices**.
-2. Click the **&#43;** (**Add**) button in the top-right corner and select **Add new device**.
+2. Click the **"&#43; Add device** button in the top-right corner and select **"Add new device"**.
 3. Create the device with the following parameters:   
    &#8194;&#8226;&#8194;**Device name**: Thermometer   
    &#8194;&#8226;&#8194;**Device profile**: thermostat
@@ -62,14 +62,14 @@ Each alarm rule is evaluated every time telemetry is received from the target en
 
 1. Download the [High temperature alarm rule](/docs/user-guide/resources/guides/high_temperature_alarm_rule.json){:target="_blank" download="high_temperature_alarm_rule.json"} configuration file.
 2. Go to **Alarms &#8702; Alarm rules**.
-3. Click the **&#43;** (**Add**) in the top-right corner, and select **Import alarm rule**.
+3. Click the **"&#43; Add alarm rule"** in the top-right corner, and select **"Import alarm rule"**.
 4. Specify your **device** or **device profile** as target entity.
 5. Click **Add** to complete the import.
 
 ### Import Low temperature alarm rule
 
 1. Download the [Low temperature alarm rule](/docs/user-guide/resources/guides/low_temperature_alarm_rule.json){:target="_blank" download="low_temperature_alarm_rule.json"} configuration file.
-2. In **Alarms &#8702; Alarm rules**, click the **&#43;** (**Add**) and select **Import alarm rule**. 
+2. In **Alarms &#8702; Alarm rules**, click the **"&#43; Add alarm rule"** and select **"Import alarm rule"**. 
 3. Specify your **device** or **device profile** as target entity.
 4. Click **Add**.
 
@@ -78,9 +78,9 @@ Each alarm rule is evaluated every time telemetry is received from the target en
 To verify that the alarm rules work correctly, publish several temperature values.   
 The easiest way is to use [Check connectivity](/docs/{{docsPrefix}}user-guide/ui/devices/#check-connectivity){:target="_blank"}. Alternatively, use the commands below.
 
-Replace {% if docsPrefix == null or docsPrefix == "pe/" %}
-- **$THINGSBOARD_HOST_NAME** with your ThingsBoard hostname or IP address.
-- {% endif %}**$ACCESS_TOKEN** with the device access token.
+⚠️ Replace {% unless docsPrefix contains "paas/" %}   
+&#8194;&#8226;&#8194;**$THINGSBOARD_HOST_NAME** with your ThingsBoard hostname or IP address.   
+&#8194;&#8226;&#8194;{% endunless %}**$ACCESS_TOKEN** with the device access token.
 
 1. Trigger the High temperature alarm.   
    Publish a temperature value above the upper threshold (for example, 7 °C).

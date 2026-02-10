@@ -3,10 +3,10 @@
 
 This guide demonstrates how to calculate a telemetry delta using data from two different devices in ThingsBoard and store the result as asset telemetry.
 
-As an example, we calculate the temperature difference between indoor and outdoor thermometers installed in a warehouse. The calculated value is stored as a new telemetry key and can be used for monitoring, visualization, or alerting.
+As an example, we will calculate the temperature difference between indoor and outdoor thermometers installed in a warehouse. The calculated value is stored as a new telemetry key and can be used for monitoring, visualization, or alerting.
 
 This guide is introductory and focuses on demonstrating the core capabilities of the platform, rather than building configurations from scratch.   
-For this reason, predefined calculated field configuration are provided and imported during the setup.
+For this reason, predefined calculated field configurations are provided and imported during the setup.
 
 After importing these configurations into your ThingsBoard instance, you can examine their structure, logic, and behavior, and then adapt them to suit your own use cases.
 
@@ -20,7 +20,7 @@ Assume you have a warehouse equipped with two temperature sensors:
 
 Your objective is to:
 - Collect telemetry from both devices 
-- Calculate the absolute temperature difference between indoor and outdoor readings 
+- Calculate the absolute temperature difference between the indoor and outdoor readings 
 - Store the result as telemetry on the warehouse asset 
 - Visualize and monitor this value in real time
 
@@ -43,7 +43,7 @@ In this example, the asset represents a warehouse and is used to store aggregate
 
 **Create the asset:**
 1. Navigate to **Entities** **&#8702;** **Assets**.
-2. Click the **&#43;** (**Add**) button in the top-right corner, select **Add new asset** and create:   
+2. Click the **"&#43; Add asset"** button in the top-right corner, select **"Add new asset"** and create:   
 &#8194;&#8226;&#8194;**Asset name**: Warehouse A   
 &#8194;&#8226;&#8194;**Asset profile**: warehouse
 
@@ -51,8 +51,8 @@ In this example, the asset represents a warehouse and is used to store aggregate
 1. Download the CSV file containing the device configuration:   
    [thermometers_device_data.csv](/docs/user-guide/resources/guides/thermometers_device_data.csv){:target="_blank" download="thermometers_device_data.csv"}
 2. Navigate to **Entities** **&#8702;** **Devices**.
-3. Click the **&#43;** (**Add**) button in the top-right corner and select **Import device**.
-4. [Upload the CSV file](/docs/user-guide/bulk-provisioning/#upload-file){:target="_blank"} and follow the import wizard instructions.
+3. Click the **"&#43; Add device"** button in the top-right corner and select **"Import device"**.
+4. [Upload the CSV file](/docs/{{docsPrefix}}user-guide/bulk-provisioning/#upload-file){:target="_blank"} and follow the import wizard instructions.
 
 **CSV configuration details:**
 - **CSV delimiter**: <span class="code-light">,</span>
@@ -66,14 +66,23 @@ In this example, the asset represents a warehouse and is used to store aggregate
 
 Since this example uses virtual devices, telemetry must be generated artificially.
 
-Use [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/) [generator nodes](/docs/user-guide/rule-engine-2-0/nodes/action/generator){:target="_blank"} to periodically publish random temperature values.
+Use [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/){:target="_blank"} to periodically publish random temperature values.
 
-> For simplicity, the generators are added to the Root Rule Chain, although production setups should use a dedicated rule chain.
+> For simplicity, the generators are added to the Root Rule Chain, although in production setups a dedicated rule chain should be used instead.
 
-**Indoor Thermometer emulator:**
+- Navigate to **Rule chains**.
+- Open the **Root Rule Chain**. 
+- Drag and drop a [Generator node](/docs/user-guide/rule-engine-2-0/nodes/action/generator){:target="_blank"} onto the canvas. 
+- Select **Indoor Thermometer** as the originator. 
+- Replace the generator function with the appropriate emulator script. 
+- Repeat the same steps for the **Outdoor Thermometer** device. 
+- Connect both Generator nodes to the [Entity type filter node](/docs/user-guide/rule-engine-2-0/nodes/filter/entity-type-filter){:target="_blank"} using the **Success** relation.
+- Apply changes.
+
+**Indoor Thermometer emulator script:**
 ```javascript
-var temperature = toFixed(Math.random()*10 + 18, 2);
-var msg = { temperature: temperature };
+var indoorTemperature = toFixed(Math.random()*10 + 18, 2);
+var msg = { indoorTemperature: indoorTemperature };
 var metadata = { data: 40 };
 var msgType = "POST_TELEMETRY_REQUEST";
 return { msg: msg, metadata: metadata, msgType: msgType };
@@ -82,10 +91,10 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 
 This generator simulates indoor temperatures in the range of approximately 18–28 °C.
 
-**Outdoor Thermometer emulator:**
+**Outdoor Thermometer emulator script:**
 ```javascript
-var temperature = toFixed(Math.random()*10 + 16, 2);
-var msg = { temperature: temperature };
+var outdoorTemperature = toFixed(Math.random()*10 + 16, 2);
+var msg = { outdoorTemperature: outdoorTemperature };
 var metadata = { data: 40 };
 var msgType = "POST_TELEMETRY_REQUEST";
 return { msg: msg, metadata: metadata, msgType: msgType };
@@ -107,18 +116,26 @@ You should see continuously updated <span class="code-light">temperature</span> 
 ## 3. Import a calculated field on the asset
 
 Calculate the temperature difference between the two thermometers and store it as asset telemetry.
-
-The calculated field is created on the Warehouse A asset.
-
-<b><font size="3">Actions</font></b>
-
 1. Download the calculated field configuration file:   
    [temperature_delta_based_on_2_devices_cf.json](/docs/user-guide/resources/guides/temperature_delta_based_on_2_devices_cf.json){:target="_blank" download="temperature_delta_based_on_2_devices_cf.json"}.
 2. Navigate to the **Calculated fields** page.
-3. Click the **&#43;** (**Add**) button in the top-right corner and select **Import calculated field** .
+3. Click the **"&#43; Add calculated field"** button in the top-right corner and select **"Import calculated field"**.
 4. [Upload the calculated field configuration file](/docs/{{docsPrefix}}user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"}.
-5. Select the <span class="code-light">warehouse</span> [asset profile](/docs/{{docsPrefix}}user-guide/asset-profiles/){:target="_blank"} as the target entity so the calculated field is applied automatically to all relevant assets.
-6. Click **Add** to complete the import.
+5. Select the **warehouse** [asset profile](/docs/{{docsPrefix}}user-guide/asset-profiles/){:target="_blank"} as the target entity so the calculated field is applied automatically to all relevant assets.
+6. Update the calculated field arguments as follows:   
+   &#8226;&#8194;**First argument**:   
+   &#8194;&#8194;&#8226;&#8194;**Entity type**: Device   
+   &#8194;&#8194;&#8226;&#8194;**Device name**: Indoor Thermometer   
+   &#8194;&#8194;&#8226;&#8194;**Argument type**: Latest telemetry   
+   &#8194;&#8194;&#8226;&#8194;**Time series key**: indoorTemperature   
+   &#8194;&#8194;&#8226;&#8194;**Argument name**: indoorTemperature   
+   &#8226;&#8194;**Second argument**:   
+   &#8194;&#8194;&#8226;&#8194;**Entity type**: Device   
+   &#8194;&#8194;&#8226;&#8194;**Device name**: Outdoor Thermometer   
+   &#8194;&#8194;&#8226;&#8194;**Argument type**: Latest telemetry   
+   &#8194;&#8194;&#8226;&#8194;**Time series key**: outdoorTemperature   
+   &#8194;&#8194;&#8226;&#8194;**Argument name**: outdoorTemperature
+7. Click **Add** to complete the import.
 
 <b><font size="3">Calculation logic</font></b>
 

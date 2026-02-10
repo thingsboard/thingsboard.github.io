@@ -55,7 +55,7 @@ This rule chain ensures that only valid temperature readings are stored, while i
 1. Download the rule chain configuration file:   
    [validate_incoming_telemetry_rule_chain.json](/docs/user-guide/resources/guides/validate_incoming_telemetry_rule_chain.json){:target="_blank" download="validate_incoming_telemetry_rule_chain.json"}.
 2. Navigate to the **Rule chains** page.
-3. Click the **&#43;** (**Add**) button in the top-right corner and select **Import rule chain**.
+3. Click the **"&#43; Add rule chain"** button in the top-right corner and select **"Import rule chain"**.
 4. [Upload the rule chain configuration file](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#import-rule-chain){:target="_blank"} and click **Import**.
 5. Click **Apply changes** to finalize the import.
 
@@ -77,7 +77,7 @@ return typeof msg.temperature === 'undefined' || (msg.temperature >= -40 && msg.
 Next, create a demo device that publishes temperature telemetry and ensure it uses the imported validation rule chain.
 
 1. Navigate to **Entities** **&#8702;** **Devices**.
-2. Click the **&#43;** (**Add**) button in the top-right corner, select **Add new device** and create:
+2. Click the **"&#43; Add device"** button in the top-right corner, select **"Add new device"** and create:
     - **Device name:** Thermometer
     - **Device profile:** thermostat
 3. In the **thermostat** device profile settings, set the imported **Validate Incoming Telemetry** rule chain as the default rule chain for this profile.
