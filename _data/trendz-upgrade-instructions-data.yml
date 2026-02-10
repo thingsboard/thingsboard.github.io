@@ -1,9 +1,17 @@
+1.15.0.4:
+  upgradable-from: "1.7.0"
+  tbVersion: "4.3.0"
+  release-date: Feb 9 2026
+  lts: "true"
+  x: "true"
+  patch: "true"
 1.15.0:
   upgradable-from: "1.7.0"
   tbVersion: "4.3.0"
   release-date: Jan 20 2026
   lts: "true"
   x: "true"
+  vulnerable: "true"
 1.14.0:
   upgradable-from: "1.7.0"
   tbVersion: "4.2.0"
