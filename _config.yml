@@ -112,4 +112,4 @@ release:
   broker_branch: release-2.2.0
   pe_broker_full_ver: 2.2.0PE
   # <<< TBMQ
-  trendz_ver: 1.15.0
+  trendz_ver: 1.15.0.4
