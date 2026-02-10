@@ -157,6 +157,43 @@
               border: 1px solid #009688
               background: rgba(0, 150, 136, 0.08)
 
+.trendz-table.releases-table
+  background: rgba(42, 125, 236, 0.08)
+  border: 12px solid rgba(42, 125, 236, 0.08)
+  .releases-table-header-item, .releases-table-content-item
+    &:nth-child(1)
+      min-width: 80px
+    &:nth-child(2)
+      min-width: 135px
+    &:nth-child(3)
+      min-width: 200px
+    &:nth-child(4)
+      min-width: 115px
+    &:nth-child(5)
+      min-width: 115px
+    &:nth-child(6)
+      min-width: 180px
+    &:nth-child(7)
+      text-align: left
+      min-width: 400px
+    &:nth-child(8)
+      text-align: center
+      min-width: 100px
+  .releases-table-content-wrapper
+    .releases-table-content
+      &:hover
+        border-left: 3px solid #2696F3
+      .releases-table-content-item
+        &.version-link.version-link-lts
+          &:hover
+            text-decoration-color: #2696F3
+        &.upgrade-link
+          a
+            &:hover
+              color: #2696F3
+              border: 1px solid #2696F3
+              background: rgba(42, 125, 236, 0.08)
+
 .releases-table.upgrade-instructions-table
   margin: 30px 0
   .releases-table-content
@@ -246,6 +283,7 @@
                 scale: 1
                 filter: brightness(0) saturate(100%) invert(57%) sepia(2%) saturate(45%) hue-rotate(44deg) brightness(88%) contrast(90%)
                 transition: ease-in-out 0.3s
+
 
 .legend
   li.list-link

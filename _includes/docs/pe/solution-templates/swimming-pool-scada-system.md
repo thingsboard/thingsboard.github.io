@@ -93,8 +93,8 @@ The data is then visualized on the dashboard, allowing users to interact with an
 
 ### Gateway
 
-The ThingsBoard IoT Gateway integrates devices into the SCADA system in ThingsBoard, ensuring seamless connectivity and data transmission.
-The "Pool System Gateway" gateway configuration is accessible on the "Gateway" page in the "Entities" section.
+The ThingsBoard IoT Gateway integrates devices into the SCADA system in ThingsBoard, ensuring seamless connectivity and data transmission. 
+The "Pool System Gateway" gateway configuration is accessible on the **Gateways** page in the **Entities** section.
 
 {% include images-gallery.html imageCollection="select-pool-system-gateway-1" %}
 
@@ -104,8 +104,8 @@ The Pool System Gateway displays connected devices and their status. Click "Show
 
 **Connector configuration**
 
-Let's go over the connector settings. Click the "Connectors configuration" button to display available connectors. Click on the "Modbus Gateway" connector to open its configuration settings. 
-Navigate to the "Master Connectors" tab, where you'll find connection parameters for connecting devices to the Modbus server and data processing settings for each device.
+Let&#39;s go over the connector settings. Click the **Connectors configuration** button to display available connectors. Click on the **Pool Connector** to open its configuration settings. 
+Navigate to the **Master Connections** tab, where you&#39;ll find connection parameters for connecting devices to the Modbus server and data processing settings for each device.
 
 {% include images-gallery.html imageCollection="gateway-connector-1" %}
 

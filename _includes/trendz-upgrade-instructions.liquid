@@ -1,0 +1,48 @@
+{% assign upgrade_instructions_data = site.data.trendz-upgrade-instructions-data %}
+{% assign family = include.family %}
+{% assign os = include.os %}
+
+{% assign family_parts = family | split: "." %}
+{% assign family_major = family_parts[0] %}
+{% assign family_minor = family_parts[1] %}
+
+{% for item in upgrade_instructions_data %}
+{% if item[1].vulnerable == 'true' %}
+    {% continue %}
+{% endif %}
+
+{% assign version = item[0] %}
+{% assign data = item[1] %}
+
+{% assign parts = version | split: "." %}
+{% assign major = parts[0] %}
+{% assign minor = parts[1] %}
+
+{% if major == family_major and minor == family_minor %}
+{% assign applicable_versions = data.applicable-versions %}
+
+{% assign display_version = version %}
+{% if parts.size == 3 and parts[2] == "0" %}
+{% assign display_version = parts[0] | append: "." | append: parts[1] %}
+{% endif %}
+
+{% assign base_version = display_version %}
+{% assign patch_status = "false" %}
+
+{% if item[1].patch == "true" %}
+    {% assign patch_status = "true" %}
+    {% assign base_version = parts[0] | append: "." | append: parts[1] | append: "." | append: parts[2] %}
+{% endif %}
+
+{% if os == "windows" %}
+{% include templates/trendz/upgrade-instructions/windows-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version x=data.x %}
+{% elsif os == "ubuntu" %}
+{% include templates/trendz/upgrade-instructions/ubuntu-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version x=data.x %}
+{% elsif os == "centos" %}
+{% include templates/trendz/upgrade-instructions/centos-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version x=data.x %}
+{% elsif os == "docker" %}
+{% include templates/trendz/upgrade-instructions/docker-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version %}
+{% endif %}
+{% endif %}
+
+{% endfor %}
