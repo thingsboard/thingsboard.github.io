@@ -36,7 +36,7 @@ The next step is to register an account on [Tuya](https://www.tuya.com/){:target
 - Go to the **Cloud** tab &#8702; **Project Management**. Click the **Create Cloud Project** button. 
 - In a pop-up window, fill required fields and click "Create".
 - Make additional settings in the **Authorize API Services** window and click **Authorize**.
-- Now your cloud project is created. In this window, remember the Access ID/Client ID and Access Secret/Client Secret values. These values will be needed during the Tuya Integration setup.
+- Now your cloud project is created. In this window, remember the **Access ID/Client ID** and **Access Secret/Client Secret** values. These values will be needed during the Tuya Integration setup.
 
 ### Enable Tuya message service
 
@@ -80,81 +80,26 @@ Let&#39;s move on to setting up the integration between the ThingsBoard platform
 Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard.
 - Enter a name for the converter. It must be unique. 
 - To view the events, enable debug mode. 
-- In the **Main decoding configuration** section use the existing script for parsing and transforming data, or provide your own custom script.
+- In the **Main decoding configuration** section, provide your own script or use the script below.
 
-```javascript
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
+{% include templates/tbel-vs-js.md %}
 
-/** Decoder **/
-
-// decode payload to JSON
-var data = decodeToJson(payload);
-
-var deviceName = data.?bizData.?devId != null ? data.?bizData.?devId : data.?devId;
-var deviceType = 'Tuya device';
-
-var telemetry = [];
-if (data.status != null) {
-    for (var i = 0; i < data.status.length; i++) {
-        var res = {};
-        var code = data.status[i].code;
-        var value = data.status[i].value;
-        if (code == "cur_voltage" || code == "cur_power") {
-            value = data.status[i].value / 10;
-        } else if (code == "cur_current") {
-            value = data.status[i].value / 100;
-        }
-        res[code] = value;
-        telemetry.push(res);
-    }
-    
-} else {
-    telemetry = data;
-}
-
-var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-   attributes: {},
-   telemetry: telemetry,
-   deviceName: deviceName,
-};
-
-/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
-
-return result;
-```
-{:.copy-code.expandable-15}
-
-> One can use either TBEL (ThingsBoard expression language) or JavaScript to develop user defined functions. We recommend utilizing TBEL as it’s execution in ThingsBoard is much more efficient compared to JS.
+{% capture tuyauplink %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tuya/tuya-uplink-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/tuya/tuya-uplink-java.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="tuyauplink" toggle-spec=tuyauplink %}
 
 - Once the uplink converter is set up, click **Next**.
 
 <b><font size="4">3. Downlink data converter</font></b>
 
-The Downlink converter transforming outgoing RPC message and then the Integration sends it to your device.
+The Downlink converter transforming outgoing RPC message and then the Integration sends it to your device.   
 You can use our example of Downlink Converter, or write your own according to your configuration:
 
-```javascript
-const command = {
-  code: msg.method,
-  value:
-    msg.params === "false" || msg.params === "true"
-      ? msg.params === "true"
-      : msg.params
-};
-const result = {
-  contentType: "JSON",
-  data: JSON.stringify(command),
-  metadata: {
-    deviceId: metadata.deviceName
-  }
-};
-return result;
-```
-{:.copy-code}
+{% capture tuyadownlink %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tuya/tuya-downlink-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/tuya/tuya-downlink-java.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="tuyadownlink" toggle-spec=tuyadownlink %}
 
 - Click **Next**.
 
@@ -165,7 +110,7 @@ In the last step, fill in the following fields:
 - **Environment**:
   - Choose **PROD** for real devices. 
   - Select **TEST** if you want to connect a **virtual device** to Thingsboard and test its operation before you buy it.
-- **Access Id** and **Access Key** is an authorization certificate distributed by Tuya. Paste previously copied **Access Id** and **Access Key** into the integration.
+- **Access Id** and **Access Key** is an authorization certificate distributed by Tuya. Paste [previously copied Access Id and Access Key](#create-cloud-project) into the integration.
 - Click **Add** to create an integration.
 
 ## Rule Chain configuration
