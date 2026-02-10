@@ -9,6 +9,34 @@ Its distributed **cluster architecture** takes scalability even further, support
 
 For installation instructions and detailed insights into its architecture and MQTT features, refer to the official TBMQ documentation.
 
+## Try TBMQ Live
+
+The fastest way to get started is to use our public demo instance — no installation required.
+
+<div class="doc-features row mt-4 align-items-stretch">
+    <div class="col-12 col-sm-7 col-lg-7 mb-4 d-flex">
+        <div class="feature-card w-100">
+            <div class="feature-title">MQTT Connection Details</div>
+            <div class="feature-text">
+                <b>Host:</b> <code>demo.tbmq.io</code><br>
+                <b>TCP Port:</b> <code>1883</code><br>
+                <b>TLS Port:</b> <code>8883</code><br>
+                <b>Username:</b> <code>tbmq_demo_username</code><br>
+                <b>Password:</b> <i>leave empty</i>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-5 col-lg-5 mb-4 d-flex">
+        <a class="feature-card w-100" href="https://demo.tbmq.io/signup" target="_blank">
+            <img class="feature-logo" src="/images/feature-logo/getting-started.svg" alt="Sign up icon">
+            <div class="feature-title">Sign Up for Free</div>
+            <div class="feature-text">
+                Create an account to access the live TBMQ Demo UI — monitor sessions, subscriptions, and broker statistics in real time.
+            </div>
+        </a>
+    </div>
+</div>
+
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/">
