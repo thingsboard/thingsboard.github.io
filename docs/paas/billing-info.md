@@ -115,9 +115,7 @@ Once validated, the card becomes the active payment method for future charges.
 
 **Billing information** is used to generate invoices.
 
-To update your billing details, click **Update**.
-
-Fill in the required fields and click Update.
+To update billing details, click **Update**, fill in the required fields, and save your changes.
 
 ## Invoices
 
@@ -143,4 +141,4 @@ Audit logs help track administrative actions and support troubleshooting and com
 
 ## Learn more about plans
 
-Learn more about available subscription plans, plan limits, and included features on the [Subscription page](/docs/paas/subscriptions/#entity-limits){:target="_blank"}.
+Learn more about available subscription plans, plan limits, and included features on the [Subscription page](/docs/paas/subscriptions/){:target="_blank"}.
