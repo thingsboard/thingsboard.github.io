@@ -50,7 +50,7 @@ Each metric produces **one output telemetry key (Metric name)** by applying one 
 
 Click the **Add metric** button and fill in the required fields:
 - **Metric name**: output telemetry key name (e.g., tempAvg, tempMax)
-- **Aggregation**: Average / Min / Max / Sum / Count / Count unique
+- **Aggregation**: Average / Min / Max / Sum / Count
 - **Argument name**: the argument whose value is being aggregated.
 - **Default value**: used if the interval contains no data
 
@@ -59,7 +59,7 @@ Click the **Add metric** button and fill in the required fields:
 {% assign timeSeriesAggrMetric = '
     ===
         image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-metric-1-ce.png
-        title: Click the **Add metric** button (1) and fill in the required fields:<br>- **Metric name** (2): output telemetry key name (e.g., tempAvg, tempMax)<br>- **Aggregation** (3): Average / Min / Max / Sum / Count / Count unique<br>- **Argument name** (4): the argument whose value is being aggregated.<br>- **Default value** (5): used if the interval contains no data<br>Then click **Add** (6).
+        title: Click the **Add metric** button (1) and fill in the required fields:<br>- **Metric name** (2): output telemetry key name (e.g., tempAvg, tempMax)<br>- **Aggregation** (3): Average / Min / Max / Sum / Count<br>- **Argument name** (4): the argument whose value is being aggregated.<br>- **Default value** (5): used if the interval contains no data<br>Then click **Add** (6).
 '
 %}
 

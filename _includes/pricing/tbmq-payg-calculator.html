@@ -394,7 +394,7 @@
                 <div class="results-total">
                     <span>Total</span>
                     <span class="total-value">
-                        ${formatCurrency(totalPrice)}/month
+                        ${formatCurrency(totalPrice)} ${isInitialState ? `<span class="strikethrough-text">${formatCurrency(plan.basePrice)}</span>` : ''}/month
                         <span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltipText}</span></span>
                     </span>
                 </div>

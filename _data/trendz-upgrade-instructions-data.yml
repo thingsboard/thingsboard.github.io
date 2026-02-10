@@ -1,0 +1,87 @@
+1.15.0:
+  upgradable-from: "1.7.0"
+  tbVersion: "4.3.0"
+  release-date: Jan 20 2026
+  lts: "true"
+  x: "true"
+1.14.0:
+  upgradable-from: "1.7.0"
+  tbVersion: "4.2.0"
+  release-date: Nov 6 2025
+  x: "true"
+1.13.2:
+  upgradable-from: "1.7.0"
+  tbVersion: "4.0.1"
+  release-date: Jun 27 2025
+  x: "true"
+1.13.1:
+  upgradable-from: "1.7.0"
+  tbVersion: "4.0.1"
+  release-date: May 2 2025
+  x: "true"
+1.13.0:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.9.1"
+  release-date: Mar 10 2025
+  x: "true"
+1.12.0:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.9.0"
+  release-date: Dec 31 2024
+  x: "true"
+1.11.2:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.8.1"
+  release-date: Nov 12 2024
+  x: "true"
+1.11.1:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.8.1"
+  release-date: Nov 4 2024
+  x: "true"
+1.11.0:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.6.4"
+  release-date: Apr 2 2024
+  x: "true"
+1.10.3-HF7:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.6.2"
+  release-date: Feb 19 2024
+  x: "true"
+1.10.3:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.6.0"
+  release-date: Sep 27 2023
+  x: "true"
+1.10.2:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.5.1"
+  release-date: Aug 18 2023
+  x: "true"
+1.10.1:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.5.0"
+  release-date: May 10 2023
+  x: "true"
+1.10.0:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.4.4"
+  release-date: Feb 27 2023
+  x: "true"
+1.9.2-HF3:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.4.3"
+  release-date: Jan 10 2023
+  x: "true"
+1.8.2:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.3.2"
+  release-date: Dec 13 2021
+  x: "true"
+1.8.1:
+  upgradable-from: "1.7.0"
+  tbVersion: "3.3"
+  release-date: Aug 27 2021
+  x: "true"
+

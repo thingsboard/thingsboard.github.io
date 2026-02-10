@@ -8,9 +8,13 @@
 
 
 {%- assign releases = site.pages | where_exp: "p", "p.path contains prefix" -%}
-{%- assign releases = releases | sort: "path" | reverse -%}
+{%- if docsPrefix == "trendz/" -%}
+    {%- assign releases = releases | sort: "version_number" | reverse -%}
+{%- else -%}
+    {%- assign releases = releases | sort: "path" | reverse -%}
+{%- endif -%}
 
-<div class="releases-table{% if docsPrefix == "pe/" %} pe-table{% elsif docsPrefix == "edge/" %} edge-table{% elsif docsPrefix == "pe/edge/" %} pe-edge-table{% endif %}">
+<div class="releases-table{% if docsPrefix == "pe/" %} pe-table{% elsif docsPrefix == "edge/" %} edge-table{% elsif docsPrefix == "pe/edge/" %} pe-edge-table{% elsif docsPrefix == "trendz/" %} trendz-table{% endif %}">
     <div class="releases-table-content">
         <div class="releases-table-header">
             <div class="releases-table-header-item">Version</div>
@@ -18,6 +22,9 @@
             <div class="releases-table-header-item cur-patch">Current Patch</div>
             <div class="releases-table-header-item">Support</div>
             <div class="releases-table-header-item">End of Life</div>
+            {% if docsPrefix == "trendz/" %}
+                <div class="releases-table-header-item">ThingsBoard Support</div>
+            {% endif %}
             <div class="releases-table-header-item">Release Notes & Highlights</div>
             <div class="releases-table-header-item">Instructions</div>
         </div>
@@ -70,11 +77,11 @@
 
                                 <a href="/docs/{{ docsPrefix }}releases/release-policy/"
                                    class="releases-table-content-item version-link version-link-lts">
-                                    <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% elsif docsPrefix == "edge/" %}#2260A7{% elsif docsPrefix == "pe/edge/" %}#009688{% else %}#2a7dec{% endif %}">
+                                    <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% elsif docsPrefix == "edge/" %}#2260A7{% elsif docsPrefix == "pe/edge/" %}#009688{% elsif docsPrefix == "trendz/" %}#2696F3{% else %}#2a7dec{% endif %}">
                                         {{ lts_label }}
                                     </span>
                                     <i class="fas fa-external-link-alt"
-                                       style="color: {% if docsPrefix == "pe/" %}#1F8B4D{% elsif docsPrefix == "edge/" %}#2260A7{% elsif docsPrefix == "pe/edge/" %}#009688{% else %}#2a7dec{% endif %}">
+                                       style="color: {% if docsPrefix == "pe/" %}#1F8B4D{% elsif docsPrefix == "edge/" %}#2260A7{% elsif docsPrefix == "pe/edge/" %}#009688{% elsif docsPrefix == "trendz/" %}#2696F3{% else %}#2a7dec{% endif %}">
                                     </i>
                                 </a>
                             {% else %}
@@ -108,6 +115,10 @@
                                 {% endif %}
                             </div>
 
+                            {% if docsPrefix == "trendz/" %}
+                                <div class="releases-table-content-item">Up to v{{ page.tbVersion }}</div>
+                            {% endif %}
+
                             <a href="{{ page.url }}" class="releases-table-content-item version-link" target="_blank">
                                 <span>{{ page.release-note-label }}</span>
                                 <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
@@ -116,6 +127,10 @@
                             <div class="releases-table-content-item upgrade-link">
                             {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
                                 <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ version }}" target="_blank">
+                                    Upgrade
+                                </a>
+                            {% elsif docsPrefix == "trendz/" %}
+                                <a href="/docs/{{ docsPrefix }}install/upgrade-instructions/?version={{ version }}" target="_blank">
                                     Upgrade
                                 </a>
                             {% else %}

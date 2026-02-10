@@ -139,5 +139,9 @@ toc:
   path: /docs/trendz/settings/
 - title: Trendz REST API
   path: /docs/trendz/rest-api/
-- title: Trendz release notes
-  path: /docs/trendz/releases/
+- title: Versions & Support
+  section:
+    - title: Releases
+      path: /docs/trendz/releases/releases-table/
+    - title: Release & Support Policy
+      path: /docs/trendz/releases/release-policy/

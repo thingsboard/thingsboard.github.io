@@ -1,11 +1,21 @@
-{% assign versionsCollection = site.data.upgrade-instructions-data %}
+{% if docsPrefix == "trendz/" %}
+    {% assign versionsCollection = site.data.trendz-upgrade-instructions-data %}
+{% else %}
+    {% assign versionsCollection = site.data.upgrade-instructions-data %}
+{% endif %}
 
-<div class="releases-table upgrade-instructions-table{% if docsPrefix == "pe/" %} pe-table{% elsif docsPrefix == "edge/" %} edge-table{% elsif docsPrefix == "pe/edge/" %} pe-edge-table{% endif %}">
+<div class="releases-table upgrade-instructions-table{% if docsPrefix == "pe/" %} pe-table {% elsif docsPrefix == "trendz/" %} trendz-table{% elsif docsPrefix == "edge/" %} edge-table{% elsif docsPrefix == "pe/edge/" %} pe-edge-table{% endif %}">
     <div class="releases-table-content">
         <div class="releases-table-header">
             <div class="releases-table-header-item">Version</div>
             <div class="releases-table-header-item">Release Date</div>
-            <div class="releases-table-header-item">Upgradable From</div>
+            <div class="releases-table-header-item">
+                {% if docsPrefix == "trendz/" %}
+                    ThingsBoard Support
+                {% else %}
+                    Upgradable From
+                {% endif %}
+            </div>
             <div class="releases-table-header-item"><a href="/docs/{{ docsPrefix }}releases/release-policy/" target="_blank">LTS</a></div>
             <div class="releases-table-header-item">Release Notes</div>
             <div class="releases-table-header-item">Upgrade Instructions</div>
@@ -50,6 +60,8 @@
                     {% assign hashLinkReleaseBase = hashLinkReleaseBase | append: "-edge-" %}
                 {% elsif docsPrefix == "pe/edge/" %}
                     {% assign hashLinkReleaseBase = hashLinkReleaseBase | append: "-pe-edge-" %}
+                {% elsif docsPrefix == "trendz/" %}
+                    {% assign hashLinkReleaseBase = hashLinkReleaseBase | append: "-trendz-" %}
                 {% else %}
                     {% assign hashLinkReleaseBase = hashLinkReleaseBase | append: "-ce-" %}
                 {% endif %}
@@ -103,21 +115,26 @@
                                 {{ releaseDate | date: "%-d" }} {{ release_month_short }} {{ releaseDate | date: "%Y" }}
                             </time>
                         </div>
-                        <div class="releases-table-content-item">
-                            {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
-                                {% if item[1].upgradable-from-edge %}
-                                    v{{ item[1].upgradable-from-edge }}
+
+                        {%- if docsPrefix == "trendz/" -%}
+                            <div class="releases-table-content-item">Up to v{{ item[1].tbVersion }}</div>
+                        {%- else -%}
+                            <div class="releases-table-content-item">
+                                {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+                                    {% if item[1].upgradable-from-edge %}
+                                        v{{ item[1].upgradable-from-edge }}
+                                    {% else %}
+                                        v{{ item[1].upgradable-from }}
+                                    {% endif %}
                                 {% else %}
                                     v{{ item[1].upgradable-from }}
                                 {% endif %}
-                            {% else %}
-                                v{{ item[1].upgradable-from }}
-                            {% endif %}
-                            {%- if docsPrefix == "pe/" -%}PE
-                            {%- elsif docsPrefix == "edge/" -%}Edge
-                            {%- elsif docsPrefix == "pe/edge/" -%}PE Edge
-                            {%- endif -%}
-                        </div>
+                                {%- if docsPrefix == "pe/" -%}PE
+                                {%- elsif docsPrefix == "edge/" -%}Edge
+                                {%- elsif docsPrefix == "pe/edge/" -%}PE Edge
+                                {%- endif -%}
+                            </div>
+                        {%- endif -%}
 
                         <div class="releases-table-content-item lts-item">
                             {%- if item[1].lts == 'true' -%}
@@ -139,6 +156,8 @@
                             {% assign hashLinkUpgradeBase = hashLinkUpgradeBase | append: "-edge-to-" %}
                         {% elsif docsPrefix == "pe/edge/" %}
                             {% assign hashLinkUpgradeBase = hashLinkUpgradeBase | append: "-pe-edge-to-" %}
+                        {% elsif docsPrefix == "trendz/" %}
+                            {% assign hashLinkUpgradeBase = "upgrading-trendz-analytics-to-" %}
                         {% else %}
                             {% assign hashLinkUpgradeBase = hashLinkUpgradeBase | append: "-ce-to-" %}
                         {% endif %}
@@ -172,6 +191,19 @@
                                 <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/docker/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Instructions">
                                     <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
                                 </a>
+                            {% elsif docsPrefix == "trendz/" %}
+                                <a href="/docs/{{ docsPrefix }}install/upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Ubuntu Instructions">
+                                    <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
+                                </a>
+                                <a href="/docs/{{ docsPrefix }}install/upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="CentOS Instructions">
+                                    <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
+                                </a>
+                                <a href="/docs/{{ docsPrefix }}install/upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Windows Instructions">
+                                    <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
+                                </a>
+                                <a href="/docs/{{ docsPrefix }}install/upgrade-instructions/docker/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Instructions">
+                                    <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
+                                </a>    
                             {% else %}
                                 <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Ubuntu Instructions">
                                     <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">

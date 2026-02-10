@@ -689,9 +689,9 @@ See product [homepage](/products/trendz/){:target="_blank"} for more details.
 
 To cancel your ThingsBoars {{cloudPrefix}} Cloud subscription, follow these steps:
 
-- Navigate to **Plan and billing**.
-- Click **Cancel subscription**.
-- Follow the on-screen instructions.
+- Navigate to **Plan and billing**. 
+- Click **Cancel subscription**. 
+- Follow the on-screen instructions. 
 - Confirm the cancellation by clicking **Cancel subscription** in the confirmation dialog.
 
 {% capture update-only-keys-cluster-mode %}
