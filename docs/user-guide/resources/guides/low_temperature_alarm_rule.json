@@ -28,7 +28,7 @@
           },
           "schedule": null
         },
-        "alarmDetails": null,
+        "alarmDetails": "${temperature}",
         "dashboardId": null
       }
     },

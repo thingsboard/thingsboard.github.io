@@ -3,7 +3,7 @@
 
 ## Use case
 
-Assume your refrigeration equipment is equipped with a temperature sensor that periodically publishes telemetry data to ThingsBoard.
+Assume your refrigeration equipment is fitted with a temperature sensor that periodically publishes telemetry data to ThingsBoard.
 
 The normal operating temperature range is between 2 °C and 5 °C.   
 If the reported temperature goes outside this range, it should be treated as an abnormal condition.
@@ -54,11 +54,9 @@ You need to create two separate alarm rules, each responsible for a specific tem
 Each alarm rule is evaluated every time telemetry is received from the target entity:
 - The incoming temperature value is read
 - The value is compared against the create and clear conditions
-- If a condition matches, the alarm is created, updated, or cleared
+- If a condition is met, the alarm is created, updated, or cleared
 
-## Import alarm rules
-
-### Import High temperature alarm rule
+## Step 1. Import High temperature alarm rule
 
 1. Download the [High temperature alarm rule](/docs/user-guide/resources/guides/high_temperature_alarm_rule.json){:target="_blank" download="high_temperature_alarm_rule.json"} configuration file.
 2. Go to **Alarms &#8702; Alarm rules**.
@@ -66,7 +64,7 @@ Each alarm rule is evaluated every time telemetry is received from the target en
 4. Specify your **device** or **device profile** as target entity.
 5. Click **Add** to complete the import.
 
-### Import Low temperature alarm rule
+## Step 2. Import Low temperature alarm rule
 
 1. Download the [Low temperature alarm rule](/docs/user-guide/resources/guides/low_temperature_alarm_rule.json){:target="_blank" download="low_temperature_alarm_rule.json"} configuration file.
 2. In **Alarms &#8702; Alarm rules**, click the **"&#43; Add alarm rule"** and select **"Import alarm rule"**. 
@@ -168,7 +166,7 @@ The easiest way is to use [Check connectivity](/docs/{{docsPrefix}}user-guide/ui
    {: .copy-code}
    {% endif %}
 
-After each step, observe the alarm state in the **Alarms page** or on a dashboard to confirm correct behavior.
+After each step, observe the alarm state in the **Alarms** page, in the corresponding tab inside device details or on a dashboard to confirm correct behavior.
 
 <hr>
 
