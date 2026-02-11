@@ -18,7 +18,7 @@ description: TBMQ Terms of Use
 
 <br>
 <p> <b>2. Acceptance of Terms</b> </p>
-<p> 2.1 By connecting to or using this Service, you agree to be bound by these Terms of Use and acknowledge that you have read and understood our <a href="/products/mqtt-broker/privacy-policy/">Privacy Policy</a>. You consent to the collection and processing of data as outlined therein. If you do not agree, please discontinue use immediately.</p>
+<p> 2.1 By connecting to or using this Service, you agree to be bound by these Terms of Use and acknowledge that you have read and understood our <a target="_blank" href="/products/mqtt-broker/privacy-policy/">Privacy Policy</a>. You consent to the collection and processing of data as outlined therein. If you do not agree, please discontinue use immediately.</p>
 
 <br>
 <p> <b>3. No Warranty & "As-Is" Provision</b> </p>
