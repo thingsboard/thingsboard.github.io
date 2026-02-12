@@ -85,7 +85,7 @@ description: Comprehensive software solutions for edge computing, providing data
                     <div class="image-background"></div>
                     <div class="image-background"></div>
                     <div class="image">
-                        <img src="/images/edge/tb-edge-gw.webp" alt="ThingsBoard Gateway block" width="615" height="719" loading="lazy">
+                        <img src="https://img.thingsboard.io/edge/tb-edge-gw.webp" alt="ThingsBoard Gateway block" width="615" height="719" loading="lazy">
                     </div>
                 </div>
                 <a href="/docs/iot-gateway/getting-started/" target="_blank" class="cta-button gtm_button">Connect Your Devices</a>
@@ -97,7 +97,7 @@ description: Comprehensive software solutions for edge computing, providing data
                     <div class="image-background"></div>
                     <div class="image-background"></div>
                     <div class="image">
-                        <img src="/images/edge/tb-edge.webp" alt="ThingsBoard Edge block" loading="lazy">
+                        <img src="https://img.thingsboard.io/edge/tb-edge.webp" alt="ThingsBoard Edge block" loading="lazy">
                     </div>
                 </div>
                 <a href="/docs/edge/getting-started/" target="_blank" class="cta-button gtm_button">Try Edge Now</a>
@@ -109,7 +109,7 @@ description: Comprehensive software solutions for edge computing, providing data
                     <div class="image-background"></div>
                     <div class="image-background"></div>
                     <div class="image">
-                        <img src="/images/edge/tb-cloud.webp" alt="ThingsBoard Cloud block" loading="lazy">
+                        <img src="https://img.thingsboard.io/edge/tb-cloud.webp" alt="ThingsBoard Cloud block" loading="lazy">
                     </div>
                 </div>
                 <a href="/docs/getting-started-guides/helloworld/" target="_blank" class="cta-button gtm_button">Get Started</a>
@@ -139,63 +139,63 @@ description: Comprehensive software solutions for edge computing, providing data
             <tbody>
                 <tr>
                     <th>ThingsBoard Server Required</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                     <td>N/A</td>
                 </tr>
                 <tr>
                     <th><a href="/docs/reference/performance/" target="_blank">Data Collection</a></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th><a href="/docs/api/" target="_blank">Core Protocols Support<br>(MQTT, HTTP, CoAP, etc.)</a></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th><a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">Peripheral Infrastructure Protocols Support<br>(Modbus, BACNet, BLE, etc.)</a></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
                     <th><a href="/docs/guides/#AnchorIDDataProcessing" target="_blank">Data Processing and Analysis</a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th><a href="/docs/user-guide/dashboards/" target="_blank">Real-Time HMI Dashboards</a><br>and <a href="/docs/user-guide/scada/" target="_blank">SCADA-like HMI Dashboards</a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th><a href="/docs/user-guide/alarms/" target="_blank">Alarms & Notifications</a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th><a href="/docs/user-guide/ui/assets/" target="_blank">Asset Management</a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th><a href="/docs/edge/config/management/" target="_blank">Offline Data Computing and Storage<br>(Remote Site Scenarios)</a></th>
                     <td>Data Collection</td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
                     <th><a href="/docs/user-guide/ui/tenants/" target="_blank">Multi-Tenancy Support</a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Hardware Resources Usage</th>
@@ -213,7 +213,7 @@ description: Comprehensive software solutions for edge computing, providing data
         <div class="main1"></div><div class="small3"></div><div class="small4"></div>
     </div>
     <div class="main-content">
-        <img class="h-auto" src="/images/case-studies/Dominic_Winkler.webp" title="ÖBB-Infrastruktur AG IT Enterprise Architect Dominic Winkler" alt="Dominic Winkler" width="1316" height="848">
+        <img class="h-auto" src="https://img.thingsboard.io/case-studies/Dominic_Winkler.webp" title="ÖBB-Infrastruktur AG IT Enterprise Architect Dominic Winkler" alt="Dominic Winkler" width="1316" height="848">
         <div class="text">
             <h2>ÖBB-Infrastruktur AG</h2>
             <p class="quote">"Thingsboard Edge gives us the invaluable ability to allow data to flow within our IT network without the need to bridge Firewalls and Public Internet."</p>
@@ -238,11 +238,11 @@ description: Comprehensive software solutions for edge computing, providing data
         <div class="block">
             <div class="feature-des"><h3 class="item-heading">Local Deployment and Storage</h3>
                 <p>Process and store data from local (edge) devices independently of the server. Sync updates with the server once connectivity is restored.</p>
-                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
-                <a class="read-more-button" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <a class="read-more-button" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="block-img">
-                <img src="/images/edge/local-deployment.svg" alt="local deployment">
+                <img src="https://img.thingsboard.io/edge/local-deployment.svg" alt="local deployment">
             </div>
         </div>
 </section>
@@ -253,12 +253,12 @@ description: Comprehensive software solutions for edge computing, providing data
         </div>
         <div class="block">
             <div class="block-img">
-                <img src="/images/edge/data-filtering.svg" alt="data filtering">
+                <img src="https://img.thingsboard.io/edge/data-filtering.svg" alt="data filtering">
             </div>
             <div class="feature-des"><h3 class="item-heading">Data Filtering</h3>
                 <p>Use the ThingsBoard Edge service to filter data from local (edge) devices and forward only a subset of data to the server for further processing or storage.</p>
-                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
-                <a class="read-more-button" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <a class="read-more-button" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
         </div>
 </section>
@@ -270,11 +270,11 @@ description: Comprehensive software solutions for edge computing, providing data
         <div class="block">
             <div class="feature-des"><h3 class="item-heading">Local Alarms</h3>
                 <p>Respond instantly to critical situations on-site, even without connectivity to server.</p>
-                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
-                <a class="read-more-button" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <a class="read-more-button" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="block-img">
-                <img src="/images/edge/local-alarms.svg" alt="local alarms">
+                <img src="https://img.thingsboard.io/edge/local-alarms.svg" alt="local alarms">
             </div>
         </div>
 </section>
@@ -282,12 +282,12 @@ description: Comprehensive software solutions for edge computing, providing data
 <section id="batch-update">
         <div class="block">
             <div class="block-img">
-                <img src="/images/edge/batch-update.svg" alt="batch update">
+                <img src="https://img.thingsboard.io/edge/batch-update.svg" alt="batch update">
             </div>
             <div class="feature-des"><h3 class="item-heading">Batch Update and Visualization</h3>
                 <p>Update thousands of edge configurations with a single click. Monitor local events and time series data using a real-time dashboard.</p>
-                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
-                <a class="read-more-button" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <a class="read-more-button" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
         </div>
 </section>
@@ -302,7 +302,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="feature-card">
                 <div class="feature-header" onclick="toggleFeature(this)">
                     <div class="feature-icon">
-                        <img src="/images/edge/opensource-icon.svg" alt="100% Open-source">
+                        <img src="https://img.thingsboard.io/edge/opensource-icon.svg" alt="100% Open-source">
                     </div>
                     <h3 class="feature-title">100% Open-source</h3>
                     <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -316,7 +316,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="feature-card">
                 <div class="feature-header" onclick="toggleFeature(this)">
                     <div class="feature-icon">
-                        <img src="/images/edge/customizable-icon.svg" alt="Customizable">
+                        <img src="https://img.thingsboard.io/edge/customizable-icon.svg" alt="Customizable">
                     </div>
                     <h3 class="feature-title">Customizable</h3>
                     <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -330,7 +330,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="feature-card">
                 <div class="feature-header" onclick="toggleFeature(this)">
                     <div class="feature-icon">
-                        <img src="/images/edge/robust-icon.svg" alt="Robust and Efficient">
+                        <img src="https://img.thingsboard.io/edge/robust-icon.svg" alt="Robust and Efficient">
                     </div>
                     <h3 class="feature-title">Robust and Reliable</h3>
                     <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -344,7 +344,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="feature-card">
                 <div class="feature-header" onclick="toggleFeature(this)">
                     <div class="feature-icon">
-                        <img src="/images/edge/scalable-icon.svg" alt="Scalable">
+                        <img src="https://img.thingsboard.io/edge/scalable-icon.svg" alt="Scalable">
                     </div>
                     <h3 class="feature-title">Scalable</h3>
                     <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -358,7 +358,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="feature-card">
                 <div class="feature-header" onclick="toggleFeature(this)">
                     <div class="feature-icon">
-                        <img src="/images/edge/visualization-icon.svg" alt="Real-Time">
+                        <img src="https://img.thingsboard.io/edge/visualization-icon.svg" alt="Real-Time">
                     </div>
                     <h3 class="feature-title">Real-Time</h3>
                     <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -372,7 +372,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="feature-card">
                 <div class="feature-header" onclick="toggleFeature(this)">
                     <div class="feature-icon">
-                        <img src="/images/edge/offline-edge.svg" alt="Offline Capable">
+                        <img src="https://img.thingsboard.io/edge/offline-edge.svg" alt="Offline Capable">
                     </div>
                     <h3 class="feature-title">Offline Capable</h3>
                     <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -386,7 +386,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="feature-card">
                 <div class="feature-header" onclick="toggleFeature(this)">
                     <div class="feature-icon">
-                        <img src="/images/edge/low-latency.svg" alt="Responsive">
+                        <img src="https://img.thingsboard.io/edge/low-latency.svg" alt="Responsive">
                     </div>
                     <h3 class="feature-title">Responsive</h3>
                     <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -400,7 +400,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="feature-card">
                 <div class="feature-header" onclick="toggleFeature(this)">
                     <div class="feature-icon">
-                        <img src="/images/edge/engine-icon.svg" alt="Logic-Driven">
+                        <img src="https://img.thingsboard.io/edge/engine-icon.svg" alt="Logic-Driven">
                     </div>
                     <h3 class="feature-title">Logic-Driven</h3>
                     <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -414,7 +414,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="feature-card">
                 <div class="feature-header" onclick="toggleFeature(this)">
                     <div class="feature-icon">
-                        <img src="/images/edge/friendly-icon.svg" alt="User-Friendly">
+                        <img src="https://img.thingsboard.io/edge/friendly-icon.svg" alt="User-Friendly">
                     </div>
                     <h3 class="feature-title">User-Friendly</h3>
                     <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -437,7 +437,7 @@ description: Comprehensive software solutions for edge computing, providing data
                 <a id="Products_Edge_TryEdgeNow" href="/docs/edge/getting-started/" target="_blank" class="bottom-button gtm_button">Get started now</a>
             </div>
         </div>
-        <img src="/images/edge/offline-edge.svg" alt="Edge icon">
+        <img src="https://img.thingsboard.io/edge/offline-edge.svg" alt="Edge icon">
     </div>
 </section>
 
