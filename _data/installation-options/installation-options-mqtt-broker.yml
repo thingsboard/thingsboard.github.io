@@ -3,7 +3,7 @@ mqttBroker:
     title: TBMQ Public Demo
     description: Try TBMQ instantly — no installation required. Connect to the public demo instance and start publishing and subscribing right away.
     link: https://demo.tbmq.io/signup
-    icon: /images/install/platform/tbmq-demo-ce.svg
+    icon: https://img.thingsboard.io/install/platform/tbmq-demo-ce.svg
     alt: TBMQ logo
     imageTitleAttribute: Try TBMQ Public Demo
     imageWidth: 36

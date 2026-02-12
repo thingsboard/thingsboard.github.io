@@ -28,7 +28,7 @@ The fastest way to get started is to use our public demo instance — no install
     </div>
     <div class="col-12 col-sm-5 col-lg-5 mb-4 d-flex">
         <a class="feature-card w-100" href="https://demo.tbmq.io/signup" target="_blank">
-            <img class="feature-logo" src="/images/feature-logo/getting-started.svg" alt="Sign up icon">
+            <img class="feature-logo" src="https://img.thingsboard.io/feature-logo/getting-started.svg" alt="Sign up icon">
             <div class="feature-title">Sign Up for Free</div>
             <div class="feature-text">
                 Create an account to access the live TBMQ Demo UI — monitor sessions, subscriptions, and broker statistics in real time.
