@@ -3,6 +3,10 @@ abstract: "Documentation for installation and configuration of TBMQ PE."
 toc:
   - title: Installation options
     path: /docs/pe/mqtt-broker/install/installation-options/
+  - title: TBMQ Public Demo
+    path: https://demo.tbmq.io/signup
+    new_window: true
+    new: true
   - title: Docker (Linux or Mac OS)
     path: /docs/pe/mqtt-broker/install/docker/
   - title: Docker (Windows)

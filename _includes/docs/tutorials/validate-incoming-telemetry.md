@@ -3,7 +3,7 @@
 
 This guide explains how to validate incoming telemetry data in ThingsBoard and discard invalid values before they are stored.
 
-As an example, we validate temperature readings received from a Thermometer sensor and ensure that only values within the supported range are stored in the database.
+As an example, we will validate temperature readings received from a Thermometer sensor and ensure that only values within the supported range are stored in the database.
 
 The guide is introductory and focuses on demonstrating the core platform capabilities rather than building configurations from scratch.    
 For this reason, predefined rule chain configurations are provided and imported during the setup process.
@@ -19,7 +19,7 @@ Assume your device is equipped with a Thermometer temperature sensor that period
 The Thermometer sensor supports temperature measurements in the range -40 °C to +80 °C
 
 Your objective is to:
-- Accept and store temperature readings only within the valid range
+- Accept and store temperature readings only if they fall within the valid range
 - Discard telemetry values outside this range
 - Allow all other telemetry data (that does not contain temperature) to pass through unchanged
 
@@ -44,19 +44,19 @@ Only messages that meet these conditions are stored in the database.
 
 <br>
 
-Telemetry validation is implemented using a [rule chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} that filters incoming messages before they are saved. Rule chain behavior:
+Telemetry validation is implemented using a [rule chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} that filters incoming messages before they are saved. Rule chain behaves as follows:
 - Routes **all messages from devices using this rule chain** to a [filter node](/docs/user-guide/rule-engine-2-0/nodes/filter/script){:target="_blank"} with the temperature validation script
 - Forwards **validated telemetry** to the [save timeseries node](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries){:target="_blank"}, which stores data in the database
 
 This rule chain ensures that only valid temperature readings are stored, while invalid values are filtered out before persistence.
 
-## 1. Import the validation rule chain
+## Step 1. Import the validation rule chain
 
 1. Download the rule chain configuration file:   
    [validate_incoming_telemetry_rule_chain.json](/docs/user-guide/resources/guides/validate_incoming_telemetry_rule_chain.json){:target="_blank" download="validate_incoming_telemetry_rule_chain.json"}.
 2. Navigate to the **Rule chains** page.
-3. Click the **&#43;** (**Add**) button in the top-right corner and select **Import rule chain**.
-4. [Upload the rule chain configuration file](/docs/{{docsPrefix}}user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} and click **Import**.
+3. Click the **"&#43; Add rule chain"** button in the top-right corner and select **"Import rule chain"**.
+4. [Upload the rule chain configuration file](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#import-rule-chain){:target="_blank"} and click **Import**.
 5. Click **Apply changes** to finalize the import.
 
 <br><b><font size="3">Script used in this example</font></b>
@@ -72,12 +72,12 @@ return typeof msg.temperature === 'undefined' || (msg.temperature >= -40 && msg.
 
 <hr>
 
-## 2. Add demo device
+## Step 2. Add demo device
 
 Next, create a demo device that publishes temperature telemetry and ensure it uses the imported validation rule chain.
 
 1. Navigate to **Entities** **&#8702;** **Devices**.
-2. Click the **&#43;** (**Add**) button in the top-right corner, select **Add new device** and create:
+2. Click the **"&#43; Add device"** button in the top-right corner, select **"Add new device"** and create:
     - **Device name:** Thermometer
     - **Device profile:** thermostat
 3. In the **thermostat** device profile settings, set the imported **Validate Incoming Telemetry** rule chain as the default rule chain for this profile.

@@ -38,4 +38,6 @@ check-connectivity:
 
 ---
 
+{% assign tbmqSuffix = "CE" %}
+{% assign tbmqSuffixLc = "ce" %}
 {% include docs/mqtt-broker/getting-started.md %}

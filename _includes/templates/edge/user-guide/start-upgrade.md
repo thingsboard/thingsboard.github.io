@@ -16,12 +16,7 @@ sed -i 's|thingsboard/tb-edge:{{previousVersion}}|thingsboard/tb-edge:{{versionN
 ```
 {: .copy-code}
 
-Upgrade the **ThingsBoard Edge** service:
-
-```bash
-docker compose run mytbedge upgrade-tb-edge.sh
-```
-{: .copy-code}
+{% include templates/edge/install/info-patch-upgrade.md %}
 
 To start this docker compose, run the following command:
 ```

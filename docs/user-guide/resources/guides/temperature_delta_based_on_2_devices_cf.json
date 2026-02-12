@@ -10,13 +10,13 @@
   "configuration": {
     "type": "SIMPLE",
     "arguments": {
-      "IndoorTemperature": {
+      "indoorTemperature": {
         "refEntityId": {
           "entityType": "DEVICE",
           "id": "77281820-f86f-11f0-b422-89b7a795a343"
         },
         "refEntityKey": {
-          "key": "temperature",
+          "key": "indoorTemperature",
           "type": "TS_LATEST"
         },
         "defaultValue": ""
@@ -27,13 +27,13 @@
           "id": "7d957310-f86f-11f0-b422-89b7a795a343"
         },
         "refEntityKey": {
-          "key": "temperature",
+          "key": "outdoorTemperature",
           "type": "TS_LATEST"
         },
         "defaultValue": ""
       }
     },
-    "expression": "abs(IndoorTemperature - outdoorTemperature)",
+    "expression": "abs(indoorTemperature - outdoorTemperature)",
     "output": {
       "type": "TIME_SERIES",
       "name": "deltaTemperature",

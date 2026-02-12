@@ -96,10 +96,10 @@ toc:
       path: /docs/pe/mqtt-broker/user-guide/ui/sessions/
     - title: Subscriptions
       path: /docs/pe/mqtt-broker/user-guide/ui/subscriptions/
-    - title: Unauthorized Clients
-      path: /docs/pe/mqtt-broker/user-guide/ui/unauthorized-clients/
     - title: MQTT Client Credentials
       path: /docs/pe/mqtt-broker/user-guide/ui/mqtt-client-credentials/
+    - title: Unauthorized Clients
+      path: /docs/pe/mqtt-broker/user-guide/ui/unauthorized-clients/
     - title: WebSocket Client
       path: /docs/pe/mqtt-broker/user-guide/ui/websocket-client/
     - title: Application Shared Subscriptions
