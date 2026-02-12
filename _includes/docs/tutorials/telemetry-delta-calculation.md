@@ -14,12 +14,12 @@ After importing these configurations into your ThingsBoard instance, you can exp
 
 Assume you have a device equipped with a temperature sensor that periodically sends telemetry data to ThingsBoard.
 
-You need:
+You need to:
 - Monitor temperature changes over a fixed time window (for example, 15 minutes).
 - Trigger an alarm when the temperature change exceeds a defined threshold (5 °C).
 - Automatically clear the alarm when the value returns to normal.
 
-This workflow represents a common real-time monitoring and anomaly detection scenario and can be easily extended to more advanced use cases.
+This workflow represents a common real-time monitoring and anomaly detection scenario and can be easily extended to support more advanced use cases.
 
 <hr>
 
@@ -33,7 +33,7 @@ These concepts are essential for understanding the configuration described below
 
 <hr>
 
-## 1. Add demo device
+## Step 1. Add demo device
 
 Start by adding a demo device that publishes temperature telemetry.
 
@@ -42,7 +42,7 @@ The device serves as the source of telemetry data used by the calculated field a
 <b><font size="3">Actions</font></b>
 
 1. Navigate to **Entities** **&#8702;** **Devices**.
-2. Click the **&#43;** (**Add**) button in the top-right corner, select **Add new device** and create:   
+2. Click the **"&#43; Add device"** button in the top-right corner, select **"Add new device"** and create:   
 &#8194;&#8226;&#8194;**Device name**: Thermometer   
 &#8194;&#8226;&#8194;**Device profile**: thermostat
 
@@ -50,7 +50,7 @@ The device is registered in ThingsBoard and ready to publish telemetry data.
 
 <hr>
 
-## 2. Import a calculated field for telemetry delta
+## Step 2. Import a calculated field for telemetry delta
 
 The provided configuration calculates the temperature delta over the last 15 minutes and stores the result as a new telemetry key: <span class="code-light">deltaTemperature</span>.
 
@@ -59,7 +59,7 @@ The provided configuration calculates the temperature delta over the last 15 min
 1. Download the calculated field configuration file:   
    [telemetry_delta_calculation_cf.json](/docs/user-guide/resources/guides/telemetry_delta_calculation_cf.json){:target="_blank" download="telemetry_delta_calculation_cf.json"}.
 2. Navigate to the **Calculated fields** page.
-3. Click the **&#43;** (**Add**) button in the top-right corner and select **Import calculated field**.
+3. Click the **"&#43; Add calculated field"** button in the top-right corner and select **"Import calculated field"**.
 4. [Upload the calculated field configuration file](/docs/{{docsPrefix}}user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"}.
 5. Select the <span class="code-light">thermostat</span> [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} as the target entity so the calculated field is applied automatically to all relevant devices.
 6. Click **Add** to complete the import.
@@ -68,7 +68,7 @@ The provided configuration calculates the temperature delta over the last 15 min
    
 The calculated field script:
 - Collects temperature values from the last 5 minutes
-- Uses the first and last values in the time window
+- Uses the first and last values within the time window
 - Calculates their difference
 - Stores the absolute value as telemetry
 
@@ -96,7 +96,7 @@ return {
 
 <hr>
 
-## 3. Configure alarm rules based on telemetry delta
+## Step 3. Configure alarm rules based on telemetry delta
 
 Configure the [alarm rule](/docs/{{docsPrefix}}user-guide/alarm-rules){:target="_blank"} that react to changes in the <span class="code-light">deltaTemperature</span> key value.
 
@@ -116,15 +116,18 @@ Once imported, the alarm lifecycle is managed automatically by ThingsBoard.
 
 <hr>
 
-## 4. Verify the configuration
+## Step 4. Verify the configuration
 
 To confirm that everything works as expected, publish two temperature values within a 15-minute interval.
 
 **Verification steps**
 
 1. Publish an initial temperature value (for example, 25).   
-   The easiest way is to use the [check connectivity](/docs/{{docsPrefix}}user-guide/ui/devices/#check-connectivity){:target="_blank"} feature. Alternatively, execute the command below&#42;:   
-   **&#42;** Make sure to replace {% if docsPrefix == null or docsPrefix == "pe/" %}**$THINGSBOARD_HOST_NAME** with the hostname or IP address of your ThingsBoard instance, and {% endif %}**$ACCESS_TOKEN** with the Thermostat device access token.   
+   The easiest way is to use the [check connectivity](/docs/{{docsPrefix}}user-guide/ui/devices/#check-connectivity){:target="_blank"} feature. Alternatively, execute the command below:   
+   > **Don&#39;t forget to replace:**   
+   &#8194;&#8226;&#8194;<code>{{HOST_NAME}}</code> with your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Edge{% endif %} hostname or IP address.   
+   &#8194;&#8226;&#8194;<code>$ACCESS_TOKEN</code> with your device&#39;s access token.
+
    {% if docsPrefix == null or docsPrefix == "pe/" %}
    ```bash
    curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header Content-Type:application/json --data "{temperature:25}"
@@ -147,7 +150,7 @@ To confirm that everything works as expected, publish two temperature values wit
 2. Open the device **Latest telemetry** tab to monitor incoming data in real time.   
    At this stage, you should see the following telemetry keys:
    - <span class="code-light">temperature = 25</span>
-   - <span class="code-light">deltaTemperature> = 0</span (only one value is available)
+   - <span class="code-light">deltaTemperature = 0</span>
 
 3. Publish a second temperature value within 15 minutes (for example, 32).   
    {% if docsPrefix == null or docsPrefix == "pe/" %}
@@ -169,10 +172,8 @@ To confirm that everything works as expected, publish two temperature values wit
    {: .copy-code}
    {% endif %}
 
-4. After the second update:
-   - <span class="code-light">deltaTemperature = 7</span>
-   - The alarm is triggered because the threshold is exceeded
-
+4. After the second update:   
+   &#8194;&#8226;&#8194;<span class="code-light">deltaTemperature = 7</span>. The alarm is triggered because the threshold is exceeded
 5. Open the **Alarms** tab to verify the alarm status.
 
 As soon as the <span class="code-light">deltaTemperature</span> key value becomes less than <span class="code-light">5</span>, the alarm will be automatically cleared.

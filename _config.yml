@@ -97,11 +97,11 @@ release:
   # In short form (e.g. v4.3)
   wd_examples_commit: v4.3.0.1
   # >>> EDGE
-  edge_ver: 4.3
-  edge_tag: v4.3
-  edge_full_ver: 4.3.0EDGE
-  pe_edge_ver: 4.3pe
-  pe_edge_full_ver: 4.3.0EDGEPE
+  edge_ver: 4.3.0.1
+  edge_tag: v4.3.0.1
+  edge_full_ver: 4.3.0.1EDGE
+  pe_edge_ver: 4.3.0.1pe
+  pe_edge_full_ver: 4.3.0.1EDGEPE
   # <<< EDGE
   ce_flutter_app_ver: 1.8.0
   pe_flutter_app_ver: 1.8.0

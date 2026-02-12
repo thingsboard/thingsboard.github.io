@@ -85,7 +85,7 @@ If your ThingsBoard{% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %} Ed
 
 {% endunless %}
 
-> Don&#39;t forget to replace <code>$ACCESS_TOKEN</code> with your device&#39;s access token.
+> Don&#39;t forget to replace <code>$ACCESS_TOKEN</code> with your gateway device access token.
 
 **Example 1.** Connect a device.
 
@@ -140,7 +140,7 @@ If something goes wrong during the disconnecting, the PUBACK will return with th
 
 **Example**
 
-> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your device&#39;s access token.
+> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your gateway device access token.
 
 Also, make sure that the device is connected before disconnecting it.
 
@@ -213,7 +213,7 @@ If something goes wrong during the publishing, the PUBACK will return with the c
 
 **Example**
 
-> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your device&#39;s access token.
+> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your gateway device access token.
 
 In order to publish client-side device attributes to ThingsBoard platform, one needs to publish following message:
 
@@ -247,7 +247,7 @@ v1/gateway/attributes/request
 
 ```json
 {
-  "id": $request_id,
+  "id": "$request_id",
   "device": "Device A",
   "client": ["key1", "key2"],
   "shared": ["key3", "key4"]
@@ -340,7 +340,7 @@ v1/gateway/telemetry
 
 Fields:
 - **device** – required. The device name in ThingsBoard.
-- **ts** – Unix timestamp in milliseconds.
+- **ts** – Optional. Unix timestamp in milliseconds.
 - **values** – required. Key-value map of telemetry fields (e.g., temperature, humidity).
 
 **Behavior:**
@@ -358,7 +358,7 @@ If something goes wrong during the publishing, the PUBACK will return with the c
 
 **Example**
 
-> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your device&#39;s access token.
+> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your gateway device access token.
 
 In order to publish device telemetry to ThingsBoard platform, one needs to publish following message:
 
@@ -455,7 +455,7 @@ Per-device parameters:
 
 **Example**
 
-> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your device&#39;s access token.
+> ⚠️ Replace <code>$ACCESS_TOKEN</code> with your gateway device access token.
 
 Also, make sure that the device is connected before testing claiming.
 

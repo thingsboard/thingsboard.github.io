@@ -52,7 +52,8 @@
 
                             <div class="releases-table-content-item">
                                 {{ version | replace: "-", "." | replace: ".x", "" }}{% if docsPrefix == "pe/" %}PE
-                                {%- elsif docsPrefix == "edge/" or docsPrefix == "pe/edge/" -%}Edge
+                                {%- elsif docsPrefix == "edge/" -%}Edge
+                                {%- elsif docsPrefix == "pe/edge/" -%}PE Edge
                                 {%- endif -%}
                             </div>
 
@@ -148,8 +149,8 @@
     </div>
 </div>
 <ul class="legend{% if docsPrefix == "pe/" %} pe{% elsif docsPrefix == "edge/" %} edge{% elsif docsPrefix == "pe/edge/" %} pe-edge{% endif %}">
-    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Active LTS</a> - releases supported for 18 months from initial release date</li>
-    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Maintenance LTS</a> - older LTS releases still supported within the LTS window</li>
+    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/" target="_blank">Active LTS</a> - releases supported for 18 months from initial release date</li>
+    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/" target="_blank">Maintenance LTS</a> - older LTS releases still supported within the LTS window</li>
     <li>Standard - releases supported for 6 months from initial release date</li>
 </ul>
 <div class="fixed-upgrade-scrollbar" id="fixedScrollbar">

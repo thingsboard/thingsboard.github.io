@@ -1,20 +1,18 @@
 <!Doctype html>
-<html id="thingsboard-edge">
+<html id="thingsboard-edge" lang="en">
 
 {% include head-header.html productTag="edge" %}
 <!--  HERO  -->
-<section id="hero" class="light-text"
-         data-vide-bg="mp4: https://video.thingsboard.io/edge-cover.mp4,
-                       poster: https://img.thingsboard.io/pe-cover.webp"
-         data-vide-options="bgColor: #000000, loop: true, muted: true, posterType: webp">
+<section id="hero" class="light-text">
     <div class="video-cover"></div>
     <div id="hero-content">
-        <span class="header-animation edge-title">ThingsBoard Edge</span>
-        <h2 class="header-animation edge-description">Distribute data processing and analysis using edge computing</h2>
+        <h1 class="header-animation edge-title">Open Source IoT Edge Computing</h1>
+        <h2 class="header-animation edge-description">ThingsBoard Edge: IoT that works when the internet doesn't</h2>
         <div class="header-animation">
-            <a href="#encyclopedia" class="button try-edge" id="learn-more">Learn More</a>
-            <a id="Products_Edge_DemoRequest" href="/products/thingsboard-edge/request-demo/"
-               class="button try-edge gtm_button">Request a Demo</a>
+            <a id="Products_Edge_DemoRequest" href="/docs/contact-us/?subject=ThingsBoard%20Products" target="_blank"
+               class="button try-edge accent gtm_button">Contact Us</a>
+            <a id="What_Is_Edge_Guide" href="/docs/edge/getting-started-guides/what-is-edge/" target="_blank"
+               class="button try-edge">Learn More</a>
         </div>
         <div class="paas-arrow">
             <a href="#encyclopedia"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
@@ -37,7 +35,7 @@
                 slideUp();
             }
         });
-        $('#hero-content > .paas-arrow > a, #learn-more').click(function(event) {
+        $('#hero-content > .paas-arrow > a').click(function(event) {
             event.preventDefault();
             var target = $('#encyclopedia');
             $('html, body').animate({

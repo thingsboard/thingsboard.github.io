@@ -3,7 +3,7 @@
 {:toc}
 
 This guide explains how to configure ThingsBoard to automatically send email notifications to users when an alarm is created.   
-It extends the [Create and Clear Alarms](/docs/tutorials/create-clear-alarms){:target="_blank"} use case by using the Notification Center to deliver alarm-based email notifications.
+It extends the [Create and Clear Alarms](/docs/{{docsPrefix}}tutorials/create-clear-alarms){:target="_blank"} use case by using the Notification Center to deliver alarm-based email notifications.
 
 <hr>
 
@@ -13,7 +13,7 @@ Assume your refrigeration equipment periodically reports temperature telemetry t
 - Normal operating temperature range: 2 °C to 5 °C
 - Any value outside this range is considered an abnormal condition.
 
-When such a condition occurs:
+When this condition is met:
 - An alarm is created by the alarm rules.
 - An email notification is sent to the responsible users.
 

@@ -6,7 +6,7 @@
       &::after
         opacity: 0
   #hero
-    height: 100vh //calc(100vh + 5px)
+    height: 100vh
     padding-top: 0
     position: relative
     overflow: hidden
@@ -34,14 +34,14 @@
       align-content: center
       background-color: rgba(0,0,0,0.72)
       .edge-title
-        margin-bottom: 20px
-        font-size: 22px
-        font-weight: 400
+        margin-bottom: 24px
+        font-size: 42px
+        font-weight: 500
         text-shadow: 0 0 18px rgba(0,0,0,.66)
       .edge-description
-        margin-bottom: 40px
-        font-size: 14px
-        line-height: 16px
+        margin-bottom: 48px
+        font-size: 22px
+        line-height: 32px
         text-shadow: 0 0 18px rgba(0,0,0,.66)
       .try-edge
         cursor: pointer
@@ -54,20 +54,16 @@
         text-shadow: 0 0 18px rgba(0,0,0,.66)
         &:hover
           background-color: white
-          color: $dark-grey
-      .learn-tb
-        cursor: pointer
-        line-height: 40px
-        font-size: 16px
-        padding: 0 15px
-        border: 1px solid white
-        background-color: transparent
-        transition: 0.6s
-        text-shadow: 0 0 18px rgba(0,0,0,.66)
-        &:hover
-          background-color: white
-          color: $dark-grey
+          color: #009688
           text-shadow: none
+        &.accent
+          background-color: white
+          color: #009688
+          text-shadow: none
+          &:hover
+            background-color: transparent
+            color: white
+            text-shadow: 0 0 18px rgba(0,0,0,.66)
       .paas-arrow
         position: fixed
         bottom: 40px
@@ -93,6 +89,8 @@
       position: relative
       transition-duration: 0.3s
       outline: none
+      & + a.read-more-button
+        margin-left: 60px
       .arrow
         transform: translate(0px)
         transition-duration: 0.3s
@@ -146,277 +144,613 @@
       font-size: 18px
 
     #intro
-      margin-bottom: 80px
-      padding-top: 98px
+      margin-bottom: 100px
+      padding-top: 25px
       color: #212924
-      .intro_title
-        padding: 0
-      .labeling
-        margin: 48px 0 102px
+      .stats-container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 40px
+        max-width: 1400px
+        margin: 0 auto
+      .stat-block
+        flex: 1
         text-align: center
-        color: #A5A5A5
-        font-size: 20px
-        line-height: 1.5em
-        font-weight: normal
-        padding: 0
-
-    #matrix
-      margin: 80px -100% 0
-      padding: 0 100% 88px
-      h3
-        color: #212529
-        font-weight: 600
-        text-align: center
-        font-size: 20px
-        line-height: 40px
-      #backg-matrix
+        padding: 32px 20px
         position: relative
-        margin-left: -20px
-        margin-right: -20px
-        width: calc(100% + 40px)
-        .gateway, .edge, .cloud
-          padding: 0 2px
-          width: 20%
+        &:not(:last-child)::after
+          content: ''
           position: absolute
-          z-index: -1
-          top: 127px
-        .coln
-          height: 840px
-          border-radius: 6px
-        .gateway
-          right: 40%
-          .coln
-            border: 2px solid #7A4DC3
-            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
-            .head
-              height: 106px
-              background-color: #7A4DC3
-        .edge
-          right: 20%
-          .coln
-            border: 2px solid #009688
-            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
-            .head
-              height: 106px
-              background-color: #009688
-        .cloud
-          right: 0
-          .coln
-            border: 2px solid #2A7DEC
-            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
-            .head
-              height: 106px
-              background-color: #2A7DEC
-      table
-        width: calc(100% + 40px)
-        margin: 64px -20px 16px
-        border: none
-        top: 40px
-        td, th
-          margin: 0 2px
-          padding: 2px
-          align-content: center
-          &:nth-child(3n)
-            color: #009688
-            img
-              filter: invert(40%) sepia(88%) saturate(245%) hue-rotate(129deg) brightness(91%) contrast(103%)
-          &:nth-child(2n)
-            color: #7A4DC3
-            img
-              filter: invert(43%) sepia(48%) saturate(952%) hue-rotate(223deg) brightness(78%) contrast(96%)
-          &:nth-child(4n)
-            color: #2A7DEC
-            img
-              filter: invert(32%) sepia(100%) saturate(700%) hue-rotate(207deg) brightness(100%) contrast(102%)
-        thead
-          color: #212529
-          font-size: 12px
-          line-height: 30px
-          background-color: unset
-          tr
-            height: 110px
-            th
-              width: 20%
-              text-align: center
-              vertical-align: center
-              font-weight: 600
-              font-size: 11px
-              padding: 46px 0 30px
-              &:nth-child(1n)
-                color: white
-            td
-              width: 40%
-        tbody
-          tr
-            background-color: unset
-            height: 64px
-            th, a
-              font-weight: 600
-              font-size: 12px
-              padding-right: 5px
-              color: #212529
-              img
-                vertical-align: top
-            td
-              text-align: center
-              font-weight: 600
-              font-size: 11px
-              img
-                width: 32px
-    #products
-      margin-bottom: 143px
-      #typical-usage-scenario
-        font-size: 42px
-      #background
-        .main2
-          height: 877px
+          right: -20px
+          top: 50%
+          transform: translateY(-50%)
+          width: 1px
+          height: 60px
+          background: linear-gradient(to bottom, transparent, #E0E0E0 20%, #E0E0E0 80%, transparent)
+      .stat-number
+        font-size: 64px
+        font-weight: 700
+        color: #009688
+        line-height: 1
+        margin-bottom: 12px
+      .stat-label
+        font-size: 18px
+        font-weight: 500
+        color: #757C76
+        line-height: 1.4
+
+    #product
+      max-width: 1400px
+      margin: 0 auto
+      padding: 0 20px 80px
+      .background
+        max-width: 1400px
+        .small1
+          top: -50px
       .product-title
         text-align: center
-        margin-bottom: 72px
-      .product-list
+        margin-bottom: 68px
+        font-size: 42px
+        font-weight: 600
+        color: #212529
+      .scenario-wrapper
+        margin: 0 auto
         display: flex
         gap: 40px
         align-items: flex-start
-        @media screen and (max-width: 1450px)
-          flex-direction: column
-        div
+      .scenario-tabs
+        flex: 0 0 380px
+        display: flex
+        flex-direction: column
+        gap: 12px
+      .scenario-tab
+        padding: 20px 24px
+        font-size: 20px
+        font-weight: 500
+        line-height: 1.4
+        color: #212529
+        background: white
+        border-radius: 12px
+        cursor: pointer
+        transition: all 0.3s ease
+        text-align: left
+        border: 2px solid transparent
+        &:hover
+          background: #F5F7FA
+        &.active
+          background: #E8F5F3
+          color: #212529
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08)
+          .chevron
+            transform: rotate(180deg)
+          .tab-tags
+            display: flex
+          .tag
+            color: #009688
+            border: 1px solid #009688
+            background: white
+            font-size: 16px
+            font-weight: 400
+          p
+            color: #212529
+            font-size: 16px
+            font-weight: 400
+        .tab-header
+          display: flex
+          justify-content: space-between
+          align-items: center
           width: 100%
+          .tab-name
+            margin: 0
+            font-size: 24px
+            font-weight: 400
+            line-height: inherit
+            display: block
+          .chevron
+            display: inline-block
+            margin-left: 8px
+            vertical-align: middle
+            transition: transform 0.3s ease
+            flex-shrink: 0
+            color: currentColor
+        .tab-tags
+          display: none
+          flex-wrap: wrap
+          gap: 8px
+          margin-top: 12px
+        .tag
+          display: inline-block
+          padding: 6px 14px
+          font-size: 13px
+          font-weight: 400
+          color: #009688
+          background: transparent
+          border: 1px solid #009688
+          border-radius: 6px
+          transition: all 0.2s ease
+          text-align: center
+      .scenario-category
+        display: none
+        flex: 1
+        min-width: 0
+        &.active
+          display: flex
+          align-items: center
+        > div
+          background: transparent
+          padding: 48px
+          width: 100%
+          min-height: 500px
           display: flex
           flex-direction: column
-          align-items: center
-          gap: 40px
-          padding: 40px
-          border-radius: 6px
-          text-align: center
-          background-color: white
-          box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
-          @media screen and (max-width: 1450px)
-            gap: 30px
-            padding: 30px
-          p
-            font-size: 16px
-          h4
-            font-size: 40px
-          &:first-of-type
-            p
-              margin-bottom: 45px
-          &.main
-            height: 820px
-            h4
-              font-size: 55px
-            p
-              font-size: 18px
-              margin: 0
-            a
-              padding-top: 20px
-              color: #009688
-              font-weight: 500
-    #minimal-requirements
-      main
-        #background
-          .main1
-            top: -200px
-            height: 890px
-
-    #local-deployment, #data-filtering, #local-alarms, #batch-update, #minimal-requirements
-      .block
-        justify-content: space-between
-        display: flex
-        align-items: center
-        flex-direction: column
-        padding: 50px 0
-        .feature-des, img
+          justify-content: center
+        .image-container
           width: 100%
-        .block-img
+          position: relative
+          margin-bottom: 32px
+          .image-background
+            position: absolute
+            width: 100%
+            height: 100%
+            border-radius: 24px
+            &:nth-of-type(1)
+              right: -42px
+              top: -72px
+              z-index: -3
+              background-color: #EFFAF9
+            &:nth-of-type(2)
+              left: -47px
+              top: -35px
+              border: 1.5px solid #B2DFDB
+              z-index: -2
+            &:nth-of-type(3)
+              bottom: -37px
+              right: -65px
+              border: 1.5px solid #009688
+              z-index: -1
+          .image
+            img
+              display: block
+              max-width: 100%
+              max-height: 550px
+              width: auto
+              height: auto
+              margin: 0 auto
+              border-radius: 24px
+              border: 1px solid #009688
+              padding: 8px
+              background-color: white
+        .cta-button
+          display: block
+          width: fit-content
+          padding: 12px 32px
+          margin: 0 auto
+          background: #009688
+          color: white
+          font-size: 20px
+          font-weight: 500
+          text-decoration: none
+          border-radius: 6px
+          transition: all 0.3s ease
+          box-shadow: 0 2px 8px rgba(0,150,136,0.3)
+          &:hover
+            background: #1EB7A9
+            box-shadow: 0 4px 12px rgba(0,150,136,0.4)
+            text-decoration: none
+            transform: translateY(-2px)
+
+    #matrix
+      max-width: 1400px
+      margin: 0 auto
+      padding: 60px 20px 88px
+      position: relative
+      .main-content
+        position: relative
+      h2
+        text-align: center
+        margin-bottom: 48px
+        font-size: 42px
+        font-weight: 600
+        color: #212529
+      table
+        width: 100%
+        border-collapse: separate
+        border-spacing: 16px 0
+        table-layout: fixed
+        border: none
+        .col-feature
+          width: 40%
+        .col-gateway, .col-edge, .col-server
+          width: 20%
+        thead
+          background: white
+        thead td
+          border: none
+          background: transparent
+        thead th
+          padding: 20px 12px
           text-align: center
+          vertical-align: middle
+          font-weight: 600
+          font-size: 18px
+          line-height: 1.3
+          color: white
+          border: none
+          &.gateway
+            background: #7A4DC3
+            border-radius: 12px 12px 0 0
+            box-shadow: 0 -2px 8px rgba(122, 77, 195, 0.15)
+          &.edge
+            background: #009688
+            border-radius: 12px 12px 0 0
+            box-shadow: 0 -2px 8px rgba(0, 150, 136, 0.15)
+          &.server
+            background: #2A7DEC
+            border-radius: 12px 12px 0 0
+            box-shadow: 0 -2px 8px rgba(42, 125, 236, 0.15)
+        tbody
+          th
+            font-weight: 600
+            font-size: 16px
+            line-height: 1.4
+            padding: 16px 12px 16px 0
+            color: #212529
+            text-align: left
+            border: none
+            background: white
+            a
+              color: #212529
+              font-weight: 600
+              font-size: 16px
+              &:hover
+                color: #009688
+          td
+            text-align: center
+            vertical-align: middle
+            font-weight: 600
+            font-size: 15px
+            padding: 16px 8px
+            background: white
+            border: none
+            &:nth-child(2)
+              color: #7A4DC3
+              border-left: 2px solid #7A4DC3
+              border-right: 2px solid #7A4DC3
+              img
+                filter: invert(43%) sepia(48%) saturate(952%) hue-rotate(223deg) brightness(78%) contrast(96%)
+            &:nth-child(3)
+              color: #009688
+              border-left: 2px solid #009688
+              border-right: 2px solid #009688
+              img
+                filter: invert(40%) sepia(88%) saturate(245%) hue-rotate(129deg) brightness(91%) contrast(103%)
+            &:nth-child(4)
+              color: #2A7DEC
+              border-left: 2px solid #2A7DEC
+              border-right: 2px solid #2A7DEC
+              img
+                filter: invert(32%) sepia(100%) saturate(700%) hue-rotate(207deg) brightness(100%) contrast(102%)
+            img
+              width: 28px
+              vertical-align: middle
+          tr:last-child td
+            &:nth-child(2)
+              border-bottom: 3px solid #7A4DC3
+              border-radius: 0 0 12px 12px
+            &:nth-child(3)
+              border-bottom: 3px solid #009688
+              border-radius: 0 0 12px 12px
+            &:nth-child(4)
+              border-bottom: 3px solid #2A7DEC
+              border-radius: 0 0 12px 12px
+
+    #authored-quote
+      margin-top: 150px
+      padding: 20px 20px
+      .background
+        .main1
+          top: -150px
+        .small3
+          top: -300px
+        .small4
+          top: -90px
+      .main-content
+        max-width: 1400px
+        margin: 0 auto
+        background: white
+        border: 2px solid #E8EBF0
+        border-radius: 24px
+        padding: 24px
+        display: grid
+        grid-template-columns: 185px 1fr
+        gap: 40px
+        position: relative
+      img
+        grid-column: 1
+        grid-row: 1
+        width: 200px
+        height: 200px
+        border-radius: 12px
+        object-fit: cover
+        object-position: 15% center
+        position: relative
+        z-index: 1
+      .text
+        grid-column: 2
+        grid-row: 1
+        padding-left: 32px
+        border-left: 4px solid #009688
+        position: relative
+        z-index: 1
+        h2
+          font-size: 24px
+          font-weight: 600
+          color: #212529
+          margin-bottom: 20px
+        .quote
+          font-size: 16px
+          line-height: 1.6
+          color: #3D3D3D
+          margin-bottom: 24px
+        .author
+          font-size: 18px
+          font-weight: 600
+          color: #212529
+          margin-bottom: 4px
+        .title
+          font-size: 14px
+          color: #757C76
+          margin: 0
+
+    #get-in-touch
+      padding: 60px 20px
+      position: relative
+      .main-content
+        max-width: 1400px
+        margin: 0 auto
+        position: relative
+        opacity: 0
+        transform: translateY(50px)
+        animation: slideUp 0.8s ease-out forwards
+      .background
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: -1
+      .block
+        background: white
+        border: 2px solid #009688
+        border-radius: 24px
+        padding: 40px 60px
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08)
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 40px
+      .cta
+        font-size: 32px
+        font-weight: 600
+        color: #212529
+        margin: 0
+      .button
+        display: inline-block
+        padding: 16px 40px
+        background: #009688
+        color: white
+        font-size: 20px
+        font-weight: 500
+        text-decoration: none
+        border-radius: 8px
+        transition: all 0.3s ease
+        white-space: nowrap
+        &:hover
+          background: #1EB7A9
+          transform: translateY(-2px)
+          box-shadow: 0 4px 12px rgba(0,150,136,0.4)
+
+    #local-deployment, #data-filtering, #local-alarms, #batch-update
+      max-width: 1400px
+      margin: 0 auto
+      h2
+        text-align: center
+        margin: 60px 0 48px
+        font-size: 42px
+        font-weight: 600
+        color: #212529
+      .block
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        gap: 60px
+        padding: 80px 0
+        max-width: 1400px
+        margin: 0 auto
+        .feature-des
+          flex: 0 0 40%
+          order: 1
+        .block-img
+          flex: 1
           order: 2
           img
-            margin-top: 32px
             width: 100%
-            max-width: fit-content
+            max-width: 100%
+            height: auto
+      .background
+        .main2
+          height: 700px
+        .small7
+          top: 900px
+
+    #data-filtering, #batch-update
+      .block
         .feature-des
+          order: 2
+        .block-img
           order: 1
 
-    #local-deployment .block .feature-des
+    #local-deployment .block
       padding-top: 100px
 
     #data-filtering .block
-      padding: 60px 0
+      padding: 230px 0 100px
 
-    #local-alarms .block .feature-des
-      padding-top: 200px
-      h2, a, h3.item-heading
-        color: #fff
-      p
-        color: #868686
-      .read-more-button .arrow
-        filter: brightness(100%) invert(100%)
+    #local-alarms
+      .block
+        position: relative
+      .background
+        position: absolute
+        top: 0
+        left: 50%
+        height: 100%
+        z-index: 0
+      .block .feature-des
+        padding-top: 200px
+        h2, a, h3.item-heading
+          color: #fff
+        p
+          color: #868686
+        .read-more-button .arrow
+          filter: brightness(100%) invert(100%)
 
     #batch-update .block
-      padding: 80px 0 120px
-
-    #minimal-requirements .block .feature-des
-      padding: 80px 0 120px
+      padding: 180px 0
 
     #bottom-features
-      padding-top: 72px
-      .cards
-        background-color: #EFFAF9
-        padding: 72px 50% 28px
+      padding: 20px 20px
+      .main-content
+        max-width: 1400px
+        margin: 0 auto
+        position: relative
+      h2
+        text-align: center
+        margin-bottom: 48px
+        font-size: 42px
+        font-weight: 600
+        color: #212529
+      .features-grid
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-auto-rows: min-content
+        align-items: start
+        gap: 24px
+      .feature-card
+        background: white
+        border: 2px solid #E8EBF0
+        border-radius: 12px
+        overflow: hidden
+        transition: all 0.3s ease
+        &:hover
+          border-color: #009688
+          box-shadow: 0 4px 12px rgba(0,150,136,0.15)
+        &.active
+          border-color: #009688
+          .chevron
+            transform: rotate(180deg)
+        &.open
+          .chevron
+            transform: rotate(180deg)
+          .feature-content
+            max-height: 500px
+            padding: 0 24px 24px
+            opacity: 1
+      .feature-header
+        display: flex
+        align-items: center
+        gap: 16px
+        padding: 24px
+        cursor: pointer
+        transition: background 0.2s ease
+      .feature-icon
+        flex: 0 0 68px
+        width: 68px
+        height: 68px
+        display: flex
+        align-items: center
         justify-content: center
-        margin-right: -50%
-        margin-left: -50%
-        &>div
-          margin-bottom: 36px
-          &.col-lg-6
-            padding: 0 18px
-            max-width: 100%
-          .block
-            padding: 48px
-            float: left
-            width: 100%
-            height: 100%
-            background: white
-            border-radius: 6px
-            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
-            display: unset
-            text-align: center
-            div
-              width: 100%
-              .title
-                margin-bottom: 6px
-                line-height: 33px
-              p
-                margin-top: 10px
-            img
-              height: fit-content
-              margin: 0 0 18px
+        background: #F0F8F7
+        border-radius: 8px
+        img
+          width: 58px
+          height: 58px
+      .feature-title
+        flex: 1
+        font-size: 18px
+        font-weight: 600
+        color: #212529
+        margin: 0
+      .chevron
+        flex: 0 0 20px
+        color: #757C76
+        transition: transform 0.3s ease
+      .feature-content
+        max-height: 0
+        overflow: hidden
+        opacity: 0
+        padding: 0 24px
+        transition: max-height 0.4s ease, opacity 0.4s ease, padding-bottom 0.4s ease
+        p
+          font-size: 16px
+          line-height: 24px
+          color: #3D3D3D
+          margin: 0
 
     #bottom
-      display: flex
-      justify-content: center
-      padding: 46px 0 100px
+      padding: 80px 20px
+      .contact-us-banner
+        max-width: 1400px
+        margin: 0 auto
+        background: white
+        border: 2px solid #009688
+        border-radius: 24px
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08)
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 10px 60px
+        gap: 60px
+        position: relative
+        overflow: hidden
+        opacity: 0
+        transform: translateY(50px)
+        animation: slideUp 0.8s ease-out forwards
+      .contact-us-banner-content
+        flex: 1
+        h2
+          font-size: 32px
+          font-weight: 500
+          color: #212529
+          margin: 0 0 32px
+          line-height: 1.2
+      .contact-us-banner-buttons
+        display: flex
+        gap: 16px
       .bottom-button
-        background-color: #009688
-        font-size: 24px
-        font-weight: 400
-        text-align: center
+        display: inline-block
+        padding: 16px 40px
+        background: #009688
         color: white
-        border-radius: 4px
+        font-size: 20px
+        font-weight: 500
         text-decoration: none
-        padding: 16px
-        width: 350px
-        display: block
-        box-shadow: 0 28px 16px -20px rgba(34,41,41,0.25)
+        border-radius: 8px
+        transition: all 0.3s ease
         &:hover
-          background-color: #1EB7A9
-          text-decoration: none
-          color: #fff
-        &:active
-          background-color: #009688
-          transition-duration: 0s
+          background: #1EB7A9
+          transform: translateY(-2px)
+          box-shadow: 0 4px 12px rgba(0,150,136,0.4)
+      img
+        flex: 0 0 280px
+        width: 280px
+        height: auto
+        opacity: 0.9
+        -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%)
+        mask-image: linear-gradient(to bottom, black 0%, transparent 100%)
 
-    #background
+    .background
       z-index: -1
       position: absolute
       left: 50%
@@ -429,7 +763,7 @@
         &.main1
           top: 8px
           width: 2560px
-          height: 525px
+          height: 627px
           left: -1280px
           background-color: #EFFAF9
         &.small1
@@ -469,7 +803,7 @@
         &.main3
           top: -108px
           width: 2560px
-          height: 525px
+          height: 848px
           left: -1280px
           background-color: #EFFAF9
         &.small8
@@ -509,135 +843,399 @@
       opacity: 1
       transform: translate3d(0, 0, 0)
 
+  @keyframes slideUp
+    to
+      opacity: 1
+      transform: translateY(0)
+
+  @media screen and (max-width: 1250px)
+    #encyclopedia
+      #product
+        padding: 40px 20px 10px
+        .product-title
+          font-size: 28px
+          margin-top: 20px
+          margin-bottom: 20px
+        .scenario-wrapper
+          flex-direction: column
+          gap: 24px
+          align-items: center
+        .scenario-tabs
+          flex: none
+          width: 100%
+          max-width: 520px
+        .scenario-tab
+          padding: 16px 20px
+          font-size: 18px
+          .tab-header
+            .tab-name
+              font-size: 20px
+        .scenario-category
+          min-width: auto
+          width: 100%
+          &.active
+            display: block
+          > div
+            padding: 24px
+            min-height: auto
+          .image-container
+            margin-bottom: 24px
+            .image-background
+              &:nth-of-type(1)
+                right: -24px
+                top: -40px
+              &:nth-of-type(2)
+                left: -26px
+                top: -20px
+              &:nth-of-type(3)
+                bottom: -20px
+                right: -36px
+          .cta-button
+            font-size: 18px
+            padding: 10px 28px
+      #local-alarms
+        .background
+          .main2
+            height: 500px
+
+  @media screen and (max-width: 1024px)
+    #encyclopedia
+      #product
+        padding: 40px 20px 10px
+        .product-title
+          font-size: 28px
+          margin-top: 20px
+          margin-bottom: 20px
+        .scenario-wrapper
+          flex-direction: column
+          gap: 24px
+          align-items: center
+        .scenario-tabs
+          flex: none
+          width: 100%
+          max-width: 520px
+        .scenario-tab
+          padding: 16px 20px
+          font-size: 18px
+          .tab-header
+            .tab-name
+              font-size: 20px
+        .scenario-category
+          min-width: auto
+          width: 100%
+          &.active
+            display: block
+          > div
+            padding: 24px
+            min-height: auto
+          .image-container
+            margin-bottom: 24px
+            .image-background
+              &:nth-of-type(1)
+                right: -24px
+                top: -40px
+              &:nth-of-type(2)
+                left: -26px
+                top: -20px
+              &:nth-of-type(3)
+                bottom: -20px
+                right: -36px
+          .cta-button
+            font-size: 18px
+            padding: 10px 28px
+      #local-alarms
+        .background
+          .main2
+            height: 500px
+
+  @media screen and (max-width: 1000px)
+    #edgeContent
+      #bottom-features
+        .features-grid
+          grid-template-columns: 1fr
+        .feature-card
+          &:last-child:nth-child(odd)
+            grid-column: auto
+            max-width: none
+            margin: 0
+
   @media screen and (min-width: 750px)
     #hero
       #hero-content
         .edge-title
-          font-size: 36px
+          font-size: 49px
         .edge-description
-          font-size: 20px
+          font-size: 26px
           margin-bottom: 60px
+        .try-edge
+          line-height: 60px
+          font-size: 28px
+          padding: 0 40px
+          border-width: 3px
     #edgeContent
       #local-deployment, #data-filtering, #local-alarms, #batch-update
         .block
           .feature-des, .block-img
             width: 80%
-      #matrix
-        h3
-          font-size: 42px
-          line-height: 63px
-        #backg-matrix
-          .gateway, .edge, .cloud
-            padding: 0 20px
-            width: 20%
-        table
-          thead
-            font-size: 30px
-            tr
-              th
-                width: 20%
-                padding: 0 0 10px
-                font-size: 20px
-              td
-                width: 40%
-          tbody
-            tr
-              th, a
-                padding-right: 30px
-                font-size: 18px
-              td
-                font-size: 20px
-                img
-                  width: unset
-      #bottom-features .cards .col-lg-6 .block
-        text-align: left
-        display: flex
-        div
-          width: calc(100% - 122px)
-        img
-          margin: 0 30px 0 0
-
   @media screen and (max-width: 750px)
-    #matrix
-      h3
-        font-size: 38px
-        line-height: 42px
-        table
+    #thingsboard-edge
+      #hero
+        #hero-content
+          .edge-title
+            font-size: 28px
+            margin-bottom: 16px
+          .edge-description
+            font-size: 16px
+            line-height: 22px
+            margin-bottom: 32px
+          .try-edge
+            font-size: 15px
+            line-height: 42px
+            padding: 0 18px
+    #edgeContent
+      h1
+        font-size: 24px
+        line-height: 36px
+        a
+          font-size: 24px
+      h2, h3.item-heading
+        font-size: 26px
+        line-height: 38px
+      h3:not(.item-heading)
+        font-size: 22px
+      p
+        font-size: 15px
+        line-height: 23px
+      #intro
+        .stats-container
+          gap: 16px
+        .stat-block
+          padding: 24px 16px
+        .stat-number
+          font-size: 40px
+        .stat-label
+          font-size: 14px
+      #product
+        padding: 40px 20px 10px
+        .product-title
+          font-size: 28px
+          margin-top: 20px
+          margin-bottom: 20px
+        .scenario-wrapper
+          flex-direction: column
+          gap: 24px
+          align-items: center
+        .scenario-tabs
+          flex: none
           width: 100%
-          thead
-            font-size: 20px
-            tr
-              th
-                width: 20%
-                padding: 0 0 2px
-                font-size: 16px
-              td
-                width: 40%
+          max-width: 520px
+        .scenario-tab
+          padding: 16px 20px
+          font-size: 18px
+          .tab-header
+            .tab-name
+              font-size: 20px
+        .scenario-category
+          min-width: auto
+          width: 100%
+          &.active
+            display: block
+          > div
+            padding: 24px
+            min-height: auto
+          .image-container
+            margin-bottom: 24px
+            .image-background
+              &:nth-of-type(1)
+                right: -16px
+                top: -28px
+              &:nth-of-type(2)
+                left: -18px
+                top: -14px
+              &:nth-of-type(3)
+                bottom: -14px
+                right: -24px
+          .cta-button
+            font-size: 18px
+            padding: 10px 28px
+      #matrix
+        padding: 40px 12px 60px
+        h2
+          font-size: 26px
+          line-height: 38px
+          margin-bottom: 24px
+        table
+          border-spacing: 10px 0
+          thead th
+            padding: 12px 4px
+            font-size: 13px
           tbody
-            tr
-              th, a
-                font-size: 16px
-              td
-                font-size: 18px
-                img
-                  width: unset
-
-  @media screen and (min-width: 1025px)
-    section, header
-      main
-        max-width: 100%
-    footer
-      main, div.main-div
-        max-width: 100%
-    #edgeContent
-      #intro
-        .intro_title
-          padding: 0 5%
-        .labeling
-          padding: 0 8%
+            th
+              font-size: 13px
+              padding: 10px 6px 10px 0
+              a
+                font-size: 13px
+            td
+              font-size: 12px
+              padding: 10px 4px
+              img
+                width: 22px
+      #authored-quote
+        margin-top: 80px
+        padding: 20px 16px
+        .main-content
+          display: flex
+          flex-direction: column
+          gap: 16px
+          padding: 20px
+        img
+          width: 140px
+          height: 140px
+          margin: 0 auto
+          order: 1
+        .text
+          order: 2
+          border-left: none
+          padding-left: 0
+          padding-top: 16px
+          border-top: 4px solid #009688
+          text-align: center
+          h2
+            font-size: 20px
+          .quote
+            font-size: 14px
+          .author
+            font-size: 16px
+      #local-alarms
+        .background
+          .main2
+            top: 0
+            height: 100%
       #local-deployment, #data-filtering, #local-alarms, #batch-update
+        padding: 0 20px
+        h2
+          text-align: center
+          font-size: 28px
+          margin: 50px 0 8px
         .block
-          flex-direction: row
-          .feature-des, .block-img
-            width: calc(50% - 80px)
-            order: unset
-          .block-img img
-              margin: unset
-      #local-alarms #background .main2
-        height: 405px
-
-  @media screen and (min-width: 1250px)
-    #hero
-      #hero-content
-        .edge-title
-          margin-bottom: 60px
-          font-size: 64px
-        .edge-description
+          flex-direction: column
+          gap: 24px
+          padding: 36px 0
+          .feature-des
+            flex: 1
+            order: 1
+            text-align: center
+            padding-top: 40px !important
+          .block-img
+            flex: 1
+            order: 2
+            img
+              max-width: 100%
+      #bottom-features
+        padding: 40px 16px
+        h2
           font-size: 28px
-          margin-bottom: 80px
-        .try-edge
-          line-height: 60px
-          font-size: 28px
-          padding: 0 40px
-          margin: 0 4px
-          border-width: 3px
-    #edgeContent
-      max-width: 1400px
-      #intro
-        .intro_title
-          padding: 0 7%
-        .labeling
-          padding: 0 13%
+          margin-bottom: 36px
+        .feature-header
+          padding: 18px 16px
+        .feature-icon
+          flex: 0 0 52px
+          width: 52px
+          height: 52px
+          img
+            width: 42px
+            height: 42px
+        .feature-title
+          font-size: 15px
+      #get-in-touch
+        padding: 50px 16px
+        .block
+          padding: 24px 20px
+          flex-direction: column
+          text-align: center
+          gap: 20px
+        .cta
+          font-size: 22px
+        .button
+          font-size: 16px
+          padding: 12px 28px
+    #bottom
+      padding: 60px 16px
+      .contact-us-banner
+        padding: 24px 20px
+        flex-direction: column
+        align-items: center
+        text-align: center
+        gap: 24px
+      img
+        flex: 0 0 auto
+        width: 100px
+      .contact-us-banner-content
+        flex: none
+        order: 2
+        h2
+          font-size: 24px
+          margin-bottom: 20px
+      .contact-us-banner-buttons
+        order: 3
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        width: 100%
+        gap: 12px
+      .bottom-button
+        font-size: 18px
+        padding: 14px 32px
+        width: 100%
+        max-width: 280px
 
-  @media screen and (min-width: 1500px)
-    #edgeContent
-      max-width: 1400px
+  @media screen and (max-width: 576px)
+    #encyclopedia
+      padding: 0 10px
       #intro
-        .intro_title
-          padding: 0 10%
-        .labeling
-          padding: 0 18%
-      #batch-update .block
-        padding-top: 40px
-      #local-alarms #background .main2
-        height: 485px
+        padding-top: 20px
+        margin-bottom: 32px
+        .stats-container
+          display: grid
+          grid-template-columns: repeat(2, 1fr)
+          gap: 16px
+        .stat-block
+          padding: 8px 2px
+          &:not(:last-child)::after
+            display: none
+        .stat-number
+          font-size: 36px
+          margin-bottom: 8px
+        .stat-label
+          font-size: 18px
+      #matrix
+        padding: 20px 6px 40px
+        h2
+          font-size: 20px
+          line-height: 28px
+          margin-bottom: 16px
+        table
+          border-spacing: 6px 0
+          .col-feature
+            width: 34%
+          .col-gateway, .col-edge, .col-server
+            width: 22%
+          thead th
+            padding: 10px 3px
+            font-size: 10px
+            border-radius: 8px 8px 0 0
+          tbody
+            th
+              font-size: 11px
+              padding: 8px 4px 8px 0
+              a
+                font-size: 11px
+            td
+              font-size: 10px
+              padding: 8px 2px
+              border-left-width: 1px
+              border-right-width: 1px
+              img
+                width: 18px
+            tr:last-child td
+              border-bottom-width: 2px
