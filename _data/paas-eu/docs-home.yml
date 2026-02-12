@@ -53,8 +53,10 @@ toc:
       new: true
     - title: Notification center
       path: /docs/paas/eu/user-guide/notifications/
-    - title: Entities and Relations
+    - title: Entities
       path: /docs/paas/eu/user-guide/entities-and-relations/
+    - title: Relations
+      path: /docs/paas/eu/key-concepts/relations/
     - title: Device profiles
       path: /docs/paas/eu/user-guide/device-profiles/
     - title: Asset profiles

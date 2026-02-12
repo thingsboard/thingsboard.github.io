@@ -4,94 +4,95 @@
 
 ## Entities Overview
 
-ThingsBoard provides the user interface and REST APIs to provision and manage multiple entity types and their relations in your IoT application.
-Supported entities are:
+ThingsBoard is built around a flexible and scalable entity model that enables you to design, manage, and operate complex IoT solutions. The platform organizes devices, assets, users, and business structures into a unified hierarchy, while providing powerful tools for data ingestion, processing, visualization, analytics, and access control.
 
- - **[Tenants](/docs/{{docsPrefix}}user-guide/ui/tenants/)** - you can treat the tenant as a separate business-entity: it's an individual or an organization who owns or produce devices and assets;
- Tenant may have multiple tenant administrator users and millions of customers, devices and assets;
- - **[Customers](/docs/{{docsPrefix}}user-guide/ui/customers/)** - the customer is also a separate business-entity: individual or organization who purchase or uses tenant devices and/or assets;
- Customer may have multiple users and millions of devices and/or assets;
- - **[Users](/docs/{{docsPrefix}}user-guide/ui/users/)** - users are able to browse dashboards and manage entities;
- - **[Devices](/docs/{{docsPrefix}}user-guide/ui/devices/)** - basic IoT entities that may produce telemetry data and handle RPC commands. For example, sensors, actuators, switches;
- - **[Assets](/docs/{{docsPrefix}}user-guide/ui/assets/)** - abstract IoT entities that may be related to other devices and assets. For example factory, field, vehicle;
- - **[Entity Views](/docs/{{docsPrefix}}user-guide/entity-views/)** - useful if you like to share only part of device or asset data to the customers;
- - **[Alarms](/docs/{{docsPrefix}}user-guide/alarms/)** - events that identify issues with your assets, devices, or other entities;
- - **[Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/)** - visualization of your IoT data and ability to control particular devices through the user interface;
- - **Rule Node** - processing units for incoming messages, entity lifecycle events, etc;
- - **Rule Chain** - defines the flow of the processing in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/). May contain many rule nodes and links to other rule chains;
+At the core of this model are:
 
-Each entity supports:
+<br><b><font size="4">Ownership layer</font></b>  
+- <b><font size="3">Tenants</font></b>   
+  A [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants/){:target="_blank"} is the top-level organizational entity that represents a company or business unit in ThingsBoard.     
+  Tenants own and manage all platform resources (devices, assets, dashboards, rule chains, users, and customers) and define the main security boundary between organizations.
+- <b><font size="3">Customers</font></b>   
+  A [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"} is a logical sub-organization within a tenant, typically representing an end client or department.   
+  Customers allow tenant administrators to isolate access to entities, distribute resources across clients, and manage customer users independently.
 
- - **[Attributes](/docs/{{docsPrefix}}user-guide/attributes/)** - static and semi-static key-value pairs associated with entities. For example serial number, model, firmware version;
- - **[Time-series data](/docs/{{docsPrefix}}user-guide/telemetry/)** - time-series data points available for storage, querying and visualization. For example temperature, humidity, battery level;
- - **[Relations](#relations)** - directed connections to other entities. For example contains, manages, owns, produces.
+<br><b><font size="4">Identity and Access</font></b>
+- <b><font size="3">Users</font></b>   
+  A [User](/docs/{{docsPrefix}}user-guide/ui/users/){:target="_blank"} is an authenticated account with role-based access to ThingsBoard.   
+  Users can belong to a Tenant or a Customer and can manage entities, dashboards, telemetry, and device operations based on assigned permissions.
+- <b><font size="3">Role-Based Access Control (RBAC)</font></b>   
+  [Role-Based Access Control (RBAC)](/docs/pe/user-guide/rbac/){:target="_blank"} is a security mechanism that regulates user access to entities and platform operations based on assigned roles and permissions. It allows administrators to define what actions users can perform and which resources they can access.    
+  RBAC is used to enforce secure multi-tenant deployments, isolate customer data, and implement fine-grained access control across devices, assets, dashboards, and other platform components.
 
-Some entities support profiles:
+<br><b><font size="4">IoT domain model</font></b>  
+- <b><font size="3">Devices</font></b>   
+  A [Device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"} represents a physical or virtual IoT device connected to ThingsBoard.   
+  Devices publish telemetry and attributes, receive RPC commands, and typically represent sensors, actuators, gateways, controllers, or software agents.
+- <b><font size="3">Assets</font></b>   
+  An [Assets](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"} is an abstract entity used to model real-world objects and organize devices into hierarchical structures.   
+  Assets commonly represent infrastructure such as buildings, production lines, vehicles, warehouses, farms, or geographic areas.
+- <b><font size="3">Entity Views</font></b>   
+  An [Entity Views](/docs/{{docsPrefix}}user-guide/entity-views/){:target="_blank"} is a virtual representation of a device or asset that exposes only a selected subset of telemetry and attributes.   
+  Entity Views are used to securely share limited data with customers and behave as independent entities in dashboards and rule engine processing.
+- <b><font size="3">Gateway</font></b>   
+  A [Gateway](/docs/iot-gateway/){:target="_blank"} is a specialized device that acts as an intermediary between multiple downstream devices and ThingsBoard.   
+  A Gateway aggregates telemetry and attributes from connected devices, forwards data to the platform over a single connection, and routes RPC commands back to subordinate devices.   
+  Gateways are commonly used to integrate non-IP or constrained devices (e.g., Modbus, BLE, Zigbee, LoRa), perform protocol translation, and reduce the number of direct platform connections. In ThingsBoard, a Gateway is registered as a Device operating in gateway mode and can manage multiple subordinate devices.
 
-  - **[Tenant Profiles](/docs/{{docsPrefix}}user-guide/tenant-profiles/)** - contains common settings for multiple tenants: entity, API and rate limits, etc. Each Tenant has the one and only profile at a single point in time.
-  - **[Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/)** - contains common settings for multiple devices: processing and transport configuration, etc. Each Device has the one and only profile at a single point in time.
-  - **[Asset Profiles](/docs/{{docsPrefix}}user-guide/asset-profiles/)** - contains common settings for multiple assets: processing configuration, etc. Each Asset has the one and only profile at a single point in time.
+<br><b><font size="4">Data model layer</font></b>
 
-{% if docsPrefix == "pe/" %}
-**[Entity Groups](/docs/pe/user-guide/groups/)**:
+- **[Attributes](/docs/{{docsPrefix}}user-guide/attributes/)** - static and semi-static key-value pairs associated with entities. For example serial number, model, firmware version;
+- **[Time-series data](/docs/{{docsPrefix}}user-guide/telemetry/)** - time-series data points available for storage, querying and visualization. For example temperature, humidity, battery level;
+- **[Relations](#relations)** - directed connections to other entities. For example contains, manages, owns, produces.
 
-ThingsBoard Professional Edition allows you to configure Entity Groups for Customers, Users, Devices, Assets, Entity Views and Dashboards.
-Each entity may belong to multiple groups simultaneously. Entity Group always have an owner - particular Tenant or Customer.
-All entities in the group must have the same entity type (i.e. You can't put device and asset into one group).
-Entity Groups are useful for dashboards and data processing, but the primary reason of their existence is to support advanced Role-Based Access Control ([RBAC](/docs/pe/user-guide/rbac/)) for IoT.
+<br><b><font size="4">Configuration and policy management</font></b>
 
-**[Integrations](/docs/user-guide/integrations/)** and **[Data Converters](/docs/user-guide/integrations/#data-converters)**:
+- **[Tenant Profiles](/docs/{{docsPrefix}}user-guide/tenant-profiles/)** - contains common settings for multiple tenants: entity, API and rate limits, etc. Each Tenant has the one and only profile at a single point in time.
+- **[Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/)** - contains common settings for multiple devices: processing and transport configuration, etc. Each Device has the one and only profile at a single point in time.
+- **[Asset Profiles](/docs/{{docsPrefix}}user-guide/asset-profiles/)** - contains common settings for multiple assets: processing configuration, etc. Each Asset has the one and only profile at a single point in time.
 
-ThingsBoard Platform integrations feature was designed for two primary use cases / deployment options:
+<br><b><font size="4">Operational monitoring</font></b>
+- <b><font size="3">Alarms</font></b>   
+  An [Alarms](/docs/{{docsPrefix}}user-guide/alarms/){:target="_blank"} is an event entity that represents abnormal behavior or an issue detected for another entity (device, asset, etc.).   
+  Alarms can be generated by rule chains, acknowledged and cleared manually, and monitored through dashboards and notifications.
 
-  - Connect existing NB IoT, LoRaWAN, SigFox and other devices with specific payload formats directly to ThingsBoard platform.
-  - Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing.
+<br><b><font size="4">Visualization</font></b>
 
-Data Converters is a part of the Platform Integrations feature. Their purpose is to transform raw payload from device to the format that ThingsBoard uses and vise-versa.
+- <b><font size="3">Dashboards</font></b>   
+  A [Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} is an interactive interface for real-time monitoring and control of IoT entities.   
+  Dashboards provide widgets for telemetry visualization, alarm monitoring, entity management, and device control via RPC or attribute updates.
 
-{% endif %}
+<br><b><font size="4">Processing components</font></b>
 
-This guide provides an overview of the features listed above, some useful links to get more details, and real-life examples of their usage.
+- <b><font size="3">Rule Nodes</font></b>   
+  A [Rule Node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/nodes/){:target="_blank"} is a processing component of the ThingsBoard Rule Engine that performs a specific action or transformation on incoming messages.   
+  Rule Nodes can filter, enrich, route data, manage alarms, trigger notifications, execute RPC, and integrate with external systems.
 
-## Relations
+- <b><font size="3">Rule Chains</font></b>   
+  A [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} is a configurable workflow in the ThingsBoard [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/){:target="_blank"} that defines how messages are routed and processed.   
+  Rule Chains consist of connected rule nodes and handle telemetry, attributes, alarms, lifecycle events, and RPC-related processing.
 
-Entity relation defines connection between two ThingsBoard entities that belong to the same [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants/).
-The relation has an arbitrary type: Contains, Manages, Supports, etc. The relation is also directional.
-You may treat ThingsBoard relations as a [Has-a](https://en.wikipedia.org/wiki/Has-a) relationship from object-oriented programming.
+<br><b><font size="4">Data Processing & Enrichment (analytics and data enrichment tools)</font></b>
 
-Relations help to model physical world objects in ThingsBoard. The easiest way to understand them is using the example.
-Let’s assume we want to build an application that collects data from soil moisture and temperature sensors, visualize this data on the dashboard, detect issues, raise alarms and control the irrigation.
-Let’s also assume we want to support multiple fields with hundreds of sensors. Fields may be also grouped into the Geo regions.
+- <b><font size="3">Calculated Fields</font></b>   
+  [Calculated fields](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"} are virtual data points derived from existing telemetry or attributes using configurable expressions. They allow real-time data transformation and enrichment without modifying device firmware.   
+  Calculated fields are commonly used to compute KPIs, normalize measurements, or generate aggregated metrics directly within the platform.
 
-The following diagram explains how those entities are configured and stored in ThingsBoard:
+<br><b><font size="4">Business Intelligence Features</font></b>
 
-![image](/images/user-guide/entities-and-relations.svg)
+- <b><font size="3">Reporting</font></b>   
+  Reporting provides structured data export and scheduled report generation based on telemetry, alarms, and entity data. It enables automated delivery of operational insights in formats suitable for business users.   
+  Reporting is typically used for periodic summaries, compliance documentation, and sharing analytics results with stakeholders.
+
+<br><b><font size="4">Integration Components</font></b>
+
+- <b><font size="3">Integrations</font></b>   
+  An [Integrations](/docs/user-guide/integrations/) provides connectivity between ThingsBoard and external IoT networks, devices, and third-party platforms, enabling data collection from external sources and delivery to ThingsBoard for real-time visualization and processing.    
+  Integrations are mainly used to connect NB-IoT, LoRaWAN, SigFox, and other devices with specific payload formats directly to ThingsBoard, or to stream data from existing IoT platforms to support interactive dashboards and efficient data processing.
+
+- <b><font size="3">Data Converters</font></b>   
+  [Data Converters](/docs/user-guide/integrations/#data-converters) are used within integrations to transform raw incoming and outgoing payloads into the ThingsBoard message format and vice versa, ensuring compatibility with various protocols and device-specific data structures.
+
+<br><b><font size="4">Security and Access Control Components (permission management features)</font></b>
 
 
-See ["add and delete assets"](/docs/pe/user-guide/ui/assets/#add-and-delete-assets) and ["manage asset relations"](/docs/pe/user-guide/ui/assets/#manage-asset-relations)
-to learn how to configure this entities via Administration UI. You may also use [REST API](/docs/reference/rest-client/) to create entities and relations programmatically.
-
-## Next steps
-
-**Assign attributes to the assets and devices**
-
-ThingsBoard provides the ability to assign attributes to entities and manage them.
-You are welcome to learn how to do it here:
-<p><a href="/docs/{{docsPrefix}}user-guide/attributes" class="button">Working with device attributes</a></p>
-
-
-**Upload telemetry data from devices**
-
-ThingsBoard provides the ability to work with telemetry data for devices and other entities.
-You are welcome to learn how to do it here:
-<p><a href="/docs/{{docsPrefix}}user-guide/telemetry" class="button">Working with telemetry data</a></p>
-
-**Creating Rules for Alarms**
-
-ThingsBoard provides the ability to raise alarms using rule engine for devices and other entities.
-You are welcome to learn how to do it here:
-<p><a href="/docs/{{docsPrefix}}user-guide/alarms" class="button">Working with alarms</a></p>
-
-**Design your dashboard**
-
-Please [import](/docs/{{docsPrefix}}user-guide/ui/dashboards/#dashboard-import) the following [**dashboard**](/docs/{{docsPrefix}}user-guide/resources/region_fields_dashboard.json) that demonstrates Map, Alarm, Entity Table and Charts widgets.

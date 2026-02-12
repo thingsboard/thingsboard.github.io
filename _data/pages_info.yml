@@ -771,6 +771,9 @@
 "/docs/iot-gateway/what-is-iot-gateway/":
   url: "/docs/iot-gateway/what-is-iot-gateway/"
   redirect_from: []
+"/docs/key-concepts/relations/":
+  url: "/docs/key-concepts/relations/"
+  redirect_from: []
 "/docs/license/search/":
   url: "/docs/license/search/"
   redirect_from: []
@@ -1842,6 +1845,9 @@
 "/docs/paas/eu/":
   url: "/docs/paas/eu/"
   redirect_from: []
+"/docs/paas/eu/key-concepts/relations/":
+  url: "/docs/paas/eu/key-concepts/relations/"
+  redirect_from: []
 "/docs/paas/eu/legacy-subscriptions/":
   url: "/docs/paas/eu/legacy-subscriptions/"
   redirect_from:
@@ -1898,6 +1904,9 @@
   url: "/docs/paas/eu/reference/snmp-api/"
   redirect_from:
   - "/docs/paas/eu/reference/snmp-api"
+"/docs/paas/eu/samples/abeeway/tracker/":
+  url: "/docs/paas/eu/samples/abeeway/tracker/"
+  redirect_from: []
 "/docs/paas/eu/samples/analytics/ai-models/":
   url: "/docs/paas/eu/samples/analytics/ai-models/"
   redirect_from: []
@@ -2407,6 +2416,9 @@
 "/docs/paas/":
   url: "/docs/paas/"
   redirect_from: []
+"/docs/paas/key-concepts/relations/":
+  url: "/docs/paas/key-concepts/relations/"
+  redirect_from: []
 "/docs/paas/legacy-subscriptions/":
   url: "/docs/paas/legacy-subscriptions/"
   redirect_from:
@@ -2463,6 +2475,9 @@
   url: "/docs/paas/reference/snmp-api/"
   redirect_from:
   - "/docs/paas/reference/snmp-api"
+"/docs/paas/samples/abeeway/tracker/":
+  url: "/docs/paas/samples/abeeway/tracker/"
+  redirect_from: []
 "/docs/paas/samples/analytics/ai-models/":
   url: "/docs/paas/samples/analytics/ai-models/"
   redirect_from: []
@@ -3562,6 +3577,9 @@
 "/docs/pe/":
   url: "/docs/pe/"
   redirect_from: []
+"/docs/pe/key-concepts/relations/":
+  url: "/docs/pe/key-concepts/relations/"
+  redirect_from: []
 "/docs/pe/mobile/alarm-dashboard/":
   url: "/docs/pe/mobile/alarm-dashboard/"
   redirect_from: []
@@ -4001,6 +4019,9 @@
   redirect_from: []
 "/docs/pe/releases/roadmap/":
   url: "/docs/pe/releases/roadmap/"
+  redirect_from: []
+"/docs/pe/samples/abeeway/tracker/":
+  url: "/docs/pe/samples/abeeway/tracker/"
   redirect_from: []
 "/docs/pe/samples/analytics/ai-models/":
   url: "/docs/pe/samples/analytics/ai-models/"

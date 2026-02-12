@@ -19,8 +19,10 @@ toc:
     new: true
   - title: Notification center
     path: /docs/user-guide/notifications/
-  - title: Entities and Relations
+  - title: Entities
     path: /docs/user-guide/entities-and-relations/
+  - title: Relations
+    path: /docs/key-concepts/relations/
   - title: Device profiles
     path: /docs/user-guide/device-profiles/
   - title: Asset profiles
