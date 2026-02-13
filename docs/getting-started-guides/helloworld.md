@@ -53,7 +53,7 @@ Devices publish telemetry and attributes and can receive control commands.
 
 Create a device that will act as the telemetry source for the platform.
 1. Navigate to **Entities &#8702; Devices** from the main menu.
-2. Click **&#43;** (**Add**) in the upper-right corner and select **Add new device**. 
+2. Click **"&#43; Add device** in the upper-right corner and select **"Add new device"**. 
 3. Enter a device name (for example, **Thermometer**). 
 4. Click **Add** to complete the device creation.
 5. A connectivity check dialog appears. Close it for now — you will return to it in the next step.
@@ -64,7 +64,7 @@ The device is successfully created and registered in ThingsBoard. It is ready to
 
 ## Step 2. Connect the Device {#step-2-connect-device}
 
-ThingsBoard provides built-in connectivity examples for sending telemetry using different protocols. It allows you to quickly test connectivity, validate credentials, and confirm that incoming data is processed correctly.
+ThingsBoard provides built-in connectivity examples for sending telemetry using different protocols. This allows you to quickly test connectivity, validate credentials, and confirm that incoming data is processed correctly.
 
 > To learn how to connect devices based on your technology stack or connectivity solution, see the available [connection guides](/docs/guides/#AnchorIDConnectYourDevice){:target="_blank"}.
 
@@ -78,17 +78,18 @@ Once telemetry is published successfully:
 - The device status changes from **Inactive &#8702; Active**
 - Telemetry is displayed on the device&#39;s **Latest telemetry** tab.
 
-For additional protocols and API options,[ThingsBoard API reference](/docs/api/){:target="_blank"}.
+For additional protocols and API options, check the [ThingsBoard API reference](/docs/api/){:target="_blank"}.
 
 <hr>
 
 ## Step 3. Visualize data on Dashboard {#step-3-create-dashboard}
 
-A [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} is a configurable user interface composed of widgets that visualize telemetry, alarms, and other data from IoT entities, allow users to control devices, and highlight abnormal behavior, enabling real-time monitoring, analysis, and response to events.
+A [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} is a configurable user interface composed of widgets that visualize telemetry, alarms, and other data from IoT entities, allow users to control devices, and highlight abnormal behavior. 
+This enables real-time monitoring, analysis, and response to events.
 
 Create a dashboard to visualize telemetry and alarm data from the device.
 1. Navigate to **Dashboards**.
-2. Click **&#43;** (**Add**) in the upper-right corner and select **Create new dashboard**.
+2. Click **"&#43; Add dashboard"** in the upper-right corner and select **"Create new dashboard"**.
 3. Name it **My Dashboard** and click **Add**.
 
 The dashboard has been created. It opens automatically, so you can start adding widgets right away.
@@ -96,10 +97,10 @@ The dashboard has been created. It opens automatically, so you can start adding 
 ### Step 3.1 Add a Value card widget
 
 A [Widget](/docs/{{docsPrefix}}user-guide/widgets/){:target="_blank"} in ThingsBoard is a configurable UI component used on dashboards to visualize data, control devices, or display alarms and events.
-Its enabling interactive monitoring and management of IoT systems.
+It enables interactive monitoring and management of IoT systems.
 
 Add a **Value card** widget to display the latest temperature value.
-1. In dashboard edit mode, click Add widget.
+1. In dashboard edit mode, click **&#43; Add widget**.
 2. Select the **Cards** widget bundle. 
 3. Add the **Value card** widget. 
 4. Configure the data source:   
@@ -118,7 +119,7 @@ For dynamic or multi-entity dashboards, use [entity aliases](/docs/{{docsPrefix}
 A **Time series chart** visualizes how telemetry values change over time.
 
 Add a chart to display temperature history:
-1. Click **Add widget**. 
+1. Click **&#43; Add widget**. 
 2. Choose the **Charts** widget bundle. 
 3. Select **Time series chart**. 
 4. Set the **Thermometer** as the data source. 
@@ -128,7 +129,7 @@ Add a chart to display temperature history:
 
 The chart now displays temperature values over time.
 
-Send several telemetry updates (see [Step 2](#step-2-connect-the-device)). The chart updates automatically as new data arrives.
+Send several telemetry updates (see [Step 2](#step-2-connect-device)). The chart updates automatically as new data arrives.
 
 You can customize the [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"}, aggregation, and grouping settings in the widget configuration.
 
@@ -137,12 +138,12 @@ You can customize the [time window](/docs/{{docsPrefix}}user-guide/dashboards/#t
 An **Alarms table** widget displays alarms associated with selected entities, including severity and status.
 
 Add an alarms table to the dashboard:
-1. In edit mode, click **Add widget**. 
+1. In edit mode, click **&#43; Add widget**. 
 2. Choose the **Alarm widgets** bundle. 
 3. Select **Alarms table**. 
 4. Set **Thermometer** as the data source. 
 5. Configure alarm severity and status filters as needed.   
-   Mark those you want to see in the widget. If none are marked, all alarms will be displayed regardless of their status or severity. 
+   The widget displays alarms matching the selected properties. If none are selected, all alarms will be displayed, regardless of their status or severity. 
 6. Click **Add**.
 7. Resize and position the widget.
 8. **Save** the dashboard.
@@ -168,26 +169,26 @@ Configure the alarm rule at the device profile level to ensure the same logic is
 
 <b><font size="3">Create the alarm rule</font></b>
 1. Navigate to **Alarms &#8702; Alarm rules**. 
-2. Click **&#43;** (**Add**) in the upper-right corner and select **Create new alarm rule**.
+2. Click **"&#43; Add alarm rule"** in the upper-right corner and select **"Create new alarm rule"**.
 
 <b><font size="3">Configure general settings</font></b>   
-1. **Alarm type**: <span class="code-light">High temperature</span>
-2. **Target entity**: <span class="code-light">default</span> device profile
+1. Alarm type: **High temperature**
+2. Target entity: **default**
 
 <b><font size="3">Add a telemetry argument</font></b>   
 1. Click **Add argument**
 2. Configure the argument:   
-   &#8194;&#8226;&#8194;**Entity type**: **Current entity**   
-   &#8194;&#8226;&#8194;**Argument type**: **Latest telemetry**   
-   &#8194;&#8226;&#8194;**Time series key**: <span class="code-light">temperature</span>   
-   &#8194;&#8226;&#8194;**Argument name**: <span class="code-light">temperature</span>   
+   &#8194;&#8226;&#8194;Entity type: **Current entity**   
+   &#8194;&#8226;&#8194;Argument type: **Latest telemetry**   
+   &#8194;&#8226;&#8194;Time series key: <span class="code-light">temperature</span>   
+   &#8194;&#8226;&#8194;Argument name: <span class="code-light">temperature</span>   
 3. Click **Add**
 
 This creates the <span class="code-light">temperature</span> variable used in the alarm condition.
 
 <b><font size="3">Define the trigger condition</font></b>   
 1. Click **Add trigger condition**.
-2. Set **Severity** to **Critical**.
+2. Ensure that **Severity** is set to **Critical**.
 3. **Add a condition** in **Script** mode:
    ```javascript
    // Triggers an alarm when temperature is above 25 degrees
@@ -232,7 +233,7 @@ Use the [ThingsBoard Mobile Application](/docs/mobile/){:target="_blank"} to ena
 ## Step 5. Share data with Customers {#step-7-assign-device-and-dashboard-to-customer}
 
 ThingsBoard supports multi-tenancy, allowing you to securely share devices and dashboards with different customers while keeping their data isolated.
-Each customer user must be able to see only the devices and dashboards assigned to their customer and must not have access to devices, dashboards, or any other data belonging to another customer.
+Each customer user can see only the devices and dashboards assigned to their customer and cannot access devices, dashboards, or any other data belonging to another customer.
 
 In this step, you will:
 - create a Customer and a Customer User
@@ -249,12 +250,12 @@ A [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"} in 
 
 Create a Customer:
 1. Navigate to the **Customers**. 
-2. Click the **&#43;** (**Add customer**). 
+2. Click the **&#43; Add customer**. 
 3. Enter **My New Customer** as the title.   
    Optionally, provide an address, phone number, or other additional details. 
 4. Click **Add**.
 
-The customer is created and ready for assigned devices, dashboards, and create users.
+The customer has been created and is ready for device, dashboard, and user assignment.
 
 <hr>
 
@@ -262,14 +263,14 @@ A **Customer User** is a user account associated with a specific Customer. Custo
 
 Create a Customer User:
 1. In the **Customers** list, click **Manage customer users** for the newly created customer. 
-2. Click **Add user** in the top-right corner. 
+2. Click **&#43; Add user** in the top-right corner. 
 3. Enter the user&#39;s email address.   
    Optionally, specify the first name, last name, phone number, preferred UI language, and unit system. 
 4. Click **Add**.
 5. **Copy the activation link** and store it in a secure place—you will use it later to sign in to ThingsBoard. 
 6. Click **OK** to finish.
 
-A customer user account is created and ready for activation.
+A customer user account has been created and is ready for activation.
 
 <hr>
 
@@ -277,7 +278,7 @@ A customer user account is created and ready for activation.
 
 To allow Customer Users to view telemetry and interact with the device, assign the device to the Customer.
 1. In the **Customers** list, click **Manage customer devices** for **My New Customer**. 
-2. Click the **Assign new device** in the top right corner of the table. 
+2. Click the **&#43; Assign new device** in the top-right corner of the table. 
 3. Click **Assign new device**. 
 4. Select **Thermometer** and click **Assign**.
 
@@ -289,7 +290,7 @@ The device is now assigned to the customer.
 
 Share the dashboard with the customer so they can visualize device data. Customer users will have read-only access and will not be able to add, modify, or remove widgets.
 1. In the **Customers** list, click **Manage customer dashboards** for **My New Customer**.
-2. Click the **Assign new dashboard** in the top right corner of the table. 
+2. Click the **&#43; Assign new dashboard** in the top-right corner of the table. 
 3. Select **My Dashboard** and click **Assign**.
 
 Customer Users now have **read-only access** to the dashboard.
