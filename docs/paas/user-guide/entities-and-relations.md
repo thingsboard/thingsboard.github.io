@@ -2,8 +2,8 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: Entities and relations
-description: IoT asset management using ThingsBoard entities and relations feature
+title: Key Concepts and Architecture
+description: IoT asset management using ThingsBoard entities and components
 
 ---
 

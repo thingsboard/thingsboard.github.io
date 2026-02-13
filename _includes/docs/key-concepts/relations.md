@@ -9,7 +9,7 @@ A relation has the following properties:
 - Each relation has a **relation type** (string), for example: _Contains_, _Manages_, _Uses_, _Supports_.
 - You can define **custom relation types** depending on your needs.
 
-## Why use relations?
+## Why Use Relations?
 
 Relations help you model logical and physical connections between entities such as:
 - A building (asset) contains multiple devices. 
@@ -22,14 +22,15 @@ Relations are commonly used for:
 - Performing relation-based processing in rule chains
 - Filtering, aggregating, and visualizing data across entity groups
 
-## Relation direction and types
+## Relation Direction and Types
 
 <b><font size="4">Direction</font></b>   
 Relations in ThingsBoard are **directional**:
 - **From** – the source entity 
 - **To** – the target entity
 
-Relation direction is important because many queries rely on it to determine which entities are considered parent/child.
+Direction is important because most API queries and rule engine operations depend on it to determine which entities are considered parent/child.
+The same relation type behaves differently depending on whether you query relations **from** an entity or **to** an entity.
 
 <b><font size="4">Relation Types</font></b>
 
@@ -41,32 +42,35 @@ Relation types define the meaning of the relationship. Common examples:
 
 You can create **your own relation types** if needed.
 
-## How to Create relations
+## Creating and Managing Relations
 
-Relations are created and managed directly in the ThingsBoard user interface from the **Relations** tab on the target entity details page.
+Relations are created and managed in the ThingsBoard UI from the **Relations** tab on the entity details page.
 
-To create a new relation:
-1. Open the entity details page and switch to the **Relations** tab. 
-2. Select the relation **direction** (**From** or **To**). 
-3. Click the "**+**" button to open the **Add relation** dialog. 
-4. In the dialog, specify the **Relation type** (for example, _Contains_). 
-5. Select the **entity type** in the **From (To) entity** section (for example, _Asset_, _Device_, etc.). 
-6. Select the required entity or multiple entities in the **Entity list** field.
+To create a relation:
+1. Open the entity details page.
+2. Navigate to the **Relations** tab.
+3. Select the relation **direction** (**From** or **To**). 
+4. Click the "**+**" button to open the **Add relation** dialog. 
+5. In the dialog, specify the **Relation type** (for example, _Contains_). 
+6. Define the **relation type** and select the **related entity**.
 7. (Optional) Fill in the **Additional info (JSON)** field if additional metadata is required. 
-8. Click **Add** to create the relation.
+8. lick **Add** to create the relation.
 
-Once created, the relation will appear in the relations table and can later be used in dashboards, rule chains, calculated fields, and other platform features.
-
-## How relations are used in ThingsBoard
+## How Relations Are Used in ThingsBoard
 
 Relations are widely used across the ThingsBoard platform to build hierarchical models, simplify entity navigation, and implement advanced data processing scenarios.
 
-<b><font size="4">In dashboard</font></b>
+<b><font size="4">In Dashboards</font></b>
 
-Relations enable dashboards to dynamically resolve and display entities without hardcoding identifiers. They are primarily used in [entity aliases](/docs/user-guide/ui/aliases/) and dashboard states to implement hierarchical navigation.   
-[Widgets](/docs/{{docsPrefix}}user-guide/widgets/){:target="_blank"} can display telemetry, attributes, and alarms from related entities, filter entity lists by relationship, and visualize real-world structures such as _Customer_ &#8702; _Assets_ &#8702; _Devices_. 
+Relations enable dashboards to dynamically resolve and display entities without hardcoding identifiers.   
+They are commonly used in:
+- [Entity aliases](/docs/user-guide/ui/aliases/){:target="_blank"}
+- Dashboard states
+- Widgets that display related entity data (for example, Alarms table)
 
-This approach enables reusable dashboards that automatically adapt to different customers and complex deployments.
+[Widgets](/docs/{{docsPrefix}}user-guide/widgets/){:target="_blank"} can display alarms, telemetry and attributes from related entities, filter entities based on relationships, visualize hierarchical structures (_Customer_ &#8702; _Assets_ &#8702; _Devices_)
+
+This enables reusable dashboards that adapt automatically to different customers and deployments.
 
 <b><font size="4">In Rule Engine</font></b>
 
@@ -114,3 +118,32 @@ A relation is represented as a JSON object containing:
   "additionalInfo": {}
 }
 ```
+
+## Example Hierarchy Using Relations
+
+The following example illustrates how the _Contains_ relation can be used to model a hierarchical structure in ThingsBoard.
+
+In this example:
+- **Region A** is defined as an **Asset**.
+- Region A contains two child assets: **Field A** and **Field B**.
+- Each field contains multiple **Devices**, such as moisture sensors and irrigation systems.
+
+This forms the following hierarchy:
+
+{% if docsPrefix == null %}
+![image](/images/key-concepts/relations-ce.svg)
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+![image](/images/key-concepts/relations-pe.svg)
+{% endif %}
+
+The _Contains_ relation follows the direction:
+**From (Parent) → To (Child)**
+
+In this case:
+- Region A &#8702; Contains &#8702; Field A 
+- Region A &#8702; Contains &#8702; Field B 
+- Field A &#8702; Contains &#8702; Devices 
+- Field B &#8702; Contains &#8702; Devices
+
+This structure demonstrates how relations are used to model real-world physical or logical hierarchies such as geographic regions, production areas, facilities, or equipment groups.

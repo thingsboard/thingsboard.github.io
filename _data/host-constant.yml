@@ -3,7 +3,7 @@
   hostName: localhost
   mqttHostName: localhost
   coapHostName: localhost
-  httpsUrl: https://localhost
+  httpsUrl: http(s)://localhost
   lwm2mHostName: localhost
   apiHostName: localhost
 - tag: pe
@@ -11,7 +11,7 @@
   hostName: localhost
   mqttHostName: localhost
   coapHostName: localhost
-  httpsUrl: https://thingsboard.cloud
+  httpsUrl: http(s)://localhost
   lwm2mHostName: lwm2m.thingsboard.cloud
   apiHostName: YOUR_SERVER_HOSTNAME
 - tag: paas

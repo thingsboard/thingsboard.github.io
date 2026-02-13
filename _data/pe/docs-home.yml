@@ -41,6 +41,8 @@ toc:
     path: /docs/pe/solution-templates/waste-management/
 - title: Key concepts
   section:
+  - title: Key Concepts and Architecture
+    path: /docs/pe/user-guide/entities-and-relations/
   - title: Alarms
     path: /docs/pe/user-guide/alarms/
   - title: Alarm rules
@@ -51,8 +53,6 @@ toc:
     new: true
   - title: Notification center
     path: /docs/pe/user-guide/notifications/
-  - title: Entities
-    path: /docs/pe/user-guide/entities-and-relations/
   - title: Relations
     path: /docs/pe/key-concepts/relations/
   - title: Device profiles

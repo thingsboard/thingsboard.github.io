@@ -43,6 +43,8 @@ toc:
       path: /docs/paas/eu/solution-templates/waste-management/
 - title: Key concepts
   section:
+    - title: Key Concepts and Architecture
+      path: /docs/paas/eu/user-guide/entities-and-relations/
     - title: Alarms
       path: /docs/paas/eu/user-guide/alarms/
     - title: Alarm rules
@@ -53,8 +55,6 @@ toc:
       new: true
     - title: Notification center
       path: /docs/paas/eu/user-guide/notifications/
-    - title: Entities
-      path: /docs/paas/eu/user-guide/entities-and-relations/
     - title: Relations
       path: /docs/paas/eu/key-concepts/relations/
     - title: Device profiles
