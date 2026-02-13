@@ -1,5 +1,5 @@
 
-<b><font size="4">Create or update server-side attribute</font></b>
+### Create or update server-side attribute
 
 Send a **POST** request with a JSON payload to:
 
@@ -25,7 +25,7 @@ curl -v '{{httpsUrl}}/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862
 
 Replace <code>$YOUR_JWT_TOKEN_HERE</code> with your JWT token value.
 
-<br><b><font size="4">Fetch server-side attributes</font></b>
+### Fetch server-side attributes
 
 To retrieve all server-side attributes for an entity, send a **GET** request:
 

@@ -182,9 +182,6 @@ The attribute will be stored immediately and become available for [dashboards](h
 
 > **Note:** Client-side attributes cannot be created or modified from the UI because they are published by the device.
 
-{% include templates/info-banner.md content=bulk_provisioning %}
-
-
 {% capture bulk_provisioning %}
 [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/){:target="_blank"} feature allows you to quickly create multiple devices and assets and their attributes from CSV file.
 {% endcapture %}

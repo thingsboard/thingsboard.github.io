@@ -26,9 +26,9 @@ Controls authentication and authorization.
 - <b><font size="3">Users</font></b>   
   A [User](/docs/{{docsPrefix}}user-guide/ui/users/){:target="_blank"} is an authenticated account with role-based access to ThingsBoard.   
   Users can belong to a Tenant or a Customer and can manage entities, dashboards, telemetry, and device operations based on assigned permissions.
-- <b><font size="3">Role-Based Access Control (RBAC)</font></b>   
+{% unless docsPrefix == nil %}- <b><font size="3">Role-Based Access Control (RBAC)</font></b>   
   [Role-Based Access Control (RBAC)](/docs/pe/user-guide/rbac/){:target="_blank"} is a security mechanism that regulates user access to entities and platform operations based on assigned roles and permissions. It allows administrators to define what actions users can perform and which resources they can access.    
-  RBAC is used to enforce secure multi-tenant deployments, isolate customer data, and implement fine-grained access control across devices, assets, dashboards, and other platform components.
+  RBAC is used to enforce secure multi-tenant deployments, isolate customer data, and implement fine-grained access control across devices, assets, dashboards, and other platform components.{% endunless %}
 - <b><font size="3">Tenant Profiles</font></b>   
   A [Tenant Profile](/docs/{{docsPrefix}}user-guide/tenant-profiles/){:target="_blank"} defines common policies and limits applied to tenants, such as entity quotas, API limits, and rate limits.   
   Tenant Profiles are used to enforce resource usage rules and manage platform scalability. Each tenant is assigned to exactly one tenant profile at a time.

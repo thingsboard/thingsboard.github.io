@@ -1,5 +1,5 @@
 
-<b><font size="4">Fetch client-side attributes</font></b>
+### Fetch client-side attributes
 
 To retrieve client-side attributes, send a **GET** request to:
 
@@ -37,7 +37,7 @@ The response contains the attribute key, value, and the timestamp of the last up
 ]
 ```
 
-<b><font size="4">Device API</font></b>
+### Device API
 
 Devices can interact with client-side attributes using the following APIs:
 - Publish client-side attributes:

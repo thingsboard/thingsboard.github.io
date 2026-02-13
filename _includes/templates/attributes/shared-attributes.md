@@ -1,5 +1,5 @@
 
-<b><font size="4">Create or update shared attribute</font></b>
+### Create or update shared attribute
 
 To create or update a shared attribute, send a **POST** request with a JSON payload to:
 
@@ -25,7 +25,7 @@ curl -v '{{httpsUrl}}/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862
 
 Replace <code>$YOUR_JWT_TOKEN_HERE</code> with your JWT token value.
 
-<br><b><font size="4">Fetch shared attributes</font></b>
+### Fetch shared attributes
 
 To retrieve all shared attributes for a device, send a GET request:
 
@@ -51,7 +51,7 @@ The response contains the attribute key, value, and the timestamp of the last up
 
 As an alternative to curl, you may use the official [Java](/docs/{{docsPrefix}}reference/rest-client/){:target="_blank"} or [Python](/docs/{{docsPrefix}}reference/python-rest-client/){:target="_blank"} REST clients.
 
-<b><font size="4">Device API</font></b>
+###  Device API
 
 Devices can interact with shared attributes using the following APIs:
 - Request shared attribute values:
