@@ -41,3 +41,5 @@ toc:
   section:
     - title: Python Client SDK
       path: /docs/reference/python-client-sdk/
+    - title: MicroPython Client SDK
+      path: /docs/reference/micropython-client-sdk/
