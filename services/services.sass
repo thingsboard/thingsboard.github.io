@@ -139,13 +139,22 @@
         .card
           width: 100%
     .bottom
+      position: relative
       display: flex
       flex-direction: column
       text-align: center
-      margin: 0 0 -50px -50%
-      background-color: #F9FBFE
-      width: 200%
+      margin: 0 0 -50px 0
       padding: 50px 0
+      &:before
+        content: ""
+        background-color: #F9FBFE
+        width: 200vw
+        left: 50%
+        transform: translateX(-50%)
+        height: 100%
+        position: absolute
+        top: 0
+        z-index: -1
       .contact-button
         cursor: pointer
         width: 350px

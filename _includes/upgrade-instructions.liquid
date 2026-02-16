@@ -10,6 +10,9 @@
 {% if item[1].vulnerable == 'true' %}
     {% continue %}
 {% endif %}
+{% if item[1].edge-only == 'true' %}
+    {% continue %}
+{% endif %}
 
 {% assign version = item[0] %}
 {% assign data = item[1] %}

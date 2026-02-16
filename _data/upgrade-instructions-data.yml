@@ -114,6 +114,7 @@
   release-date-edge: Sep 22, 2023
   manual-version-upgrade: "true"
 3.5.1.1:
+  edge-only: "true"
   upgradable-from: "3.5.1"
   release-date-edge: Jul 4, 2023
 3.5.1:
