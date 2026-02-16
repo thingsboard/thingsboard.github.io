@@ -3,7 +3,7 @@
 To subscribe to the **sensors/temperature** topic and start receiving messages, use the following command:
 
 ```bash
-mosquitto_sub -d -h demo.tbmq.io -p 1883 -t sensors/temperature -q 1 -u tbmq_demo_username
+mosquitto_sub -d -h demo.tbmq.io -p 1883 -t sensors/temperature -q 1 -u demo
 ```
 {: .copy-code}
 
@@ -16,6 +16,6 @@ If you have signed up for a demo account, log in to [demo.tbmq.io](https://demo.
 To publish a message to the **sensors/temperature** topic, use the following command:
 
 ```bash
-mosquitto_pub -d -h demo.tbmq.io -p 1883 -t sensors/temperature -m 32 -q 1 -u tbmq_demo_username
+mosquitto_pub -d -h demo.tbmq.io -p 1883 -t sensors/temperature -m 32 -q 1 -u demo
 ```
 {: .copy-code}

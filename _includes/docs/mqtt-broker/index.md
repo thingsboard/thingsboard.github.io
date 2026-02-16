@@ -9,9 +9,9 @@ Its distributed **cluster architecture** takes scalability even further, support
 
 For installation instructions and detailed insights into its architecture and MQTT features, refer to the official TBMQ documentation.
 
-## Try TBMQ Live
+## Try Live Demo
 
-The fastest way to get started is to use our public demo instance — no installation required.
+The fastest way to get started is to use our **free public MQTT broker** — no installation required.
 
 <div class="doc-features row mt-4 align-items-stretch">
     <div class="col-12 col-sm-7 col-lg-7 mb-4 d-flex">
@@ -21,7 +21,7 @@ The fastest way to get started is to use our public demo instance — no install
                 <b>Host:</b> <code>demo.tbmq.io</code><br>
                 <b>TCP Port:</b> <code>1883</code><br>
                 <b>TLS Port:</b> <code>8883</code><br>
-                <b>Username:</b> <code>tbmq_demo_username</code><br>
+                <b>Username:</b> <code>demo</code><br>
                 <b>Password:</b> <i>leave empty</i>
             </div>
         </div>
@@ -31,7 +31,7 @@ The fastest way to get started is to use our public demo instance — no install
             <img class="feature-logo" src="/images/feature-logo/getting-started.svg" alt="Sign up icon">
             <div class="feature-title">Sign Up for Free</div>
             <div class="feature-text">
-                Create an account to access the live TBMQ Demo UI — monitor sessions, subscriptions, and broker statistics in real time.
+                Create an account to access the live TBMQ Demo Broker — monitor sessions, subscriptions, and broker statistics in real time.
             </div>
         </a>
     </div>
