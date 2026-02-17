@@ -44,3 +44,5 @@ toc:
         path: /docs/reference/python-client-sdk
       - title: MicroPython Client SDK
         path: /docs/reference/micropython-client-sdk/
+      - title: CircuitPython Client SDK
+        path: /docs/reference/circuitpython-client-sdk/
