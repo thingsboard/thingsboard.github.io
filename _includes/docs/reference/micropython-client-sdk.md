@@ -204,7 +204,7 @@ key, the device is automatically linked to the user’s account. This simplifies
 can activate their hardware without needing platform-level permissions.
 
 More information about device claiming can be found in
-the [Device claiming](/docs/{{docsPrefix}}user-guide/device-claiming/) section of the documentation.
+the [Device claiming](docs/user-guide/claiming-devices/) section of the documentation.
 
 **Method Syntax**
 
