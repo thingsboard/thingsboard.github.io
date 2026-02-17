@@ -16,20 +16,20 @@ Through this tutorial, you will gain knowledge and proficiency in the following 
 For more comprehensive information regarding the architecture of TBMQ, navigate to the following [document](/docs/{{docsPrefix}}mqtt-broker/architecture/).
 This resource provides detailed insights into the underlying structure and design principles of the broker.
 
-## Try TBMQ Live
+## Try Live Demo
 
-The fastest way to get started with TBMQ is to use our public demo instance at [demo.tbmq.io](https://demo.tbmq.io){:target="_blank"}.
+The fastest way to get started with TBMQ is to use our free public MQTT broker at [demo.tbmq.io](https://demo.tbmq.io){:target="_blank"}.
 This sandbox environment allows you to explore TBMQ features without any installation.
 
 **MQTT connection details:**
 
-| Parameter | Value |
-|-----------|-------|
-| Host | demo.tbmq.io |
-| TCP Port | 1883 |
-| TLS Port | 8883 |
-| Username | tbmq_demo_username |
-| Password | *(leave empty)* |
+| Parameter | Value           |
+|-----------|-----------------|
+| Host      | demo.tbmq.io    |
+| TCP Port  | 1883            |
+| TLS Port  | 8883            |
+| Username  | demo            |
+| Password  | *(leave empty)* |
 
 You can start publishing and subscribing to topics immediately using these credentials.
 To access the TBMQ UI and explore sessions, subscriptions, and other features, [sign up](https://demo.tbmq.io/signup){:target="_blank"} for a free account.
