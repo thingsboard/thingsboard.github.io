@@ -7,8 +7,7 @@ The [CircuitPython Client SDK](https://github.com/thingsboard/CircuitPython_thin
 development kit for client-side integration of your CircuitPython projects. [CircuitPython](https://circuitpython.org/) 
 is a simplified version of MicroPython designed to be easy to use on microcontrollers. 
 It allows you to connect your CircuitPython devices to ThingsBoard using MQTT protocol and send telemetry data, 
-attributes, and receive RPC calls. This SDK lets you connect CircuitPython devices to ThingsBoard over the MQTT protocol
-to send telemetry and attributes, and to receive RPC calls. It provides a clean, developer-friendly API for connecting 
+attributes, and receive RPC calls. It provides a clean, developer-friendly API for connecting 
 to ThingsBoard and exchanging data, making it easier to integrate CircuitPython devices with the platform.
 
 CircuitPython Client SDK supports the following features:
@@ -196,7 +195,7 @@ key, the device is automatically linked to the user’s account. This simplifies
 can activate their hardware without needing platform-level permissions.
 
 More information about device claiming can be found in
-the [Device claiming](docs/user-guide/claiming-devices/) section of the documentation.
+the [Device claiming](/docs/user-guide/claiming-devices/) section of the documentation.
 
 **Method Syntax**
 
@@ -414,13 +413,13 @@ client.set_server_side_rpc_request_handler(handler)
 In this section, we’ll cover the core concepts of the CircuitPython Client SDK:
 
 - Connecting your device to ThingsBoard over MQTT.
-- The Non-Blocking Loop.
-- Telemetry, Attributes and Data Flow.
+- The non-blocking loop.
+- Telemetry, attributes and data flow.
 - Attributes requests.
 - Attributes updates.
-- Handling Server-Side RPC.
+- Handling server-side RPC.
 
-Let's review these concepts of the CircuitPython Client SDK using the following code examples:
+Let's review these concepts of the CircuitPython Client SDK:
 
 #### Connecting to ThingsBoard
 
@@ -457,7 +456,7 @@ while True:
 ```
 {: .copy-code}
 
-Before communicating with the cloud, make sure your device is connected to the network. The above code assumes that the Wi-Fi connection is already established.
+Before communicating with the ThingsBoard, make sure your device is connected to the network. The above code assumes that the Wi-Fi connection is already established.
 More about how you can establish Wi-Fi connection can be found in the [Networking in CircuitPython](https://learn.adafruit.com/networking-in-circuitpython/networking-with-the-wifi-module).
 
 - First we make sure that Wi-Fi is connected and print the device's IP address. This is important because the MQTT client needs an active network connection to communicate with ThingsBoard.
@@ -472,7 +471,7 @@ The most critical part of the SDK implementation is the main loop. In CircuitPyt
 helps reduce CPU usage while waiting for events, but it also pauses your code. 
 To keep the device responsive to incoming MQTT messages, you should regularly poll the client.
 
-`client.check_for_msg()` :
+`client.check_for_msg()` method is the "heartbeat" of your communication:
 
 - It checks the MQTT buffer for incoming messages.
 - It processes any received messages and triggers the appropriate callbacks (for example, RPC requests or attribute updates).
@@ -488,8 +487,8 @@ timestamp, which is useful for sending historical data to ThingsBoard.
 while True:
     # Non-blocking: poll for incoming MQTT packets, then continue doing other work
     client.check_for_msg()
-    client.send_telemetry({"CPU", 12.0})
-    client.send_attributes({"status", "ok"})
+    client.send_telemetry({"CPU": 12.0})
+    client.send_attributes({"status": "ok"})
     time.sleep(0.05)  # small delay to prevent overwhelming the CPU and allow other tasks to run
 ```
 {: .copy-code}
@@ -614,17 +613,21 @@ GitHub.
 
 - **Low memory, unstable SDK behavior**
 
-    This usually happens when the board has limited RAM for CircuitPython, or when your application (and its dependencies) uses too much memory. 
-    Try reducing memory usage in your code (for example, avoid large allocations and keep imports minimal). We also recommend reading this guide:
-    [CircuitPython memory saving](https://github.com/kmatch98/CircuitPython_memory_saving).
+  This usually happens when the board has limited RAM for CircuitPython, or when your application (and its dependencies)
+  uses too much memory.
+  Try reducing memory usage in your code (for example, avoid large allocations and keep imports minimal). We also
+  recommend reading this guide:
+  [CircuitPython memory saving](https://github.com/kmatch98/CircuitPython_memory_saving).
 
 - **Errors with circup installation**
-    On some boards, `circup install` may fail when using a USB/serial workflow. In this case, you can install
-    libraries using [Web-Workflow](https://adafruit-playground.com/u/tyeth/pages/using-circup-with-web-workflow) instead. 
-    This method lets you target the device directly over the network by specifying the device IP (host) and Web Workflow password, which often resolves upload/permission issues.
-    
-    ```bash
-    circup --host <your_device_ip> --password <your_password> install thingsboard-circuitpython-client-sdk
-    ```
+
+  On some boards, `circup install` may fail when using a USB/serial workflow. In this case, you can install
+  libraries using [Web-Workflow](https://adafruit-playground.com/u/tyeth/pages/using-circup-with-web-workflow) instead.
+  This method lets you target the device directly over the network by specifying the device IP (host) and Web Workflow
+  password, which often resolves upload/permission issues.
+
+  ```bash
+  circup --host <your_device_ip> --password <your_password> install thingsboard-circuitpython-client-sdk
+  ```
   {: .copy-code}
   
