@@ -31,6 +31,7 @@ import mip
 
 mip.install('github:thingsboard/thingsboard-micropython-client-sdk')
 ```
+{: .copy-code}
 
 It is recommended to use the following code snippet to make sure that the SDK is installed and imported correctly,
 and also to not install the SDK every time you run your code:
@@ -45,6 +46,7 @@ except ImportError:
     mip.install('github:thingsboard/thingsboard-micropython-client-sdk')
     from thingsboard_sdk.tb_device_mqtt import TBDeviceMqttClient
 ```
+{: .copy-code}
 
 ### Methods
 
@@ -85,6 +87,7 @@ client.connect(timeout=20)
 # Connecting with waiting for connection result
 result = client.connect(timeout=20)
 ```
+{: .copy-code}
 
 #### disconnect
 
@@ -107,6 +110,7 @@ client.connect()
 
 client.disconnect()
 ```
+{: .copy-code}
 
 #### send_attributes
 
@@ -130,6 +134,7 @@ attributes in key-value pairs.
 attributes = {"sensorModel": "DHT-22", "attribute_2": "value"}
 client.send_attributes(attributes)
 ```
+{: .copy-code}
 
 #### send_telemetry
 
@@ -161,6 +166,7 @@ telemetry = [{"ts": 1451649600000, "values": {"temperature": 42.2, "humidity": 7
              {"ts": 1451649601000, "values": {"temperature": 42.3, "humidity": 72}}]
 client.send_telemetry(telemetry)
 ```
+{: .copy-code}
 
 #### request_attributes
 
@@ -196,6 +202,7 @@ def on_attributes_change(result, exception=None):
 
 client.request_attributes(client_keys=["atr1", "atr2"], callback=on_attributes_change)
 ```
+{: .copy-code}
 
 #### claim_device
 
@@ -204,7 +211,7 @@ key, the device is automatically linked to the user’s account. This simplifies
 can activate their hardware without needing platform-level permissions.
 
 More information about device claiming can be found in
-the [Device claiming](docs/user-guide/claiming-devices/) section of the documentation.
+the [Device claiming](/docs/user-guide/claiming-devices/) section of the documentation.
 
 **Method Syntax**
 
@@ -227,6 +234,7 @@ client.claim_device("my_claim_code")
 # Claiming a device with a claim code that will be valid for 60 seconds
 client.claim_device("my_claim_code", duration_ms=60000)
 ```
+{: .copy-code}
 
 #### subscribe_to_attribute
 
@@ -258,6 +266,7 @@ def callback(result, *args):
 
 sub_id = client.subscribe_to_attribute("frequency", callback)
 ```
+{: .copy-code}
 
 #### subscribe_to_all_attributes
 
@@ -287,6 +296,7 @@ def callback(result, *args):
 
 sub_id = client.subscribe_to_all_attributes(callback)
 ```
+{: .copy-code}
 
 #### unsubscribe_from_attribute
 
@@ -317,6 +327,7 @@ sub_id = client.subscribe_to_attribute("frequency", callback)
 # Unsubscribing from attribute updates
 client.unsubscribe_from_attribute(sub_id)
 ```
+{: .copy-code}
 
 #### set_server_side_rpc_request_handler
 
@@ -346,6 +357,7 @@ def handler(request_id, request_body):
 
 client.set_server_side_rpc_request_handler(handler)
 ```
+{: .copy-code}
 
 #### send_rpc_reply
 
@@ -374,6 +386,7 @@ def handler(request_id, request_body):
    
 client.set_server_side_rpc_request_handler(handler)
 ```
+{: .copy-code}
 
 #### get_provision_request
 
@@ -418,6 +431,7 @@ provision_request = TBDeviceMqttClient.get_provision_request("my_provision_key",
 # Forming provision request for a gateway device
 provision_request = TBDeviceMqttClient.get_provision_request("my_provision_key", "my_provision_secret", gateway=True)
 ```
+{: .copy-code}
 
 #### provision
 
@@ -448,6 +462,7 @@ provision_request = TBDeviceMqttClient.get_provision_request("my_provision_key",
 # Sending provision request to ThingsBoard for device provisioning
 provisioned_credentials = client.provision("thingsboard.cloud", 1883, provision_request)
 ```
+{: .copy-code}
 
 ### Concepts
 
@@ -514,7 +529,7 @@ def safe_check_msg():
 while True:
     # Non-blocking: poll for incoming MQTT packets, then continue doing other work
     safe_check_msg()
-    client.send_telemetry({"CPU", 12.0})
+    client.send_telemetry({"CPU": 12.0})
     time.sleep_ms(50)
 ```
 {:.copy-code.expandable-15}
@@ -549,8 +564,9 @@ client.connect()
 while True:
     # some tasks with ThingsBoard
 ```
+{: .copy-code}
 
-Before communicating with the cloud, the device must bridge the gap between the hardware and the network:
+Before communicating with the ThingsBoard, the device must bridge the gap between the hardware and the network:
 
 - The network module initializes the Wi-Fi instance. We use STA_IF (Station Interface) to connect the device to an existing
   access point.
@@ -577,6 +593,7 @@ def on_server_side_rpc_request(request_id, request_body):
 
 client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
 ```
+{: .copy-code}
 
 In the SDK, we don't "wait" for a command, instead we provide a callback function (`on_server_side_rpc_request`):
 
@@ -607,9 +624,10 @@ timestamp, which is useful for sending historical data to ThingsBoard.
 while True:
     # Non-blocking: poll for incoming MQTT packets, then continue doing other work
     safe_check_msg()
-    client.send_telemetry({"CPU", 12.0})
+    client.send_telemetry({"CPU": 12.0})
     time.sleep_ms(50)
 ```
+{: .copy-code}
 
 By placing this inside the main loop, the device continuously streams its state. Because we use a non-blocking approach,
 the device can simultaneously send telemetry and receive RPC commands without one interrupting the other.
@@ -625,12 +643,13 @@ GitHub.
 
 - **Mip installation failed with OSError: -202**
 
-    This error can occur when the device is not connected to the internet or when there are issues with the network 
-    connection. To resolve this issue, make sure that your device is connected to the internet and that there are no 
-    issues with the network connection. You can also try restarting your device and running the installation command again.
-    
-    Recommended firstly to establish a connection to the internet and then run the installation command:
-    
+  This error can occur when the device is not connected to the internet or when there are issues with the network
+  connection. To resolve this issue, make sure that your device is connected to the internet and that there are no
+  issues with the network connection. You can also try restarting your device and running the installation command
+  again.
+
+  Recommended firstly to establish a connection to the internet and then run the installation command:
+
     ```python
     import network
     import mip
@@ -648,3 +667,4 @@ GitHub.
     
     mip.install('github:thingsboard/thingsboard-micropython-client-sdk')
     ```
+    {: .copy-code}
