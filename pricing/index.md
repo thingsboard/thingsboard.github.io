@@ -605,7 +605,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             <div class="top-up-details">
                                 <div class="detail-row">
                                     <span class="detail-label">AI credits</span>
-                                    <span class="detail-value">+1M</span>
+                                    <span class="detail-value">+1M AI credits</span>
                                 </div>
                             </div>
                         </div>
