@@ -30,6 +30,7 @@ Server-side API is available as REST API:
 Software development kits:
 
 * [**Python Client SDK**](/docs/{{docsPrefix}}reference/python-client-sdk) - Software development kit for client-side integration of your Python projects.
-* [**MicroPython Client SDK**](/docs/reference/micropython-client-sdk)
+* [**MicroPython Client SDK**](/docs/reference/micropython-client-sdk) - Software development kit for client-side integration of your MicroPython projects.
+* [**CircuitPython Client SDK**](/docs/reference/circuitpython-client-sdk) - Software development kit for client-side integration of your CircuitPython projects.
 
 {% endif %}

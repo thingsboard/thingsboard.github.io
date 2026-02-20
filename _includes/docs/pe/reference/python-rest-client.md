@@ -377,7 +377,7 @@ def main():
 
             # Creating an Asset
             default_asset_profile_id = rest_client.get_default_asset_profile_info().id
-            asset = Asset(name="Building 1",
+            asset = Asset(name="Building 12",
                           asset_profile_id=default_asset_profile_id)
             asset = rest_client.save_asset(asset)
 
@@ -387,6 +387,8 @@ def main():
             # Also, you can use default Device Profile:
             # default_device_profile_id = rest_client.get_default_device_profile_info().id
             device_profile = DeviceProfile(name="Thermometer",
+                                           type="DEFAULT",
+                                           transport_type="DEFAULT",
                                            profile_data=DeviceProfileData(configuration={"type": "DEFAULT"},
                                                                           transport_configuration={"type": "DEFAULT"}))
             device_profile = rest_client.save_device_profile(device_profile)
@@ -426,16 +428,17 @@ There are 2 possible ways to configure version control system (VCS):
 
 To configure this feature we will need the command line arguments and data:  
 
-| Command line argument | Description                                                                       |  
-|-|-|  
-| -H | **ThingsBoard host (Default: localhost)**                                                            |    
-| -p | **ThingsBoard port (Default: 80)**                                                                   |  
-| -U | **ThingsBoard user (email for login)**                                                               |  
-| -P | **ThingsBoard user password**                                                                        |
-| -r | **Repository uri, link to your repository**                                                          |
-| -b | **Default branch (Default: main)**                                                                   |  
-| -gu | **VCS username** (This parameter named GITHUB_USERNAME, but it can work with any VCS)               |  
-| -gp | **VCS access token / password** (This parameter named GITHUB_PASSWORD, but it can work with any VCS)|  
+| Command line argument | Description                                                                                          |
+|-----------------------|------------------------------------------------------------------------------------------------------|
+| -H                    | **ThingsBoard host (Default: localhost)**                                                            |
+| -p                    | **ThingsBoard port (Default: 80)**                                                                   |
+| -U                    | **ThingsBoard user (email for login)**                                                               |
+| -P                    | **ThingsBoard user password**                                                                        |
+| -r                    | **Repository uri, link to your repository**                                                          |
+| -b                    | **Default branch (Default: main)**                                                                   |
+| -gu                   | **VCS username** (This parameter named GITHUB_USERNAME, but it can work with any VCS)                |
+| -gp                   | **VCS access token / password** (This parameter named GITHUB_PASSWORD, but it can work with any VCS) |
+| --------------------- | -----------------------------------------------------------------------------------------            |
 
 *You always can get the full list of arguments by calling script with* **-h** *argument.*
 
@@ -457,17 +460,18 @@ python3 configure_vcs_access.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_POR
 
 To configure this feature we will need next command line arguments and data:  
 
-| Command line argument | Description                                                                       |  
-|-|-|  
-| -H | **ThingsBoard host (Default: localhost)**                                                            |    
-| -p | **ThingsBoard port (Default: 80)**                                                                   |  
-| -U | **ThingsBoard user (email for login)**                                                               |  
-| -P | **ThingsBoard user password**                                                                        |
-| -r | **Repository uri, link to your repository**                                                          |  
-| -b | **Default branch (Default: main)**                                                                   |  
-| -gu | **VCS username** (This parameter named GITHUB_USERNAME, but it can work with any VCS)               |  
-| -pk | **Path to private key**                                                                             |  
-| -pkp | **Password for private key (If it was set)**                                                       |  
+| Command line argument   | Description                                                                             |
+|-------------------------|-----------------------------------------------------------------------------------------|
+| -H                      | **ThingsBoard host (Default: localhost)**                                               |
+| -p                      | **ThingsBoard port (Default: 80)**                                                      |
+| -U                      | **ThingsBoard user (email for login)**                                                  |
+| -P                      | **ThingsBoard user password**                                                           |
+| -r                      | **Repository uri, link to your repository**                                             |
+| -b                      | **Default branch (Default: main)**                                                      |
+| -gu                     | **VCS username** (This parameter named GITHUB_USERNAME, but it can work with any VCS)   |
+| -pk                     | **Path to private key**                                                                 |
+| -pkp                    | **Password for private key (If it was set)**                                            |
+| ----------------------- | --------------------------------------------------------------------------------------- |
 
 *You always can get the full list of arguments by calling script with* **-h** *argument.*
 
@@ -494,20 +498,21 @@ The latest source code you can find [here](https://github.com/thingsboard/things
 
 To save entities from command line we will use the following arguments and data:  
 
-| Command line argument | Description                                                                       |  
-|-|-|  
-| -H | **ThingsBoard host (Default: localhost)**                                                                        |    
-| -p | **ThingsBoard port (Default: 80)**                                                                               |  
-| -U | **ThingsBoard user (email for login)**                                                                           |  
-| -P | **ThingsBoard user password**                                                                                    |  
-| -b | **Default branch (Default: main)**                                                                               |  
-| -N | **Version name (If not provided will be generated 5 random letters and numbers and used as a name)**             |
-| --save_attributes     | **Optional, do we need to save attributes for target entities (Default: True)**               |
-| --save_credentials    | **Optional, do we need to save credentials for target entities (Default: True)**              |
-| --save_relations      | **Optional, do we need to save relations for target entities (Default: True)**                |
-| --save_group_entities | **Optional, do we need to save entities group for target entities (Default: True)**           | 
-| --save_permissions    | **Optional, do we need to save permissions for target entities (Default: True)**              |
-| --sync_strategy       | **Optional, Sync strategy for saving entities can be OVERWRITE and MERGE (Default: MERGE)**   |
+| Command line argument   | Description                                                                                          |
+|-------------------------|------------------------------------------------------------------------------------------------------|
+| -H                      | **ThingsBoard host (Default: localhost)**                                                            |
+| -p                      | **ThingsBoard port (Default: 80)**                                                                   |
+| -U                      | **ThingsBoard user (email for login)**                                                               |
+| -P                      | **ThingsBoard user password**                                                                        |
+| -b                      | **Default branch (Default: main)**                                                                   |
+| -N                      | **Version name (If not provided will be generated 5 random letters and numbers and used as a name)** |
+| --save_attributes       | **Optional, do we need to save attributes for target entities (Default: True)**                      |
+| --save_credentials      | **Optional, do we need to save credentials for target entities (Default: True)**                     |
+| --save_relations        | **Optional, do we need to save relations for target entities (Default: True)**                       |
+| --save_group_entities   | **Optional, do we need to save entities group for target entities (Default: True)**                  |
+| --save_permissions      | **Optional, do we need to save permissions for target entities (Default: True)**                     |
+| --sync_strategy         | **Optional, Sync strategy for saving entities can be OVERWRITE and MERGE (Default: MERGE)**          |
+| ----------------------- | -----------------------------------------------------------------------------------------            |
 
 *You always can get the full list of arguments by calling script with* **-h** *argument.*
 
@@ -533,21 +538,22 @@ The latest source code you can find [here](https://github.com/thingsboard/things
 
 To load entities from command line we will use the following arguments and data:  
 
-| Command line argument | Description                                                                                                                       |  
-|-|-|  
-| -H | **ThingsBoard host (Default: localhost)**                                                                                                            |    
-| -p | **ThingsBoard port (Default: 80)**                                                                                                                   |  
-| -U | **ThingsBoard user (email for login)**                                                                                                               |  
-| -P | **ThingsBoard user password**                                                                                                                        |  
-| -b | **Default branch (Default: main)**                                                                                                                   |  
-| -N | **Version name (You can provide a part of the version name and script will propose you all find versions that include provided name)**               |
-| --find_existing_entity_by_name | **Optional, do we need to looking for existing entities by their names instead of using ids(Default: True)**             |
-| --load_attributes  | **Optional, do we need to load attributes for target entities (Default: True)**                                                      |
-| --load_credentials | **Optional, do we need to load credentials for target entities (Default: True)**                                                     |
-| --load_relations   | **Optional, do we need to load relations for target entities (Default: True)**                                                       |
-| --load_group_entities | **Optional, do we need to load entities group for target entities (Default: True)**                                               |
-| --load_permissions | **Optional, do we need to load permissions for target entities (Default: True)**                                                     |
-| --sync_strategy    | **Optional, Sync strategy for existing entities can be OVERWRITE and MERGE (Default: MERGE)**                                        |
+| Command line argument          | Description                                                                                                                            |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|  
+| -H                             | **ThingsBoard host (Default: localhost)**                                                                                              |
+| -p                             | **ThingsBoard port (Default: 80)**                                                                                                     |
+| -U                             | **ThingsBoard user (email for login)**                                                                                                 |
+| -P                             | **ThingsBoard user password**                                                                                                          |
+| -b                             | **Default branch (Default: main)**                                                                                                     |
+| -N                             | **Version name (You can provide a part of the version name and script will propose you all find versions that include provided name)** |
+| --find_existing_entity_by_name | **Optional, do we need to looking for existing entities by their names instead of using ids(Default: True)**                           |
+| --load_attributes              | **Optional, do we need to load attributes for target entities (Default: True)**                                                        |
+| --load_credentials             | **Optional, do we need to load credentials for target entities (Default: True)**                                                       |
+| --load_relations               | **Optional, do we need to load relations for target entities (Default: True)**                                                         |
+| --load_group_entities          | **Optional, do we need to load entities group for target entities (Default: True)**                                                    |
+| --load_permissions             | **Optional, do we need to load permissions for target entities (Default: True)**                                                       |
+| --sync_strategy                | **Optional, Sync strategy for existing entities can be OVERWRITE and MERGE (Default: MERGE)**                                          |
+| ------------------------------ | -----------------------------------------------------------------------------------------                                              |
 
 *You always can get the full list of arguments by calling script with no arguments or with* **-h** *argument.*
 
