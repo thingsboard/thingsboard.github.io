@@ -3,13 +3,14 @@
 
 ### Overview
 
-The [MicroPython Client SDK](https://github.com/thingsboard/thingsboard-micropython-client-sdk) is a software
-development kit for client-side integration of your MicroPython projects. It allows you to connect your MicroPython 
-devices to ThingsBoard using MQTT protocol and send telemetry data, attributes, and receive RPC calls. The SDK 
-provides a simple and easy-to-use API for connecting to ThingsBoard and sending data, making it easier for developers 
-to integrate their MicroPython devices with the platform.
+The [CircuitPython Client SDK](https://github.com/thingsboard/CircuitPython_thingsboard-client-sdk) is a software
+development kit for client-side integration of your CircuitPython projects. [CircuitPython](https://circuitpython.org/) 
+is a simplified version of MicroPython designed to be easy to use on microcontrollers. 
+It allows you to connect your CircuitPython devices to ThingsBoard using MQTT protocol and send telemetry data, 
+attributes, and receive RPC calls. It provides a clean, developer-friendly API for connecting 
+to ThingsBoard and exchanging data, making it easier to integrate CircuitPython devices with the platform.
 
-MicroPython Client SDK supports the following features:
+CircuitPython Client SDK supports the following features:
 
 - Connecting to ThingsBoard using MQTT protocol.
 - Sending attributes to ThingsBoard.
@@ -18,33 +19,25 @@ MicroPython Client SDK supports the following features:
 - Request client and shared attributes from ThingsBoard.
 - Subscribing to attribute updates from ThingsBoard.
 - Device claiming.
-- Device provisioning.
 
 ### Installation
 
-To install the MicroPython Client SDK, you can use the
-[mip](https://docs.micropython.org/en/latest/reference/packages.html) package manager. Run the following command in
-the REPL or in your code:
+First you need to have a CircuitPython compatible device and set up your development environment. You can follow the
+[CircuitPython getting started guide](https://learn.adafruit.com/welcome-to-circuitpython) to get everything ready.
+To install the CircuitPython Client SDK, you can use the 
+[circup](https://learn.adafruit.com/keep-your-circuitpython-libraries-on-devices-up-to-date-with-circup/overview) package manager. 
+Run the following command in your terminal:
 
-```python
-import mip
-
-mip.install('github:thingsboard/thingsboard-micropython-client-sdk')
+```bash
+circup install thingsboard-circuitpython-client-sdk
 ```
 {: .copy-code}
 
-It is recommended to use the following code snippet to make sure that the SDK is installed and imported correctly,
-and also to not install the SDK every time you run your code:
+In case you are having issues with `circup install` command, you can 
+try to install it using [Web-Workflow](https://adafruit-playground.com/u/tyeth/pages/using-circup-with-web-workflow):
 
-```python
-try:
-    from thingsboard_sdk.tb_device_mqtt import TBDeviceMqttClient
-
-    print("thingsboard-micropython-client-sdk package already installed.")
-except ImportError:
-    print("Installing thingsboard-micropython-client-sdk package...")
-    mip.install('github:thingsboard/thingsboard-micropython-client-sdk')
-    from thingsboard_sdk.tb_device_mqtt import TBDeviceMqttClient
+```bash
+circup --host <your_device_ip> --password <your_password> install thingsboard-circuitpython-client-sdk
 ```
 {: .copy-code}
 
@@ -52,10 +45,10 @@ except ImportError:
 
 #### Introduction
 
-The MicroPython Client SDK has a `TBDeviceMqttClient` class that provides methods for connecting to ThingsBoard and
+The CircuitPython Client SDK has a `TBDeviceMqttClient` class that provides methods for connecting to ThingsBoard and
 sending data.
 
-This class is designed to be simple to use and easy to understand for developers who are new to MicroPython or
+This class is designed to be simple to use and easy to understand for developers who are new to CircuitPython or
 ThingsBoard.
 
 #### connect
@@ -66,14 +59,7 @@ class. When you call the `connect` method, `self.connected` property of the clie
 
 **Method Syntax**
 
-`client.connect(timeout=10)`
-
-**Arguments**
-
-| **Arguments** | **Default value** | **Description**                                           |
-|:--------------|-------------------|:----------------------------------------------------------|
-| timeout       | **10**            | (Optional) Time to establish a connection to ThingsBoard. |
-| ---           |                   |                                                           |
+`client.connect()`
 
 **Example usage**
 
@@ -81,11 +67,8 @@ class. When you call the `connect` method, `self.connected` property of the clie
 # Default connecting
 client.connect()
 
-# Connecting with custom timeout
-client.connect(timeout=20)
-
-# Connecting with waiting for connection result
-result = client.connect(timeout=20)
+# Connecting and waiting for the connection result
+response = client.connect()
 ```
 {: .copy-code}
 
@@ -93,7 +76,7 @@ result = client.connect(timeout=20)
 
 Disconnects from ThingsBoard. This method can be called after connecting to ThingsBoard. It is recommended to call 
 this method when you no longer need to send data to ThingsBoard or when you want to free up resources. After calling 
-this method, you will need to call the [connect](/docs/reference/micropython-client-sdk/#connect) method again to send 
+this method, you will need to call the [connect](/docs/reference/circuitpython-client-sdk/#connect) method again to send 
 data to ThingsBoard. When you call the `disconnect` method, `self.connected` property of the client will be set 
 to `False`.
 
@@ -193,13 +176,14 @@ will be called with empty result.
 
 ```python
 def on_attributes_change(result, exception=None):
-    # This is a callback function that will be called when client receive the response from the server
+    # Callback is called when the attributes response arrives
     if exception is not None:
-        print("Exception: " + str(exception))
+        print("Exception:", exception)
     else:
-        print(result)
+        print("Attributes response:", result)
 
 
+# Request client/shared attributes by keys (your SDK forms attributes/request/<id>)
 client.request_attributes(client_keys=["atr1", "atr2"], callback=on_attributes_change)
 ```
 {: .copy-code}
@@ -243,7 +227,7 @@ providing an attribute key. If subscribed attribute value is updated, the provid
 called with the corresponding attribute value.
 
 Method will return a subscription ID that can be used to unsubscribe from attribute updates using 
-the [unsubscribe_from_attribute](/docs/reference/micropython-client-sdk/#unsubscribe_from_attribute) method.
+the [unsubscribe_from_attribute](/docs/reference/circuitpython-client-sdk/#unsubscribe_from_attribute) method.
 
 **Method Syntax**
 
@@ -261,6 +245,7 @@ the [unsubscribe_from_attribute](/docs/reference/micropython-client-sdk/#unsubsc
 
 ```python
 def callback(result, *args):
+    # Called when subscribed attribute update arrive
     print("Received data: %r", result)
 
 
@@ -274,7 +259,7 @@ Subscribes to all shared attribute updates from ThingsBoard. Whenever any shared
 the SDK triggers the designated callback function, passing the updated data as the result.
 
 Method will return a subscription ID that can be used to unsubscribe from attribute updates using 
-the [unsubscribe_from_attribute](/docs/reference/micropython-client-sdk/#unsubscribe_from_attribute) method.
+the [unsubscribe_from_attribute](/docs/reference/circuitpython-client-sdk/#unsubscribe_from_attribute) method.
 
 **Method Syntax**
 
@@ -301,8 +286,8 @@ sub_id = client.subscribe_to_all_attributes(callback)
 #### unsubscribe_from_attribute
 
 Terminates an existing subscription for shared attribute updates. This method requires the `subscription_id` returned 
-by the original call to [subscribe_to_attribute](/docs/reference/micropython-client-sdk/#subscribe_to_attribute) or 
-[subscribe_to_all_attributes](/docs/reference/micropython-client-sdk/#subscribe_to_all_attributes). Once unsubscribed, 
+by the original call to [subscribe_to_attribute](/docs/reference/circuitpython-client-sdk/#subscribe_to_attribute) or 
+[subscribe_to_all_attributes](/docs/reference/circuitpython-client-sdk/#subscribe_to_all_attributes). Once unsubscribed, 
 the associated callback will no longer trigger upon server-side changes.
 
 **Method Syntax**
@@ -313,7 +298,7 @@ the associated callback will no longer trigger upon server-side changes.
 
 | **Arguments**   | **Description**                                                                                                                                                                                                                                                                                     |
 |:----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| subscription_id | (Required) Subscription ID returned when subscribing to attribute updates using the [subscribe_to_attribute](/docs/reference/micropython-client-sdk/#subscribe_to_attribute) or [subscribe_to_all_attributes](/docs/reference/micropython-client-sdk/#subscribe_to_all_attributes) methods.         |
+| subscription_id | (Required) Subscription ID returned when subscribing to attribute updates using the [subscribe_to_attribute](/docs/reference/circuitpython-client-sdk/#subscribe_to_attribute) or [subscribe_to_all_attributes](/docs/reference/circuitpython-client-sdk/#subscribe_to_all_attributes) methods.         |
 | ---             |                                                                                                                                                                                                                                                                                                     |
 
 **Example usage**
@@ -322,6 +307,7 @@ the associated callback will no longer trigger upon server-side changes.
 # Subscribing to attribute updates
 def callback(result, *args):
     print("Received data: %r", result)
+
 
 sub_id = client.subscribe_to_attribute("frequency", callback)
 # Unsubscribing from attribute updates
@@ -355,6 +341,7 @@ handler, passing the following arguments:
 def handler(request_id, request_body):
     print("Received RPC request with ID: %s and body: %r", request_id, request_body)
 
+
 client.set_server_side_rpc_request_handler(handler)
 ```
 {: .copy-code}
@@ -383,84 +370,39 @@ call this method may result in `request timeout` errors on the ThingsBoard dashb
 def handler(request_id, request_body):
     print("Received RPC request with ID: %s and body: %r", request_id, request_body)
     client.send_rpc_reply(request_id, {"status": "success"})
-   
+
+
 client.set_server_side_rpc_request_handler(handler)
 ```
 {: .copy-code}
 
-#### get_provision_request
+#### send_rpc_reply
 
-Static method that forms a request for [device provisioning](/docs/user-guide/device-provisioning/) by input arguments. 
-The returned provision request should be sent to ThingsBoard using the 
-[provision](/docs/reference/micropython-client-sdk/#provision) method.
+Responds to an incoming RPC request from ThingsBoard. Use this method inside your RPC handler to return data to the 
+server. It requires the `request_id` from the initial request and a `response` object containing the result. Failing to 
+call this method may result in `request timeout` errors on the ThingsBoard dashboard.
 
 **Method Syntax**
 
-`TBDeviceMqttClient.get_provision_request(provision_key, provision_secret)`
+`client.send_rpc_reply(request_id, response)`
 
 **Arguments**
 
-| **Arguments**    | **Description**                                                                                                                                              |
-|:-----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| provision_key    | (Required) Provisioning device key, you should take it from configured device profile.                                                                       |
-| provision_secret | (Required) Provisioning device secret, you should take it from configured device profile.                                                                    |
-| device_name      | (Optional) Device name in ThingsBoard.                                                                                                                       |
-| access_token     | (Optional) Access token for device in ThingsBoard.                                                                                                           |
-| client_id        | (Optional) Client id for device in ThingsBoard.                                                                                                              |
-| username         | (Optional) Username for device in ThingsBoard.                                                                                                               |
-| password         | (Optional) Password for device in ThingsBoard.                                                                                                               |
-| hash             | (Optional) Public key X509 hash for device in ThingsBoard.                                                                                                   |
-| gateway          | (Optional) Flag that indicates whether the provision request is for a gateway device. If not provided, the provision request will be for a regular device.   |
-| ---              |                                                                                                                                                              |
+| **Arguments** | **Description**                                                                 |
+|:--------------|:--------------------------------------------------------------------------------|
+| request_id    | (Required) ID of the received RPC request that will be used to send a reply to. |
+| response      | (Required) Data that will be sent as a reply to the received RPC.               |
+| ---           |                                                                                 |
 
 **Example usage**
 
 ```python
-# Forming provision request with required arguments
-provision_request = TBDeviceMqttClient.get_provision_request("my_provision_key", "my_provision_secret")
+def handler(request_id, request_body):
+    print("Received RPC request with ID: %s and body: %r", request_id, request_body)
+    client.send_rpc_reply(request_id, {"status": "success"})
 
-# Forming provision request with specified device name
-provision_request = TBDeviceMqttClient.get_provision_request("my_provision_key", "my_provision_secret", device_name="My Device")
 
-# Forming provision request with specified access token
-provision_request = TBDeviceMqttClient.get_provision_request("my_provision_key", "my_provision_secret", access_token="my_access_token")
-
-# Forming provision request with specified client ID, username, and password
-provision_request = TBDeviceMqttClient.get_provision_request("my_provision_key", "my_provision_secret", client_id="my_client_id", username="my_username", password="my_password")
-
-# Forming provision request for a gateway device
-provision_request = TBDeviceMqttClient.get_provision_request("my_provision_key", "my_provision_secret", gateway=True)
-```
-{: .copy-code}
-
-#### provision
-
-Sends a request to ThingsBoard for [device provisioning](/docs/user-guide/device-provisioning/). 
-The argument of the method should be the provision request that is formed using the 
-[get_provision_request](/docs/reference/micropython-client-sdk/#get_provision_request) static method. If the request 
-is successful, the device will be provisioned on ThingsBoard and associated with the account that owns the 
-provision key and provision secret. If the request is not successful, an exception will be raised.
-
-**Method Syntax**
-
-`client.provision(host, port, provision_request)`
-
-**Arguments**
-
-| **Arguments**     | **Description**                                                                                                                                                      |
-|:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| host              | (Required) Host of the ThingsBoard server.                                                                                                                           |
-| port              | (Required) Port of the ThingsBoard server.                                                                                                                           |
-| provision_request | (Required) Request that will be sent to ThingsBoard for device provisioning. The provision request should be formed using the `get_provision_request` static method. |
-| ---               |                                                                                                                                                                      |
-
-**Example usage**
-
-```python
-# Forming provision request
-provision_request = TBDeviceMqttClient.get_provision_request("my_provision_key", "my_provision_secret")
-# Sending provision request to ThingsBoard for device provisioning
-provisioned_credentials = client.provision("thingsboard.cloud", 1883, provision_request)
+client.set_server_side_rpc_request_handler(handler)
 ```
 {: .copy-code}
 
@@ -468,116 +410,168 @@ provisioned_credentials = client.provision("thingsboard.cloud", 1883, provision_
 
 #### Introduction
 
-In this section, we will go over the core concepts of the MicroPython Client SDK, such as connecting to ThingsBoard, 
-sending and receiving data. Understanding these concepts will help you to use the MicroPython Client SDK effectively 
-in your projects.
+In this section, we’ll cover the core concepts of the CircuitPython Client SDK:
 
-Let's review the main concepts of the MicroPython Client SDK using the following code example:
+- Connecting your device to ThingsBoard over MQTT.
+- The non-blocking loop.
+- Telemetry, attributes and data flow.
+- Attributes requests.
+- Attributes updates.
+- Handling server-side RPC.
 
-```python
-import time
-import network
-from thingsboard_sdk.tb_device_mqtt import TBDeviceMqttClient
-
-# Enabling WLAN interface
-wlan = network.WLAN(network.STA_IF)
-wlan.active(True)
-
-# Establishing connection to the Wi-Fi
-if not wlan.isconnected():
-    print("Connecting to network...")
-    wlan.connect("WIFI_SSID", "WIFI_PASSWORD")
-    while not wlan.isconnected():
-        pass
-
-print("Connected! Network config:", wlan.ifconfig())
-
-
-# This callback will be called when an RPC request is received from ThingsBoard.
-def on_server_side_rpc_request(request_id, request_body):
-    # request_id: numeric id from the MQTT topic
-    # request_body: decoded JSON dict, typically {"method": "...", "params": ...}
-    print("[RPC] id:", request_id, "body:", request_body)
-
-    client.send_rpc_reply(request_id, "ok")
-
-
-# Initialising client to communicate with ThingsBoard
-client = TBDeviceMqttClient("THINGSBOARD_HOST", port=1883, access_token="ACCESS_TOKEN")
-# Register the server-side RPC callback before the main loop
-client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
-# Connect to ThingsBoard
-client.connect()
-
-
-def safe_check_msg():
-    """
-    Non-blocking MQTT poll.
-    """
-    try:
-        # non-blocking check
-        client.check_for_msg()
-        return True
-    except OSError as e:
-        print("[MQTT] check_msg OSError:", e)
-    except Exception as e:
-        print("[MQTT] check_msg error:", e)
-    return False
-
-
-# Main loop (non-blocking)
-while True:
-    # Non-blocking: poll for incoming MQTT packets, then continue doing other work
-    safe_check_msg()
-    client.send_telemetry({"CPU": 12.0})
-    time.sleep_ms(50)
-```
-{:.copy-code.expandable-15}
+Let's review these concepts of the CircuitPython Client SDK:
 
 #### Connecting to ThingsBoard
 
-To connect to ThingsBoard using the MicroPython Client SDK, instantiate the `TBDeviceMqttClient` class by providing 
+To connect to ThingsBoard using the CircuitPython Client SDK, instantiate the `TBDeviceMqttClient` class by providing 
 your server credentials: host, port, and access token. Once the client is initialized, invoke the 
-[connect()](/docs/reference/micropython-client-sdk/#connect) method to establish the MQTT session. After a successful 
+[connect()](/docs/reference/circuitpython-client-sdk/#connect) method to establish the MQTT session. After a successful 
 connection, the device is ready to transmit telemetry or subscribe to updates. We recommend the following minimal code 
 snippet to use:
 
 ```python
-import network
-from thingsboard_sdk.tb_device_mqtt import TBDeviceMqttClient
+import time
 
-wlan = network.WLAN(network.STA_IF)
-wlan.active(True)
+import wifi  # CircuitPython Wi-Fi module
 
-# Establishing connection to the Wi-Fi
-if not wlan.isconnected():
-    print('Connecting to network...')
-    wlan.connect("YOUR_SSID", "YOUR_PASSWORD")
-    while not wlan.isconnected():
-        pass
+from tb_device_mqtt import TBDeviceMqttClient  # ThingsBoard MQTT client wrapper (your SDK)
 
-print('Connected! Network config:', wlan.ifconfig())
+# Quick sanity-check that Wi-Fi is up before using MQTT
+print("WiFi connected:", wifi.radio.connected)
+print("IP:", wifi.radio.ipv4_address)
 
-client = TBDeviceMqttClient(host="thingsboard.cloud", port=1883, access_token="YOUR_ACCESS_TOKEN")
-client.connect()
+# ThingsBoard connection settings
+HOST = "YOUR_HOST"  # e.g. "thingsboard.cloud" or "192.168.1.10"
+PORT = "YOUR_PORT"  # e.g. 1883 (use an int)
+TOKEN = "YOUR_ACCESS_TOKEN"  # device access token from ThingsBoard
+
+# Create MQTT client instance
+client = TBDeviceMqttClient(host=HOST, port=PORT, access_token=TOKEN)
+print("Connecting...")
+client.connect()  # open MQTT connection to ThingsBoard
+time.sleep(1)  # small delay to ensure connection stabilizes on some boards
 
 while True:
-    # some tasks with ThingsBoard
+# some tasks with ThingsBoard
 ```
 {: .copy-code}
 
-Before communicating with the ThingsBoard, the device must bridge the gap between the hardware and the network:
+Before communicating with the ThingsBoard, make sure your device is connected to the network. The above code assumes that the Wi-Fi connection is already established.
+More about how you can establish Wi-Fi connection can be found in the [Networking in CircuitPython](https://learn.adafruit.com/networking-in-circuitpython/networking-with-the-wifi-module).
 
-- The network module initializes the Wi-Fi instance. We use STA_IF (Station Interface) to connect the device to an existing
-  access point.
+- First we make sure that Wi-Fi is connected and print the device's IP address. This is important because the MQTT client needs an active network connection to communicate with ThingsBoard.
 - The `TBDeviceMqttClient` is the primary class. It requires ThingsBoard host and a unique Access Token generated in the
   ThingsBoard device page.
+- We create the MQTT client instance using these connection settings, so the SDK knows where to connect and how to identify the device.
+- After calling client.connect(), we add a short delay to give the connection time to stabilize on some boards.
+
+#### The Non-Blocking Loop
+
+The most critical part of the SDK implementation is the main loop. In CircuitPython, using `time.sleep()` 
+helps reduce CPU usage while waiting for events, but it also pauses your code. 
+To keep the device responsive to incoming MQTT messages, you should regularly poll the client.
+
+`client.check_for_msg()` method is the "heartbeat" of your communication:
+
+- It checks the MQTT buffer for incoming messages.
+- It processes any received messages and triggers the appropriate callbacks (for example, RPC requests or attribute updates).
+
+#### Telemetry, Attributes and Data Flow
+
+The SDK provides methods to send telemetry data to ThingsBoard. You can use the [send_telemetry()](/docs/reference/circuitpython-client-sdk/#send_telemetry) method to send
+data in various formats, including key-value pairs and lists. The SDK also supports sending telemetry data grouped by 
+timestamp, which is useful for sending historical data to ThingsBoard.
+
+```python
+# Main loop (non-blocking)
+while True:
+    # Non-blocking: poll for incoming MQTT packets, then continue doing other work
+    client.check_for_msg()
+    client.send_telemetry({"CPU": 12.0})
+    client.send_attributes({"status": "ok"})
+    time.sleep(0.05)  # small delay to prevent overwhelming the CPU and allow other tasks to run
+```
+{: .copy-code}
+
+By placing this inside the main loop, the device continuously streams its state. Because we use a non-blocking approach,
+the device can simultaneously send telemetry and receive RPC commands without one interrupting the other.
+
+#### Attributes requests
+
+The SDK provides methods to work with device attributes in ThingsBoard. You can use the 
+[request_attributes()](/docs/reference/circuitpython-client-sdk/#request_attributes) method to request client and/or shared attributes by key. 
+When ThingsBoard responds, the SDK calls your callback function with the received data (or an error).
+
+```python
+TIMEOUT = 20  # how long we keep pumping MQTT loop (seconds)
+
+
+def on_attributes_change(result, exception=None):
+    # Callback is called when the attributes response arrives
+    if exception is not None:
+        print("Exception:", exception)
+    else:
+        print("Attributes response:", result)
+
+
+# Request client/shared attributes by keys (your SDK forms attributes/request/<id>)
+client.request_attributes(client_keys=["atr1", "atr2"], callback=on_attributes_change)
+
+# IMPORTANT: CircuitPython needs a loop to receive/process MQTT packets
+deadline = time.monotonic() + TIMEOUT
+while time.monotonic() < deadline:
+    client.check_for_msg()  # wraps MiniMQTT.loop() -> triggers callbacks
+    time.sleep(0.05)  # small sleep to reduce CPU usagesks to run
+```
+{: .copy-code}
+
+By placing this polling logic inside your main loop, the device remains responsive: it can request/receive attributes 
+and still handle other MQTT events (such as RPC calls) without blocking the whole application.
+
+- We define a callback (`on_attributes_change`) that will be triggered when the attributes response arrives.
+- We send an attributes request for specific keys ("atr1", "atr2"). The SDK publishes a request message and waits for the response from ThingsBoard.
+- The loop runs only for a limited time (`TIMEOUT`) using `time.monotonic(`), so the device does not wait forever if no response is received.
+
+#### Attributes updates
+
+The SDK provides methods to subscribe to attribute updates. You can use the 
+[subscribe_to_attribute()](/docs/reference/circuitpython-client-sdk/#subscribe_to_attribute) method to 
+subscribe to updates of a client and/or shared attribute by key.
+When ThingsBoard publishes an update for that attribute, the SDK calls your callback function with the received data (or an error).
+
+```python
+TIMEOUT = 20  # how long we keep pumping MQTT loop (seconds)
+
+
+def callback(result, *args):  # noqa: F841
+    # Called when subscribed attribute update arrives
+    # (extra args may contain metadata depending on your SDK design)
+    print("Received data:", result)
+
+
+# Subscribe to updates of a single attribute key (e.g. shared attribute "frequency")
+sub_id = client.subscribe_to_attribute("frequency", callback)  # returns subscription id (optional)
+
+# IMPORTANT: keep looping so incoming MQTT messages are processed
+deadline = time.monotonic() + TIMEOUT
+while time.monotonic() < deadline:
+    client.check_for_msg()  # wraps MiniMQTT.loop() -> triggers callbacks
+    time.sleep(0.05)  # small sleep to reduce CPU usage
+```
+{: .copy-code}
+
+By placing this polling logic inside your main loop, the device remains responsive: it can request/receive attributes 
+and still handle other MQTT events (such as RPC calls) without blocking the whole application.
+
+- We define a callback (`callback`) that will be triggered each time a subscribed attribute update arrives.
+- We subscribe to updates for a single attribute key (for example, a shared attribute "frequency"). The method may return a subscription id that can be used later to manage the subscription.
+- The loop runs only for a limited time (`TIMEOUT`) using `time.monotonic()`, so the example does not run forever.
 
 #### Handling Server-Side RPC
 
 [Remote Procedure Calls](/docs/user-guide/rpc/) allow ThingsBoard to send commands to your device 
 (e.g., "Turn on the LED" or "Reset"). To handle these commands, you need to set a handler function using
-the [set_server_side_rpc_request_handler](/docs/reference/micropython-client-sdk/#set_server_side_rpc_request_handler)
+the [set_server_side_rpc_request_handler](/docs/reference/circuitpython-client-sdk/#set_server_side_rpc_request_handler)
 method. This handler will be called whenever a server-side RPC request is received from ThingsBoard. The handler
 function should accept two arguments: `request_id` and `request_body`, which will contain the ID of the received RPC
 request and the data of the received RPC request, respectively.
@@ -591,80 +585,49 @@ def on_server_side_rpc_request(request_id, request_body):
 
     client.send_rpc_reply(request_id, "ok")
 
+
 client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
+
+while True:
+    # Non-blocking: poll for incoming MQTT packets
+    client.check_for_msg()
+    time.sleep(0.1)  # small delay to avoid busy-waiting (adjust as need)
 ```
 {: .copy-code}
 
 In the SDK, we don't "wait" for a command, instead we provide a callback function (`on_server_side_rpc_request`):
 
-- Tells the client which function to run when a RPC arrives using [set_server_side_rpc_request_handler()](/docs/reference/micropython-client-sdk/#set_server_side_rpc_request_handler).
+- Tells the client which function to run when a RPC arrives using [set_server_side_rpc_request_handler()](/docs/reference/circuitpython-client-sdk/#set_server_side_rpc_request_handler).
 - When a RPC arrives, the SDK automatically passes the `request_id` (used for the reply) and the `request_body` to your function.
-- The [send_rpc_reply()](/docs/reference/micropython-client-sdk/#send_rpc_reply) informs the server that the RPC was received and processed
+- The [send_rpc_reply()](/docs/reference/circuitpython-client-sdk/#send_rpc_reply) informs the server that the RPC was received and processed
   successfully.
-
-#### The Non-Blocking Loop
-
-The most critical part of the SDK implementation is the main loop. In MicroPython, if you use `time.sleep_ms()`, the 
-device is effectively "blind" to incoming messages during that pause.
-
-`client.check_for_msg()` method is the "heartbeat" of your communication:
-
-- It checks the MQTT buffer for incoming messages.
-- By wrapping it in a `safe_check_msg()` function, we ensure that if a network interruption occurs (an `OSError`), the program
-  doesn't crash, but simply logs the error and tries again in the next cycle.
-
-#### Telemetry and Data Flow
-
-The SDK provides methods to send telemetry data to ThingsBoard. You can use the [send_telemetry()](/docs/reference/micropython-client-sdk/#send_telemetry) method to send
-data in various formats, including key-value pairs and lists. The SDK also supports sending telemetry data grouped by 
-timestamp, which is useful for sending historical data to ThingsBoard.
-
-```python
-# Main loop (non-blocking)
-while True:
-    # Non-blocking: poll for incoming MQTT packets, then continue doing other work
-    safe_check_msg()
-    client.send_telemetry({"CPU": 12.0})
-    time.sleep_ms(50)
-```
-{: .copy-code}
-
-By placing this inside the main loop, the device continuously streams its state. Because we use a non-blocking approach,
-the device can simultaneously send telemetry and receive RPC commands without one interrupting the other.
 
 ### Examples
 
-You can find more examples of using the MicroPython Client SDK in
-the [examples](https://github.com/thingsboard/thingsboard-micropython-client-sdk/tree/main/examples) directory of the
-[thingsboard-micropython-client-sdk](https://github.com/thingsboard/thingsboard-micropython-client-sdk) repository on
+You can find more examples of using the CircuitPython Client SDK in
+the [examples](https://github.com/thingsboard/CircuitPython_thingsboard-client-sdk/tree/main/examples) directory of the
+[thingsboard-circuitpython-client-sdk](https://github.com/thingsboard/CircuitPython_thingsboard-client-sdk) repository on
 GitHub.
 
 ### Troubleshooting
 
-- **Mip installation failed with OSError: -202**
+- **Low memory, unstable SDK behavior**
 
-  This error can occur when the device is not connected to the internet or when there are issues with the network
-  connection. To resolve this issue, make sure that your device is connected to the internet and that there are no
-  issues with the network connection. You can also try restarting your device and running the installation command
-  again.
+  This usually happens when the board has limited RAM for CircuitPython, or when your application (and its dependencies)
+  uses too much memory.
+  Try reducing memory usage in your code (for example, avoid large allocations and keep imports minimal). We also
+  recommend reading this guide:
+  [CircuitPython memory saving](https://github.com/kmatch98/CircuitPython_memory_saving).
 
-  Recommended firstly to establish a connection to the internet and then run the installation command:
+- **Errors with circup installation**
 
-    ```python
-    import network
-    import mip
-    
-    # Enabling WLAN interface
-    wlan = network.WLAN(network.STA_IF)
-    wlan.active(True)
-    
-    # Establishing connection to the Wi-Fi
-    if not wlan.isconnected():
-        print('Connecting to network...')
-        wlan.connect("YOUR_WIFI_SSID", "YOUR_WIFI_PASSWORD")
-        while not wlan.isconnected():
-            pass
-    
-    mip.install('github:thingsboard/thingsboard-micropython-client-sdk')
-    ```
-    {: .copy-code}
+  On some boards, `circup install` may fail when using a USB/serial workflow. In this case, you can install
+  libraries using [Web-Workflow](https://adafruit-playground.com/u/tyeth/pages/using-circup-with-web-workflow) instead.
+  This method lets you target the device directly over the network by specifying the device IP (host) and Web Workflow
+  password, which often resolves upload/permission issues.
+
+  ```bash
+  circup --host <your_device_ip> --password <your_password> install thingsboard-circuitpython-client-sdk
+  ```
+  {: .copy-code}
+  

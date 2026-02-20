@@ -556,6 +556,23 @@ array[3] = 4; return: Error with message:"Invalid statement: 4" and "[Line: 5, C
 ```
 {: .copy-code}
 
+**Avoid i++ inside [...]:**
+
+✅ Allowed:
+
+```java
+var channel_id = input[i];
+i = i + 1;
+```
+{: .copy-code}
+
+❌ Not allowed:
+
+```java
+var channel_id = input[(i++)];
+```
+{: .copy-code}
+
 ### Literals
 
 A literal is used to represent a fixed-value in the source of a particular script.

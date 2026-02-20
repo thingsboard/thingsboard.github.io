@@ -564,6 +564,18 @@
     }
   },
   {
+    "type": ["North America"],
+    "country": ["Mexico", "Honduras", "Guatemala", "El Salvador", "Costa Rica", "Nicaragua", "Panama"],
+    "name": "LUMEN",
+    "contact": {
+      "href": "Jinsu.chang@lumenenergysolutions.com"
+    },
+    "site": {
+      "href": "lumenenergysolutions.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia", "Middle East"],
     "country": ["Saudi Arabia"],
     "name": "LTS-Connecting Things",
@@ -692,6 +704,18 @@
     },
     "site": {
       "href": "omnicon.it",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["North America", "Asia"],
+    "country": ["United States of America", "Canada", "India", "Mexico", "Sri Lanka"],
+    "name": "OneData",
+    "contact": {
+      "href": "admin-inida@onedatasoftware.com"
+    },
+    "site": {
+      "href": "onedatasoftware.com",
       "target": "_blank"
     }
   },
