@@ -98,6 +98,10 @@ In order to upgrade to {{ current_version_with_platform | upcase }} you need to 
 {%- endif -%}
 {%- endif -%}
 
+{% if current_version == "4.4" %}
+{% include templates/install/tb-440-tbel-note.md %}
+{% endif %}
+
 #### {{ platform }} service upgrade
 
 {% assign skipUpgrade = false %}

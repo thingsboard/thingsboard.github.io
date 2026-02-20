@@ -23,7 +23,7 @@ The steps below apply to:
 
 ## Installation and Configuration
 
-### Step 1. Install Java 17 (OpenJDK) 
+### Step 1. Install Java 25 (OpenJDK) 
 
 {% include templates/install/windows-java-install.md %}
 

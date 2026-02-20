@@ -29,7 +29,7 @@ sudo apt update && sudo apt install -y libharfbuzz0b fontconfig fonts-dejavu-cor
 ```
 {: .copy-code}
 
-## Step 1. Install Java 17 (OpenJDK) 
+## Step 1. Install Java 25 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 

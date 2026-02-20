@@ -8,7 +8,7 @@ Nevertheless, we have decided to provide an alternative to JavaScript. You may f
 
 ## Motivation
 
-ThingsBoard is written in Java and currently uses Java 17. There are two ways to execute the JS function in ThingsBoard:  
+ThingsBoard is written in Java and currently uses Java 25. There are two ways to execute the JS function in ThingsBoard:  
 
 A) use remote JS Executor microservice written in Node.js. It is the default way for ThingsBoard to run in a cluster/microservices mode;
 
@@ -2578,6 +2578,98 @@ As you can see, **key2** and **key4** was excluded from the output and **key_to_
 
 The *Tbel* library uses all standard JavaScript methods in the [JavaScript Date](https://www.w3schools.com/jsref/jsref_getdate.asp), such as **"toLocaleString"**,  **"toISOString"** and other methods;
 
+#### Date formatting changes in ThingsBoard 4.4+
+
+Starting with ThingsBoard 4.4, the platform runs on Java 25, which includes updated Unicode CLDR (Common Locale Data Repository) locale data. This may cause changes in locale-formatted date/time strings produced by `TbDate` methods.
+
+##### What changed
+
+| Format | Before (Java 17) | After (Java 25) |
+|--------|---------|----------|
+| Time with AM/PM (English) | `9:04:05 PM` | `9:04:05 PM` (narrow no-break space U+202F before AM/PM) |
+| Full datetime (English) | `Sunday, August 6, 2023 at 6:04:05 AM Central European Summer Time` | `Sunday, August 6, 2023, 6:04:05 AM Central European Summer Time` |
+| Full datetime (Ukrainian) | `неділя, 6 серпня 2023 р. о 06:04:05 за центральноєвропейським літнім часом` | `неділя, 6 серпня 2023 р., 06:04:05 за центральноєвропейським літнім часом` |
+| Short datetime (Arabic) | `5/9/2023, 9:04:05 م` | `5/9/2023، 9:04:05 م` (Arabic comma) |
+| UTC timezone display | `Eastern European Time` | `Kyiv (+0)` |
+
+##### Impact
+
+TBEL scripts that rely on exact string matching or parsing of locale-formatted dates may behave differently after upgrading. For example:
+
+```java
+// May break after upgrade - string comparison
+var dateStr = new Date(ts).toLocaleString("en-US", "America/New_York");
+if (dateStr == "9/5/23, 9:04:05 PM") {
+    // Will fail - invisible character difference (narrow no-break space before PM)
+}
+```
+{: .copy-code}
+
+```java
+// May break after upgrade - string splitting
+var parts = new Date(ts).toLocaleTimeString("en-US", tz).split(" ");
+// "PM" now preceded by narrow no-break space (U+202F), not regular space
+```
+{: .copy-code}
+
+##### Recommendations
+
+**1. Use ISO formats for comparisons and storage**
+
+```java
+// Stable across Java versions
+var dateStr = new Date(ts).toISOString();  // "2023-09-05T21:04:05Z"
+var dateJson = new Date(ts).toJSON();      // "2023-09-05T21:04:05.000Z"
+```
+{: .copy-code}
+
+**2. Use explicit patterns for consistent formatting**
+
+```java
+// Explicit pattern - stable output
+var dateStr = new Date(ts).toLocaleString("en-US", '{"pattern": "M/d/yyyy, h:mm:ss a"}');
+```
+{: .copy-code}
+
+**3. Use numeric getters for comparisons**
+
+```java
+// Compare numeric values instead of strings
+var d = new Date(ts);
+if (d.getHours() == 21 && d.getMinutes() == 4) { ... }
+```
+{: .copy-code}
+
+**4. Avoid string equality checks on formatted dates**
+
+```java
+// Avoid
+if (date.toLocaleString() == storedDateString) { ... }
+
+// Prefer
+if (date.getTime() == storedTimestamp) { ... }
+```
+{: .copy-code}
+
+##### Affected methods
+
+The following `TbDate` methods may produce different output:
+- `toLocaleString()`
+- `toLocaleDateString()`
+- `toLocaleTimeString()`
+- `toString()`
+- `toDateString()`
+- `toTimeString()`
+- `toUTCString()`
+
+##### Unaffected methods
+
+These methods produce consistent output across Java versions:
+- `toISOString()`
+- `toJSON()`
+- `getTime()` / `valueOf()`
+- All numeric getters (`getFullYear()`, `getMonth()`, `getDate()`, `getHours()`, etc.)
+
 #### Input format data:
 - String with Optional: pattern, locale, time zone
 - ints (year, month and etc) with Optional: pattern, locale, time zone
@@ -2718,7 +2810,7 @@ var dLocal_us = d.toLocaleString("en-US");                                      
 var d = new Date(2023, 8, 6, 4, 4, 5, "America/New_York");
 var dLocal = d.toLocaleString();        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "America/New_York")
 var dIso = d.toISOString();             //  return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
-var dDate = d;                          //  return "Sunday, August 6, 2023 at 4:04:05 AM Eastern Daylight Time"
+var dDate = d;                          //  return "Sunday, August 6, 2023, 4:04:05 AM Eastern Daylight Time"
 ```
 {: .copy-code}
 
@@ -2727,7 +2819,7 @@ var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin");
 var dLocal = d.toLocaleString();                                    // return "2023-08-05 22:04:05" (Locale: "UTC", (if ZoneId.systemDefault(): "America/New_York" = "-04:00"))
 var dLocal_us = d.toLocaleString("en-us", "America/New_York");      // return "8/5/23, 10:04:05 PM" (Locale: "en-us", ZoneId "America/New_York")
 var dIso = d.toISOString();                                         // return "2023-08-06T02:04:05Z"
-var dDate = d;                                                      // return "Saturday, August 5, 2023 at 22:04:05 AM Eastern Daylight Time" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var dDate = d;                                                      // return "Saturday, August 5, 2023, 22:04:05 AM Eastern Daylight Time" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
 ```
 {: .copy-code}
 
@@ -2754,7 +2846,7 @@ _Input date Without TZ (TZ Default = ZoneId.systemDefault())_
 var d = new Date(2023, 8, 6, 4, 4, 5);          //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds) => TZ Default = ZoneId.systemDefault();
 var dLocal = d.toLocaleString("en-US");         //  return "8/6/23, 4:04:05 AM" (Locale: "en-US")
 var dIso = d.toISOString();                     //  return Default = ZoneId.systemDefault: "2023-08-06T08:04:05Z", (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
-var dDate = d;                                  //  return "Sunday, August 6, 2023 at 4:04:05 AM Eastern Daylight Time" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
+var dDate = d;                                  //  return "Sunday, August 6, 2023, 4:04:05 AM Eastern Daylight Time" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
 ```
 {: .copy-code}
         
@@ -2858,8 +2950,8 @@ var d = new Date(2023, 8, 6, 4, 4, 5, "UTC");        // TZ => "UTC"
 var dIso = d.toISOString();                          // return "2023-08-06T04:04:05Z"       
 var options = {"timeZone":"Europe/Berlin","dateStyle":"full","timeStyle":"full"};
 var optionsStr = JSON.stringify(options);
-var dLocal1 = d.toLocaleString("uk-UA", optionsStr); // return  "неділя, 6 серпня 2023 р. о 06:04:05 за центральноєвропейським літнім часом"
-var dLocal2 = d.toLocaleString("en-US", optionsStr); // return  "Sunday, August 6, 2023 at 6:04:05 AM Central European Summer Time"
+var dLocal1 = d.toLocaleString("uk-UA", optionsStr); // return  "неділя, 6 серпня 2023 р., 06:04:05 за центральноєвропейським літнім часом"
+var dLocal2 = d.toLocaleString("en-US", optionsStr); // return  "Sunday, August 6, 2023, 6:04:05 AM Central European Summer Time"
 var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. August 2023 um 06:04:05 Mitteleuropäische Sommerzeit"
 ```
 {: .copy-code}

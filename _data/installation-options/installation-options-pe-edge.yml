@@ -19,7 +19,7 @@ peEdge:
     imageHeight: 36
   2:
     title: Ubuntu Server
-    description: This guide provides step-by-step instructions for installing ThingsBoard Edge on Ubuntu 18.04 LTS and 20.04 LTS.
+    description: This guide provides step-by-step instructions for installing ThingsBoard Edge on Ubuntu 22.04 / 24.04 LTS.
     link: /docs/user-guide/install/pe/edge/deb-installation/
     icon: /images/install/platform/ubuntu.svg
     alt: Ubuntu logo

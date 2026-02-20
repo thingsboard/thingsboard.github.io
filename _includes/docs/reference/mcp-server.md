@@ -131,7 +131,7 @@ You can also build the JAR file from sources and run the ThingsBoard MCP Server 
 
 #### Prerequisites
 
-- Java 17 or later
+- Java 25 or later
 - Maven 3.6 or later
 
 #### Build Steps

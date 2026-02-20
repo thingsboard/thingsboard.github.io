@@ -29,7 +29,7 @@ sudo yum install -y nano wget && sudo yum install -y https://dl.fedoraproject.or
 ```
 {: .copy-code}
 
-### Step 1. Install Java 17 (OpenJDK) 
+### Step 1. Install Java 25 (OpenJDK) 
 
 {% include templates/install/rhel-java-install.md %}
 

@@ -23,7 +23,7 @@ This guide provides step-by-step instructions for installing **ThingsBoard Edge*
 
 {% include templates/edge/install/manual-install-instructions-intro.md %}
 
-### Step 1. Install Java 17 (OpenJDK) 
+### Step 1. Install Java 25 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 

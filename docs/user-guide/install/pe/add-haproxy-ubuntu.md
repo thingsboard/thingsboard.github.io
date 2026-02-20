@@ -15,7 +15,7 @@ as a service. This is possible in case you are hosting ThingsBoard in the cloud 
 
 ### Prerequisites
 
-Ubuntu 20.04 / 22.04 / 24.04 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS).
+Ubuntu 22.04 / 24.04 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS).
 
 ### Step 1. Connect to your ThingsBoard instance over SSH
 

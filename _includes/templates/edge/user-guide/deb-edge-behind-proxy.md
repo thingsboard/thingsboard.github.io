@@ -2,7 +2,7 @@
 
 * Have a proxy server (**HTTP** or **HTTPS**) with its address, port, and credentials (if required).
 * Consider the addresses that should bypass the proxy (e.g., internal resources).
-* Have **Java 17** installed.
+* Have **Java 25** installed.
 * **ThingsBoard Edge** is installed and running.
 
 #### Step 1. Modify Configuration File

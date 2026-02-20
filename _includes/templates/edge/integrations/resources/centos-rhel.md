@@ -1,4 +1,4 @@
-#### Install Java 17 (OpenJDK)
+#### Install Java 25 (OpenJDK)
 
 {% include templates/install/rhel-java-install.md %}
 

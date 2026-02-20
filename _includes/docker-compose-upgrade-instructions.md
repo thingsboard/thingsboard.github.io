@@ -114,6 +114,10 @@ If you are running older releases of ThingsBoard - be aware that the manifests i
 {%- endif -%}
 {%- endif -%}
 
+{% if current_version == "4.4" %}
+{% include templates/install/tb-440-tbel-note.md %}
+{% endif %}
+
 #### {{ platform }} service upgrade
 
 {% assign skipUpgrade = false %}

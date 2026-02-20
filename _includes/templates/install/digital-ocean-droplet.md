@@ -2,7 +2,7 @@
 
 - Active [DigitalOcean](https://cloud.digitalocean.com/){:target="_blank"} account
 
-## Step 1. Launch Ubuntu 18.04 on DigitalOcean
+## Step 1. Launch Ubuntu 24.04 on DigitalOcean
 
 ### Step 1.1 Create DigitalOcean Droplet
 
@@ -13,7 +13,7 @@
 
 ### Step 1.2 Select your plan
 
-- Once "Create Droplets" page is loaded, select "Ubuntu 18.04 x64" as your image (see image below).
+- Once "Create Droplets" page is loaded, select "Ubuntu 24.04 x64" as your image (see image below).
 - Choose your plan. For beginners we would like to recommend 2CPUs and 4GB of RAM plan. 
 
   Note: Advanced ThingsBoard users may choose the plan that suites their workload best. 

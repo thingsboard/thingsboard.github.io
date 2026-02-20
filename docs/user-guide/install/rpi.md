@@ -22,7 +22,7 @@ To run ThingsBoard and PostgreSQL you will need at least 4Gb of RAM.
 To run ThingsBoard and Cassandra you will need at least 8Gb of RAM.
 
 
-## Step 1. Install Java 17 (OpenJDK) 
+## Step 1. Install Java 25 (OpenJDK) 
 {% include templates/install/ubuntu-java-install.md %}
 {: .copy-code}
 

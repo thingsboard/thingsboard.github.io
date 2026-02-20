@@ -46,7 +46,7 @@ sudo dnf install -y harfbuzz fontconfig dejavu-sans-fonts
 ```
 {: .copy-code}
 
-## Step 1. Install Java 17 (OpenJDK) 
+## Step 1. Install Java 25 (OpenJDK) 
 
 {% include templates/install/rhel-java-install.md %} 
 

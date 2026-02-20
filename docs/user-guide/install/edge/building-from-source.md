@@ -17,7 +17,7 @@ This section contains installation instructions for build tools.
 
 ### Java
 
-ThingsBoard Edge is build using Java 17. You can use [following instructions](/docs/user-guide/install/linux#java) to install Java 17.
+ThingsBoard Edge is build using Java 25. You can use [following instructions](/docs/user-guide/install/ubuntu/#step-1-install-java-25-openjdk) to install Java 25.
 
 ### Maven
 

@@ -113,6 +113,9 @@ sudo dnf install -y postgresql16-contrib
 ```
 {: .copy-code}
 {% endif %}
+{% if current_version == "4.4" %}
+{% include templates/install/tb-440-update-linux.md %}
+{% endif %}
 {% if current_version == "3.7" %}
 {% include templates/install/tb-370-update-linux.md %}
 {% endif %}

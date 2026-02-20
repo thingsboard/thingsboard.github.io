@@ -21,11 +21,11 @@ Instructions listed below are tested on Ubuntu 24.04 LTS and CentOS 8/9.
 This section contains installation instructions for build tools.
 
 <b><font size="4">Java</font></b>   
-ThingsBoard is built using **Java 17**.
+ThingsBoard is built using **Java 25**.
 
-Install Java 17 using these instructions:
+Install Java 25 using these instructions:
 
-- [Install Java 17 on Ubuntu](/docs/user-guide/install/ubuntu/#step-1-install-java-17-openjdk){:target="_blank"}
+- [Install Java 25 on Ubuntu](/docs/user-guide/install/ubuntu/#step-1-install-java-25-openjdk){:target="_blank"}
 
 Verify the installation:
 
@@ -42,7 +42,7 @@ A,Ubuntu,shell,resources/maven-ubuntu-installation.sh,/docs/user-guide/install/r
 B,CentOS,shell,resources/maven-centos-installation.sh,/docs/user-guide/install/resources/maven-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-> Note: On certain Linux machines, Maven installation may set Java 7 as the default JVM. If this happens, reconfigure your system to use Java 17.
+> Note: On certain Linux machines, Maven installation may set Java 7 as the default JVM. If this happens, reconfigure your system to use Java 25.
 
 <hr>
 

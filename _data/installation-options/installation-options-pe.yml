@@ -38,7 +38,7 @@ onPremise:
     imageHeight: 36
   2:
     title: Ubuntu Server
-    description: Install ThingsBoard Professional Edition on Ubuntu 20.04 / 22.04 / 24.04 with PostgreSQL or Cassandra, depending on your setup.
+    description: Install ThingsBoard Professional Edition on Ubuntu 22.04 / 24.04 with PostgreSQL or Cassandra, depending on your setup.
     link: /docs/user-guide/install/pe/ubuntu/
     icon: /images/install/platform/ubuntu.svg
     alt: Ubuntu logo
