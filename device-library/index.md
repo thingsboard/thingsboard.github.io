@@ -81,7 +81,7 @@ filterCollection:
       - Arduino
       - M5Stack
       - Espressif
-#      - HiLetgo
+      - HiLetGo
       - NodeMCU
       - Raspberry
       - uPesy
@@ -101,14 +101,14 @@ filterCollection:
       - PINE64
       - Qualcomm
       - Radxa
-#      - Elastel
+      - Elastel
       - 96Boards
       - Adapteva
       - UDOO
       - Aaeon
       - MClimate
       - ACE Automation
-#      - Makerfabs
+      - Makerfabs
       - Sixfab
       - Milesight
       - Nano Sensorics
