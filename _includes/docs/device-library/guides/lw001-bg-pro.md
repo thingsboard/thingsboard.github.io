@@ -101,5 +101,5 @@ To add the dashboard to ThingsBoard, follow the next steps:
 
 <br><b><font size="4">Import Dashboard</font></b>
 
-You can [download this example dashboard in JSON format](/docs/device-library/resources/dashboards/lw001-bg-pro/lw001-bg_pro_lorawan_tracker_dashboard.json){:target="_blank" download="lw001-bg_pro_lorawan_tracker_dashboard.json"} and [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your ThingsBoard instance.
+You can [download this example dashboard in JSON format](/docs/devices-library/resources/dashboards/lw001-bg-pro/lw001-bg_pro_lorawan_tracker_dashboard.json){:target="_blank" download="lw001-bg_pro_lorawan_tracker_dashboard.json"} and [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your ThingsBoard instance.
 {% include add-device-banner.liquid %}

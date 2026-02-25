@@ -180,7 +180,7 @@ The first step is to add a new [device](/docs/{{docsPrefix}}user-guide/ui/device
 
 ## Importing and configuring the NCD template flow
 
-The next step is to **import** and **configure** a pre-configured **flow template**. This flow will allow us to filter and format the vibration sensor data before connecting it to the ThingsBoard MQTT broker server and publishing the sensor data. The flow will also set the appropriate topics based on the ThingsBoard MQTT Gateway API reference. To import the flow into your workspace, begin by navigating to the GitHub repository and copying or downloading the RAW JSON file: [ncd-vibration-sensor-t80-to-thingsboard-mqtt.json](/docs/device-library/resources/ncd-vibration-sensor-t80-to-thingsboard-mqtt.json){:target="_blank"}
+The next step is to **import** and **configure** a pre-configured **flow template**. This flow will allow us to filter and format the vibration sensor data before connecting it to the ThingsBoard MQTT broker server and publishing the sensor data. The flow will also set the appropriate topics based on the ThingsBoard MQTT Gateway API reference. To import the flow into your workspace, begin by navigating to the GitHub repository and copying or downloading the RAW JSON file: [ncd-vibration-sensor-t80-to-thingsboard-mqtt.json](/docs/devices-library/resources/ncd-vibration-sensor-t80-to-thingsboard-mqtt.json){:target="_blank"}
 
 {% capture difference %}
 **Internal note**: This flow will be on NCD Github repository.

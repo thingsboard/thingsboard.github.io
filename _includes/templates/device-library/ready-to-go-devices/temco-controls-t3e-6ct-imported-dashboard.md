@@ -1,6 +1,6 @@
 ### Import dashboard
 
-Download [Check Device Data Dashboard](/docs/device-library/resources/dashboards/ready-to-go-devices/temco-t3e-6ct-dashboard.json){:target="_blank" download="temco-t3e-6ct-dashboard.json"} and import it.
+Download [Check Device Data Dashboard](/docs/devices-library/resources/dashboards/ready-to-go-devices/temco-t3e-6ct-dashboard.json){:target="_blank" download="temco-t3e-6ct-dashboard.json"} and import it.
 
 You can import a dashboard in JSON format. To do this, you should go to the Dashboard group, click on the "**+**" button in the upper-right corner of the page and choose "**Import dashboard**".
 The dashboard import window will appear, prompting you to upload the JSON file and click "**Import**".

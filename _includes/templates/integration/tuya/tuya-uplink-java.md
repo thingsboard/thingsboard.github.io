@@ -1,4 +1,3 @@
-Now copy & paste the following script to the Decoder function section:
 
 ```javascript
 // Decode an uplink message from a buffer
@@ -58,11 +57,4 @@ function decodeToJson(payload) {
 
 return result;
 ```
-{: .copy-code}
-
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-uplink-converter-java-pe.png)
-{% endif %}
-{% if docsPrefix contains "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-uplink-converter-java-pe.png)
-{% endif %}
+{:.copy-code.expandable-15}

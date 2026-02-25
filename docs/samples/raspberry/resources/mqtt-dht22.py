@@ -5,7 +5,8 @@ import Adafruit_DHT as dht
 import paho.mqtt.client as mqtt
 import json
 
-THINGSBOARD_HOST = 'demo.thingsboard.io'
+# Set ThingsBoard host to "mqtt.thingsboard.cloud", "mqtt.eu.thingsboard.cloud" or "localhost"
+THINGSBOARD_HOST = 'mqtt.thingsboard.cloud'
 ACCESS_TOKEN = 'DHT22_DEMO_TOKEN'
 
 # Data capture and upload interval in seconds. Less interval will eventually hang the DHT22.

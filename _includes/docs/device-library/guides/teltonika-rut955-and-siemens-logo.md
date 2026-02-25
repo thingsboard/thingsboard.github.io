@@ -25,7 +25,7 @@ To continue with this guide, we will need the following:
 
 ## Import Rule chain
 
-Download [Teltonika Rule Chain](/docs/device-library/resources/dashboards/ready-to-go-devices/teltonika-rut-955-rule-chain.json){:target="_blank" download="teltonika-rut955-rule-chain.json"} and import.
+Download [Teltonika Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/teltonika-rut-955-rule-chain.json){:target="_blank" download="teltonika-rut955-rule-chain.json"} and import.
 
 To import rule chain from а JSON file, you should:
 

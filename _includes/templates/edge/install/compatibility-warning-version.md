@@ -1,6 +1,8 @@
 {% capture update_server_first %}
-**Please make sure that ThingsBoard Server version is {{serverVersion}} or above before updating ThingsBoard Edge to this version**.
+Ensure your <b>ThingsBoard Server is up to date</b> before updating ThingsBoard Edge.
 
-If the **ThingsBoard Server** version is below {{serverVersion}}, please follow the [upgrade instructions](/docs/user-guide/install/{{docsPrefix}}upgrade-instructions/{{updateServerLink}}){:target="_blank"} first.
+If your Server version is outdated, [upgrade it first](/docs/{{peDocsPrefix}}user-guide/install/upgrade-instructions/{{updateServerLink}}/){:target="_blank"}.
+
+The following instructions are applicable for <b>ThingsBoard Edge {{previousVersion}}</b> version.
 {% endcapture %}
 {% include templates/warn-banner.md content=update_server_first %}

@@ -19,7 +19,7 @@ This guide covers initial IoT Gateway installation and configuration, we will do
 
 ## Prerequisites
 
-- Before initiating the Gateway setup, ensure that the ThingsBoard server is up and running. The simplest approach is to utilize the [Live Demo](https://demo.thingsboard.io) or [ThingsBoard Cloud](https://thingsboard.cloud). Alternatively, you can install ThingsBoard manually by following the steps outlined in the [Installation Guide](/docs/user-guide/install/installation-options/).
+- Before initiating the Gateway setup, ensure that the ThingsBoard server is up and running. The simplest approach is to use [ThingsBoard Cloud](https://thingsboard.io/installations/){:target="_blank"}. Alternatively, you can install ThingsBoard manually by following the steps outlined in the [Installation Guide](/docs/user-guide/install/installation-options/).
 - Before moving forward, ensure Docker is installed and properly configured on your machine. If you haven't installed Docker yet, you can download it from the [official Docker website](https://docs.docker.com/engine/install/) and follow their installation guide for your specific operating system.
 
 ## Step 1. Create a new gateway device on ThingsBoard

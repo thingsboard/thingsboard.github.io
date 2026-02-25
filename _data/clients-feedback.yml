@@ -29,18 +29,18 @@ smart-energy:
         1: 'We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and cost without sacrificing functionality and extensibility.'
         2: 'The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box.'
         3: 'The platform is continually being extended and improved, with the ThingsBoard Team both accessible and supportive to all of our needs. We now have a robust industrial platform that unlocks our IoT service goals.'
-    - author: Agustin Derregibus
-      position: CEO & Co-Founder
-      companyName: Nettra
-      id: nettra
-      link: https://www.nettra.tech/
-      companyImage: /images/customers/nettra.webp
-      companyImageWidth: 127
-      companyImageHeight: 32
+    - author: Samantha Epa
+      position: General Manager – Solar, Windforce PL
+      companyName: Energenix
+      id: energenix
+      link: https://energenix.lk/
+      authorImage: /images/customers/energenix-person.webp
+      companyImage: /images/customers/energenix.webp
+      companyImageWidth: 132
+      companyImageHeight: 45
       text:
-        0: 'IOT Company specialized in the monitoring and control of distributed infrastructures.'
-        1: 'We had been working on the development of our own software platform for almost 6 months when we came across Thingsboard. Not only Thingsboard had all the functionalities we had already developed, but also included many more that were on our pipeline for the coming months. Switching to Thingsboard was a no-brainer.'
-        2: 'The platform has proven to be very reliable, with great support and constant evolution. Definitely the right choice for our company.'
+        0: 'Real-time solar portfolio visibility with unified dashboards and automated alerts'
+        1: 'Energenix has significantly improved visibility across our entire solar portfolio. Having real-time performance data, unified dashboards, and automated alerts in one platform has transformed how our teams monitor plants, identify issues, and make operational decisions. It has become an essential tool for managing and optimizing our renewable energy assets at scale.'
     - author: David Eitzinger
       position: Managing Director
       companyName: Berliner Energieinstitut GmbH
@@ -80,6 +80,18 @@ smart-energy:
         0: 'co.met GmbH has been active in the energy industry since 2001 with process and data services and in some cases proprietary IT solutions.'
         1: 'We’re a meter operator and as such a service provider for energy distribution network carriers (electricity, gas, water and heat) and other meter operators. We provide SaaS-Solutions for the remote reading of meters, field force management (for meter fitters) and the administration of smart meter gateways. Additionally we’re a LoRa WAN carrier for the city of Saarbrücken and a Solution Provider for LoRa-WAN Backendsystems.'
         2: 'In the above mentioned roles we face a lot of use cases, ranging from the mere visualization of telemetry data to the necessity to trigger events using rule chains. ThingsBoard is a mighty tool and yet easy to use. It meets our requirements perfectly and far better than any other solution we’ve been testing so far. We and our customers appreciate it’s professional look, functionality and speed of reaction . The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.'
+    - author: Agustin Derregibus
+      position: CEO & Co-Founder
+      companyName: Nettra
+      id: nettra
+      link: https://www.nettra.tech/
+      companyImage: /images/customers/nettra.webp
+      companyImageWidth: 127
+      companyImageHeight: 32
+      text:
+        0: 'IOT Company specialized in the monitoring and control of distributed infrastructures.'
+        1: 'We had been working on the development of our own software platform for almost 6 months when we came across Thingsboard. Not only Thingsboard had all the functionalities we had already developed, but also included many more that were on our pipeline for the coming months. Switching to Thingsboard was a no-brainer.'
+        2: 'The platform has proven to be very reliable, with great support and constant evolution. Definitely the right choice for our company.'
 agriculture:
   label: Agriculture
   icon: /images/agriculture-icon.svg
@@ -356,6 +368,17 @@ smart-city:
         7: 'ThingsBoard Platform'
         8: 'ThingsBoard will make the development of your IoT backend a breeze. It is a robust platform that can handle anything you throw at it. A wide variety of connection options exist, and it comes with a compelling user interface that can be customized to suit any need.'
         9: 'It has a very flexible price bracket. The open-source version is free, and the Professional version has a comprehensive price bracket to let you grow as your business increases. Want to avoid managing complex IT infrastructures? You will love their hosted version thingsboard.cloud!'
+    - author: Raja Marimuthu
+      position: CEO
+      companyName: Onedata
+      id: onedata
+      link: https://www.onedatasoftware.com/
+      authorImage: /images/customers/onedata-person.webp
+      companyImage: /images/customers/onedata.webp
+      companyImageWidth: 190
+      companyImageHeight: 32
+      text:
+        0: 'Managing and synchronizing hundreds of connected devices in a hospital was a key challenge, and ThingsBoard helped us turn that complexity into real-time operational clarity.'
 telecom:
   label: Telecom
   icon: /images/telecom-icon.svg

@@ -111,7 +111,7 @@ step5Edge:
 {% include templates/edge/getting-started/introduction.md %}
 
 {% capture difference %}
-Interested in the **Edge Professional Edition**? Explore the ThingsBoard PE Edge documentation [here](/docs/pe/edge/getting-started/){:target="_blank"}.
+Looking for **white-labeling** or **premium features**? <a href="/docs/pe/edge/" target="_blank">Explore Edge Professional Edition documentation →</a>
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 

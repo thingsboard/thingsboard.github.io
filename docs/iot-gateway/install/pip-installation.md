@@ -79,10 +79,10 @@ First, add a gateway device to your ThingsBoard instance by following these step
 {% assign createNewGatewayDevice = '
   ===
     image: /images/gateway/dashboard/gateway-getting-started-1-ce.png,
-    title: Go to the "**Dashboards**" page and open the "**ThingsBoard IoT Gateways**" dashboard;
+    title: Go to the "**Entities**" > "**Gateways**" page and click the "**plus**" icon in the upper right corner to add a new gateway.
   ===
     image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
-    title: Click the "**plus**" icon in the upper right corner to add a new gateway. Input the gateway name (e.g., "My Gateway"), and select the default device profile. Click "Create".
+    title: In the opened modal window input the gateway name(e.g., "My Gateway"), specify the "**default**" device profile, and click "**Create**".
 '
 %}
 
@@ -131,19 +131,41 @@ nano /etc/thingsboard-gateway/config/tb_gateway.json
 
 {% assign configureGatewayLogs = '
     ===
-        image: /images/gateway/install/configure-gateway-1-ce.png,
+        image: /images/gateway/install/configure-gateway-4-ce.png,
         title: Click the "**General configuration**" button;
     ===
-        image: /images/gateway/install/configure-gateway-4-ce.png,
+        image: /images/gateway/install/configure-gateway-5-ce.png,
         title: Navigate to the "**Logs**" tab and replace the "**File path**" field value to `/var/log/thingsboard-gateway` in all tabs. Then, click "**Save**".
 '
 %}
 
 {% include images-gallery.liquid imageCollection=configureGatewayLogs %}
 
-**7. Check installation you can with command** (You will get errors about connection, because you don't configure gateway for yourself. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration/)):*
+**7. You can check installation with this command**. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration/):*
 
 ```bash
 thingsboard-gateway
 ```
 {: .copy-code}
+
+- If everything is done correctly, you will see the gateway status set to `Active`.
+
+{% assign configureCorrectGateway = '
+    ===
+        image: /images/gateway/install/configure-gateway-6-ce.png,
+        title: If everything is done correctly, you will see the gateway status set to `Active`.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=configureCorrectGateway %}
+
+## Next steps
+
+Explore guides related to main ThingsBoard features:
+
+ - [Getting Started](/docs/iot-gateway/getting-started/) with ThingsBoard IoT Gateway.
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+ - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
+ - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
+ - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.

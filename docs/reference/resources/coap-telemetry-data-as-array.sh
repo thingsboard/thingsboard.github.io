@@ -1,1 +1,1 @@
-cat telemetry-data-as-array.json | coap post coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
+cat telemetry-data-as-array.json | coap post coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry

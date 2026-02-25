@@ -62,6 +62,8 @@
     </div>
 </section>
 
+{% include cookie-consent.html %}
+
 <script>
     const DEFAULT_PLATFORM = 'ce';
 
@@ -81,7 +83,7 @@
 
     const URL_PARAM_PLATFORM = 'platform';
     const URL_PARAM_QUERY = 'q';
-    const URL_PARAM_FILTER_PREFIX = 'f_';       
+    const URL_PARAM_FILTER_PREFIX = 'f_';
     const URL_PARAM_ORDER = 'order';
 
     function normalizeCatKey(cat) {
@@ -252,6 +254,46 @@
         ensurePlatformSelected();
         const checked = Array.from(platformRadios).find(r => r.checked);
         return checked ? (checked.value || '').trim().toLowerCase() : '';
+    }
+
+
+    function updateHeroConnectivityLink(selectedPlatform) {
+        const link = document.querySelector('.devices-hero-banner a');
+
+        if (!link) return;
+
+        if (!link.dataset.baseHref) {
+            link.dataset.baseHref = '/docs/getting-started-guides/connectivity/';
+        }
+
+        const base = link.dataset.baseHref;
+        const p = (selectedPlatform || '').trim().toLowerCase();
+
+        if (!p || p === 'ce') {
+            link.setAttribute('href', base);
+            return;
+        }
+
+        if (p === 'paas-eu') {
+            link.setAttribute('href', '/docs/paas/eu/getting-started-guides/connectivity/');
+            return;
+        }
+
+        if (p === 'pe-edge') {
+            link.setAttribute('href', '/docs/pe/edge/getting-started-guides/connectivity/');
+            return;
+        }
+
+        const allowed = Object.keys(PLATFORM_LABELS);
+
+        if (allowed.includes(p)) {
+            link.setAttribute(
+                'href',
+                `/docs/${encodeURIComponent(p)}/getting-started-guides/connectivity/`
+            );
+        } else {
+            link.setAttribute('href', base);
+        }
     }
 
     function updatePlatformVisibility() {
@@ -531,6 +573,8 @@
 
         const selectedPlatform = getSelectedPlatform();
 
+        updateHeroConnectivityLink(selectedPlatform);
+
         crispsContainers.forEach(container => {
             updateCrisps(selectedFilters, container, selectedPlatform);
         });
@@ -604,8 +648,6 @@
 
 
 {% include footer.html %}
-
-{% include cookie-consent.html %}
 
 </body>
 </html>

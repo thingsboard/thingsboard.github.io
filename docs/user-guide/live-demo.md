@@ -12,10 +12,8 @@ description: ThingsBoard IoT Platform Live Demo Server
 * TOC
 {:toc}
 
-Live Demo is a single-node server that is deployed to simplify the process of getting started with the ThingsBoard platform.
+The Live Demo is a pre-configured, single-node instance designed for rapid evaluation and testing. You can access the environment immediately at [**demo.thingsboard.io**](https://demo.thingsboard.io).
+Once logged in, you'll have full access to our "Hello World" resources to jumpstart your project.
 
-You can access the demo server using the following URL [**demo.thingsboard.io**](https://{{hostName}}/signup)
+**Note:** New user registration is now directed to [ThingsBoard Cloud](https://thingsboard.io/installations/), which offers a permanent free-tier account with better reliability.
 
-You will need to populate the sign-up form and as a result, you will receive tenant administrator account for your dedicated tenant.
-
-Once you have logged in you will receive access to all features required to [**get you started**](/docs/getting-started-guides/helloworld/).

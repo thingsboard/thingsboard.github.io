@@ -18,10 +18,20 @@ tb-edge-install-ubuntu-onprem,<div style="text-align:center;">On-Premise<br>(Loc
 
 {% else %}
 
-{% capture tabspec %}tb-edge-install-ubuntu
-tb-edge-install-ubuntu-cloud,Live Demo,shell,resources/tb-edge-ubuntu-install-cloud.sh,/docs/user-guide/install/edge/resources/3.9/tb-edge-ubuntu-install-cloud.sh
-tb-edge-install-ubuntu-onprem,On-Premise,shell,resources/tb-edge-ubuntu-install-onprem.sh,/docs/user-guide/install/edge/resources/3.9/tb-edge-ubuntu-install-onprem.sh{% endcapture %}
-{% include tabs.html %}
+```bash
+sudo sh -c 'cat <<EOL >> /etc/tb-edge/conf/tb-edge.conf
+export CLOUD_ROUTING_KEY=<PUT_YOUR_EDGE_KEY_HERE>
+export CLOUD_ROUTING_SECRET=<PUT_YOUR_EDGE_SECRET_HERE>
+export CLOUD_RPC_HOST=<PUT_YOUR_RPC_HOST>
+export CLOUD_RPC_PORT=7070
+export CLOUD_RPC_SSL_ENABLED=false
+export HTTP_BIND_PORT=18080
+export MQTT_BIND_PORT=11883
+export COAP_BIND_PORT=15683
+export LWM2M_ENABLED=false
+export SNMP_ENABLED=false
+EOL'
+```
 
 {% endif %}
 

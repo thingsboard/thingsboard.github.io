@@ -20,7 +20,7 @@ Through ThingsBoard dashboards, you can efficiently manage and monitor your IoT 
 
 To add the dashboard to ThingsBoard, we need to import it. To import a dashboard, follow these steps:
 
-- First download the [Check and control device data dashboard](/docs/device-library/resources/dashboards/lansitec-lorawan/cat1_check_and_control_device_data_dashboard.json){:target="_blank"} file.
+- First download the [Check and control device data dashboard](/docs/devices-library/resources/dashboards/lansitec-lorawan/cat1_check_and_control_device_data_dashboard.json){:target="_blank"} file.
 
 {% assign cat1Show = '
     ===

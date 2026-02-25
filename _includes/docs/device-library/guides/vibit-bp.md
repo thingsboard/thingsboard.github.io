@@ -1,7 +1,7 @@
 {% assign deviceName = "VIBit-BP" %}
 {% assign deviceVendorLink = "https://machineastro.com/vibit-battery-powered/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
-{% assign officialManualLink = "/docs/device-library/resources/manuals/vibit-bp.pdf" %}
+{% assign officialManualLink = "/docs/devices-library/resources/manuals/vibit-bp.pdf" %}
 {% assign prerequisites = '
 - [Sensor user guide](' | append: officialManualLink | append: '){: target="_blank"}
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>

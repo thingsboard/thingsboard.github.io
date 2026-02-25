@@ -3,57 +3,6 @@ layout: docwithnav
 title: OAuth 2.0
 description: OAuth 2.0
 
-adding-domain-1:
-    0:
-        image: /images/user-guide/oauth-2-support/adding-domain-1-ce.png
-        title: 'On the "Domains" tab of the "OAuth 2.0 client" page, click the "plus" icon to add a new domain. Provide your domain name and OAuth 2.0 client. Then, click "Add".'
-    1:
-        image: /images/user-guide/oauth-2-support/adding-domain-2-ce.png
-        title: 'Domain added.'
-    
-editing-domain-1:
-    0:
-        image: /images/user-guide/oauth-2-support/managing-domain-1-ce.png
-        title: 'Click on the domain to view its details. Switch to editing mode by clicking the large orange button;'
-    1:
-        image: /images/user-guide/oauth-2-support/managing-domain-2-ce.png
-        title: 'Make the required modifications. Then confirm and save the changes by clicking the "Apply Changes" button.'
-    
-deleting-domain-1:
-    0:
-        image: /images/user-guide/oauth-2-support/deleting-domain-1-ce.png
-        title: 'Click the "trash" icon in the domain&#39;s row you wish to remove;'
-    1:
-        image: /images/user-guide/oauth-2-support/deleting-domain-2-ce.png
-        title: 'Confirm the deletion by clicking "Yes".'
-
-adding-oauth2-client-1:
-    0:
-        image: /images/user-guide/oauth-2-support/adding-oauth2-client-1-ce.png
-        title: 'Navigate to the "OAuth 2.0 clients" tab on the "OAuth 2.0" page. Click the "plus" icon to add a new OAuth 2.0 client;'
-    1:
-        image: /images/user-guide/oauth-2-support/adding-oauth2-client-2-ce.png
-        title: 'Enter a descriptive title for the client, and select the authentication provider from the dropdown menu. Provide the Client ID and Client Secret obtained from your authentication provider. Configure advanced settings as necessary. Then, click "Add".'
-    2:
-        image: /images/user-guide/oauth-2-support/adding-oauth2-client-3-ce.png
-        title: 'New OAuth 2.0 client added.'
-
-editing-oauth2-client-1:
-    0:
-        image: /images/user-guide/oauth-2-support/managing-oauth2-client-1-ce.png
-        title: 'Click on the OAuth 2.0 client to view its details. Switch to editing mode by clicking the large orange button;'
-    1:
-        image: /images/user-guide/oauth-2-support/managing-oauth2-client-2-ce.png
-        title: 'Make the required modifications. Then confirm and save the changes by clicking the "Apply changes" button.'
-
-deleting-oauth2-client-1:
-    0:
-        image: /images/user-guide/oauth-2-support/deleting-oauth2-client-1-ce.png
-        title: 'Click the "trash" icon in the client&#39;s row you wish to remove;'
-    1:
-        image: /images/user-guide/oauth-2-support/deleting-oauth2-client-2-ce.png
-        title: 'Confirm the deletion by clicking "Yes".'
-
 google-credentials-for-oauth-1:
     0:
         image: /images/user-guide/oauth-2-support/google/google-credentials-for-oauth/google-credentials-for-oauth-1.png
@@ -279,15 +228,6 @@ login-with-keycloak-1:
         image: /images/user-guide/oauth-2-support/login-with-oauth-tenant-1-ce.png
         title: 'You are logged into ThingsBoard using Keycloak authorization credentials.'
 
-mapper-basic-1:
-    0:
-        image: /images/user-guide/oauth-2-support/mapper-basic-1-ce.png
-        title: 'To use a basic mapper, set mapper type "Basic".'
-
-mapper-custom-1:
-    0:
-        image: /images/user-guide/oauth-2-support/mapper-custom-1-ce.png
-        title: 'To use the custom mapper, set mapper type "Custom".'
 
 ---
 

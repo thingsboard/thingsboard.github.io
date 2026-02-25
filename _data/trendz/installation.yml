@@ -20,11 +20,7 @@ toc:
   - title: Kubernetes
     path: /docs/trendz/install/kubernetes/
 - title: Upgrade instructions
-  section:
-  - title: Ubuntu/CentOS/Windows
-    path: /docs/trendz/install/trndz-upgrade-instructions/
-  - title: Kubernetes
-    path: /docs/trendz/install/trndz-upgrade-instructions-kubernetes/
+  path: /docs/trendz/install/upgrade-instructions/
 - title: Python Executor Configuration
   path: /docs/trendz/install/python-executor-configuration/
 - title: Configuration properties

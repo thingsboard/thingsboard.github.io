@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-paas-eu
-title: FAQ
+title: Frequently Asked Questions
 description: ThingsBoard FAQ
 
 ---

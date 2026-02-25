@@ -1,0 +1,54 @@
+---
+title: ThingsBoard choose region
+customTitle: "true"
+description: ThingsBoard is an open-source IoT platform for device management, data collection, processing and visualization for your IoT projects
+---
+<!Doctype html>
+<html id="choose-region">
+
+{% include head-header.html %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section class="intro">
+    <h1>Choose region</h1>
+    <div class="details">
+        <p class="margin">The Live Demo is retired. Switch to <b>ThingsBoard Cloud</b> for production-grade reliability and our <b>Free Forever</b> plan with 5 devices, 1M messages, and unlimited data reads.</p>
+        <p>Select your region to get started.</p>
+    </div>
+    <div class="region-button-section">
+        <a id="TryItNow_Cloud_NorthAmerica" data-region="north-america" class="button gtm_button" href="https://thingsboard.cloud/signup">
+            North America
+        </a>
+        <a id="TryItNow_Cloud_Europe" data-region="europe" class="button gtm_button" href="https://eu.thingsboard.cloud/signup">
+            Europe
+        </a>
+    </div>
+</section>
+<section class="map-container">
+    <object id="map" data="/images/region-map.svg"></object>
+</section>
+
+
+<script>
+    document.getElementById('map').addEventListener('load', function() {
+        const svgDoc = this.contentDocument;
+        const buttons = document.querySelector('.region-button-section').querySelectorAll('.button');
+
+        buttons.forEach(button => {
+            button.addEventListener("mouseenter", (e) => {
+                svgDoc.querySelector('.' + button.dataset.region).classList.add('region-selected');
+            });
+
+            button.addEventListener("mouseleave", (e) => {
+                svgDoc.querySelector('.' + button.dataset.region).classList.remove('region-selected');
+            });
+        });
+    });
+</script>
+
+{% include footer.html %}
+{% include cookie-consent.html %}
+</body>
+</html>

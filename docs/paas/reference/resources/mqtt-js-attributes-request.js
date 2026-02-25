@@ -1,5 +1,5 @@
 var mqtt = require('mqtt')
-var client  = mqtt.connect('mqtt://{{hostName}}',{
+var client = mqtt.connect('mqtt://thingsboard.cloud', {
     username: process.env.TOKEN
 })
 

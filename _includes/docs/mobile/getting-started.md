@@ -1,17 +1,10 @@
 {% if docsPrefix == 'pe/' %}
 {% assign appPrefix = "ThingsBoard PE" %}
-{% assign appRepo = "https://github.com/thingsboard/flutter_thingsboard_pe_app.git" %}
 {% assign appProject = "flutter_thingsboard_pe_app" %}
 {% assign cloudApp = "[ThingsBoard Cloud](https://thingsboard.cloud/signup)" %}
-{% assign cloudEndpoint = "https://thingsboard.cloud" %}
-{% assign flutterAppVer = site.release.pe_flutter_app_ver %}
 {% else %}
 {% assign appPrefix = "ThingsBoard" %}
-{% assign appRepo = "https://github.com/thingsboard/flutter_thingsboard_app.git" %}
 {% assign appProject = "flutter_thingsboard_app" %}
-{% assign cloudApp = "[Live Demo](https://demo.thingsboard.io/signup)" %}
-{% assign cloudEndpoint = "https://demo.thingsboard.io" %}
-{% assign flutterAppVer = site.release.ce_flutter_app_ver %}
 {% endif %}
 
 * TOC
@@ -23,7 +16,7 @@ Welcome! This guide walks you through creating and configuring your own {{appPre
 
 ## Prerequisites
 
-- Access to a {{appPrefix}} instance. The easiest way is to use {{cloudApp}}{:target="_blank"} server. Alternatively, install {{appPrefix}} using the official [installation guide](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
+- Access to a {{appPrefix}} instance. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/). Alternatively, install {{appPrefix}} using the official [installation guide](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
 - Prepare the environment for building the {{appPrefix}} mobile application:
   - [Install the Flutter SDK](https://flutter.dev/docs/get-started/install){:target="_blank"} version that corresponds to your app version (see the [compatibility matrix](/docs/{% if docsPrefix == 'pe/' %}pe/{% endif %}mobile/#compatibility-table){:target="_blank"}).
   - (Recommended) [Configure your IDE (e.g., Visual Studio Code)](https://flutter.dev/docs/get-started/editor){:target="_blank"} for Flutter development.
@@ -395,30 +388,6 @@ Learn more about **notifications** and how to configure them [here](/docs/{{docs
 ## Step 3. [Optional] Build and release mobile application
 
 If you need to **build and release** {{appPrefix}} mobile application for iOS or Android, please refer to [this guide](/docs/{{docsPrefix}}mobile/release/){:target="_blank"}.
-
-{% if docsPrefix != 'pe/' %}
-## Live demo app
-
-To be familiar with common app features try out our **ThingsBoard Live mobile application** available on Google Play and App Store.
-
-<br>
-
-<div class="mobile-market-badges">
-    <a id="Products_MobApp_GetStart_GooglePlay" 
-       href="https://play.google.com/store/apps/details?id=org.thingsboard.demo.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" 
-       target="_blank"
-       class="gtm_button">
-        <img src="/images/mobile/get-it-on-google-play.png" alt="Get it on Google Play icon">
-    </a>
-    <a id="Products_MobApp_GetStart_AppStore" 
-       href="https://apps.apple.com/us/app/thingsboard-live/id1594355695?itsct=apps_box_badge&amp;itscg=30200" 
-       target="_blank"
-       class="gtm_button">
-        <img src="/images/mobile/download-on-the-app-store.png" alt="Download on the App Store icon">
-    </a>
-</div>
-
-{% endif %}
 
 ## Troubleshooting
 

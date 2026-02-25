@@ -550,10 +550,10 @@ Transitioning to the new model is seamless and requires no migration of data.
 
 To terminate your ThingsBoard Cloud subscription, follow these steps:
 
-- Log in to ThingsBoard Cloud as Tenant Administrator;
-- Go to account settings by clicking the **three-dot icon** in the upper-right corner of the screen and selecting "**Account**" from the dropdown menu;
-- Under the "**Profile**" tab, click the orange "**Delete account**" button;
-- Follow the instructions to cancel your subscription;
+- Log in to ThingsBoard Cloud as Tenant Administrator.
+- Go to account settings by clicking the **three-dot icon** in the upper-right corner of the screen and selecting **Account** from the dropdown menu.
+- Under the **Profile** tab, click the orange **Delete account** button.
+- Follow the instructions to cancel your subscription.
 - Confirm the action by clicking the "**I understand the consequences, delete account**" button.
 
 In the future, the subscription termination button will be moved to the "**Plan and billing**" page in the ThingsBoard navigation menu.

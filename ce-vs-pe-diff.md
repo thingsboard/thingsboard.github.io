@@ -94,11 +94,7 @@ Choosing the right edition is only half the job. It’s equally important to sel
 
 ### :white_check_mark: Getting started with Community Edition
 
-1. **ThingsBoard Demo**
-   The fastest way to start. Free Demo environment by the ThingsBoard team — just connect your devices and start.
-   :link: [ThingsBoard Demo](https://demo.thingsboard.io/signup)
-
-2. **Self-managed (On-premise)**
+1. **Self-managed (On-premise)**
    Full control in your own or isolated data centers, or offline/on-premise setups.
    :link: [Self-managed](https://thingsboard.io/docs/user-guide/install/installation-options/)
 

@@ -1,8 +1,9 @@
 ---
 layout: docwithnav-mqtt-broker
-title: FAQ
+title: Frequently Asked Questions
 description: TBMQ FAQ
 
 ---
 
+{% assign tbmqName = "Community Edition" %}
 {% include docs/mqtt-broker/faq.md %}

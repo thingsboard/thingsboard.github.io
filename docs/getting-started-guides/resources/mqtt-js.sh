@@ -1,7 +1,9 @@
 #!/bin/sh
 
-# Set ThingsBoard host to "demo.thingsboard.io" or "localhost"
-export THINGSBOARD_HOST=demo.thingsboard.io
+# Set ThingsBoard host to "mqtt.thingsboard.cloud" for ThingsBoard Cloud (North America)
+# Set ThingsBoard host to "mqtt.eu.thingsboard.cloud" for ThingsBoard Cloud (Europe)
+# Set ThingsBoard host to "localhost" for local platform installation
+export THINGSBOARD_HOST=mqtt.thingsboard.cloud
 
 # Replace YOUR_ACCESS_TOKEN with one from Device details panel.
 export ACCESS_TOKEN=YOUR_ACCESS_TOKEN

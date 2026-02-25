@@ -103,7 +103,9 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 ## Step 9. Enable Trendz Analytics (optional)
 
-In order to start Trendz Analytics addon, please edit the configuration file:
+You may optionally install Trendz Analytics any time using the following steps:
+
+Edit the configuration file:
 
 ```bash
 nano .env
@@ -127,11 +129,13 @@ You can read about Trendz Analytics [here](/docs/trendz/what-is-trendz/).
 {% assign dockerComposeFileLocation = "-f $TB_SETUP/docker-compose.yml " %}
 {% include templates/install/docker/docker-compose-setup-running.md %}
 
-## Upgrading
+## Post-installation steps
+
+{% include templates/install/generate_certificate_docker-compose.md %}
 
 ### Upgrading to new ThingsBoard version
 
-{% include templates/install/upgrade-docker-compose.md %}
+{% include templates/install/upgrade-thingsboard.md %}
 
 ### Upgrading to new Trendz version (Optional)
 
@@ -147,8 +151,6 @@ To update Trendz, it's necessary to edit .env file to set "TRENDZ_VERSION" to ta
 {: .copy-code}
 
 Note that you can upgrade Trendz from any version to the latest (for example, 1.12.0 -> {{ site.release.trendz_ver }} etc).
-
-{% include templates/install/generate_certificate_docker-compose.md %}
 
 ## Next steps
 

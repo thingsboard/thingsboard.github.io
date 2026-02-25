@@ -22,7 +22,7 @@ System diagram shows some typical automation and metering elements in DHS: subst
 Decode [DL28](https://decode.rs/product/dl28/) device plays role of communication and signal concentrator and provides bridge function between all control, monitoring and measuring equipment installed in DHS and ThingsBoard servers on internet. Three signal are used in this example: two relay outputs and one of temperatures from heat meter.
 
 ## Prerequisites 
-- Demo account on ThingsBoard
+- Account on [ThingsBoard Cloud](https://thingsboard.cloud/signup/)
 - Computer with Ethernet connection and web browser
 - Decode DL28 communication controller
 - Decode EXIO I/O expansion device
@@ -32,7 +32,7 @@ Decode [DL28](https://decode.rs/product/dl28/) device plays role of communicatio
 
 ## Setup of ThingsBoard
 ### Step 1. Log in
-Go to ThingsBoard demo web page https://demo.thingsboard.io and log in with credentials obtained when account is created.
+Go to ThingsBoard Cloud web page and log in with credentials obtained when account is created.
 ### Step 2. Add DL28 device
 After the successful login procedure, click on the Devices entry in the left side menu and then on "+" icon. Select Add New Device option, enter Name, Device type and Label fields and click on Add button.
 
@@ -150,7 +150,7 @@ Select a show/hide option to show detailed device data. Data values from M-Bus a
 
 
 ### Step 6. Setup MQTT
-In MQTT Settings menu tick check boxes: Enable, Clean Session and JSON format. Enter Thingsboard broker data: Broker: **demo.thingsboard.io**, Port: **1883**, Reconnect Period: **10**, Keep Alive Interval: **60**, Client ID: Enter **Device ID** obtained from ThingsBoard demo account, Username: Enter **Access Token** obtained from ThingsBoard demo account, Password: Leave empty. Click on a Save button.
+In MQTT Settings menu tick check boxes: Enable, Clean Session and JSON format. Enter Thingsboard broker data: Broker: **mqtt.thingsboard.cloud**, Port: **1883**, Reconnect Period: **10**, Keep Alive Interval: **60**, Client ID: Enter **Device ID** obtained from ThingsBoard demo account, Username: Enter **Access Token** obtained from ThingsBoard demo account, Password: Leave empty. Click on a Save button.
 In MQTT Publish List menu add three parameters, two for publishing relay states,  and one for publishing return temperature from heat meter. Click on a Save button.
 
 

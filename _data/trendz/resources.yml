@@ -1,0 +1,115 @@
+1.15.0:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.15.0.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.15.0.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.15.0.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.15.0.deb
+1.14.0:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.14.0.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.14.0.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.14.0.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.14.0.deb
+1.13.2:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.13.2.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.13.2.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.13.2.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.13.2.deb
+1.13.1:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.13.1.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.13.1.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.13.1.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.13.1.deb
+1.13.0:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.13.0.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.13.0.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.13.0.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.13.0.deb
+1.12.0:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.12.0.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.12.0.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.12.0.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.12.0.deb
+1.11.2:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.11.2.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.11.2.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.11.2.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.11.2.deb
+1.11.1:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.11.1.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.11.1.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.11.1.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.11.1.deb
+1.11.0:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.11.0.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.11.0.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.11.0.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.11.0.deb
+1.10.3-HF7:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.10.3-HF7.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.10.3-HF7.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.10.3-HF7.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.10.3-HF7.deb
+1.10.3:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.10.3.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.10.3.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.10.3.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.10.3.deb
+1.10.2:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.10.2.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.10.2.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.10.2.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.10.2.deb
+1.10.1:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.10.1.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.10.1.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.10.1.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.10.1.deb
+1.10.0:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.10.0-HF1.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.10.0-HF1.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.10.0-HF1.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.10.0-HF1.deb
+1.9.2-HF:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.9.2-HF3.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.9.2-HF3.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.9.2-HF3.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.9.2-HF3.deb
+1.8.2:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.8.2.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.8.2.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.8.2.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.8.2.deb
+1.8.1:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.8.1.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.8.1.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.8.1.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.8.1.deb
+1.7.0:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.7.0.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.7.0.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.7.0.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.7.0.deb
+1.6.0:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.6.0.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.6.0.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.6.0.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.6.0.deb
+1.5.1:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.5.1.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.5.1.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.5.1.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.5.1.deb
+1.5.0:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.5.0.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.5.0.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.5.0.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.5.0.deb
+1.4.1:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.4.1.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.4.1.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.4.1.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.4.1.deb
+1.4.0:
+  centos-download: wget https://dist.thingsboard.io/trendz-1.4.0.rpm
+  centos-installation: sudo rpm -Uvh trendz-1.4.0.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/trendz-1.4.0.deb
+  ubuntu-installation: sudo dpkg -i trendz-1.4.0.deb

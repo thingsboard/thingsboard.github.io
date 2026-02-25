@@ -12,7 +12,7 @@ This guide will help you to install and start ThingsBoard Gateway using Docker C
 ## Prerequisites
 
 - [Install Docker Compose](https://docs.docker.com/compose/){:target="_blank"};
-- You will need to have access to ThingsBoard. The easiest way is to use the [ThingsBoard Demo](https://demo.thingsboard.io/){:target="_blank"} or [ThingsBoard Cloud](https://thingsboard.cloud){:target="_blank"}.
+- You will need to have access to ThingsBoard. The easiest way is to [ThingsBoard Cloud](https://thingsboard.io/installations/){:target="_blank"}.
 The alternative option is to install the ThingsBoard locally using the [installation guide](https://thingsboard.io/docs/user-guide/install/installation-options/){:target="_blank"}.
 
 ## Download a docker-compose file

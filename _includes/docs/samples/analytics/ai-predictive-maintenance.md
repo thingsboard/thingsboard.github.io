@@ -1,7 +1,4 @@
-{% if docsPrefix == nil %}
-{% assign HOST = "demo.thingsboard.io" %}
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == nil or docsPrefix == "pe/" %}
 {% assign HOST = "localhost:8080" %}
 {% endif %}
 {% if docsPrefix == "paas/" %}

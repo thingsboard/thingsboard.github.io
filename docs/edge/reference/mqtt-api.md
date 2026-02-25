@@ -5,4 +5,6 @@ description: Supported MQTT API Reference for IoT Devices
 redirect_from: "/docs/edge/reference/mqtt-api"
 ---
 
+{% assign docsPrefix = "edge/" %}
+{% include get-hosts-name.html docsTag="edge" %}
 {% include docs/reference/mqtt-api.md %}

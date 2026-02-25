@@ -31,7 +31,7 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/thingsboard-windows-{{ site.release.pe_ver }}.zip
+https://dist.thingsboard.io/thingsboard-windows-setup-{{ site.release.pe_ver }}.exe
 ```
 {: .copy-code}
 
@@ -158,6 +158,12 @@ C:\Program Files (x86)\tb-web-report>net start tb-web-report
 The Thingsboard Web Report Microservice service is starting.
 The Thingsboard Web Report Microservice service was started successfully.
 ```
+
+## Post-installation steps
+
+### Upgrading to new ThingsBoard version
+
+{% include templates/install/upgrade-thingsboard.md %}
 
 ## Troubleshooting
 

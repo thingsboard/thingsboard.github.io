@@ -3,7 +3,7 @@ layout: device
 title: How to connect AgroSense Soil Moisture Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN
-vendor: AgroSense
+vendor: Makerfabs
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: soil-moisture-sensor.png
 converters20: true

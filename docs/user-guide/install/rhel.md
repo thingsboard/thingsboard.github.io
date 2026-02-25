@@ -116,7 +116,13 @@ Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 
 ## Post-installation steps
 
+### Configure HAProxy to enable HTTPS
+
 {% include templates/install/rhel-haproxy-postinstall.md %}
+
+### Upgrading to new ThingsBoard version
+
+{% include templates/install/upgrade-thingsboard.md %}
 
 ## Troubleshooting
 

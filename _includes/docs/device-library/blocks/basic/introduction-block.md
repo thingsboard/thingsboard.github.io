@@ -10,9 +10,9 @@ Additionally, you’ll learn how to control the device using platform features s
 
 Before proceeding, ensure you have the following requirements in place:  
 {{ prerequisites }} {% if page.docsPrefix == "pe/edge/" %}
-- A ThingsBoard Cloud account ([Europe](https://eu.thingsboard.cloud/signup){: target="_blank"} or [America](https://thingsboard.cloud/signup){: target="_blank"}), or a [local server](/docs/user-guide/install/pe/installation-options/){: target="_blank"} installed on-premises
+- ThingsBoard Cloud account in ([Europe](https://eu.thingsboard.cloud/signup){: target="_blank"} or [North America](https://thingsboard.cloud/signup){: target="_blank"}), or a [local server](/docs/user-guide/install/pe/installation-options/){: target="_blank"} installed on-premises
 {% else %}
-- A [ThingsBoard account](https://demo.thingsboard.io/signup){: target="_blank"} or a [local server](/docs/user-guide/install/installation-options/){: target="_blank"} installed on-premises
+- [ThingsBoard Cloud](https://thingsboard.io/installations/){: target="_blank"} account or a [local server](/docs/user-guide/install/installation-options/){: target="_blank"} installed on-premises
 {% endif %}
 
 {% else %}
@@ -30,7 +30,7 @@ To continue with this guide, we will need the following:
 {{ prerequisites }} {% if page.docsPrefix == "pe/" %}
 - [ThingsBoard Cloud (Europe)](https://eu.thingsboard.cloud/signup){: target="_blank"} or [ThingsBoard Cloud (America)](https://thingsboard.cloud/signup){: target="_blank"}
 {% else %}
-- [ThingsBoard account](https://demo.thingsboard.io/signup){: target="_blank"}
+- [ThingsBoard Cloud](https://thingsboard.io/installations/){: target="_blank"} account or a [local server](/docs/user-guide/install/installation-options/){: target="_blank"} installed on-premises
 {% endif %}
 
 {% endif %}

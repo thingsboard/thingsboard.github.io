@@ -311,24 +311,18 @@ This guide demonstrates basic usage of popular ThingsBoard features. You will le
 - Build real-time dashboards
 - Create a Customer and assign the dashboard with them.
 - Define thresholds and trigger alarms
-- Set up notifications via email, SMS, mobile apps, or integrate with third-party services.
+- Set up notifications.
 
 For simplicity, we&#39;ll visualize data from a temperature sensor.
 
 <hr>
 
-## Video tutorial
+## Prerequisites
 
-Prefer visual learning? Check out our step-by-step getting started video tutorial:
+You will need a ThingsBoard server up and running:
 
-&nbsp;
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/80L0ubQLXsc" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-
-{% include templates/prerequisites.md %}
+* **ThingsBoard Cloud:** The fastest way to start with zero setup. Click for the [North America](/docs/paas/getting-started-guides/helloworld/) or [Europe](/docs/paas/eu/getting-started-guides/helloworld/) region (these links lead to a separate "Getting Started" guide for our managed service).
+* **Self-Managed Installation:** Alternatively, you can manually install ThingsBoard using our guides for [Windows (Docker)](/docs/user-guide/install/docker-windows/){:target="_blank"} or [Linux and MacOS (Docker)](/docs/user-guide/install/docker/){:target="_blank"}.
 
 <hr>
 

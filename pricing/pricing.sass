@@ -635,11 +635,9 @@ html#pricing
         margin-bottom: 0
       .solution
         padding-left: 14px
-        padding-right: 24px
+        padding-right: 14px
         @media (max-width: 599px)
           padding: 21px
-        &:nth-of-type(1)
-          margin-right: 12px
         h3
           font-size: 16px
           line-height: 20px
@@ -661,9 +659,7 @@ html#pricing
       border-radius: 26px
       .solution
         padding-left: 14px
-        padding-right: 24px
-        &:nth-of-type(1)
-          margin-right: 12px
+        padding-right: 14px
         h3
           font-size: 14px
           line-height: 20px
@@ -869,7 +865,9 @@ html#pricing
             font-weight: 400
             line-height: 24px
 
-      &#thingsboard-ce
+
+
+      &#thingsboard-ce, &#community-support
         padding-top: 46px
         .pricing-div
           margin-top: 25px
@@ -1374,93 +1372,24 @@ html#pricing
             &.tb-logo
               a:before
                 filter: brightness(0) saturate(100%) invert(37%) sepia(91%) saturate(1415%) hue-rotate(199deg) brightness(94%) contrast(96%)
-
-.faq-link, .container .add-ons .cards .card .text .faq-link, .pricing-content .container .additional-content .plans-comparison .comparison-table-container table tbody tr .faq-link
-  position: relative
-  display: inline-block
-  font-family: 'Font Awesome 5 Free'
-  font-weight: 400
-  vertical-align: super
-  font-size: smaller
-  cursor: pointer
-  z-index: 10
-  &:after
-    content: "\f059"
-    position: absolute
-    transform: translate(15%, -100%)
-  &:hover
-    z-index: 20
-    .faq-tooltip
-      visibility: visible
-      opacity: 1
-      transform: translateY(-50%)
-      transition-delay: 0s
-  .faq-tooltip
-    visibility: hidden
-    opacity: 0
-    position: absolute
-    top: -7px
-    left: calc(100% + 21px)
-    transform: translateY(-50%) translateX(-10px)
-    width: 258px
-    background-color: #fff
-    color: #3D3D3D
-    text-align: left
-    border-radius: 8px
-    padding: 16px
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.05)
-    border: 1px solid #E6F0FC
-    font-family: 'Roboto', sans-serif
-    font-size: 14px
-    line-height: 1.5
+.faq
+  white-space: nowrap
+  .faq-link
+    display: inline-block
+    font-family: 'Font Awesome 5 Free'
+    line-height: 1
     font-weight: 400
-    cursor: auto
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease
-    transition-delay: 0.1s
-    pointer-events: auto
-    text-decoration: none
-    white-space: normal
-    @media (max-width: 768px)
-      display: none
-    &:before
-      content: ''
-      position: absolute
-      top: 50%
-      right: 100%
-      margin-top: -8px
-      border-width: 8px
-      border-style: solid
-      border-color: transparent #E6F0FC transparent transparent
+    vertical-align: super
+    font-size: smaller
+    cursor: pointer
+    z-index: 10
+    &-50
+      font-size: 50%
+    &-70
+      font-size: 70%
     &:after
-      content: ''
-      position: absolute
-      top: 50%
-      right: 100%
-      margin-top: -7px
-      margin-right: -1px
-      border-width: 7px
-      border-style: solid
-      border-color: transparent #fff transparent transparent
-    p, p:first-child, p:last-child
-      margin-bottom: 8px
-      white-space: wrap
-      font-size: 14px
-      line-height: 24px
-      color: #3D3D3D
-      &:last-child
-        margin-bottom: 0
-    a
-      color: #2A7DEC
-      text-decoration: none
-      &:hover
-        text-decoration: underline
-    .read-more-link
-      color: #2A7DEC
-      font-weight: 500
-      cursor: pointer
-      text-decoration: none
-      &:hover
-        text-decoration: underline
+      content: "\f059"
+      transform: translate(15%, -100%)
 
 .tippy-box[data-theme~="light"]
   background-color: #fff
@@ -1480,6 +1409,7 @@ html#pricing
     padding: 16px
     max-width: 320px
     width: max-content
+    white-space: pre-line
 
     .tooltip-content, .tooltip-content:first-child, .tooltip-content:last-child
       margin: 0 0 8px 0

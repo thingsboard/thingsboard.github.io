@@ -1,5 +1,5 @@
+You can install the **ThingsBoard CE** local server. For this, please refer to the [ThingsBoard installation guide](/docs/user-guide/install/installation-options/){:target="_blank"}.
 
-{% capture contenttogglespec %}
-Live Demo%,%cloud%,%templates/edge/install/prerequisites-ce-cloud.md%br%
-Local Server%,%on-premise%,%templates/edge/install/prerequisites-on-premise.md{% endcapture %}
-{% include content-toggle.liquid content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
+The local server can be accessed via [http://localhost:8080](http://localhost:8080){:target="_blank"}. Throughout this tutorial, we will refer to this URL as **SERVER_URL.** Log in with:
+* **Username:** tenant@thingsboard.org
+* **Password:** tenant

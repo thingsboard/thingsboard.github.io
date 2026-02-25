@@ -29,8 +29,6 @@ Please set **CLOUD_RPC_HOST** with an IP address of the machine where {{appPrefi
 
 **NOTE**: **thingsboard.cloud** uses SSL protocol for edge communication.
 Please change **CLOUD_RPC_SSL_ENABLED** to **true** as well.
-{% else %}
-* Use **demo.thingsboard.io** if you are connecting Edge to the [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup){: target="_blank"} for evaluation.
 {% endif %}
 * Use **X.X.X.X** IP address if the Edge is connected to the Cloud instance in the same network or Docker environment.
 
@@ -42,9 +40,15 @@ If **ThingsBoard Edge** is set to run on the **same machine** where the **{{appP
 
 Ensure that the ports **18080, 11883, 15683-15688** are not used by any other application.
 
-Then, update the port configuration in the **docker-compose.yml** file:
+{% endcapture %}
 
-**sed -i 's/8080:8080/18080:8080/; s/1883:1883/11883:1883/; s/5683-5688:5683-5688\/udp/15683-15688:5683-5688\/udp/' docker-compose.yml**
+{% include templates/info-banner.md content=local-deployment %}
 
-{% endcapture %}{% include templates/info-banner.md content=local-deployment %}
+To update the port configuration in the **docker-compose.yml** file, run:
+
+```bash
+sed -i 's/8080:8080/18080:8080/; s/1883:1883/11883:1883/; s/5683-5688:5683-5688\/udp/15683-15688:5683-5688\/udp/' docker-compose.yml
+```
+{: .copy-code}
+
 

@@ -10,18 +10,9 @@ This guide demonstrates basic usage of popular ThingsBoard features. You will le
 - Define thresholds and trigger alarms
 - Set up notifications via email, SMS, mobile apps, or integrate with third-party services.
 
-For simplicity, we&#39;ll visualize data from a temperature sensor.
+For simplicity, we will visualize data from a temperature sensor.
 
-## Video tutorial
-
-Prefer visual learning? Check out our step-by-step getting started video tutorial:
-
-&nbsp;
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/iIuyG1KL-bw" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
+Prefer visual learning? Check out our step-by-step getting started [video tutorial](https://www.youtube.com/watch?v=iIuyG1KL-bw){:target="_blank"}.
 
 <hr>
 

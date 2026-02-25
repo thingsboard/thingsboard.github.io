@@ -1,7 +1,7 @@
 {% assign deviceName = "VIBit" %}
 {% assign deviceVendorLink = "https://machineastro.com/vibit/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
-{% assign officialManualLink = "/docs/device-library/resources/manuals/vibit.pdf" %}
+{% assign officialManualLink = "/docs/devices-library/resources/manuals/vibit.pdf" %}
 {% assign prerequisites = '
 - [Sensor user guide](' | append: officialManualLink | append: '){: target="_blank"}
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>

@@ -43,15 +43,15 @@ kubectl scale deployment trendz-app-deployment --replicas=1
 ### Step 4. Create flag-file
 
 Create a file “.upgradeversion” inside the directory by calling the command that must be executed by Trendz pod.
-Run the command:
+Run the command (replace 1.14.0 with Trendz version **from** which you are updating):
 ```text
 kubectl exec <POD_NAME> -- sh -c "echo '1.14.0' > /data/.upgradeversion"
-```   
+```
+
 You can get the pod name by the command:
 ```text
 kubectl get pods -l app=trendz-app-pod-label
-```   
-Use another version instead of '1.14.0 if another is needed
+```
 
 ### Step 5. Change image version
 

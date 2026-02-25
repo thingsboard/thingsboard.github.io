@@ -102,15 +102,7 @@ copy device access token from the device **DHT22**.
 <br>
 Use terminal for will send a message with temperature readings  = 99. Replace **$ACCESS_TOKEN** with actual device token.
 
-{% if docsPrefix == null %}
-```bash
-curl -v -X POST -d '{"temperature":99}' https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-```
-{: .copy-code}
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-demo-2.png)
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```bash
 curl -v -X POST -d '{"temperature":99}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
@@ -140,15 +132,7 @@ We will see that telemetry **was not** added in Device **Latest Telemetry** sect
 
 Now send a message with temperature readings = 24.
 
-{% if docsPrefix == null %}
-```bash
-curl -v -X POST -d '{"temperature":24}' https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
-```
-{: .copy-code}
-
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-demo-1.png)
-{% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```bash
 curl -v -X POST -d '{"temperature":24}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```

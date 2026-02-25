@@ -75,4 +75,6 @@ See [**TBMQ Architecture**](/docs/{{docsPrefix}}mqtt-broker/architecture) for mo
 
 ## Ready to get started?
 
-<p><a href="/docs/{{docsPrefix}}mqtt-broker/getting-started/" class="button">Hello World Application</a></p>
+Follow the getting started guide to learn the basics, or try TBMQ instantly on our public demo instance — no installation required.
+
+<p><a href="/docs/{{docsPrefix}}mqtt-broker/getting-started/" class="button">Hello World Application</a> <a target="_blank" href="https://demo.tbmq.io/signup" class="button">Try TBMQ Live</a></p>

@@ -1,4 +1,3 @@
-Now copy & paste the following script to the Decoder function section:
 
 ```javascript
 // Decode an uplink message from a buffer
@@ -10,7 +9,7 @@ Now copy & paste the following script to the Decoder function section:
 // decode payload to JSON
 var data = decodeToJson(payload);
 
-var deviceName = data.devId;
+var deviceName = data.?bizData.?devId != null ? data.?bizData.?devId : data.?devId;
 var deviceType = 'Tuya device';
 
 var telemetry = [];
@@ -27,27 +26,21 @@ if (data.status != null) {
         res[code] = value;
         telemetry.push(res);
     }
-    
+
 } else {
     telemetry = data;
 }
 
 var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-   attributes: {},
-   telemetry: telemetry
+    deviceName: deviceName,
+    deviceType: deviceType,
+    attributes: {},
+    telemetry: telemetry,
+    deviceName: deviceName,
 };
 
 /** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
 
 return result;
 ```
-{: .copy-code}
-
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-uplink-converter-tbel-pe.png)
-{% endif %}
-{% if docsPrefix contains "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-uplink-converter-tbel-pe.png)
-{% endif %}
+{:.copy-code.expandable-15}

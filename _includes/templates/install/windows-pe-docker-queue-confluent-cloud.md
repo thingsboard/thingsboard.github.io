@@ -7,7 +7,7 @@ notepad docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don’t forget to replace "CLUSTER_API_KEY", "CLUSTER_API_SECRET" and "localhost:9092" with your real Confluent Cloud bootstrap servers:
+Add the following lines to the yml file. Don’t forget to replace "CLUSTER_API_KEY", "CLUSTER_API_SECRET" and "localhost:9092" with your real Confluent Cloud bootstrap servers:
 
 ```yml
 services:
@@ -94,71 +94,12 @@ services:
       DEFAULT_PAGE_NAVIGATION_TIMEOUT: 120000
       DASHBOARD_IDLE_WAIT_TIME: 3000
       USE_NEW_PAGE_FOR_REPORT: true
-  trendz:
-    profiles: ['trendz']
-    restart: always
-    image: "thingsboard/trendz:{{ site.release.trendz_ver }}"
-    ports:
-      - "8888:8888"
-    environment:
-      TB_API_URL: http://thingsboard-pe:8080
-      SPRING_DATASOURCE_URL: jdbc:postgresql://trendz-postgres:5432/trendz
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: postgres
-      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: trendz-python-executor:8181
-      SCRIPT_ENGINE_TIMEOUT: 30000
-    volumes:
-      - trendz-conf:/trendz-config-files
-      - trendz-data:/data
-    depends_on:
-      - trendz-postgres
-  trendz-python-executor:
-    profiles: ['trendz']
-    restart: always
-    image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
-    ports:
-      - "8181:8181"
-    environment:
-      EXECUTOR_MANAGER: 1
-      EXECUTOR_SCRIPT_ENGINE: 6
-      THROTTLING_QUEUE_CAPACITY: 10
-      THROTTLING_THREAD_POOL_SIZE: 6
-      NETWORK_BUFFER_SIZE: 5242880
-    volumes:
-      - trendz-python-executor-conf:/python-executor-config-files
-      - trendz-python-executor-data:/data
-  trendz-postgres:
-    profiles: ['trendz']
-    restart: always
-    image: "postgres:16"
-    ports:
-      - "5433:5432"
-    environment:
-      POSTGRES_DB: trendz
-      POSTGRES_PASSWORD: postgres
-    volumes:
-      - trendz-postgres-data:/var/lib/postgresql/data
 volumes:
   postgres-data:
     name: tb-postgres-data
     driver: local
   license-data:
     name: tb-pe-license-data
-    driver: local
-  trendz-conf:
-    name: trendz-conf
-    driver: local
-  trendz-data:
-    name: trendz-data
-    driver: local
-  trendz-python-executor-conf:
-    name: trendz-python-executor-conf
-    driver: local
-  trendz-python-executor-data:
-    name: trendz-python-executor-data
-    driver: local
-  trendz-postgres-data:
-    name: trendz-postgres-data
     driver: local
 ```
 {: .copy-code.expandable-15}

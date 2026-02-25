@@ -3,7 +3,7 @@ services:
   trendz:
     profiles: ['trendz']
     restart: always
-    image: "thingsboard/trendz:1.14.0"
+    image: "thingsboard/trendz:{{ site.release.trendz_ver }}"
     ports:
       - "8888:8888"
     environment:
@@ -20,7 +20,7 @@ services:
   trendz-python-executor:
     profiles: ['trendz']
     restart: always
-    image: "thingsboard/trendz-python-executor:1.14.0"
+    image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
     ports:
       - "8181:8181"
     environment:

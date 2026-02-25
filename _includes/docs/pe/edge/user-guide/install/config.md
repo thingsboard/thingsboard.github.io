@@ -245,7 +245,7 @@
 			<td>cloud.rpc.host</td>
 			<td>CLOUD_RPC_HOST</td>
 			<td>localhost</td>
-			<td> Hostname or IP of the ThingsBoard platform, e.g. thingsboard.cloud, demo.thingsboard.io, X.X.X.X or localhost</td>
+			<td> Hostname or IP of the ThingsBoard platform, e.g. thingsboard.cloud, X.X.X.X or localhost</td>
 		</tr>
 		<tr>
 			<td>cloud.rpc.port</td>

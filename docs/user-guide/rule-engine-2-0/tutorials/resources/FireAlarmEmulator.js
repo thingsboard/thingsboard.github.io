@@ -1,7 +1,7 @@
 var mqtt = require('mqtt');
 
 // Don't forget to update accessToken constant with your device access token
-const thingsboardHost = "demo.thingsboard.io";
+const thingsboardHost = "mqtt.thingsboard.cloud";
 const ACCESS_TOKEN = "$ACCESS_TOKEN";
 
 // Initialization of mqtt client using Thingsboard host and device access token

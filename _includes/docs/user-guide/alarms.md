@@ -347,7 +347,7 @@ Authorized users may add, edit, and delete their comments. System comments are n
 
 ## Alarm management using REST API
 
-ThingsBoard provides REST API to manage and query alarms. See demo environment [Alarm REST API](https://demo.thingsboard.io/swagger-ui.html#/alarm-controller) and general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
+ThingsBoard provides REST API to manage and query alarms. See [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
 
 ## Next steps
 

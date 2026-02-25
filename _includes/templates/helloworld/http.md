@@ -30,10 +30,17 @@ curl -v -X POST -d "{\"temperature\": 25}" $THINGSBOARD_HOST_NAME_AND_PORT/api/v
 ```
 {: .copy-code}
 
-For example, $THINGSBOARD_HOST_NAME_AND_PORT reference live demo server, $ACCESS_TOKEN is ABC123:
+For example, $THINGSBOARD_HOST_NAME_AND_PORT reference ThingsBoard Cloud (North America), $ACCESS_TOKEN is ABC123:
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" https://demo.thingsboard.io/api/v1/ABC123/telemetry --header "Content-Type:application/json"
+echo -n '{"temperature": 25}' | coap post coap://thingsboard.cloud/api/v1/ABC123/telemetry
+```
+{: .copy-code}
+
+For example, $THINGSBOARD_HOST_NAME_AND_PORT reference ThingsBoard Cloud (Europe), $ACCESS_TOKEN is ABC123:
+
+```bash
+echo -n '{"temperature": 25}' | coap post coap://eu.thingsboard.cloud/api/v1/ABC123/telemetry
 ```
 {: .copy-code}
 

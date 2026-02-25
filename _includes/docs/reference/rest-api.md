@@ -1,8 +1,4 @@
-{% if docsPrefix == null %}
-{% assign hostName = "Community Edition demo server" %}
-{% assign host = "demo.thingsboard.io" %}
-{% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix == null or docsPrefix == "paas/" %}
 {% assign hostName = "ThingsBoard Cloud" %}
 {% assign host = "thingsboard.cloud" %}
 {% endif %}
@@ -42,17 +38,6 @@ http://$THINGSBOARD_HOST:PORT/swagger-ui.html
 
 {% if docsPrefix == "pe/" %}
 The easiest way to get your account is to use [ThingsBoard Cloud](https://{{hostName}}/signup){:target="_blank"} server.
-{% endif %}
-
-{% if docsPrefix == null %}
-For example, the {{ hostName }} provides its Swagger UI here:
-
-```text
-https://{{host}}/swagger-ui.html
-```
-{: .copy-code}
-
-See [Live Demo ThingsBoard](/docs/{{docsPrefix}}user-guide/live-demo/){:target="_blank"} page for more details how to get your account.
 {% endif %}
 
 {% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}

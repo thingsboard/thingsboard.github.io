@@ -25,17 +25,17 @@
 '
 %}
 
-{% assign exampleDashboardPath = "/docs/device-library/resources/dashboards/microcontrollers/basic/dashboard.json" %}
+{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/basic/dashboard.json" %}
 {% if boardLedCount == 3 %}
-{% assign exampleDashboardPath = "/docs/device-library/resources/dashboards/microcontrollers/rgb-led/dashboard.json" %}
+{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/rgb-led/dashboard.json" %}
 {% endif %}
 
 {% if hasDisplay == "true" %}
-{% assign exampleDashboardPath = "/docs/device-library/resources/dashboards/microcontrollers/display/dashboard.json" %}
+{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/display/dashboard.json" %}
 {% endif %}
 
 {% if hasCamera == "true" %}
-{% assign exampleDashboardPath = "/docs/device-library/resources/dashboards/microcontrollers/camera/dashboard.json" %}
+{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/camera/dashboard.json" %}
 {% endif %}
 
 {% if include.exampleDashboardPath %}
