@@ -143,7 +143,7 @@ Connect n8n to your ThingsBoard instance. There are two authentication options:
 1. Click **+** (top-left) → **Credentials**
 2. Search for **ThingsBoard API Key** → **Continue**
 3. Fill in the required fields:
-   - **Base URL**: Your instance URL (e.g., {% if docsPrefix == nil %}`https://demo.thingsboard.io`{% elsif docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% elsif docsPrefix == "pe/" or docsPrefix == "paas/" %}`https://thingsboard.cloud`{% endif %})
+   - **Base URL**: Your instance URL (e.g., {% if docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% else %}`https://thingsboard.cloud`{% endif %})
    - **Connect using**: API Key
    - **API Key**: Generated from your ThingsBoard instance. See [API Keys](/docs/{{docsPrefix}}user-guide/security/api-keys/){: target="_blank"} for details.
 4. Click **Save**
@@ -153,7 +153,7 @@ Connect n8n to your ThingsBoard instance. There are two authentication options:
 1. Click **+** (top-left) → **Credentials**
 2. Search for **ThingsBoard Username/Password** → **Continue**
 3. Fill in the required fields:
-   - **Base URL**: Your instance URL (e.g., {% if docsPrefix == nil %}`https://demo.thingsboard.io`{% elsif docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% elsif docsPrefix == "pe/" or docsPrefix == "paas/" %}`https://thingsboard.cloud`{% endif %})
+   - **Base URL**: Your instance URL (e.g., {% if docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% else %}`https://thingsboard.cloud`{% endif %})
    - **Connect using**: Username/Password
    - **Username**: Your email
    - **Password**: Your password
