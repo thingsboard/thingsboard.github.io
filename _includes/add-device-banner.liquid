@@ -1,8 +1,14 @@
+{% assign url_parts = page.url | split: '/' %}
+{% assign platform = url_parts[2] %}
+
+{% assign root_url = "/device-library/" | append: platform | append: "/" %}
+{% assign platform_url = "/device-library/?platform=" | append: platform %}
+
 <div class="add-device-banner">
     <div class="add-device-text">
         <span class="add-device-banner-title">Discover ready-to-connect hardware for your solution</span>
         <div class="add-device-buttons">
-            <a href="/device-library/" class="contact-us">Explore Device Library</a>
+            <a href="{{ platform_url }}" class="contact-us">Explore Device Library</a>
             <a href="/partners/hardware/" class="hardware-partners">Hardware Partners</a>
         </div>
     </div>
