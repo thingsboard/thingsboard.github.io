@@ -3,7 +3,7 @@ layout: device
 title: How to connect AgroSense Positioning Water Leak Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN
-vendor: AgroSense
+vendor: Makerfabs
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: positioning-water-leak-sensor.png
 converters20: true

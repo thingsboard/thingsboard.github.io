@@ -3,7 +3,7 @@ layout: device
 title: How to connect AgroSense Air Temperature and Humidity Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN
-vendor: AgroSense
+vendor: Makerfabs
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: air-temperature-and-humidity-sensor.png
 converters20: true
