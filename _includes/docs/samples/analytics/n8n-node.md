@@ -79,11 +79,11 @@ Before you begin, ensure you have the following:
 {% if docsPrefix == "paas/eu/" %}
 - **EU ThingsBoard Cloud**: Fully managed cloud service available at [eu.thingsboard.cloud](https://eu.thingsboard.cloud/signup){: target="_blank"}
 {% endif %}
-- **Authentication credentials**: Valid username and password with appropriate permissions on the ThingsBoard instance
+- **Authentication credentials**: API key or username and password (deprecated) with appropriate permissions on the ThingsBoard instance. See [API Keys](/docs/{{docsPrefix}}user-guide/security/api-keys/){: target="_blank"} for details on generating API keys.
 - **n8n instance**:
     - **Local n8n installation**: Self-hosted n8n on your infrastructure, or
     - **Docker-based n8n deployment**: n8n running in Docker containers
-    - **Cloud n8n**: The ThingsBoard node requires official verification to be listed in the n8n Cloud catalog.
+    - **Cloud n8n**: The ThingsBoard node is verified and available on [n8n Cloud](https://n8n.io/){: target="_blank"} — no manual installation required.
 
 ## Installation
 
@@ -139,18 +139,30 @@ N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
 
 ### Configure Credentials
 
-Connect n8n to your ThingsBoard instance:
+Connect n8n to your ThingsBoard instance. There are two authentication options:
+
+#### Option A: API Key
 
 1. Click **+** (top-left) → **Credentials**
-2. Search for **ThingsBoard API** → **Continue**
-3. Fill in your ThingsBoard details:
+2. Search for **ThingsBoard API Key** → **Continue**
+3. Fill in the required fields:
    - **Base URL**: Your instance URL (e.g., {% if docsPrefix == nil %}`https://demo.thingsboard.io`{% elsif docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% elsif docsPrefix == "pe/" or docsPrefix == "paas/" %}`https://thingsboard.cloud`{% endif %})
+   - **Connect using**: API Key
+   - **API Key**: Generated from your ThingsBoard instance. See [API Keys](/docs/{{docsPrefix}}user-guide/security/api-keys/){: target="_blank"} for details.
+4. Click **Save**
+
+#### Option B: Username/Password (Deprecated)
+
+1. Click **+** (top-left) → **Credentials**
+2. Search for **ThingsBoard Username/Password** → **Continue**
+3. Fill in the required fields:
+   - **Base URL**: Your instance URL (e.g., {% if docsPrefix == nil %}`https://demo.thingsboard.io`{% elsif docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% elsif docsPrefix == "pe/" or docsPrefix == "paas/" %}`https://thingsboard.cloud`{% endif %})
+   - **Connect using**: Username/Password
    - **Username**: Your email
    - **Password**: Your password
 4. Click **Save**
 
-These credentials work across all ThingsBoard nodes in your workflows.
-
+The credentials are encrypted and stored securely by n8n. You can reuse the same credentials across multiple ThingsBoard nodes in different workflows.
 
 {% assign n8nGuiInstallation = '
     ===
@@ -161,10 +173,10 @@ These credentials work across all ThingsBoard nodes in your workflows.
         title: Search and select **ThingsBoard API** to connect to and click **Continue**.
     ===
         image: /images/samples/analytics/n8n-node/credentials-configuration-3.png
-        title: Fill in the required fields:<br>- **Base URL** — your ThingsBoard instance URL (without a trailing slash)<br>- **Username** — your ThingsBoard account username<br>- **Password** — your ThingsBoard account password.<br>Click **Save** to store the credentials.
+        title: Fill in the **Base URL** — your ThingsBoard instance URL (without a trailing slash), and the **API Key** — generated from your ThingsBoard instance. Click **Save** to store the credentials.
     ===
         image: /images/samples/analytics/n8n-node/credentials-configuration-4.png
-        title: The credentials are encrypted and stored securely by n8n. You can reuse the same credentials across multiple ThingsBoard nodes in different workflows.
+        title: The credentials are saved and the connection is tested successfully. You can reuse the same credentials across multiple ThingsBoard nodes in different workflows.
 '
 %}
 
