@@ -3,7 +3,7 @@ layout: device
 title: How to connect KNX IP Multi IO 580 to ThingsBoard?
 category: Other devices
 connectivity: KNX
-vendor: Weinzierl
+vendor: Weinzierl Engineering
 deviceImageFileName: knx-ip-multi-io-580.png
 docsPrefix: pe/
 hardwareType: Other devices

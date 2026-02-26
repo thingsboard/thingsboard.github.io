@@ -76,6 +76,58 @@ filterCollection:
       - Healthcare
       - Energy Management
       - Agriculture
+  - label: Vendor
+    filters:
+      - Aaeon
+      - ACE Automation
+      - Adapteva
+      - Arduino
+      - Arwin Technology Limited
+      - ASUS
+      - Banana Pi
+      - BeagleBoard
+      - 96Boards
+      - Dusun
+      - Efento
+      - Elastel
+      - Espressif
+      - EXXN
+      - Ezurio
+      - Fusion DAQ
+      - Google
+      - Hardkernel
+      - HiLetGo
+      - Huawei
+      - ioThings
+      - IOTRouter
+      - Lansitec
+      - LattePanda
+      - Lenovo
+      - MachineAstro Pvt Ltd
+      - Makerfabs
+      - M5Stack
+      - MClimate
+      - Milesight
+      - MOKO SMART
+      - Nano Sensorics
+      - NCD
+      - NodeMCU
+      - NVIDIA
+      - Orange Pi
+      - PINE64
+      - Qualcomm
+      - Radionode
+      - Radxa
+      - Raspberry
+      - Seeed Studio
+      - Sixfab
+      - SolidRun
+      - Teltonika
+      - Temco Controls
+      - UDOO
+      - uPesy
+      - Weinzierl Engineering
+      - WeMos
   - label: Use cases
     filters:
       - Smart energy

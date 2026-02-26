@@ -4,7 +4,7 @@ title: How to connect ESP-EYE to ThingsBoard?
 category: Microcontrollers
 chip: ESP32
 connectivity: [HTTP, MQTT, WIFI, Bluetooth]
-vendor: M5Stack
+vendor: Espressif
 deviceImageFileName: esp-eye.png
 hardwareType: Microcontrollers
 industry: Security
