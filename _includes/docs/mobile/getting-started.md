@@ -478,7 +478,7 @@ fvm flutter build apk --dart-define-from-file configs.json
 ```
 
 **Option 2**: Manually set the global Flutter version **[Not recommended]**
-F
+
 If you only work on one project, you can manually set the global Flutter version:
 
 ```bash
