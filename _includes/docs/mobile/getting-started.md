@@ -382,7 +382,7 @@ if the **{{appProject}}** project is currently running, please stop it and proce
 To confirm that Firebase has been integrated properly, run your application. 
 
 ```
-flutter run
+flutter run --dart-define-from-file configs.json
 ```
 {:.copy-code}
 
@@ -473,12 +473,12 @@ Usage: Use Flutter commands prefixed with `fvm`, like this:
 Examples:
 
 ```bash
-fvm flutter run
-fvm flutter build apk
+fvm flutter run --dart-define-from-file configs.json
+fvm flutter build apk --dart-define-from-file configs.json
 ```
 
 **Option 2**: Manually set the global Flutter version **[Not recommended]**
-
+F
 If you only work on one project, you can manually set the global Flutter version:
 
 ```bash
