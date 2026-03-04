@@ -1,6 +1,6 @@
 {% capture patch_restrictions %}
-If you are upgrading from **{{minorVersion}}**, you **MUST** run the script below. However, if you are upgrading from version **{{mainteneceVersion}}**,
-**DO NOT** run the upgrade script; proceed directly to starting the Edge service.
+If you are upgrading from **{{minorVersion}}**, you **MUST** run the script below.{% if showPatchWarning %} However, if you are upgrading from version **{{mainteneceVersion}}**,
+**DO NOT** run the upgrade script; proceed directly to starting the Edge service.{% endif %}
 {% endcapture -%}
 
 {% include templates/warn-banner.md content=patch_restrictions %}
@@ -21,14 +21,7 @@ C:\tb-edge>upgrade.bat
 {: .copy-code}
 **Note:** The upgrade script must be run with Administrator privileges.
 
-{% elsif docsPrefix == "pe/edge/" and page.url contains 'docker' %}
-Upgrade the **ThingsBoard Edge** service:
-```bash
-docker compose run mytbedge upgrade-tb-edge-pe.sh
-```
-{: .copy-code}
-
-{% elsif docsPrefix == "edge/" and page.url contains 'docker' %}
+{% elsif page.url contains 'docker' %}
 Upgrade the **ThingsBoard Edge** service:
 ```bash
 docker compose run mytbedge upgrade-tb-edge.sh

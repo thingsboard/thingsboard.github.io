@@ -35,7 +35,7 @@ services:
       - "host.docker.internal:host-gateway"
   postgres:
     restart: always
-    image: "postgres:15"
+    image: "postgres:16"
     ports:
       - "5432"
     environment:

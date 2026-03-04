@@ -1852,6 +1852,9 @@
 "/docs/paas/eu/mobile-center/mobile-center/":
   url: "/docs/paas/eu/mobile-center/mobile-center/"
   redirect_from: []
+"/docs/paas/eu/reference/circuitpython-client-sdk/":
+  url: "/docs/paas/eu/reference/circuitpython-client-sdk/"
+  redirect_from: []
 "/docs/paas/eu/reference/coap-api/":
   url: "/docs/paas/eu/reference/coap-api/"
   redirect_from:
@@ -1871,6 +1874,9 @@
   redirect_from: []
 "/docs/paas/eu/reference/mcp-server/":
   url: "/docs/paas/eu/reference/mcp-server/"
+  redirect_from: []
+"/docs/paas/eu/reference/micropython-client-sdk/":
+  url: "/docs/paas/eu/reference/micropython-client-sdk/"
   redirect_from: []
 "/docs/paas/eu/reference/mqtt-api/":
   url: "/docs/paas/eu/reference/mqtt-api/"
@@ -1898,6 +1904,9 @@
   url: "/docs/paas/eu/reference/snmp-api/"
   redirect_from:
   - "/docs/paas/eu/reference/snmp-api"
+"/docs/paas/eu/samples/abeeway/tracker/":
+  url: "/docs/paas/eu/samples/abeeway/tracker/"
+  redirect_from: []
 "/docs/paas/eu/samples/analytics/ai-models/":
   url: "/docs/paas/eu/samples/analytics/ai-models/"
   redirect_from: []
@@ -2417,6 +2426,9 @@
 "/docs/paas/mobile-center/mobile-center/":
   url: "/docs/paas/mobile-center/mobile-center/"
   redirect_from: []
+"/docs/paas/reference/circuitpython-client-sdk/":
+  url: "/docs/paas/reference/circuitpython-client-sdk/"
+  redirect_from: []
 "/docs/paas/reference/coap-api/":
   url: "/docs/paas/reference/coap-api/"
   redirect_from:
@@ -2436,6 +2448,9 @@
   redirect_from: []
 "/docs/paas/reference/mcp-server/":
   url: "/docs/paas/reference/mcp-server/"
+  redirect_from: []
+"/docs/paas/reference/micropython-client-sdk/":
+  url: "/docs/paas/reference/micropython-client-sdk/"
   redirect_from: []
 "/docs/paas/reference/mqtt-api/":
   url: "/docs/paas/reference/mqtt-api/"
@@ -2463,6 +2478,9 @@
   url: "/docs/paas/reference/snmp-api/"
   redirect_from:
   - "/docs/paas/reference/snmp-api"
+"/docs/paas/samples/abeeway/tracker/":
+  url: "/docs/paas/samples/abeeway/tracker/"
+  redirect_from: []
 "/docs/paas/samples/analytics/ai-models/":
   url: "/docs/paas/samples/analytics/ai-models/"
   redirect_from: []
@@ -3883,6 +3901,9 @@
   url: "/docs/pe/mqtt-broker/white-labeling/"
   redirect_from:
   - "/docs/mqtt-broker/white-labeling/"
+"/docs/pe/reference/circuitpython-client-sdk/":
+  url: "/docs/pe/reference/circuitpython-client-sdk/"
+  redirect_from: []
 "/docs/pe/reference/coap-api/":
   url: "/docs/pe/reference/coap-api/"
   redirect_from:
@@ -3905,6 +3926,9 @@
   redirect_from: []
 "/docs/pe/reference/mcp-server/":
   url: "/docs/pe/reference/mcp-server/"
+  redirect_from: []
+"/docs/pe/reference/micropython-client-sdk/":
+  url: "/docs/pe/reference/micropython-client-sdk/"
   redirect_from: []
 "/docs/pe/reference/monolithic/":
   url: "/docs/pe/reference/monolithic/"
@@ -4001,6 +4025,9 @@
   redirect_from: []
 "/docs/pe/releases/roadmap/":
   url: "/docs/pe/releases/roadmap/"
+  redirect_from: []
+"/docs/pe/samples/abeeway/tracker/":
+  url: "/docs/pe/samples/abeeway/tracker/"
   redirect_from: []
 "/docs/pe/samples/analytics/ai-models/":
   url: "/docs/pe/samples/analytics/ai-models/"
@@ -4674,6 +4701,9 @@
   url: "/docs/reference/architecture/"
   redirect_from:
   - "/docs/user-guide/rule-engine-2-0/architecture/"
+"/docs/reference/circuitpython-client-sdk/":
+  url: "/docs/reference/circuitpython-client-sdk/"
+  redirect_from: []
 "/docs/reference/coap-api/":
   url: "/docs/reference/coap-api/"
   redirect_from:

@@ -34,10 +34,10 @@ Upload to AWS S3
 
 {% assign quickExample = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/quick-example.png
+        image: /images/samples/analytics/n8n-node/quick-example.png
         title: The complete workflow showing all nodes: Schedule trigger → Code (time calc) → Get device → Get timeseries → Convert to file → AWS S3 upload.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/quick-example-result.png
+        image: /images/samples/analytics/n8n-node/quick-example-result.png
         title: Successful execution result showing the telemetry data exported to S3 as a JSON file.
 '
 %}
@@ -76,11 +76,11 @@ Before you begin, ensure you have the following:
 {% if docsPrefix == "paas/eu/" %}
 - **EU ThingsBoard Cloud**: Fully managed cloud service available at [eu.thingsboard.cloud](https://eu.thingsboard.cloud/signup){: target="_blank"}
 {% endif %}
-- **Authentication credentials**: Valid username and password with appropriate permissions on the ThingsBoard instance
+- **Authentication credentials**: API key or username and password (deprecated) with appropriate permissions on the ThingsBoard instance. See [API Keys](/docs/{{docsPrefix}}user-guide/security/api-keys/){: target="_blank"} for details on generating API keys.
 - **n8n instance**:
     - **Local n8n installation**: Self-hosted n8n on your infrastructure, or
     - **Docker-based n8n deployment**: n8n running in Docker containers
-    - **Cloud n8n**: The ThingsBoard node requires official verification to be listed in the n8n Cloud catalog.
+    - **Cloud n8n**: The ThingsBoard node is verified and available on [n8n Cloud](https://n8n.io/){: target="_blank"} — no manual installation required.
 
 ## Installation
 
@@ -103,16 +103,16 @@ Before you start, make sure n8n is already running. Check the [official n8n docs
 
 {% assign n8nGuiInstallation = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/n8n-gui-installation-1.png
+        image: /images/samples/analytics/n8n-node/n8n-gui-installation-1.png
         title: Open **n8n** in your browser. In the bottom-left corner, click the **three dots** button and select **Settings** from the dropdown menu.
    ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/n8n-gui-installation-2.png
+        image: /images/samples/analytics/n8n-node/n8n-gui-installation-2.png
         title: Go to the **Community Nodes** tab and click **Install a community node**.
    ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/n8n-gui-installation-3.png
+        image: /images/samples/analytics/n8n-node/n8n-gui-installation-3.png
         title: Enter the package name: `@thingsboard/n8n-nodes-thingsboard` and click **Install**.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/n8n-gui-installation-4.png
+        image: /images/samples/analytics/n8n-node/n8n-gui-installation-4.png
         title: Wait for the installation to complete. Then, refresh the browser page.
 '
 %}
@@ -136,32 +136,44 @@ N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
 
 ### Configure Credentials
 
-Connect n8n to your ThingsBoard instance:
+Connect n8n to your ThingsBoard instance. There are two authentication options:
+
+#### Option A: API Key
 
 1. Click **+** (top-left) → **Credentials**
-2. Search for **ThingsBoard API** → **Continue**
-3. Fill in your ThingsBoard details:
+2. Search for **ThingsBoard API Key** → **Continue**
+3. Fill in the required fields:
    - **Base URL**: Your instance URL (e.g., {% if docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% else %}`https://thingsboard.cloud`{% endif %})
+   - **Connect using**: API Key
+   - **API Key**: Generated from your ThingsBoard instance. See [API Keys](/docs/{{docsPrefix}}user-guide/security/api-keys/){: target="_blank"} for details.
+4. Click **Save**
+
+#### Option B: Username/Password (Deprecated)
+
+1. Click **+** (top-left) → **Credentials**
+2. Search for **ThingsBoard Username/Password** → **Continue**
+3. Fill in the required fields:
+   - **Base URL**: Your instance URL (e.g., {% if docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% else %}`https://thingsboard.cloud`{% endif %})
+   - **Connect using**: Username/Password
    - **Username**: Your email
    - **Password**: Your password
 4. Click **Save**
 
-These credentials work across all ThingsBoard nodes in your workflows.
-
+The credentials are encrypted and stored securely by n8n. You can reuse the same credentials across multiple ThingsBoard nodes in different workflows.
 
 {% assign n8nGuiInstallation = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/credentials-configuration-1.png
+        image: /images/samples/analytics/n8n-node/credentials-configuration-1.png
         title: In the top-left corner, click **+** and select **Credentials** from the dropdown menu.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/credentials-configuration-2.png
+        image: /images/samples/analytics/n8n-node/credentials-configuration-2.png
         title: Search and select **ThingsBoard API** to connect to and click **Continue**.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/credentials-configuration-3.png
-        title: Fill in the required fields:<br>- **Base URL** — your ThingsBoard instance URL (without a trailing slash)<br>- **Username** — your ThingsBoard account username<br>- **Password** — your ThingsBoard account password.<br>Click **Save** to store the credentials.
+        image: /images/samples/analytics/n8n-node/credentials-configuration-3.png
+        title: Fill in the **Base URL** — your ThingsBoard instance URL (without a trailing slash), and the **API Key** — generated from your ThingsBoard instance. Click **Save** to store the credentials.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/credentials-configuration-4.png
-        title: The credentials are encrypted and stored securely by n8n. You can reuse the same credentials across multiple ThingsBoard nodes in different workflows.
+        image: /images/samples/analytics/n8n-node/credentials-configuration-4.png
+        title: The credentials are saved and the connection is tested successfully. You can reuse the same credentials across multiple ThingsBoard nodes in different workflows.
 '
 %}
 
@@ -179,16 +191,16 @@ After installing the node and restarting n8n, verify the ThingsBoard node is ava
 
 {% assign installationVerification = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/installation-verification-1.png
+        image: /images/samples/analytics/n8n-node/installation-verification-1.png
         title: In the top-right corner of the interface, click Create Workflow.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/installation-verification-2.png
+        image: /images/samples/analytics/n8n-node/installation-verification-2.png
         title: On the workflow canvas, click the **+** button to open the list of available nodes.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/installation-verification-3.png
+        image: /images/samples/analytics/n8n-node/installation-verification-3.png
         title: In the node search field, type **ThingsBoard**. The **ThingsBoard node** should appear in the search results. Click on it.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/installation-verification-4.png
+        image: /images/samples/analytics/n8n-node/installation-verification-4.png
         title: A list of available **actions** will be displayed.
 '
 %}
@@ -207,7 +219,7 @@ After installing the node and restarting n8n, verify the ThingsBoard node is ava
 
 {% assign n8nUsageNode = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/thingsboard-n8n-node.png
+        image: /images/samples/analytics/n8n-node/thingsboard-n8n-node.png
         title: A ThingsBoard Node and a ThingsBoard Tool for AI Agent.
 '
 %}
@@ -265,16 +277,16 @@ This section provides practical examples demonstrating the three usage patterns 
 
 {% assign example1 = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-1-1-0.png
+        image: /images/samples/analytics/n8n-node/example-1-1-0.png
         title: Create a new workflow with AI Agent node. Choose your AI Model (Gemini, Anthropic, ChatGPT, etc.) and configure memory settings.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-1-1-1.png
+        image: /images/samples/analytics/n8n-node/example-1-1-1.png
         title: Select ThingsBoard from the Tools list. Add **Get devices** and **Get timeseries** operations.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/ai-agent-define-parameter.png
+        image: /images/samples/analytics/n8n-node/ai-agent-define-parameter.png
         title: For tools with required or optional fields, the AI model intelligently determines parameter values based on conversation context. The model decides which values to pass automatically.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-1-2.png
+        image: /images/samples/analytics/n8n-node/example-1-2.png
         title: Open the chat interface and write your natural language query.
 '
 %}
@@ -325,10 +337,10 @@ Start by creating a new workflow and adding a Schedule Trigger to run the export
 
 {% assign example21 = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-2-1.png
+        image: /images/samples/analytics/n8n-node/example-2-1.png
         title: Create a new workflow and select **Schedule Trigger** to run the export daily.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-2-2.png
+        image: /images/samples/analytics/n8n-node/example-2-2.png
         title: Configure the trigger to run every day at 00:00 UTC (midnight).
 '
 %}
@@ -360,10 +372,10 @@ return [{ startTsMs, endTsMs }];  // Pass to next node
 
 {% assign example22 = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-2-3.png
+        image: /images/samples/analytics/n8n-node/example-2-3.png
         title: Add a **Code** node after the Schedule Trigger.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-2-4.png
+        image: /images/samples/analytics/n8n-node/example-2-4.png
         title: Paste the time calculation code and click **Execute node** to test it.
 '
 %}
@@ -385,10 +397,10 @@ Now retrieve the device you want to export telemetry for.
 
 {% assign example23 = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-2-5.png
+        image: /images/samples/analytics/n8n-node/example-2-5.png
         title: Add ThingsBoard node and select **Get a device by name**.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-2-6.png
+        image: /images/samples/analytics/n8n-node/example-2-6.png
         title: Enter the device name and execute to retrieve the device object.
 '
 %}
@@ -415,10 +427,10 @@ Fetch the telemetry data using the time range from the Code node.
 
 {% assign example24 = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-2-7.png
+        image: /images/samples/analytics/n8n-node/example-2-7.png
         title: Add ThingsBoard **Get timeseries** node.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-2-8.png
+        image: /images/samples/analytics/n8n-node/example-2-8.png
         title: Configure with device ID, entity type, and time range from previous nodes. Execute to fetch telemetry data.
 '
 %}
@@ -443,10 +455,10 @@ Finally, upload the file to your S3 bucket.
 
 {% assign example26 = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-2-10.png
+        image: /images/samples/analytics/n8n-node/example-2-10.png
         title: Add **AWS S3** node and configure upload settings with your bucket name and credentials.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-2-11.png
+        image: /images/samples/analytics/n8n-node/example-2-11.png
         title: Execute the workflow to see the file successfully uploaded to S3.
 '
 %}
@@ -520,16 +532,16 @@ We'll use a manual trigger to simulate what would normally be a webhook from you
 
 {% assign example31 = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-1-1.png
+        image: /images/samples/analytics/n8n-node/example-3-1-1.png
         title: Click **Add first step…** and select **Trigger manually**.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-1-2.png
+        image: /images/samples/analytics/n8n-node/example-3-1-2.png
         title: Click on the trigger node to open its configuration.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-1-3.png
+        image: /images/samples/analytics/n8n-node/example-3-1-3.png
         title: In the top-right corner, click the **pencil** icon.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-1-4.png
+        image: /images/samples/analytics/n8n-node/example-3-1-4.png
         title: Paste the following JSON into the input field. **Save** the changes and **back to canvas**.
 '
 %}
@@ -555,22 +567,22 @@ Now we need to look up the device by name to get its ID (since most ThingsBoard 
 
 {% assign example32 = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-1.png
+        image: /images/samples/analytics/n8n-node/example-3-2-1.png
         title: Click the **+** button to the right of the **trigger node**.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-2.png
+        image: /images/samples/analytics/n8n-node/example-3-2-2.png
         title: Find and select **ThingsBoard**
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-3.png
+        image: /images/samples/analytics/n8n-node/example-3-2-3.png
         title: Choose **Get a device by name** action.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-4.png
+        image: /images/samples/analytics/n8n-node/example-3-2-4.png
         title: Drag **deviceName** from the **INPUT** panel (left side) into the **Name** field. This creates a dynamic reference to the trigger input.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-5.png
+        image: /images/samples/analytics/n8n-node/example-3-2-5.png
         title: Click **Execute step**
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-6.png
+        image: /images/samples/analytics/n8n-node/example-3-2-6.png
         title: The node returns the full device object, including:<br>- device ID<br>- <span class="code-light">type</span><br>- additional metadata<br>**Back to canvas**.
 '
 %}
@@ -596,10 +608,10 @@ Before we can fetch telemetry, we need to know what keys are available (temperat
 
 {% assign example33 = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-3-1.png
+        image: /images/samples/analytics/n8n-node/example-3-3-1.png
         title: - Click the **+** button to the right of the **Get a device by name** node.<br>- Select **ThingsBoard**<br>- Choose **Get timeseries keys** action.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-3-2.png
+        image: /images/samples/analytics/n8n-node/example-3-3-2.png
         title: - Set parameters dynamically:<br>- Entity ID<br>- Entity Type<br>You can drag these values directly from the **INPUT** panel (left side).<br>- Click **Execute step**<br>- **Back to canvas**
 '
 %}
@@ -630,10 +642,10 @@ Finally, get the actual sensor readings using the keys we just discovered.
 
 {% assign example34 = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-4-1.png
+        image: /images/samples/analytics/n8n-node/example-3-4-1.png
         title: Click the **+** button to the right of the trigger node.<br>Select **ThingsBoard**.<br>Choose **Get timeseries action**.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-4-2.png
+        image: /images/samples/analytics/n8n-node/example-3-4-2.png
         title: Configure parameters:<br>- **Entity ID**<br>- **Entity Type**<br>- **Keys (Comma Separated)**<br>You can drag these values directly from the **INPUT** panel (left side).<br>- Click **Execute step**.<br>- **Back to canvas**.
 '
 %}
@@ -656,13 +668,13 @@ You just built a completely reusable workflow. Change the input from "Refrigerat
 
 {% assign ruleChainUseCase = '
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-final-1.png
+        image: /images/samples/analytics/n8n-node/example-3-final-1.png
         title: Accepts a device name as input. Finds the corresponding device in ThingsBoard.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-final-2.png
+        image: /images/samples/analytics/n8n-node/example-3-final-2.png
         title: Discovers available telemetry keys.
     ===
-        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-final-3.png
+        image: /images/samples/analytics/n8n-node/example-3-final-3.png
         title: Retrieves telemetry values for the specified time window.
 '
 %}

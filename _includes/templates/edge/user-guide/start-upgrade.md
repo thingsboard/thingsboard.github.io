@@ -1,8 +1,3 @@
-{% capture edge-previousVersion %}
-These steps are applicable for Edge {{previousVersion}} version.
-{% endcapture %}
-{% include templates/info-banner.md content=edge-previousVersion %}
-
 Set the terminal in the directory which contains the "docker-compose.yml" file, and run the following command to stop and remove the currently running TB Edge container (if it's still running):
 ```
 docker compose stop mytbedge
