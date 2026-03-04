@@ -41,8 +41,8 @@ toc:
     new: true
     section:
       - title: Python Client SDK
-        path: /docs/reference/python-client-sdk
+        path: /docs/paas/eu/reference/python-client-sdk/
       - title: MicroPython Client SDK
-        path: /docs/reference/micropython-client-sdk/
+        path: /docs/paas/eu/reference/micropython-client-sdk/
       - title: CircuitPython Client SDK
-        path: /docs/reference/circuitpython-client-sdk/
+        path: /docs/paas/eu/reference/circuitpython-client-sdk/

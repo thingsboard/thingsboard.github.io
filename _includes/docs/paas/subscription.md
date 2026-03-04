@@ -231,6 +231,15 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>1000</td>
           <td>Total number of SMS sent</td>
       </tr>
+      <tr>
+          <td>AI credits</td>
+          <td>500K</td>
+          <td>2M</td>
+          <td>4M</td>
+          <td>8M</td>
+          <td>16M</td>
+          <td>Total number of AI credits</td>
+      </tr> 
   </tbody>
 </table>
 
@@ -655,6 +664,11 @@ These packs allow you to extend the operational capacity of your solution, ensur
       <td>SMS Pack</td>
       <td>+100 SMS sent per month</td>
       <td>{{cloudCurrency}}15</td>
+    </tr>
+    <tr>
+      <td>AI Credits Pack</td>
+      <td>+1M AI credits</td>
+      <td>{{cloudCurrency}}5</td>
     </tr>
   </tbody>
 </table>

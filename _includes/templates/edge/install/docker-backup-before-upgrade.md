@@ -1,17 +1,16 @@
-### Prepare for upgrading ThingsBoard Edge
+## Backup before upgrading
 
-Back up your ThingsBoard Edge data before upgrading.
+{% capture check-space %}
+Make sure your system has enough free space to store the backup.
+{% endcapture %}
+{% include templates/info-banner.md content=check-space %}
 
-#### Stop the Edge container
+Go to your **docker-compose.yml** directory and stop the container:
 
-Navigate to your **docker-compose.yml** directory and stop the container:
-
-```
+```bash
 docker compose stop
 ```
 {: .copy-code}
-
-#### Backup the database volume
 
 Before upgrading, make a **backup copy** of the database volume:
 
@@ -22,6 +21,6 @@ docker run --rm -v tb-edge-postgres-data:/source -v tb-edge-postgres-data-backup
 
 This copies all contents from **tb-edge-postgres-data** to **tb-edge-postgres-data-backup**.
 
-#### Restore the backup (if needed)
+### Restore the backup (if needed)
 
 {% include templates/edge/user-guide/backup/docker-restore-backup.md %}

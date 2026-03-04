@@ -592,6 +592,23 @@ defaultActivePricingSection: thingsboard-pe-options
                                 </div>
                             </div>
                         </div>
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>AI Credits Pack</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="5">$5</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">AI credits</span>
+                                    <span class="detail-value">+1M AI credits</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

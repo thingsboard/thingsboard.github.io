@@ -68,25 +68,26 @@ client.disconnect()
 **TBDeviceMqttClient** provides access to Device MQTT APIs of ThingsBoard platform.  
 It allows publishing telemetry and attributes updates, subscribing to attribute changes, sending and receiving RPC commands, etc.    
 
-### Subscribtion to attributes
+### Subscription to attributes
 
 If you need to receive shared attributes updates, you can use the code like the following:  
 
 ```python
-from time import sleep
+import time
 from tb_device_mqtt import TBDeviceMqttClient
 
 
-def callback(result):
+def on_attributes_change(result, *args):
     print(result)
+
 
 client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 client.connect()
-client.subscribe_to_attribute("uploadFrequency", callback)
-client.subscribe_to_all_attributes(callback)
-while True:
-    sleep(1)
+client.subscribe_to_attribute("uploadFrequency", on_attributes_change)
+client.subscribe_to_all_attributes(on_attributes_change)
 
+while True:
+    time.sleep(1)
 ```
 {:.copy-code}
 
@@ -149,27 +150,30 @@ The following example connects to the ThingsBoard local instance and waits for R
 When RPC request is received, the client will send the response to ThingsBoard with data from machine with client for device with the name **Test Device A1**.  
 
 ```python
-from psutil import cpu_percent, virtual_memory
-from time import sleep
+import time
+
 from tb_device_mqtt import TBDeviceMqttClient
 
+try:
+    import psutil
+except ImportError:
+    print("Please install psutil using 'pip install psutil' command")
+    exit(1)
 
 # dependently of request method we send different data back
-def on_server_side_rpc_request(client, request_id, request_body):
+def on_server_side_rpc_request(request_id, request_body):
     print(request_id, request_body)
     if request_body["method"] == "getCPULoad":
-        client.send_rpc_reply(request_id, {"CPU percent": cpu_percent()})
+        client.send_rpc_reply(request_id, {"CPU percent": psutil.cpu_percent()})
     elif request_body["method"] == "getMemoryUsage":
-        client.send_rpc_reply(request_id, {"Memory": virtual_memory().percent})
+        client.send_rpc_reply(request_id, {"Memory": psutil.virtual_memory().percent})
 
 client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
 client.connect()
 
-
 while True:
-    sleep(1)
-
+    time.sleep(1)
 ```
 {:.copy-code}
 
@@ -232,12 +236,18 @@ The following example will connect to the ThingsBoard local instance and wait fo
 When RPC request will be received, client will send response to ThingsBoard with data for device with name **Test Device A1**.  
 
 ```python
-from time import sleep
-from psutil import cpu_percent, virtual_memory
+import time
+
 from tb_gateway_mqtt import TBGatewayMqttClient
 
+try:
+    import psutil
+except ImportError:
+    print("Please install psutil using 'pip install psutil' command")
+    exit(1)
 
-def rpc_request_response(client, request_id, request_body):
+
+def rpc_request_response(request_id, request_body):
     # request body contains id, method and other parameters
     print(request_body)
     method = request_body["data"]["method"]
@@ -245,11 +255,12 @@ def rpc_request_response(client, request_id, request_body):
     req_id = request_body["data"]["id"]
     # dependently of request method we send different data back
     if method == 'getCPULoad':
-        gateway.gw_send_rpc_reply(device, req_id, {"CPU load": cpu_percent()})
+        gateway.gw_send_rpc_reply(device, req_id, {"CPU load": psutil.cpu_percent()})
     elif method == 'getMemoryLoad':
-        gateway.gw_send_rpc_reply(device, req_id, {"Memory": virtual_memory().percent})
+        gateway.gw_send_rpc_reply(device, req_id, {"Memory": psutil.virtual_memory().percent})
     else:
         print('Unknown method: ' + method)
+
 
 gateway = TBGatewayMqttClient("127.0.0.1", username="TEST_GATEWAY_TOKEN")
 gateway.connect()
@@ -257,10 +268,8 @@ gateway.connect()
 gateway.gw_set_server_side_rpc_request_handler(rpc_request_response)
 # without device connection it is impossible to get any messages
 gateway.gw_connect_device("Test Device A1")
-
 while True:
-    sleep(1)
-
+    time.sleep(1)
 ```
 {:.copy-code}
 

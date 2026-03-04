@@ -68,7 +68,7 @@ services:
       - mytb-edge-logs:/var/log/tb-edge
   postgres:
     restart: always
-    image: "postgres:15"
+    image: "postgres:16"
     ports:
       - "5432"
     environment:
