@@ -143,7 +143,7 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" data-category="Smart energy">
+        <div class="client-card" data-category="Industry 4.0">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/crai.webp');">
                 <a class="content" href="/case-studies/crai">
                     <img style="height: 65px" class="logo" src="/images/case-studies/crai.svg" title="CRAI Automatización" alt="CRAI Automatización logo">

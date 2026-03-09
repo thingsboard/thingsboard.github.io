@@ -1,9 +1,9 @@
 ---
 layout: case-studies
-title: Smart Farming Platform by Supertech Agroline and ThingsBoard
+title: "CRAI IIoT Case Study: Remote Control & Data Acquisition"
 notitle: "true"
 customTitle: "true"
-description: Discover how Supertech Agroline, a leading Romanian AgTech innovator, leveraged ThingsBoard to build a scalable, real-time Agricultural IoT platform for post-harvest monitoring and smart automation.
+description: See how CRAI unified generators, pumps, VFDs and PLCs on ThingsBoard—real-time dashboards, remote actions, RBAC, and event-driven alerts across sites.
 ---
 
 <div class="case-study-page-wrapper">
