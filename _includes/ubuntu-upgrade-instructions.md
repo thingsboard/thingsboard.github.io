@@ -41,8 +41,8 @@
 {%- assign prev_major = prev_parts[0] -%}
 {%- assign prev_minor = prev_parts[1] -%}
 
-{% if patch_status == "true" %}
-### Upgrading {{ platform }} to latest {{ base_version }} ({{ current_version }})
+{% if include.is_latest_patch == "true" %}
+### Upgrading {{ platform }} to latest {{ curr_major }}.{{ curr_minor }}.x ({{ current_version }})
 {% else %}
 ### Upgrading {{ platform }} to {{ current_version }}
 {% endif %}
@@ -71,7 +71,7 @@
 {% capture difference %}
 **NOTE:**
 {% if curr_major > "4" or (curr_major == "4" and curr_minor >= "2") %}
-These upgrade steps are applicable for ThingsBoard version {{ prev_version }}{% if patch_status == "true" %} or any {{ base_version }} patch{% endif %}.
+{% if include.is_latest_patch == "true" %}{% if prev_version contains ".x" %}{% assign prev_version_plus = prev_version | replace: ".x", "+" %}{% else %}{% assign prev_version_plus = prev_version | append: "+" %}{% endif %}These upgrade steps are applicable for ThingsBoard version {{ prev_version_plus }}.{% else %}These upgrade steps are applicable for ThingsBoard version {{ prev_version }}{% if patch_status == "true" %} or any {{ base_version }} patch{% endif %}.{% endif %}
 In order to upgrade to {{ current_version_with_platform | upcase }} you need to [**upgrade to {{ prev_version }} first**]({{ prev_version_href }}).
 {% else %}
 These upgrade steps are applicable for ThingsBoard version {{ prev_version_label }}{% if applicable_versions %}{% assign versions = applicable_versions | split: "," %}{% for v in versions %} and ThingsBoard version {{ v | strip }}{% endfor %}{% endif %}.
@@ -90,6 +90,8 @@ In order to upgrade to {{ current_version_with_platform | upcase }} you need to 
 {% else %}
 {% include templates/info-banner.md content=difference %}
 {% endif %}
+
+{% include templates/install/upgrade-version-warning.md version=include.raw_version known_vulnerabilities=include.known_vulnerabilities %}
 
 {%- if curr_major_n > 4 -%}
   {%- if docsPrefix == "pe/" -%}

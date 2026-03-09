@@ -5,7 +5,7 @@
   patch: "true"
   x: "true"
 4.3.0.1:
-  vulnerable: "true"
+  known-vulnerabilities: "true"
   upgradable-from: "4.2.1.x"
   release-date: Feb 3 2026
   release-date-edge: Feb 4, 2026
@@ -26,7 +26,7 @@
   patch: "true"
   x: "true"
 4.2.1.2:
-  vulnerable: "true"
+  known-vulnerabilities: "true"
   upgradable-from: "4.2.0"
   release-date: Feb 3 2026
   release-date-edge: Feb 4, 2026
