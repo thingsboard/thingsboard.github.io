@@ -28,6 +28,9 @@
                 {% if item[1].vulnerable == 'true' %}
                     {% continue %}
                 {% endif %}
+                {% if item[1].known-vulnerabilities == 'true' %}
+                    {% continue %}
+                {% endif %}
 
                 {%- comment -%}Filter versions based on edition{%- endcomment -%}
                 {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
@@ -119,15 +122,24 @@
                         {%- if docsPrefix == "trendz/" -%}
                             <div class="releases-table-content-item">Up to v{{ item[1].tbVersion }}</div>
                         {%- else -%}
+                            {%- if item[1].patch == "true" -%}
+                                {%- if item[1].upgradable-from contains ".x" -%}
+                                    {%- assign upgradable_display = item[1].upgradable-from | replace: ".x", "+" -%}
+                                {%- else -%}
+                                    {%- assign upgradable_display = item[1].upgradable-from | append: "+" -%}
+                                {%- endif -%}
+                            {%- else -%}
+                                {%- assign upgradable_display = item[1].upgradable-from -%}
+                            {%- endif -%}
                             <div class="releases-table-content-item">
                                 {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
                                     {% if item[1].upgradable-from-edge %}
                                         v{{ item[1].upgradable-from-edge }}
                                     {% else %}
-                                        v{{ item[1].upgradable-from }}
+                                        v{{ upgradable_display }}
                                     {% endif %}
                                 {% else %}
-                                    v{{ item[1].upgradable-from }}
+                                    v{{ upgradable_display }}
                                 {% endif %}
                                 {%- if docsPrefix == "pe/" -%}PE
                                 {%- elsif docsPrefix == "edge/" -%}Edge

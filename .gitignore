@@ -7,3 +7,4 @@ CNAME
 .idea/**
 **/*.iml
 _config.yml
+/.claude/
