@@ -4,6 +4,8 @@
   lts: "true"
   patch: "true"
   x: "true"
+  windows:
+    zip: "true"
 4.3.0.1:
   known-vulnerabilities: "true"
   upgradable-from: "4.2.1.x"
@@ -25,6 +27,8 @@
   lts: "true"
   patch: "true"
   x: "true"
+  windows:
+    zip: "true"
 4.2.1.2:
   known-vulnerabilities: "true"
   upgradable-from: "4.2.0"
