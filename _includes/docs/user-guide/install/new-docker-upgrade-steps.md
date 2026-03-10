@@ -1,6 +1,5 @@
 {% assign current_version = include.version %}
 {% assign previous_version = include.previous_version %}
-{%- assign family = include.family -%}
 
 {% capture update_note %}
 {% assign base_version_parts = base_version | split: "." %}
