@@ -143,6 +143,16 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
+        <div class="client-card" data-category="Industry 4.0">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/crai.webp');">
+                <a class="content" href="/case-studies/crai">
+                    <img style="height: 65px" class="logo" src="https://img.thingsboard.io/case-studies/crai.svg" title="CRAI Automatización" alt="CRAI Automatización logo">
+                    <p>IoT in industrial automation</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about IoT in industrial automation</span>
+                </a>
+            </div>
+        </div>
         <div class="client-card" data-category="Smart city">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/iioote.webp');">
                 <a class="content" href="/case-studies/iioote">

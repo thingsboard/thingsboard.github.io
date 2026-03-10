@@ -6,6 +6,7 @@
 {% assign family_major = family_parts[0] %}
 {% assign family_minor = family_parts[1] %}
 
+{% assign latest_patch_found = false %}
 {% for item in upgarde_instructions_data %}
 {% if item[1].vulnerable == 'true' %}
     {% continue %}
@@ -34,10 +35,15 @@
 
 {% assign base_version = display_version %}
 {% assign patch_status = "false" %}
+{% assign is_latest_patch = "false" %}
 
 {% if item[1].patch == "true" %}
     {% assign patch_status = "true" %}
     {% assign base_version = parts[0] | append: "." | append: parts[1] | append: "." | append: parts[2] %}
+    {% if latest_patch_found == false %}
+        {% assign is_latest_patch = "true" %}
+        {% assign latest_patch_found = true %}
+    {% endif %}
 {% endif %}
 
 {% assign prev_version = data.upgradable-from %}
@@ -51,15 +57,15 @@
 {% endif %}
 
 {% if os == "windows" %}
-{% include windows-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade zip=data.windows.zip applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% include windows-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade zip=data.windows.zip applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label known_vulnerabilities=data.known-vulnerabilities raw_version=version is_latest_patch=is_latest_patch %}
 {% elsif os == "ubuntu" %}
-{% include ubuntu-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% include ubuntu-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label known_vulnerabilities=data.known-vulnerabilities raw_version=version is_latest_patch=is_latest_patch %}
 {% elsif os == "centos" %}
-{% include centos-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% include centos-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label known_vulnerabilities=data.known-vulnerabilities raw_version=version is_latest_patch=is_latest_patch %}
 {% elsif os == "docker" %}
-{% include docker-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions %}
+{% include docker-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions known_vulnerabilities=data.known-vulnerabilities raw_version=version is_latest_patch=is_latest_patch %}
 {% elsif os == "docker-compose" %}
-{% include docker-compose-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions %}
+{% include docker-compose-upgrade-instructions.md family=family version=display_version patch_status=patch_status base_version=base_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions known_vulnerabilities=data.known-vulnerabilities raw_version=version is_latest_patch=is_latest_patch %}
 {% endif %}
 {% endif %}
 
