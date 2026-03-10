@@ -72,6 +72,18 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["Thailand"],
+    "name": "Appomax",
+    "contact": {
+      "href": "info@appomax.ai"
+    },
+    "site": {
+      "href": "appomax.co",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Romania"],
     "name": "Archibus Solution Center-Romania SRL",
@@ -560,6 +572,18 @@
     },
     "site": {
       "href": "logicontech.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Switzerland", "Spain", "Hungary"],
+    "name": "Loriot",
+    "contact": {
+      "href": "sales@loriot.io"
+    },
+    "site": {
+      "href": "loriot.io",
       "target": "_blank"
     }
   },
