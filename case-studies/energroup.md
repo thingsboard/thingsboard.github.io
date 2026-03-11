@@ -1,9 +1,9 @@
 ---
 layout: case-studies
-title: EnerGroup
+title: "EnerGroup + ThingsBoard: Wireless Room Heating Control"
 notitle: "true"
 customTitle: "true"
-description: EnerGroup
+description: Discover how EnerGroup improved comfort and operational visibility with wireless heating control, heat pump supervision, and secure dashboards on ThingsBoard.
 ---
 
 <div class="case-study-page-wrapper">
