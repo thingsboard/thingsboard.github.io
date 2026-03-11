@@ -153,6 +153,16 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
+        <div class="client-card" data-category="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/energroup.webp');">
+                <a class="content" href="/case-studies/energroup">
+                    <img style="height: 65px" class="logo" src="/images/case-studies/energroup.svg" title="EnerGroup" alt="EnerGroup logo">
+                    <p>Smart building energy management</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about Smart building energy management</span>
+                </a>
+            </div>
+        </div>
         <div class="client-card" data-category="Smart city">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iioote.webp');">
                 <a class="content" href="/case-studies/iioote">
