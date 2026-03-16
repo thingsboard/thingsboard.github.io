@@ -204,6 +204,6 @@ description: See how CRAI unified generators, pumps, VFDs and PLCs on ThingsBoar
             </div>
         </div>
         <p>Real stories, real impact — share your experience with ThingsBoard!</p>
-        <a id="CaseStudy_SuessCo_ContactUs" target="_blank" href="/docs/contact-us/" class="button gtm_button">Contact us <span class="visually-hidden">to discuss your case</span></a>
+        <a id="CaseStudy_Crai_ContactUs" target="_blank" href="/docs/contact-us/" class="button gtm_button">Contact us <span class="visually-hidden">to discuss your case</span></a>
     </section>
 </div>
