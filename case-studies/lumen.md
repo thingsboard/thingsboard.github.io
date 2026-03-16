@@ -12,15 +12,15 @@ description: "See how Lumen digitalized multi-site factories on ThingsBoard: 1,0
             <div class="text">
                 <p class="category">INDUSTRIAL IOT</p>
                 <h1>Industrial IoT in manufacturing: how Lumen Energy Solutions digitalized large-scale factories with ThingsBoard</h1>
-                <div class="image inner" style="background-image: url('/images/case-studies/lumen.webp')">
-                    <img src="/images/case-studies/lumen.svg" title="Lumen Energy Solutions" alt="Lumen Energy Solutions logo" width="200" height="38">
+                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/lumen.webp')">
+                    <img src="https://img.thingsboard.io/case-studies/lumen.svg" title="Lumen Energy Solutions" alt="Lumen Energy Solutions logo" width="200" height="38">
                 </div>
                 <p>Lumen Energy Solutions is an Industrial IoT and energy digitalization company specializing in smart monitoring, energy management, and industrial automation solutions across Central America.</p>
                 <p>Operating in the intersection of IoT, energy analytics, and industrial digital transformation, Lumen designs and deploys end-to-end solutions that integrate sensors, gateways, connectivity, and software platforms into scalable and secure ecosystems.</p>
                 <p>With in-house development capabilities and deep expertise in energy management systems, Lumen delivers customized industrial monitoring solutions for manufacturing, commercial, and infrastructure sectors.</p>
             </div>
-            <div class="image large" style="background-image: url('/images/case-studies/lumen.webp')">
-                <img src="/images/case-studies/lumen.svg" title="Lumen Energy Solutions" alt="Lumen Energy Solutions logo" width="200" height="38">
+            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/lumen.webp')">
+                <img src="https://img.thingsboard.io/case-studies/lumen.svg" title="Lumen Energy Solutions" alt="Lumen Energy Solutions logo" width="200" height="38">
             </div>
         </div>
     </section>
@@ -43,7 +43,7 @@ description: "See how Lumen digitalized multi-site factories on ThingsBoard: 1,0
         </div>
     </section>
     <section class="quote-with-mark fill-background">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
+        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>"ThingsBoard has been a key platform for delivering scalable Industrial IoT solutions. Its ability to integrate heterogeneous devices, process telemetry in real time, and support both cloud and on-premise deployments allows us to meet strict industrial IT requirements while delivering powerful analytics and monitoring capabilities to our clients"</p>
             <h2>Jinsu Chang, CEO, Lumen Energy Solutions</h2>
@@ -115,7 +115,7 @@ description: "See how Lumen digitalized multi-site factories on ThingsBoard: 1,0
                 <p>Over 1,000 IoT sensors and industrial energy meters were integrated into a centralized ThingsBoard platform. Data from production lines, substations, environmental systems, and utility infrastructure is collected in real time through secure gateways and standardized protocols.</p>
                 <p>The platform enables unified visualization and historical analytics, transforming raw telemetry into actionable operational insights.</p>
             </div>
-            <img src="/images/case-studies/lumen-1.webp" title="Large-scale device integration" alt="Large-scale device integration" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/lumen-1.webp" title="Large-scale device integration" alt="Large-scale device integration" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
@@ -130,14 +130,14 @@ description: "See how Lumen digitalized multi-site factories on ThingsBoard: 1,0
                 </ul>
                 <p>Role-based dashboards ensure that plant managers, maintenance teams, and executives access relevant data aligned with their responsibilities.</p>
             </div>
-            <img src="/images/case-studies/lumen-2.webp" title="Personalized dashboards for multiple industrial applications" alt="Personalized dashboards for multiple industrial applications" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/lumen-2.webp" title="Personalized dashboards for multiple industrial applications" alt="Personalized dashboards for multiple industrial applications" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Hybrid deployment: cloud & on-premise architecture</h3>
                 <p>Due to strict IT and cybersecurity requirements, the client required flexible deployment options. ThingsBoard’s support for both Cloud and On-Premise configurations allowed Lumen to design a secure architecture aligned with corporate IT policies. This hybrid capability was a key factor in successfully delivering and scaling the project.</p>
             </div>
-            <img src="/images/case-studies/lumen-3.webp" title="Hybrid deployment: cloud & on-premise architecture" alt="Hybrid deployment: cloud & on-premise architecture" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/lumen-3.webp" title="Hybrid deployment: cloud & on-premise architecture" alt="Hybrid deployment: cloud & on-premise architecture" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
@@ -145,7 +145,7 @@ description: "See how Lumen digitalized multi-site factories on ThingsBoard: 1,0
                 <p>The platform has been operating continuously for more than four years, supporting high-frequency telemetry across thousands of data points without performance degradation.</p>
                 <p>The system architecture allows seamless onboarding of new devices, additional production areas, and future expansion plans.</p>
             </div>
-            <img src="/images/case-studies/lumen-4.webp" title="Long-term stability in a 24/7 industrial environment" alt="Long-term stability in a 24/7 industrial environment" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/lumen-4.webp" title="Long-term stability in a 24/7 industrial environment" alt="Long-term stability in a 24/7 industrial environment" width="450" height="240">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -157,8 +157,8 @@ description: "See how Lumen digitalized multi-site factories on ThingsBoard: 1,0
                 <p>ThingsBoard’s rule engine enables automated alerts and anomaly detection for abnormal energy usage, equipment behavior, and environmental deviations. This strengthens preventive and predictive maintenance strategies.</p>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/alarms-table.webp" title="ThingsBoard alarm table widget" alt="ThingsBoard alarm table widget" width="388" height="388">
-                <img src="/images/case-studies/notification-widget.webp" title="ThingsBoard notification widget" alt="ThingsBoard notification widget" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/alarms-table.webp" title="ThingsBoard alarm table widget" alt="ThingsBoard alarm table widget" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="ThingsBoard notification widget" alt="ThingsBoard notification widget" width="388" height="388">
             </div>
         </div>
         <div class="block">
@@ -167,8 +167,8 @@ description: "See how Lumen digitalized multi-site factories on ThingsBoard: 1,0
                 <p>The platform’s asset hierarchy structure allows Lumen to model factories, production lines, machines, and utility systems in a structured and scalable way. This is essential for managing multi-site industrial operations efficiently. </p>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/maps-widgets.webp" title="ThingsBoard map widgets" alt="ThingsBoard map widgets" width="388" height="388">
-                <img src="/images/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/maps-widgets.webp" title="ThingsBoard map widgets" alt="ThingsBoard map widgets" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -177,8 +177,8 @@ description: "See how Lumen digitalized multi-site factories on ThingsBoard: 1,0
                 <p>Highly customized dashboards transform complex telemetry into intuitive visualizations. Executives gain high-level KPI visibility, while technical teams access detailed operational metrics.</p>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/time-series-chart.webp" title="ThingsBoard time series chart widget" alt="ThingsBoard time series chart widget" width="776" height="776">
-                <img src="/images/case-studies/donut-widget.webp" title="ThingsBoard doughnut widget" alt="ThingsBoard doughnut widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="ThingsBoard time series chart widget" alt="ThingsBoard time series chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/donut-widget.webp" title="ThingsBoard doughnut widget" alt="ThingsBoard doughnut widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -187,8 +187,8 @@ description: "See how Lumen digitalized multi-site factories on ThingsBoard: 1,0
                 <p>ThingsBoard’s secure device authentication, encrypted communication, and role-based access control meet strict industrial IT standards. The platform handles large-scale industrial workloads while maintaining stability and responsiveness.</p>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/roles-table.webp" title="ThingsBoard roles table" alt="ThingsBoard roles table" width="776" height="776">
-                <img src="/images/case-studies/hierarchy-widget.webp" title="ThingsBoard hierarchy table" alt="ThingsBoard hierarchy table" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/roles-table.webp" title="ThingsBoard roles table" alt="ThingsBoard roles table" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hierarchy-widget.webp" title="ThingsBoard hierarchy table" alt="ThingsBoard hierarchy table" width="388" height="388">
             </div>
         </div>
         <div class="block">
@@ -206,18 +206,18 @@ description: "See how Lumen digitalized multi-site factories on ThingsBoard: 1,0
                 <p>This case demonstrates how Lumen Energy Solutions leverages ThingsBoard to build secure, scalable, and high-performance industrial IoT applications in demanding manufacturing environments.</p>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/thingsboard.webp" title="ThingsBoard logo" alt="ThingsBoard logo" width="776" height="776">
-                <img src="/images/case-studies/lumen-color.webp" title="Lumen logo" alt="Lumen logo" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/thingsboard.webp" title="ThingsBoard logo" alt="ThingsBoard logo" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/lumen-color.webp" title="Lumen logo" alt="Lumen logo" width="388" height="388">
             </div>
         </div>
         {% include services-banner.liquid %}
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img src="/images/case-studies/lumen.svg" title="Lumen" alt="Lumen logo" width="200" height="38" style="width: 280px">
+                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/lumen.svg" title="Lumen" alt="Lumen logo" width="200" height="38" style="width: 280px">
                 </div>
             </div>
         </div>
