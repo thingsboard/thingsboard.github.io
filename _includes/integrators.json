@@ -48,18 +48,6 @@
     }
   },
   {
-    "type": ["Middle East"],
-    "country": ["United Arab Emirates"],
-    "name": "Agreefy FZE",
-    "contact": {
-      "href": "vinu@agreefy.com"
-    },
-    "site": {
-      "href": "agreefy.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Africa"],
     "country": ["South Africa"],
     "name": "AppBuilder (Pty.) Ltd.",
