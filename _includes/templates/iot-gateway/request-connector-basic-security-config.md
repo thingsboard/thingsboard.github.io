@@ -18,3 +18,14 @@ Security section in configuration file will look like this:
       "password": "password"
     }
 ```
+
+Since ThingsBoard IoT Gateway version 3.8.3, environment variables can be specified for username and password fields. 
+This allows you to avoid hardcoding sensitive information in the configuration file and provide it securely at runtime.
+
+To use ENV variables for username and password, you can set them in your environment or define them in 
+your `docker-compose.yml` file.
+
+The following ENV variables are used for Basic authentication configuration:
+
+- `REQUEST_BASIC_USERNAME`
+- `REQUEST_BASIC_PASSWORD`
