@@ -29,3 +29,6 @@ The following ENV variables are used for Basic authentication configuration:
 
 - `REQUEST_BASIC_USERNAME`
 - `REQUEST_BASIC_PASSWORD`
+
+Make attention that if you specify ENV variables for username and password, the values from the configuration file 
+will be ignored, and the connector will use the values from the ENV variables instead.
