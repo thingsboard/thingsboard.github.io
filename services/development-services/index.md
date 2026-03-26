@@ -3,6 +3,10 @@ layout: development-services
 title: "Custom IoT Development  |  3X Faster Delivery & Fixed Cost"
 notitle: "true"
 description: "Get your IoT development services 3X faster and 2X lower TCO. We guarantee high-quality, scalable solutions with deep IoT expertise. Ensure project predictability."
+redirect_from:
+  - /docs/services/development-services/
+  - /iot-solutions/
+  - /services/development-services/customers-full-reviews/
 ---
 
 <section class="hero light-text">
