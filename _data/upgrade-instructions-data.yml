@@ -1,4 +1,13 @@
+4.3.1.1:
+  upgradable-from: "4.2.1.x"
+  release-date: Mar 31 2026
+  lts: "true"
+  patch: "true"
+  x: "true"
+  windows:
+    zip: "true"
 4.3.1:
+  vulnerable: "true"
   upgradable-from: "4.2.1.x"
   release-date: Mar 10 2026
   lts: "true"
