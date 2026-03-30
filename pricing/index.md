@@ -1065,7 +1065,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             <li>Your financial model favors a one-time capital investment (CAPEX) over recurring expenses.</li>
                             <li>Your business needs a unique, tailored solution, not a one-size-fits-all subscription.</li>
                         </ul>
-                        <a class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=ThingsBoard%20Products&message=I%20am%20interested%20in%20Self-managed%20perpetual%20license">
+                        <a class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=ThingsBoard%20Products">
                             Contact us
                             <span class="visually-hidden">to get your perpetual license</span>
                         </a>
@@ -1092,7 +1092,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                     </div>
                     <h3>Let us help you identify the best option for your business</h3>
-                    <a class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=ThingsBoard%20Products&message=I%20am%20interested%20in%20Self-managed%20perpetual%20license">
+                    <a class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=ThingsBoard%20Products">
                         Contact us
                         <span class="visually-hidden">to get your perpetual license</span>
                     </a>
@@ -1195,7 +1195,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                     </div>
                     <h3>Let us help you identify the best option for your business</h3>
-                    <a class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=ThingsBoard%20Products&message=I%20am%20interested%20in%20Self-managed%20perpetual%20license">
+                    <a class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=ThingsBoard%20Products">
                         Contact us
                         <span class="visually-hidden">to get your perpetual license</span>
                     </a>

@@ -83,19 +83,19 @@ release:
   branch: release-4.3
   branch_major_next: master
   # In short form (e.g. 4.3)
-  ver: 4.3.1
+  ver: 4.3.1.1
   # In short form (e.g. 4.3)
-  ce_ver: 4.3.1
+  ce_ver: 4.3.1.1
   # In short form (e.g. v4.3)
-  ce_tag: v4.3.1
+  ce_tag: v4.3.1.1
   # In full form (e.g. 4.3.0, 4.3.0.1)
-  ce_full_ver: 4.3.1
+  ce_full_ver: 4.3.1.1
   # In short form (e.g. 4.3pe)
-  pe_ver: 4.3.1pe
+  pe_ver: 4.3.1.1pe
   # In full form (e.g. 4.3.0PE, 4.3.0.1PE)
-  pe_full_ver: 4.3.1PE
+  pe_full_ver: 4.3.1.1PE
   # In short form (e.g. v4.3)
-  wd_examples_commit: v4.3.1
+  wd_examples_commit: v4.3.1.1
   # >>> EDGE
   edge_ver: 4.3.0.1
   edge_tag: v4.3.0.1
