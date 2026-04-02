@@ -93,13 +93,13 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" data-category="Smart energy">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('/images/case-studies/oxi.webp');">
-                <a class="content" href="/case-studies/oxi">
-                    <img class="logo" src="/images/case-studies/oxi.svg" title="OXI Trade" alt="OXI Trade logo">
-                    <p>Empowering alternative energy: how OXI TRADE streamlined IoT infrastructure with ThingsBoard</p>
+        <div class="client-card" data-category="Smart IoT solution">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/lumen.webp');">
+                <a class="content" href="/case-studies/lumen">
+                    <img class="logo" src="/images/case-studies/lumen.svg" title="Lumen Energy Solutions" alt="Lumen Energy Solutions logo">
+                    <p>Industrial IoT in manufacturing: how Lumen Energy Solutions digitalized large-scale factories with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about how OXI TRADE streamlined IoT infrastructure with ThingsBoard</span>
+                    <span class="visually-hidden">about Industrial IoT in manufacturing: how lumen energy solutions digitalized large-scale factories with ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -120,6 +120,26 @@ itemsPerPage: "9"
                     <p>Scaling renewable energy intelligence: how Energenix uses ThingsBoard to monitor and optimize 120+ MW of solar power assets</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about how Energenix uses ThingsBoard to monitor and optimize 120+ MW of solar power assets</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" data-category="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/energroup.webp');">
+                <a class="content" href="/case-studies/energroup">
+                    <img style="height: 65px" class="logo" src="/images/case-studies/energroup.svg" title="EnerGroup" alt="EnerGroup logo">
+                    <p>Smart building energy management: how EnerGroup enabled wireless room-level heating control with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about Smart building energy management: how EnerGroup enabled wireless room-level heating control with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" data-category="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('/images/case-studies/oxi.webp');">
+                <a class="content" href="/case-studies/oxi">
+                    <img class="logo" src="/images/case-studies/oxi.svg" title="OXI Trade" alt="OXI Trade logo">
+                    <p>Empowering alternative energy: how OXI TRADE streamlined IoT infrastructure with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how OXI TRADE streamlined IoT infrastructure with ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -147,7 +167,7 @@ itemsPerPage: "9"
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/crai.webp');">
                 <a class="content" href="/case-studies/crai">
                     <img style="height: 65px" class="logo" src="/images/case-studies/crai.svg" title="CRAI Automatización" alt="CRAI Automatización logo">
-                    <p>IoT in industrial automation</p>
+                    <p>IoT in industrial automation: how CRAI enables remote control and data acquisition with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about IoT in industrial automation</span>
                 </a>
