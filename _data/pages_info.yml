@@ -2015,6 +2015,9 @@
 "/docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
   redirect_from: []
+"/docs/paas/eu/user-guide/ai-solution-creator/":
+  url: "/docs/paas/eu/user-guide/ai-solution-creator/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/alarm-rules/":
   url: "/docs/paas/eu/user-guide/alarm-rules/"
   redirect_from: []
@@ -2588,6 +2591,9 @@
   redirect_from: []
 "/docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/paas/user-guide/ai-solution-creator/":
+  url: "/docs/paas/user-guide/ai-solution-creator/"
   redirect_from: []
 "/docs/paas/user-guide/alarm-rules/":
   url: "/docs/paas/user-guide/alarm-rules/"
@@ -4129,6 +4135,9 @@
 "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
   redirect_from: []
+"/docs/pe/user-guide/ai-solution-creator/":
+  url: "/docs/pe/user-guide/ai-solution-creator/"
+  redirect_from: []
 "/docs/pe/user-guide/alarm-rules/":
   url: "/docs/pe/user-guide/alarm-rules/"
   redirect_from: []
@@ -5410,6 +5419,9 @@
   redirect_from: []
 "/docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/user-guide/ai-solution-creator/":
+  url: "/docs/user-guide/ai-solution-creator/"
   redirect_from: []
 "/docs/user-guide/alarm-rules/":
   url: "/docs/user-guide/alarm-rules/"
