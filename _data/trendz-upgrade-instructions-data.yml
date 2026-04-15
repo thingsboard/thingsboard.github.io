@@ -1,3 +1,9 @@
+1.15.1:
+  upgradable-from: "1.7.0"
+  tbVersion: "4.3.0"
+  release-date: Apr 15 2026
+  lts: "true"
+  x: "true"
 1.15.0.4:
   upgradable-from: "1.7.0"
   tbVersion: "4.3.0"
