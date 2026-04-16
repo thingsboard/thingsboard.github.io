@@ -16,7 +16,7 @@ with the key `textmessage`, so it would be easy to verify later whether the valu
   {
     "key": "textmessage",
     "type": "path",   
-    "path": "${Root\\.Objects\\.DemoDeviceInfo\\.TextMessage}"
+    "value": "${Root\\.Objects\\.DemoDeviceInfo\\.TextMessage}"
   }
 ]
 ```

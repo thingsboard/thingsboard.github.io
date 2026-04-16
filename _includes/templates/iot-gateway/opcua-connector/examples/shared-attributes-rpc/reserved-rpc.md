@@ -14,7 +14,8 @@ telemetry will look like this:
 "timeseries": [
   {
     "key": "relay",
-    "path": "${ns=3;i=1012}"
+    "type": "identifier",
+    "value": "${ns=3;i=1012}"
   }
 ]
 ```

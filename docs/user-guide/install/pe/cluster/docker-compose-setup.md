@@ -127,6 +127,7 @@ You can read about Trendz Analytics [here](/docs/trendz/what-is-trendz/).
 
 ### Install and run ThingsBoard
 {% assign dockerComposeFileLocation = "-f $TB_SETUP/docker-compose.yml " %}
+{% assign peEdition = true %}
 {% include templates/install/docker/docker-compose-setup-running.md %}
 
 ## Post-installation steps

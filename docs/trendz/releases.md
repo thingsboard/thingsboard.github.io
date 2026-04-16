@@ -8,6 +8,34 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.15.1 (April 15, 2026)
+
+**New features:**
+
+* Added anomaly creation wizard.
+* Added anomaly detection summary page.
+* Added anomaly model result page.
+* Improved design in anomaly model interface.
+* Improved anomaly model accuracy.
+* Added automatic topology synchronization mechanism (Lite topology discovery).
+* Improved export to dashboard with alias.
+* Added support for dashboard grouping interval in the date picker within Trendz views.
+* Added an export button to Trendz view action buttons.
+
+**Bug fixes:**
+
+* Fixed date formatting in exported data.
+
+## v1.15.0.5 (February 26, 2026)
+
+**Bug fixes:**
+
+* Fixed row click behavior when no items are found in table views.
+* Fixed chart refresh after saving anomaly views.
+* Fixed date export functionality.
+* Fixed owner entity loading.
+* Minor Metric Explorer UI fixes.
+
 ## v1.15.0 (January 20, 2026)
 
 **Improvements:**

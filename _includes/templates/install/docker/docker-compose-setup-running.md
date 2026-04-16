@@ -9,6 +9,15 @@ Where:
 
 - `--loadDemo` - optional argument. Whether to load additional demo data.
 
+{% if peEdition %}
+Execute the following command to install Trendz Analytics if you have set `TRENDZ_ENABLED` to `true` in the `.env` file:
+
+```bash
+./docker-install-trendz.sh
+```
+{: .copy-code}
+
+{% endif %}
 Execute the following command to start services:
 
 ```bash
