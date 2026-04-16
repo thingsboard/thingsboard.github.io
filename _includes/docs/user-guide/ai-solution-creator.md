@@ -13,7 +13,7 @@ This feature is available in [ThingsBoard Cloud](/docs/paas/user-guide/ai-soluti
 Describe what you need, review the proposed configuration, and get a ready-to-explore foundational solution in minutes.
 Think of it as working with a ThingsBoard solution architect who asks the right questions, understands your goals, and builds a solution tailored to your use case.
 
-![image](/images/user-guide/ai-solution-creator/creator.png)
+![image](https://img.thingsboard.io/user-guide/ai-solution-creator/creator.png)
 
 ## How it works
 
