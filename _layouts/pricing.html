@@ -233,6 +233,10 @@
             const headerId = $solutionButtonElement.attr("data-description-toggle");
             $('.pricing-div .pricing-section'+id).addClass("active");
             $('.pricing-content-header .pricing-content-description'+headerId).addClass("active");
+            const header = $solutionButtonElement.closest('.pricing-content').find('.pricing-content-header')[0];
+            if (header) {
+                header.style.marginBottom = (sectionId === 'pe-perpetual' || sectionId === 'tbmq-pe-perpetual') ? '16px' : '';
+            }
             switchFaqContainer(sectionId);
         }
     }
@@ -472,7 +476,7 @@
     }
 
     function generateAddOnsCards(currency = 'usd') {
-        document.querySelectorAll('.add-ons').forEach(elem => {
+        document.querySelectorAll('.add-ons[data-product-name]').forEach(elem => {
             const product = elem.dataset.productName;
             const addOnsPricing = {{ addons }};
 

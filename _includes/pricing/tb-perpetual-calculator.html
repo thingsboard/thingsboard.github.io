@@ -15,7 +15,7 @@
                             <label for="perp-devices" class="label">
                                 Number of Devices
                                 <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
-                                    <span class="tooltip-text">The total number of IoT devices that will connect to ThingsBoard</span>
+                                    <span class="tooltip-text">Total number of IoT devices that will connect to your ThingsBoard platform. Your license covers 1000 devices; a one-time fee applies to additional devices</span>
                                 </span>
                             </label>
                             <input id="perp-devices" type="number" value="1000" min="1000" class="input input-right">
@@ -37,10 +37,10 @@
                                 <h4>
                                     Production Instances
                                     <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
-                                        <span class="tooltip-text">Production instances handle your live data and real-time operations</span>
+                                        <span class="tooltip-text">Dedicated compute instances for your production environment. Add instances to enable clustering and High Availability (HA).</span>
                                     </span>
                                 </h4>
-                                <p id="perpProdDescription">1 Production Instance included. Add a 2nd instance for high availability (HA) to prevent downtime.</p>
+                                <p id="perpProdDescription">1 included. Add a 2nd for high availability (HA). For every 5,000 extra devices, one production instance is added at no charge.</p>
                             </div>
                             <div class="stepper-control" id="perpProdStepper">
                                 <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease production instances">−</button>
@@ -53,10 +53,10 @@
                                 <h4>
                                     Development Instances
                                     <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
-                                        <span class="tooltip-text">Development instances for testing and CI/CD workflows</span>
+                                        <span class="tooltip-text">Compute instances used for development, testing, and CI/CD workflows.</span>
                                     </span>
                                 </h4>
-                                <p id="perpDevDescription">Add dedicated instances for your dev, test, and CI/CD workflows.</p>
+                                <p id="perpDevDescription">Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.</p>
                             </div>
                             <div class="stepper-control" id="perpDevStepper">
                                 <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease development instances">−</button>
@@ -70,7 +70,7 @@
                             Add-ons
                             <span class="tooltip">
                                 <img src="/images/pricing/info-icon.svg" alt="Hint icon">
-                                <span class="tooltip-text">Optional features to enhance your perpetual license</span>
+                                <span class="tooltip-text">Optional modules to extend platform functionality.</span>
                             </span>
                         </p>
                         <div class="add-ons-grid three-items">
@@ -80,11 +80,11 @@
                                         Edge Computing
                                         <span class="tooltip">
                                             <img src="/images/pricing/info-icon.svg" alt="Hint icon">
-                                            <span class="tooltip-text">Deploy edge computing instances for local data processing</span>
+                                            <span class="tooltip-text">Deploy and manage Edge instances at remote locations for offline operation, local processing, and automatic cloud sync.</span>
                                         </span>
                                     </span>
                                     <label class="toggle-switch">
-                                        <input type="checkbox" id="perpEdgeToggle" checked>
+                                        <input type="checkbox" id="perpEdgeToggle">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
@@ -104,7 +104,7 @@
                                         Trendz Analytics
                                         <span class="tooltip">
                                             <img src="/images/pricing/info-icon.svg" alt="Hint icon">
-                                            <span class="tooltip-text">Advanced analytics and visualization for your IoT data</span>
+                                            <span class="tooltip-text">Advanced analytics for data insights, custom dashboards, and trend discovery.</span>
                                         </span>
                                     </span>
                                     <label class="toggle-switch">
@@ -120,7 +120,7 @@
                                         Offline Mode
                                         <span class="tooltip">
                                             <img src="/images/pricing/info-icon.svg" alt="Hint icon">
-                                            <span class="tooltip-text">Operate your ThingsBoard instance without internet connectivity</span>
+                                            <span class="tooltip-text">Enables full platform functionality in environments without internet connection.</span>
                                         </span>
                                     </span>
                                     <label class="toggle-switch">
@@ -167,10 +167,11 @@
         clipboardMessage: '',
         debounceTimer: null,
         deviceCount: 1000,
+        _prevDevices: 1000,
         prodInstances: 1,
         devInstances: 0,
         addons: {
-            edge: { enabled: true, count: 2 },
+            edge: { enabled: false, count: 2 },
             trendz: { enabled: false },
             offline: { enabled: false }
         }
@@ -240,11 +241,33 @@
         });
     }
 
+    const tbSmPGetComplimentary = () => {
+        const extraDevices = Math.max(0, tbSmPState.deviceCount - tbSmPPlan.includedDevices);
+        return Math.floor(extraDevices / 5000);
+    };
+
+    const tbSmPGetMinProd = () => tbSmPPlan.includedProdInstances + tbSmPGetComplimentary();
+
     const tbSmPUpdateUI = () => {
         const plan = tbSmPPlan;
+        const minProd = tbSmPGetMinProd();
+        const complimentary = tbSmPGetComplimentary();
+
+        const prevMinProd = plan.includedProdInstances + Math.floor(Math.max(0, tbSmPState._prevDevices - plan.includedDevices) / 5000);
+        if (tbSmPState.prodInstances <= prevMinProd || tbSmPState.prodInstances < minProd) {
+            tbSmPState.prodInstances = minProd;
+        }
+        tbSmPState._prevDevices = tbSmPState.deviceCount;
 
         tbSmPUi.inputs.prod.value = tbSmPState.prodInstances;
-        tbSmPUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbSmPState.prodInstances <= plan.includedProdInstances;
+        tbSmPUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbSmPState.prodInstances <= minProd;
+
+        const extraDevices = Math.max(0, tbSmPState.deviceCount - plan.includedDevices);
+        if (complimentary > 0) {
+            tbSmPUi.desc.prod.textContent = `1 included + ${complimentary} complimentary for ${formatNumber(complimentary * 5000)} extra devices.`;
+        } else {
+            tbSmPUi.desc.prod.textContent = '1 included. Add a 2nd for high availability (HA). For every 5,000 extra devices, one production instance is added at no charge.';
+        }
 
         tbSmPUi.inputs.dev.value = tbSmPState.devInstances;
         tbSmPUi.steppers.dev.querySelector('[data-action="decrement"]').disabled = tbSmPState.devInstances <= 0;
@@ -287,7 +310,7 @@
         const plan = tbSmPPlan;
 
         if (type === 'prod') {
-            const min = plan.includedProdInstances;
+            const min = tbSmPGetMinProd();
             tbSmPState.prodInstances = action === 'increment' ? tbSmPState.prodInstances + 1 : Math.max(min, tbSmPState.prodInstances - 1);
             tbSmPUi.inputs.prod.value = tbSmPState.prodInstances;
             tbSmPUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbSmPState.prodInstances <= min;
@@ -317,7 +340,8 @@
         const extraDevicesCost = extraDevices * plan.extraDevicePrice;
         totalPrice += extraDevicesCost;
 
-        const extraProd = Math.max(0, tbSmPState.prodInstances - plan.includedProdInstances);
+        const complimentaryProd = tbSmPGetComplimentary();
+        const extraProd = Math.max(0, tbSmPState.prodInstances - plan.includedProdInstances - complimentaryProd);
         const extraProdCost = extraProd * plan.extraProdInstancePrice;
         totalPrice += extraProdCost;
 
@@ -364,6 +388,7 @@
             devices,
             extraDevices,
             extraDevicesCost,
+            complimentaryProd,
             extraProd,
             extraProdCost,
             devCost,
@@ -380,21 +405,22 @@
             </span>
         </div>`;
 
-    const tbSmPDisplay = ({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice }) => {
+    const tbSmPDisplay = ({ plan, devices, extraDevices, extraDevicesCost, complimentaryProd, extraProd, extraProdCost, devCost, breakdown, totalPrice }) => {
         let detailsHtml = `
             <div class="results-section expandable" data-section="planDetails">
                 <div class="section-header" data-toggle="planDetails">
                     <span class="section-title-with-chevron">${plan.name} ${chevronUpIcon}</span>
                     <span class="section-value">
                         ${formatCurrency(plan.price)}
-                        <span class="tooltip">${infoIcon}<span class="tooltip-text">Base perpetual license price</span></span>
+                        <span class="tooltip">${infoIcon}<span class="tooltip-text">Total one-time perpetual license cost including extra resources.</span></span>
                     </span>
                 </div>
                 <div class="section-content">
                     ${tbSmPCreateItem('Included Devices', formatNumber(plan.includedDevices), null, true)}
-                    ${tbSmPCreateItem('Included Prod Instances', formatNumber(plan.includedProdInstances))}
-                    ${tbSmPCreateItem('White Labeling', '<span class="badge enabled">Enabled</span>')}
-                    ${tbSmPCreateItem('Base Price', formatCurrency(plan.price), 'One-time perpetual license fee')}`;
+                    ${tbSmPCreateItem('Included Prod Instances', formatNumber(plan.includedProdInstances), 'Number of production instances covered by the perpetual license base price.')}
+                    ${complimentaryProd > 0 ? tbSmPCreateItem('Complimentary Prod Instances', formatNumber(complimentaryProd), '1 Production Instance provided at no charge for every 5,000 extra devices.') : ''}
+                    ${tbSmPCreateItem('White Labeling', '<span class="badge enabled">Enabled</span>', 'Customization of the platform interface with your corporate branding.')}
+                    ${tbSmPCreateItem('Base Price', formatCurrency(plan.price), 'One-time license fee before extras and add-ons.')}`;
 
         if (extraDevices > 0) {
             detailsHtml += tbSmPCreateItem('Extra Devices', formatNumber(extraDevices), 'Devices beyond included');
@@ -422,16 +448,16 @@
         if (breakdown.offline) tooltips.push(`${formatCurrency(breakdown.offline.cost)} (Offline)`);
 
         tbSmPUi.results.innerHTML = `
-            <div class="results-scroll-container">
-                <div class="card-header">
-                    <div class="header-top">
-                        <h3>Calculation summary</h3>
-                        <div class="header-actions">
-                            <div id="perpCopyBtn" class="icon-button" title="Copy">${copyIcon}</div>
-                            <div id="perpDownloadBtn" class="icon-button" title="Download">${downloadIcon}</div>
-                        </div>
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="perpCopyBtn" class="icon-button" title="Copy">${copyIcon}</div>
+                        <div id="perpDownloadBtn" class="icon-button" title="Download">${downloadIcon}</div>
                     </div>
                 </div>
+            </div>
+            <div class="results-scroll-container">
                 ${detailsHtml}
                 <div class="addons-separator"><span>Add-ons</span></div>
                 ${addonsHtml}
@@ -478,11 +504,11 @@
         if (tbSmPState.addons.edge.enabled && breakdown.edge) {
             const edge = breakdown.edge;
             const content = `<div class="section-content">
-                ${tbSmPCreateItem('Add-on Base Price', formatCurrency(edge.base))}
-                ${tbSmPCreateItem('Included Edges', edge.included)}
+                ${tbSmPCreateItem('Included Edges', edge.included, 'Number of Edge instances covered by the Edge Computing add-on base price.')}
+                ${tbSmPCreateItem('Add-on Base Price', formatCurrency(edge.base), 'One-time base fee for the Edge Computing add-on.')}
                 ${edge.extra > 0 ? tbSmPCreateItem('Extra Edges', edge.extra) + tbSmPCreateItem('Extra Edges Cost', formatCurrency(edge.extraCost)) : ''}
             </div>`;
-            html += section('edgeComputing', 'Edge Computing', `<span class="section-value">${formatCurrency(edge.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Edge Computing add-on</span></span></span>`, 'expandable', content);
+            html += section('edgeComputing', 'Edge Computing', `<span class="section-value">${formatCurrency(edge.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Total one-time Edge Computing cost. Calculation: ${formatCurrency(edge.cost)} = ${formatCurrency(edge.base)} (base) + ${formatCurrency(edge.extraCost)} (extra edges)</span></span></span>`, 'expandable', content);
         } else {
             html += addButton('edge', 'Edge Computing', plan.edgeMonthPrice);
         }
@@ -491,11 +517,12 @@
             const trendz = breakdown.trendz;
             const hasExtra = trendz.extraDevices > 0;
             const content = hasExtra ? `<div class="section-content">
-                ${tbSmPCreateItem('Add-on Base Price', formatCurrency(trendz.base))}
+                ${tbSmPCreateItem('Included Devices', formatNumber(plan.includedDevices), 'Number of devices covered by the Trendz perpetual license base price.')}
+                ${tbSmPCreateItem('Add-on Base Price', formatCurrency(trendz.base), 'Base cost for the Trendz Analytics add-on.')}
                 ${tbSmPCreateItem('Extra Devices', trendz.extraDevices)}
                 ${tbSmPCreateItem('Extra Devices Cost', formatCurrency(trendz.extraCost))}
             </div>` : '';
-            html += section('trendzAnalytics', 'Trendz Analytics', `<span class="section-value">${formatCurrency(trendz.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Trendz Analytics add-on</span></span></span>`, hasExtra ? 'expandable' : '', content);
+            html += section('trendzAnalytics', 'Trendz Analytics', `<span class="section-value">${formatCurrency(trendz.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Total one-time Trendz cost. ${formatCurrency(trendz.cost)} = ${formatCurrency(trendz.base)} (base price) + ${formatCurrency(trendz.extraCost)} (extra devices)</span></span></span>`, hasExtra ? 'expandable' : '', content);
         } else {
             html += addButton('trendz', 'Trendz Analytics', plan.trendzMonthPrice);
         }
@@ -504,7 +531,7 @@
             html += `<div class="results-section">
                 <div class="section-header">
                     <span class="section-title">Offline Mode</span>
-                    <span class="section-value">${formatCurrency(breakdown.offline.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">One-time offline mode license</span></span></span>
+                    <span class="section-value">${formatCurrency(breakdown.offline.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Enables full platform functionality in environments without internet connection.</span></span></span>
                 </div>
             </div>`;
         } else {
@@ -533,10 +560,12 @@
         });
     };
 
-    const tbSmPUpdateClipboard = ({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice }) => {
+    const tbSmPUpdateClipboard = ({ plan, devices, extraDevices, extraDevicesCost, complimentaryProd, extraProd, extraProdCost, devCost, breakdown, totalPrice }) => {
         let msg = `Perpetual License: ${plan.name} (${formatCurrency(plan.price)})\n`;
         msg += `- Devices: ${formatNumber(devices)}\n`;
-        msg += `- Prod Instances: ${formatNumber(tbSmPState.prodInstances)}\n`;
+        msg += `- Prod Instances: ${formatNumber(tbSmPState.prodInstances)}`;
+        if (complimentaryProd > 0) msg += ` (${plan.includedProdInstances} included + ${complimentaryProd} complimentary)`;
+        msg += '\n';
         msg += `- Dev Instances: ${formatNumber(tbSmPState.devInstances)}\n`;
         if (extraDevices) msg += `- Extra Devices: ${formatNumber(extraDevices)} (${formatCurrency(extraDevicesCost)})\n`;
         if (extraProd) msg += `- Extra Prod: ${formatNumber(extraProd)} (${formatCurrency(extraProdCost)})\n`;
@@ -571,6 +600,7 @@
         if (!tbSmPUi.openBtn || !tbSmPUi.modal) return;
 
         tbSmPUi.openBtn.addEventListener('click', () => {
+            document.querySelector('header').style.display = 'none';
             openModal(tbSmPUi.modal);
             setTimeout(tbSmPInitTicks, 50);
 
@@ -579,18 +609,20 @@
             tbSmPCalculate();
         });
 
-        tbSmPUi.closeBtn.addEventListener('click', () => closeModal(tbSmPUi.modal));
-        tbSmPUi.modal.addEventListener('click', e => e.target === tbSmPUi.modal && closeModal(tbSmPUi.modal));
+        const perpCloseModal = () => { closeModal(tbSmPUi.modal); document.querySelector('header').style.display = ''; };
+        tbSmPUi.closeBtn.addEventListener('click', perpCloseModal);
+        tbSmPUi.modal.addEventListener('click', e => e.target === tbSmPUi.modal && perpCloseModal());
 
         tbSmPUi.resetBtn.addEventListener('click', () => {
             tbSmPState = {
                 clipboardMessage: '',
                 debounceTimer: null,
                 deviceCount: 1000,
+                _prevDevices: 1000,
                 prodInstances: 1,
                 devInstances: 0,
                 addons: {
-                    edge: { enabled: true, count: 2 },
+                    edge: { enabled: false, count: 2 },
                     trendz: { enabled: false },
                     offline: { enabled: false }
                 }
@@ -600,7 +632,7 @@
             tbSmPUi.inputs.prod.value = 1;
             tbSmPUi.inputs.dev.value = 0;
             tbSmPUi.inputs.edge.value = 2;
-            tbSmPUi.toggles.edge.checked = true;
+            tbSmPUi.toggles.edge.checked = false;
             tbSmPUi.toggles.trendz.checked = false;
             tbSmPUi.toggles.offline.checked = false;
             sliderProgress(tbSmPUi.inputs.slider);
@@ -643,9 +675,10 @@
         bindStepper(tbSmPUi.steppers.edge, 'edge');
 
         tbSmPUi.inputs.prod.addEventListener('change', e => {
-            tbSmPState.prodInstances = Math.max(tbSmPPlan.includedProdInstances, parseInt(e.target.value) || 1);
+            const min = tbSmPGetMinProd();
+            tbSmPState.prodInstances = Math.max(min, parseInt(e.target.value) || 1);
             e.target.value = tbSmPState.prodInstances;
-            tbSmPUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbSmPState.prodInstances <= tbSmPPlan.includedProdInstances;
+            tbSmPUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbSmPState.prodInstances <= min;
             tbSmPCalculate();
             tbSmPSendGTM();
         });

@@ -1045,6 +1045,26 @@ html#pricing
                     margin-top: 3px
                     @media (max-width)
                       filter: blur(8px)
+              .perpetual-price
+                font-size: 24px
+                font-weight: 400
+                line-height: 36px
+                color: #212121
+                margin-bottom: 24px
+                strong
+                  font-size: 28px
+                  font-weight: 600
+              .perpetual-cta-row
+                display: flex
+                gap: 16px
+                align-items: center
+                flex-wrap: wrap
+                .button.secondary
+                  background-color: #fff
+                  color: #2A7DEC
+                  border: solid 1px #2A7DEC
+                  &:hover
+                    filter: brightness(1.1)
             .benefits
               text-align: left
               .benefit-cards
@@ -1092,6 +1112,9 @@ html#pricing
                     font-weight: 400
                     line-height: 24px
                     color: #3D3D3D
+        #perpetual
+          .crd
+            margin-top: 0
         .indicator
           font-size: 28px
           line-height: 25px
@@ -1118,6 +1141,24 @@ html#pricing
           .pricing-square.support-cards
             .btn-pricing
               margin-top: 0
+
+      #perpetualHeader
+        margin-bottom: 0 !important
+        h2
+          margin: 0 !important
+      #perpetual + .add-ons
+        padding-bottom: 40px
+      .add-ons .perpetual-cta
+        text-align: center
+        margin-top: 80px
+        h3
+          font-size: 36px
+          font-weight: 500
+          line-height: 48px
+          margin-bottom: 24px
+        .btn-pricing
+          display: inline-block
+          margin-bottom: 0
 
       .additional-content
         margin-bottom: 100px
