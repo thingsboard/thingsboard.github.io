@@ -1105,7 +1105,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     <p>Customize your deployment with optional features to suit your business needs.</p>
                     <div class="cards">
                         <div class="card">
-                            <img src="/images/pricing/edge-add-on-icon.svg" alt="Edge add on icon">
+                            <img src="https://img.thingsboard.io/pricing/edge-add-on-icon.svg" alt="Edge add on icon">
                             <div class="text">
                                 <h3 class="faq" data-faq-id="edge-addon-payg-what-is" data-faq-tooltip="Deploy and manage Edge instances at remote locations for offline operation, local processing, and automatic cloud sync.">Edge Computing<a class="faq-link faq-link-50"></a></h3>
                                 <p>Process data where it is collected</p>
@@ -1113,7 +1113,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             </div>
                         </div>
                         <div class="card">
-                            <img src="/images/pricing/trendz-add-on-icon.svg" alt="Trendz add on icon">
+                            <img src="https://img.thingsboard.io/pricing/trendz-add-on-icon.svg" alt="Trendz add on icon">
                             <div class="text">
                                 <h3 class="faq" data-faq-id="trendz-payg-what-is" data-faq-tooltip="Advanced analytics for data insights, custom dashboards, and trend discovery.">Trendz Analytics<a class="faq-link faq-link-50"></a></h3>
                                 <p>Advanced analytics for your solution</p>
@@ -1121,7 +1121,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             </div>
                         </div>
                         <div class="card">
-                            <img src="/images/pricing/offline-add-on-icon.svg" alt="Offline Mode icon">
+                            <img src="https://img.thingsboard.io/pricing/offline-add-on-icon.svg" alt="Offline Mode icon">
                             <div class="text">
                                 <h3 class="faq" data-faq-id="perp-offline-mode" data-faq-tooltip="Enables full platform functionality in environments without internet connection.">Offline Mode<a class="faq-link faq-link-50"></a></h3>
                                 <p>Full functionality without internet</p>
