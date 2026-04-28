@@ -745,7 +745,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     <h2>Not sure which plan fits?</h2>
                     <p>Use our calculator to estimate the best plan for your needs.</p>
                 </div>
-                <button id="openCalculatorBtn" class="button calculator gtm_button">Calculate your pricing</button>
+                <button id="openCalculatorBtn" class="button calculator gtm_button">Estimate my cost</button>
             </div>
             <div class="add-ons" data-product-name="private-cloud"></div>
             <div class="plans-comparison">
@@ -870,6 +870,9 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div class="pricing-content-details">
                     All subscription plans include unlimited customers, dashboards, integrations, api calls, data points & messages.
                 </div>
+            </div>
+            <div id="perpetualHeader" class="pricing-content-description">
+                <h2>License packages</h2>
             </div>
             <div class="col d-flex justify-content-end">
                 <div class="solution-selector">
@@ -1048,7 +1051,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             <h2>Not sure which plan fits?</h2>
                             <p>Use our calculator to estimate the best plan for your needs.</p>
                         </div>
-                        <button id="openSMCalculatorBtn" class="button calculator gtm_button">Calculate your pricing</button>
+                        <button id="openSMCalculatorBtn" class="button calculator gtm_button">Estimate my cost</button>
                     </div>
                 </div>
                 <div class="add-ons" data-product-name="pay-as-you-go"></div>
@@ -1057,18 +1060,23 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div class="crd-container no-padding">
                     <div class="crd">
                         <h3>Own Your IoT Solution. Perpetually.</h3>
-                        <p class="subtitle">The one-time, enterprise-grade license for maximum security, permanent data control, and predictable costs. </p>
+                        <p class="subtitle">The one-time, enterprise-grade license for maximum security, permanent data control, and predictable costs.</p>
                         <p>A perpetual license transforms your core IoT platform into a permanent asset, giving you a predictable financial model and complete control over your technology roadmap. It's the ideal foundation for a long-term, large-scale enterprise deployment.</p>
+                        <p class="perpetual-price">Starting from <strong>$4 999</strong></p>
                         <h4>This solution is for you if:</h4>
                         <ul>
                             <li>Your security policy requires an isolated, on-premises, or offline deployment.</li>
                             <li>Your financial model favors a one-time capital investment (CAPEX) over recurring expenses.</li>
                             <li>Your business needs a unique, tailored solution, not a one-size-fits-all subscription.</li>
                         </ul>
-                        <a class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=ThingsBoard%20Products">
-                            Contact us
-                            <span class="visually-hidden">to get your perpetual license</span>
-                        </a>
+                        <div class="perpetual-cta-row">
+                            <button class="button btn-pricing gtm_button" onclick="document.getElementById('openPerpCalculatorBtn')?.click();">
+                                Estimate my cost
+                            </button>
+                            <a class="button secondary btn-pricing gtm_button" href="/docs/contact-us/?subject=ThingsBoard%20Products">
+                                Contact Us
+                            </a>
+                        </div>
                     </div>
                     <div class="benefits">
                         <h3>Why choose a Perpetual License?</h3>
@@ -1091,15 +1099,46 @@ defaultActivePricingSection: thingsboard-pe-options
                             </div>
                         </div>
                     </div>
-                    <h3>Let us help you identify the best option for your business</h3>
-                    <a class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=ThingsBoard%20Products">
-                        Contact us
-                        <span class="visually-hidden">to get your perpetual license</span>
-                    </a>
+                </div>
+                <div class="add-ons">
+                    <h2>Add-ons</h2>
+                    <p>Customize your deployment with optional features to suit your business needs.</p>
+                    <div class="cards">
+                        <div class="card">
+                            <img src="/images/pricing/edge-add-on-icon.svg" alt="Edge add on icon">
+                            <div class="text">
+                                <h3 class="faq" data-faq-id="edge-addon-payg-what-is" data-faq-tooltip="Deploy and manage Edge instances at remote locations for offline operation, local processing, and automatic cloud sync.">Edge Computing<a class="faq-link faq-link-50"></a></h3>
+                                <p>Process data where it is collected</p>
+                                <p>Starting from <span>$849</span></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/images/pricing/trendz-add-on-icon.svg" alt="Trendz add on icon">
+                            <div class="text">
+                                <h3 class="faq" data-faq-id="trendz-payg-what-is" data-faq-tooltip="Advanced analytics for data insights, custom dashboards, and trend discovery.">Trendz Analytics<a class="faq-link faq-link-50"></a></h3>
+                                <p>Advanced analytics for your solution</p>
+                                <p>Starting from <span>$1 499</span></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="/images/pricing/offline-add-on-icon.svg" alt="Offline Mode icon">
+                            <div class="text">
+                                <h3 class="faq" data-faq-id="perp-offline-mode" data-faq-tooltip="Enables full platform functionality in environments without internet connection.">Offline Mode<a class="faq-link faq-link-50"></a></h3>
+                                <p>Full functionality without internet</p>
+                                <p><span>$19 999</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="perpetual-cta">
+                        <h3>Let us help you identify the best option for your business</h3>
+                        <a class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=ThingsBoard%20Products">
+                            Contact Us
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-        <button style="visibility: hidden" id="openPerpCalculatorBtn" class="button calculator gtm_button">Calculate your pricing</button>
+        <button style="visibility: hidden; position: absolute;" id="openPerpCalculatorBtn" class="button calculator gtm_button">Estimate my cost</button>
     </div>
 </div>
 
