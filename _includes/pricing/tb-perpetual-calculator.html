@@ -418,17 +418,22 @@
                 <div class="section-content">
                     ${tbSmPCreateItem('Included Devices', formatNumber(plan.includedDevices), null, true)}
                     ${tbSmPCreateItem('Included Prod Instances', formatNumber(plan.includedProdInstances), 'Number of production instances covered by the perpetual license base price.')}
-                    ${complimentaryProd > 0 ? tbSmPCreateItem('Complimentary Prod Instances', formatNumber(complimentaryProd), '1 Production Instance provided at no charge for every 5,000 extra devices.') : ''}
+                    ${complimentaryProd > 0 ? tbSmPCreateItem('Complimentary Prod Instances', formatNumber(complimentaryProd), '1 Production Instance provided at no charge for every 5,000 extra devices.') : ''}`;
+
+        // Group all Prod Instance info together at the top, immediately
+        // after Complimentary, before White Labeling / Base Price.
+        if (extraProd > 0) {
+            detailsHtml += tbSmPCreateItem('Extra Prod Instances', formatNumber(extraProd), 'Additional instances');
+            detailsHtml += tbSmPCreateItem('Extra Prod Instances Cost', formatCurrency(extraProdCost), `${formatNumber(extraProd)} × ${formatCurrency(plan.extraProdInstancePrice)}`);
+        }
+
+        detailsHtml += `
                     ${tbSmPCreateItem('White Labeling', '<span class="badge enabled">Enabled</span>', 'Customization of the platform interface with your corporate branding.')}
                     ${tbSmPCreateItem('Base Price', formatCurrency(plan.price), 'One-time license fee before extras and add-ons.')}`;
 
         if (extraDevices > 0) {
             detailsHtml += tbSmPCreateItem('Extra Devices', formatNumber(extraDevices), 'Devices beyond included');
             detailsHtml += tbSmPCreateItem('Extra Devices Cost', formatCurrency(extraDevicesCost), `${formatNumber(extraDevices)} × ${formatCurrency(plan.extraDevicePrice)}`);
-        }
-        if (extraProd > 0) {
-            detailsHtml += tbSmPCreateItem('Extra Prod Instances', formatNumber(extraProd), 'Additional instances');
-            detailsHtml += tbSmPCreateItem('Extra Prod Instances Cost', formatCurrency(extraProdCost), `${formatNumber(extraProd)} × ${formatCurrency(plan.extraProdInstancePrice)}`);
         }
         if (tbSmPState.devInstances > 0) {
             detailsHtml += tbSmPCreateItem('Extra Dev Instances', formatNumber(tbSmPState.devInstances));
@@ -470,13 +475,21 @@
                         <span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltips.join(' + ')}</span></span>
                     </span>
                 </div>
-                <a id="perpContactBtn" href="/docs/contact-us/" class="button">Contact Us</a>
+                <a id="perpContactBtn" href="/docs/contact-us/" class="button" target="_blank" rel="noopener noreferrer">Contact Us</a>
             </div>`;
 
         tbSmPInitExpandable();
         document.getElementById('perpCopyBtn')?.addEventListener('click', e => tbSmPCopy(e.currentTarget));
         document.getElementById('perpDownloadBtn')?.addEventListener('click', tbSmPDownload);
-        tbSmPUpdateClipboard({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice });
+        tbSmPUpdateClipboard({ plan, devices, extraDevices, extraDevicesCost, complimentaryProd, extraProd, extraProdCost, devCost, breakdown, totalPrice });
+
+        // Pre-fill the Contact Us form with the calculation summary —
+        // matches the pattern used by tb-payg / tb-private-cloud calculators.
+        const perpContactBtn = document.getElementById('perpContactBtn');
+        if (perpContactBtn) {
+            const subject = 'ThingsBoard Perpetual License';
+            perpContactBtn.href = `/docs/contact-us/?subject=${encodeURIComponent(subject)}&message=${encodeURIComponent(tbSmPState.clipboardMessage)}`;
+        }
     };
 
     const tbSmPGenAddons = (breakdown, plan) => {
@@ -561,22 +574,62 @@
     };
 
     const tbSmPUpdateClipboard = ({ plan, devices, extraDevices, extraDevicesCost, complimentaryProd, extraProd, extraProdCost, devCost, breakdown, totalPrice }) => {
-        let msg = `Perpetual License: ${plan.name} (${formatCurrency(plan.price)})\n`;
-        msg += `- Devices: ${formatNumber(devices)}\n`;
-        msg += `- Prod Instances: ${formatNumber(tbSmPState.prodInstances)}`;
-        if (complimentaryProd > 0) msg += ` (${plan.includedProdInstances} included + ${complimentaryProd} complimentary)`;
-        msg += '\n';
-        msg += `- Dev Instances: ${formatNumber(tbSmPState.devInstances)}\n`;
-        if (extraDevices) msg += `- Extra Devices: ${formatNumber(extraDevices)} (${formatCurrency(extraDevicesCost)})\n`;
-        if (extraProd) msg += `- Extra Prod: ${formatNumber(extraProd)} (${formatCurrency(extraProdCost)})\n`;
-        if (tbSmPState.devInstances) msg += `- Dev Cost: ${formatCurrency(devCost)}\n`;
+        // Mirror the on-screen "Calculation summary" panel as faithfully as
+        // possible — single flat list under Platform, in the same order
+        // shown in the UI, so the contact form / clipboard / download all
+        // match what the user is looking at.
+        let msg = `Perpetual License: ${plan.name}\n\n`;
+
+        msg += `Platform: ${formatCurrency(plan.price)}\n`;
+        msg += `- Included Devices: ${formatNumber(plan.includedDevices)}\n`;
+        msg += `- Included Prod Instances: ${formatNumber(plan.includedProdInstances)}\n`;
+        if (complimentaryProd > 0) {
+            msg += `- Complimentary Prod Instances: ${formatNumber(complimentaryProd)}\n`;
+        }
+        if (extraProd > 0) {
+            msg += `- Extra Prod Instances: ${formatNumber(extraProd)}\n`;
+            msg += `- Extra Prod Instances Cost: ${formatCurrency(extraProdCost)}\n`;
+        }
+        msg += `- White Labeling: Enabled\n`;
+        msg += `- Base Price: ${formatCurrency(plan.price)}\n`;
+        if (extraDevices > 0) {
+            msg += `- Extra Devices: ${formatNumber(extraDevices)}\n`;
+            msg += `- Extra Devices Cost: ${formatCurrency(extraDevicesCost)}\n`;
+        }
+        if (tbSmPState.devInstances > 0) {
+            msg += `- Extra Dev Instances: ${formatNumber(tbSmPState.devInstances)}\n`;
+            msg += `- Extra Dev Instances Cost: ${formatCurrency(devCost)}\n`;
+        }
 
         if (Object.keys(breakdown).length) {
             msg += '\nAdd-ons:\n';
-            if (breakdown.edge) msg += `- Edge: ${formatCurrency(breakdown.edge.cost)} (${breakdown.edge.total} instances)\n`;
-            if (breakdown.trendz) msg += `- Trendz: ${formatCurrency(breakdown.trendz.cost)}\n`;
-            if (breakdown.offline) msg += `- Offline Mode: ${formatCurrency(breakdown.offline.cost)}\n`;
+
+            if (breakdown.edge) {
+                const edge = breakdown.edge;
+                msg += `\nEdge Computing: ${formatCurrency(edge.cost)}\n`;
+                msg += `- Included Edges: ${formatNumber(edge.included)}\n`;
+                msg += `- Add-on Base Price: ${formatCurrency(edge.base)}\n`;
+                if (edge.extra > 0) {
+                    msg += `- Extra Edges: ${formatNumber(edge.extra)}\n`;
+                    msg += `- Extra Edges Cost: ${formatCurrency(edge.extraCost)}\n`;
+                }
+            }
+
+            if (breakdown.trendz) {
+                const trendz = breakdown.trendz;
+                msg += `\nTrendz Analytics: ${formatCurrency(trendz.cost)}\n`;
+                msg += `- Add-on Base Price: ${formatCurrency(trendz.base)}\n`;
+                if (trendz.extraDevices > 0) {
+                    msg += `- Extra Devices: ${formatNumber(trendz.extraDevices)}\n`;
+                    msg += `- Extra Devices Cost: ${formatCurrency(trendz.extraCost)}\n`;
+                }
+            }
+
+            if (breakdown.offline) {
+                msg += `\nOffline Mode: ${formatCurrency(breakdown.offline.cost)}\n`;
+            }
         }
+
         tbSmPState.clipboardMessage = msg + `\nTotal: ${formatCurrency(totalPrice)}`;
     };
 
