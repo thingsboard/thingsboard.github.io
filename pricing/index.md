@@ -1062,10 +1062,10 @@ defaultActivePricingSection: thingsboard-pe-options
                         <h3>Own Your IoT Solution. Perpetually.</h3>
                         <p class="subtitle">The one-time, enterprise-grade license for maximum security, permanent data control, and predictable costs.</p>
                         <p>A perpetual license transforms your core IoT platform into a permanent asset, giving you a predictable financial model and complete control over your technology roadmap. It's the ideal foundation for a long-term, large-scale enterprise deployment.</p>
-                        <p class="perpetual-price">Starting from <strong>$4 999</strong></p>
-                        <h4>This solution is for you if:</h4>
+                        <p class="perpetual-price"><strong>Starting from $4 999</strong></p>
+                        <p>This solution is for you if:</p>
                         <ul>
-                            <li>Your security policy requires an isolated, on-premises, or offline deployment.</li>
+                            <li>Your security policy requires an isolated, on-premises, or development deployment.</li>
                             <li>Your financial model favors a one-time capital investment (CAPEX) over recurring expenses.</li>
                             <li>Your business needs a unique, tailored solution, not a one-size-fits-all subscription.</li>
                         </ul>
