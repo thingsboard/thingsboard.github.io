@@ -164,6 +164,9 @@ var tb = (function () {
 				let faqAnchor = this;
 				let nodeId = this.getAttribute('data-faq-id');
 				let faqLink = $(faqAnchor).children('a')[0];
+				if ($(faqAnchor).closest('#perpetual').length) {
+					return;
+				}
 				$(faqLink).on('click', function() {
 					navigateToFaq(nodeId);
 				});
