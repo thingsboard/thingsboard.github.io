@@ -96,8 +96,13 @@ The main idea is to sacrifice small performance/latency penalties in favor of pe
 
 ### Kafka
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform. ThingsBoard uses Kafka to persist incoming telemetry from HTTP/MQTT/CoAP transpots 
-until it is processed by the rule engine. ThingsBoard also uses Kafka for some API calls between micro-services.
+[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing platform. In ThingsBoard microservices deployments, Kafka is used as an 
+internal message queue to buffer telemetry ingested via supported device transports (e.g., HTTP/MQTT/CoAP) until it is 
+processed by the Rule Engine. Kafka is also used for certain inter-service communication between microservices.
+
+Note: Kafka in this context is not a public ingestion endpoint. ThingsBoard Community Edition does not provide a built-in Kafka consumer 
+to ingest telemetry from external Kafka topics/clusters. To ingest data from external Kafka, forward it via supported ingestion 
+paths (device transports / REST API) or use the Kafka Integration in ThingsBoard Professional Edition or Cloud.
 
 ### Cache database
 
